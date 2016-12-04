@@ -3,8 +3,6 @@
 <hibernate-mapping>
 
 
-
-
     <!-- this query to get assignments and answer sheets-->
     <!--<query-->
         <!--name="acad.getHeadAssignmentsList">-->
