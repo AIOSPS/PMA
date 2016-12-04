@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!-- this query to get assignments and answer sheets-->
+    <!--<query-->
+        <!--name="acad.getHeadAssignmentsList">-->
+        <!--<![CDATA[-->
+           <!--select distinct md.comp_id.crsNo, md.comp_id.crsSeq,-->
+                    <!--rec.crsAName, rec.crsLName,-->
+                    <!--pas.assignId, pas.assignType, pas.fileId,-->
+                    <!--pas.seed, pas.notes, pas.answerSheet-->
+           <!--from-->
+               <!--edu.qou.studentInfo.database.RegMsDtl md,-->
+               <!--edu.qou.studentInfo.database.RegCourse rec,-->
+               <!--edu.qou.assignmentsDept.database.DBPortalAssignmentStorage pas-->
+           <!--where-->
+                 <!--md.comp_id.specNo = ? and-->
+                 <!--md.comp_id.msCrsType in ('5','6') and-->
+                 <!--pas.termNo = (select ps.keyValue-->
+                               <!--from edu.qou.studentInfo.database.PortalSetup ps-->
+                               <!--where ps.keyName = 'currentSemester') and-->
+                 <!--md.comp_id.msNo = (select max(a.comp_id.msNo)-->
+                                    <!--from edu.qou.studentInfo.database.RegMsDtl a-->
+                                    <!--where a.comp_id.specNo = ?) and-->
+                 <!--pas.crsNo = md.comp_id.crsNo and-->
+                 <!--pas.crsSeq = md.comp_id.crsSeq and-->
+                 <!--rec.comp_id.crsNo = md.comp_id.crsNo and-->
+                 <!--rec.comp_id.crsSeq = md.comp_id.crsSeq-->
+                 <!--order by md.comp_id.crsNo, md.comp_id.crsSeq, pas.assignType-->
+        <!--]]>-->
+    <!--</query>-->
+ </hibernate-mapping>

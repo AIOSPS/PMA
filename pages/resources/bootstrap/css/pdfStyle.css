@@ -1,0 +1,305 @@
+@media print {
+body {
+    -webkit-print-color-adjust: exact!important;
+    }
+}
+.qouLogoNew
+{
+    margin-top: 2px;
+    margin-bottom: 1px;
+    height:75px;
+    width:75px;
+}
+.centerpage {
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 17px;
+    FONT-WEIGHT: bold;
+    LIST-STYLE: disc;
+    direction: ltr;
+}
+
+.pdfVertical_txt {
+    color: #000000;
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(90 deg);
+    -moz-transform: rotate(90 deg);
+    -o-transform: rotate(90 deg);
+    white-space: nowrap;
+    display: block;
+    bottom: 0;
+    width: 17px;
+    height: 17px;
+    font-family: Times New Roman;
+    font-size: 13px;
+    font-weight: normal;
+    text-shadow: 0px 0px 1px #333;
+}
+
+.pdfBorderBlack {
+    border: 1pt solid #000000;
+}
+
+.pdfTabHeadBorder {
+    border: 1pt solid #000000;
+    COLOR: #000000;
+    background-color: #E7E2E2;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 11pt;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: bold;
+}
+
+.pdfTitle {
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 23px;
+    LIST-STYLE: disc;
+}
+
+.pdfSubTitle {
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 13px;
+    LIST-STYLE: disc;
+}
+
+.pdfText {
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 11pt;
+    FONT-STYLE: normal;
+    TEXT-DECORATION: none;
+}
+
+.pdfTextUn {
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 11pt;
+    FONT-STYLE: normal;
+    text-decoration: underline;
+}
+
+.pdfTabHead {
+    COLOR: #000000;
+    background-color: #E7E2E2;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 11pt;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: bold;
+}
+.qou {
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 11pt;
+    FONT-STYLE: normal;
+    TEXT-DECORATION: none;
+    direction: ltr;
+}
+
+/************************* Start Simple New Print***************************/
+.simpleNewPrint {
+
+    -webkit-border-radius: 8px 8px;
+    -moz-border-radius: 8px / 8px;
+    -o-border-radius: 8px / 8px;
+    -ms-border-radius: 8px / 8px;
+    -khtml-border-radius: 8px / 8px;
+    border-radius: 8px / 8px;
+    width: 100%;
+    border-spacing: 0px;
+    border: 1px solid black;
+    border-collapse: separate;
+    direction: ltr;
+    empty-cells: show;
+}
+
+.simpleNewPrint th {
+    padding: 3px;
+    text-align: center;
+    COLOR: #474a3c;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 12px;
+    font-weight: bold;
+    FONT-STYLE: normal;
+    border-left: 1px solid #000;
+    background-color: #E7E2E2; !important;
+    padding-top: 4px;
+    vertical-align: middle;
+}
+
+.simpleNewPrint td {
+    padding: 2px;
+    COLOR: #000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 12px;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+    height: 20px;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+
+}
+
+.simpleNewPrintFirstTr tr:first-child  td:first-child {
+    -moz-border-radius: 8px 0 0 0;
+    -webkit-border-radius: 8px 0 0 0;
+    border-radius: 8px 0 0 0;
+
+}
+
+.simpleNewPrintFirstTr tr:first-child  td:last-child {
+    -moz-border-radius: 0 8px 0 0;
+    -webkit-border-radius: 0 8px 0 0;
+    border-radius: 0 8px 0 0;
+
+}
+
+.simpleNewPrint td:first-child, .simpleNewPrint th:first-child {
+    border-left: none;
+}
+
+.simpleNewPrint th:first-child {
+    -moz-border-radius: 8px 0 0 0;
+    -webkit-border-radius: 8px 0 0 0;
+    border-radius: 8px 0 0 0;
+
+}
+
+.simpleNewPrint th:last-child {
+    -moz-border-radius: 0 8px 0 0;
+    -webkit-border-radius: 0 8px 0 0;
+    border-radius: 0 8px 0 0;
+
+}
+
+.simpleNewPrint th:only-child {
+    -moz-border-radius: 8px 8px 0 0;
+    -webkit-border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
+
+}
+
+.simpleNewPrint tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 8px;
+    -webkit-border-radius: 0 0 0 8px;
+    border-radius: 0 0 0 8px;
+}
+
+.simpleNewPrint tr:last-child td:last-child {
+    -moz-border-radius: 0 0 8px 0;
+    -webkit-border-radius: 0 0 8px 0;
+    border-radius: 0 0 8px 0;
+
+}
+
+.simpleNewPrint th {
+    border-bottom-width: 0;
+    BACKGROUND-COLOR: #666666;
+    COLOR: #ffffff;
+    FONT-FAMILY: Times New Roman;
+    font-size: 14px;
+
+}
+
+* html .simpleNewPrint th {
+/*IE only rule. Original menu width minus all left/right paddings */
+    font-family: Times New Roman;
+    font-size: 14px;
+    background: #666666;
+}
+
+.simpleNewPrint th a {
+    font-family: Times New Roman;
+    font-size: 14px;
+    padding: 2px 1px;
+    display: block;
+    width: 100%; /*Define width for IE6's sake*/
+    color: #474a3c;
+    text-decoration: none;
+    background: #E7E2E2;
+    -webkit-border-radius: 4px 4px;
+    -moz-border-radius: 4px / 4px;
+    -o-border-radius: 4px / 4px;
+    -ms-border-radius: 4px / 4px;
+    -khtml-border-radius: 4px / 4px;
+    border-radius: 4px / 4px;
+}
+
+.simpleNewPrint th a:visited {
+    color: #474a3c;
+    font-family: Times New Roman;
+    font-size: 14px;
+    background: #E7E2E2;
+    -webkit-border-radius: 4px 4px;
+    -moz-border-radius: 4px / 4px;
+    -o-border-radius: 4px / 4px;
+    -ms-border-radius: 4px / 4px;
+    -khtml-border-radius: 4px / 4px;
+     border-radius: 4px / 4px;
+}
+
+html>body .simpleNewPrint th a {
+/*Non IE rule*/
+    width: auto;
+    font-family: Times New Roman;
+    font-size: 14px;
+    background: #E7E2E2;
+    -webkit-border-radius: 4px 4px;
+    -moz-border-radius: 4px / 4px;
+    -o-border-radius: 4px / 4px;
+    -ms-border-radius: 4px / 4px;
+    -khtml-border-radius: 4px / 4px;
+    border-radius: 4px / 4px;
+}
+
+.simpleNewPrint th a:hover {
+    background-color: #F8FBBD;
+    color: #474a3c;
+    font-family: Times New Roman;
+    font-size: 14px;
+    -webkit-border-radius: 4px 4px;
+    -moz-border-radius: 4px / 4px;
+    -o-border-radius: 4px / 4px;
+    -ms-border-radius: 4px / 4px;
+    -khtml-border-radius: 4px / 4px;
+    border-radius: 4px / 4px;
+}
+
+.simpleNewPrint tr.odd {
+    BACKGROUND-COLOR: #ffffff;
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 12px;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+
+}
+.simpleNewPrint tr.odd:hover {
+    BACKGROUND-COLOR: #F0EB83;
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 12px;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+
+}
+
+.simpleNewPrint tr.even {
+    BACKGROUND-COLOR: #E2DFD1 ;
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 12px;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+}
+.simpleNewPrint tr.even:hover {
+    BACKGROUND-COLOR: #F0EB83;
+    COLOR: #000000;
+    FONT-FAMILY: Times New Roman;
+    FONT-SIZE: 12px;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+}
+
+/************************ End Simple New Print*******************************/

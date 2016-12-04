@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app
+        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+        "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+<web-app>
+
+
+
+
+
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/strutsConfig/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>2</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <!--        <init-param>-->
+        <!--            <param-name>application</param-name>-->
+        <!--            <param-value>ApplicationResources</param-value>-->
+        <!--        </init-param>-->
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <!-- START WEB SERVICE MAPPING
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <servlet-class>edu.ws.LibUserWS</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/getUserInfo</url-pattern>
+    </servlet-mapping>
+         END WEB SERVICE MAPPING -->
+    <!-- Standard Action Servlet Mapping -->
+
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!--<servlet-mapping>-->
+    <!--<servlet-name>synchronizeNews</servlet-name>-->
+    <!--<url-pattern>/synchronizeNews</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+
+    <!-- The Usual Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Response Errors overwriting-->
+    <error-page>
+        <error-code>400</error-code>
+        <location>/pages/invalidPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/pages/invalidPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pages/invalidPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>408</error-code>
+        <location>/pages/invalidPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/pages/invalidPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.RuntimeException</exception-type>
+        <location>/pages/invalidPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/pages/invalidPage.jsp</location>
+        <!--location>/com.jplates.examples.webapp.ErrorPage.jplate</location-->
+    </error-page>
+
+    <!-- session timeout (short for testing, longer for deployment) -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+
+    <!-- Struts Tag Library Descriptors -->
+
+    <taglib>
+        <taglib-uri>/tags/struts-bean</taglib-uri>
+        <taglib-location>/WEB-INF/lib/struts-bean.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+        <taglib-uri>/tags/struts-html</taglib-uri>
+        <taglib-location>/WEB-INF/lib/struts-html.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+        <taglib-uri>/tags/struts-logic</taglib-uri>
+        <taglib-location>/WEB-INF/lib/struts-logic.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+        <taglib-uri>/tags/struts-nested</taglib-uri>
+        <taglib-location>/WEB-INF/lib/struts-nested.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+        <taglib-uri>/tags/struts-tiles</taglib-uri>
+        <taglib-location>/WEB-INF/lib/struts-tiles.tld</taglib-location>
+    </taglib>
+
+    <taglib>
+        <taglib-uri>/tags/qou-Taglib</taglib-uri>
+        <taglib-location>/WEB-INF/lib/qou-Taglib.tld</taglib-location>
+    </taglib>
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>SecureOrdersEast</web-resource-name>
+            <description>Security constraint for resources in the pages directory </description>
+            <url-pattern>/reports/*</url-pattern>
+            <!--            <url-pattern>/capture/*</url-pattern>-->
+            <!--<url-pattern>/pages/tutorInfo/*</url-pattern>-->
+            <!--<url-pattern>/pages/studentAffairs/*</url-pattern>-->
+            <!--<url-pattern>/pages/studentInfo/*</url-pattern>-->
+            <!--<url-pattern>/pages/forums/*</url-pattern>-->
+            <url-pattern>/pages/admin/*</url-pattern>
+            <url-pattern>/pages/layout/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>role1</role-name>
+        </auth-constraint>
+    </security-constraint>
+</web-app>

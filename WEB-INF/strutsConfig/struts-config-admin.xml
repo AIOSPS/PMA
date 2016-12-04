@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+    <!-- ========== Form Bean Definitions ================================== -->
+    <form-beans>
+        <form-bean name="CreateFaqForm" type="com.psgateway.form.FaqActionForm"/>
+        <form-bean name="CreateQandAForm" type="com.psgateway.form.QandAActionForm"/>
+<!--        <form-bean name="RegistrationForm" type="com.psgateway.form.user.UserRegistrationActionForm"/>-->
+        <form-bean name="NewForum" type="com.psgateway.form.forum.ForumActionForm"/>
+        <form-bean name="MessageForm" type="com.psgateway.form.forum.ForumMessageActionForm"/>
+        <form-bean name="PermissionActionForm" type="com.psgateway.form.permission.PermissionActionForm"/>
+        <form-bean name="roleForm" type="com.psgateway.form.role.RoleActionForm"/>
+        <form-bean name="addUserForm" type="com.psgateway.form.user.UserRegistrationActionForm"/>
+        <form-bean name="updateUserForm" type="com.psgateway.form.user.UpdateUserActionForm"/>
+        <form-bean name="actionForm" type="edu.qou.security.actionroles.form.ActionToRoleActionForm"/>
+        <form-bean name="areaForumMappingForm" type="edu.qou.security.permission.form.AreaForumMappingForm"/>
+        <form-bean name="PollsAndForumsPermissionForm" type="edu.qou.security.permission.form.PollsAndForumsPermissionForm"/>
+        <form-bean name="userForumPermissionForm" type="edu.qou.security.permission.form.UserForumPermissionForm"/>
+        <form-bean name="calenderForm" type="edu.qou.security.calender.form.CalenderForm"/>
+        <form-bean name="studOrTutorPasswordForm" type="edu.qou.security.users.forms.ResetStudnetOrTutorPasswordActionForm"/>
+        <form-bean name="coordinatorForm" type="edu.qou.CoordinatorInfo.forms.CoordinarorForm"/>
+        <form-bean name="regCalenderTermMarkForm" type="edu.qou.security.calender.form.registrationCalendar.RegCalenderTermMarkForm"/>
+        <form-bean name="setTutorsStatusForm" type="edu.qou.security.users.forms.SetTutorsStatusForm"/>
+        <form-bean name="sendUsersMessageForm" type="edu.qou.security.messaging.forms.SendUsersMessageForm"/>
+        <form-bean name="centerUsersForm" type="edu.qou.security.users.forms.CenterUsersForm"/>
+        <form-bean name="miExceptionForm" type="edu.qou.security.calender.form.MarksInsExceptionActionForm"/>
+        <form-bean name="exceptionStatisticsForm" type="edu.qou.security.calender.form.ExceptionStatisticsForm"/>
+        <form-bean name="updatePasswordForm" type="edu.qou.login.forms.UpdatePasswordForm"/>
+        <form-bean name="exceptionReasonForm" type="edu.qou.security.calender.form.ExceptionReasonForm"/>
+        <form-bean name="regCalenderSelectionForm" type="edu.qou.security.calender.form.registrationCalendar.RegCalenderSelectionForm"/>
+        <form-bean name="delPracExamForm" type="edu.qou.security.calender.form.practicalExamCalendar.DelPracExamCrsActionForm"/>
+        <form-bean name="cmsContentForm" type="edu.qou.ans.forms.CmsContentForm"/>
+<!--        added by Ibrahim assi date :18-6-2011-->
+<!--        <form-bean name="onlineAccountForm"      type="edu.qou.security.actionroles.form.OnlineAccountForm"/>-->
+<!--        <form-bean name="statusSpecInCenterForm" type="edu.qou.registrationDept.forms.StatusSpecInCenterForm"/>-->
+<!--        <form-bean name="admRateForm"            type="edu.qou.registrationDept.forms.AdmRateForm"/>-->
+        <form-bean name="revokeActionForm"            type="edu.qou.security.actionroles.form.RevokeActionForm"/>
+        <form-bean name="searchForm"                  type="edu.qou.registrationDept.forms.CrsSearchActionForm"/>
+        <form-bean name="loginForm"                   type="edu.qou.login.forms.LoginForm"/>
+        <form-bean name="auditForm"                   type="com.psgateway.form.admin.AuditForm"/>
+        <form-bean name="auditTableForm"              type="com.psgateway.form.admin.AuditTableForm"/>
+        <form-bean name="auditScreenForm"             type="com.psgateway.form.admin.AuditScreenForm"/>
+        <form-bean name="servletContextAttributeForm" type="com.psgateway.form.admin.ServletContextAttributeForm"/>
+        <form-bean name="statisticsRegStudFrom"       type="edu.qou.registrationDept.forms.StatisticsRegStudFrom"/>
+<!--        <form-bean name="centersForm"             type="edu.qou.registrationDept.forms.CentersForm"/>-->
+<!--     end   added by Ibrahim assi date :18-6-2011-->
+
+    </form-beans>
+
+<!--    <global-exceptions>-->
+<!--        <exception key="null.error" type="java.lang.NullPointerException" path="/errorPageAction.do"/>-->
+<!--    </global-exceptions>-->
+
+    <global-forwards>
+        <forward name="logout" path="/logout.do"/>
+        <forward name="noPermission" path="admin.NoPermission.tile"/>
+        <forward name="ViewForums" path="/ViewForums.do"/>
+        <forward name="subMain" path="/subMain.do"/>
+        <forward name="ViewCreateNewForum" path="/ViewCreateNewForum.do"/>
+        <forward name="viewAddCntAction" path="/viewAddCntAction.do"/>
+        <forward name="loadContentInfo" path="/loadContentInfo.do"/>        
+        <forward name="invalidAccess" path="/pages/errorPage.jsp" contextRelative="true" redirect="true"/>
+        <forward name="ViewPollsAndForumPermissions" path="/pollsForumsAdmin.do"/>
+        <forward name="areaForumMapping" path="/getAreaForumMapping.do"/>
+        <forward name="pollsAdmin" path="/polls/viewAllPolls.do" contextRelative="true"/>
+        <forward name="showSearch" path="/showSearch.do"/>
+        <forward name="showSearchExams" path="/showSearchExams.do"/>
+        <forward name="viewRegCourseMarksTransfer" path="/viewRegCourseMarksTransfer.do"/>
+    </global-forwards>
+
+    <!-- ========== Action Mapping Definitions =============================== -->
+    <action-mappings>
+        <!-- ========== Begin of admin module ==== -->
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            path="/errorPageAction"
+            parameter="/pages/invalidPage.jsp"
+            />
+
+        <!-- =========== faq module ========== -->
+        <action
+            type="edu.qou.logout.actions.LogoutAction"
+            path="/logout">
+            <forward name="logoutDone" path="/portalLogin.do" contextRelative="true"/>
+        </action>
+
+        <action
+              type="org.apache.struts.actions.ForwardAction"
+              parameter="/pages/portalIndex.jsp"
+              path="/portalLogin" />
+
+
+        <action
+            type="com.psgateway.action.forum.IndexPageAction"
+            path="/indexPage">
+            <forward name="success" path="/pages/index.jsp" contextRelative="true"/>
+        </action>
+
+
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            path="/main"
+            parameter="/pages/forums/main.jsp"
+            />
+
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            path="/subMain"
+            parameter="admin.mainPage.tile"
+            />
+
+        <action
+            name="CreateFaqForm"
+            type="com.psgateway.action.CreateFaqAction"
+            input="/pages/faq/CreateEditFaq.jsp"
+            path="/CreateFaq">
+            <forward name="success" path="/pages/faq/ViewFaqs.jsp"/>
+        </action>
+        <action
+            type="com.psgateway.action.ViewFaqsAction"
+            path="/ViewFaqs">
+            <forward name="success" path="/pages/faq/ViewFaqs.jsp"/>
+        </action>
+        <action
+            name="CreateQandAForm"
+            type="com.psgateway.action.CreateQandAAction"
+            input="/pages/faq/CreateEditQandAs.jsp"
+            path="/CreateQandA">
+            <forward name="success" path="/pages/faq/ViewQandAs.jsp"/>
+        </action>
+        <action
+            type="com.psgateway.action.ViewQandAAction"
+            path="/ViewQandAs">
+            <forward name="success" path="/pages/faq/ViewQandAs.jsp"/>
+        </action>
+        <!-- =========== End faq module =========== -->
+        <!-- =========== User module    =========== -->
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="UserLogin"
+            path="/UserLogin"/>
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="error.tile"
+            path="/Error"/>
+        <!--action
+                   path="/CreateNewUser"
+                   type="com.psgateway.action.user.NewUserAction"
+                   name="RegistrationForm"
+                   input="/pages/admin/user/Register.jsp" >
+                   <forward path="/index.jsp" name="success" />
+           </action>
+           <action
+                   path="/Login"
+                   type="com.psgateway.action.LoginAction"
+                   name="loginForm"
+                   input="/pages/login.jsp" >
+                   <forward path="/pages/login.jsp" name="success" />
+                   <forward path="/pages/login.jsp" name="login_failed" />
+           </action>
+           <action
+                   path="/Logout"
+                   type="com.psgateway.action.LogoutAction" >
+                   <forward name="success" path="/pages/login.jsp" />
+                   <forward name="logout_failed" path="/pages/login.jsp" />
+           </action>
+           <action
+                   path="/ViewUsers"
+                   type="com.psgateway.action.user.ViewUsersAction" >
+                   <forward path="/pages/admin/permission/Users.jsp" name="success" />
+           </action>
+
+           <action path="/AuthorizeAction" type="com.psgateway.action.AuthorizeAction">
+                 <forward name="error" path="authorization.failure"/>
+                 <forward name="login" path="UserLogin"/>
+           </action>
+
+           <action path="/Register" type="org.apache.struts.actions.ForwardAction" parameter="Register">
+           </action-->
+
+        <action
+            path="/getRolesList"
+            type="com.psgateway.action.role.GetRolesListAction"
+            >
+            <forward name="success" path="admin.getRolesList.tile"/>
+        </action>
+
+        <action
+            path="/addRole"
+            type="com.psgateway.action.role.AddRoleAction"
+            name="roleForm"
+            scope="request"
+            validate="true"
+            input="/getRolesList.do"
+            >
+            <forward name="success" path="/getRolesList.do" redirect="true"/>
+            <forward name="fail" path="/getRolesList.do"/>
+        </action>
+
+        <action
+            path="/getRoleMembersList"
+            type="com.psgateway.action.role.RoleMemebersAction"
+            >
+            <forward name="success" path="admin.getRoleMembersList.tile"/>
+        </action>
+
+
+        <action
+            path="/addUserForm"
+            type="com.psgateway.action.user.AddUserFormAction"
+            >
+            <forward name="success" path="admin.addUserForm.tile"/>
+        </action>
+
+        <action
+            path="/addUser"
+            type="com.psgateway.action.user.AddUserAction"
+            name="addUserForm"
+            scope="request"
+            validate="true"
+            input="/addUserForm.do"
+            >
+            <forward name="success" path="/addUserForm.do"/>
+            <forward name="fail" path="/addUserForm.do"/>
+        </action>
+
+        <action
+            path="/editUserForm"
+            scope="request"
+            type="com.psgateway.action.user.EditUserFormAction"
+            >
+            <forward name="success" path="admin.editUserForm.tile"/>
+        </action>
+
+        <action
+            path="/loadUserInfo"
+            name="updateUserForm"
+            scope="request"
+            validate="false"
+            type="com.psgateway.action.user.LoadUserInfoAction"
+            >
+            <forward name="success" path="admin.editUserForm.tile"/>
+            <forward name="fail" path="admin.editUserForm.tile"/>
+        </action>
+
+        <action
+            path="/updateUser"
+            type="com.psgateway.action.user.UpdateUserInfoAction"
+            name="updateUserForm"
+            scope="request"
+            validate="true"
+            input="/editUserForm.do"
+            >
+            <forward name="success" path="/editUserForm.do"/>
+            <forward name="fail" path="/editUserForm.do"/>
+        </action>
+
+        <!-- =========== End of user module ===== -->
+
+        <!-- =========== Forum module ===== -->
+        <action
+            type="com.psgateway.action.forum.ViewCreateNewForumAction"
+            path="/ViewCreateNewForum">
+            <forward name="success" path="forums.createForum.tile" contextRelative="true"/>
+        </action>
+        <action
+            name="NewForum"
+            type="com.psgateway.action.forum.AddNewForumAction"
+            validate="true"
+            input="forums.createForum.tile"
+            scope="request"
+            path="/CreateNewForum">
+            <forward name="success" path="/ViewForums.do"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ViewForumsAction"
+            path="/ViewForums">
+            <forward name="success" path="forums.main.tile" contextRelative="true"/>
+            <!--forward path="ViewForums" name="success" /-->
+        </action>
+        <action
+            name="MessageForm"
+            type="com.psgateway.action.forum.AddNewThreadAction"
+            input="/PostNewTopic.do"
+            scope="request"
+            path="/CreateThread">
+            <forward name="success" path="/ViewTopics.do"/>
+            <forward name="login" path="/pages/errorPage.jsp" contextRelative="true"/>
+            <forward name="thanks" path="forums.thanks.tile" contextRelative="true"/>
+        </action>
+        <action
+            name="MessageForm"
+            type="com.psgateway.action.forum.ReplyMessageAction"
+            input="/PostNewMessage.do"
+            scope="request"
+            path="/CreateMessage">
+            <forward name="success" path="/ViewMessages.do"/>
+            <forward name="fail" path="forums.createMessage.tile" contextRelative="true"/>
+            <forward name="thanks" path="forums.thanks.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ViewTopicsAction"
+            path="/ViewTopics">
+            <forward name="success" path="forums.viewTopics.tile" contextRelative="true"/>
+            <forward name="success_s" path="forums.viewTopicsStudent.tile" contextRelative="true"/>
+            <forward name="success_t" path="forums.viewTopics.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ViewMessagesAction"
+            path="/ViewMessages">
+            <forward name="success" path="forums.viewMessages.tile" contextRelative="true"/>
+            <forward name="success_p" path="forums.viewMessagesPublic.tile" contextRelative="true"/>
+            <forward name="success_s" path="forums.viewMessagesStudent.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ViewModeratorsAction"
+            path="/ViewModerators">
+            <forward name="success" path="forums.moderators.tile" contextRelative="true"/>
+        </action>
+        <action
+            name="PermissionActionForm"
+            type="com.psgateway.action.forum.AddModeratorAction"
+            path="/AddModerator">
+            <forward name="success" path="/ViewPermissions.do"/>
+            <forward name="fail" path="/pages/error.jsp"/>
+        </action>
+        <action
+            name="PermissionActionForm"
+            type="com.psgateway.action.permission.PrivilegeManagmentAction"
+            path="/ModeratorManagment">
+            <forward name="success" path="forums.grantModeratorPermission.tile"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ViewUnapprovedMessagesAction"
+            path="/ViewUnapprovedMessages">
+            <forward name="success" path="forums.unapprovedMessages.tile" contextRelative="true"/>
+            <forward name="fail" path="ErrorPage"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ViewUnapprovedThreadAction"
+            path="/ViewUnapprovedThreads">
+            <forward name="success" path="forums.unapprovedThreads.tile" contextRelative="true"/>
+            <forward name="fail" path="ErrorPage"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ApproveMessageAction"
+            path="/ApproveMessage">
+            <forward name="success" path="/ViewUnapprovedMessages.do"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.DeleteMessageAction"
+            path="/DeleteMessageAction">
+            <forward name="success" path="/ViewUnapprovedMessages.do"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.ApproveThreadAction"
+            path="/ApproveThread">
+            <forward name="success" path="/ViewUnapprovedThreads.do"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.AdminForumAction"
+            path="/AdminForums">
+            <forward name="success" path="/EditForum.do"/>
+        </action>
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="CreateForum"
+            path="/CreateForum"/>
+        <action
+            name="NewForum"
+            type="com.psgateway.action.forum.EditForumAction"
+            validate="false"
+            scope="request"
+            path="/EditForum">
+            <forward name="success" path="forums.editForum.tile" contextRelative="true"/>
+            <!--forward name="NotFound" path="/NotFound.do" /-->
+        </action>
+        <!-- delete forum action -->
+        <action
+            type="com.psgateway.action.forum.DeleteForumAction"
+            path="/DeleteForum">
+            <forward name="success" path="/ViewForums.do"/>
+        </action>
+        <action
+            name="NewForum"
+            type="com.psgateway.action.forum.UpdateForumAction"
+            validate="true"
+            input="/EditForum.do"
+            scope="request"
+            path="/UpdateForum">
+            <forward name="success" path="/ViewForums.do"/>
+        </action>
+        <!-- open edit thread page-->
+        <action
+            name="MessageForm"
+            type="com.psgateway.action.forum.EditThreadAction"
+            validate="false"
+            scope="request"
+            path="/EditThread">
+            <forward name="success" path="forums.editThread.tile" contextRelative="true"/>
+        </action>
+        <!-- Secure open edit thread page-->
+        <action
+            name="MessageForm"
+            type="com.psgateway.action.forum.SecEditThreadAction"
+            validate="false"
+            scope="request"
+            path="/SecEditThread">
+            <forward name="success" path="forums.editThread.tile" contextRelative="true"/>
+        </action>
+
+        <!--update thread process-->
+        <action
+            name="MessageForm"
+            type="com.psgateway.action.forum.UpdateThreadAction"
+            validate="true"
+            input="forums.editThread.tile"
+            scope="request"
+            path="/UpdateThread">
+            <forward name="success" path="/ViewTopics.do"/>
+        </action>
+        <!--delete thread process-->
+        <action
+            type="com.psgateway.action.forum.DeleteThreadAction"
+            path="/DeleteThread">
+            <forward name="success" path="/ViewTopics.do"/>
+        </action>
+        <!--Secure delete thread process-->
+        <action
+            type="com.psgateway.action.forum.SecDeleteThreadAction"
+            path="/SecDeleteThread">
+            <forward name="success" path="/ViewTopics.do"/>
+        </action>
+        <action
+            type="edu.qou.studentInfo.actions.ViewTopicsDetailsAction"
+            path="/ViewTopicDetails">
+            <forward name="success_p" path="forums.viewMessagesPublic.tile" contextRelative="true"/>
+            <forward name="success_s" path="/pages/studentInfo/viewMessagesStudent.jsp" contextRelative="true"/>
+            <forward name="success_t" path="/pages/tutorInfo/viewMessagesTutor.jsp" contextRelative="true"/>
+        </action>
+        <!--
+           <action path="/ViewModerators" type="org.apache.struts.actions.ForwardAction" parameter="ViewModerators" >
+           </action>
+           -->
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="AddModerators"
+            path="/AddModerators"/>
+        <action
+            type="com.psgateway.action.forum.PostNewMessageAction"
+            path="/PostNewMessage">
+            <forward name="success" path="forums.createMessage.tile" contextRelative="true">
+                <!--set-property property="threadId" value="threadId"/>
+               <set-property property="forumId" value="forumId"/-->
+            </forward>
+            <forward name="forum_closed" path="forums.ForumClosed.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="com.psgateway.action.forum.PostNewTopicAction"
+            path="/PostNewTopic">
+            <forward name="success" path="forums.createThread.tile" contextRelative="true"/>
+            <forward name="forum_closed" path="forums.ForumClosed.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="com.psgateway.action.NotFoundAction"
+            path="/NotFound">
+            <forward name="success" path="NotFound"/>
+        </action>
+        <!-- =========== End of forum module ====== -->
+        <!-- =========== ns module  ====== -->
+        <action
+            type="com.psgateway.action.permission.ViewPermissionsAction"
+            path="/ViewPermissions">
+            <forward name="success" path="ViewPermissions"/>
+        </action>
+        <action
+            name="PermissionActionForm"
+            type="com.psgateway.action.permission.GrantPermissionAction"
+            path="/GrantPermission">
+            <forward name="success" path="/ViewPermissions.do"/>
+            <forward name="fail" path="/pages/error.jsp"/>
+        </action>
+        <action
+            name="PermissionActionForm"
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="GrantPermissions"
+            scope="request"
+            path="/b"/>
+        <action
+            name="PermissionActionForm"
+            type="com.psgateway.action.permission.PrivilegeManagmentAction"
+            path="/PrivilegeManagment">
+            <forward name="success" path="GrantPermissions"/>
+        </action>
+        <action
+            type="com.psgateway.action.permission.RevokePermissionAction"
+            path="/RevokePermission">
+            <forward name="success" path="ViewPermissions"/>
+        </action>
+
+        <action
+            type="edu.qou.security.actionroles.actions.ViewAddActionToRoleAction"
+            path="/newAction">
+            <forward name="success" path="admin.newAction.tile" contextRelative="true"/>
+        </action>
+
+        <action
+            type="edu.qou.security.actionroles.actions.AddActionToRoleAction"
+            path="/addAction"
+            name="actionForm"
+            validate="true"
+            input="/newAction.do"
+            scope="request">
+            <forward name="success" path="/newAction.do"/>
+            <forward name="fail" path="/newAction.do"/>
+        </action>
+
+        <action
+            path="/editAction"
+            scope="request"
+            type="edu.qou.security.actionroles.actions.EditActionInfoAction"
+            >
+            <forward name="success" path="admin.editAction.tile"/>
+        </action>
+
+        <action
+            path="/loadActionInfo"
+            name="actionForm"
+            scope="request"
+            validate="false"
+            type="edu.qou.security.actionroles.actions.LoadActionInfoAction"
+            >
+            <forward name="success" path="admin.editAction.tile"/>
+            <forward name="fail" path="admin.editAction.tile"/>
+        </action>
+
+        <action
+            path="/updateActionInfo"
+            type="edu.qou.security.actionroles.actions.UpdateActionInfoAction"
+            name="actionForm"
+            scope="request"
+            validate="true"
+            input="/editAction.do"
+            >
+            <forward name="success" path="/editAction.do"/>
+            <forward name="fail" path="/editAction.do"/>
+        </action>
+
+        <action
+            path="/viewAllActionsList"
+            type="edu.qou.security.actionroles.actions.ViewAllActionsListAction"
+            >
+            <forward name="success" path="admin.viewAllActions.tile"/>
+        </action>
+
+        <action
+            path="/deleteAction"
+            type="edu.qou.security.actionroles.actions.DeleteActionInfoAction"
+            >
+            <forward name="success" path="/viewAllActionsList.do"/>
+        </action>
+
+        <action
+            type="edu.qou.security.permission.actions.PollsForumsAdminPageAction"
+            path="/pollsForumsAdmin">
+
+            <forward name="success" path="admin.PollsAndForumsPermission.tile"/>
+        </action>
+
+        <action
+            name="PollsAndForumsPermissionForm"
+            type="edu.qou.security.permission.actions.GetPollsAndForumsOfUserAction"
+            input="/pollsForumsAdmin.do"
+            scope="request"
+            validate="true"
+            path="/getPollsAndForumsOfUserAction">
+
+            <forward name="success" path="admin.PollsAndForumsPermission.tile"/>
+            <forward name="fail" path="admin.PollsAndForumsPermission.tile"/>
+        </action>
+
+        <action
+            name="PollsAndForumsPermissionForm"
+            type="edu.qou.security.permission.actions.SavePollsAndForumsOfUserAction"
+            input="/getPollsAndForumsOfUserAction.do"
+            scope="request"
+            validate="true"
+            path="/savePollsAndForumsOfUserAction">
+            <forward name="success" path="/getPollsAndForumsOfUserAction.do"/>
+        </action>
+
+        <action
+            type="edu.qou.security.permission.actions.GetAreaForumMappingAction"
+            path="/getAreaForumMapping">
+
+            <forward name="success" path="admin.AreaForumMapping.tile"/>
+        </action>
+
+        <action
+            name="areaForumMappingForm"
+            type="edu.qou.security.permission.actions.JoinAreaForumMappingAction"
+            validate="true"
+            input="/getAreaForumMapping.do"
+            scope="request"
+            path="/joinAreaForumMappingAction">
+
+            <forward name="success" path="/getAreaForumMapping.do"/>
+        </action>
+
+        <action
+            name="areaForumMappingForm"
+            type="edu.qou.security.permission.actions.RevokeForumMappingAction"
+            validate="false"
+            scope="request"
+            path="/revokeAreaForumMappingAction">
+
+            <forward name="success" path="/getAreaForumMapping.do"/>
+        </action>
+
+        <action
+            name="calenderForm"
+            scope="request"
+            validate="true"
+            input="/selectCalenderTerm.do"
+            type="edu.qou.security.calender.actions.SetCalenderDateAction"
+            path="/setCalenderDateAction">
+            <forward name="success" path="admin.ProcessResult.tile"/>
+            <forward name="failed" path="admin.ProcessResult.tile"/>
+        </action>
+
+        <action
+            type="edu.qou.CoordinatorInfo.actions.ViewRegCourseMarksTransfer"
+            path="/viewRegCourseMarksTransfer">
+            <forward name="success" path="coordinator.viewSearchCourses.tile"/>
+        </action>
+
+
+	        <action
+	            name="coordinatorForm"
+	            input="/viewRegCourseMarksTransfer.do"
+	            type="edu.qou.CoordinatorInfo.actions.SearchRegCourseMarksTransfer"
+	            scope="request"
+	            path="/searchRegCourseMarksTransfer">
+	            <forward name="success" path="coordinator.viewSearchCoursesResult.tile"/>
+        </action>
+
+
+        <action
+            path="/openStudentOrTutorLoad"
+            type="edu.qou.security.users.actions.OpenStundeOrTuturLoadPageAction"
+            >
+            <forward name="success" path="admin.openStudOrToturResetPassword.tile"/>
+        </action>
+
+        <action
+            path="/loadStudentOrTutorInfo"
+            name="studOrTutorPasswordForm"
+            scope="request"
+            validate="true"
+            type="edu.qou.security.users.actions.LoadStudentOrToturInforAction"
+            input="/openStudentOrTutorLoad.do"
+            >
+            <forward name="success" path="admin.openStudOrToturResetPassword.tile"/>
+            <forward name="fail" path="admin.openStudOrToturResetPassword.tile"/>
+        </action>
+
+        <action
+            path="/resetUserPassword"
+            type="edu.qou.security.users.actions.ResetStudenOrTutorPasswordAction"
+            name="studOrTutorPasswordForm"
+            scope="request"
+            validate="true"
+            input="/loadStudentOrTutorInfo.do"
+            >
+
+            <forward name="success" path="/loadStudentOrTutorInfo.do"/>
+            <forward name="fail" path="/loadStudentOrTutorInfo.do"/>
+        </action>
+
+        <action
+            name="setTutorsStatusForm"
+            type="edu.qou.security.users.actions.ViewCenterTutorsStatusAction"
+            scope="request"
+            validate="false"
+            path="/viewCenterTutorsStatus">
+            <forward name="success" path="admin.viewCenterTutorsStatus.tile" contextRelative="true"/>
+        </action>
+
+
+        <action
+            name="setTutorsStatusForm"
+            type="edu.qou.security.users.actions.SetCenterTutorsStatusAction"
+            path="/setCenterTutorsStatus"
+            scope="request"
+            validate="true"
+            input="/viewCenterTutorsStatus.do">
+            <forward name="success" path="/viewCenterTutorsStatus.do"/>
+            <forward name="search" path="admin.viewCenterTutorsStatus.tile" contextRelative="true"/>
+        </action>
+
+        <action
+            type="edu.qou.security.permission.actions.ViewUserForumsPermissionAction"
+            path="/userForumsPermission">
+
+            <forward name="success" path="admin.userForumsPermission.tile"/>
+        </action>
+
+        <action
+            name="userForumPermissionForm"
+            type="edu.qou.security.permission.actions.GetUserForumsAction"
+            input="/userForumsPermission.do"
+            scope="request"
+            validate="true"
+            path="/getUserForums">
+
+            <forward name="success" path="admin.userForumsPermission.tile"/>
+            <forward name="fail" path="admin.userForumsPermission.tile"/>
+        </action>
+
+        <action
+            name="userForumPermissionForm"
+            type="edu.qou.security.permission.actions.SaveUserForumsAction"
+            input="/getUserForums.do"
+            scope="request"
+            validate="true"
+            path="/saveUsreForms">
+            <forward name="success" path="/getUserForums.do"/>
+        </action>
+
+        <action
+            type="edu.qou.security.users.actions.GetUsersListAction"
+            path="/getUsersSessionList">
+            <forward name="success" path="admin.usersSessionList.tile"/>
+        </action>
+
+       <action
+            name="sendUsersMessageForm"
+            type="edu.qou.security.messaging.actions.ViewSendUsersMessageAction"
+            scope="request"
+            validate="false"
+            path="/viewSendMessage">
+            <forward name="success" path="admin.sendUsersMessage.tile"/>
+        </action>
+
+        <action
+            name="sendUsersMessageForm"
+            type="edu.qou.security.messaging.actions.SendUsersMessageAction"
+            scope="request"
+            validate="true"
+            input="/viewSendMessage.do"
+            path="/sendUsersMessage">
+            <forward name="success" path="admin.ProcessResult.tile"/>
+            <forward name="fail" path="/viewSendMessage.do"/>
+        </action>
+
+        <action
+            type="edu.qou.security.users.actions.ViewCenterUsersListAction"
+            path="/viewCenterUserSearch">
+            <forward name="success" path="admin.searchCenterUsers.tile"/>
+        </action>
+
+        <action
+            name="centerUsersForm"
+            type="edu.qou.security.users.actions.GetUsersListAction"
+            scope="request"
+            validate="true"
+            input="/viewCenterUserSearch.do"
+            path="/getUsersList">
+            <forward name="success" path="admin.CenterUsersList.tile"/>
+            <forward name="fail" path="/viewCenterUserSearch.do"/>
+        </action>
+
+        <action
+            name="centerUsersForm"
+            type="edu.qou.security.users.actions.ExportCenterUsersToExcelAction"
+            scope="request"
+            validate="true"
+            input="/getUsersList.do"
+            path="/exportUsersList">
+            <forward name="success" path="admin.exportedUsersList.tile"/>
+            <forward name="fail" path="/viewCenterUserSearch.do"/>
+        </action>
+
+      <action
+            name="miExceptionForm"
+            type="edu.qou.security.calender.actions.ExportApprovedClassesListAction"
+            scope="request"
+            validate="true"
+            input="/loadApprovalMarksClasses.do"
+            path="/exportApprovedClassesList">
+            <forward name="success" path="/exportClassesStatusList"/>
+            <forward name="fail" path="/loadApprovalMarksClasses.do"/>
+        </action>
+
+        <action
+            name="exceptionStatisticsForm"
+            scope="request"
+            validate="false"
+            type="edu.qou.security.calender.actions.SelectExceptionsStatisticsOptionsAction"
+            path="/showExceptionsStatistics">
+            <forward name="success" path="admin.exceptionStatisticsOption.tile"/>
+        </action>
+
+         <action
+            type="edu.qou.login.actions.ChangePasswordAction"
+            name="updatePasswordForm"
+            scope="request"
+            validate="false"
+            path="/changePassword">
+            <forward name="showPage" path="admin.changePassword.tile" contextRelative="true"/>
+        </action>
+
+        <action
+            name="updatePasswordForm"
+            type="edu.qou.login.actions.UpdatePasswordAction"
+            validate="true"
+            input="/changePassword.do"
+            scope="request"
+            path="/updatePassword">
+            <forward name="success" path="admin.ProcessResult.tile" contextRelative="true"/>
+            <forward name="failed" path="/changePassword.do"/>
+        </action>
+
+        <!-- ========== end of admin module ==== -->
+
+<!-- regisrtation calendar -->
+
+
+
+
+
+<!-- new practical exam calendar setting -->
+        <action
+            type="edu.qou.security.calender.actions.practicalExamCalendar.ShowCoursesManagementPageAction"
+            path="/pracExamCalCrs">
+            <forward name="success" path="admin.pracExamCalCrs.tile"/>
+        </action>
+
+        <action
+            name="searchForm"
+            scope="request"
+            validate="true"
+            input="/pracExamCalCrs.do"
+            type="edu.qou.security.calender.actions.practicalExamCalendar.AddPractExamCalCrsAction"
+            path="/addPracExamCalCrs">
+            <forward name="success" path="/pracExamCalCrs.do"/>
+            <forward name="fail" path="/pracExamCalCrs.do"/>
+        </action>
+
+        <action
+            name="delPracExamForm"
+            scope="request"
+            validate="true"
+            input="/pracExamCalCrs.do"
+            type="edu.qou.security.calender.actions.practicalExamCalendar.DeletePractExamCalCrsAction"
+            path="/deletePracExamCalCrs">
+            <forward name="success" path="/pracExamCalCrs.do"/>
+            <forward name="fail" path="/pracExamCalCrs.do"/>
+        </action>
+
+
+
+    <!--    the ans module actions    -->
+        <action
+          type="edu.qou.ans.actions.AddContentFormAction"
+          path="/viewAddCntAction"
+          name="cmsContentForm"
+          scope="request"
+          validate="false">
+
+          <forward name="success" path="admin.ans.addAns.tile" contextRelative="true"/>
+        </action>
+
+        <action
+            path="/addContentAction"
+            type="edu.qou.ans.actions.InsertContentAction"
+            name="cmsContentForm"
+            input="/viewAddCntAction.do"
+            validate = "true"
+            scope = "request">
+
+            <forward name="success" path="/viewAddCntAction.do"/>
+        </action>
+
+        <action
+            path="/viewLoadContentForm"
+            scope="request"
+            type="edu.qou.ans.actions.ViewContentInfoFormAction"
+            >
+            <forward name="success" path="admin.ans.contentPage.tile"/>
+        </action>
+
+        <action
+            path="/loadContentInfo"
+            type="edu.qou.ans.actions.LoadContentInfoAction"
+            name="cmsContentForm"
+            validate="false">
+            <forward name="success" path="admin.ans.contentPage.tile"/>
+        </action>
+
+        <action
+            path="/deleteContAction"
+            type="edu.qou.ans.actions.DeleteContentAction">
+
+            <forward name="success"  path="/loadContentInfo.do"/>
+        </action>
+
+        <action
+            path="/updateContStatusAction"
+            type="edu.qou.ans.actions.UpdateContentStatusAction">
+
+            <forward name="success"  path="/loadContentInfo.do"/>
+        </action>
+
+        <action
+            path="/loadContForUpdate"
+            type="edu.qou.ans.actions.LoadContentForUpdateAction"
+            name="cmsContentForm"
+            scope="request"
+            validate="false">
+
+            <forward name="success" path="admin.ans.viewEditCntPage.tile" contextRelative="true"/>
+        </action>
+
+        <action
+            path="/updateContentAction"
+            type="edu.qou.ans.actions.UpdateContentAction"
+            name="cmsContentForm"
+            input="/loadContForUpdate.do"
+            validate = "true"
+            scope = "request">
+
+            <forward name="success" path="/loadContentInfo.do"/>
+        </action>
+
+        <!-- end of the ans module actions    -->
+
+
+
+             <action
+                  scope="request"
+                  type="com.psgateway.action.role.RemoveRoleAction"
+                  path="/removeRole">
+                  <forward name="success" path="/getRolesList.do"/>
+                  <forward name="fail" path="/getRolesList.do"/>
+              </action>
+
+            <action
+                  scope="request"
+                  type="edu.qou.security.actionroles.actions.ViewRevokeAction"
+                  path="/viewRevokeAction">
+                  <forward name="success" path="admin.actionRevoke.tile"/>
+               </action>
+
+        <action
+            name="revokeActionForm"
+            type="edu.qou.security.actionroles.actions.GetActionsUserAction"
+            input="/viewRevokeAction.do"
+            scope="request"
+            validate="true"
+            path="/getActionsUserAction">
+
+            <forward name="success" path="admin.actionRevoke.tile"/>
+            <forward name="fail" path="admin.actionRevoke.tile"/>
+        </action>
+
+        <action
+            name="revokeActionForm"
+            type="edu.qou.security.actionroles.actions.SaveActionsUserAction"
+            input="/getActionsUserAction.do"
+            scope="request"
+            validate="true"
+            path="/saveActionsUserAction">
+            <forward name="success" path="/getActionsUserAction.do"/>
+        </action>
+
+
+        <action
+             type="com.psgateway.action.user.ViewloginAsUserAction"
+             path="/viewloginAsUser">
+            <forward name="success"        path="adm.loginAsUser.tile" />
+        </action>
+
+       <action
+            name="loginForm"
+            type="com.psgateway.action.user.LoginAsUserAction"
+            validate="false"
+            path="/loginAsUser">
+            <forward name="success"     path="/pages/admin/forwordLogin.jsp" contextRelative="true"   />
+            <forward name="fail"        path="adm.loginAsUser.tile" />
+        </action>
+
+        <action
+             name="auditForm"
+             validate="false"
+             type="com.psgateway.action.admin.ViewSearchAuditAction"
+             path="/viewSearchAudit">
+            <forward name="success"        path="admin.searchAudit.tile" />
+        </action>
+
+        <action
+            name="auditForm"
+            type="com.psgateway.action.admin.SearchAuditAction"
+            validate="true"
+            input="/viewSearchAudit.do"
+            path="/searchAudit">
+            <forward name="success"        path="admin.searchAudit.tile" />
+         </action>
+
+
+
+
+        <action
+             name="auditForm"
+             validate="false"
+             type="com.psgateway.action.admin.ViewSelectAuditTableNameAction"
+             path="/viewSelectAuditTableName">
+            <forward name="success"        path="admin.SelectAuditTableName.tile"   />
+         </action>
+
+        <action
+             type="com.psgateway.action.admin.ViewSelectAuditTableNameAction"
+             path="/viewAllAuditTableName">
+            <forward name="success"        path="admin.viewAllAuditTableName.tile"   />
+         </action>
+
+        <action
+             type="com.psgateway.action.admin.AuditTableDeleteAction"
+             path="/auditTableDelete">
+            <forward name="success"        path="/viewAllAuditTableName.do"   />
+         </action>
+
+        <action
+             name="auditTableForm"
+             validate="true"
+             input="/viewAllAuditTableName.do"
+             type="com.psgateway.action.admin.AuditTableAddAction"
+             path="/auditTableAdd">
+            <forward name="success"        path="/viewAllAuditTableName.do"   />
+         </action>
+
+        <action
+             name="auditForm"
+             validate="false"
+             type="com.psgateway.action.admin.ViewSearchAudtingScreensAction"
+             path="/viewSearchAuditScreens">
+            <forward name="success"        path="admin.searchAuditScreens.tile"   />
+         </action>
+
+
+        <action
+             name="auditForm"
+             validate="false"
+             type="com.psgateway.action.admin.SearchAuditScreensAction"
+             path="/searchAuditScreens">
+            <forward name="success"        path="admin.searchAuditScreens.tile"   />
+         </action>
+
+
+        <action
+             type="com.psgateway.action.admin.AuditScreenDeleteAction"
+             path="/auditScreenDelete">
+            <forward name="success"        path="/searchAuditScreens.do"   />
+         </action>
+
+        <action
+             name="auditScreenForm"
+             validate="true"
+             input="/searchAuditScreens.do"
+             type="com.psgateway.action.admin.AuditScreenAddAction"
+             path="/auditScreenAdd">
+            <forward name="success"        path="/searchAuditScreens.do"   />
+         </action>
+
+
+          <action
+              type="com.psgateway.action.admin.ViewAllServletContextAttributeAction"
+              path="/viewAllServletContextAttribute">
+             <forward name="success"        path="admin.servletContextAttribute.tile"   />
+          </action>
+
+        <action
+              name="servletContextAttributeForm"
+              validate="true"
+              input="/viewAllServletContextAttribute.do"
+              type="com.psgateway.action.admin.UpdateServletContextAttributeAction"
+              path="/updateServletContextAttribute">
+             <forward name="success"        path="admin.servletContextAttribute.tile"   />
+          </action>
+
+          <action
+              type="com.psgateway.action.admin.ViewRefreshMySqlConnectionAction"
+              path="/viewRefreshMySqlConnection">
+             <forward name="success"        path="admin.ViewRefreshMySqlConnection.tile"   />
+          </action>
+
+          <action
+              type="com.psgateway.action.admin.RefreshMySqlConnectionAction"
+              path="/refreshMySqlConnection">
+             <forward name="success"        path="admin.ViewRefreshMySqlConnection.tile"   />
+          </action>
+
+          <action
+              type="com.psgateway.action.admin.ViewAuditUserLoginAction"
+              path="/viewAuditUserLogin">
+             <forward name="success"        path="admin.viewAuditUserLogin.tile"   />
+          </action>
+
+           <action
+            name="auditForm"
+            type="com.psgateway.action.admin.SearchAuditUserLoginAction"
+            validate="true"
+            input="/viewAuditUserLogin.do"
+            path="/searchAuditUserLogin">
+            <forward name="success"        path="admin.viewAuditUserLogin.tile" />
+         </action>
+
+         <action
+              type="com.psgateway.action.admin.ViewSendingMessagesListAction"
+              path="/viewSendingMessages">
+             <forward name="success"        path="admin.sendingMessages.tile"   />
+          </action>
+
+
+        <action
+            name="auditForm"
+            type="com.psgateway.action.admin.SearchSendingMessagesAction"
+            validate="true"
+            input="/viewSendingMessages.do"
+            path="/searchSendingMessages">
+            <forward name="success"        path="admin.sendingMessages.tile" />
+         </action>
+
+        <action
+            type="com.psgateway.action.admin.MessageReceiverListAction"
+            path="/messageReceiverList"
+            scope="request">
+            <forward name="success" path="/pages/tutorInfo/msgRecieversList.jsp" contextRelative="true"/>
+        </action>
+
+         <action
+            type="com.psgateway.action.admin.ViewArchiveMessageDetailsAction"
+            path="/viewUserArchiveMessageDetails">
+
+            <forward name="success" path="admin.viewArchiveMessages.tile" contextRelative="true"/>
+
+        </action>
+
+       <action
+            type="edu.qou.fileManager.actions.DownloadFileAction"
+            path="/download">
+            <forward name="downloadResult" path="admin.ProcessResult.tile" contextRelative="true"/>
+        </action>
+
+
+        <action
+            name="statisticsRegStudFrom"
+            type="edu.qou.registrationDept.actions.StatisticsRegStudAction"
+            path="/statisticsRegStud">
+            <forward name="success"        path="admin.statisticsRegStud.tile" />
+         </action>
+
+        <action
+            name="statisticsRegStudFrom"
+            type="edu.qou.registrationDept.actions.StatisticsRegStudAction"
+            path="/statisticsRegStudPrint">
+            <forward name="success"        path="admin.statisticsRegStudPrint.tile"   />
+         </action>
+
+    </action-mappings>
+
+    <!-- ========== Controller Configuration ================================ -->
+    <controller nocache="true" maxFileSize="2M"/>
+
+    <!-- ========== Message Resources Definitions ============================ -->
+    <!-- ========== Plug Ins Configuration ================================= -->
+    <message-resources parameter="ApplicationResources"/>
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property value="/WEB-INF/tilesDef/tilesDef-admin.xml" property="definitions-config"/>
+        <set-property value="true" property="moduleAware"/>
+        <set-property value="true" property="definitions-parser-validate"/>
+    </plug-in>
+</struts-config>

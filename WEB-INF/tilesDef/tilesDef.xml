@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+    <!-- ========= The definition of the wider layout for the regisrtation pages ========== -->
+    <definition name="outerLayout" path="/pages/layout/outerLayout.jsp">
+        <put name="title" value="EU Project Tracking System"/>
+        <put name="subtitle" value=""/>
+        <put name="header" value="/pages/layout/outerHeaderPage.jsp"/>
+        <put name="body" value="variet"/>
+        <put name="footer" value="/pages/layout/footerPage.jsp"/>
+    </definition>
+    <definition name="innerLayout" path="/pages/layout/innerLayout.jsp">
+        <put name="title" value="EU Project Tracking System"/>
+        <put name="subtitle" value=""/>
+        <put name="header" value="/pages/layout/innerHeaderPage.jsp"/>
+        <put name="body" value="variet"/>
+        <put name="footer" value="/pages/layout/footerPage.jsp"/>
+    </definition>
+
+    <definition name="login.tile" extends="outerLayout">
+        <put name="body" value="/pages/login.jsp"/>
+    </definition>
+
+    <definition name="main.tile" extends="innerLayout">
+        <put name="body" value="/pages/main.jsp"/>
+    </definition>
+
+
+</tiles-definitions>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+    <!-- ========== Form Bean Definitions ================================== -->
+
+    <form-beans>
+        <form-bean name="loginForm" type="eu.pms.login.forms.LoginForm"/>
+
+    </form-beans>
+
+    <global-exceptions>
+        <!--<exception key="null.error" type="java.lang.NullPointerException" path="/errorPageAction.do"/>-->
+    </global-exceptions>
+
+    <!-- ========== Global Forward Definitions =============================== -->
+
+    <global-forwards>
+        <!--<forward name="portalIndex" path="/portalLogin.do"/>-->
+    </global-forwards>
+
+    <!-- ========== Action Mapping Definitions =============================== -->
+
+    <action-mappings>
+
+        <action
+            type="org.apache.struts.actions.ForwardAction"
+            path="/errorPageAction"
+            parameter="/pages/invalidPage.jsp"
+            />
+
+        <action
+                type="org.apache.struts.actions.ForwardAction"
+                path="/loginPage"
+                parameter="login.tile"
+                />
+
+        <action
+            name="loginForm"
+            type="eu.pms.login.actions.LoginAction"
+            validate="true"
+            input="/loginPage.do"
+            path="/login"
+            >
+            <forward name="failed"   path="/loginPage.do"/>
+            <forward name="success" path="main.tile"/>
+        </action>
+
+        <!--<action-->
+            <!--name="contactUsMessageForm"-->
+            <!--type="com.psgateway.action.forum.SendContactUsMessageAction"-->
+            <!--validate="true"-->
+            <!--input="/pages/contactUs.jsp"-->
+            <!--scope="request"-->
+            <!--path="/sendContactUsMessage">-->
+            <!--<forward name="sendingResult" path="/pages/processResultPage.jsp" contextRelative="true"/>-->
+        <!--</action>-->
+
+
+
+    </action-mappings>
+
+    <!-- ========== Controller Configuration ================================ -->
+    <controller nocache="true" maxFileSize="1M"/>
+
+    <!-- ========== Message Resources Definitions ============================ -->
+    <message-resources parameter="ApplicationResources"/>
+
+    <!-- ========== Plug Ins Configuration ================================= -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property value="/WEB-INF/tilesDef/tilesDef.xml" property="definitions-config"/>
+        <set-property value="true" property="moduleAware"/>
+        <set-property value="true" property="definitions-parser-validate"/>
+    </plug-in>
+</struts-config>

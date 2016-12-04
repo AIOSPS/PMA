@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<tiles-definitions>
+
+
+    <!-- ========= The definition of the wider layout ============================= -->
+    <definition name="sysAdminLayout" path="/pages/layoutNew/widerLayout.jsp">
+        <put name="title"          value="Al-Bawwabah  Al-Quds Open University - Academic Portal"/>
+        <put name="subtitle"       value=""/>
+        <put name="header"         value="forums.subHeader.tile"/>
+        <put name="subHeader"      value="/pages/admin/adminInfoHeader.jsp"/>
+        <put name="body"           value="variet"/>
+        <put name="rightMenuBar"   value="/pages/admin/adminMenu.jsp"/>
+        <put name="footer"         value="/pages/layoutNew/footer.jsp"/>
+    </definition>
+
+    <!-- ========= The definition of print layout in   module ========== -->
+     <definition name="printPdfLayout" path="/pages/layoutNew/printPdfLayout.jsp">
+     <put name="title"     value="Al-Bawwabah Al-Quds Open University - Academic Portal"/>
+     <put name="subtitle"  value=""/>
+     <put name="body"      value="varient"/>
+     <put name="footer"    value="varient"/>
+     <put name="subHeader" value="varient"/>
+     </definition>
+
+    <!-- ========= The definition of print layout in   module ========== -->
+     <definition name="modalLayout" path="/pages/layoutNew/modalLayout.jsp">
+     <put name="body"      value="varient"/>
+     </definition>
+
+
+    <!-- ========= The definition of the sub header in the forums module ========== -->
+    <definition name="forums.subHeader.tile" path="/pages/layoutNew/pageHeader.jsp">
+        <put name="currentDomain" value="admin"/>
+    </definition>
+
+    <!-- ========= The definition of the process Result Page in the admin module ========== -->
+    <definition name="admin.processResultPage.tile" extends="sysAdminLayout">
+        <put name="subtitle"  value="النتيجة"/>
+        <put name="body" value="/pages/common/processResultPage.jsp"/>
+    </definition>
+
+    <!-- ========= The definition of the view Forums in the forums module ========== -->
+    <definition name="forums.main.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/viewForums.jsp"/>
+        <put name="subtitle" value="إدارة المنتديات"/>
+    </definition>
+
+    <!-- ========= The definition of the create Forum in the forums module ========== -->
+    <definition name="forums.createForum.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/admin/createForum.jsp"/>
+        <put name="subtitle" value="إضافة غرفة"/>
+    </definition>
+
+    <!-- ========= The definition of the view Topics in the forums module ========== -->
+    <definition name="forums.viewTopics.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/viewTopics.jsp"/>
+        <put name="subtitle" value="عرض العناوين"/>
+    </definition>
+
+    <!-- ========= The definition of the edit Forum in the forums module ========== -->
+    <definition name="forums.editForum.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/admin/editForum.jsp"/>
+        <put name="subtitle" value="إعدادات الغرفة"/>
+    </definition>
+
+    <!-- ========= The definition of the view Messages in the forums module ========== -->
+    <definition name="forums.viewMessages.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/viewMessages.jsp"/>
+        <put name="subtitle" value="عرض الردود"/>
+    </definition>
+
+    <!-- ========= The definition of the view Messages Public in the forums module ========== -->
+    <definition name="forums.viewMessagesPublic.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/viewMessagesPublic.jsp"/>
+        <put name="subtitle" value="عرض الاخبار و الاعلانات"/>
+    </definition>
+    <!-- ========= The definition of the edit Thread in the forums module ========== -->
+    <definition name="forums.editThread.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/admin/editThread.jsp"/>
+        <put name="subtitle" value="عرض الاخبار و الاعلانات"/>
+    </definition>
+
+    <!-- ========= The definition of the create Thread in the forums module ========== -->
+    <definition name="forums.createThread.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/createThread.jsp"/>
+        <put name="subtitle" value="إضافة عنوان"/>
+    </definition>
+
+    <!-- ========= The definition of the Forum Closed in the forums module ========== -->
+    <definition name="forums.ForumClosed.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/forumClosed.jsp"/>
+        <put name="subtitle" value="منتدى مغلق"/>
+    </definition>
+
+    <!-- ========= The definition of the create Message in the forums module ========== -->
+    <definition name="forums.createMessage.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/createMessage.jsp"/>
+        <put name="subtitle" value="إضافة رد"/>
+    </definition>
+
+    <!-- ========= The definition of the unapproved Messages in the forums module ========== -->
+    <definition name="forums.unapprovedMessages.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/admin/unapprovedMessages.jsp"/>
+        <put name="subtitle" value="ردود غير موافق عليها"/>
+    </definition>
+
+    <!-- ========= The definition of the unapproved Messages in the forums module ========== -->
+    <definition name="forums.moderators.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/admin/moderators.jsp"/>
+        <put name="subtitle" value="ردود غير موافق عليها"/>
+    </definition>
+
+    <!-- ========= The definition of the grant Moderator Permission in the forums module ========== -->
+    <definition name="forums.grantModeratorPermission.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/admin/grantModeratorPermission.jsp"/>
+        <put name="subtitle" value="ردود غير موافق عليها"/>
+    </definition>
+
+    <!-- ========= The definition of the thanks in the forums module ========== -->
+    <definition name="forums.thanks.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/thanks.jsp"/>
+        <put name="subtitle" value="تمرير عنوان"/>
+    </definition>
+
+    <!-- ========= The definition of the unapprovedThreads in the forums module ========== -->
+    <definition name="forums.unapprovedThreads.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/forums/admin/unapprovedThreads.jsp"/>
+        <put name="subtitle" value="تمرير عنوان"/>
+    </definition>
+
+    <!-- ========= The definition of the view Topics Student in the Student module ========== -->
+    <definition name="forums.viewTopicsStudent.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/studentInfo/viewTopicsStudent.jsp"/>
+        <put name="subtitle" value="عرض الاخبار و الاعلانات"/>
+    </definition>
+
+    <!-- ========= The definition of the view Topics Student in the Student module ========== -->
+    <definition name="totur.viewTopics.tile" extends="sysAdminLayout">
+        <put name="subtitle" value="الاعلانات"/>
+        <put name="body" value="/pages/tutorInfo/viewTopics.jsp"/>
+    </definition>
+
+
+    <!-- ========= The definition of the view Messages Student Student in the Student module ========== -->
+    <definition name="forums.viewMessagesStudent.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/common/innerMessages/viewUserMessages.jsp"/>
+        <put name="subtitle" value="عرض الاخبار و الاعلانات"/>
+    </definition>
+
+    <!-- ========= The definition of the view roles list in admin side ========== -->
+    <definition name="admin.getRolesList.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/rolesList.jsp"/>
+        <put name="subtitle" value="Roles View"/>
+    </definition>
+
+    <!-- ========= The definition of the view role members list in admin side ========== -->
+    <definition name="admin.getRoleMembersList.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/roleMembersList.jsp"/>
+        <put name="subtitle" value="Role Members List"/>
+    </definition>
+
+    <!-- ========= The definition of add new user in admin side ========== -->
+    <definition name="admin.addUserForm.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/addUserForm.jsp"/>
+        <put name="subtitle" value="Add New User"/>
+    </definition>
+
+    <!-- ========= The definition of load and edit user in admin side ========== -->
+    <definition name="admin.editUserForm.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/editUserForm.jsp"/>
+        <put name="subtitle" value="Edit User Info"/>
+    </definition>
+
+     <!-- ========= The definition of NoPermission in admin side ========== -->
+    <definition name="admin.NoPermission.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/common/noPermission.jsp"/>
+        <put name="subtitle" value="No Permission"/>
+    </definition>
+
+    <!-- ========= The definition of add new action in admin side ========== -->
+    <definition name="admin.newAction.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/addActionForm.jsp"/>
+        <put name="subtitle" value="Add New Action"/>
+    </definition>
+
+    <!-- ========= The definition of add new action in admin side ========== -->
+    <definition name="admin.editAction.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/editActionForm.jsp"/>
+        <put name="subtitle" value="Edit Action Settings"/>
+    </definition>
+
+    <!-- ========= The definition of view struts actions list in admin side ========== -->
+    <definition name="admin.viewAllActions.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/viewAllActionsList.jsp"/>
+        <put name="subtitle" value="View System Actions List"/>
+    </definition>
+
+    <!-- ========= The definition of area forum mapping in admin side ========== -->
+    <definition name="admin.AreaForumMapping.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/areaForumMapping.jsp"/>
+        <put name="subtitle" value="Area And Forum Settings"/>
+    </definition>
+
+    <!-- ========= The definition of Polls And Forums Permission in admin side ========== -->
+    <definition name="admin.PollsAndForumsPermission.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/pollsForumsPermission.jsp"/>
+        <put name="subtitle" value="Polls And Forums Permission"/>
+    </definition>
+
+
+    <!-- ========= The definition of admin side main page========== -->
+    <definition name="admin.mainPage.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/subMain.jsp"/>
+        <put name="subtitle" value="Portal Administration Site"/>
+    </definition>
+    <!--============process Result Page page subHeader Defintion==================-->
+    <definition name="admin.header.processResultPage.tile" extends="forums.subHeader.tile">
+        <put name="subtitle" value=""/>
+    </definition>
+
+    <!-- ========= The definition of load and reset student password in admin side ========== -->
+    <definition name="admin.openStudOrToturResetPassword.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/resetStudentOrTutorPassword.jsp"/>
+        <put name="subtitle" value="عرض وتعديل بيانات اعضاء هيئة التدريس  والطلاب"/>
+    </definition>
+
+
+    <!-- Added in 27/7/2005   coordinator module-->
+    <!-- ========= The definition of  view Search Courses in the coordinator module ========== -->
+    <definition name="coordinator.viewSearchCourses.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/coordinatorsInfo/viewRegCourseMarksTransfer.jsp"/>
+        <put name="subtitle" value="المواد المثبتة"/>
+    </definition>
+
+  <!-- ========= The definition of  view Search Courses in the coordinator module ========== -->
+    <definition name="coordinator.viewSearchCoursesResult.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/coordinatorsInfo/regCoursesMarksTransferResult.jsp"/>
+        <put name="subtitle" value="المواد المثبتة"/>
+    </definition>
+
+    <!-- ========= The definition of  view Search Courses in the coordinator module ========== -->
+    <definition name="coordinator.searchCourses.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/coordinatorsInfo/viewRegCourseMarksTransfer.jsp"/>
+        <put name="subtitle" value="المواد المثبتة"/>
+    </definition>
+
+    <!--end coordinator module-->
+
+    <!-- ========= The definition of change the tutors status by the INSt========== -->
+    <definition name="admin.viewCenterTutorsStatus.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/setTutorStatus.jsp"/>
+        <put name="subtitle" value="اعدادات الاعضاء هيئة التدريس"/>
+    </definition>
+
+    <!-- Cahnges by M.F 30-5-2006 -->
+    <!-- ========= The definition of Polls And Forums Permission in admin side ========== -->
+    <definition name="admin.userForumsPermission.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/userForumPermission.jsp"/>
+        <put name="subtitle" value="User Forum Permission"/>
+    </definition>
+
+    <!-- Cahnges by M.F 30-5-2006 -->
+
+
+    <!-- ========= The definition of users Session list in admin side ========== -->
+    <definition name="admin.usersSessionList.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/portalSessionList.jsp"/>
+        <put name="subtitle" value="Users Sessions List"/>
+    </definition>
+
+
+
+    <!-- ========= The definition of change the tutors status by the INSt========== -->
+    <definition name="admin.sendUsersMessage.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/sendUsersMessage.jsp"/>
+        <put name="subtitle" value="ارسال رسالة للمستخدمين"/>
+    </definition>
+
+
+    <!-- ========= The definition of get center users list ========== -->
+    <definition name="admin.searchCenterUsers.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/searchOnCenterStudentsOrTutorsList.jsp"/>
+        <put name="subtitle" value="قوائم المستخدمين في الفرع /المركز الدراسي"/>
+    </definition>
+
+    <!-- ========= The definition of get center users list ========== -->
+    <definition name="admin.CenterUsersList.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/centerStudentsOrTutorsList.jsp"/>
+        <put name="subtitle" value="Center Users List"/>
+    </definition>
+
+    <!-- ========= Change Password ========== -->
+   <definition name="admin.changePassword.tile" extends="sysAdminLayout">
+       <put name="body" value="admin.changePasswordBody.tile"/>
+       <put name="subtitle" value="تعديل البيانات الشخصية"/>
+   </definition>
+   <definition name="admin.changePasswordBody.tile" path="/pages/common/changePassword.jsp">
+       <put name="userType"      value="4"/>
+       <put name="auditScreenId" value="4"/>
+   </definition>
+
+   
+     <!-- ========= The definition of registration calender selection page ========== -->
+    <definition name="admin.pracExamCalCrs.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/calender/practicalExam/coursesManagment.jsp"/>
+        <put name="subtitle" value="إدارة المقررات للإمتحانات العملية"/>
+    </definition>
+
+    <!-- ========= The definition of ans adding page ========== -->
+    <definition name="admin.ans.addAns.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/ans/addContentForm.jsp"/>
+        <put name="subtitle" value="اضافة المحتوى"/>
+    </definition>
+
+    <!-- ========= The definition of ans adding page ========== -->
+    <definition name="admin.ans.contentPage.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/ans/viewContentInfo.jsp"/>
+        <put name="subtitle" value="عرض وإدارة المحتوى"/>
+    </definition>
+
+    <!-- ========= The definition of ans adding page ========== -->
+    <definition name="admin.ans.viewEditCntPage.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/ans/editContentForm.jsp"/>
+        <put name="subtitle" value="تحرير وتعديل المحتوى"/>
+    </definition>
+
+
+        <!-- ========= The definition of Polls And Forums Permission in admin side ========== -->
+    <definition name="admin.actionRevoke.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/revokeAction.jsp"/>
+        <put name="subtitle" value="revoke action from user"/>
+    </definition>
+
+       <!-- ========= The definition of the loginAsUser Page ========== -->
+    <definition name="adm.loginAsUser.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/loginAsUser.jsp"/>
+        <put name="subtitle" value="Login As User"/>
+    </definition>
+
+       <!-- ========= The definition of the Calender in admin module ========== -->
+    <definition name="admin.ProcessResult.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/common/processResultPage.jsp"/>
+        <put name="subtitle" value=""/>
+    </definition>
+
+    <!-- ========= The definition of the Calender in admin module ========== -->
+    <definition name="admin.searchAudit.tile" extends="sysAdminLayout">
+        <put name="subtitle" value="Audit Data"/>
+         <put name="body" value="/pages/admin/searchAudit.jsp"/>
+    </definition>
+
+
+ <!-- ========= The definition of the SelectAuditTableName in admin module ========== -->
+    <definition name="admin.SelectAuditTableName.tile" extends="modalLayout">
+         <put name="body" value="/pages/admin/selectAuditTableName.jsp"/>
+    </definition>
+
+    <!-- ========= The definition of the viewAllAuditTableName in admin module ========== -->
+       <definition name="admin.viewAllAuditTableName.tile" extends="sysAdminLayout">
+            <put name="subtitle" value="view All Audit Table Name"/>
+            <put name="body" value="/pages/admin/viewAllAuditTableName.jsp"/>
+       </definition>
+
+    <!-- ========= The definition of the viewAllAuditTableName in admin module ========== -->
+       <definition name="admin.searchAuditScreens.tile" extends="sysAdminLayout">
+           <put name="subtitle" value="View Screens Auding On Table"/>
+            <put name="body" value="/pages/admin/viewScreensAudingOnTable.jsp"/>
+       </definition>
+
+    <!-- ========= The definition of the servletContextAttribute in admin module ========== -->
+       <definition name="admin.servletContextAttribute.tile" extends="sysAdminLayout">
+            <put name="body" value="/pages/admin/servletContextAttribute.jsp"/>
+           <put name="subtitle" value="Portal Application Attribute "/>
+       </definition>
+
+       <!-- ========= The definition of the ViewRefreshMySqlConnection in admin module ========== -->
+        <definition name="admin.ViewRefreshMySqlConnection.tile" extends="sysAdminLayout">
+             <put name="body" value="/pages/admin/refreshMySqlConnection.jsp"/>
+            <put name="subtitle" value=" Refresh MySql Connection "/>
+        </definition>
+
+    <!-- ========= The definition of admin.viewAuditUserLogin.tile in admin side ========== -->
+    <definition name="admin.viewAuditUserLogin.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/viewAuditUserLogin.jsp"/>
+        <put name="subtitle" value="Audit User Login"/>
+    </definition>
+
+    <!-- ========= The definition of admin.sendingMessages.tile in admin side ========== -->
+    <definition name="admin.sendingMessages.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/admin/sendingMessages.jsp"/>
+        <put name="subtitle" value="sending Messages"/>
+    </definition>
+
+      <!-- ========= The definition of  viewArchiveMessagespage in the   module ========== -->
+    <definition name="admin.viewArchiveMessages.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/common/innerMessages/viewUserArchiveMessage.jsp"/>
+        <put name="subtitle" value="view Messages"/>
+    </definition>
+
+  <!-- ========= The definition  in admin side ========== -->
+    <definition name="admin.statisticsRegStud.tile" extends="sysAdminLayout">
+        <put name="body" value="/pages/regDept/statisticsRegStud.jsp"/>
+        <put name="subtitle" value="احصائية الطلبة المسجلين"/>
+    </definition>
+
+    <definition name="admin.statisticsRegStudPrint.tile"  path="/pages/regDept/statisticsRegStud.jsp">
+
+    </definition>
+
+ </tiles-definitions>
+
+
