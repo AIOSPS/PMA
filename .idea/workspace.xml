@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dbb13ca-2d46-4815-b453-347fbebd02a5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pms.war.iws" />
@@ -934,7 +933,7 @@
       <workItem from="1480696057157" duration="599000" />
       <workItem from="1480846781489" duration="18000" />
       <workItem from="1480847298871" duration="81000" />
-      <workItem from="1480849357063" duration="30000" />
+      <workItem from="1480849357063" duration="49000" />
     </task>
     <task id="LOCAL-00001" summary="Test2">
       <created>1480847352600</created>
@@ -943,11 +942,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480847352600</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="delete unwanted files">
+      <created>1480849404966</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480849404966</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32816000" />
+    <option name="totallyTimeSpent" value="32835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
@@ -1007,7 +1013,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test2" />
+    <MESSAGE value="delete unwanted files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unwanted files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
