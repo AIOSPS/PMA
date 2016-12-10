@@ -9,126 +9,31 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsMasterPlan implements Serializable {
 
-    /** identifier field */
     private String masId;
-
-    /** persistent field */
+    private String impId;
     private String masMpNo;
-
-    /** persistent field */
     private String masMpName;
-
-    /** nullable persistent field */
     private String masStatus;
-
-    /** persistent field */
     private String masStatusIca;
-
-    /** persistent field */
     private java.util.Date masFirstSubmitDateToIca;
-
-    /** persistent field */
     private java.util.Date masLastSubmitDateToIca;
-
-    /** persistent field */
     private int masNoSessionWithIca;
-
-    /** persistent field */
     private String masSubmitToMod;
-
-    /** persistent field */
     private java.util.Date masApprovalDate;
-
-    /** persistent field */
     private java.util.Date masPublicationDate;
-
-    /** persistent field */
     private java.util.Date masLastDateForObjection;
-
-    /** persistent field */
     private java.util.Date masDateOfFinalPublication;
-
-    /** persistent field */
     private int masApprovedPlanedArea;
-
-    /** persistent field */
     private String masVillageAdminBoarder;
-
-    /** persistent field */
     private String masNote;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
 
-    /** persistent field */
-    private PmsImplementer pmsImplementer;
-
-    /** persistent field */
-    private Set pmsMasterPlanCommunities;
-
-    /** persistent field */
-    private Set pmsInterventions;
-
-    /** persistent field */
-    private Set pmsMasterPlanDonors;
-
-    /** full constructor */
-    public PmsMasterPlan(String masId, String masMpNo, String masMpName, String masStatus, String masStatusIca, java.util.Date masFirstSubmitDateToIca, java.util.Date masLastSubmitDateToIca, int masNoSessionWithIca, String masSubmitToMod, java.util.Date masApprovalDate, java.util.Date masPublicationDate, java.util.Date masLastDateForObjection, java.util.Date masDateOfFinalPublication, int masApprovedPlanedArea, String masVillageAdminBoarder, String masNote, String username, java.util.Date timeStamp, PmsImplementer pmsImplementer, Set pmsMasterPlanCommunities, Set pmsInterventions, Set pmsMasterPlanDonors) {
-        this.masId = masId;
-        this.masMpNo = masMpNo;
-        this.masMpName = masMpName;
-        this.masStatus = masStatus;
-        this.masStatusIca = masStatusIca;
-        this.masFirstSubmitDateToIca = masFirstSubmitDateToIca;
-        this.masLastSubmitDateToIca = masLastSubmitDateToIca;
-        this.masNoSessionWithIca = masNoSessionWithIca;
-        this.masSubmitToMod = masSubmitToMod;
-        this.masApprovalDate = masApprovalDate;
-        this.masPublicationDate = masPublicationDate;
-        this.masLastDateForObjection = masLastDateForObjection;
-        this.masDateOfFinalPublication = masDateOfFinalPublication;
-        this.masApprovedPlanedArea = masApprovedPlanedArea;
-        this.masVillageAdminBoarder = masVillageAdminBoarder;
-        this.masNote = masNote;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsImplementer = pmsImplementer;
-        this.pmsMasterPlanCommunities = pmsMasterPlanCommunities;
-        this.pmsInterventions = pmsInterventions;
-        this.pmsMasterPlanDonors = pmsMasterPlanDonors;
-    }
 
     /** default constructor */
     public PmsMasterPlan() {
     }
 
-    /** minimal constructor */
-    public PmsMasterPlan(String masId, String masMpNo, String masMpName, String masStatusIca, java.util.Date masFirstSubmitDateToIca, java.util.Date masLastSubmitDateToIca, int masNoSessionWithIca, String masSubmitToMod, java.util.Date masApprovalDate, java.util.Date masPublicationDate, java.util.Date masLastDateForObjection, java.util.Date masDateOfFinalPublication, int masApprovedPlanedArea, String masVillageAdminBoarder, String masNote, String username, java.util.Date timeStamp, PmsImplementer pmsImplementer, Set pmsMasterPlanCommunities, Set pmsInterventions, Set pmsMasterPlanDonors) {
-        this.masId = masId;
-        this.masMpNo = masMpNo;
-        this.masMpName = masMpName;
-        this.masStatusIca = masStatusIca;
-        this.masFirstSubmitDateToIca = masFirstSubmitDateToIca;
-        this.masLastSubmitDateToIca = masLastSubmitDateToIca;
-        this.masNoSessionWithIca = masNoSessionWithIca;
-        this.masSubmitToMod = masSubmitToMod;
-        this.masApprovalDate = masApprovalDate;
-        this.masPublicationDate = masPublicationDate;
-        this.masLastDateForObjection = masLastDateForObjection;
-        this.masDateOfFinalPublication = masDateOfFinalPublication;
-        this.masApprovedPlanedArea = masApprovedPlanedArea;
-        this.masVillageAdminBoarder = masVillageAdminBoarder;
-        this.masNote = masNote;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsImplementer = pmsImplementer;
-        this.pmsMasterPlanCommunities = pmsMasterPlanCommunities;
-        this.pmsInterventions = pmsInterventions;
-        this.pmsMasterPlanDonors = pmsMasterPlanDonors;
-    }
 
     public String getMasId() {
         return this.masId;
@@ -274,36 +179,12 @@ public class PmsMasterPlan implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public PmsImplementer getPmsImplementer() {
-        return this.pmsImplementer;
+    public String getImpId() {
+        return impId;
     }
 
-    public void setPmsImplementer(PmsImplementer pmsImplementer) {
-        this.pmsImplementer = pmsImplementer;
-    }
-
-    public Set getPmsMasterPlanCommunities() {
-        return this.pmsMasterPlanCommunities;
-    }
-
-    public void setPmsMasterPlanCommunities(Set pmsMasterPlanCommunities) {
-        this.pmsMasterPlanCommunities = pmsMasterPlanCommunities;
-    }
-
-    public Set getPmsInterventions() {
-        return this.pmsInterventions;
-    }
-
-    public void setPmsInterventions(Set pmsInterventions) {
-        this.pmsInterventions = pmsInterventions;
-    }
-
-    public Set getPmsMasterPlanDonors() {
-        return this.pmsMasterPlanDonors;
-    }
-
-    public void setPmsMasterPlanDonors(Set pmsMasterPlanDonors) {
-        this.pmsMasterPlanDonors = pmsMasterPlanDonors;
+    public void setImpId(String impId) {
+        this.impId = impId;
     }
 
     public String toString() {

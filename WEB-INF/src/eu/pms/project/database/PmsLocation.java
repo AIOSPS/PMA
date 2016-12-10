@@ -9,45 +9,13 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsLocation implements Serializable {
 
-    /** identifier field */
     private String locId;
-
-    /** nullable persistent field */
     private java.math.BigDecimal locLatitude;
-
-    /** persistent field */
     private java.math.BigDecimal locLongitude;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private Set pmsProjectsLocations;
-
-    /** full constructor */
-    public PmsLocation(String locId, java.math.BigDecimal locLatitude, java.math.BigDecimal locLongitude, String username, java.util.Date timeStamp, Set pmsProjectsLocations) {
-        this.locId = locId;
-        this.locLatitude = locLatitude;
-        this.locLongitude = locLongitude;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProjectsLocations = pmsProjectsLocations;
-    }
-
     /** default constructor */
     public PmsLocation() {
-    }
-
-    /** minimal constructor */
-    public PmsLocation(String locId, java.math.BigDecimal locLongitude, String username, java.util.Date timeStamp, Set pmsProjectsLocations) {
-        this.locId = locId;
-        this.locLongitude = locLongitude;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProjectsLocations = pmsProjectsLocations;
     }
 
     public String getLocId() {
@@ -90,13 +58,6 @@ public class PmsLocation implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public Set getPmsProjectsLocations() {
-        return this.pmsProjectsLocations;
-    }
-
-    public void setPmsProjectsLocations(Set pmsProjectsLocations) {
-        this.pmsProjectsLocations = pmsProjectsLocations;
-    }
 
     public String toString() {
         return new ToStringBuilder(this)

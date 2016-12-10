@@ -29,6 +29,54 @@
     <definition name="main.tile" extends="innerLayout">
         <put name="body" value="/pages/main.jsp"/>
     </definition>
+    <definition name="pms.projectList.tile" extends="innerLayout">
+        <put name="body" value="/pages/projects/listProject.jsp"/>
+    </definition>
+    <definition name="pms.addProject.tile" extends="innerLayout">
+        <put name="body" value="/pages/projects/addProject.jsp"/>
+    </definition>
+    <definition name="pms.viewProject.tile" extends="innerLayout">
+        <put name="body" value="/pages/projects/viewProject.jsp"/>
+    </definition>
+    <definition name="pms.editProject.tile" extends="innerLayout">
+        <put name="body" value="/pages/projects/editProject.jsp"/>
+    </definition>
+    <definition name="pms.communityList.tile" extends="innerLayout">
+        <put name="body" value="/pages/communities/listCommunity.jsp"/>
+    </definition>
+    <definition name="pms.addCommunity.tile" extends="innerLayout">
+        <put name="body" value="/pages/communities/addCommunity.jsp"/>
+    </definition>
+    <definition name="pms.viewCommunity.tile" extends="innerLayout">
+        <put name="body" value="/pages/communities/viewCommunity.jsp"/>
+    </definition>
+    <definition name="pms.editCommunity.tile" extends="innerLayout">
+        <put name="body" value="/pages/communities/editCommunity.jsp"/>
+    </definition>
+    <definition name="pms.interventionList.tile" extends="innerLayout">
+        <put name="body" value="/pages/interventions/listIntervention.jsp"/>
+    </definition>
+    <definition name="pms.addIntervention.tile" extends="innerLayout">
+        <put name="body" value="/pages/interventions/addIntervention.jsp"/>
+    </definition>
+    <definition name="pms.viewIntervention.tile" extends="innerLayout">
+        <put name="body" value="/pages/interventions/viewIntervention.jsp"/>
+    </definition>
+    <definition name="pms.editIntervention.tile" extends="innerLayout">
+        <put name="body" value="/pages/interventions/editIntervention.jsp"/>
+    </definition>
+    <definition name="pms.activityList.tile" extends="innerLayout">
+        <put name="body" value="/pages/activities/listActivity.jsp"/>
+    </definition>
+    <definition name="pms.addActivity.tile" extends="innerLayout">
+        <put name="body" value="/pages/activities/addActivity.jsp"/>
+    </definition>
+    <definition name="pms.viewActivity.tile" extends="innerLayout">
+        <put name="body" value="/pages/activities/viewActivity.jsp"/>
+    </definition>
+    <definition name="pms.editActivity.tile" extends="innerLayout">
+        <put name="body" value="/pages/activities/editActivity.jsp"/>
+    </definition>
 
 
 </tiles-definitions>

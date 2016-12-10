@@ -9,41 +9,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsCommunityTyp implements Serializable {
 
-    /** identifier field */
     private String typId;
-
-    /** nullable persistent field */
     private String typDesc;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private Set pmsCommunities;
-
-    /** full constructor */
-    public PmsCommunityTyp(String typId, String typDesc, String username, java.util.Date timeStamp, Set pmsCommunities) {
-        this.typId = typId;
-        this.typDesc = typDesc;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsCommunities = pmsCommunities;
-    }
-
     /** default constructor */
     public PmsCommunityTyp() {
     }
 
-    /** minimal constructor */
-    public PmsCommunityTyp(String typId, String username, java.util.Date timeStamp, Set pmsCommunities) {
-        this.typId = typId;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsCommunities = pmsCommunities;
-    }
+
 
     public String getTypId() {
         return this.typId;
@@ -75,14 +49,6 @@ public class PmsCommunityTyp implements Serializable {
 
     public void setTimeStamp(java.util.Date timeStamp) {
         this.timeStamp = timeStamp;
-    }
-
-    public Set getPmsCommunities() {
-        return this.pmsCommunities;
-    }
-
-    public void setPmsCommunities(Set pmsCommunities) {
-        this.pmsCommunities = pmsCommunities;
     }
 
     public String toString() {

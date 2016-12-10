@@ -9,68 +9,33 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsIntervention implements Serializable {
 
-    /** identifier field */
-    private PmsInterventionPK comp_id;
-
-    /** persistent field */
+    private PmsInterventionPK compId;
+    private String masId;
     private String intDesc;
-
-    /** persistent field */
     private int intEstimatedBudget;
-
-    /** nullable persistent field */
     private String intSource;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private PmsSubSector pmsSubSector;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsMasterPlan pmsMasterPlan;
-
-    /** persistent field */
-    private Set pmsActivities;
-
-    /** full constructor */
-    public PmsIntervention(PmsInterventionPK comp_id, String intDesc, int intEstimatedBudget, String intSource, String username, java.util.Date timeStamp, PmsSubSector pmsSubSector, eu.pms.project.database.PmsMasterPlan pmsMasterPlan, Set pmsActivities) {
-        this.comp_id = comp_id;
-        this.intDesc = intDesc;
-        this.intEstimatedBudget = intEstimatedBudget;
-        this.intSource = intSource;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsSubSector = pmsSubSector;
-        this.pmsMasterPlan = pmsMasterPlan;
-        this.pmsActivities = pmsActivities;
-    }
 
     /** default constructor */
     public PmsIntervention() {
     }
 
-    /** minimal constructor */
-    public PmsIntervention(PmsInterventionPK comp_id, String intDesc, int intEstimatedBudget, String username, java.util.Date timeStamp, PmsSubSector pmsSubSector, eu.pms.project.database.PmsMasterPlan pmsMasterPlan, Set pmsActivities) {
-        this.comp_id = comp_id;
-        this.intDesc = intDesc;
-        this.intEstimatedBudget = intEstimatedBudget;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsSubSector = pmsSubSector;
-        this.pmsMasterPlan = pmsMasterPlan;
-        this.pmsActivities = pmsActivities;
+
+    public PmsInterventionPK getCompId() {
+        return this.compId;
     }
 
-    public PmsInterventionPK getComp_id() {
-        return this.comp_id;
+    public void setCompId(PmsInterventionPK compId) {
+        this.compId = compId;
     }
 
-    public void setComp_id(PmsInterventionPK comp_id) {
-        this.comp_id = comp_id;
+    public String getMasId() {
+        return masId;
+    }
+
+    public void setMasId(String masId) {
+        this.masId = masId;
     }
 
     public String getIntDesc() {
@@ -113,33 +78,9 @@ public class PmsIntervention implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public PmsSubSector getPmsSubSector() {
-        return this.pmsSubSector;
-    }
-
-    public void setPmsSubSector(PmsSubSector pmsSubSector) {
-        this.pmsSubSector = pmsSubSector;
-    }
-
-    public eu.pms.project.database.PmsMasterPlan getPmsMasterPlan() {
-        return this.pmsMasterPlan;
-    }
-
-    public void setPmsMasterPlan(eu.pms.project.database.PmsMasterPlan pmsMasterPlan) {
-        this.pmsMasterPlan = pmsMasterPlan;
-    }
-
-    public Set getPmsActivities() {
-        return this.pmsActivities;
-    }
-
-    public void setPmsActivities(Set pmsActivities) {
-        this.pmsActivities = pmsActivities;
-    }
-
     public String toString() {
         return new ToStringBuilder(this)
-            .append("comp_id", getComp_id())
+            .append("comp_id", getCompId())
             .toString();
     }
 
@@ -147,13 +88,13 @@ public class PmsIntervention implements Serializable {
         if ( !(other instanceof PmsIntervention) ) return false;
         PmsIntervention castOther = (PmsIntervention) other;
         return new EqualsBuilder()
-            .append(this.getComp_id(), castOther.getComp_id())
+            .append(this.getCompId(), castOther.getCompId())
             .isEquals();
     }
 
     public int hashCode() {
         return new HashCodeBuilder()
-            .append(getComp_id())
+            .append(getCompId())
             .toHashCode();
     }
 

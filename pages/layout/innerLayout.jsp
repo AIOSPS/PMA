@@ -40,17 +40,25 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+          href="/pages/resources/bootstrap/select/bootstrap-select.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+    <script src="/pages/resources/bootstrap/select/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/pages/resources/bootstrap/dataTable/datatables.min.css"/>
 
+    <script type="text/javascript" src="/pages/resources/bootstrap/dataTable/datatables.min.js"></script>
 
     <!-- additional scripts -->
     <script src="/pages/resources/js/script.js"></script>
 
     <!-- additional css -->
     <link rel="stylesheet" href="/pages/resources/css/style.css">
+
+    <script src="/pages/resources/js/moment.js" ></script>
+
+
+    <script src="/pages/resources/bootstrap/dateTimePicker/bootstrap-datetimepicker.min.js" ></script>
+    <link rel="stylesheet" href="/pages/resources/bootstrap/dateTimePicker/bootstrap-datetimepicker.min.css">
 </head>
 
 <BODY topmargin="0">

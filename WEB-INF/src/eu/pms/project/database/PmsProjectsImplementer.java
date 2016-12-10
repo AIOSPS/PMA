@@ -1,32 +1,21 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-/** @author Hibernate CodeGenerator */
+/**
+ * @author Hibernate CodeGenerator
+ */
 public class PmsProjectsImplementer implements Serializable {
 
-    /** persistent field */
+    private PmsProjectsImplementerPK compId;
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
 
-    /** persistent field */
-    private PmsProject pmsProject;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsImplementer pmsImplementer;
-
-    /** full constructor */
-    public PmsProjectsImplementer(String username, java.util.Date timeStamp, PmsProject pmsProject, eu.pms.project.database.PmsImplementer pmsImplementer) {
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProject = pmsProject;
-        this.pmsImplementer = pmsImplementer;
-    }
-
-    /** default constructor */
+    /**
+     * default constructor
+     */
     public PmsProjectsImplementer() {
     }
 
@@ -46,25 +35,17 @@ public class PmsProjectsImplementer implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public PmsProject getPmsProject() {
-        return this.pmsProject;
+    public PmsProjectsImplementerPK getCompId() {
+        return compId;
     }
 
-    public void setPmsProject(PmsProject pmsProject) {
-        this.pmsProject = pmsProject;
-    }
-
-    public eu.pms.project.database.PmsImplementer getPmsImplementer() {
-        return this.pmsImplementer;
-    }
-
-    public void setPmsImplementer(eu.pms.project.database.PmsImplementer pmsImplementer) {
-        this.pmsImplementer = pmsImplementer;
+    public void setCompId(PmsProjectsImplementerPK compId) {
+        this.compId = compId;
     }
 
     public String toString() {
         return new ToStringBuilder(this)
-            .toString();
+                .toString();
     }
 
 }

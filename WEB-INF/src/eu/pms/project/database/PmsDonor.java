@@ -11,6 +11,7 @@ public class PmsDonor implements Serializable {
 
     /** identifier field */
     private String donId;
+    private String conId;
 
     /** persistent field */
     private String donName;
@@ -123,6 +124,14 @@ public class PmsDonor implements Serializable {
 
     public void setPmsMasterPlanDonors(Set pmsMasterPlanDonors) {
         this.pmsMasterPlanDonors = pmsMasterPlanDonors;
+    }
+
+    public String getConId() {
+        return conId;
+    }
+
+    public void setConId(String conId) {
+        this.conId = conId;
     }
 
     public String toString() {

@@ -46,7 +46,6 @@
         </div>
 </nav>
 </div>
-
 <nav class="navbar navbar-default dashboardMnu">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -62,70 +61,144 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-main-menu">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span>   Dashboard <span class="sr-only"></span></a> </li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Planning <span class="caret"></span></a>
+                <li class="active"><a href="/home.do"><span class="glyphicon glyphicon-home"></span> Home <span class="sr-only">(current)</span></a></li>
+
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-desktop"></span>   Community Information<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="/pmsCommunityList.do">Community</a></li>
+                        <li><a href="#">socio- economic data</a></li>
+                        <li class="dropdown-submenu ">
+                            <a   >Master Plan </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/pmsInterventionList.do">Interventions</a></li>
+                                <li><a href="/pmsActivityList.do">Activities</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-star  "></span>   Project Information <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="form.html">Create a New Project</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="/pmsProjectList.do">Projects</a></li>
+                        <li><a href="#">Benificaries</a></li>
+                        <li><a href="incidents.html">Incidents </a></li>
+                        <li><a href="#">Permit</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Incident  <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Incident</a></li>
+                        <li><a href="#">Link to project</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-qrcode "></span>  Community Profile <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-qrcode "></span>  Indicators  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Indicators</a></li>
+                        <li><a href="#">Objectives</a></li>
+                        <li><a href="#">Results</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span>   Reporting<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span>   Reports <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="QReport.html" target="_blank">Quartaliy Report</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-map-marker"></span>   Maps<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                    </ul>
+                    <a href="#" ><span class="glyphicon glyphicon-map-marker"></span>   Maps</a>
                 </li>
 
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-cog  "></span>  <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
+            <!--	 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-cog  "></span>  <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
                         <li><a href="#">Link 1</a></li>
                         <li><a href="#">Link 2</a></li>
                         <li><a href="#">Link 3</a></li>
+                      </ul>
+                    </li>
                     </ul>
-                </li>
-            </ul>
+                --!>
 
 
-
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+            </div><!-- /.navbar-collapse -->
+        <%--</div><!-- /.container-fluid -->--%>
 </nav>
+<%--<nav class="navbar navbar-default dashboardMnu">--%>
+    <%--<div class="container">--%>
+        <%--<!-- Brand and toggle get grouped for better mobile display -->--%>
+        <%--<div class="navbar-header">--%>
+            <%--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main-menu" aria-expanded="false">--%>
+                <%--<span class="sr-only">Toggle navigation</span>--%>
+                <%--<span class="icon-bar"></span>--%>
+                <%--<span class="icon-bar"></span>--%>
+                <%--<span class="icon-bar"></span>--%>
+            <%--</button>--%>
+        <%--</div>--%>
+
+        <%--<!-- Collect the nav links, forms, and other content for toggling -->--%>
+        <%--<div class="collapse navbar-collapse" id="navbar-main-menu">--%>
+            <%--<ul class="nav navbar-nav">--%>
+                <%--<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home <span class="sr-only">(current)</span></a></li>--%>
+                <%--<li><a href="#"><span class="glyphicon glyphicon-dashboard"></span>   Dashboard <span class="sr-only"></span></a> </li>--%>
+                <%--<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Planning <span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="#">Link 1</a></li>--%>
+                        <%--<li><a href="#">Link 2</a></li>--%>
+                        <%--<li><a href="#">Link 3</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-star  "></span>   Project Information <span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="form.html">Create a New Project</a></li>--%>
+                        <%--<li><a href="#">Link 2</a></li>--%>
+                        <%--<li><a href="#">Link 3</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-qrcode "></span>  Community Profile <span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="#">Link 1</a></li>--%>
+                        <%--<li><a href="#">Link 2</a></li>--%>
+                        <%--<li><a href="#">Link 3</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span>   Reporting<span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="#">Link 1</a></li>--%>
+                        <%--<li><a href="#">Link 2</a></li>--%>
+                        <%--<li><a href="#">Link 3</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-map-marker"></span>   Maps<span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="#">Link 1</a></li>--%>
+                        <%--<li><a href="#">Link 2</a></li>--%>
+                        <%--<li><a href="#">Link 3</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+
+            <%--</ul>--%>
+            <%--<ul class="nav navbar-nav navbar-right">--%>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-cog  "></span>  <span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="#">Link 1</a></li>--%>
+                        <%--<li><a href="#">Link 2</a></li>--%>
+                        <%--<li><a href="#">Link 3</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+            <%--</ul>--%>
 
 
 
-<div class="content-wrapper breadcrumb brd2">
-    <div class="container clearfix">
-        <nav class="menu-breadcrumb2"><a href="home.html"   class="active"><span class="fa fa-home "></span> Home </a><span class=""> > </span><span>   Home </span></nav>
-    </div>
-</div>
+        <%--</div><!-- /.navbar-collapse -->--%>
+    <%--</div><!-- /.container-fluid -->--%>
+<%--</nav>--%>
+

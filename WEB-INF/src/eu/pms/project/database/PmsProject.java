@@ -1,161 +1,38 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.Date;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 /** @author Hibernate CodeGenerator */
 public class PmsProject implements Serializable {
-
-    /** identifier field */
     private String proId;
-
-    /** persistent field */
     private String proTitle;
-
-    /** nullable persistent field */
     private String proDescription;
-
-    /** persistent field */
     private String proStatus;
-
-    /** persistent field */
+    private String proStatusDesc;
     private java.math.BigDecimal proBudget;
-
-    /** persistent field */
-    private java.util.Date proStartDate;
-
-    /** persistent field */
-    private java.util.Date proEndDate;
-
-    /** persistent field */
+    private Date proStartDate;
+    private Date proEndDate;
+    private String proStartDateStr;
+    private String proEndDateStr;
     private String proNeedPermit;
-
-    /** persistent field */
     private String proHasCluster;
-
-    /** nullable persistent field */
     private String proNotes;
-
-    /** persistent field */
-    private String proUserId;
-
-    /** persistent field */
-    private java.util.Date proTimeStamp;
-
-    /** persistent field */
     private String proArea;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
-    private java.util.Date timeStamp;
-
-    /** nullable persistent field */
-    private eu.pms.project.database.PmsProjectAlbum pmsProjectAlbum;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsPermit pmsPermit;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsProgramm pmsProgramm;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsDevelopmentAgency pmsDevelopmentAgency;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsClusterTyp pmsClusterTyp;
-
-    /** persistent field */
-    private Set pmsProjectsImplementers;
-
-    /** persistent field */
-    private Set pmsProjectsHasPmsProjectsByPmsProjectsProId;
-
-    /** persistent field */
-    private Set pmsProjectsHasPmsProjectsByPmsProjectsProId1;
-
-    /** persistent field */
-    private Set pmsProjectsCommunities;
-
-    /** persistent field */
-    private Set pmsProjectsLocations;
-
-    /** persistent field */
-    private Set pmsProjectsBenificiaries;
-
-    /** persistent field */
-    private Set pmsProjectDonors;
-
-    /** persistent field */
-    private Set pmsIncidents;
-
-    /** full constructor */
-    public PmsProject(String proId, String proTitle, String proDescription, String proStatus, java.math.BigDecimal proBudget, java.util.Date proStartDate, java.util.Date proEndDate, String proNeedPermit, String proHasCluster, String proNotes, String proUserId, java.util.Date proTimeStamp, String proArea, String username, java.util.Date timeStamp, eu.pms.project.database.PmsProjectAlbum pmsProjectAlbum, eu.pms.project.database.PmsPermit pmsPermit, eu.pms.project.database.PmsProgramm pmsProgramm, eu.pms.project.database.PmsDevelopmentAgency pmsDevelopmentAgency, eu.pms.project.database.PmsClusterTyp pmsClusterTyp, Set pmsProjectsImplementers, Set pmsProjectsHasPmsProjectsByPmsProjectsProId, Set pmsProjectsHasPmsProjectsByPmsProjectsProId1, Set pmsProjectsCommunities, Set pmsProjectsLocations, Set pmsProjectsBenificiaries, Set pmsProjectDonors, Set pmsIncidents) {
-        this.proId = proId;
-        this.proTitle = proTitle;
-        this.proDescription = proDescription;
-        this.proStatus = proStatus;
-        this.proBudget = proBudget;
-        this.proStartDate = proStartDate;
-        this.proEndDate = proEndDate;
-        this.proNeedPermit = proNeedPermit;
-        this.proHasCluster = proHasCluster;
-        this.proNotes = proNotes;
-        this.proUserId = proUserId;
-        this.proTimeStamp = proTimeStamp;
-        this.proArea = proArea;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProjectAlbum = pmsProjectAlbum;
-        this.pmsPermit = pmsPermit;
-        this.pmsProgramm = pmsProgramm;
-        this.pmsDevelopmentAgency = pmsDevelopmentAgency;
-        this.pmsClusterTyp = pmsClusterTyp;
-        this.pmsProjectsImplementers = pmsProjectsImplementers;
-        this.pmsProjectsHasPmsProjectsByPmsProjectsProId = pmsProjectsHasPmsProjectsByPmsProjectsProId;
-        this.pmsProjectsHasPmsProjectsByPmsProjectsProId1 = pmsProjectsHasPmsProjectsByPmsProjectsProId1;
-        this.pmsProjectsCommunities = pmsProjectsCommunities;
-        this.pmsProjectsLocations = pmsProjectsLocations;
-        this.pmsProjectsBenificiaries = pmsProjectsBenificiaries;
-        this.pmsProjectDonors = pmsProjectDonors;
-        this.pmsIncidents = pmsIncidents;
-    }
-
+    private Date timeStamp;
+    private String prgId;
+    private String devId;
+    private String cluId;
+    private String proType;
+    private String preId;
     /** default constructor */
     public PmsProject() {
-    }
-
-    /** minimal constructor */
-    public PmsProject(String proId, String proTitle, String proStatus, java.math.BigDecimal proBudget, java.util.Date proStartDate, java.util.Date proEndDate, String proNeedPermit, String proHasCluster, String proUserId, java.util.Date proTimeStamp, String proArea, String username, java.util.Date timeStamp, eu.pms.project.database.PmsPermit pmsPermit, eu.pms.project.database.PmsProgramm pmsProgramm, eu.pms.project.database.PmsDevelopmentAgency pmsDevelopmentAgency, eu.pms.project.database.PmsClusterTyp pmsClusterTyp, Set pmsProjectsImplementers, Set pmsProjectsHasPmsProjectsByPmsProjectsProId, Set pmsProjectsHasPmsProjectsByPmsProjectsProId1, Set pmsProjectsCommunities, Set pmsProjectsLocations, Set pmsProjectsBenificiaries, Set pmsProjectDonors, Set pmsIncidents) {
-        this.proId = proId;
-        this.proTitle = proTitle;
-        this.proStatus = proStatus;
-        this.proBudget = proBudget;
-        this.proStartDate = proStartDate;
-        this.proEndDate = proEndDate;
-        this.proNeedPermit = proNeedPermit;
-        this.proHasCluster = proHasCluster;
-        this.proUserId = proUserId;
-        this.proTimeStamp = proTimeStamp;
-        this.proArea = proArea;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsPermit = pmsPermit;
-        this.pmsProgramm = pmsProgramm;
-        this.pmsDevelopmentAgency = pmsDevelopmentAgency;
-        this.pmsClusterTyp = pmsClusterTyp;
-        this.pmsProjectsImplementers = pmsProjectsImplementers;
-        this.pmsProjectsHasPmsProjectsByPmsProjectsProId = pmsProjectsHasPmsProjectsByPmsProjectsProId;
-        this.pmsProjectsHasPmsProjectsByPmsProjectsProId1 = pmsProjectsHasPmsProjectsByPmsProjectsProId1;
-        this.pmsProjectsCommunities = pmsProjectsCommunities;
-        this.pmsProjectsLocations = pmsProjectsLocations;
-        this.pmsProjectsBenificiaries = pmsProjectsBenificiaries;
-        this.pmsProjectDonors = pmsProjectDonors;
-        this.pmsIncidents = pmsIncidents;
     }
 
     public String getProId() {
@@ -198,19 +75,19 @@ public class PmsProject implements Serializable {
         this.proBudget = proBudget;
     }
 
-    public java.util.Date getProStartDate() {
+    public Date getProStartDate() {
         return this.proStartDate;
     }
 
-    public void setProStartDate(java.util.Date proStartDate) {
+    public void setProStartDate(Date proStartDate) {
         this.proStartDate = proStartDate;
     }
 
-    public java.util.Date getProEndDate() {
+    public Date getProEndDate() {
         return this.proEndDate;
     }
 
-    public void setProEndDate(java.util.Date proEndDate) {
+    public void setProEndDate(Date proEndDate) {
         this.proEndDate = proEndDate;
     }
 
@@ -238,22 +115,6 @@ public class PmsProject implements Serializable {
         this.proNotes = proNotes;
     }
 
-    public String getProUserId() {
-        return this.proUserId;
-    }
-
-    public void setProUserId(String proUserId) {
-        this.proUserId = proUserId;
-    }
-
-    public java.util.Date getProTimeStamp() {
-        return this.proTimeStamp;
-    }
-
-    public void setProTimeStamp(java.util.Date proTimeStamp) {
-        this.proTimeStamp = proTimeStamp;
-    }
-
     public String getProArea() {
         return this.proArea;
     }
@@ -270,116 +131,87 @@ public class PmsProject implements Serializable {
         this.username = username;
     }
 
-    public java.util.Date getTimeStamp() {
+    public Date getTimeStamp() {
         return this.timeStamp;
     }
 
-    public void setTimeStamp(java.util.Date timeStamp) {
+    public void setTimeStamp(Date timeStamp) {
         this.timeStamp = timeStamp;
     }
 
-    public eu.pms.project.database.PmsProjectAlbum getPmsProjectAlbum() {
-        return this.pmsProjectAlbum;
+    public String getPrgId() {
+        return prgId;
     }
 
-    public void setPmsProjectAlbum(eu.pms.project.database.PmsProjectAlbum pmsProjectAlbum) {
-        this.pmsProjectAlbum = pmsProjectAlbum;
+    public void setPrgId(String prgId) {
+        this.prgId = prgId;
     }
 
-    public eu.pms.project.database.PmsPermit getPmsPermit() {
-        return this.pmsPermit;
+    public String getDevId() {
+        return devId;
     }
 
-    public void setPmsPermit(eu.pms.project.database.PmsPermit pmsPermit) {
-        this.pmsPermit = pmsPermit;
+    public void setDevId(String devId) {
+        this.devId = devId;
     }
 
-    public eu.pms.project.database.PmsProgramm getPmsProgramm() {
-        return this.pmsProgramm;
+    public String getCluId() {
+        return cluId;
     }
 
-    public void setPmsProgramm(eu.pms.project.database.PmsProgramm pmsProgramm) {
-        this.pmsProgramm = pmsProgramm;
+    public void setCluId(String cluId) {
+        this.cluId = cluId;
     }
 
-    public eu.pms.project.database.PmsDevelopmentAgency getPmsDevelopmentAgency() {
-        return this.pmsDevelopmentAgency;
+    public String getProType() {
+        return proType;
     }
 
-    public void setPmsDevelopmentAgency(eu.pms.project.database.PmsDevelopmentAgency pmsDevelopmentAgency) {
-        this.pmsDevelopmentAgency = pmsDevelopmentAgency;
+    public void setProType(String proType) {
+        this.proType = proType;
     }
 
-    public eu.pms.project.database.PmsClusterTyp getPmsClusterTyp() {
-        return this.pmsClusterTyp;
+    public String getPreId() {
+        return preId;
     }
 
-    public void setPmsClusterTyp(eu.pms.project.database.PmsClusterTyp pmsClusterTyp) {
-        this.pmsClusterTyp = pmsClusterTyp;
+    public void setPreId(String preId) {
+        this.preId = preId;
     }
 
-    public Set getPmsProjectsImplementers() {
-        return this.pmsProjectsImplementers;
+    public String getProStatusDesc() {
+        if (this.proStatus==null || this.proStatus.isEmpty()){
+            proStatusDesc = "Unknown";
+        }else if(this.proStatus.equals("1")){
+            proStatusDesc = "New";
+        }else if(this.proStatus.equals("2")){
+            proStatusDesc = "Stopped";
+        }else if(this.proStatus.equals("3")){
+            proStatusDesc = "Completed";
+        }else{
+            proStatusDesc = "Unknown";
+        }
+        return proStatusDesc;
     }
 
-    public void setPmsProjectsImplementers(Set pmsProjectsImplementers) {
-        this.pmsProjectsImplementers = pmsProjectsImplementers;
+    public void setProStatusDesc(String proStatusDesc) {
+        this.proStatusDesc = proStatusDesc;
     }
 
-    public Set getPmsProjectsHasPmsProjectsByPmsProjectsProId() {
-        return this.pmsProjectsHasPmsProjectsByPmsProjectsProId;
+    public String getProStartDateStr() {
+        return proStartDate!=null? DateTool.decorateDate(proStartDate, DateTool.DD_MM_YYYY):"";
     }
 
-    public void setPmsProjectsHasPmsProjectsByPmsProjectsProId(Set pmsProjectsHasPmsProjectsByPmsProjectsProId) {
-        this.pmsProjectsHasPmsProjectsByPmsProjectsProId = pmsProjectsHasPmsProjectsByPmsProjectsProId;
+    public void setProStartDateStr(String proStartDateStr) {
+        this.proStartDateStr = proStartDateStr;
     }
 
-    public Set getPmsProjectsHasPmsProjectsByPmsProjectsProId1() {
-        return this.pmsProjectsHasPmsProjectsByPmsProjectsProId1;
+    public String getProEndDateStr() {
+        return proEndDate!=null? DateTool.decorateDate(proEndDate, DateTool.DD_MM_YYYY):"";
     }
 
-    public void setPmsProjectsHasPmsProjectsByPmsProjectsProId1(Set pmsProjectsHasPmsProjectsByPmsProjectsProId1) {
-        this.pmsProjectsHasPmsProjectsByPmsProjectsProId1 = pmsProjectsHasPmsProjectsByPmsProjectsProId1;
-    }
-
-    public Set getPmsProjectsCommunities() {
-        return this.pmsProjectsCommunities;
-    }
-
-    public void setPmsProjectsCommunities(Set pmsProjectsCommunities) {
-        this.pmsProjectsCommunities = pmsProjectsCommunities;
-    }
-
-    public Set getPmsProjectsLocations() {
-        return this.pmsProjectsLocations;
-    }
-
-    public void setPmsProjectsLocations(Set pmsProjectsLocations) {
-        this.pmsProjectsLocations = pmsProjectsLocations;
-    }
-
-    public Set getPmsProjectsBenificiaries() {
-        return this.pmsProjectsBenificiaries;
-    }
-
-    public void setPmsProjectsBenificiaries(Set pmsProjectsBenificiaries) {
-        this.pmsProjectsBenificiaries = pmsProjectsBenificiaries;
-    }
-
-    public Set getPmsProjectDonors() {
-        return this.pmsProjectDonors;
-    }
-
-    public void setPmsProjectDonors(Set pmsProjectDonors) {
-        this.pmsProjectDonors = pmsProjectDonors;
-    }
-
-    public Set getPmsIncidents() {
-        return this.pmsIncidents;
-    }
-
-    public void setPmsIncidents(Set pmsIncidents) {
-        this.pmsIncidents = pmsIncidents;
+    public void setProEndDateStr(String proEndDateStr) {
+        this.proEndDateStr = proEndDateStr;
     }
 
     public String toString() {

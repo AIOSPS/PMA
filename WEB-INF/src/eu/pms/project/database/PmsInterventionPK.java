@@ -8,13 +8,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsInterventionPK implements Serializable {
 
-    /** identifier field */
     private String intId;
-
-    /** identifier field */
     private String subId;
-
-    /** identifier field */
     private String secId;
 
     /** full constructor */

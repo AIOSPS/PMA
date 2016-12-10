@@ -3,6 +3,11 @@
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
 <%@ taglib uri="/WEB-INF/lib/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
+<div class="content-wrapper breadcrumb brd2">
+    <div class="container clearfix">
+        <nav class="menu-breadcrumb2"><a href="home.html"   class="active"><span class="fa fa-home "></span> Home </a><span class=""> > </span><span>   Home </span></nav>
+    </div>
+</div>
 
 <article class="dashboard">
     <div class="container">
@@ -15,7 +20,7 @@
             <div class="col-md-4 dsh-blocks dsh-projects sec1">
                 <div class="dsh-bg">
                     <div class="pull-right"><span class="fa fa-connectdevelop "></span></div>
-                    <p class="dsh-title"><a href="#">projects</a></p>
+                    <p class="dsh-title"><a href="/pmsProjectList.do">projects</a></p>
                     <p class="dsh-txt">
                         Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
                     </p>

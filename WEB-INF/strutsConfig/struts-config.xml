@@ -6,6 +6,14 @@
 
     <form-beans>
         <form-bean name="loginForm" type="eu.pms.login.forms.LoginForm"/>
+        <form-bean name="pmsProjectForm" type="eu.pms.project.forms.PmsProjectForm"/>
+        <form-bean name="pmsProjectSearchForm" type="eu.pms.project.forms.PmsProjectSearchForm"/>
+        <form-bean name="pmsCommunityForm" type="eu.pms.community.forms.PmsCommunityForm"/>
+        <form-bean name="pmsCommunitySearchForm" type="eu.pms.community.forms.PmsCommunitySearchForm"/>
+        <form-bean name="pmsInterventionForm" type="eu.pms.intervention.forms.PmsInterventionForm"/>
+        <form-bean name="pmsInterventionSearchForm" type="eu.pms.intervention.forms.PmsInterventionSearchForm"/>
+        <form-bean name="pmsActivityForm" type="eu.pms.activity.forms.PmsActivityForm"/>
+        <form-bean name="pmsActivitySearchForm" type="eu.pms.activity.forms.PmsActivitySearchForm"/>
 
     </form-beans>
 
@@ -45,18 +53,196 @@
             <forward name="failed"   path="/loginPage.do"/>
             <forward name="success" path="main.tile"/>
         </action>
+        <action
+                type="org.apache.struts.actions.ForwardAction"
+                path="/home"
+                parameter="main.tile"
+        />
 
-        <!--<action-->
-            <!--name="contactUsMessageForm"-->
-            <!--type="com.psgateway.action.forum.SendContactUsMessageAction"-->
-            <!--validate="true"-->
-            <!--input="/pages/contactUs.jsp"-->
-            <!--scope="request"-->
-            <!--path="/sendContactUsMessage">-->
-            <!--<forward name="sendingResult" path="/pages/processResultPage.jsp" contextRelative="true"/>-->
-        <!--</action>-->
-
-
+        <action
+            type="eu.pms.project.actions.PmsProjectListAction"
+            scope="request"
+            path="/pmsProjectList">
+            <forward name="success" path="pms.projectList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.project.actions.PmsProjectListAction"
+                scope="request"
+                path="/searchProject"
+                name="pmsProjectSearchForm"
+        >
+            <forward name="success" path="pms.projectList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsProjectForm"
+                type="eu.pms.project.actions.ViewAddPmsProjectAction"
+                validate="false"
+                path="/viewAddProject"
+        >
+            <forward name="success" path="pms.addProject.tile"/>
+        </action>
+        <action
+                name="pmsProjectForm"
+                type="eu.pms.project.actions.AddPmsProjectAction"
+                validate="false"
+                path="/addProject"
+        >
+            <forward name="success" path="/pmsProjectList.do"/>
+        </action>
+        <action
+                name="pmsProjectForm"
+                type="eu.pms.project.actions.ViewPmsProjectAction"
+                validate="false"
+                path="/viewPmsProject"
+        >
+            <forward name="success" path="pms.viewProject.tile"/>
+        </action>
+        <action
+                name="pmsProjectForm"
+                type="eu.pms.project.actions.ViewPmsProjectAction"
+                validate="false"
+                path="/viewEditProject"
+        >
+            <forward name="success" path="pms.editProject.tile"/>
+        </action>
+        <action
+            type="eu.pms.community.actions.PmsCommunityListAction"
+            scope="request"
+            path="/pmsCommunityList">
+            <forward name="success" path="pms.communityList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.community.actions.PmsCommunityListAction"
+                scope="request"
+                path="/searchCommunity"
+                name="pmsCommunitySearchForm"
+        >
+            <forward name="success" path="pms.communityList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsCommunityForm"
+                type="eu.pms.community.actions.ViewAddPmsCommunityAction"
+                validate="false"
+                path="/viewAddCommunity"
+        >
+            <forward name="success" path="pms.addCommunity.tile"/>
+        </action>
+        <action
+                name="pmsCommunityForm"
+                type="eu.pms.community.actions.AddPmsCommunityAction"
+                validate="false"
+                path="/addCommunity"
+        >
+            <forward name="success" path="/pmsCommunityList.do"/>
+        </action>
+        <action
+                name="pmsCommunityForm"
+                type="eu.pms.community.actions.ViewPmsCommunityAction"
+                validate="false"
+                path="/viewPmsCommunity"
+        >
+            <forward name="success" path="pms.viewCommunity.tile"/>
+        </action>
+        <action
+                name="pmsCommunityForm"
+                type="eu.pms.community.actions.ViewPmsCommunityAction"
+                validate="false"
+                path="/viewEditCommunity"
+        >
+            <forward name="success" path="pms.editCommunity.tile"/>
+        </action>
+        <action
+            type="eu.pms.intervention.actions.PmsInterventionListAction"
+            scope="request"
+            path="/pmsInterventionList">
+            <forward name="success" path="pms.interventionList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.intervention.actions.PmsInterventionListAction"
+                scope="request"
+                path="/searchIntervention"
+                name="pmsInterventionSearchForm"
+        >
+            <forward name="success" path="pms.interventionList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsInterventionForm"
+                type="eu.pms.intervention.actions.ViewAddPmsInterventionAction"
+                validate="false"
+                path="/viewAddIntervention"
+        >
+            <forward name="success" path="pms.addIntervention.tile"/>
+        </action>
+        <action
+                name="pmsInterventionForm"
+                type="eu.pms.intervention.actions.AddPmsInterventionAction"
+                validate="false"
+                path="/addIntervention"
+        >
+            <forward name="success" path="/pmsInterventionList.do"/>
+        </action>
+        <action
+                name="pmsInterventionForm"
+                type="eu.pms.intervention.actions.ViewPmsInterventionAction"
+                validate="false"
+                path="/viewPmsIntervention"
+        >
+            <forward name="success" path="pms.viewIntervention.tile"/>
+        </action>
+        <action
+                name="pmsInterventionForm"
+                type="eu.pms.intervention.actions.ViewPmsInterventionAction"
+                validate="false"
+                path="/viewEditIntervention"
+        >
+            <forward name="success" path="pms.editIntervention.tile"/>
+        </action>
+        <action
+            type="eu.pms.activity.actions.PmsActivityListAction"
+            scope="request"
+            path="/pmsActivityList">
+            <forward name="success" path="pms.activityList.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="eu.pms.activity.actions.PmsActivityListAction"
+            scope="request"
+            path="/searchActivity"
+            name="pmsActivitySearchForm"
+        >
+            <forward name="success" path="pms.activityList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsActivityForm"
+                type="eu.pms.activity.actions.ViewAddPmsActivityAction"
+                validate="false"
+                path="/viewAddActivity"
+        >
+            <forward name="success" path="pms.addActivity.tile"/>
+        </action>
+        <action
+                name="pmsActivityForm"
+                type="eu.pms.activity.actions.AddPmsActivityAction"
+                validate="false"
+                path="/addActivity"
+        >
+            <forward name="success" path="/pmsActivityList.do"/>
+        </action>
+        <action
+                name="pmsActivityForm"
+                type="eu.pms.activity.actions.ViewPmsActivityAction"
+                validate="false"
+                path="/viewPmsActivity"
+        >
+            <forward name="success" path="pms.viewActivity.tile"/>
+        </action>
+        <action
+                name="pmsActivityForm"
+                type="eu.pms.activity.actions.ViewPmsActivityAction"
+                validate="false"
+                path="/viewEditActivity"
+        >
+            <forward name="success" path="pms.editActivity.tile"/>
+        </action>
 
     </action-mappings>
 

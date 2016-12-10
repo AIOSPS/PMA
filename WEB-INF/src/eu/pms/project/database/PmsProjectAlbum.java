@@ -2,47 +2,36 @@ package eu.pms.project.database;
 
 import java.io.InputStream;
 import java.io.Serializable;
+import java.sql.Blob;
+import java.util.Date;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 /** @author Hibernate CodeGenerator */
 public class PmsProjectAlbum implements Serializable {
 
-    /** persistent field */
-    private InputStream albImage;
-
-    /** persistent field */
+    private String proId;
+    private Blob albImage;
     private String username;
-
-    /** persistent field */
-    private java.util.Date timeStamp;
-
-    /** nullable persistent field */
-    private PmsProject pmsProject;
-
-    /** full constructor */
-    public PmsProjectAlbum(InputStream albImage, String username, java.util.Date timeStamp, PmsProject pmsProject) {
-        this.albImage = albImage;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProject = pmsProject;
-    }
+    private Date timeStamp;
 
     /** default constructor */
     public PmsProjectAlbum() {
     }
 
-    /** minimal constructor */
-    public PmsProjectAlbum(InputStream albImage, String username, java.util.Date timeStamp) {
-        this.albImage = albImage;
-        this.username = username;
-        this.timeStamp = timeStamp;
+    public String getProId() {
+        return proId;
     }
 
-    public InputStream getAlbImage() {
+    public void setProId(String proId) {
+        this.proId = proId;
+    }
+
+    public Blob getAlbImage() {
         return this.albImage;
     }
 
-    public void setAlbImage(InputStream albImage) {
+    public void setAlbImage(Blob albImage) {
         this.albImage = albImage;
     }
 
@@ -54,21 +43,14 @@ public class PmsProjectAlbum implements Serializable {
         this.username = username;
     }
 
-    public java.util.Date getTimeStamp() {
+    public Date getTimeStamp() {
         return this.timeStamp;
     }
 
-    public void setTimeStamp(java.util.Date timeStamp) {
+    public void setTimeStamp(Date timeStamp) {
         this.timeStamp = timeStamp;
     }
 
-    public PmsProject getPmsProject() {
-        return this.pmsProject;
-    }
-
-    public void setPmsProject(PmsProject pmsProject) {
-        this.pmsProject = pmsProject;
-    }
 
     public String toString() {
         return new ToStringBuilder(this)

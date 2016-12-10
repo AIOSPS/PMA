@@ -2,32 +2,217 @@
 <!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <!-- this query to get assignments and answer sheets-->
-    <!--<query-->
-        <!--name="acad.getHeadAssignmentsList">-->
-        <!--<![CDATA[-->
-           <!--select distinct md.comp_id.crsNo, md.comp_id.crsSeq,-->
-                    <!--rec.crsAName, rec.crsLName,-->
-                    <!--pas.assignId, pas.assignType, pas.fileId,-->
-                    <!--pas.seed, pas.notes, pas.answerSheet-->
-           <!--from-->
-               <!--edu.qou.studentInfo.database.RegMsDtl md,-->
-               <!--edu.qou.studentInfo.database.RegCourse rec,-->
-               <!--edu.qou.assignmentsDept.database.DBPortalAssignmentStorage pas-->
-           <!--where-->
-                 <!--md.comp_id.specNo = ? and-->
-                 <!--md.comp_id.msCrsType in ('5','6') and-->
-                 <!--pas.termNo = (select ps.keyValue-->
-                               <!--from edu.qou.studentInfo.database.PortalSetup ps-->
-                               <!--where ps.keyName = 'currentSemester') and-->
-                 <!--md.comp_id.msNo = (select max(a.comp_id.msNo)-->
-                                    <!--from edu.qou.studentInfo.database.RegMsDtl a-->
-                                    <!--where a.comp_id.specNo = ?) and-->
-                 <!--pas.crsNo = md.comp_id.crsNo and-->
-                 <!--pas.crsSeq = md.comp_id.crsSeq and-->
-                 <!--rec.comp_id.crsNo = md.comp_id.crsNo and-->
-                 <!--rec.comp_id.crsSeq = md.comp_id.crsSeq-->
-                 <!--order by md.comp_id.crsNo, md.comp_id.crsSeq, pas.assignType-->
-        <!--]]>-->
-    <!--</query>-->
- </hibernate-mapping>
+    <query
+            name="getPmsProjectList">
+        <![CDATA[
+                from eu.pms.project.database.PmsProject a
+                order by a.proStartDate,proEndDate,proTitle
+                  ]]>
+    </query>
+    <query
+            name="getPmsProject">
+        <![CDATA[
+                from eu.pms.project.database.PmsProject a
+                where a.proId = ?
+                order by a.proStartDate,proEndDate,proTitle
+                  ]]>
+    </query>
+    <query
+            name="getPmsProjectDonor">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectDonor a
+                where a.compId.proId = ?
+                order by a.compId.donId
+                  ]]>
+    </query>
+    <query
+            name="getPmsProjectImplementer">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectsImplementer a
+                where a.compId.proId = ?
+                order by a.compId.impId
+                  ]]>
+    </query>
+    <query
+            name="getPmsProjectLocation">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectsLocation a
+                where a.compId.proId = ?
+                order by a.compId.locId
+                  ]]>
+    </query>
+    <query
+            name="getPmsProjectCommunity">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectsCommunity a
+                where a.compId.proId = ?
+                order by a.compId.comId
+                  ]]>
+    </query>
+    <query
+            name="getPmsProjectBenificiary">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectsBenificiary a
+                where a.compId.proId = ?
+                order by a.compId.benId
+                  ]]>
+    </query>
+    <query
+            name="getPmsProjectIndicator">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectsIndicator a
+                where a.compId.proId = ?
+                order by a.compId.indId
+                  ]]>
+    </query>
+    <query
+            name="getPmsDonors">
+        <![CDATA[
+                from eu.pms.project.database.PmsDonor a
+                order by a.donName
+                  ]]>
+    </query>
+    <query
+            name="pmsImplementer">
+        <![CDATA[
+                from eu.pms.project.database.PmsImplementer a
+                order by a.impName
+                  ]]>
+    </query>
+    <query
+            name="pmsDevelopmentAgency">
+        <![CDATA[
+                from eu.pms.project.database.PmsDevelopmentAgency a
+                order by a.devAbbName
+                  ]]>
+    </query>
+    <query
+            name="pmsProgramm">
+        <![CDATA[
+                from eu.pms.project.database.PmsProgramm a
+                order by a.prgTitle
+                  ]]>
+    </query>
+    <query
+            name="getPmsLocation">
+        <![CDATA[
+                from eu.pms.project.database.PmsLocation a
+                order by a.locLatitude
+                  ]]>
+    </query>
+    <query
+            name="getPmsCommunity">
+        <![CDATA[
+                from eu.pms.project.database.PmsCommunity a
+                order by a.comName
+                  ]]>
+    </query>
+    <query
+            name="getPmsClusterTyp">
+        <![CDATA[
+                from eu.pms.project.database.PmsClusterTyp a
+                order by a.cluDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsPermit">
+        <![CDATA[
+                from eu.pms.project.database.PmsPermit a
+                order by a.perTitle
+                  ]]>
+    </query>
+    <query
+            name="getPmsBenificiary">
+        <![CDATA[
+                from eu.pms.project.database.PmsBenificiary a
+                order by a.benDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsIndicator">
+        <![CDATA[
+                from eu.pms.project.database.PmsIndicator a
+                order by a.indTitle
+                  ]]>
+    </query>
+
+    <!--**************************************************************-->
+
+    <query
+            name="getPmsCommunityList">
+        <![CDATA[
+                from eu.pms.project.database.PmsCommunity a
+                order by a.comName
+                  ]]>
+    </query>
+    <query
+            name="getPmsCommunityById">
+        <![CDATA[
+                from eu.pms.project.database.PmsCommunity a
+                where a.comId = ?
+                order by a.comName
+                  ]]>
+    </query>
+    <query
+            name="getPmsInterventionById">
+        <![CDATA[
+                from eu.pms.project.database.PmsIntervention a
+                where a.compId.intId = ?
+                and a.compId.secId = ?
+                and a.compId.subId = ?
+                order by a.intDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsCommunityType">
+        <![CDATA[
+                from eu.pms.project.database.PmsCommunityTyp a
+                order by a.typDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlan">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlan a
+                order by a.masMpName
+                  ]]>
+    </query>
+    <query
+            name="getPmsSectors">
+        <![CDATA[
+                from eu.pms.project.database.PmsSector a
+                order by a.secName
+                  ]]>
+    </query>
+    <query
+            name="getPmsSubSectors">
+        <![CDATA[
+                from eu.pms.project.database.PmsSubSector a
+                order by a.subName
+                  ]]>
+    </query>
+    <query
+            name="getPmsInterventionList">
+        <![CDATA[
+                from eu.pms.project.database.PmsIntervention a
+                order by a.intDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsActivityById">
+        <![CDATA[
+                from eu.pms.project.database.PmsActivity a
+                where a.compId.actId = ?
+                and a.compId.intId = ?
+                and a.compId.secId = ?
+                order by a.actDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsActivityList">
+        <![CDATA[
+                from eu.pms.project.database.PmsActivity a
+                order by a.actDesc
+                  ]]>
+    </query>
+</hibernate-mapping>

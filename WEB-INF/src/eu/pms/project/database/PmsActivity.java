@@ -8,63 +8,24 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsActivity implements Serializable {
 
-    /** identifier field */
-    private PmsActivityPK comp_id;
-
-    /** persistent field */
+    private PmsActivityPK compId;
     private String actDesc;
-
-    /** persistent field */
     private String actUnit;
-
-    /** persistent field */
     private int actUnitQty;
-
-    /** nullable persistent field */
     private int actEstimatedBudget;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsIntervention pmsIntervention;
-
-    /** full constructor */
-    public PmsActivity(PmsActivityPK comp_id, String actDesc, String actUnit, int actUnitQty, int actEstimatedBudget, String username, java.util.Date timeStamp, eu.pms.project.database.PmsIntervention pmsIntervention) {
-        this.comp_id = comp_id;
-        this.actDesc = actDesc;
-        this.actUnit = actUnit;
-        this.actUnitQty = actUnitQty;
-        this.actEstimatedBudget = actEstimatedBudget;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsIntervention = pmsIntervention;
-    }
 
     /** default constructor */
     public PmsActivity() {
     }
 
-    /** minimal constructor */
-    public PmsActivity(PmsActivityPK comp_id, String actDesc, String actUnit, int actUnitQty, String username, java.util.Date timeStamp, eu.pms.project.database.PmsIntervention pmsIntervention) {
-        this.comp_id = comp_id;
-        this.actDesc = actDesc;
-        this.actUnit = actUnit;
-        this.actUnitQty = actUnitQty;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsIntervention = pmsIntervention;
+    public PmsActivityPK getCompId() {
+        return compId;
     }
 
-    public PmsActivityPK getComp_id() {
-        return this.comp_id;
-    }
-
-    public void setComp_id(PmsActivityPK comp_id) {
-        this.comp_id = comp_id;
+    public void setCompId(PmsActivityPK compId) {
+        this.compId = compId;
     }
 
     public String getActDesc() {
@@ -115,17 +76,10 @@ public class PmsActivity implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public eu.pms.project.database.PmsIntervention getPmsIntervention() {
-        return this.pmsIntervention;
-    }
-
-    public void setPmsIntervention(eu.pms.project.database.PmsIntervention pmsIntervention) {
-        this.pmsIntervention = pmsIntervention;
-    }
 
     public String toString() {
         return new ToStringBuilder(this)
-            .append("comp_id", getComp_id())
+            .append("comp_id", getCompId())
             .toString();
     }
 
@@ -133,13 +87,13 @@ public class PmsActivity implements Serializable {
         if ( !(other instanceof PmsActivity) ) return false;
         PmsActivity castOther = (PmsActivity) other;
         return new EqualsBuilder()
-            .append(this.getComp_id(), castOther.getComp_id())
+            .append(this.getCompId(), castOther.getCompId())
             .isEquals();
     }
 
     public int hashCode() {
         return new HashCodeBuilder()
-            .append(getComp_id())
+            .append(getCompId())
             .toHashCode();
     }
 

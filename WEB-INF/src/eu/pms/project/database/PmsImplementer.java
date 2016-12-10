@@ -9,45 +9,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsImplementer implements Serializable {
 
-    /** identifier field */
     private String impId;
-
-    /** persistent field */
+    private String conId;
     private String impName;
-
-    /** persistent field */
     private String impType;
-
-    /** persistent field */
     private String impAbbName;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
 
-    /** persistent field */
-    private PmsContry pmsContry;
-
-    /** persistent field */
-    private Set pmsProjectsImplementers;
-
-    /** persistent field */
-    private Set pmsMasterPlans;
-
-    /** full constructor */
-    public PmsImplementer(String impId, String impName, String impType, String impAbbName, String username, java.util.Date timeStamp, PmsContry pmsContry, Set pmsProjectsImplementers, Set pmsMasterPlans) {
-        this.impId = impId;
-        this.impName = impName;
-        this.impType = impType;
-        this.impAbbName = impAbbName;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsContry = pmsContry;
-        this.pmsProjectsImplementers = pmsProjectsImplementers;
-        this.pmsMasterPlans = pmsMasterPlans;
-    }
 
     /** default constructor */
     public PmsImplementer() {
@@ -101,28 +70,12 @@ public class PmsImplementer implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public PmsContry getPmsContry() {
-        return this.pmsContry;
+    public String getConId() {
+        return conId;
     }
 
-    public void setPmsContry(PmsContry pmsContry) {
-        this.pmsContry = pmsContry;
-    }
-
-    public Set getPmsProjectsImplementers() {
-        return this.pmsProjectsImplementers;
-    }
-
-    public void setPmsProjectsImplementers(Set pmsProjectsImplementers) {
-        this.pmsProjectsImplementers = pmsProjectsImplementers;
-    }
-
-    public Set getPmsMasterPlans() {
-        return this.pmsMasterPlans;
-    }
-
-    public void setPmsMasterPlans(Set pmsMasterPlans) {
-        this.pmsMasterPlans = pmsMasterPlans;
+    public void setConId(String conId) {
+        this.conId = conId;
     }
 
     public String toString() {

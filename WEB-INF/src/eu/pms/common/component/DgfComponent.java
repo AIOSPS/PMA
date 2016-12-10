@@ -52,7 +52,8 @@ public abstract class DgfComponent
         {
             dgfProperties = new Properties();
 
-            Class thisClass = Class.forName("edu.qou.common.component.DgfComponent");
+            Class thisClass = Class.forName("eu.pms.common.component.DgfComponent");
+
             InputStream is = thisClass.getResourceAsStream(PROPERTIES_FILE_NAME);
             dgfProperties.load(is);
 

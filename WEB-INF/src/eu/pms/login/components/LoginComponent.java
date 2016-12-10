@@ -11,6 +11,7 @@ package eu.pms.login.components;
 
 import eu.pms.common.component.DgfComponent;
 import eu.pms.common.component.DataAccessObjectImpl;
+import eu.pms.common.exceptions.ComponentException;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class LoginComponent extends  DgfComponent
         List retList = null;
         try
         {
-            retList = super.getList("pms.userLogin", parameters);
+            retList = super.getList("Portal.userLogin", parameters);
         }
         catch (eu.pms.common.exceptions.ComponentException e)
         {
@@ -37,6 +38,11 @@ public class LoginComponent extends  DgfComponent
         return retList;
     }
 
+    public List checkActionPermission(Integer roleId, String actionName)throws ComponentException {
 
+        List result = getList("lib.checkPermission", new Object[]{actionName, roleId});
+
+        return result;
+    }
 
 }

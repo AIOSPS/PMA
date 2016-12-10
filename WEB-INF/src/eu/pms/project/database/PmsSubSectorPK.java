@@ -8,12 +8,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsSubSectorPK implements Serializable {
 
-    /** identifier field */
     private String subId;
-
-    /** identifier field */
     private String secId;
-
     /** full constructor */
     public PmsSubSectorPK(String subId, String secId) {
         this.subId = subId;

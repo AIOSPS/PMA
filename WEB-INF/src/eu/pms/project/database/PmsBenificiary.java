@@ -9,37 +9,12 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsBenificiary implements Serializable {
 
-    /** identifier field */
     private String benId;
-
-    /** persistent field */
+    private String btpId;
     private String benDesc;
-
-    /** persistent field */
     private int benTotal;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsBenificiaryTyp pmsBenificiaryTyp;
-
-    /** persistent field */
-    private Set pmsProjectsBenificiaries;
-
-    /** full constructor */
-    public PmsBenificiary(String benId, String benDesc, int benTotal, String username, java.util.Date timeStamp, eu.pms.project.database.PmsBenificiaryTyp pmsBenificiaryTyp, Set pmsProjectsBenificiaries) {
-        this.benId = benId;
-        this.benDesc = benDesc;
-        this.benTotal = benTotal;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsBenificiaryTyp = pmsBenificiaryTyp;
-        this.pmsProjectsBenificiaries = pmsProjectsBenificiaries;
-    }
 
     /** default constructor */
     public PmsBenificiary() {
@@ -85,20 +60,12 @@ public class PmsBenificiary implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public eu.pms.project.database.PmsBenificiaryTyp getPmsBenificiaryTyp() {
-        return this.pmsBenificiaryTyp;
+    public String getBtpId() {
+        return btpId;
     }
 
-    public void setPmsBenificiaryTyp(eu.pms.project.database.PmsBenificiaryTyp pmsBenificiaryTyp) {
-        this.pmsBenificiaryTyp = pmsBenificiaryTyp;
-    }
-
-    public Set getPmsProjectsBenificiaries() {
-        return this.pmsProjectsBenificiaries;
-    }
-
-    public void setPmsProjectsBenificiaries(Set pmsProjectsBenificiaries) {
-        this.pmsProjectsBenificiaries = pmsProjectsBenificiaries;
+    public void setBtpId(String btpId) {
+        this.btpId = btpId;
     }
 
     public String toString() {

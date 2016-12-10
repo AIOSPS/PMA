@@ -9,7 +9,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class PmsIndicator implements Serializable {
 
     /** identifier field */
-    private PmsIndicatorPK comp_id;
+    private PmsIndicatorPK compId;
 
     /** persistent field */
     private String indTitle;
@@ -47,33 +47,18 @@ public class PmsIndicator implements Serializable {
     /** persistent field */
     private PmsResult pmsResult;
 
-    /** full constructor */
-    public PmsIndicator(PmsIndicatorPK comp_id, String indTitle, java.util.Date indDate, String indLongDesc, int indBaseline, int indFrequency, String indCollectionMethod, String indStatisticalMethod, int indTarget, int indValue, String username, java.util.Date timeStamp, PmsResult pmsResult) {
-        this.comp_id = comp_id;
-        this.indTitle = indTitle;
-        this.indDate = indDate;
-        this.indLongDesc = indLongDesc;
-        this.indBaseline = indBaseline;
-        this.indFrequency = indFrequency;
-        this.indCollectionMethod = indCollectionMethod;
-        this.indStatisticalMethod = indStatisticalMethod;
-        this.indTarget = indTarget;
-        this.indValue = indValue;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsResult = pmsResult;
-    }
+
 
     /** default constructor */
     public PmsIndicator() {
     }
 
-    public PmsIndicatorPK getComp_id() {
-        return this.comp_id;
+    public PmsIndicatorPK getCompId() {
+        return this.compId;
     }
 
-    public void setComp_id(PmsIndicatorPK comp_id) {
-        this.comp_id = comp_id;
+    public void setCompId(PmsIndicatorPK compId) {
+        this.compId = compId;
     }
 
     public String getIndTitle() {
@@ -172,24 +157,6 @@ public class PmsIndicator implements Serializable {
         this.pmsResult = pmsResult;
     }
 
-    public String toString() {
-        return new ToStringBuilder(this)
-            .append("comp_id", getComp_id())
-            .toString();
-    }
 
-    public boolean equals(Object other) {
-        if ( !(other instanceof PmsIndicator) ) return false;
-        PmsIndicator castOther = (PmsIndicator) other;
-        return new EqualsBuilder()
-            .append(this.getComp_id(), castOther.getComp_id())
-            .isEquals();
-    }
-
-    public int hashCode() {
-        return new HashCodeBuilder()
-            .append(getComp_id())
-            .toHashCode();
-    }
 
 }

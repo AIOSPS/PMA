@@ -5,15 +5,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 /** @author Hibernate CodeGenerator */
 public class SecUserRole implements Serializable {
+private SecUserRolePK compId;
+    /** persistent field */
+    private SecRole secRole;
 
     /** persistent field */
-    private eu.pms.login.database.SecRole secRole;
-
-    /** persistent field */
-    private eu.pms.login.database.SecUser secUser;
+    private SecUser secUser;
 
     /** full constructor */
-    public SecUserRole(eu.pms.login.database.SecRole secRole, eu.pms.login.database.SecUser secUser) {
+    public SecUserRole(SecRole secRole, SecUser secUser) {
         this.secRole = secRole;
         this.secUser = secUser;
     }
@@ -22,19 +22,27 @@ public class SecUserRole implements Serializable {
     public SecUserRole() {
     }
 
-    public eu.pms.login.database.SecRole getSecRole() {
+    public SecUserRolePK getCompId() {
+        return compId;
+    }
+
+    public void setCompId(SecUserRolePK compId) {
+        this.compId = compId;
+    }
+
+    public SecRole getSecRole() {
         return this.secRole;
     }
 
-    public void setSecRole(eu.pms.login.database.SecRole secRole) {
+    public void setSecRole(SecRole secRole) {
         this.secRole = secRole;
     }
 
-    public eu.pms.login.database.SecUser getSecUser() {
+    public SecUser getSecUser() {
         return this.secUser;
     }
 
-    public void setSecUser(eu.pms.login.database.SecUser secUser) {
+    public void setSecUser(SecUser secUser) {
         this.secUser = secUser;
     }
 

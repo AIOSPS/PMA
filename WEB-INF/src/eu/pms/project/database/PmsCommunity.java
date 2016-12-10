@@ -9,178 +9,42 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsCommunity implements Serializable {
 
-    /** identifier field */
     private String comId;
-
-    /** persistent field */
+    private String govId;
+    private String locId;
+    private String typeId;
     private String comPcbsCode;
-
-    /** persistent field */
     private String comOchaCode;
-
-    /** nullable persistent field */
     private String comName;
-
-    /** persistent field */
     private int comTotalAreaLand;
-
-    /** persistent field */
     private String comLocationShortDescription;
-
-    /** persistent field */
     private String comHistoricalBackground;
-
-    /** persistent field */
     private String comTopology;
-
-    /** persistent field */
     private int comResidentsTotal;
-
-    /** persistent field */
     private int comMaleTotal;
-
-    /** persistent field */
     private int comFemaleTotal;
-
-    /** persistent field */
     private int comYouthTotal;
-
-    /** persistent field */
     private int comKidsTotal;
-
-    /** nullable persistent field */
     private String comSchoolsInfo;
-
-    /** nullable persistent field */
     private String comHealthSchoolsInfo;
-
-    /** nullable persistent field */
     private String comReligionCenters;
-
-    /** nullable persistent field */
     private String comCemetery;
-
-    /** nullable persistent field */
     private String comWaterNetworkInfo;
-
-    /** nullable persistent field */
     private String comSewerageNetworkInfo;
-
-    /** nullable persistent field */
     private String comElectricalNetworkInfo;
-
-    /** nullable persistent field */
     private String comSolidWasteServiceInfo;
-
-    /** nullable persistent field */
     private String comRoadNetworkInfo;
-
-    /** nullable persistent field */
     private String comTransportNetworkInfo;
-
-    /** nullable persistent field */
     private String comEcnonomicActivitiesInfo;
-
-    /** nullable persistent field */
     private java.math.BigDecimal locLatitude;
-
-    /** nullable persistent field */
     private java.math.BigDecimal locLongitude;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsCommunityTyp pmsCommunityTyp;
-
-    /** persistent field */
-    private Set pmsProjectsCommunities;
-
-    /** persistent field */
-    private Set pmsMasterPlanCommunities;
-
-    /** persistent field */
-    private Set pmsAccessToLands;
-
-    /** persistent field */
-    private Set pmsAgricultureSocios;
-
-    /** persistent field */
-    private Set pmsIncidents;
-
-    /** persistent field */
-    private Set pmsWaterSocios;
-
-    /** full constructor */
-    public PmsCommunity(String comId, String comPcbsCode, String comOchaCode, String comName, int comTotalAreaLand, String comLocationShortDescription, String comHistoricalBackground, String comTopology, int comResidentsTotal, int comMaleTotal, int comFemaleTotal, int comYouthTotal, int comKidsTotal, String comSchoolsInfo, String comHealthSchoolsInfo, String comReligionCenters, String comCemetery, String comWaterNetworkInfo, String comSewerageNetworkInfo, String comElectricalNetworkInfo, String comSolidWasteServiceInfo, String comRoadNetworkInfo, String comTransportNetworkInfo, String comEcnonomicActivitiesInfo, java.math.BigDecimal locLatitude, java.math.BigDecimal locLongitude, String username, java.util.Date timeStamp, eu.pms.project.database.PmsCommunityTyp pmsCommunityTyp, Set pmsProjectsCommunities, Set pmsMasterPlanCommunities, Set pmsAccessToLands, Set pmsAgricultureSocios, Set pmsIncidents, Set pmsWaterSocios) {
-        this.comId = comId;
-        this.comPcbsCode = comPcbsCode;
-        this.comOchaCode = comOchaCode;
-        this.comName = comName;
-        this.comTotalAreaLand = comTotalAreaLand;
-        this.comLocationShortDescription = comLocationShortDescription;
-        this.comHistoricalBackground = comHistoricalBackground;
-        this.comTopology = comTopology;
-        this.comResidentsTotal = comResidentsTotal;
-        this.comMaleTotal = comMaleTotal;
-        this.comFemaleTotal = comFemaleTotal;
-        this.comYouthTotal = comYouthTotal;
-        this.comKidsTotal = comKidsTotal;
-        this.comSchoolsInfo = comSchoolsInfo;
-        this.comHealthSchoolsInfo = comHealthSchoolsInfo;
-        this.comReligionCenters = comReligionCenters;
-        this.comCemetery = comCemetery;
-        this.comWaterNetworkInfo = comWaterNetworkInfo;
-        this.comSewerageNetworkInfo = comSewerageNetworkInfo;
-        this.comElectricalNetworkInfo = comElectricalNetworkInfo;
-        this.comSolidWasteServiceInfo = comSolidWasteServiceInfo;
-        this.comRoadNetworkInfo = comRoadNetworkInfo;
-        this.comTransportNetworkInfo = comTransportNetworkInfo;
-        this.comEcnonomicActivitiesInfo = comEcnonomicActivitiesInfo;
-        this.locLatitude = locLatitude;
-        this.locLongitude = locLongitude;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsCommunityTyp = pmsCommunityTyp;
-        this.pmsProjectsCommunities = pmsProjectsCommunities;
-        this.pmsMasterPlanCommunities = pmsMasterPlanCommunities;
-        this.pmsAccessToLands = pmsAccessToLands;
-        this.pmsAgricultureSocios = pmsAgricultureSocios;
-        this.pmsIncidents = pmsIncidents;
-        this.pmsWaterSocios = pmsWaterSocios;
-    }
 
     /** default constructor */
     public PmsCommunity() {
     }
 
-    /** minimal constructor */
-    public PmsCommunity(String comId, String comPcbsCode, String comOchaCode, int comTotalAreaLand, String comLocationShortDescription, String comHistoricalBackground, String comTopology, int comResidentsTotal, int comMaleTotal, int comFemaleTotal, int comYouthTotal, int comKidsTotal, String username, java.util.Date timeStamp, eu.pms.project.database.PmsCommunityTyp pmsCommunityTyp, Set pmsProjectsCommunities, Set pmsMasterPlanCommunities, Set pmsAccessToLands, Set pmsAgricultureSocios, Set pmsIncidents, Set pmsWaterSocios) {
-        this.comId = comId;
-        this.comPcbsCode = comPcbsCode;
-        this.comOchaCode = comOchaCode;
-        this.comTotalAreaLand = comTotalAreaLand;
-        this.comLocationShortDescription = comLocationShortDescription;
-        this.comHistoricalBackground = comHistoricalBackground;
-        this.comTopology = comTopology;
-        this.comResidentsTotal = comResidentsTotal;
-        this.comMaleTotal = comMaleTotal;
-        this.comFemaleTotal = comFemaleTotal;
-        this.comYouthTotal = comYouthTotal;
-        this.comKidsTotal = comKidsTotal;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsCommunityTyp = pmsCommunityTyp;
-        this.pmsProjectsCommunities = pmsProjectsCommunities;
-        this.pmsMasterPlanCommunities = pmsMasterPlanCommunities;
-        this.pmsAccessToLands = pmsAccessToLands;
-        this.pmsAgricultureSocios = pmsAgricultureSocios;
-        this.pmsIncidents = pmsIncidents;
-        this.pmsWaterSocios = pmsWaterSocios;
-    }
 
     public String getComId() {
         return this.comId;
@@ -406,60 +270,28 @@ public class PmsCommunity implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public eu.pms.project.database.PmsCommunityTyp getPmsCommunityTyp() {
-        return this.pmsCommunityTyp;
+    public String getGovId() {
+        return govId;
     }
 
-    public void setPmsCommunityTyp(eu.pms.project.database.PmsCommunityTyp pmsCommunityTyp) {
-        this.pmsCommunityTyp = pmsCommunityTyp;
+    public void setGovId(String govId) {
+        this.govId = govId;
     }
 
-    public Set getPmsProjectsCommunities() {
-        return this.pmsProjectsCommunities;
+    public String getLocId() {
+        return locId;
     }
 
-    public void setPmsProjectsCommunities(Set pmsProjectsCommunities) {
-        this.pmsProjectsCommunities = pmsProjectsCommunities;
+    public void setLocId(String locId) {
+        this.locId = locId;
     }
 
-    public Set getPmsMasterPlanCommunities() {
-        return this.pmsMasterPlanCommunities;
+    public String getTypeId() {
+        return typeId;
     }
 
-    public void setPmsMasterPlanCommunities(Set pmsMasterPlanCommunities) {
-        this.pmsMasterPlanCommunities = pmsMasterPlanCommunities;
-    }
-
-    public Set getPmsAccessToLands() {
-        return this.pmsAccessToLands;
-    }
-
-    public void setPmsAccessToLands(Set pmsAccessToLands) {
-        this.pmsAccessToLands = pmsAccessToLands;
-    }
-
-    public Set getPmsAgricultureSocios() {
-        return this.pmsAgricultureSocios;
-    }
-
-    public void setPmsAgricultureSocios(Set pmsAgricultureSocios) {
-        this.pmsAgricultureSocios = pmsAgricultureSocios;
-    }
-
-    public Set getPmsIncidents() {
-        return this.pmsIncidents;
-    }
-
-    public void setPmsIncidents(Set pmsIncidents) {
-        this.pmsIncidents = pmsIncidents;
-    }
-
-    public Set getPmsWaterSocios() {
-        return this.pmsWaterSocios;
-    }
-
-    public void setPmsWaterSocios(Set pmsWaterSocios) {
-        this.pmsWaterSocios = pmsWaterSocios;
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
     }
 
     public String toString() {
