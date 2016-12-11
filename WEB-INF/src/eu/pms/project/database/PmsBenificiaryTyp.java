@@ -21,17 +21,6 @@ public class PmsBenificiaryTyp implements Serializable {
     /** persistent field */
     private java.util.Date timeStamp;
 
-    /** persistent field */
-    private Set pmsBenificiaries;
-
-    /** full constructor */
-    public PmsBenificiaryTyp(String btpId, String btpDesc, String username, java.util.Date timeStamp, Set pmsBenificiaries) {
-        this.btpId = btpId;
-        this.btpDesc = btpDesc;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsBenificiaries = pmsBenificiaries;
-    }
 
     /** default constructor */
     public PmsBenificiaryTyp() {
@@ -69,13 +58,6 @@ public class PmsBenificiaryTyp implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public Set getPmsBenificiaries() {
-        return this.pmsBenificiaries;
-    }
-
-    public void setPmsBenificiaries(Set pmsBenificiaries) {
-        this.pmsBenificiaries = pmsBenificiaries;
-    }
 
     public String toString() {
         return new ToStringBuilder(this)

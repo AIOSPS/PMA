@@ -215,4 +215,41 @@
                 order by a.actDesc
                   ]]>
     </query>
+    <query
+            name="getPmsBenificiaryTypeList">
+        <![CDATA[
+                from eu.pms.project.database.PmsBenificiaryTyp a
+                order by a.btpDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsBenificiaryList">
+        <![CDATA[
+                from eu.pms.project.database.PmsBenificiary a
+                order by a.benDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsBenificiaryById">
+        <![CDATA[
+                from eu.pms.project.database.PmsBenificiary a
+                where a.benId =?
+                order by a.benDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsPermitList">
+        <![CDATA[
+                from eu.pms.project.database.PmsPermit a
+                order by a.perTitle
+                  ]]>
+    </query>
+    <query
+            name="getPmsPermitById">
+        <![CDATA[
+                from eu.pms.project.database.PmsPermit a
+                where a.perId = ?
+                order by a.perTitle
+                  ]]>
+    </query>
 </hibernate-mapping>

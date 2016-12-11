@@ -77,6 +77,30 @@
     <definition name="pms.editActivity.tile" extends="innerLayout">
         <put name="body" value="/pages/activities/editActivity.jsp"/>
     </definition>
+    <definition name="pms.benificiaryList.tile" extends="innerLayout">
+        <put name="body" value="/pages/benificiaries/listBenificiary.jsp"/>
+    </definition>
+    <definition name="pms.addBenificiary.tile" extends="innerLayout">
+        <put name="body" value="/pages/benificiaries/addBenificiary.jsp"/>
+    </definition>
+    <definition name="pms.viewBenificiary.tile" extends="innerLayout">
+        <put name="body" value="/pages/benificiaries/viewBenificiary.jsp"/>
+    </definition>
+    <definition name="pms.editBenificiary.tile" extends="innerLayout">
+        <put name="body" value="/pages/benificiaries/editBenificiary.jsp"/>
+    </definition>
+    <definition name="pms.permitList.tile" extends="innerLayout">
+        <put name="body" value="/pages/permits/listPermit.jsp"/>
+    </definition>
+    <definition name="pms.addPermit.tile" extends="innerLayout">
+        <put name="body" value="/pages/permits/addPermit.jsp"/>
+    </definition>
+    <definition name="pms.viewPermit.tile" extends="innerLayout">
+        <put name="body" value="/pages/permits/viewPermit.jsp"/>
+    </definition>
+    <definition name="pms.editPermit.tile" extends="innerLayout">
+        <put name="body" value="/pages/permits/editPermit.jsp"/>
+    </definition>
 
 
 </tiles-definitions>

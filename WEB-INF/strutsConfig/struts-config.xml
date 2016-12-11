@@ -14,6 +14,10 @@
         <form-bean name="pmsInterventionSearchForm" type="eu.pms.intervention.forms.PmsInterventionSearchForm"/>
         <form-bean name="pmsActivityForm" type="eu.pms.activity.forms.PmsActivityForm"/>
         <form-bean name="pmsActivitySearchForm" type="eu.pms.activity.forms.PmsActivitySearchForm"/>
+        <form-bean name="pmsBenificiaryForm" type="eu.pms.benificiary.forms.PmsBenificiaryForm"/>
+        <form-bean name="pmsBenificiarySearchForm" type="eu.pms.benificiary.forms.PmsBenificiarySearchForm"/>
+        <form-bean name="pmsPermitForm" type="eu.pms.permit.forms.PmsPermitForm"/>
+        <form-bean name="pmsPermitSearchForm" type="eu.pms.permit.forms.PmsPermitSearchForm"/>
 
     </form-beans>
 
@@ -242,6 +246,98 @@
                 path="/viewEditActivity"
         >
             <forward name="success" path="pms.editActivity.tile"/>
+        </action>
+        <action
+            type="eu.pms.benificiary.actions.PmsBenificiaryListAction"
+            scope="request"
+            path="/pmsBenificiaryList">
+            <forward name="success" path="pms.benificiaryList.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="eu.pms.benificiary.actions.PmsBenificiaryListAction"
+            scope="request"
+            path="/searchBenificiary"
+            name="pmsBenificiarySearchForm"
+        >
+            <forward name="success" path="pms.benificiaryList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsBenificiaryForm"
+                type="eu.pms.benificiary.actions.ViewAddPmsBenificiaryAction"
+                validate="false"
+                path="/viewAddBenificiary"
+        >
+            <forward name="success" path="pms.addBenificiary.tile"/>
+        </action>
+        <action
+                name="pmsBenificiaryForm"
+                type="eu.pms.benificiary.actions.AddPmsBenificiaryAction"
+                validate="false"
+                path="/addBenificiary"
+        >
+            <forward name="success" path="/pmsBenificiaryList.do"/>
+        </action>
+        <action
+                name="pmsBenificiaryForm"
+                type="eu.pms.benificiary.actions.ViewPmsBenificiaryAction"
+                validate="false"
+                path="/viewPmsBenificiary"
+        >
+            <forward name="success" path="pms.viewBenificiary.tile"/>
+        </action>
+        <action
+                name="pmsBenificiaryForm"
+                type="eu.pms.benificiary.actions.ViewPmsBenificiaryAction"
+                validate="false"
+                path="/viewEditBenificiary"
+        >
+            <forward name="success" path="pms.editBenificiary.tile"/>
+        </action>
+        <action
+            type="eu.pms.permit.actions.PmsPermitListAction"
+            scope="request"
+            path="/pmsPermitList">
+            <forward name="success" path="pms.permitList.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="eu.pms.permit.actions.PmsPermitListAction"
+            scope="request"
+            path="/searchPermit"
+            name="pmsPermitSearchForm"
+        >
+            <forward name="success" path="pms.permitList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsPermitForm"
+                type="eu.pms.permit.actions.ViewAddPmsPermitAction"
+                validate="false"
+                path="/viewAddPermit"
+        >
+            <forward name="success" path="pms.addPermit.tile"/>
+        </action>
+        <action
+                name="pmsPermitForm"
+                type="eu.pms.permit.actions.AddPmsPermitAction"
+                validate="false"
+                path="/addPermit"
+        >
+            <forward name="success" path="/pmsPermitList.do"/>
+        </action>
+        <action
+                name="pmsPermitForm"
+                type="eu.pms.permit.actions.ViewPmsPermitAction"
+                validate="false"
+                path="/viewPmsPermit"
+        >
+            <forward name="success" path="pms.viewPermit.tile"/>
+        </action>
+        <action
+                name="pmsPermitForm"
+                type="eu.pms.permit.actions.ViewPmsPermitAction"
+                validate="false"
+                path="/viewEditPermit"
+        >
+            <forward name="success" path="pms.editPermit.tile"/>
         </action>
 
     </action-mappings>

@@ -2,6 +2,8 @@ package eu.pms.project.database;
 
 import java.io.Serializable;
 import java.util.Set;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -9,53 +11,18 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsPermit implements Serializable {
 
-    /** identifier field */
     private String perId;
-
-    /** persistent field */
     private String perTitle;
-
-    /** persistent field */
     private String perType;
-
-    /** persistent field */
     private java.util.Date perSubmitDate;
-
-    /** persistent field */
     private java.util.Date perIssueDate;
-
-    /** persistent field */
+    private String perSubmitDateStr;
+    private String perIssueDateStr;
     private int perPeriod;
-
-    /** persistent field */
     private String perStatus;
-
-    /** persistent field */
     private String perIssuingAgency;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private Set pmsProjects;
-
-    /** full constructor */
-    public PmsPermit(String perId, String perTitle, String perType, java.util.Date perSubmitDate, java.util.Date perIssueDate, int perPeriod, String perStatus, String perIssuingAgency, String username, java.util.Date timeStamp, Set pmsProjects) {
-        this.perId = perId;
-        this.perTitle = perTitle;
-        this.perType = perType;
-        this.perSubmitDate = perSubmitDate;
-        this.perIssueDate = perIssueDate;
-        this.perPeriod = perPeriod;
-        this.perStatus = perStatus;
-        this.perIssuingAgency = perIssuingAgency;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProjects = pmsProjects;
-    }
 
     /** default constructor */
     public PmsPermit() {
@@ -141,12 +108,20 @@ public class PmsPermit implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public Set getPmsProjects() {
-        return this.pmsProjects;
+    public String getPerSubmitDateStr() {
+        return perSubmitDate!=null? DateTool.decorateDate(perSubmitDate, DateTool.DD_MM_YYYY):"";
     }
 
-    public void setPmsProjects(Set pmsProjects) {
-        this.pmsProjects = pmsProjects;
+    public void setPerSubmitDateStr(String perSubmitDateStr) {
+        this.perSubmitDateStr = perSubmitDateStr;
+    }
+
+    public String getPerIssueDateStr() {
+        return perIssueDate!=null? DateTool.decorateDate(perIssueDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setPerIssueDateStr(String perIssueDateStr) {
+        this.perIssueDateStr = perIssueDateStr;
     }
 
     public String toString() {

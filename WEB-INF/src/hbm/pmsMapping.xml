@@ -3116,7 +3116,7 @@
         <property name="benTotal" type="int" column="ben_total"/>
         <property name="username" type="java.lang.String" column="username"/>
         <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
-        <property name="btpId" type="java.util.Date" column="btp_id"/>
+        <property name="btpId" type="java.lang.String" column="btp_id"/>
     </class>
 
     <class name="eu.pms.project.database.PmsProjectsBenificiary" table="pms_projects_benificiaries">
@@ -3237,4 +3237,15 @@
     <property name="username" type="java.lang.String" column="username" />
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
+
+    <class name="eu.pms.project.database.PmsBenificiaryTyp" table="pms_benificiary_types"  >
+    <id name="btpId" type="java.lang.String" column="btp_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="btpDesc" type="java.lang.String" column="btp_desc" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.sql.Timestamp" column="time_stamp" />
+    </class>
+
+
 </hibernate-mapping>
