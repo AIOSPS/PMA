@@ -81,9 +81,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-star  "></span>   Project Information <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/pmsProjectList.do">Projects</a></li>
-                        <li><a href="#">Benificaries</a></li>
+                        <li><a href="/pmsBenificiaryList.do">Benificaries</a></li>
                         <li><a href="incidents.html">Incidents </a></li>
-                        <li><a href="#">Permit</a></li>
+                        <li><a href="/pmsPermitList.do">Permit</a></li>
                     </ul>
                 </li>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Incident  <span class="caret"></span></a>
