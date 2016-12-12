@@ -1,6 +1,8 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -8,126 +10,38 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsIncident implements Serializable {
 
-    /** identifier field */
     private String incId;
-
-    /** nullable persistent field */
+    private String datId;
+    private String comId;
+    private String proId;
     private String incOchaId;
-
-    /** persistent field */
     private String incDescription;
-
-    /** nullable persistent field */
     private int incAffectedWomen;
-
-    /** nullable persistent field */
     private int incAffectedMen;
-
-    /** nullable persistent field */
     private int incAffectedAdaults;
-
-    /** nullable persistent field */
     private int incAffectedChildren;
-
-    /** nullable persistent field */
     private int incDisplacedWomen;
-
-    /** nullable persistent field */
     private int incDemolishedWomen;
-
-    /** nullable persistent field */
     private String incSourceLink;
-
-    /** persistent field */
-    private String incUserId;
-
-    /** persistent field */
+    private String incType;
     private java.util.Date incTimeStamp;
-
-    /** nullable persistent field */
+    private String incTimeStampStr;
     private java.math.BigDecimal locLatitude;
-
-    /** nullable persistent field */
     private java.math.BigDecimal locLongitude;
-
-    /** nullable persistent field */
     private int incDisplacedMen;
-
-    /** nullable persistent field */
     private int incDisplacedAdult;
-
-    /** nullable persistent field */
     private int incDisplacedChildren;
-
-    /** nullable persistent field */
     private int incDemolishedMen;
-
-    /** nullable persistent field */
     private int incDemolishedAdult;
-
-    /** nullable persistent field */
     private int incDemolishedChildren;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
 
-    /** persistent field */
-    private PmsProject pmsProject;
-
-    /** persistent field */
-    private PmsCommunity pmsCommunity;
-
-    /** persistent field */
-    private PmsDatasourc pmsDatasourc;
-
-    /** full constructor */
-    public PmsIncident(String incId, String incOchaId, String incDescription, int incAffectedWomen, int incAffectedMen, int incAffectedAdaults, int incAffectedChildren, int incDisplacedWomen, int incDemolishedWomen, String incSourceLink, String incUserId, java.util.Date incTimeStamp, java.math.BigDecimal locLatitude, java.math.BigDecimal locLongitude, int incDisplacedMen, int incDisplacedAdult, int incDisplacedChildren, int incDemolishedMen, int incDemolishedAdult, int incDemolishedChildren, String username, java.util.Date timeStamp, PmsProject pmsProject, PmsCommunity pmsCommunity, PmsDatasourc pmsDatasourc) {
-        this.incId = incId;
-        this.incOchaId = incOchaId;
-        this.incDescription = incDescription;
-        this.incAffectedWomen = incAffectedWomen;
-        this.incAffectedMen = incAffectedMen;
-        this.incAffectedAdaults = incAffectedAdaults;
-        this.incAffectedChildren = incAffectedChildren;
-        this.incDisplacedWomen = incDisplacedWomen;
-        this.incDemolishedWomen = incDemolishedWomen;
-        this.incSourceLink = incSourceLink;
-        this.incUserId = incUserId;
-        this.incTimeStamp = incTimeStamp;
-        this.locLatitude = locLatitude;
-        this.locLongitude = locLongitude;
-        this.incDisplacedMen = incDisplacedMen;
-        this.incDisplacedAdult = incDisplacedAdult;
-        this.incDisplacedChildren = incDisplacedChildren;
-        this.incDemolishedMen = incDemolishedMen;
-        this.incDemolishedAdult = incDemolishedAdult;
-        this.incDemolishedChildren = incDemolishedChildren;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProject = pmsProject;
-        this.pmsCommunity = pmsCommunity;
-        this.pmsDatasourc = pmsDatasourc;
-    }
 
     /** default constructor */
     public PmsIncident() {
     }
 
-    /** minimal constructor */
-    public PmsIncident(String incId, String incDescription, String incUserId, java.util.Date incTimeStamp, String username, java.util.Date timeStamp, PmsProject pmsProject, PmsCommunity pmsCommunity, PmsDatasourc pmsDatasourc) {
-        this.incId = incId;
-        this.incDescription = incDescription;
-        this.incUserId = incUserId;
-        this.incTimeStamp = incTimeStamp;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsProject = pmsProject;
-        this.pmsCommunity = pmsCommunity;
-        this.pmsDatasourc = pmsDatasourc;
-    }
 
     public String getIncId() {
         return this.incId;
@@ -209,12 +123,12 @@ public class PmsIncident implements Serializable {
         this.incSourceLink = incSourceLink;
     }
 
-    public String getIncUserId() {
-        return this.incUserId;
+    public String getIncType() {
+        return incType;
     }
 
-    public void setIncUserId(String incUserId) {
-        this.incUserId = incUserId;
+    public void setIncType(String incType) {
+        this.incType = incType;
     }
 
     public java.util.Date getIncTimeStamp() {
@@ -305,28 +219,36 @@ public class PmsIncident implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public PmsProject getPmsProject() {
-        return this.pmsProject;
+    public String getDatId() {
+        return datId;
     }
 
-    public void setPmsProject(PmsProject pmsProject) {
-        this.pmsProject = pmsProject;
+    public void setDatId(String datId) {
+        this.datId = datId;
     }
 
-    public PmsCommunity getPmsCommunity() {
-        return this.pmsCommunity;
+    public String getComId() {
+        return comId;
     }
 
-    public void setPmsCommunity(PmsCommunity pmsCommunity) {
-        this.pmsCommunity = pmsCommunity;
+    public void setComId(String comId) {
+        this.comId = comId;
     }
 
-    public PmsDatasourc getPmsDatasourc() {
-        return this.pmsDatasourc;
+    public String getProId() {
+        return proId;
     }
 
-    public void setPmsDatasourc(PmsDatasourc pmsDatasourc) {
-        this.pmsDatasourc = pmsDatasourc;
+    public void setProId(String proId) {
+        this.proId = proId;
+    }
+
+    public String getIncTimeStampStr() {
+        return incTimeStamp!=null? DateTool.decorateDate(incTimeStamp, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setIncTimeStampStr(String incTimeStampStr) {
+        this.incTimeStampStr = incTimeStampStr;
     }
 
     public String toString() {

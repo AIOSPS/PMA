@@ -18,6 +18,8 @@
         <form-bean name="pmsBenificiarySearchForm" type="eu.pms.benificiary.forms.PmsBenificiarySearchForm"/>
         <form-bean name="pmsPermitForm" type="eu.pms.permit.forms.PmsPermitForm"/>
         <form-bean name="pmsPermitSearchForm" type="eu.pms.permit.forms.PmsPermitSearchForm"/>
+        <form-bean name="pmsIncidentForm" type="eu.pms.incident.forms.PmsIncidentForm"/>
+        <form-bean name="pmsIncidentSearchForm" type="eu.pms.incident.forms.PmsIncidentSearchForm"/>
 
     </form-beans>
 
@@ -338,6 +340,52 @@
                 path="/viewEditPermit"
         >
             <forward name="success" path="pms.editPermit.tile"/>
+        </action>
+        <action
+            type="eu.pms.incident.actions.PmsIncidentListAction"
+            scope="request"
+            path="/pmsIncidentList">
+            <forward name="success" path="pms.incidentList.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="eu.pms.incident.actions.PmsIncidentListAction"
+            scope="request"
+            path="/searchIncident"
+            name="pmsIncidentSearchForm"
+        >
+            <forward name="success" path="pms.incidentList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsIncidentForm"
+                type="eu.pms.incident.actions.ViewAddPmsIncidentAction"
+                validate="false"
+                path="/viewAddIncident"
+        >
+            <forward name="success" path="pms.addIncident.tile"/>
+        </action>
+        <action
+                name="pmsIncidentForm"
+                type="eu.pms.incident.actions.AddPmsIncidentAction"
+                validate="false"
+                path="/addIncident"
+        >
+            <forward name="success" path="/pmsIncidentList.do"/>
+        </action>
+        <action
+                name="pmsIncidentForm"
+                type="eu.pms.incident.actions.ViewPmsIncidentAction"
+                validate="false"
+                path="/viewPmsIncident"
+        >
+            <forward name="success" path="pms.viewIncident.tile"/>
+        </action>
+        <action
+                name="pmsIncidentForm"
+                type="eu.pms.incident.actions.ViewPmsIncidentAction"
+                validate="false"
+                path="/viewEditIncident"
+        >
+            <forward name="success" path="pms.editIncident.tile"/>
         </action>
 
     </action-mappings>

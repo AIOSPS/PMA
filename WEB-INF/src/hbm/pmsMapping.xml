@@ -3244,8 +3244,47 @@
     </id>
     <property name="btpDesc" type="java.lang.String" column="btp_desc" />
     <property name="username" type="java.lang.String" column="username" />
-    <property name="timeStamp" type="java.sql.Timestamp" column="time_stamp" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
 
+    <class name="eu.pms.project.database.PmsIncident" table="pms_incidents" >
+    <id name="incId" type="java.lang.String" column="inc_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="incType" type="java.lang.String" column="inc_type" />
+    <property name="incOchaId" type="java.lang.String" column="inc_ocha_id" />
+    <property name="incDescription" type="java.lang.String" column="inc_description" />
+    <property name="incAffectedWomen" type="int" column="inc_Affected_women" />
+    <property name="incAffectedMen" type="int" column="inc_Affected_men" />
+    <property name="incAffectedAdaults" type="int" column="inc_Affected_adaults" />
+    <property name="incAffectedChildren" type="int" column="inc_Affected_children" />
+    <property name="incDisplacedWomen" type="int" column="inc_Displaced_women" />
+    <property name="incDemolishedWomen" type="int" column="inc_Demolished_women" />
+    <property name="incSourceLink" type="java.lang.String" column="inc_SourceLink" />
+    <property name="incTimeStamp" type="java.util.Date" column="inc_timeStamp" />
+    <property name="locLatitude" type="java.math.BigDecimal" column="ocha_loc_latitude" />
+    <property name="locLongitude" type="java.math.BigDecimal" column="ocha_loc_longitude" />
+    <property name="incDisplacedMen" type="int" column="inc_Displaced_men" />
+    <property name="incDisplacedAdult" type="int" column="inc_Displaced_adult" />
+    <property name="incDisplacedChildren" type="int"  column="inc_Displaced_children" />
+    <property name="incDemolishedMen" type="int" column="inc_Demolished_men" />
+    <property name="incDemolishedAdult" type="int" column="inc_Demolished_adult" />
+    <property name="incDemolishedChildren" type="int" column="inc_Demolished_children" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="datId" type="java.lang.String" column="dat_id" />
+    <property name="comId" type="java.lang.String" column="com_id" />
+    <property name="proId" type="java.lang.String" column="pro_id" />
+    </class>
 
+    <class name="eu.pms.project.database.PmsDatasourc" table="pms_datasources" >
+    <id name="datId" type="java.lang.String" column="dat_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="datDesc" type="java.lang.String" column="dat_desc" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+
+
+    </class>
 </hibernate-mapping>

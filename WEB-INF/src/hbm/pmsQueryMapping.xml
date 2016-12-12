@@ -252,4 +252,26 @@
                 order by a.perTitle
                   ]]>
     </query>
+    <query
+            name="getPmsIncidentList">
+        <![CDATA[
+                from eu.pms.project.database.PmsIncident a
+                order by a.incDescription
+                  ]]>
+    </query>
+    <query
+            name="getPmsIncidentById">
+        <![CDATA[
+                from eu.pms.project.database.PmsIncident a
+                where a.incId = ?
+                order by a.incDescription
+                  ]]>
+    </query>
+    <query
+            name="getPmsDataSourceList">
+        <![CDATA[
+                from eu.pms.project.database.PmsDatasourc a
+                order by a.datDesc
+                  ]]>
+    </query>
 </hibernate-mapping>
