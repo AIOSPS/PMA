@@ -2,6 +2,8 @@ package eu.pms.project.database;
 
 import java.io.Serializable;
 import java.util.Set;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -9,70 +11,20 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsObjectiv implements Serializable {
 
-    /** identifier field */
     private String objId;
-
-    /** persistent field */
+    private String strDocId;
     private String objDesc;
-
-    /** nullable persistent field */
     private String objLongDesc;
-
-    /** persistent field */
     private java.util.Date objDefineDate;
-
-    /** persistent field */
+    private String objDefineDateStr;
     private String objStatus;
-
-    /** persistent field */
     private java.util.Date objCloseDate;
-
-    /** persistent field */
+    private String objCloseDateStr;
     private String ojbUserId;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private PmsStrategicPlanDocument pmsStrategicPlanDocument;
-
-    /** persistent field */
-    private Set pmsResults;
-
-    /** full constructor */
-    public PmsObjectiv(String objId, String objDesc, String objLongDesc, java.util.Date objDefineDate, String objStatus, java.util.Date objCloseDate, String ojbUserId, String username, java.util.Date timeStamp, PmsStrategicPlanDocument pmsStrategicPlanDocument, Set pmsResults) {
-        this.objId = objId;
-        this.objDesc = objDesc;
-        this.objLongDesc = objLongDesc;
-        this.objDefineDate = objDefineDate;
-        this.objStatus = objStatus;
-        this.objCloseDate = objCloseDate;
-        this.ojbUserId = ojbUserId;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsStrategicPlanDocument = pmsStrategicPlanDocument;
-        this.pmsResults = pmsResults;
-    }
-
     /** default constructor */
     public PmsObjectiv() {
-    }
-
-    /** minimal constructor */
-    public PmsObjectiv(String objId, String objDesc, java.util.Date objDefineDate, String objStatus, java.util.Date objCloseDate, String ojbUserId, String username, java.util.Date timeStamp, PmsStrategicPlanDocument pmsStrategicPlanDocument, Set pmsResults) {
-        this.objId = objId;
-        this.objDesc = objDesc;
-        this.objDefineDate = objDefineDate;
-        this.objStatus = objStatus;
-        this.objCloseDate = objCloseDate;
-        this.ojbUserId = ojbUserId;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsStrategicPlanDocument = pmsStrategicPlanDocument;
-        this.pmsResults = pmsResults;
     }
 
     public String getObjId() {
@@ -147,26 +99,35 @@ public class PmsObjectiv implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public PmsStrategicPlanDocument getPmsStrategicPlanDocument() {
-        return this.pmsStrategicPlanDocument;
-    }
-
-    public void setPmsStrategicPlanDocument(PmsStrategicPlanDocument pmsStrategicPlanDocument) {
-        this.pmsStrategicPlanDocument = pmsStrategicPlanDocument;
-    }
-
-    public Set getPmsResults() {
-        return this.pmsResults;
-    }
-
-    public void setPmsResults(Set pmsResults) {
-        this.pmsResults = pmsResults;
-    }
 
     public String toString() {
         return new ToStringBuilder(this)
             .append("objId", getObjId())
             .toString();
+    }
+
+    public String getStrDocId() {
+        return strDocId;
+    }
+
+    public void setStrDocId(String strDocId) {
+        this.strDocId = strDocId;
+    }
+
+    public String getObjDefineDateStr() {
+        return objDefineDate!=null? DateTool.decorateDate(objDefineDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setObjDefineDateStr(String objDefineDateStr) {
+        this.objDefineDateStr = objDefineDateStr;
+    }
+
+    public String getObjCloseDateStr() {
+        return objCloseDate!=null? DateTool.decorateDate(objCloseDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setObjCloseDateStr(String objCloseDateStr) {
+        this.objCloseDateStr = objCloseDateStr;
     }
 
     public boolean equals(Object other) {

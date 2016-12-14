@@ -2,6 +2,8 @@ package eu.pms.project.database;
 
 import java.io.Serializable;
 import java.util.Set;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -9,72 +11,27 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsResult implements Serializable {
 
-    /** identifier field */
-    private eu.pms.project.database.PmsResultPK comp_id;
-
-    /** persistent field */
+    private eu.pms.project.database.PmsResultPK compId;
     private String resDesc;
-
-    /** nullable persistent field */
     private String resLongDesc;
-
-    /** persistent field */
     private java.util.Date resDefineDate;
-
-    /** persistent field */
+    private String resDefineDateStr;
     private String resStatus;
-
-    /** nullable persistent field */
     private java.util.Date resCloseDate;
-
-    /** persistent field */
+    private String resCloseDateStr;
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsObjectiv pmsObjectiv;
-
-    /** persistent field */
-    private Set pmsIndicators;
-
-    /** full constructor */
-    public PmsResult(eu.pms.project.database.PmsResultPK comp_id, String resDesc, String resLongDesc, java.util.Date resDefineDate, String resStatus, java.util.Date resCloseDate, String username, java.util.Date timeStamp, eu.pms.project.database.PmsObjectiv pmsObjectiv, Set pmsIndicators) {
-        this.comp_id = comp_id;
-        this.resDesc = resDesc;
-        this.resLongDesc = resLongDesc;
-        this.resDefineDate = resDefineDate;
-        this.resStatus = resStatus;
-        this.resCloseDate = resCloseDate;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsObjectiv = pmsObjectiv;
-        this.pmsIndicators = pmsIndicators;
-    }
 
     /** default constructor */
     public PmsResult() {
     }
 
-    /** minimal constructor */
-    public PmsResult(eu.pms.project.database.PmsResultPK comp_id, String resDesc, java.util.Date resDefineDate, String resStatus, String username, java.util.Date timeStamp, eu.pms.project.database.PmsObjectiv pmsObjectiv, Set pmsIndicators) {
-        this.comp_id = comp_id;
-        this.resDesc = resDesc;
-        this.resDefineDate = resDefineDate;
-        this.resStatus = resStatus;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsObjectiv = pmsObjectiv;
-        this.pmsIndicators = pmsIndicators;
+    public PmsResultPK getCompId() {
+        return compId;
     }
 
-    public eu.pms.project.database.PmsResultPK getComp_id() {
-        return this.comp_id;
-    }
-
-    public void setComp_id(eu.pms.project.database.PmsResultPK comp_id) {
-        this.comp_id = comp_id;
+    public void setCompId(PmsResultPK compId) {
+        this.compId = compId;
     }
 
     public String getResDesc() {
@@ -133,39 +90,41 @@ public class PmsResult implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public eu.pms.project.database.PmsObjectiv getPmsObjectiv() {
-        return this.pmsObjectiv;
-    }
 
-    public void setPmsObjectiv(eu.pms.project.database.PmsObjectiv pmsObjectiv) {
-        this.pmsObjectiv = pmsObjectiv;
-    }
-
-    public Set getPmsIndicators() {
-        return this.pmsIndicators;
-    }
-
-    public void setPmsIndicators(Set pmsIndicators) {
-        this.pmsIndicators = pmsIndicators;
-    }
 
     public String toString() {
         return new ToStringBuilder(this)
-            .append("comp_id", getComp_id())
+            .append("comp_id", getCompId())
             .toString();
+    }
+
+    public String getResDefineDateStr() {
+        return resDefineDate!=null? DateTool.decorateDate(resDefineDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setResDefineDateStr(String resDefineDateStr) {
+        this.resDefineDateStr = resDefineDateStr;
+    }
+
+    public String getResCloseDateStr() {
+        return resCloseDate!=null? DateTool.decorateDate(resCloseDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setResCloseDateStr(String resCloseDateStr) {
+        this.resCloseDateStr = resCloseDateStr;
     }
 
     public boolean equals(Object other) {
         if ( !(other instanceof PmsResult) ) return false;
         PmsResult castOther = (PmsResult) other;
         return new EqualsBuilder()
-            .append(this.getComp_id(), castOther.getComp_id())
+            .append(this.getCompId(), castOther.getCompId())
             .isEquals();
     }
 
     public int hashCode() {
         return new HashCodeBuilder()
-            .append(getComp_id())
+            .append(getCompId())
             .toHashCode();
     }
 

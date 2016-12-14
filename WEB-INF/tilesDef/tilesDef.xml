@@ -113,6 +113,42 @@
     <definition name="pms.editIncident.tile" extends="innerLayout">
         <put name="body" value="/pages/incidents/editIncident.jsp"/>
     </definition>
+    <definition name="pms.objectiveList.tile" extends="innerLayout">
+        <put name="body" value="/pages/objectivies/listObjective.jsp"/>
+    </definition>
+    <definition name="pms.addObjective.tile" extends="innerLayout">
+        <put name="body" value="/pages/objectivies/addObjective.jsp"/>
+    </definition>
+    <definition name="pms.viewObjective.tile" extends="innerLayout">
+        <put name="body" value="/pages/objectivies/viewObjective.jsp"/>
+    </definition>
+    <definition name="pms.editObjective.tile" extends="innerLayout">
+        <put name="body" value="/pages/objectivies/editObjective.jsp"/>
+    </definition>
+    <definition name="pms.resultList.tile" extends="innerLayout">
+        <put name="body" value="/pages/results/listResult.jsp"/>
+    </definition>
+    <definition name="pms.addResult.tile" extends="innerLayout">
+        <put name="body" value="/pages/results/addResult.jsp"/>
+    </definition>
+    <definition name="pms.viewResult.tile" extends="innerLayout">
+        <put name="body" value="/pages/results/viewResult.jsp"/>
+    </definition>
+    <definition name="pms.editResult.tile" extends="innerLayout">
+        <put name="body" value="/pages/results/editResult.jsp"/>
+    </definition>
+    <definition name="pms.indicatorList.tile" extends="innerLayout">
+        <put name="body" value="/pages/indicators/listIndicator.jsp"/>
+    </definition>
+    <definition name="pms.addIndicator.tile" extends="innerLayout">
+        <put name="body" value="/pages/indicators/addIndicator.jsp"/>
+    </definition>
+    <definition name="pms.viewIndicator.tile" extends="innerLayout">
+        <put name="body" value="/pages/indicators/viewIndicator.jsp"/>
+    </definition>
+    <definition name="pms.editIndicator.tile" extends="innerLayout">
+        <put name="body" value="/pages/indicators/editIndicator.jsp"/>
+    </definition>
 
 
 </tiles-definitions>

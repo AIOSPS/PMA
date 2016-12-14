@@ -2,6 +2,8 @@ package eu.pms.project.database;
 
 import java.io.InputStream;
 import java.io.Serializable;
+import java.sql.Blob;
+import java.util.Date;
 import java.util.Set;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -10,30 +12,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsStrategicPlanDocument implements Serializable {
 
-    /** identifier field */
     private String strDocId;
-
-    /** persistent field */
-    private InputStream strDocument;
-
-    /** persistent field */
+    private Blob strDocument;
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private Set pmsObjectivs;
-
-    /** full constructor */
-    public PmsStrategicPlanDocument(String strDocId, InputStream strDocument, String username, java.util.Date timeStamp, Set pmsObjectivs) {
-        this.strDocId = strDocId;
-        this.strDocument = strDocument;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsObjectivs = pmsObjectivs;
-    }
-
+    private String conId;
+    private String strPlanTitle;
+    private java.util.Date strStartDate;
+    private java.util.Date strEndDate;
     /** default constructor */
     public PmsStrategicPlanDocument() {
     }
@@ -46,11 +32,11 @@ public class PmsStrategicPlanDocument implements Serializable {
         this.strDocId = strDocId;
     }
 
-    public InputStream getStrDocument() {
+    public Blob getStrDocument() {
         return this.strDocument;
     }
 
-    public void setStrDocument(InputStream strDocument) {
+    public void setStrDocument(Blob strDocument) {
         this.strDocument = strDocument;
     }
 
@@ -70,12 +56,36 @@ public class PmsStrategicPlanDocument implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public Set getPmsObjectivs() {
-        return this.pmsObjectivs;
+    public String getConId() {
+        return conId;
     }
 
-    public void setPmsObjectivs(Set pmsObjectivs) {
-        this.pmsObjectivs = pmsObjectivs;
+    public void setConId(String conId) {
+        this.conId = conId;
+    }
+
+    public String getStrPlanTitle() {
+        return strPlanTitle;
+    }
+
+    public void setStrPlanTitle(String strPlanTitle) {
+        this.strPlanTitle = strPlanTitle;
+    }
+
+    public Date getStrStartDate() {
+        return strStartDate;
+    }
+
+    public void setStrStartDate(Date strStartDate) {
+        this.strStartDate = strStartDate;
+    }
+
+    public Date getStrEndDate() {
+        return strEndDate;
+    }
+
+    public void setStrEndDate(Date strEndDate) {
+        this.strEndDate = strEndDate;
     }
 
     public String toString() {

@@ -20,6 +20,12 @@
         <form-bean name="pmsPermitSearchForm" type="eu.pms.permit.forms.PmsPermitSearchForm"/>
         <form-bean name="pmsIncidentForm" type="eu.pms.incident.forms.PmsIncidentForm"/>
         <form-bean name="pmsIncidentSearchForm" type="eu.pms.incident.forms.PmsIncidentSearchForm"/>
+        <form-bean name="pmsObjectiveForm" type="eu.pms.objective.forms.PmsObjectiveForm"/>
+        <form-bean name="pmsObjectiveSearchForm" type="eu.pms.objective.forms.PmsObjectiveSearchForm"/>
+        <form-bean name="pmsResultForm" type="eu.pms.result.forms.PmsResultForm"/>
+        <form-bean name="pmsResultSearchForm" type="eu.pms.result.forms.PmsResultSearchForm"/>
+        <form-bean name="pmsIndicatorForm" type="eu.pms.indicator.forms.PmsIndicatorForm"/>
+        <form-bean name="pmsIndicatorSearchForm" type="eu.pms.indicator.forms.PmsIndicatorSearchForm"/>
 
     </form-beans>
 
@@ -386,6 +392,144 @@
                 path="/viewEditIncident"
         >
             <forward name="success" path="pms.editIncident.tile"/>
+        </action>
+        <action
+            type="eu.pms.objective.actions.PmsObjectiveListAction"
+            scope="request"
+            path="/pmsObjectiveList">
+            <forward name="success" path="pms.objectiveList.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="eu.pms.objective.actions.PmsObjectiveListAction"
+            scope="request"
+            path="/searchObjective"
+            name="pmsObjectiveSearchForm"
+        >
+            <forward name="success" path="pms.objectiveList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsObjectiveForm"
+                type="eu.pms.objective.actions.ViewAddPmsObjectiveAction"
+                validate="false"
+                path="/viewAddObjective"
+        >
+            <forward name="success" path="pms.addObjective.tile"/>
+        </action>
+        <action
+                name="pmsObjectiveForm"
+                type="eu.pms.objective.actions.AddPmsObjectiveAction"
+                validate="false"
+                path="/addObjective"
+        >
+            <forward name="success" path="/pmsObjectiveList.do"/>
+        </action>
+        <action
+                name="pmsObjectiveForm"
+                type="eu.pms.objective.actions.ViewPmsObjectiveAction"
+                validate="false"
+                path="/viewPmsObjective"
+        >
+            <forward name="success" path="pms.viewObjective.tile"/>
+        </action>
+        <action
+                name="pmsObjectiveForm"
+                type="eu.pms.objective.actions.ViewPmsObjectiveAction"
+                validate="false"
+                path="/viewEditObjective"
+        >
+            <forward name="success" path="pms.editObjective.tile"/>
+        </action>
+        <action
+            type="eu.pms.result.actions.PmsResultListAction"
+            scope="request"
+            path="/pmsResultList">
+            <forward name="success" path="pms.resultList.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="eu.pms.result.actions.PmsResultListAction"
+            scope="request"
+            path="/searchResult"
+            name="pmsResultSearchForm"
+        >
+            <forward name="success" path="pms.resultList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsResultForm"
+                type="eu.pms.result.actions.ViewAddPmsResultAction"
+                validate="false"
+                path="/viewAddResult"
+        >
+            <forward name="success" path="pms.addResult.tile"/>
+        </action>
+        <action
+                name="pmsResultForm"
+                type="eu.pms.result.actions.AddPmsResultAction"
+                validate="false"
+                path="/addResult"
+        >
+            <forward name="success" path="/pmsResultList.do"/>
+        </action>
+        <action
+                name="pmsResultForm"
+                type="eu.pms.result.actions.ViewPmsResultAction"
+                validate="false"
+                path="/viewPmsResult"
+        >
+            <forward name="success" path="pms.viewResult.tile"/>
+        </action>
+        <action
+                name="pmsResultForm"
+                type="eu.pms.result.actions.ViewPmsResultAction"
+                validate="false"
+                path="/viewEditResult"
+        >
+            <forward name="success" path="pms.editResult.tile"/>
+        </action>
+        <action
+            type="eu.pms.indicator.actions.PmsIndicatorListAction"
+            scope="request"
+            path="/pmsIndicatorList">
+            <forward name="success" path="pms.indicatorList.tile" contextRelative="true"/>
+        </action>
+        <action
+            type="eu.pms.indicator.actions.PmsIndicatorListAction"
+            scope="request"
+            path="/searchIndicator"
+            name="pmsIndicatorSearchForm"
+        >
+            <forward name="success" path="pms.indicatorList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsIndicatorForm"
+                type="eu.pms.indicator.actions.ViewAddPmsIndicatorAction"
+                validate="false"
+                path="/viewAddIndicator"
+        >
+            <forward name="success" path="pms.addIndicator.tile"/>
+        </action>
+        <action
+                name="pmsIndicatorForm"
+                type="eu.pms.indicator.actions.AddPmsIndicatorAction"
+                validate="false"
+                path="/addIndicator"
+        >
+            <forward name="success" path="/pmsIndicatorList.do"/>
+        </action>
+        <action
+                name="pmsIndicatorForm"
+                type="eu.pms.indicator.actions.ViewPmsIndicatorAction"
+                validate="false"
+                path="/viewPmsIndicator"
+        >
+            <forward name="success" path="pms.viewIndicator.tile"/>
+        </action>
+        <action
+                name="pmsIndicatorForm"
+                type="eu.pms.indicator.actions.ViewPmsIndicatorAction"
+                validate="false"
+                path="/viewEditIndicator"
+        >
+            <forward name="success" path="pms.editIndicator.tile"/>
         </action>
 
     </action-mappings>

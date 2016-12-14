@@ -3284,7 +3284,49 @@
     <property name="datDesc" type="java.lang.String" column="dat_desc" />
     <property name="username" type="java.lang.String" column="username" />
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
-
-
     </class>
+
+    <class name="eu.pms.project.database.PmsStrategicPlanDocument" table="pms_strategic_plan_documents" >
+    <id name="strDocId" type="java.lang.String" column="str_doc_id"
+    >
+    <generator class="assigned" />
+    </id>
+    <property name="strDocument" type="java.sql.Blob" column="str_document" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="conId" type="java.lang.String" column="con_id" />
+    <property name="strPlanTitle" type="java.lang.String" column="str_plan_title" />
+    <property name="strStartDate" type="java.util.Date" column="str_start_date" />
+    <property name="strEndDate" type="java.util.Date" column="str_end_date" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsObjectiv" table="pms_objectives" >
+    <id name="objId" type="java.lang.String" column="obj_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="objDesc" type="java.lang.String" column="obj_desc" />
+    <property name="objLongDesc" type="java.lang.String" column="obj_long_desc" />
+    <property name="objDefineDate" type="java.util.Date" column="obj_define_date" />
+    <property name="objStatus" type="java.lang.String" column="obj_status" />
+    <property name="objCloseDate" type="java.sql.Date" column="obj_close_date" />
+    <property name="ojbUserId" type="java.lang.String" column="ojb_user_id" />
+    <property name="username" type="java.lang.String" column="username"  />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="strDocId" type="java.lang.String" column="str_doc_id" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsResult" table="pms_results" >
+    <composite-id name="compId" class="eu.pms.project.database.PmsResultPK">
+    <key-property name="resId" column="res_id" type="java.lang.String"/>
+    <key-property name="objId" column="obj_id" type="java.lang.String"/>
+    </composite-id>
+    <property name="resDesc" type="java.lang.String" column="res_desc" />
+    <property name="resLongDesc" type="java.lang.String" column="res_long_desc" />
+    <property name="resDefineDate" type="java.util.Date" column="res_define_date" />
+    <property name="resStatus" type="java.lang.String" column="res_status" />
+    <property name="resCloseDate" type="java.util.Date" column="res_close_date" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    </class>
+
 </hibernate-mapping>

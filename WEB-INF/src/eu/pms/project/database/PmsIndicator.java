@@ -1,6 +1,8 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -16,6 +18,7 @@ public class PmsIndicator implements Serializable {
 
     /** persistent field */
     private java.util.Date indDate;
+    private String indDateStr;
 
     /** persistent field */
     private String indLongDesc;
@@ -157,6 +160,11 @@ public class PmsIndicator implements Serializable {
         this.pmsResult = pmsResult;
     }
 
+    public String getIndDateStr() {
+        return indDate!=null? DateTool.decorateDate(indDate, DateTool.DD_MM_YYYY):"";
+    }
 
-
+    public void setIndDateStr(String indDateStr) {
+        this.indDateStr = indDateStr;
+    }
 }

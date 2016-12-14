@@ -274,4 +274,64 @@
                 order by a.datDesc
                   ]]>
     </query>
+    <query
+            name="getPmsStrategicPlanDoc">
+        <![CDATA[
+                from eu.pms.project.database.PmsStrategicPlanDocument a
+                order by a.strDocId
+                  ]]>
+    </query>
+    <query
+            name="getPmsObjectiveList">
+        <![CDATA[
+                from eu.pms.project.database.PmsObjectiv a
+                order by a.objDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsObjectiveById">
+        <![CDATA[
+                from eu.pms.project.database.PmsObjectiv a
+                where a.objId = ?
+                order by a.objDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsResultList">
+        <![CDATA[
+                from eu.pms.project.database.PmsResult a
+                order by a.resDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsResultById">
+        <![CDATA[
+                from eu.pms.project.database.PmsResult a
+                where a.resId = ?
+                and a.objId = ?
+                order by a.resDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsObjective">
+        <![CDATA[
+                from eu.pms.project.database.PmsObjectiv a
+                order by a.objDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsIndicatorList">
+        <![CDATA[
+                from eu.pms.project.database.PmsIndicator a
+                order by a.indTitle
+                  ]]>
+    </query>
+    <query
+            name="getPmsIndicatorById">
+        <![CDATA[
+                from eu.pms.project.database.PmsIndicator a
+                where a.compId.indId
+                order by a.indTitle
+                  ]]>
+    </query>
 </hibernate-mapping>
