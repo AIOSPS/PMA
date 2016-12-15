@@ -1,6 +1,7 @@
 package eu.pms.objective.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
+import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
@@ -35,9 +36,9 @@ public class AddPmsObjectiveUseCase implements ComponentUseCase {
             pmsObjectiv.setStrDocId(strDocId);
             pmsObjectiv.setObjDesc(objDesc);
             pmsObjectiv.setObjLongDesc(objLongDesc);
-            pmsObjectiv.setObjDefineDate(timeStamp);
+            pmsObjectiv.setObjDefineDate(DateTool.convertStringToDate(objDefineDate,DateTool.DD_MM_YYYY));
             pmsObjectiv.setObjStatus(objStatus);
-            pmsObjectiv.setObjCloseDate(timeStamp);
+            pmsObjectiv.setObjCloseDate(DateTool.convertStringToDate(objCloseDate,DateTool.DD_MM_YYYY));
             pmsObjectiv.setOjbUserId(ojbUserId);
             pmsObjectiv.setUsername(username);
             pmsObjectiv.setTimeStamp(timeStamp);
