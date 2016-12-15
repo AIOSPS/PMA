@@ -3135,7 +3135,7 @@
             <key-property name="objId" column="obj_id" type="java.lang.String"/>
         </composite-id>
         <property name="indTitle" type="java.lang.String" column="ind_title"/>
-        <property name="indDate" type="java.sql.Date" column="ind_date"/>
+        <property name="indDate" type="java.util.Date" column="ind_date"/>
         <property name="indLongDesc" type="java.lang.String" column="ind_long_desc"/>
         <property name="indBaseline" type="int" column="ind_baseline"/>
         <property name="indFrequency" type="int" column="ind_frequency"/>
@@ -3154,6 +3154,8 @@
         <key-property name="resId" column="res_id" type="java.lang.String"/>
         <key-property name="objId" column="obj_id" type="java.lang.String"/>
     </composite-id>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
     <class name="eu.pms.project.database.PmsCommunityTyp" table="pms_community_types" >
     <id name="typId" type="java.lang.String" column="typ_id" >

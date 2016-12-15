@@ -308,7 +308,7 @@
         <![CDATA[
                 from eu.pms.project.database.PmsResult a
                 where a.compId.resId = ?
-                and a.objId = ?
+                and a.compId.objId = ?
                 order by a.resDesc
                   ]]>
     </query>
@@ -330,7 +330,7 @@
             name="getPmsIndicatorById">
         <![CDATA[
                 from eu.pms.project.database.PmsIndicator a
-                where a.compId.indId
+                where a.compId.indId=?
                 order by a.indTitle
                   ]]>
     </query>

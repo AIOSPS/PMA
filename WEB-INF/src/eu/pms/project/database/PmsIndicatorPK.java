@@ -16,12 +16,14 @@ public class PmsIndicatorPK implements Serializable {
 
     /** identifier field */
     private String objId;
+    private String compId;
 
     /** full constructor */
     public PmsIndicatorPK(String indId, String resId, String objId) {
         this.indId = indId;
         this.resId = resId;
         this.objId = objId;
+        this.compId = indId+"_"+resId+"_"+objId;
     }
 
     /** default constructor */
@@ -50,6 +52,14 @@ public class PmsIndicatorPK implements Serializable {
 
     public void setObjId(String objId) {
         this.objId = objId;
+    }
+
+    public String getCompId() {
+        return indId+"_"+resId+"_"+objId;
+    }
+
+    public void setCompId(String compId) {
+        this.compId = compId;
     }
 
     public String toString() {

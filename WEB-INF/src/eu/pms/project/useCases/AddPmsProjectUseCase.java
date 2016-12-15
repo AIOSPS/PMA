@@ -1,6 +1,7 @@
 package eu.pms.project.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
+import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
@@ -41,7 +42,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             String[] benificiaryProjectArray = (String[]) itr.next();
             String[] indicatorProjectArray = (String[]) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsProject pmsProject = new PmsProject();
@@ -50,8 +51,8 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             pmsProject.setProDescription(proDescription);
             pmsProject.setProStatus(proStatus);
             pmsProject.setProBudget(proBudget);
-            pmsProject.setProStartDate(timeStamp);
-            pmsProject.setProEndDate(timeStamp);
+            pmsProject.setProStartDate(DateTool.convertStringToDate(proStartDate,DateTool.DD_MM_YYYY));
+            pmsProject.setProEndDate(DateTool.convertStringToDate(proEndDate,DateTool.DD_MM_YYYY));
             pmsProject.setProNeedPermit(proNeedPermit);
             pmsProject.setProHasCluster(proHasCluster);
             pmsProject.setProNotes(proNotes);
@@ -148,8 +149,13 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
                     pmsProjectsIndicatorPK = new PmsProjectsIndicatorPK();
                     pmsProjectsIndicator = new PmsProjectsIndicator();
                     pmsProjectsIndicatorPK.setProId(proId);
-                    pmsProjectsIndicatorPK.setIndId(indicator);
+                    String[] indCompId = indicator.split("_");
+                    pmsProjectsIndicatorPK.setIndId(indCompId[0]);
+                    pmsProjectsIndicatorPK.setResId(indCompId[1]);
+                    pmsProjectsIndicatorPK.setObjId(indCompId[2]);
                     pmsProjectsIndicator.setCompId(pmsProjectsIndicatorPK);
+                    pmsProjectsIndicator.setUsername(username);
+                    pmsProjectsIndicator.setTimeStamp(timeStamp);
                     insertList.add(pmsProjectsIndicator);
                 }
             }
