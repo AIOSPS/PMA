@@ -1,6 +1,7 @@
 package eu.pms.permit.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
+import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
@@ -27,15 +28,15 @@ public class AddPmsPermitUseCase implements ComponentUseCase {
             String perStatus = (String) itr.next();
             String perIssuingAgency = (String) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsPermit pmsPermit = new PmsPermit();
             pmsPermit.setPerId(perId);
             pmsPermit.setPerTitle(perTitle);
             pmsPermit.setPerType(perType);
-            pmsPermit.setPerSubmitDate(timeStamp);
-            pmsPermit.setPerIssueDate(timeStamp);
+            pmsPermit.setPerSubmitDate(DateTool.convertStringToDate(perSubmitDate,DateTool.DD_MM_YYYY));
+            pmsPermit.setPerIssueDate(DateTool.convertStringToDate(perIssueDate,DateTool.DD_MM_YYYY));
             pmsPermit.setPerPeriod(perPeriod);
             pmsPermit.setPerStatus(perStatus);
             pmsPermit.setPerIssuingAgency(perIssuingAgency);

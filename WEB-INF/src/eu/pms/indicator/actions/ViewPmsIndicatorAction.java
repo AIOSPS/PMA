@@ -36,8 +36,12 @@ public class ViewPmsIndicatorAction extends Action {
         List resultList = (List) new GetPmsResultUseCase().execute(null, request);
         request.setAttribute("resultList", resultList);
         String indId = request.getParameter("indId");
+        String resId = request.getParameter("resId");
+        String objId = request.getParameter("objId");
         ArrayList inputs = new ArrayList();
         inputs.add(indId);
+        inputs.add(resId);
+        inputs.add(objId);
         List indicatorList = (List) new GetPmsIndicatorUseCase().execute(inputs, request);
         PmsIndicator pmsIndicator = null;
         if (indicatorList != null && indicatorList.size() > 0 && indicatorList.get(0) instanceof PmsIndicator) {

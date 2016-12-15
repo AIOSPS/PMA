@@ -33,7 +33,6 @@ public class AddPmsIndicatorAction extends Action {
         PmsIndicatorForm pmsIndicatorForm = (PmsIndicatorForm) form;
         String indId=pmsIndicatorForm.getIndId();
         String resId=pmsIndicatorForm.getResId();
-        String objId=pmsIndicatorForm.getObjId();
         String indTitle=pmsIndicatorForm.getIndTitle();
         String indDate=pmsIndicatorForm.getIndDate();
         String indLongDesc=pmsIndicatorForm.getIndLongDesc();
@@ -48,7 +47,6 @@ public class AddPmsIndicatorAction extends Action {
         ArrayList inputs = new ArrayList();
         inputs.add(indId);
         inputs.add(resId);
-        inputs.add(objId);
         inputs.add(indTitle);
         inputs.add(indDate);
         inputs.add(indLongDesc);

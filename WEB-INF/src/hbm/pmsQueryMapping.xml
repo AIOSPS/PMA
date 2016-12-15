@@ -331,6 +331,8 @@
         <![CDATA[
                 from eu.pms.project.database.PmsIndicator a
                 where a.compId.indId=?
+                and a.compId.resId=?
+                and a.compId.objId=?
                 order by a.indTitle
                   ]]>
     </query>

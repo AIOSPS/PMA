@@ -26,7 +26,7 @@ public class AddPmsActivityUseCase implements ComponentUseCase {
             int actUnitQty = (Integer) itr.next();
             int actEstimatedBudget = (Integer) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsActivity pmsActivity = new PmsActivity();

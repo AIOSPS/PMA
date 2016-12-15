@@ -28,7 +28,7 @@ public class AddPmsObjectiveUseCase implements ComponentUseCase {
             String ojbUserId = (String) itr.next();
             String strDocId = (String) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsObjectiv pmsObjectiv = new PmsObjectiv();

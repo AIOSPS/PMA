@@ -2,7 +2,6 @@ package eu.pms.indicator.actions;
 
 
 import eu.pms.indicator.useCases.GetPmsResultUseCase;
-import eu.pms.objective.useCases.GetPmsStrategicPlanDocUseCase;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;

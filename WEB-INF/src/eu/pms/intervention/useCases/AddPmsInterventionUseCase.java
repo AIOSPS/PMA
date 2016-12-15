@@ -26,7 +26,7 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
             int intEstimatedBudget = (Integer) itr.next();
             String intSource = (String) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsIntervention pmsIntervention = new PmsIntervention();

@@ -23,7 +23,7 @@ public class AddPmsBenificiaryUseCase implements ComponentUseCase {
             int benTotal = (Integer) itr.next();
             String btpId = (String) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsBenificiary bmsBenificiary = new PmsBenificiary();

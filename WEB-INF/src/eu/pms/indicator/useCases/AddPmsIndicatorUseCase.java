@@ -1,6 +1,7 @@
 package eu.pms.indicator.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
+import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
@@ -20,7 +21,6 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
             Iterator itr = input.iterator();
             String indId = (String) itr.next();
             String resId = (String) itr.next();
-            String objId = (String) itr.next();
             String indTitle = (String) itr.next();
             String indDate = (String) itr.next();
             String indLongDesc = (String) itr.next();
@@ -31,17 +31,18 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
             int indTarget = (Integer) itr.next();
             int indValue = (Integer) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsIndicator pmsIndicator = new PmsIndicator();
             PmsIndicatorPK pmsIndicatorPK = new PmsIndicatorPK();
             pmsIndicatorPK.setIndId(indId);
-            pmsIndicatorPK.setResId(resId);
-            pmsIndicatorPK.setObjId(objId);
+            String []resCompId= resId.split("_");
+            pmsIndicatorPK.setResId(resCompId[0]);
+            pmsIndicatorPK.setObjId(resCompId[1]);
             pmsIndicator.setCompId(pmsIndicatorPK);
             pmsIndicator.setIndTitle(indTitle);
-            pmsIndicator.setIndDate(timeStamp);
+            pmsIndicator.setIndDate(DateTool.convertStringToDate(indDate,DateTool.DD_MM_YYYY));
             pmsIndicator.setIndLongDesc(indLongDesc);
             pmsIndicator.setIndBaseline(indBaseline);
             pmsIndicator.setIndFrequency(indFrequency);

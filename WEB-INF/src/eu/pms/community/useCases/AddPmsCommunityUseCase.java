@@ -43,7 +43,7 @@ public class AddPmsCommunityUseCase implements ComponentUseCase {
             String comEcnonomicActivitiesInfo = (String) itr.next();
             String locId = (String) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsCommunity pmsCommunity = new PmsCommunity();

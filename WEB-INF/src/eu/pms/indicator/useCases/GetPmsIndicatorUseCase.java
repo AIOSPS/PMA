@@ -20,8 +20,10 @@ public class GetPmsIndicatorUseCase implements ComponentUseCase {
         List retList = null;
         Iterator itr = input.iterator();
         String indId = (String) itr.next();
+        String resId = (String) itr.next();
+        String objId = (String) itr.next();
         try {
-            retList = new DataAccessObjectImpl().getList("getPmsIndicatorById", new Object[]{indId});
+            retList = new DataAccessObjectImpl().getList("getPmsIndicatorById", new Object[]{indId,resId,objId});
         } catch (Exception ce) {
             System.out.println("Error PmsIndicator: " + ce);
             retList = new ArrayList();

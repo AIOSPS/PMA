@@ -13,11 +13,13 @@ public class PmsResultPK implements Serializable {
 
     /** identifier field */
     private String objId;
+    private String compId;
 
     /** full constructor */
     public PmsResultPK(String resId, String objId) {
         this.resId = resId;
         this.objId = objId;
+        this.compId = resId+"_"+objId;
     }
 
     /** default constructor */
@@ -38,6 +40,14 @@ public class PmsResultPK implements Serializable {
 
     public void setObjId(String objId) {
         this.objId = objId;
+    }
+
+    public String getCompId() {
+        return resId+"_"+objId;
+    }
+
+    public void setCompId(String compId) {
+        this.compId = compId;
     }
 
     public String toString() {

@@ -27,7 +27,7 @@ public class AddPmsResultUseCase implements ComponentUseCase {
             String resStatus = (String) itr.next();
             String resCloseDate = (String) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsResult pmsResult = new PmsResult();

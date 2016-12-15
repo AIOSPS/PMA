@@ -1,6 +1,7 @@
 package eu.pms.incident.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
+import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
@@ -42,7 +43,7 @@ public class AddPmsIncidentUseCase implements ComponentUseCase {
             int incDemolishedAdult = (Integer) itr.next();
             int incDemolishedChildren = (Integer) itr.next();
 
-            String username = "";
+            String username = "pms";
             Date timeStamp = new Date();
 
             PmsIncident pmsIncident = new PmsIncident();
@@ -66,7 +67,7 @@ public class AddPmsIncidentUseCase implements ComponentUseCase {
             pmsIncident.setIncDemolishedChildren(incDemolishedChildren);
             pmsIncident.setIncType(incType);
             pmsIncident.setIncSourceLink(incSourceLink);
-            pmsIncident.setIncTimeStamp(timeStamp);
+            pmsIncident.setIncTimeStamp(DateTool.convertStringToDate(incTimeStamp,DateTool.DD_MM_YYYY));
             pmsIncident.setLocLatitude(locLatitude);
             pmsIncident.setLocLongitude(locLongitude);
             pmsIncident.setUsername(username);
