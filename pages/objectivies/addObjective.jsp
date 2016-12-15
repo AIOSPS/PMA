@@ -73,7 +73,9 @@
                         <div class="col-sm-9">
                             <html:select property="strDocId"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="strategicPlanDocList">
                                 <html:options collection="strategicPlanDocList" property="strDocId" labelProperty="strPlanTitle"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>
