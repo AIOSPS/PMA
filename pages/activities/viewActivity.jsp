@@ -64,7 +64,9 @@
                         <div class="col-sm-9">
                             <html:select property="intId" disabled="true"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="inertventionList" property="compId.intId" labelProperty="intDesc"/>
+                                <logic:present name="inertventionList">
+                                    <html:options collection="inertventionList" property="compId.intId" labelProperty="intDesc"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>
@@ -73,7 +75,9 @@
                         <div class="col-sm-9">
                             <html:select property="secId" disabled="true"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="sectorsList">
                                 <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>

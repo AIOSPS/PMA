@@ -211,7 +211,9 @@
                         <div class="col-sm-9">
                             <html:select property="datId"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="dataSourceList" property="datId" labelProperty="datDesc"/>
+                                <logic:present name="dataSourceList">
+                                    <html:options collection="dataSourceList" property="datId" labelProperty="datDesc"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>
@@ -220,7 +222,9 @@
                         <div class="col-sm-9">
                             <html:select property="comId"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                <logic:present name="communityList">
+                                    <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>
@@ -231,7 +235,9 @@
                         <div class="col-sm-9">
                             <html:select property="proId"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="projectList" property="proId" labelProperty="proTitle"/>
+                                <logic:present name="projectList">
+                                    <html:options collection="projectList" property="proId" labelProperty="proTitle"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>

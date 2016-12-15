@@ -66,7 +66,9 @@
                         <div class="col-sm-9">
                             <html:select property="btpId"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="benificiaryTypeList" property="btpId" labelProperty="btpDesc"/>
+                                <logic:present name="benificiaryTypeList">
+                                    <html:options collection="benificiaryTypeList" property="btpId" labelProperty="btpDesc"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>

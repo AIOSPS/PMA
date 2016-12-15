@@ -64,7 +64,9 @@
                         <div class="col-sm-9">
                             <html:select property="resId" disabled="true"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="resultList" property="resId" labelProperty="resDesc"/>
+                                <logic:present name="resultList">
+                                    <html:options collection="resultList" property="compId.compId" labelProperty="resDesc"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>

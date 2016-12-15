@@ -220,7 +220,9 @@
                         <div class="col-sm-9">
                             <html:select property="locId"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="locationList">
                                 <html:options collection="locationList" property="locId" labelProperty="locLatitude"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>
@@ -229,7 +231,9 @@
                         <div class="col-sm-9">
                             <html:select property="typeId"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="communityTypeList">
                                 <html:options collection="communityTypeList" property="typId" labelProperty="typDesc"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>

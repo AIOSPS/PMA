@@ -53,7 +53,10 @@
                         <div class="col-sm-9">
                             <html:select property="masId"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="masterPlanList" property="masId" labelProperty="masMpName"/>
+                                <logic:present name="masterPlanList">
+                                    <html:options collection="masterPlanList" property="masId" labelProperty="masMpName"/>
+                                </logic:present>
+
                             </html:select>
                         </div>
                     </div>
@@ -66,7 +69,10 @@
                         <div class="col-sm-9">
                             <html:select property="secId"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
+                                <logic:present name="sectorsList">
+                                    <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
+                                </logic:present>
+
                             </html:select>
                         </div>
                     </div>
@@ -75,7 +81,10 @@
                         <div class="col-sm-9">
                             <html:select property="subId"
                                          styleClass="selectpicker form-control">
-                                <html:options collection="subSectorsList" property="compId.subId" labelProperty="subName"/>
+                                <logic:present name="subSectorsList">
+                                    <html:options collection="subSectorsList" property="compId.subId" labelProperty="subName"/>
+                                </logic:present>
+
                             </html:select>
                         </div>
                     </div>
