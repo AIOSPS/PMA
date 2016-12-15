@@ -307,7 +307,7 @@
             name="getPmsResultById">
         <![CDATA[
                 from eu.pms.project.database.PmsResult a
-                where a.resId = ?
+                where a.compId.resId = ?
                 and a.objId = ?
                 order by a.resDesc
                   ]]>
