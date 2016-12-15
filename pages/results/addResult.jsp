@@ -57,7 +57,9 @@
                         <div class="col-sm-9">
                             <html:select property="objId"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="objectiveList">
                                 <html:options collection="objectiveList" property="objId" labelProperty="objDesc"/>
+                                </logic:present>
                             </html:select>
                         </div>
                     </div>
