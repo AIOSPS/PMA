@@ -49,10 +49,14 @@
                     <div class="col-md-6">
                         <label for="donorProjectList" class="col-sm-3 col-form-label">Donor:</label>
                         <div class="col-sm-9">
-                            <html:select property="donorProjectList" multiple="true"
-                                         styleClass="selectpicker form-control">
-                                <html:options collection="dononrList" property="donId" labelProperty="donName"/>
-                            </html:select>
+
+                                <html:select property="donorProjectList" multiple="true"
+                                             styleClass="selectpicker form-control">
+                                    <logic:present name="dononrList">
+                                    <html:options collection="dononrList" property="donId" labelProperty="donName"/>
+                                    </logic:present>
+                                </html:select>
+
                         </div>
 
                     </div>
@@ -61,10 +65,15 @@
 
                         <label for="implementerProjectList" class="col-sm-3 col-form-label">Implementer:</label>
                         <div class="col-sm-9">
-                            <html:select property="implementerProjectList" multiple="true"
-                                         styleClass="selectpicker form-control">
-                                <html:options collection="implementerList" property="impId" labelProperty="impName"/>
-                            </html:select>
+
+                                <html:select property="implementerProjectList" multiple="true"
+                                             styleClass="selectpicker form-control">
+                                    <logic:present name="implementerList">
+                                    <html:options collection="implementerList" property="impId"
+                                                  labelProperty="impName"/>
+                                    </logic:present>
+                                </html:select>
+
                         </div>
 
                     </div>
@@ -74,19 +83,27 @@
                     <div class="col-md-6">
                         <label for="devId" class="col-sm-3 col-form-label">D.A:</label>
                         <div class="col-sm-9">
+
                             <html:select property="devId" styleClass="selectpicker form-control">
+                                <logic:present name="developmentAgencyList">
                                 <html:options collection="developmentAgencyList" property="devId"
                                               labelProperty="devAbbName"/>
+                                </logic:present>
                             </html:select>
+
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <label for="prgId" class="col-sm-3 col-form-label">Programme:</label>
                         <div class="col-sm-9">
+
                             <html:select property="prgId" styleClass="selectpicker form-control">
+                                <logic:present name="programmList">
                                 <html:options collection="programmList" property="prgId" labelProperty="prgTitle"/>
+                                </logic:present>
                             </html:select>
+
                         </div>
                     </div>
                 </div>
@@ -203,10 +220,14 @@
                     <div class="col-md-6">
                         <label for="locationProjectList" class="col-sm-3 col-form-label"> GIS Location:</label>
                         <div class="col-sm-9">
+
                             <html:select property="locationProjectList" multiple="true"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="locationList">
                                 <html:options collection="locationList" property="locId" labelProperty="locLatitude"/>
+                                </logic:present>
                             </html:select>
+
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -235,10 +256,14 @@
                     <div class="col-md-6  ">
                         <label for="communityProjectList" class="col-sm-3 col-form-label"> Community:</label>
                         <div class="col-sm-9">
+
                             <html:select property="communityProjectList" multiple="true"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="communityList">
                                 <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                </logic:present>
                             </html:select>
+
                         </div>
                     </div>
                 </div>
@@ -273,8 +298,10 @@
                                 <label for="cluId" class="col-sm-3 col-form-label"> Cluster:</label>
                                 <div class="col-sm-9">
                                     <html:select property="cluId" styleClass="selectpicker form-control">
+                                        <logic:present name="clusterList">
                                         <html:options collection="clusterList" property="compId.cluId"
                                                       labelProperty="cluDesc"/>
+                                        </logic:present>
                                     </html:select>
                                 </div>
                             </div>
@@ -312,8 +339,11 @@
                         <label for="preId" class="col-sm-3 col-form-label">Permit Number:</label>
                         <div class="col-sm-9">
                             <html:select property="preId" styleClass="selectpicker form-control">
+                                <logic:present name="permitList">
                                 <html:options collection="permitList" property="perId" labelProperty="perTitle"/>
+                                </logic:present>
                             </html:select>
+
                         </div>
 
                     </div>
@@ -326,7 +356,9 @@
                         <div class="col-sm-9">
                             <html:select property="benificiaryProjectList" multiple="true"
                                          styleClass="selectpicker form-control">
+                                <logic:present name="benificiryList">
                                 <html:options collection="benificiryList" property="benId" labelProperty="benDesc"/>
+                                </logic:present>
                             </html:select>
                         </div>
 
@@ -336,8 +368,10 @@
                         <label for="indicatorProjectList" class="col-sm-3 col-form-label">Indicators:</label>
                         <div class="col-sm-9">
                             <html:select property="indicatorProjectList" styleClass="selectpicker form-control">
-                                <html:options collection="indicatorList" property="compId.indId"
+                                <logic:present name="indicatorList">
+                                <html:options collection="indicatorList" property="compId.compId"
                                               labelProperty="indTitle"/>
+                                </logic:present>
                             </html:select>
                         </div>
 
