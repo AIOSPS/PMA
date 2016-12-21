@@ -6,13 +6,13 @@
     <class
             name="eu.pms.login.database.SecRole"
             table="sec_role"
-            >
+    >
         <id
                 name="rolId"
                 type="int"
                 column="ROL_ID"
-                >
-            <generator class="assigned" />
+        >
+            <generator class="assigned"/>
         </id>
         <property
                 name="rolName"
@@ -20,31 +20,31 @@
                 column="ROL_NAME"
                 not-null="true"
                 length="50"
-                />
+        />
         <property
                 name="rolADesc"
                 type="java.lang.String"
                 column="ROL_A_DESC"
                 length="100"
-                />
+        />
         <property
                 name="rolLDesc"
                 type="java.lang.String"
                 column="ROL_L_DESC"
                 length="100"
-                />
+        />
         <property
                 name="rolStatus"
                 type="java.lang.String"
                 column="ROL_STATUS"
                 length="2"
-                />
+        />
         <property
                 name="rolCat"
                 type="java.lang.String"
                 column="ROL_CAT"
                 length="10"
-                />
+        />
 
         <!-- associations -->
         <!-- bi-directional one-to-many association to SecUserRole -->
@@ -52,85 +52,85 @@
                 name="secUserRoles"
                 lazy="true"
                 inverse="true"
-                >
+        >
             <key>
-                <column name="ROL_ID" />
+                <column name="ROL_ID"/>
             </key>
             <one-to-many
                     class="eu.pms.login.database.SecUserRole"
-                    />
+            />
         </set>
 
     </class>
     <class
             name="eu.pms.login.database.SecUser"
             table="sec_user"
-            >
+    >
         <id
                 name="usrId"
                 type="java.lang.String"
                 column="USR_ID"
-                >
-            <generator class="assigned" />
+        >
+            <generator class="assigned"/>
         </id>
         <property
                 name="usrPassword"
                 type="java.lang.String"
                 column="USR_PASSWORD"
                 length="45"
-                />
+        />
         <property
                 name="usrStatus"
                 type="java.lang.String"
                 column="USR_STATUS"
                 not-null="true"
                 length="2"
-                />
+        />
         <property
                 name="usrName"
                 type="java.lang.String"
                 column="USR_NAME"
                 length="100"
-                />
+        />
         <property
                 name="usrEmail"
                 type="java.lang.String"
                 column="USR_EMAIL"
                 length="30"
-                />
+        />
         <property
                 name="usrMobile"
                 type="java.lang.String"
                 column="USR_MOBILE"
                 length="10"
-                />
+        />
         <property
                 name="username"
                 type="java.lang.String"
                 column="username"
                 not-null="true"
                 length="20"
-                />
+        />
         <property
                 name="timeStamp"
-                type="java.sql.Timestamp"
+                type="java.util.Date"
                 column="TIME_STAMP"
                 not-null="true"
-                />
+        />
 
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to SecUserRole -->
+        <!--associations -->
+        <!--bi-directional one-to-many association to SecUserRole -->
         <set
                 name="secUserRoles"
                 lazy="true"
                 inverse="true"
-                >
+        >
             <key>
-                <column name="USR_ID" />
+                <column name="USR_ID"/>
             </key>
             <one-to-many
                     class="eu.pms.login.database.SecUserRole"
-                    />
+            />
         </set>
 
     </class>
@@ -138,2785 +138,3197 @@
     <class
             name="eu.pms.login.database.SecUserRole"
             table="sec_user_role"
-            >
-
+    >
+        <composite-id name="compId" class="eu.pms.login.database.SecUserRolePK">
+            <key-property name="userId" column="pro_id" type="java.lang.String"/>
+            <key-property name="roleId" column="imp_id" type="int"/>
+        </composite-id>
         <!-- associations -->
         <!-- bi-directional many-to-one association to SecRole -->
         <many-to-one
                 name="secRole"
                 class="eu.pms.login.database.SecRole"
                 not-null="true"
-                >
-            <column name="ROL_ID" />
+        >
+            <column name="ROL_ID"/>
         </many-to-one>
         <!-- bi-directional many-to-one association to SecUser -->
         <many-to-one
                 name="secUser"
                 class="eu.pms.login.database.SecUser"
                 not-null="true"
-                >
-            <column name="USR_ID" />
+        >
+            <column name="USR_ID"/>
         </many-to-one>
 
     </class>
     <!--Pms Tables Mapping-->
-    <class
-            name="eu.pms.project.database.PmsAccessToLand"
-            table="pms_access_to_land"
-            >
-        <id
-                name="accId"
-                type="java.lang.String"
-                column="acc_id"
-                >
-            <generator class="assigned" />
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsAccessToLand"-->
+    <!--table="pms_access_to_land"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="accId"-->
+    <!--type="java.lang.String"-->
+    <!--column="acc_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="accDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="acc_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="accAreaClassId"-->
+    <!--type="java.lang.String"-->
+    <!--column="acc_area_class_id"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="accRisk"-->
+    <!--type="java.lang.String"-->
+    <!--column="acc_risk"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="accSensitive"-->
+    <!--type="java.lang.String"-->
+    <!--column="acc_sensitive"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsCommunity &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsCommunity"-->
+    <!--class="eu.pms.project.database.PmsCommunity"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="com_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsActivity"-->
+    <!--table="pms_activities"-->
+    <!--&gt;-->
+    <!--<composite-id name="comp_id" class="eu.pms.project.database.PmsActivityPK">-->
+    <!--<key-property name="actId" column="act_id" type="java.lang.String"/>-->
+    <!--<key-property name="intId" column="int_id" type="java.lang.String"/>-->
+    <!--<key-property name="secId" column="sec_id" type="java.lang.String"/>-->
+    <!--</composite-id>-->
+    <!--<property-->
+    <!--name="actDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="act_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="actUnit"-->
+    <!--type="java.lang.String"-->
+    <!--column="act_unit"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="actUnitQty"-->
+    <!--type="int"-->
+    <!--column="act_unit_qty"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="actEstimatedBudget"-->
+    <!--type="int"-->
+    <!--column="act_estimated_budget"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsIntervention &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsIntervention"-->
+    <!--class="eu.pms.project.database.PmsIntervention"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="int_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsAgricultureSocio"-->
+    <!--table="pms_agriculture_socio"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="agrId"-->
+    <!--type="java.lang.String"-->
+    <!--column="agr_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="agrArea"-->
+    <!--type="int"-->
+    <!--column="agr_area"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="agrNoCowYear"-->
+    <!--type="int"-->
+    <!--column="agr_no_cow_year"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="agrNoSheepYear"-->
+    <!--type="int"-->
+    <!--column="agr_no_sheep_year"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="agrCostWaterTank"-->
+    <!--type="int"-->
+    <!--column="agr_cost_water_tank"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="agrHerdingArea"-->
+    <!--type="int"-->
+    <!--column="agr_herding_area"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="agrMilitaryArea"-->
+    <!--type="int"-->
+    <!--column="agr_military_area"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="agrBypassRoadArea"-->
+    <!--type="int"-->
+    <!--column="agr_bypass_road_area"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="agrSurveyDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="agr_survey_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsCommunity &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsCommunity"-->
+    <!--class="eu.pms.project.database.PmsCommunity"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="com_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsBenificiary"-->
+    <!--table="pms_benificiaries"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="benId"-->
+    <!--type="java.lang.String"-->
+    <!--column="ben_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="benDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="ben_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="benTotal"-->
+    <!--type="int"-->
+    <!--column="ben_total"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsBenificiary &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsBenificiaries"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="ben_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsBenificiary"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsBenificiaryTyp &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsBenificiaryTyp"-->
+    <!--class="eu.pms.project.database.PmsBenificiaryTyp"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="btp_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsBenificiaryTyp"-->
+    <!--table="pms_benificiary_types"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="btpId"-->
+    <!--type="java.lang.String"-->
+    <!--column="btp_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="btpDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="btp_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsBenificiary &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsBenificiaries"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="btp_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsBenificiary"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsClusterTyp"-->
+    <!--table="pms_cluster_types"-->
+    <!--&gt;-->
+    <!--<composite-id name="comp_id" class="eu.pms.project.database.PmsClusterTypPK">-->
+    <!--<key-property name="cluId" column="clu_id" type="java.lang.String"/>-->
+    <!--<key-property name="cluType" column="clu_type" type="java.lang.String"/>-->
+    <!--</composite-id>-->
+    <!--<property-->
+    <!--name="cluDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="clu_desc"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProject &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjects"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="clu_id" />-->
+    <!--<column name="pro_type" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsCommunity"-->
+    <!--table="pms_communities"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="comId"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="comPcbsCode"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_pcbs_code"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comOchaCode"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_ocha_code"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comName"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_name"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comTotalAreaLand"-->
+    <!--type="int"-->
+    <!--column="com_total_area_land"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comLocationShortDescription"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_location_short_description"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comHistoricalBackground"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_historical_background"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comTopology"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_topology"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comResidentsTotal"-->
+    <!--type="int"-->
+    <!--column="com_residents_total"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comMaleTotal"-->
+    <!--type="int"-->
+    <!--column="com_male_total"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comFemaleTotal"-->
+    <!--type="int"-->
+    <!--column="com_female_total"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comYouthTotal"-->
+    <!--type="int"-->
+    <!--column="com_youth_total"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comKidsTotal"-->
+    <!--type="int"-->
+    <!--column="com_kids_total"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comSchoolsInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_schools_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comHealthSchoolsInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_health_schools_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comReligionCenters"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_religion_centers"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comCemetery"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_cemetery"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comWaterNetworkInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_water_network_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comSewerageNetworkInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_sewerage_network_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comElectricalNetworkInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_electrical_network_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comSolidWasteServiceInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_solid_waste_service_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comRoadNetworkInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_road_network_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comTransportNetworkInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_transport_network_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="comEcnonomicActivitiesInfo"-->
+    <!--type="java.lang.String"-->
+    <!--column="com_ecnonomic_activities_info"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="locLatitude"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="loc_latitude"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="locLongitude"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="loc_longitude"-->
+    <!--length="11"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsCommunityTyp &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsCommunityTyp"-->
+    <!--class="eu.pms.project.database.PmsCommunityTyp"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="typ_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsCommunity &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsCommunities"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="com_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsCommunity"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsMasterPlanCommunity &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsMasterPlanCommunities"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="com_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsMasterPlanCommunity"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsAccessToLand &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsAccessToLands"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="com_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsAccessToLand"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsAgricultureSocio &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsAgricultureSocios"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="com_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsAgricultureSocio"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsIncident &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsIncidents"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="com_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsIncident"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsWaterSocio &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsWaterSocios"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="com_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsWaterSocio"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsCommunityTyp"-->
+    <!--table="pms_community_types"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="typId"-->
+    <!--type="java.lang.String"-->
+    <!--column="typ_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="typDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="typ_desc"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsCommunity &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsCommunities"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="typ_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsCommunity"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsContry"-->
+    <!--table="pms_contries"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="conId"-->
+    <!--type="java.lang.String"-->
+    <!--column="con_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="conName"-->
+    <!--type="java.lang.String"-->
+    <!--column="con_name"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="conAbbreviation"-->
+    <!--type="java.lang.String"-->
+    <!--column="con_abbreviation"-->
+    <!--not-null="true"-->
+    <!--length="2"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsDevelopmentAgency &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsDevelopmentAgencies"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="con_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsDevelopmentAgency"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsImplementer &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsImplementers"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="con_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsImplementer"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsDonor &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsDonors"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="con_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsDonor"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsDatasourc"-->
+    <!--table="pms_datasources"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="datId"-->
+    <!--type="java.lang.String"-->
+    <!--column="dat_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="datDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="dat_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsIncident &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsIncidents"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="dat_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsIncident"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsDevelopmentAgency"-->
+    <!--table="pms_development_agencies"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="devId"-->
+    <!--type="java.lang.String"-->
+    <!--column="dev_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="devAbbName"-->
+    <!--type="java.lang.String"-->
+    <!--column="dev_abb_name"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="devDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="dev_desc"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsContry &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsContry"-->
+    <!--class="eu.pms.project.database.PmsContry"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="con_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProject &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjects"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="dev_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsDonor"-->
+    <!--table="pms_donors"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="donId"-->
+    <!--type="java.lang.String"-->
+    <!--column="don_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="donName"-->
+    <!--type="java.lang.String"-->
+    <!--column="don_name"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="donAbbName"-->
+    <!--type="java.lang.String"-->
+    <!--column="don_abb_name"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="donType"-->
+    <!--type="java.lang.String"-->
+    <!--column="don_type"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsContry &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsContry"-->
+    <!--class="eu.pms.project.database.PmsContry"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="con_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectDonor &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectDonors"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="don_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectDonor"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsMasterPlanDonor &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsMasterPlanDonors"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="don_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsMasterPlanDonor"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsImplementer"-->
+    <!--table="pms_implementers"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="impId"-->
+    <!--type="java.lang.String"-->
+    <!--column="imp_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="impName"-->
+    <!--type="java.lang.String"-->
+    <!--column="imp_name"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="impType"-->
+    <!--type="java.lang.String"-->
+    <!--column="imp_type"-->
+    <!--not-null="true"-->
+    <!--length="2"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="impAbbName"-->
+    <!--type="java.lang.String"-->
+    <!--column="imp_abb_name"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsContry &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsContry"-->
+    <!--class="eu.pms.project.database.PmsContry"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="con_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsImplementer &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsImplementers"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="imp_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsImplementer"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsMasterPlan &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsMasterPlans"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="imp_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsMasterPlan"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsIncident"-->
+    <!--table="pms_incidents"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="incId"-->
+    <!--type="java.lang.String"-->
+    <!--column="inc_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="incOchaId"-->
+    <!--type="java.lang.String"-->
+    <!--column="inc_ocha_id"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDescription"-->
+    <!--type="java.lang.String"-->
+    <!--column="inc_description"-->
+    <!--not-null="true"-->
+    <!--length="65535"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incAffectedWomen"-->
+    <!--type="int"-->
+    <!--column="inc_Affected_women"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incAffectedMen"-->
+    <!--type="int"-->
+    <!--column="inc_Affected_men"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incAffectedAdaults"-->
+    <!--type="int"-->
+    <!--column="inc_Affected_adaults"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incAffectedChildren"-->
+    <!--type="int"-->
+    <!--column="inc_Affected_children"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDisplacedWomen"-->
+    <!--type="int"-->
+    <!--column="inc_Displaced_women"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDemolishedWomen"-->
+    <!--type="int"-->
+    <!--column="inc_Demolished_women"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incSourceLink"-->
+    <!--type="java.lang.String"-->
+    <!--column="inc_SourceLink"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incUserId"-->
+    <!--type="java.lang.String"-->
+    <!--column="inc_userId"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incTimeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="inc_timeStamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="locLatitude"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="loc_latitude"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="locLongitude"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="loc_longitude"-->
+    <!--length="11"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDisplacedMen"-->
+    <!--type="int"-->
+    <!--column="inc_Displaced_men"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDisplacedAdult"-->
+    <!--type="int"-->
+    <!--column="inc_Displaced_adult"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDisplacedChildren"-->
+    <!--type="int"-->
+    <!--column="inc_Displaced_children"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDemolishedMen"-->
+    <!--type="int"-->
+    <!--column="inc_Demolished_men"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDemolishedAdult"-->
+    <!--type="int"-->
+    <!--column="inc_Demolished_adult"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="incDemolishedChildren"-->
+    <!--type="int"-->
+    <!--column="inc_Demolished_children"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProject"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pro_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsCommunity &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsCommunity"-->
+    <!--class="eu.pms.project.database.PmsCommunity"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="com_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsDatasourc &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsDatasourc"-->
+    <!--class="eu.pms.project.database.PmsDatasourc"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="dat_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsIndicator"-->
+    <!--table="pms_indicators"-->
+    <!--&gt;-->
+    <!--<composite-id name="comp_id" class="eu.pms.project.database.PmsIndicatorPK">-->
+    <!--<key-property name="indId" column="ind_id" type="java.lang.String"/>-->
+    <!--<key-property name="resId" column="res_id" type="java.lang.String"/>-->
+    <!--<key-property name="objId" column="obj_id" type="java.lang.String"/>-->
+    <!--</composite-id>-->
+    <!--<property-->
+    <!--name="indTitle"-->
+    <!--type="java.lang.String"-->
+    <!--column="ind_title"-->
+    <!--not-null="true"-->
+    <!--length="50"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="ind_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indLongDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="ind_long_desc"-->
+    <!--not-null="true"-->
+    <!--length="65535"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indBaseline"-->
+    <!--type="int"-->
+    <!--column="ind_baseline"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indFrequency"-->
+    <!--type="int"-->
+    <!--column="ind_frequency"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indCollectionMethod"-->
+    <!--type="java.lang.String"-->
+    <!--column="ind_collection_method"-->
+    <!--not-null="true"-->
+    <!--length="45"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indStatisticalMethod"-->
+    <!--type="java.lang.String"-->
+    <!--column="ind_statistical_method"-->
+    <!--not-null="true"-->
+    <!--length="45"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indTarget"-->
+    <!--type="int"-->
+    <!--column="ind_target"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="indValue"-->
+    <!--type="int"-->
+    <!--column="ind_value"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsResult &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsResult"-->
+    <!--class="eu.pms.project.database.PmsResult"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="res_id" />-->
+    <!--<column name="obj_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsIntervention"-->
+    <!--table="pms_interventions"-->
+    <!--&gt;-->
+    <!--<composite-id name="comp_id" class="eu.pms.project.database.PmsInterventionPK">-->
+    <!--<key-property name="intId" column="int_id" type="java.lang.String"/>-->
+    <!--<key-property name="subId" column="sub_id" type="java.lang.String"/>-->
+    <!--<key-property name="secId" column="sec_id" type="java.lang.String"/>-->
+    <!--</composite-id>-->
+    <!--<property-->
+    <!--name="intDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="int_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="intEstimatedBudget"-->
+    <!--type="int"-->
+    <!--column="int_estimated_budget"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="intSource"-->
+    <!--type="java.lang.String"-->
+    <!--column="int_source"-->
+    <!--length="50"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsSubSector &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsSubSector"-->
+    <!--class="eu.pms.project.database.PmsSubSector"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="sub_id" />-->
+    <!--<column name="sec_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsActivity &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsActivities"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="int_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsActivity"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsMasterPlan &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsMasterPlan"-->
+    <!--class="eu.pms.project.database.PmsMasterPlan"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="mas_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsLocation"-->
+    <!--table="pms_locations"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="locId"-->
+    <!--type="java.lang.String"-->
+    <!--column="loc_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="locLatitude"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="loc_latitude"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="locLongitude"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="loc_longitude"-->
+    <!--not-null="true"-->
+    <!--length="11"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsLocation &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsLocations"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="loc_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsLocation"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsMasterPlan"-->
+    <!--table="pms_master_plan"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="masId"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="masMpNo"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_mp_no"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masMpName"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_mp_name"-->
+    <!--not-null="true"-->
+    <!--length="45"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masStatus"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_status"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masStatusIca"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_status_ica"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masFirstSubmitDateToIca"-->
+    <!--type="java.sql.Date"-->
+    <!--column="mas_first_submit_date_to_ica"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masLastSubmitDateToIca"-->
+    <!--type="java.sql.Date"-->
+    <!--column="mas_last_submit_date_to_ica"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masNoSessionWithIca"-->
+    <!--type="int"-->
+    <!--column="mas_no_session_with_ica"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masSubmitToMod"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_submit_to_mod"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masApprovalDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="mas_approval_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masPublicationDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="mas_publication_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masLastDateForObjection"-->
+    <!--type="java.sql.Date"-->
+    <!--column="mas_last_date_for_objection"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masDateOfFinalPublication"-->
+    <!--type="java.sql.Date"-->
+    <!--column="mas_date_of_final_publication"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masApprovedPlanedArea"-->
+    <!--type="int"-->
+    <!--column="mas_approved_planed_area"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masVillageAdminBoarder"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_village_admin_boarder"-->
+    <!--not-null="true"-->
+    <!--length="2"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="masNote"-->
+    <!--type="java.lang.String"-->
+    <!--column="mas_note"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsMasterPlanCommunity &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsMasterPlanCommunities"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="mas_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsMasterPlanCommunity"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsIntervention &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsInterventions"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="mas_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsIntervention"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsMasterPlanDonor &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsMasterPlanDonors"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="mas_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsMasterPlanDonor"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsImplementer &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsImplementer"-->
+    <!--class="eu.pms.project.database.PmsImplementer"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="imp_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsMasterPlanCommunity"-->
+    <!--table="pms_master_plan_communities"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsMasterPlan &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsMasterPlan"-->
+    <!--class="eu.pms.project.database.PmsMasterPlan"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="mas_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsCommunity &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsCommunity"-->
+    <!--class="eu.pms.project.database.PmsCommunity"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="com_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsMasterPlanDonor"-->
+    <!--table="pms_master_plan_donors"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsDonor &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsDonor"-->
+    <!--class="eu.pms.project.database.PmsDonor"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="don_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsMasterPlan &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsMasterPlan"-->
+    <!--class="eu.pms.project.database.PmsMasterPlan"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="mas_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsObjectiv"-->
+    <!--table="pms_objectives"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="objId"-->
+    <!--type="java.lang.String"-->
+    <!--column="obj_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="objDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="obj_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="objLongDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="obj_long_desc"-->
+    <!--length="65535"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="objDefineDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="obj_define_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="objStatus"-->
+    <!--type="java.lang.String"-->
+    <!--column="obj_status"-->
+    <!--not-null="true"-->
+    <!--length="5"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="objCloseDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="obj_close_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="ojbUserId"-->
+    <!--type="java.lang.String"-->
+    <!--column="ojb_user_id"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsStrategicPlanDocument &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsStrategicPlanDocument"-->
+    <!--class="eu.pms.project.database.PmsStrategicPlanDocument"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="str_doc_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsResult &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsResults"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="obj_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsResult"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsPermit"-->
+    <!--table="pms_permits"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="perId"-->
+    <!--type="java.lang.String"-->
+    <!--column="per_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="perTitle"-->
+    <!--type="java.lang.String"-->
+    <!--column="per_title"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="perType"-->
+    <!--type="java.lang.String"-->
+    <!--column="per_type"-->
+    <!--not-null="true"-->
+    <!--length="2"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="perSubmitDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="per_submit_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="perIssueDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="per_issue_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="perPeriod"-->
+    <!--type="int"-->
+    <!--column="per_period"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="perStatus"-->
+    <!--type="java.lang.String"-->
+    <!--column="per_status"-->
+    <!--not-null="true"-->
+    <!--length="2"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="perIssuingAgency"-->
+    <!--type="java.lang.String"-->
+    <!--column="per_issuing_agency"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProject &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjects"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="per_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProgramm"-->
+    <!--table="pms_programmes"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="prgId"-->
+    <!--type="java.lang.String"-->
+    <!--column="prg_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="prgTitle"-->
+    <!--type="java.lang.String"-->
+    <!--column="prg_title"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="prgDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="prg_desc"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProject &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjects"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="prg_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProject"-->
+    <!--table="pms_projects"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="proId"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="proTitle"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_title"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proDescription"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_description"-->
+    <!--length="65535"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proStatus"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_status"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proBudget"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="pro_budget"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proStartDate"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="pro_startDate"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proEndDate"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="pro_endDate"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proNeedPermit"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_needPermit"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proHasCluster"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_hasCluster"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proNotes"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_notes"-->
+    <!--length="500"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proUserId"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_userId"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proTimeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="pro_timeStamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="proArea"-->
+    <!--type="java.lang.String"-->
+    <!--column="pro_area"-->
+    <!--not-null="true"-->
+    <!--length="2"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsPermit &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsPermit"-->
+    <!--class="eu.pms.project.database.PmsPermit"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="per_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProgramm &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProgramm"-->
+    <!--class="eu.pms.project.database.PmsProgramm"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="prg_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsDevelopmentAgency &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsDevelopmentAgency"-->
+    <!--class="eu.pms.project.database.PmsDevelopmentAgency"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="dev_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsImplementer &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsImplementers"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pro_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsImplementer"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsHasPmsProject &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsHasPmsProjectsByPmsProjectsProId"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pms_projects_pro_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsHasPmsProject"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsHasPmsProject &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsHasPmsProjectsByPmsProjectsProId1"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pms_projects_pro_id1" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsHasPmsProject"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsCommunity &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsCommunities"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pro_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsCommunity"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsLocation &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsLocations"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pro_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsLocation"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectsBenificiary &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectsBenificiaries"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pro_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectsBenificiary"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsProjectDonor &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsProjectDonors"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pro_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsProjectDonor"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsIncident &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsIncidents"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="pro_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsIncident"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional one-to-one association to PmsProjectAlbum &ndash;&gt;-->
+    <!--<one-to-one-->
+    <!--name="pmsProjectAlbum"-->
+    <!--class="eu.pms.project.database.PmsProjectAlbum"-->
+    <!--outer-join="auto"-->
+    <!--property-ref="pmsProject"-->
+    <!--/>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsClusterTyp &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsClusterTyp"-->
+    <!--class="eu.pms.project.database.PmsClusterTyp"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="clu_id" />-->
+    <!--<column name="pro_type" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProjectAlbum"-->
+    <!--table="pms_project_album"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="albImage"-->
+    <!--type="java.io.InputStream"-->
+    <!--column="alb_image"-->
+    <!--not-null="true"-->
+    <!--length="65535"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProject"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--&gt;-->
+    <!--<column name="pro_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProjectDonor"-->
+    <!--table="pms_project_donors"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsDonor &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsDonor"-->
+    <!--class="eu.pms.project.database.PmsDonor"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="don_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProject"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pro_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProjectsBenificiary"-->
+    <!--table="pms_projects_benificiaries"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsBenificiary &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsBenificiary"-->
+    <!--class="eu.pms.project.database.PmsBenificiary"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="ben_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProject"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pro_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProjectsCommunity"-->
+    <!--table="pms_projects_communities"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProject"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pro_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsCommunity &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsCommunity"-->
+    <!--class="eu.pms.project.database.PmsCommunity"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="com_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProjectsHasPmsProject"-->
+    <!--table="pms_projects_has_pms_projects"-->
+    <!--&gt;-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProjectByPmsProjectsProId"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pms_projects_pro_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProjectByPmsProjectsProId1"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pms_projects_pro_id1" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProjectsImplementer"-->
+    <!--table="pms_projects_implementers"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProject"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pro_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsImplementer &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsImplementer"-->
+    <!--class="eu.pms.project.database.PmsImplementer"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="imp_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsProjectsLocation"-->
+    <!--table="pms_projects_locations"-->
+    <!--&gt;-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsLocation &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsLocation"-->
+    <!--class="eu.pms.project.database.PmsLocation"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="loc_id" />-->
+    <!--</many-to-one>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsProject &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsProject"-->
+    <!--class="eu.pms.project.database.PmsProject"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="pro_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsResult"-->
+    <!--table="pms_results"-->
+    <!--&gt;-->
+    <!--<composite-id name="comp_id" class="eu.pms.project.database.PmsResultPK">-->
+    <!--<key-property name="resId" column="res_id" type="java.lang.String"/>-->
+    <!--<key-property name="objId" column="obj_id" type="java.lang.String"/>-->
+    <!--</composite-id>-->
+    <!--<property-->
+    <!--name="resDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="res_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="resLongDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="res_long_desc"-->
+    <!--length="65535"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="resDefineDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="res_define_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="resStatus"-->
+    <!--type="java.lang.String"-->
+    <!--column="res_status"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="resCloseDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="res_close_date"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsIndicator &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsIndicators"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="res_id" />-->
+    <!--<column name="obj_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsIndicator"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsObjectiv &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsObjectiv"-->
+    <!--class="eu.pms.project.database.PmsObjectiv"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="obj_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsSector"-->
+    <!--table="pms_sectors"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="secId"-->
+    <!--type="java.lang.String"-->
+    <!--column="sec_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="secName"-->
+    <!--type="java.lang.String"-->
+    <!--column="sec_name"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="secDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="sec_desc"-->
+    <!--not-null="true"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsSubSector &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsSubSectors"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="sec_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsSubSector"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsStrategicPlanDocument"-->
+    <!--table="pms_strategic_plan_documents"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="strDocId"-->
+    <!--type="java.lang.String"-->
+    <!--column="str_doc_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="strDocument"-->
+    <!--type="java.io.InputStream"-->
+    <!--column="str_document"-->
+    <!--not-null="true"-->
+    <!--length="65535"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsObjectiv &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsObjectivs"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="str_doc_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsObjectiv"-->
+    <!--/>-->
+    <!--</set>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsSubSector"-->
+    <!--table="pms_sub_sectors"-->
+    <!--&gt;-->
+    <!--<composite-id name="comp_id" class="eu.pms.project.database.PmsSubSectorPK">-->
+    <!--<key-property name="subId" column="sub_id" type="java.lang.String"/>-->
+    <!--<key-property name="secId" column="sec_id" type="java.lang.String"/>-->
+    <!--</composite-id>-->
+    <!--<property-->
+    <!--name="subName"-->
+    <!--type="java.lang.String"-->
+    <!--column="sub_name"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="subDesc"-->
+    <!--type="java.lang.String"-->
+    <!--column="sub_desc"-->
+    <!--length="100"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional one-to-many association to PmsIntervention &ndash;&gt;-->
+    <!--<set-->
+    <!--name="pmsInterventions"-->
+    <!--lazy="true"-->
+    <!--inverse="true"-->
+    <!--&gt;-->
+    <!--<key>-->
+    <!--<column name="sub_id" />-->
+    <!--<column name="sec_id" />-->
+    <!--</key>-->
+    <!--<one-to-many-->
+    <!--class="eu.pms.project.database.PmsIntervention"-->
+    <!--/>-->
+    <!--</set>-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsSector &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsSector"-->
+    <!--class="eu.pms.project.database.PmsSector"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="sec_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+    <!--<class-->
+    <!--name="eu.pms.project.database.PmsWaterSocio"-->
+    <!--table="pms_water_socio"-->
+    <!--&gt;-->
+    <!--<id-->
+    <!--name="watId"-->
+    <!--type="java.lang.String"-->
+    <!--column="wat_id"-->
+    <!--&gt;-->
+    <!--<generator class="assigned" />-->
+    <!--</id>-->
+    <!--<property-->
+    <!--name="watIsconnected"-->
+    <!--type="java.lang.String"-->
+    <!--column="wat_isconnected"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watNetwork"-->
+    <!--type="int"-->
+    <!--column="wat_network"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watUseWatTanker"-->
+    <!--type="java.lang.String"-->
+    <!--column="wat_use_wat_tanker"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watRainWaterWell"-->
+    <!--type="java.lang.String"-->
+    <!--column="wat_rain_water_well"-->
+    <!--not-null="true"-->
+    <!--length="1"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watNoSprings"-->
+    <!--type="int"-->
+    <!--column="wat_no_springs"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watPriceWater"-->
+    <!--type="java.math.BigDecimal"-->
+    <!--column="wat_price_water"-->
+    <!--not-null="true"-->
+    <!--length="2"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watFillingPoint"-->
+    <!--type="int"-->
+    <!--column="wat_filling_point"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watQuantity"-->
+    <!--type="int"-->
+    <!--column="wat_quantity"-->
+    <!--not-null="true"-->
+    <!--length="10"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="watSurveyDate"-->
+    <!--type="java.sql.Date"-->
+    <!--column="wat_survey_date"-->
+    <!--not-null="true"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="username"-->
+    <!--type="java.lang.String"-->
+    <!--column="username"-->
+    <!--not-null="true"-->
+    <!--length="15"-->
+    <!--/>-->
+    <!--<property-->
+    <!--name="timeStamp"-->
+    <!--type="java.sql.Timestamp"-->
+    <!--column="time_stamp"-->
+    <!--not-null="true"-->
+    <!--/>-->
+
+    <!--&lt;!&ndash; associations &ndash;&gt;-->
+    <!--&lt;!&ndash; bi-directional many-to-one association to PmsCommunity &ndash;&gt;-->
+    <!--<many-to-one-->
+    <!--name="pmsCommunity"-->
+    <!--class="eu.pms.project.database.PmsCommunity"-->
+    <!--not-null="true"-->
+    <!--&gt;-->
+    <!--<column name="com_id" />-->
+    <!--</many-to-one>-->
+
+    <!--</class>-->
+
+    <!--********************************************ali added for projects*******************************-->
+
+    <class name="eu.pms.project.database.PmsProject" table="pms_projects">
+        <id name="proId" column="pro_id" type="java.lang.String">
+            <generator class="assigned"/>
         </id>
-        <property
-                name="accDesc"
-                type="java.lang.String"
-                column="acc_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="accAreaClassId"
-                type="java.lang.String"
-                column="acc_area_class_id"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="accRisk"
-                type="java.lang.String"
-                column="acc_risk"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="accSensitive"
-                type="java.lang.String"
-                column="acc_sensitive"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsCommunity -->
-        <many-to-one
-                name="pmsCommunity"
-                class="eu.pms.project.database.PmsCommunity"
-                not-null="true"
-                >
-            <column name="com_id" />
-        </many-to-one>
-
+        <property name="proTitle" column="pro_title" type="java.lang.String"/>
+        <property name="proDescription" column="pro_description" type="java.lang.String"/>
+        <property name="proStatus" column="pro_status" type="java.lang.String"/>
+        <property name="proBudget" column="pro_budget" type="java.math.BigDecimal"/>
+        <property name="proStartDate" column="pro_startDate" type="java.util.Date"/>
+        <property name="proEndDate" column="pro_endDate" type="java.util.Date"/>
+        <property name="proNeedPermit" column="pro_needPermit" type="java.lang.String"/>
+        <property name="proHasCluster" column="pro_hasCluster" type="java.lang.String"/>
+        <property name="proNotes" column="pro_notes" type="java.lang.String"/>
+        <property name="proArea" column="pro_area" type="java.lang.String"/>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+        <property name="prgId" column="prg_id" type="java.lang.String"/>
+        <property name="devId" column="dev_id" type="java.lang.String"/>
+        <property name="cluId" column="clu_id" type="java.lang.String"/>
+        <property name="proType" column="pro_type" type="java.lang.String"/>
+        <property name="preId" column="per_id" type="java.lang.String"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsActivity"
-            table="pms_activities"
-            >
-        <composite-id name="comp_id" class="eu.pms.project.database.PmsActivityPK">
-            <key-property name="actId" column="act_id" type="java.lang.String"/>
-            <key-property name="intId" column="int_id" type="java.lang.String"/>
-            <key-property name="secId" column="sec_id" type="java.lang.String"/>
+
+    <class name="eu.pms.project.database.PmsProjectAlbum" table="pms_project_album">
+        <id name="proId" column="pro_id" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+        <property name="albImage" column="alb_image" type="java.sql.Blob"/>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+    </class>
+
+    <class name="eu.pms.project.database.PmsDonor" table="pms_donors">
+        <id name="donId" type="java.lang.String" column="don_id">
+            <generator class="assigned"/>
+        </id>
+        <property name="donName" column="don_name" type="java.lang.String"/>
+        <property name="donAbbName" column="don_abb_name" type="java.lang.String"/>
+        <property name="donType" column="don_type" type="java.lang.String"/>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+        <property name="conId" column="con_id" type="java.lang.String"/>
+    </class>
+
+    <class name="eu.pms.project.database.PmsProjectDonor" table="pms_project_donors">
+        <composite-id name="compId" class="eu.pms.project.database.PmsProjectDonorPK">
+            <key-property name="proId" column="pro_id" type="java.lang.String"/>
+            <key-property name="donId" column="don_id" type="java.lang.String"/>
         </composite-id>
-        <property
-                name="actDesc"
-                type="java.lang.String"
-                column="act_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="actUnit"
-                type="java.lang.String"
-                column="act_unit"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="actUnitQty"
-                type="int"
-                column="act_unit_qty"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="actEstimatedBudget"
-                type="int"
-                column="act_estimated_budget"
-                length="10"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsIntervention -->
-        <many-to-one
-                name="pmsIntervention"
-                class="eu.pms.project.database.PmsIntervention"
-                not-null="true"
-                >
-            <column name="int_id" />
-        </many-to-one>
-
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsAgricultureSocio"
-            table="pms_agriculture_socio"
-            >
-        <id
-                name="agrId"
-                type="java.lang.String"
-                column="agr_id"
-                >
-            <generator class="assigned" />
+
+    <class name="eu.pms.project.database.PmsImplementer" table="pms_implementers">
+        <id name="impId" type="java.lang.String" column="imp_id">
+            <generator class="assigned"/>
         </id>
-        <property
-                name="agrArea"
-                type="int"
-                column="agr_area"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="agrNoCowYear"
-                type="int"
-                column="agr_no_cow_year"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="agrNoSheepYear"
-                type="int"
-                column="agr_no_sheep_year"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="agrCostWaterTank"
-                type="int"
-                column="agr_cost_water_tank"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="agrHerdingArea"
-                type="int"
-                column="agr_herding_area"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="agrMilitaryArea"
-                type="int"
-                column="agr_military_area"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="agrBypassRoadArea"
-                type="int"
-                column="agr_bypass_road_area"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="agrSurveyDate"
-                type="java.sql.Date"
-                column="agr_survey_date"
-                not-null="true"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsCommunity -->
-        <many-to-one
-                name="pmsCommunity"
-                class="eu.pms.project.database.PmsCommunity"
-                not-null="true"
-                >
-            <column name="com_id" />
-        </many-to-one>
-
+        <property name="impName" column="imp_name" type="java.lang.String"/>
+        <property name="impType" column="imp_type" type="java.lang.String"/>
+        <property name="impAbbName" column="imp_abb_name" type="java.lang.String"/>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+        <property name="conId" column="con_id" type="java.lang.String"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsBenificiary"
-            table="pms_benificiaries"
-            >
-        <id
-                name="benId"
-                type="java.lang.String"
-                column="ben_id"
-                >
-            <generator class="assigned" />
+
+    <class name="eu.pms.project.database.PmsProjectsImplementer" table="pms_projects_implementers">
+        <composite-id name="compId" class="eu.pms.project.database.PmsProjectsImplementerPK">
+            <key-property name="proId" column="pro_id" type="java.lang.String"/>
+            <key-property name="impId" column="imp_id" type="java.lang.String"/>
+        </composite-id>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+    </class>
+
+    <class name="eu.pms.project.database.PmsDevelopmentAgency" table="pms_development_agencies">
+        <id name="devId" type="java.lang.String" column="dev_id">
+            <generator class="assigned"/>
         </id>
-        <property
-                name="benDesc"
-                type="java.lang.String"
-                column="ben_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="benTotal"
-                type="int"
-                column="ben_total"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsProjectsBenificiary -->
-        <set
-                name="pmsProjectsBenificiaries"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="ben_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsBenificiary"
-                    />
-        </set>
-        <!-- bi-directional many-to-one association to PmsBenificiaryTyp -->
-        <many-to-one
-                name="pmsBenificiaryTyp"
-                class="eu.pms.project.database.PmsBenificiaryTyp"
-                not-null="true"
-                >
-            <column name="btp_id" />
-        </many-to-one>
-
+        <property name="devAbbName" column="dev_abb_name" type="java.lang.String"/>
+        <property name="devDesc" column="dev_desc" type="java.lang.String"/>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+        <property name="conId" column="con_id" type="java.lang.String"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsBenificiaryTyp"
-            table="pms_benificiary_types"
-            >
-        <id
-                name="btpId"
-                type="java.lang.String"
-                column="btp_id"
-                >
-            <generator class="assigned" />
+
+    <class name="eu.pms.project.database.PmsProgramm" table="pms_programmes">
+        <id name="prgId" type="java.lang.String" column="prg_id">
+            <generator class="assigned"/>
         </id>
-        <property
-                name="btpDesc"
-                type="java.lang.String"
-                column="btp_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsBenificiary -->
-        <set
-                name="pmsBenificiaries"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="btp_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsBenificiary"
-                    />
-        </set>
-
+        <property name="prgTitle" column="prg_title" type="java.lang.String"/>
+        <property name="prgDesc" column="prg_desc" type="java.lang.String"/>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsClusterTyp"
-            table="pms_cluster_types"
-            >
-        <composite-id name="comp_id" class="eu.pms.project.database.PmsClusterTypPK">
+
+    <class name="eu.pms.project.database.PmsLocation" table="pms_locations">
+        <id name="locId" type="java.lang.String" column="loc_id">
+            <generator class="assigned"/>
+        </id>
+        <property name="locLatitude" column="loc_latitude" type="java.math.BigDecimal"/>
+        <property name="locLongitude" column="loc_longitude" type="java.math.BigDecimal"/>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+    </class>
+
+    <class name="eu.pms.project.database.PmsProjectsLocation" table="pms_projects_locations">
+        <composite-id name="compId" class="eu.pms.project.database.PmsProjectsLocationPK">
+            <key-property name="proId" column="pro_id" type="java.lang.String"/>
+            <key-property name="locId" column="loc_id" type="java.lang.String"/>
+        </composite-id>
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
+    </class>
+
+    <class name="eu.pms.project.database.PmsCommunity" table="pms_communities">
+        <id name="comId" type="java.lang.String" column="com_id">
+            <generator class="assigned"/>
+        </id>
+        <property name="comPcbsCode" type="java.lang.String" column="com_pcbs_code"/>
+        <property name="comOchaCode" type="java.lang.String" column="com_ocha_code"/>
+        <property name="comName" type="java.lang.String" column="com_name"/>
+        <property name="comTotalAreaLand" type="int" column="com_total_area_land"/>
+        <property name="comLocationShortDescription" type="java.lang.String" column="com_location_short_description"/>
+        <!--<property name="comHistoricalBackground" type="java.lang.String" column="com_historical_background"/>-->
+        <property name="comTopology" type="java.lang.String" column="com_topology"/>
+        <property name="comResidentsTotal" type="int" column="com_residents_total"/>
+        <property name="comMaleTotal" type="int" column="com_male_total"/>
+        <property name="comFemaleTotal" type="int" column="com_female_total"/>
+        <!--<property name="comYouthTotal" type="int" column="com_youth_total"/>-->
+        <property name="comKidsTotal" type="int" column="com_kids_total"/>
+        <property name="comSchoolsInfo" type="java.lang.String" column="com_schools_info"/>
+        <property name="comHealthSchoolsInfo" type="java.lang.String" column="com_health_schools_info"/>
+        <property name="comReligionCenters" type="java.lang.String" column="com_religion_centers"/>
+        <property name="comCemetery" type="java.lang.String" column="com_cemetery"/>
+        <property name="comWaterNetworkInfo" type="java.lang.String" column="com_water_network_info"/>
+        <property name="comSewerageNetworkInfo" type="java.lang.String" column="com_sewerage_network_info"/>
+        <property name="comElectricalNetworkInfo" type="java.lang.String" column="com_electrical_network_info"/>
+        <property name="comSolidWasteServiceInfo" type="java.lang.String" column="com_solid_waste_service_info"/>
+        <property name="comRoadNetworkInfo" type="java.lang.String" column="com_road_network_info"/>
+        <property name="comTransportNetworkInfo" type="java.lang.String" column="com_transport_network_info"/>
+        <property name="comEcnonomicActivitiesInfo" type="java.lang.String" column="com_ecnonomic_activities_info"/>
+        <!--<property name="locLatitude" type="java.math.BigDecimal" column="loc_latitude"/>-->
+        <!--<property name="locLongitude" type="java.math.BigDecimal" column="loc_longitude"/>-->
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
+        <property name="govId" type="java.lang.String" column="gov_id"/>
+        <property name="locId" type="java.lang.String" column="loc_id"/>
+        <property name="typeId" type="java.lang.String" column="typ_id"/>
+    </class>
+
+    <class name="eu.pms.project.database.PmsProjectsCommunity" table="pms_projects_communities">
+        <composite-id name="compId" class="eu.pms.project.database.PmsProjectsCommunityPK">
+            <key-property name="proId" column="pro_id" type="java.lang.String"/>
+            <key-property name="comId" column="com_id" type="java.lang.String"/>
+        </composite-id>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
+    </class>
+
+    <class name="eu.pms.project.database.PmsClusterTyp" table="pms_cluster_types">
+        <composite-id name="compId" class="eu.pms.project.database.PmsClusterTypPK">
             <key-property name="cluId" column="clu_id" type="java.lang.String"/>
             <key-property name="cluType" column="clu_type" type="java.lang.String"/>
         </composite-id>
-        <property
-                name="cluDesc"
-                type="java.lang.String"
-                column="clu_desc"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsProject -->
-        <set
-                name="pmsProjects"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="clu_id" />
-                <column name="pro_type" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProject"
-                    />
-        </set>
-
+        <property name="cluDesc" type="java.lang.String" column="clu_desc"/>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsCommunity"
-            table="pms_communities"
-            >
-        <id
-                name="comId"
-                type="java.lang.String"
-                column="com_id"
-                >
-            <generator class="assigned" />
+
+    <class name="eu.pms.project.database.PmsPermit" table="pms_permits">
+        <id name="perId" type="java.lang.String" column="per_id">
+            <generator class="assigned"/>
         </id>
-        <property
-                name="comPcbsCode"
-                type="java.lang.String"
-                column="com_pcbs_code"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="comOchaCode"
-                type="java.lang.String"
-                column="com_ocha_code"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="comName"
-                type="java.lang.String"
-                column="com_name"
-                length="100"
-                />
-        <property
-                name="comTotalAreaLand"
-                type="int"
-                column="com_total_area_land"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="comLocationShortDescription"
-                type="java.lang.String"
-                column="com_location_short_description"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="comHistoricalBackground"
-                type="java.lang.String"
-                column="com_historical_background"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="comTopology"
-                type="java.lang.String"
-                column="com_topology"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="comResidentsTotal"
-                type="int"
-                column="com_residents_total"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="comMaleTotal"
-                type="int"
-                column="com_male_total"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="comFemaleTotal"
-                type="int"
-                column="com_female_total"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="comYouthTotal"
-                type="int"
-                column="com_youth_total"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="comKidsTotal"
-                type="int"
-                column="com_kids_total"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="comSchoolsInfo"
-                type="java.lang.String"
-                column="com_schools_info"
-                length="100"
-                />
-        <property
-                name="comHealthSchoolsInfo"
-                type="java.lang.String"
-                column="com_health_schools_info"
-                length="100"
-                />
-        <property
-                name="comReligionCenters"
-                type="java.lang.String"
-                column="com_religion_centers"
-                length="100"
-                />
-        <property
-                name="comCemetery"
-                type="java.lang.String"
-                column="com_cemetery"
-                length="100"
-                />
-        <property
-                name="comWaterNetworkInfo"
-                type="java.lang.String"
-                column="com_water_network_info"
-                length="100"
-                />
-        <property
-                name="comSewerageNetworkInfo"
-                type="java.lang.String"
-                column="com_sewerage_network_info"
-                length="100"
-                />
-        <property
-                name="comElectricalNetworkInfo"
-                type="java.lang.String"
-                column="com_electrical_network_info"
-                length="100"
-                />
-        <property
-                name="comSolidWasteServiceInfo"
-                type="java.lang.String"
-                column="com_solid_waste_service_info"
-                length="100"
-                />
-        <property
-                name="comRoadNetworkInfo"
-                type="java.lang.String"
-                column="com_road_network_info"
-                length="100"
-                />
-        <property
-                name="comTransportNetworkInfo"
-                type="java.lang.String"
-                column="com_transport_network_info"
-                length="100"
-                />
-        <property
-                name="comEcnonomicActivitiesInfo"
-                type="java.lang.String"
-                column="com_ecnonomic_activities_info"
-                length="100"
-                />
-        <property
-                name="locLatitude"
-                type="java.math.BigDecimal"
-                column="loc_latitude"
-                length="10"
-                />
-        <property
-                name="locLongitude"
-                type="java.math.BigDecimal"
-                column="loc_longitude"
-                length="11"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsCommunityTyp -->
-        <many-to-one
-                name="pmsCommunityTyp"
-                class="eu.pms.project.database.PmsCommunityTyp"
-                not-null="true"
-                >
-            <column name="typ_id" />
-        </many-to-one>
-        <!-- bi-directional one-to-many association to PmsProjectsCommunity -->
-        <set
-                name="pmsProjectsCommunities"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="com_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsCommunity"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsMasterPlanCommunity -->
-        <set
-                name="pmsMasterPlanCommunities"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="com_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsMasterPlanCommunity"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsAccessToLand -->
-        <set
-                name="pmsAccessToLands"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="com_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsAccessToLand"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsAgricultureSocio -->
-        <set
-                name="pmsAgricultureSocios"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="com_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsAgricultureSocio"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsIncident -->
-        <set
-                name="pmsIncidents"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="com_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsIncident"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsWaterSocio -->
-        <set
-                name="pmsWaterSocios"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="com_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsWaterSocio"
-                    />
-        </set>
-
+        <property name="perTitle" type="java.lang.String" column="per_title"/>
+        <property name="perType" type="java.lang.String" column="per_type"/>
+        <property name="perSubmitDate" type="java.util.Date" column="per_submit_date"/>
+        <property name="perIssueDate" type="java.util.Date" column="per_issue_date"/>
+        <property name="perPeriod" type="int" column="per_period"/>
+        <property name="perStatus" type="java.lang.String" column="per_status"/>
+        <property name="perIssuingAgency" type="java.lang.String" column="per_issuing_agency"/>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsCommunityTyp"
-            table="pms_community_types"
-            >
-        <id
-                name="typId"
-                type="java.lang.String"
-                column="typ_id"
-                >
-            <generator class="assigned" />
+
+    <class name="eu.pms.project.database.PmsBenificiary" table="pms_benificiaries">
+        <id name="benId" type="java.lang.String" column="ben_id">
+            <generator class="assigned"/>
         </id>
-        <property
-                name="typDesc"
-                type="java.lang.String"
-                column="typ_desc"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsCommunity -->
-        <set
-                name="pmsCommunities"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="typ_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsCommunity"
-                    />
-        </set>
-
+        <property name="benDesc" type="java.lang.String" column="ben_desc"/>
+        <property name="benTotal" type="int" column="ben_total"/>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
+        <property name="btpId" type="java.lang.String" column="btp_id"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsContry"
-            table="pms_contries"
-            >
-        <id
-                name="conId"
-                type="java.lang.String"
-                column="con_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="conName"
-                type="java.lang.String"
-                column="con_name"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="conAbbreviation"
-                type="java.lang.String"
-                column="con_abbreviation"
-                not-null="true"
-                length="2"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
 
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsDevelopmentAgency -->
-        <set
-                name="pmsDevelopmentAgencies"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="con_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsDevelopmentAgency"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsImplementer -->
-        <set
-                name="pmsImplementers"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="con_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsImplementer"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsDonor -->
-        <set
-                name="pmsDonors"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="con_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsDonor"
-                    />
-        </set>
-
+    <class name="eu.pms.project.database.PmsProjectsBenificiary" table="pms_projects_benificiaries">
+        <composite-id name="compId" class="eu.pms.project.database.PmsProjectsBenificiaryPK">
+            <key-property name="proId" column="pro_id" type="java.lang.String"/>
+            <key-property name="benId" column="ben_id" type="java.lang.String"/>
+        </composite-id>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsDatasourc"
-            table="pms_datasources"
-            >
-        <id
-                name="datId"
-                type="java.lang.String"
-                column="dat_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="datDesc"
-                type="java.lang.String"
-                column="dat_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
 
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsIncident -->
-        <set
-                name="pmsIncidents"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="dat_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsIncident"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsDevelopmentAgency"
-            table="pms_development_agencies"
-            >
-        <id
-                name="devId"
-                type="java.lang.String"
-                column="dev_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="devAbbName"
-                type="java.lang.String"
-                column="dev_abb_name"
-                length="10"
-                />
-        <property
-                name="devDesc"
-                type="java.lang.String"
-                column="dev_desc"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsContry -->
-        <many-to-one
-                name="pmsContry"
-                class="eu.pms.project.database.PmsContry"
-                not-null="true"
-                >
-            <column name="con_id" />
-        </many-to-one>
-        <!-- bi-directional one-to-many association to PmsProject -->
-        <set
-                name="pmsProjects"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="dev_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProject"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsDonor"
-            table="pms_donors"
-            >
-        <id
-                name="donId"
-                type="java.lang.String"
-                column="don_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="donName"
-                type="java.lang.String"
-                column="don_name"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="donAbbName"
-                type="java.lang.String"
-                column="don_abb_name"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="donType"
-                type="java.lang.String"
-                column="don_type"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsContry -->
-        <many-to-one
-                name="pmsContry"
-                class="eu.pms.project.database.PmsContry"
-                not-null="true"
-                >
-            <column name="con_id" />
-        </many-to-one>
-        <!-- bi-directional one-to-many association to PmsProjectDonor -->
-        <set
-                name="pmsProjectDonors"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="don_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectDonor"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsMasterPlanDonor -->
-        <set
-                name="pmsMasterPlanDonors"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="don_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsMasterPlanDonor"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsImplementer"
-            table="pms_implementers"
-            >
-        <id
-                name="impId"
-                type="java.lang.String"
-                column="imp_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="impName"
-                type="java.lang.String"
-                column="imp_name"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="impType"
-                type="java.lang.String"
-                column="imp_type"
-                not-null="true"
-                length="2"
-                />
-        <property
-                name="impAbbName"
-                type="java.lang.String"
-                column="imp_abb_name"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsContry -->
-        <many-to-one
-                name="pmsContry"
-                class="eu.pms.project.database.PmsContry"
-                not-null="true"
-                >
-            <column name="con_id" />
-        </many-to-one>
-        <!-- bi-directional one-to-many association to PmsProjectsImplementer -->
-        <set
-                name="pmsProjectsImplementers"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="imp_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsImplementer"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsMasterPlan -->
-        <set
-                name="pmsMasterPlans"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="imp_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsMasterPlan"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsIncident"
-            table="pms_incidents"
-            >
-        <id
-                name="incId"
-                type="java.lang.String"
-                column="inc_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="incOchaId"
-                type="java.lang.String"
-                column="inc_ocha_id"
-                length="15"
-                />
-        <property
-                name="incDescription"
-                type="java.lang.String"
-                column="inc_description"
-                not-null="true"
-                length="65535"
-                />
-        <property
-                name="incAffectedWomen"
-                type="int"
-                column="inc_Affected_women"
-                length="10"
-                />
-        <property
-                name="incAffectedMen"
-                type="int"
-                column="inc_Affected_men"
-                length="10"
-                />
-        <property
-                name="incAffectedAdaults"
-                type="int"
-                column="inc_Affected_adaults"
-                length="10"
-                />
-        <property
-                name="incAffectedChildren"
-                type="int"
-                column="inc_Affected_children"
-                length="10"
-                />
-        <property
-                name="incDisplacedWomen"
-                type="int"
-                column="inc_Displaced_women"
-                length="10"
-                />
-        <property
-                name="incDemolishedWomen"
-                type="int"
-                column="inc_Demolished_women"
-                length="10"
-                />
-        <property
-                name="incSourceLink"
-                type="java.lang.String"
-                column="inc_SourceLink"
-                length="15"
-                />
-        <property
-                name="incUserId"
-                type="java.lang.String"
-                column="inc_userId"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="incTimeStamp"
-                type="java.sql.Timestamp"
-                column="inc_timeStamp"
-                not-null="true"
-                />
-        <property
-                name="locLatitude"
-                type="java.math.BigDecimal"
-                column="loc_latitude"
-                length="10"
-                />
-        <property
-                name="locLongitude"
-                type="java.math.BigDecimal"
-                column="loc_longitude"
-                length="11"
-                />
-        <property
-                name="incDisplacedMen"
-                type="int"
-                column="inc_Displaced_men"
-                length="10"
-                />
-        <property
-                name="incDisplacedAdult"
-                type="int"
-                column="inc_Displaced_adult"
-                length="10"
-                />
-        <property
-                name="incDisplacedChildren"
-                type="int"
-                column="inc_Displaced_children"
-                length="10"
-                />
-        <property
-                name="incDemolishedMen"
-                type="int"
-                column="inc_Demolished_men"
-                length="10"
-                />
-        <property
-                name="incDemolishedAdult"
-                type="int"
-                column="inc_Demolished_adult"
-                length="10"
-                />
-        <property
-                name="incDemolishedChildren"
-                type="int"
-                column="inc_Demolished_children"
-                length="10"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProject"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pro_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsCommunity -->
-        <many-to-one
-                name="pmsCommunity"
-                class="eu.pms.project.database.PmsCommunity"
-                not-null="true"
-                >
-            <column name="com_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsDatasourc -->
-        <many-to-one
-                name="pmsDatasourc"
-                class="eu.pms.project.database.PmsDatasourc"
-                not-null="true"
-                >
-            <column name="dat_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsIndicator"
-            table="pms_indicators"
-            >
-        <composite-id name="comp_id" class="eu.pms.project.database.PmsIndicatorPK">
+    <class name="eu.pms.project.database.PmsIndicator" table="pms_indicators">
+        <composite-id name="compId" class="eu.pms.project.database.PmsIndicatorPK">
             <key-property name="indId" column="ind_id" type="java.lang.String"/>
             <key-property name="resId" column="res_id" type="java.lang.String"/>
             <key-property name="objId" column="obj_id" type="java.lang.String"/>
         </composite-id>
-        <property
-                name="indTitle"
-                type="java.lang.String"
-                column="ind_title"
-                not-null="true"
-                length="50"
-                />
-        <property
-                name="indDate"
-                type="java.sql.Date"
-                column="ind_date"
-                not-null="true"
-                />
-        <property
-                name="indLongDesc"
-                type="java.lang.String"
-                column="ind_long_desc"
-                not-null="true"
-                length="65535"
-                />
-        <property
-                name="indBaseline"
-                type="int"
-                column="ind_baseline"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="indFrequency"
-                type="int"
-                column="ind_frequency"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="indCollectionMethod"
-                type="java.lang.String"
-                column="ind_collection_method"
-                not-null="true"
-                length="45"
-                />
-        <property
-                name="indStatisticalMethod"
-                type="java.lang.String"
-                column="ind_statistical_method"
-                not-null="true"
-                length="45"
-                />
-        <property
-                name="indTarget"
-                type="int"
-                column="ind_target"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="indValue"
-                type="int"
-                column="ind_value"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsResult -->
-        <many-to-one
-                name="pmsResult"
-                class="eu.pms.project.database.PmsResult"
-                not-null="true"
-                >
-            <column name="res_id" />
-            <column name="obj_id" />
-        </many-to-one>
-
+        <property name="indTitle" type="java.lang.String" column="ind_title"/>
+        <property name="indDate" type="java.util.Date" column="ind_date"/>
+        <property name="indLongDesc" type="java.lang.String" column="ind_long_desc"/>
+        <property name="indBaseline" type="int" column="ind_baseline"/>
+        <property name="indFrequency" type="int" column="ind_frequency"/>
+        <property name="indCollectionMethod" type="java.lang.String" column="ind_collection_method"/>
+        <property name="indStatisticalMethod" type="java.lang.String" column="ind_statistical_method"/>
+        <property name="indTarget" type="int" column="ind_target"/>
+        <property name="indValue" type="int" column="ind_value"/>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsIntervention"
-            table="pms_interventions"
-            >
-        <composite-id name="comp_id" class="eu.pms.project.database.PmsInterventionPK">
-            <key-property name="intId" column="int_id" type="java.lang.String"/>
-            <key-property name="subId" column="sub_id" type="java.lang.String"/>
-            <key-property name="secId" column="sec_id" type="java.lang.String"/>
-        </composite-id>
-        <property
-                name="intDesc"
-                type="java.lang.String"
-                column="int_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="intEstimatedBudget"
-                type="int"
-                column="int_estimated_budget"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="intSource"
-                type="java.lang.String"
-                column="int_source"
-                length="50"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
 
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsSubSector -->
-        <many-to-one
-                name="pmsSubSector"
-                class="eu.pms.project.database.PmsSubSector"
-                not-null="true"
-                >
-            <column name="sub_id" />
-            <column name="sec_id" />
-        </many-to-one>
-        <!-- bi-directional one-to-many association to PmsActivity -->
-        <set
-                name="pmsActivities"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="int_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsActivity"
-                    />
-        </set>
-        <!-- bi-directional many-to-one association to PmsMasterPlan -->
-        <many-to-one
-                name="pmsMasterPlan"
-                class="eu.pms.project.database.PmsMasterPlan"
-                not-null="true"
-                >
-            <column name="mas_id" />
-        </many-to-one>
-
+    <class name="eu.pms.project.database.PmsProjectsIndicator" table="pms_projects_indicators">
+    <composite-id name="compId" class="eu.pms.project.database.PmsProjectsIndicatorPK">
+        <key-property name="proId" column="pro_id" type="java.lang.String"/>
+        <key-property name="indId" column="ind_id" type="java.lang.String"/>
+        <key-property name="resId" column="res_id" type="java.lang.String"/>
+        <key-property name="objId" column="obj_id" type="java.lang.String"/>
+    </composite-id>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
-    <class
-            name="eu.pms.project.database.PmsLocation"
-            table="pms_locations"
-            >
-        <id
-                name="locId"
-                type="java.lang.String"
-                column="loc_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="locLatitude"
-                type="java.math.BigDecimal"
-                column="loc_latitude"
-                length="10"
-                />
-        <property
-                name="locLongitude"
-                type="java.math.BigDecimal"
-                column="loc_longitude"
-                not-null="true"
-                length="11"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsProjectsLocation -->
-        <set
-                name="pmsProjectsLocations"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="loc_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsLocation"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsMasterPlan"
-            table="pms_master_plan"
-            >
-        <id
-                name="masId"
-                type="java.lang.String"
-                column="mas_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="masMpNo"
-                type="java.lang.String"
-                column="mas_mp_no"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="masMpName"
-                type="java.lang.String"
-                column="mas_mp_name"
-                not-null="true"
-                length="45"
-                />
-        <property
-                name="masStatus"
-                type="java.lang.String"
-                column="mas_status"
-                length="10"
-                />
-        <property
-                name="masStatusIca"
-                type="java.lang.String"
-                column="mas_status_ica"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="masFirstSubmitDateToIca"
-                type="java.sql.Date"
-                column="mas_first_submit_date_to_ica"
-                not-null="true"
-                />
-        <property
-                name="masLastSubmitDateToIca"
-                type="java.sql.Date"
-                column="mas_last_submit_date_to_ica"
-                not-null="true"
-                />
-        <property
-                name="masNoSessionWithIca"
-                type="int"
-                column="mas_no_session_with_ica"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="masSubmitToMod"
-                type="java.lang.String"
-                column="mas_submit_to_mod"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="masApprovalDate"
-                type="java.sql.Date"
-                column="mas_approval_date"
-                not-null="true"
-                />
-        <property
-                name="masPublicationDate"
-                type="java.sql.Date"
-                column="mas_publication_date"
-                not-null="true"
-                />
-        <property
-                name="masLastDateForObjection"
-                type="java.sql.Date"
-                column="mas_last_date_for_objection"
-                not-null="true"
-                />
-        <property
-                name="masDateOfFinalPublication"
-                type="java.sql.Date"
-                column="mas_date_of_final_publication"
-                not-null="true"
-                />
-        <property
-                name="masApprovedPlanedArea"
-                type="int"
-                column="mas_approved_planed_area"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="masVillageAdminBoarder"
-                type="java.lang.String"
-                column="mas_village_admin_boarder"
-                not-null="true"
-                length="2"
-                />
-        <property
-                name="masNote"
-                type="java.lang.String"
-                column="mas_note"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsMasterPlanCommunity -->
-        <set
-                name="pmsMasterPlanCommunities"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="mas_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsMasterPlanCommunity"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsIntervention -->
-        <set
-                name="pmsInterventions"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="mas_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsIntervention"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsMasterPlanDonor -->
-        <set
-                name="pmsMasterPlanDonors"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="mas_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsMasterPlanDonor"
-                    />
-        </set>
-        <!-- bi-directional many-to-one association to PmsImplementer -->
-        <many-to-one
-                name="pmsImplementer"
-                class="eu.pms.project.database.PmsImplementer"
-                not-null="true"
-                >
-            <column name="imp_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsMasterPlanCommunity"
-            table="pms_master_plan_communities"
-            >
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsMasterPlan -->
-        <many-to-one
-                name="pmsMasterPlan"
-                class="eu.pms.project.database.PmsMasterPlan"
-                not-null="true"
-                >
-            <column name="mas_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsCommunity -->
-        <many-to-one
-                name="pmsCommunity"
-                class="eu.pms.project.database.PmsCommunity"
-                not-null="true"
-                >
-            <column name="com_id" />
-        </many-to-one>
+    <class name="eu.pms.project.database.PmsCommunityTyp" table="pms_community_types" >
+    <id name="typId" type="java.lang.String" column="typ_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="typDesc" type="java.lang.String" column="typ_desc" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
 
     </class>
 
-    <class
-            name="eu.pms.project.database.PmsMasterPlanDonor"
-            table="pms_master_plan_donors"
-            >
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsDonor -->
-        <many-to-one
-                name="pmsDonor"
-                class="eu.pms.project.database.PmsDonor"
-                not-null="true"
-                >
-            <column name="don_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsMasterPlan -->
-        <many-to-one
-                name="pmsMasterPlan"
-                class="eu.pms.project.database.PmsMasterPlan"
-                not-null="true"
-                >
-            <column name="mas_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsObjectiv"
-            table="pms_objectives"
-            >
-        <id
-                name="objId"
-                type="java.lang.String"
-                column="obj_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="objDesc"
-                type="java.lang.String"
-                column="obj_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="objLongDesc"
-                type="java.lang.String"
-                column="obj_long_desc"
-                length="65535"
-                />
-        <property
-                name="objDefineDate"
-                type="java.sql.Date"
-                column="obj_define_date"
-                not-null="true"
-                />
-        <property
-                name="objStatus"
-                type="java.lang.String"
-                column="obj_status"
-                not-null="true"
-                length="5"
-                />
-        <property
-                name="objCloseDate"
-                type="java.sql.Date"
-                column="obj_close_date"
-                not-null="true"
-                />
-        <property
-                name="ojbUserId"
-                type="java.lang.String"
-                column="ojb_user_id"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsStrategicPlanDocument -->
-        <many-to-one
-                name="pmsStrategicPlanDocument"
-                class="eu.pms.project.database.PmsStrategicPlanDocument"
-                not-null="true"
-                >
-            <column name="str_doc_id" />
-        </many-to-one>
-        <!-- bi-directional one-to-many association to PmsResult -->
-        <set
-                name="pmsResults"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="obj_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsResult"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsPermit"
-            table="pms_permits"
-            >
-        <id
-                name="perId"
-                type="java.lang.String"
-                column="per_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="perTitle"
-                type="java.lang.String"
-                column="per_title"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="perType"
-                type="java.lang.String"
-                column="per_type"
-                not-null="true"
-                length="2"
-                />
-        <property
-                name="perSubmitDate"
-                type="java.sql.Date"
-                column="per_submit_date"
-                not-null="true"
-                />
-        <property
-                name="perIssueDate"
-                type="java.sql.Date"
-                column="per_issue_date"
-                not-null="true"
-                />
-        <property
-                name="perPeriod"
-                type="int"
-                column="per_period"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="perStatus"
-                type="java.lang.String"
-                column="per_status"
-                not-null="true"
-                length="2"
-                />
-        <property
-                name="perIssuingAgency"
-                type="java.lang.String"
-                column="per_issuing_agency"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsProject -->
-        <set
-                name="pmsProjects"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="per_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProject"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProgramm"
-            table="pms_programmes"
-            >
-        <id
-                name="prgId"
-                type="java.lang.String"
-                column="prg_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="prgTitle"
-                type="java.lang.String"
-                column="prg_title"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="prgDesc"
-                type="java.lang.String"
-                column="prg_desc"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsProject -->
-        <set
-                name="pmsProjects"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="prg_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProject"
-                    />
-        </set>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProject"
-            table="pms_projects"
-            >
-        <id
-                name="proId"
-                type="java.lang.String"
-                column="pro_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="proTitle"
-                type="java.lang.String"
-                column="pro_title"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="proDescription"
-                type="java.lang.String"
-                column="pro_description"
-                length="65535"
-                />
-        <property
-                name="proStatus"
-                type="java.lang.String"
-                column="pro_status"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="proBudget"
-                type="java.math.BigDecimal"
-                column="pro_budget"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="proStartDate"
-                type="java.sql.Timestamp"
-                column="pro_startDate"
-                not-null="true"
-                />
-        <property
-                name="proEndDate"
-                type="java.sql.Timestamp"
-                column="pro_endDate"
-                not-null="true"
-                />
-        <property
-                name="proNeedPermit"
-                type="java.lang.String"
-                column="pro_needPermit"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="proHasCluster"
-                type="java.lang.String"
-                column="pro_hasCluster"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="proNotes"
-                type="java.lang.String"
-                column="pro_notes"
-                length="500"
-                />
-        <property
-                name="proUserId"
-                type="java.lang.String"
-                column="pro_userId"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="proTimeStamp"
-                type="java.sql.Timestamp"
-                column="pro_timeStamp"
-                not-null="true"
-                />
-        <property
-                name="proArea"
-                type="java.lang.String"
-                column="pro_area"
-                not-null="true"
-                length="2"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsPermit -->
-        <many-to-one
-                name="pmsPermit"
-                class="eu.pms.project.database.PmsPermit"
-                not-null="true"
-                >
-            <column name="per_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsProgramm -->
-        <many-to-one
-                name="pmsProgramm"
-                class="eu.pms.project.database.PmsProgramm"
-                not-null="true"
-                >
-            <column name="prg_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsDevelopmentAgency -->
-        <many-to-one
-                name="pmsDevelopmentAgency"
-                class="eu.pms.project.database.PmsDevelopmentAgency"
-                not-null="true"
-                >
-            <column name="dev_id" />
-        </many-to-one>
-        <!-- bi-directional one-to-many association to PmsProjectsImplementer -->
-        <set
-                name="pmsProjectsImplementers"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pro_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsImplementer"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsProjectsHasPmsProject -->
-        <set
-                name="pmsProjectsHasPmsProjectsByPmsProjectsProId"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pms_projects_pro_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsHasPmsProject"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsProjectsHasPmsProject -->
-        <set
-                name="pmsProjectsHasPmsProjectsByPmsProjectsProId1"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pms_projects_pro_id1" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsHasPmsProject"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsProjectsCommunity -->
-        <set
-                name="pmsProjectsCommunities"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pro_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsCommunity"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsProjectsLocation -->
-        <set
-                name="pmsProjectsLocations"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pro_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsLocation"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsProjectsBenificiary -->
-        <set
-                name="pmsProjectsBenificiaries"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pro_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectsBenificiary"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsProjectDonor -->
-        <set
-                name="pmsProjectDonors"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pro_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsProjectDonor"
-                    />
-        </set>
-        <!-- bi-directional one-to-many association to PmsIncident -->
-        <set
-                name="pmsIncidents"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="pro_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsIncident"
-                    />
-        </set>
-        <!-- bi-directional one-to-one association to PmsProjectAlbum -->
-        <one-to-one
-                name="pmsProjectAlbum"
-                class="eu.pms.project.database.PmsProjectAlbum"
-                outer-join="auto"
-                property-ref="pmsProject"
-                />
-        <!-- bi-directional many-to-one association to PmsClusterTyp -->
-        <many-to-one
-                name="pmsClusterTyp"
-                class="eu.pms.project.database.PmsClusterTyp"
-                not-null="true"
-                >
-            <column name="clu_id" />
-            <column name="pro_type" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProjectAlbum"
-            table="pms_project_album"
-            >
-        <property
-                name="albImage"
-                type="java.io.InputStream"
-                column="alb_image"
-                not-null="true"
-                length="65535"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProject"
-                class="eu.pms.project.database.PmsProject"
-                >
-            <column name="pro_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProjectDonor"
-            table="pms_project_donors"
-            >
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsDonor -->
-        <many-to-one
-                name="pmsDonor"
-                class="eu.pms.project.database.PmsDonor"
-                not-null="true"
-                >
-            <column name="don_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProject"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pro_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProjectsBenificiary"
-            table="pms_projects_benificiaries"
-            >
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsBenificiary -->
-        <many-to-one
-                name="pmsBenificiary"
-                class="eu.pms.project.database.PmsBenificiary"
-                not-null="true"
-                >
-            <column name="ben_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProject"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pro_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProjectsCommunity"
-            table="pms_projects_communities"
-            >
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProject"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pro_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsCommunity -->
-        <many-to-one
-                name="pmsCommunity"
-                class="eu.pms.project.database.PmsCommunity"
-                not-null="true"
-                >
-            <column name="com_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProjectsHasPmsProject"
-            table="pms_projects_has_pms_projects"
-            >
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProjectByPmsProjectsProId"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pms_projects_pro_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProjectByPmsProjectsProId1"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pms_projects_pro_id1" />
-        </many-to-one>
-
+    <class name="eu.pms.project.database.PmsIntervention" table="pms_interventions" >
+    <composite-id name="compId" class="eu.pms.project.database.PmsInterventionPK">
+    <key-property name="intId" column="int_id" type="java.lang.String"/>
+    <key-property name="subId" column="sub_id" type="java.lang.String"/>
+    <key-property name="secId" column="sec_id" type="java.lang.String"/>
+    </composite-id>
+    <property name="intDesc" type="java.lang.String" column="int_desc" />
+    <property name="intEstimatedBudget" type="int" column="int_estimated_budget" />
+    <property name="intSource" type="java.lang.String" column="int_source" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="masId" type="java.lang.String" column="mas_id" />
     </class>
 
-    <class
-            name="eu.pms.project.database.PmsProjectsImplementer"
-            table="pms_projects_implementers"
-            >
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProject"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pro_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsImplementer -->
-        <many-to-one
-                name="pmsImplementer"
-                class="eu.pms.project.database.PmsImplementer"
-                not-null="true"
-                >
-            <column name="imp_id" />
-        </many-to-one>
-
-    </class>
-    <class
-            name="eu.pms.project.database.PmsProjectsLocation"
-            table="pms_projects_locations"
-            >
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsLocation -->
-        <many-to-one
-                name="pmsLocation"
-                class="eu.pms.project.database.PmsLocation"
-                not-null="true"
-                >
-            <column name="loc_id" />
-        </many-to-one>
-        <!-- bi-directional many-to-one association to PmsProject -->
-        <many-to-one
-                name="pmsProject"
-                class="eu.pms.project.database.PmsProject"
-                not-null="true"
-                >
-            <column name="pro_id" />
-        </many-to-one>
-
+    <class name="eu.pms.project.database.PmsMasterPlan" table="pms_master_plan" >
+    <id name="masId" type="java.lang.String" column="mas_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="masMpNo" type="java.lang.String" column="mas_mp_no" />
+    <property name="masMpName" type="java.lang.String" column="mas_mp_name" />
+    <property name="masStatus" type="java.lang.String" column="mas_status" />
+    <property name="masStatusIca" type="java.lang.String" column="mas_status_ica" />
+    <property name="masFirstSubmitDateToIca" type="java.util.Date" column="mas_first_submit_date_to_ica" />
+    <property name="masLastSubmitDateToIca" type="java.util.Date" column="mas_last_submit_date_to_ica" />
+    <property name="masNoSessionWithIca" type="int" column="mas_no_session_with_ica" />
+    <property name="masSubmitToMod" type="java.lang.String" column="mas_submit_to_mod" />
+    <property name="masApprovalDate" type="java.util.Date" column="mas_approval_date" />
+    <property name="masPublicationDate" type="java.util.Date" column="mas_publication_date" />
+    <property name="masLastDateForObjection" type="java.util.Date" column="mas_last_date_for_objection" />
+    <property name="masDateOfFinalPublication" type="java.util.Date" column="mas_date_of_final_publication" />
+    <property name="masApprovedPlanedArea" type="int" column="mas_approved_planed_area" />
+    <property name="masVillageAdminBoarder" type="java.lang.String" column="mas_village_admin_boarder" />
+    <property name="masNote" type="java.lang.String" column="mas_note" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="impId" type="java.lang.String" column="imp_id" />
     </class>
 
-    <class
-            name="eu.pms.project.database.PmsResult"
-            table="pms_results"
-            >
-        <composite-id name="comp_id" class="eu.pms.project.database.PmsResultPK">
-            <key-property name="resId" column="res_id" type="java.lang.String"/>
-            <key-property name="objId" column="obj_id" type="java.lang.String"/>
-        </composite-id>
-        <property
-                name="resDesc"
-                type="java.lang.String"
-                column="res_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="resLongDesc"
-                type="java.lang.String"
-                column="res_long_desc"
-                length="65535"
-                />
-        <property
-                name="resDefineDate"
-                type="java.sql.Date"
-                column="res_define_date"
-                not-null="true"
-                />
-        <property
-                name="resStatus"
-                type="java.lang.String"
-                column="res_status"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="resCloseDate"
-                type="java.sql.Date"
-                column="res_close_date"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
-
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsIndicator -->
-        <set
-                name="pmsIndicators"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="res_id" />
-                <column name="obj_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsIndicator"
-                    />
-        </set>
-        <!-- bi-directional many-to-one association to PmsObjectiv -->
-        <many-to-one
-                name="pmsObjectiv"
-                class="eu.pms.project.database.PmsObjectiv"
-                not-null="true"
-                >
-            <column name="obj_id" />
-        </many-to-one>
-
+    <class name="eu.pms.project.database.PmsSector" table="pms_sectors" >
+    <id name="secId" type="java.lang.String" column="sec_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="secName" type="java.lang.String" column="sec_name" />
+    <property name="secDesc" type="java.lang.String" column="sec_desc" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
-    <class
-            name="eu.pms.project.database.PmsSector"
-            table="pms_sectors"
-            >
-        <id
-                name="secId"
-                type="java.lang.String"
-                column="sec_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="secName"
-                type="java.lang.String"
-                column="sec_name"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="secDesc"
-                type="java.lang.String"
-                column="sec_desc"
-                not-null="true"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
 
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsSubSector -->
-        <set
-                name="pmsSubSectors"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="sec_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsSubSector"
-                    />
-        </set>
-
+    <class name="eu.pms.project.database.PmsSubSector" table="pms_sub_sectors" >
+    <composite-id name="compId" class="eu.pms.project.database.PmsSubSectorPK">
+    <key-property name="subId" column="sub_id" type="java.lang.String"/>
+    <key-property name="secId" column="sec_id" type="java.lang.String"/>
+    </composite-id>
+    <property name="subName" type="java.lang.String" column="sub_name" />
+    <property name="subDesc" type="java.lang.String" column="sub_desc" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
-    <class
-            name="eu.pms.project.database.PmsStrategicPlanDocument"
-            table="pms_strategic_plan_documents"
-            >
-        <id
-                name="strDocId"
-                type="java.lang.String"
-                column="str_doc_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="strDocument"
-                type="java.io.InputStream"
-                column="str_document"
-                not-null="true"
-                length="65535"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
 
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsObjectiv -->
-        <set
-                name="pmsObjectivs"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="str_doc_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsObjectiv"
-                    />
-        </set>
-
+    <class name="eu.pms.project.database.PmsActivity" table="pms_activities" >
+    <composite-id name="compId" class="eu.pms.project.database.PmsActivityPK">
+    <key-property name="actId" column="act_id" type="java.lang.String"/>
+    <key-property name="intId" column="int_id" type="java.lang.String"/>
+    <key-property name="secId" column="sec_id" type="java.lang.String"/>
+    </composite-id>
+    <property name="actDesc" type="java.lang.String" column="act_desc" />
+    <property name="actUnit" type="java.lang.String" column="act_unit" />
+    <property name="actUnitQty" type="int" column="act_unit_qty" />
+    <property name="actEstimatedBudget" type="int" column="act_estimated_budget" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
-    <class
-            name="eu.pms.project.database.PmsSubSector"
-            table="pms_sub_sectors"
-            >
-        <composite-id name="comp_id" class="eu.pms.project.database.PmsSubSectorPK">
-            <key-property name="subId" column="sub_id" type="java.lang.String"/>
-            <key-property name="secId" column="sec_id" type="java.lang.String"/>
-        </composite-id>
-        <property
-                name="subName"
-                type="java.lang.String"
-                column="sub_name"
-                length="100"
-                />
-        <property
-                name="subDesc"
-                type="java.lang.String"
-                column="sub_desc"
-                length="100"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
 
-        <!-- associations -->
-        <!-- bi-directional one-to-many association to PmsIntervention -->
-        <set
-                name="pmsInterventions"
-                lazy="true"
-                inverse="true"
-                >
-            <key>
-                <column name="sub_id" />
-                <column name="sec_id" />
-            </key>
-            <one-to-many
-                    class="eu.pms.project.database.PmsIntervention"
-                    />
-        </set>
-        <!-- bi-directional many-to-one association to PmsSector -->
-        <many-to-one
-                name="pmsSector"
-                class="eu.pms.project.database.PmsSector"
-                not-null="true"
-                >
-            <column name="sec_id" />
-        </many-to-one>
-
+    <class name="eu.pms.project.database.PmsBenificiaryTyp" table="pms_benificiary_types"  >
+    <id name="btpId" type="java.lang.String" column="btp_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="btpDesc" type="java.lang.String" column="btp_desc" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
-    <class
-            name="eu.pms.project.database.PmsWaterSocio"
-            table="pms_water_socio"
-            >
-        <id
-                name="watId"
-                type="java.lang.String"
-                column="wat_id"
-                >
-            <generator class="assigned" />
-        </id>
-        <property
-                name="watIsconnected"
-                type="java.lang.String"
-                column="wat_isconnected"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="watNetwork"
-                type="int"
-                column="wat_network"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="watUseWatTanker"
-                type="java.lang.String"
-                column="wat_use_wat_tanker"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="watRainWaterWell"
-                type="java.lang.String"
-                column="wat_rain_water_well"
-                not-null="true"
-                length="1"
-                />
-        <property
-                name="watNoSprings"
-                type="int"
-                column="wat_no_springs"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="watPriceWater"
-                type="java.math.BigDecimal"
-                column="wat_price_water"
-                not-null="true"
-                length="2"
-                />
-        <property
-                name="watFillingPoint"
-                type="int"
-                column="wat_filling_point"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="watQuantity"
-                type="int"
-                column="wat_quantity"
-                not-null="true"
-                length="10"
-                />
-        <property
-                name="watSurveyDate"
-                type="java.sql.Date"
-                column="wat_survey_date"
-                not-null="true"
-                />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="15"
-                />
-        <property
-                name="timeStamp"
-                type="java.sql.Timestamp"
-                column="time_stamp"
-                not-null="true"
-                />
 
-        <!-- associations -->
-        <!-- bi-directional many-to-one association to PmsCommunity -->
-        <many-to-one
-                name="pmsCommunity"
-                class="eu.pms.project.database.PmsCommunity"
-                not-null="true"
-                >
-            <column name="com_id" />
-        </many-to-one>
+    <class name="eu.pms.project.database.PmsIncident" table="pms_incidents" >
+    <id name="incId" type="java.lang.String" column="inc_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="incType" type="java.lang.String" column="inc_type" />
+    <property name="incOchaId" type="java.lang.String" column="inc_ocha_id" />
+    <property name="incDescription" type="java.lang.String" column="inc_description" />
+    <property name="incAffectedWomen" type="int" column="inc_Affected_women" />
+    <property name="incAffectedMen" type="int" column="inc_Affected_men" />
+    <property name="incAffectedAdaults" type="int" column="inc_Affected_adaults" />
+    <property name="incAffectedChildren" type="int" column="inc_Affected_children" />
+    <property name="incDisplacedWomen" type="int" column="inc_Displaced_women" />
+    <property name="incDemolishedWomen" type="int" column="inc_Demolished_women" />
+    <property name="incSourceLink" type="java.lang.String" column="inc_SourceLink" />
+    <property name="incTimeStamp" type="java.util.Date" column="inc_timeStamp" />
+    <property name="locLatitude" type="java.math.BigDecimal" column="ocha_loc_latitude" />
+    <property name="locLongitude" type="java.math.BigDecimal" column="ocha_loc_longitude" />
+    <property name="incDisplacedMen" type="int" column="inc_Displaced_men" />
+    <property name="incDisplacedAdult" type="int" column="inc_Displaced_adult" />
+    <property name="incDisplacedChildren" type="int"  column="inc_Displaced_children" />
+    <property name="incDemolishedMen" type="int" column="inc_Demolished_men" />
+    <property name="incDemolishedAdult" type="int" column="inc_Demolished_adult" />
+    <property name="incDemolishedChildren" type="int" column="inc_Demolished_children" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="datId" type="java.lang.String" column="dat_id" />
+    <property name="comId" type="java.lang.String" column="com_id" />
+    <property name="proId" type="java.lang.String" column="pro_id" />
+    </class>
 
+    <class name="eu.pms.project.database.PmsDatasourc" table="pms_datasources" >
+    <id name="datId" type="java.lang.String" column="dat_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="datDesc" type="java.lang.String" column="dat_desc" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsStrategicPlanDocument" table="pms_strategic_plan_documents" >
+    <id name="strDocId" type="java.lang.String" column="str_doc_id"
+    >
+    <generator class="assigned" />
+    </id>
+    <property name="strDocument" type="java.sql.Blob" column="str_document" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="conId" type="java.lang.String" column="con_id" />
+    <property name="strPlanTitle" type="java.lang.String" column="str_plan_title" />
+    <property name="strStartDate" type="java.util.Date" column="str_start_date" />
+    <property name="strEndDate" type="java.util.Date" column="str_end_date" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsObjectiv" table="pms_objectives" >
+    <id name="objId" type="java.lang.String" column="obj_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="objDesc" type="java.lang.String" column="obj_desc" />
+    <property name="objLongDesc" type="java.lang.String" column="obj_long_desc" />
+    <property name="objDefineDate" type="java.util.Date" column="obj_define_date" />
+    <property name="objStatus" type="java.lang.String" column="obj_status" />
+    <property name="objCloseDate" type="java.sql.Date" column="obj_close_date" />
+    <property name="ojbUserId" type="java.lang.String" column="ojb_user_id" />
+    <property name="username" type="java.lang.String" column="username"  />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="strDocId" type="java.lang.String" column="str_doc_id" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsResult" table="pms_results" >
+    <composite-id name="compId" class="eu.pms.project.database.PmsResultPK">
+    <key-property name="resId" column="res_id" type="java.lang.String"/>
+    <key-property name="objId" column="obj_id" type="java.lang.String"/>
+    </composite-id>
+    <property name="resDesc" type="java.lang.String" column="res_desc" />
+    <property name="resLongDesc" type="java.lang.String" column="res_long_desc" />
+    <property name="resDefineDate" type="java.util.Date" column="res_define_date" />
+    <property name="resStatus" type="java.lang.String" column="res_status" />
+    <property name="resCloseDate" type="java.util.Date" column="res_close_date" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
 
 </hibernate-mapping>

@@ -108,7 +108,11 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" ><span class="glyphicon glyphicon-map-marker"></span>   Maps</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span> Maps <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/viewMaps.do"> Maps </a></li>
+                        <li><a href="/viewMapsLayer.do"> Maps Layers </a></li>
+                    </ul>
                 </li>
 
             </ul>
