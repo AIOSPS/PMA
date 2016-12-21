@@ -9,57 +9,17 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class SecUser implements Serializable {
 
-    /** identifier field */
     private String usrId;
-
-    /** nullable persistent field */
     private String usrPassword;
-
-    /** persistent field */
     private String usrStatus;
-
-    /** nullable persistent field */
     private String usrName;
-
-    /** nullable persistent field */
     private String usrEmail;
-
-    /** nullable persistent field */
     private String usrMobile;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private Set secUserRoles;
-
-    /** full constructor */
-    public SecUser(String usrId, String usrPassword, String usrStatus, String usrName, String usrEmail, String usrMobile, String username, java.util.Date timeStamp, Set secUserRoles) {
-        this.usrId = usrId;
-        this.usrPassword = usrPassword;
-        this.usrStatus = usrStatus;
-        this.usrName = usrName;
-        this.usrEmail = usrEmail;
-        this.usrMobile = usrMobile;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.secUserRoles = secUserRoles;
-    }
 
     /** default constructor */
     public SecUser() {
-    }
-
-    /** minimal constructor */
-    public SecUser(String usrId, String usrStatus, String username, java.util.Date timeStamp, Set secUserRoles) {
-        this.usrId = usrId;
-        this.usrStatus = usrStatus;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.secUserRoles = secUserRoles;
     }
 
     public String getUsrId() {
@@ -124,14 +84,6 @@ public class SecUser implements Serializable {
 
     public void setTimeStamp(java.util.Date timeStamp) {
         this.timeStamp = timeStamp;
-    }
-
-    public Set getSecUserRoles() {
-        return this.secUserRoles;
-    }
-
-    public void setSecUserRoles(Set secUserRoles) {
-        this.secUserRoles = secUserRoles;
     }
 
     public String toString() {

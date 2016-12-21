@@ -3,6 +3,15 @@
 <hibernate-mapping>
 
     <query
+            name="pms.getUser">
+        <![CDATA[
+                from eu.pms.login.database.SecUser a
+                where a.usrId = ?
+                and a.usrPassword = ?
+                order by a.usrName
+                  ]]>
+    </query>
+    <query
             name="getPmsProjectList">
         <![CDATA[
                 from eu.pms.project.database.PmsProject a
@@ -111,7 +120,7 @@
             name="getPmsClusterTyp">
         <![CDATA[
                 from eu.pms.project.database.PmsClusterTyp a
-                order by a.cluDesc
+                order by a.cluType,a.cluDesc
                   ]]>
     </query>
     <query
@@ -218,8 +227,8 @@
     <query
             name="getPmsBenificiaryTypeList">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiaryTyp a
-                order by a.btpDesc
+                from eu.pms.lookup.database.PmsBenificiaryTyp a
+                order by a.lookupDesc
                   ]]>
     </query>
     <query
@@ -270,8 +279,8 @@
     <query
             name="getPmsDataSourceList">
         <![CDATA[
-                from eu.pms.project.database.PmsDatasourc a
-                order by a.datDesc
+                from eu.pms.lookup.database.PmsDatasourc a
+                order by a.lookupDesc
                   ]]>
     </query>
     <query

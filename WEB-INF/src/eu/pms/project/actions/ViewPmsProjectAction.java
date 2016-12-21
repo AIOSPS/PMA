@@ -1,6 +1,7 @@
 package eu.pms.project.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.project.database.*;
 import eu.pms.project.forms.PmsProjectForm;
 import eu.pms.project.useCases.*;
@@ -12,6 +13,7 @@ import org.apache.struts.action.ActionMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ViewPmsProjectAction extends Action {
@@ -20,6 +22,10 @@ public class ViewPmsProjectAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List dononrList = (List) new GetPmsDonorsUseCase().execute(null, request);
         List implementerList = (List) new GetPmsImplementerUseCase().execute(null, request);
         List developmentAgencyList = (List) new GetPmsDevelopmentAgencyUseCase().execute(null, request);
@@ -27,6 +33,18 @@ public class ViewPmsProjectAction extends Action {
         List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
         List clusterList = (List) new GetPmsClusterTypUseCase().execute(null, request);
+        List clusterHList = new ArrayList();
+        List clusterDList = new ArrayList();
+        Iterator itr = clusterList.iterator();
+        PmsClusterTyp pmsClusterTyp = new PmsClusterTyp();
+        while (itr.hasNext()) {
+            pmsClusterTyp = (PmsClusterTyp) itr.next();
+            if (pmsClusterTyp.getCluType().equals("Hum"))
+                clusterHList.add(pmsClusterTyp);
+            else if (pmsClusterTyp.getCluType().equals("Dev"))
+                clusterDList.add(pmsClusterTyp);
+
+        }
         List permitList = (List) new GetPmsPermitUseCase().execute(null, request);
         List benificiryList = (List) new GetPmsBenificiaryUseCase().execute(null, request);
         List indicatorList = (List) new GetPmsIndicatorListUseCase().execute(null, request);
@@ -36,7 +54,8 @@ public class ViewPmsProjectAction extends Action {
         request.setAttribute("programmList", programmList);
         request.setAttribute("locationList", locationList);
         request.setAttribute("communityList", communityList);
-        request.setAttribute("clusterList", clusterList);
+        request.setAttribute("clusterHList", clusterHList);
+        request.setAttribute("clusterDList", clusterDList);
         request.setAttribute("permitList", permitList);
         request.setAttribute("benificiryList", benificiryList);
         request.setAttribute("indicatorList", indicatorList);
@@ -128,7 +147,7 @@ public class ViewPmsProjectAction extends Action {
         pmsProjectForm.setDevId(pmsProject.getDevId());
         pmsProjectForm.setPrgId(pmsProject.getPrgId());
         pmsProjectForm.setProArea(pmsProject.getProArea());
-        pmsProjectForm.setProType(pmsProject.getProType());
+        pmsProjectForm.setCluType(pmsProject.getCluType());
         pmsProjectForm.setProHasCluster(pmsProject.getProHasCluster());
         pmsProjectForm.setCluId(pmsProject.getCluId());
         pmsProjectForm.setProNeedPermit(pmsProject.getProNeedPermit());

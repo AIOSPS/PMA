@@ -2,6 +2,7 @@ package eu.pms.incident.actions;
 
 
 import eu.pms.activity.useCases.GetPmsInterventionUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.incident.useCases.GetPmsDataSourceUseCase;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.project.useCases.GetPmsCommunityUseCase;
@@ -23,6 +24,10 @@ public class ViewAddPmsIncidentAction extends Action
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List dataSourceList = (List) new GetPmsDataSourceUseCase().execute(null, request);
         request.setAttribute("dataSourceList", dataSourceList);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);

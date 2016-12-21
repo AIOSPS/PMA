@@ -19,6 +19,10 @@ public class PmsProjectDonorPK implements Serializable {
     public PmsProjectDonorPK() {
     }
 
+    public PmsProjectDonorPK(String proId) {
+        this.proId = proId;
+    }
+
     public String getProId() {
         return proId;
     }

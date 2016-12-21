@@ -3,6 +3,7 @@ package eu.pms.incident.actions;
 
 import eu.pms.activity.forms.PmsActivityForm;
 import eu.pms.activity.useCases.AddPmsActivityUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.incident.forms.PmsIncidentForm;
 import eu.pms.incident.useCases.AddPmsIncidentUseCase;
 import eu.pms.intervention.forms.PmsInterventionForm;
@@ -23,6 +24,10 @@ public class AddPmsIncidentAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         PmsIncidentForm pmsIncidentForm = (PmsIncidentForm) form;
         String incId = pmsIncidentForm.getIncId();
         String datId = pmsIncidentForm.getDatId();

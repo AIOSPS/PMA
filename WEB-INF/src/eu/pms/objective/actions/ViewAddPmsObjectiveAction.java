@@ -1,6 +1,7 @@
 package eu.pms.objective.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.objective.useCases.GetPmsStrategicPlanDocUseCase;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -18,6 +19,10 @@ public class ViewAddPmsObjectiveAction extends Action
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List strategicPlanDocList = (List) new GetPmsStrategicPlanDocUseCase().execute(null, request);
         request.setAttribute("strategicPlanDocList", strategicPlanDocList);
         return mapping.findForward("success");

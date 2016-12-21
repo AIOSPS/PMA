@@ -1,6 +1,7 @@
 package eu.pms.project.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.project.forms.PmsProjectForm;
 import eu.pms.project.useCases.AddPmsProjectUseCase;
 import org.apache.struts.action.Action;
@@ -19,6 +20,10 @@ public class AddPmsProjectAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         PmsProjectForm pmsProjectForm = (PmsProjectForm) form;
         String proId = pmsProjectForm.getProId();
         String proTitle = pmsProjectForm.getProTitle();
@@ -36,7 +41,7 @@ public class AddPmsProjectAction extends Action {
         String prgId = pmsProjectForm.getPrgId();
         String devId = pmsProjectForm.getDevId();
         String cluId = pmsProjectForm.getCluId();
-        String proType = pmsProjectForm.getProType();
+        String cluType = pmsProjectForm.getCluType();
         String preId = pmsProjectForm.getPreId();
 
         String[] donorProjectList = pmsProjectForm.getDonorProjectList();
@@ -61,7 +66,7 @@ public class AddPmsProjectAction extends Action {
         inputs.add(prgId);
         inputs.add(devId);
         inputs.add(cluId);
-        inputs.add(proType);
+        inputs.add(cluType);
         inputs.add(preId);
         inputs.add(donorProjectList);
         inputs.add(implementerProjectList);
@@ -74,7 +79,7 @@ public class AddPmsProjectAction extends Action {
         if (result != null && result.size() > 0) {
 
         }
-
+        pmsProjectForm.reset(mapping, request);
         return mapping.findForward("success");
     }
 }

@@ -22,6 +22,9 @@
         <put name="footer" value="/pages/layout/footerPage.jsp"/>
     </definition>
 
+    <definition name="invalidAccess.tile" extends="outerLayout">
+        <put name="body" value="/pages/publicPages/invalidAccessPage.jsp"/>
+    </definition>
     <definition name="login.tile" extends="outerLayout">
         <put name="body" value="/pages/login.jsp"/>
     </definition>
@@ -149,6 +152,8 @@
     <definition name="pms.editIndicator.tile" extends="innerLayout">
         <put name="body" value="/pages/indicators/editIndicator.jsp"/>
     </definition>
-
+    <definition name="pms.viewLookupPage.tile" extends="innerLayout">
+        <put name="body" value="/pages/lookup/lookup.jsp"/>
+    </definition>
 
 </tiles-definitions>

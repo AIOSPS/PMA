@@ -1,6 +1,7 @@
 package eu.pms.community.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.community.forms.PmsCommunityForm;
 import eu.pms.community.useCases.AddPmsCommunityUseCase;
 import eu.pms.project.useCases.AddPmsProjectUseCase;
@@ -20,6 +21,10 @@ public class AddPmsCommunityAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         PmsCommunityForm pmsCommunityForm = (PmsCommunityForm) form;
         String comId = pmsCommunityForm.getComId();
         String comPcbsCode = pmsCommunityForm.getComPcbsCode();

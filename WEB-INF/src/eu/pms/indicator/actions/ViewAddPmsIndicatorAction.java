@@ -1,6 +1,7 @@
 package eu.pms.indicator.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.indicator.useCases.GetPmsResultUseCase;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -18,6 +19,10 @@ public class ViewAddPmsIndicatorAction extends Action
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List resultList = (List) new GetPmsResultUseCase().execute(null, request);
         request.setAttribute("resultList", resultList);
         return mapping.findForward("success");

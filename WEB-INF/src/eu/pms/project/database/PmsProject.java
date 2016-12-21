@@ -29,7 +29,7 @@ public class PmsProject implements Serializable {
     private String prgId;
     private String devId;
     private String cluId;
-    private String proType;
+    private String cluType;
     private String preId;
     /** default constructor */
     public PmsProject() {
@@ -163,12 +163,12 @@ public class PmsProject implements Serializable {
         this.cluId = cluId;
     }
 
-    public String getProType() {
-        return proType;
+    public String getCluType() {
+        return cluType;
     }
 
-    public void setProType(String proType) {
-        this.proType = proType;
+    public void setCluType(String cluType) {
+        this.cluType = cluType;
     }
 
     public String getPreId() {

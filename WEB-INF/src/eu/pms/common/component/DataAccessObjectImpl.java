@@ -229,6 +229,82 @@ public class DataAccessObjectImpl extends DgfComponent implements DataAccessObje
 
         return updatedEntities;
     }
+    public int deleteByHqlQuery(String query) throws ComponentException {
+        Session session = null;
+        int errorType = 0;
+        String message = null;
+
+        int updatedEntities = 0;
+        try {
+            session = getSession();
+            Query q = session.createQuery(query);
+
+            updatedEntities = q.executeUpdate();
+        } catch (HibernateException hbe) {
+            errorType = ExceptionType.HIBERNATE_EXCEPTION;
+            message = hbe.getMessage();
+        } catch (SQLException sqle) {
+            errorType = ExceptionType.SQL_EXCEPTION;
+            message = sqle.getMessage();
+        } catch (Exception e) {
+            errorType = ExceptionType.EXCEPTION;
+            message = e.getMessage();
+        } finally {
+            if (session != null) {
+                try {
+                    releaseSession(session);
+                } catch (Exception e) {
+                    errorType = ExceptionType.CLOSE_SESSION_EXCEPTION;
+                    message = e.getMessage();
+                }
+            }
+            if (errorType != 0 && message != null) {
+                ComponentException componentException = new ComponentException(ExceptionType.SQL_EXCEPTION, "DataAccessObjectImpl.deleteByHqlQuery", message);
+                throw componentException;
+            }
+
+        }
+
+        return updatedEntities;
+    }
+    public List delete_JDBC_ODBC(String queryString) throws Exception {
+        int errorType = 0;
+        String message = null;
+        Session session = null;
+        List retList = null;
+        try {
+            session = getSession();
+            Query query = session.createSQLQuery(queryString);
+
+            int retVal = query.executeUpdate();
+            retList.add(retVal);
+        } catch (HibernateException hbe) {
+            errorType = ExceptionType.HIBERNATE_EXCEPTION;
+            message = hbe.getMessage();
+        } catch (SQLException sqle) {
+            errorType = ExceptionType.SQL_EXCEPTION;
+            message = sqle.getMessage();
+        } catch (Exception e) {
+            errorType = ExceptionType.EXCEPTION;
+            message = e.getMessage();
+        } finally {
+            if (session != null) {
+                try {
+                    releaseSession(session);
+                } catch (Exception e) {
+                    errorType = ExceptionType.CLOSE_SESSION_EXCEPTION;
+                    message = e.getMessage();
+                }
+            }
+            if (errorType != 0 && message != null) {
+                ComponentException componentException = new ComponentException(ExceptionType.SQL_EXCEPTION, "DataAccessObjectImpl.getJDBC_ODBCList", message);
+                throw componentException;
+            }
+
+        }
+
+        return retList;
+    }
 
 
     public void update(Object valueObject) throws ComponentException {
@@ -551,6 +627,43 @@ public class DataAccessObjectImpl extends DgfComponent implements DataAccessObje
         return retList;
     }
 
+    public void deleteAsSelect(String query) throws Exception
+    {
+        int errorType=0;
+        String message=null;
 
-    //   end Added By Ibrahim Asi Date :23-8-2011
+        List objList = null;
+        Session session = null;
+        try
+        {
+            session=getSession();
+            Query q = session.createQuery(query);
+            objList = q.list();
+
+            if(objList!=null && objList.size()>0)
+            {
+                for(Object obj:objList)
+                    session.delete(obj);
+            }
+        }
+        catch (HibernateException hbe)  {  errorType=ExceptionType.HIBERNATE_EXCEPTION; message=hbe.getMessage();  }
+        catch (SQLException sqle)       {  errorType=ExceptionType.SQL_EXCEPTION;       message=sqle.getMessage(); }
+        catch (Exception e)             {  errorType=ExceptionType.EXCEPTION;           message=e.getMessage();    }
+
+        finally
+        {
+            if (session != null)
+            {
+                try  { releaseSession(session); }
+                catch (Exception e) { errorType=ExceptionType.CLOSE_SESSION_EXCEPTION;           message=e.getMessage(); }
+            }
+            if(errorType != 0 && message !=null)
+            {
+                ComponentException componentException=new ComponentException(ExceptionType.SQL_EXCEPTION,"DataAccessObjectImpl.deleteAsSelect",message);
+                throw componentException;
+            }
+
+        }
+    }
+
 }

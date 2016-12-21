@@ -3,6 +3,7 @@ package eu.pms.benificiary.actions;
 
 import eu.pms.activity.useCases.GetPmsInterventionUseCase;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -20,6 +21,10 @@ public class ViewAddPmsBenificiaryAction extends Action
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List benificiaryTypeList = (List) new GetPmsBenificiaryTypeUseCase().execute(null, request);
         request.setAttribute("benificiaryTypeList", benificiaryTypeList);
 

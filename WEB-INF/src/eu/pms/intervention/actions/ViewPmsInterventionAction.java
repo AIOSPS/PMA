@@ -1,6 +1,7 @@
 package eu.pms.intervention.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.forms.PmsInterventionForm;
 import eu.pms.intervention.useCases.GetPmsInterventionUseCase;
 import eu.pms.intervention.useCases.GetPmsMasterPlanUseCase;
@@ -23,6 +24,10 @@ public class ViewPmsInterventionAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List masterPlanList = (List) new GetPmsMasterPlanUseCase().execute(null, request);
         List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
         List subSectorsList = (List) new GetPmsSubSectorsUseCase().execute(null, request);

@@ -19,6 +19,10 @@ public class PmsProjectDonor implements Serializable {
     public PmsProjectDonor() {
     }
 
+    public PmsProjectDonor(PmsProjectDonorPK compId) {
+        this.compId = compId;
+    }
+
     public PmsProjectDonorPK getCompId() {
         return compId;
     }

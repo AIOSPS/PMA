@@ -23,8 +23,8 @@ public class PmsCommunityListAction extends Action
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
-//        if (!(SessionTraker.isSessionExist(request)))
-//            return mapping.findForward("invalidAccess");
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
 

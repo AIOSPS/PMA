@@ -1,6 +1,7 @@
 package eu.pms.intervention.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.forms.PmsInterventionForm;
 import eu.pms.intervention.useCases.AddPmsInterventionUseCase;
 import org.apache.struts.action.Action;
@@ -19,6 +20,10 @@ public class AddPmsInterventionAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         PmsInterventionForm pmsInterventionForm = (PmsInterventionForm) form;
         String intId = pmsInterventionForm.getIntId();
         String subId = pmsInterventionForm.getSubId();

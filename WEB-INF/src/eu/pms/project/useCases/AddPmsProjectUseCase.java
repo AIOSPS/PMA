@@ -33,7 +33,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             String prgId = (String) itr.next();
             String devId = (String) itr.next();
             String cluId = (String) itr.next();
-            String proType = (String) itr.next();
+            String cluType = (String) itr.next();
             String preId = (String) itr.next();
             String[] donorProjectArray = (String[]) itr.next();
             String[] implementerProjectArray = (String[]) itr.next();
@@ -44,7 +44,16 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
 
             String username = "pms";
             Date timeStamp = new Date();
-
+            if(cluType!=null && cluType.equals("Hum")){
+                communityProjectArray = null;
+                proHasCluster = "0";
+            }else if(cluType!=null && cluType.equals("Dev")){
+                if(proHasCluster.equals("1")){
+                    communityProjectArray = null;
+                }else if(proHasCluster.equals("0")){
+                    cluId = null;
+                }
+            }
             PmsProject pmsProject = new PmsProject();
             pmsProject.setProId(proId);
             pmsProject.setProTitle(proTitle);
@@ -60,7 +69,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             pmsProject.setPrgId(prgId);
             pmsProject.setDevId(devId);
             pmsProject.setCluId(cluId);
-            pmsProject.setProType(proType);
+            pmsProject.setCluType(cluType);
             pmsProject.setPreId(preId);
             pmsProject.setUsername(username);
             pmsProject.setTimeStamp(timeStamp);
@@ -160,6 +169,12 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
                 }
             }
 
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectDonor a where a.compId.proId='"+proId+"'");
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsImplementer a where a.compId.proId='"+proId+"'");
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsLocation a where a.compId.proId='"+proId+"'");
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsCommunity a where a.compId.proId='"+proId+"'");
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsBenificiary a where a.compId.proId='"+proId+"'");
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsIndicator a where a.compId.proId='"+proId+"'");
             new DataAccessObjectImpl().insertOrUpdate(insertList);
 
         } catch (Exception ce) {

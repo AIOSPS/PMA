@@ -7,6 +7,7 @@ import eu.pms.activity.useCases.GetPmsInterventionUseCase;
 import eu.pms.benificiary.forms.PmsBenificiaryForm;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.objective.forms.PmsObjectiveForm;
 import eu.pms.objective.useCases.GetPmsObjectiveUseCase;
@@ -33,6 +34,10 @@ public class ViewPmsResultAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List objectiveList = (List) new GetPmsObjectivesUseCase().execute(null, request);
         request.setAttribute("objectiveList", objectiveList);
         String resId = request.getParameter("resId");

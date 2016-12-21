@@ -26,6 +26,7 @@
         <form-bean name="pmsResultSearchForm" type="eu.pms.result.forms.PmsResultSearchForm"/>
         <form-bean name="pmsIndicatorForm" type="eu.pms.indicator.forms.PmsIndicatorForm"/>
         <form-bean name="pmsIndicatorSearchForm" type="eu.pms.indicator.forms.PmsIndicatorSearchForm"/>
+        <form-bean name="lookupForm" type="eu.pms.lookup.forms.LookupForm"/>
 
     </form-beans>
 
@@ -36,7 +37,7 @@
     <!-- ========== Global Forward Definitions =============================== -->
 
     <global-forwards>
-        <!--<forward name="portalIndex" path="/portalLogin.do"/>-->
+        <forward name="invalidAccess" path="invalidAccess.tile" contextRelative="true" redirect="true"/>
     </global-forwards>
 
     <!-- ========== Action Mapping Definitions =============================== -->
@@ -62,7 +63,7 @@
             input="/loginPage.do"
             path="/login"
             >
-            <forward name="failed"   path="/loginPage.do"/>
+            <forward name="fail"   path="/loginPage.do"/>
             <forward name="success" path="main.tile"/>
         </action>
         <action
@@ -70,6 +71,12 @@
                 path="/home"
                 parameter="main.tile"
         />
+
+        <action
+                type="eu.pms.logout.actions.LogoutAction"
+                path="/logout">
+            <forward name="logoutDone" path="/loginPage.do" redirect="true"/>
+        </action>
 
         <action
             type="eu.pms.project.actions.PmsProjectListAction"
@@ -531,6 +538,45 @@
         >
             <forward name="success" path="pms.editIndicator.tile"/>
         </action>
+
+
+        <!-- lookup -->
+        <action
+                path="/viewLookupsAction"
+                type="eu.pms.lookup.actions.ViewLookupsAction"
+                name="lookupForm"
+                validate="false">
+
+            <forward name="success" path="pms.viewLookupPage.tile" contextRelative="true"/>
+        </action>
+
+        <action
+                path="/insertLookupAction"
+                type="eu.pms.lookup.actions.InsertLookupAction"
+                name="lookupForm"
+                input="/viewLookupsAction.do">
+
+            <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
+        </action>
+
+        <action
+                path="/deleteLookupsAction"
+                type="eu.pms.lookup.actions.DeleteLookupAction"
+                name="lookupForm"
+                validate="false"
+        >
+            <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
+        </action>
+
+        <action
+                path="/updateLookupAction"
+                type="eu.pms.lookup.actions.UpdateLookupAction"
+                name="lookupForm"
+                input="/viewLookupsAction.do">
+
+            <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
+        </action>
+        <!-- end lookup -->
 
     </action-mappings>
 

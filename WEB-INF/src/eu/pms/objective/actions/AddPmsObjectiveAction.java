@@ -5,6 +5,7 @@ import eu.pms.activity.forms.PmsActivityForm;
 import eu.pms.activity.useCases.AddPmsActivityUseCase;
 import eu.pms.benificiary.forms.PmsBenificiaryForm;
 import eu.pms.benificiary.useCases.AddPmsBenificiaryUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.forms.PmsInterventionForm;
 import eu.pms.intervention.useCases.AddPmsInterventionUseCase;
 import eu.pms.objective.forms.PmsObjectiveForm;
@@ -27,6 +28,10 @@ public class AddPmsObjectiveAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         PmsObjectiveForm pmsObjectiveForm = (PmsObjectiveForm) form;
         String objId = pmsObjectiveForm.getObjId();
         String objDesc = pmsObjectiveForm.getObjDesc();

@@ -7,6 +7,7 @@ import eu.pms.activity.useCases.GetPmsInterventionUseCase;
 import eu.pms.benificiary.forms.PmsBenificiaryForm;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.project.database.PmsActivity;
 import eu.pms.project.database.PmsBenificiary;
@@ -27,6 +28,10 @@ public class ViewPmsBenificiaryAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List benificiaryTypeList = (List) new GetPmsBenificiaryTypeUseCase().execute(null, request);
         request.setAttribute("benificiaryTypeList", benificiaryTypeList);
 

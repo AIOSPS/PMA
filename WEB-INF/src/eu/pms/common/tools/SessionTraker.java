@@ -46,7 +46,7 @@ public class SessionTraker
 //            if (!valid)
 //                request.getSession().invalidate();
 //        }
-        if (request.getSession().getAttribute("userLogged") != null)
+        if (request.getSession().getAttribute("userInfo") != null)
         {
             valid = true;
         }

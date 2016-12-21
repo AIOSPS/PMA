@@ -5,6 +5,7 @@ import eu.pms.activity.forms.PmsActivityForm;
 import eu.pms.activity.useCases.AddPmsActivityUseCase;
 import eu.pms.benificiary.forms.PmsBenificiaryForm;
 import eu.pms.benificiary.useCases.AddPmsBenificiaryUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.forms.PmsInterventionForm;
 import eu.pms.intervention.useCases.AddPmsInterventionUseCase;
 import org.apache.struts.action.Action;
@@ -23,6 +24,10 @@ public class AddPmsBenificiaryAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         PmsBenificiaryForm pmsBenificiaryForm = (PmsBenificiaryForm) form;
         String benId = pmsBenificiaryForm.getBenId();
         String benDesc = pmsBenificiaryForm.getBenDesc();

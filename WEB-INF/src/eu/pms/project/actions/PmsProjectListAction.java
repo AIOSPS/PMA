@@ -1,6 +1,7 @@
 package eu.pms.project.actions;
 
 
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.login.components.LoginComponent;
 import eu.pms.login.forms.LoginForm;
 import eu.pms.project.forms.PmsProjectSearchForm;
@@ -21,6 +22,10 @@ public class PmsProjectListAction extends Action
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         ArrayList inputData = new ArrayList();
         PmsProjectSearchForm pmsProjectSearchForm = (PmsProjectSearchForm) form;
         if (pmsProjectSearchForm != null) {

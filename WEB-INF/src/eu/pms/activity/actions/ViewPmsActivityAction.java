@@ -4,6 +4,7 @@ package eu.pms.activity.actions;
 import eu.pms.activity.forms.PmsActivityForm;
 import eu.pms.activity.useCases.GetPmsActivityUseCase;
 import eu.pms.activity.useCases.GetPmsInterventionUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.project.database.PmsActivity;
 import eu.pms.project.database.PmsIntervention;
@@ -23,6 +24,10 @@ public class ViewPmsActivityAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List inertventionList = (List) new GetPmsInterventionUseCase().execute(null, request);
         List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
         request.setAttribute("inertventionList", inertventionList);

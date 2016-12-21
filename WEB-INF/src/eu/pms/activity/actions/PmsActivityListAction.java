@@ -3,6 +3,7 @@ package eu.pms.activity.actions;
 
 import eu.pms.activity.forms.PmsActivitySearchForm;
 import eu.pms.activity.useCases.PmsActivityListUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.useCases.PmsInterventionListUseCase;
 import org.apache.struts.action.*;
 
@@ -17,6 +18,10 @@ public class PmsActivityListAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         ArrayList inputData = new ArrayList();
         PmsActivitySearchForm pmsActivitySearchForm = (PmsActivitySearchForm) form;
         if (pmsActivitySearchForm != null) {

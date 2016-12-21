@@ -62,77 +62,17 @@
         </set>
 
     </class>
-    <class
-            name="eu.pms.login.database.SecUser"
-            table="sec_user"
-    >
-        <id
-                name="usrId"
-                type="java.lang.String"
-                column="USR_ID"
-        >
+    <class name="eu.pms.login.database.SecUser" table="sec_user" >
+        <id name="usrId" type="java.lang.String" column="USR_ID" >
             <generator class="assigned"/>
         </id>
-        <property
-                name="usrPassword"
-                type="java.lang.String"
-                column="USR_PASSWORD"
-                length="45"
-        />
-        <property
-                name="usrStatus"
-                type="java.lang.String"
-                column="USR_STATUS"
-                not-null="true"
-                length="2"
-        />
-        <property
-                name="usrName"
-                type="java.lang.String"
-                column="USR_NAME"
-                length="100"
-        />
-        <property
-                name="usrEmail"
-                type="java.lang.String"
-                column="USR_EMAIL"
-                length="30"
-        />
-        <property
-                name="usrMobile"
-                type="java.lang.String"
-                column="USR_MOBILE"
-                length="10"
-        />
-        <property
-                name="username"
-                type="java.lang.String"
-                column="username"
-                not-null="true"
-                length="20"
-        />
-        <property
-                name="timeStamp"
-                type="java.util.Date"
-                column="TIME_STAMP"
-                not-null="true"
-        />
-
-        <!--associations -->
-        <!--bi-directional one-to-many association to SecUserRole -->
-        <set
-                name="secUserRoles"
-                lazy="true"
-                inverse="true"
-        >
-            <key>
-                <column name="USR_ID"/>
-            </key>
-            <one-to-many
-                    class="eu.pms.login.database.SecUserRole"
-            />
-        </set>
-
+        <property name="usrPassword" type="java.lang.String" column="USR_PASSWORD" />
+        <property name="usrStatus" type="java.lang.String" column="USR_STATUS" />
+        <property name="usrName" type="java.lang.String" column="USR_NAME" />
+        <property name="usrEmail" type="java.lang.String" column="USR_EMAIL" />
+        <property name="usrMobile" type="java.lang.String" column="USR_MOBILE" />
+        <property name="username" type="java.lang.String" column="username" />
+        <property name="timeStamp" type="java.util.Date" column="TIME_STAMP" />
     </class>
 
     <class
@@ -435,7 +375,7 @@
     <!--&lt;!&ndash; bi-directional many-to-one association to PmsBenificiaryTyp &ndash;&gt;-->
     <!--<many-to-one-->
     <!--name="pmsBenificiaryTyp"-->
-    <!--class="eu.pms.project.database.PmsBenificiaryTyp"-->
+    <!--class="eu.pms.lookup.database.PmsBenificiaryTyp"-->
     <!--not-null="true"-->
     <!--&gt;-->
     <!--<column name="btp_id" />-->
@@ -443,7 +383,7 @@
 
     <!--</class>-->
     <!--<class-->
-    <!--name="eu.pms.project.database.PmsBenificiaryTyp"-->
+    <!--name="eu.pms.lookup.database.PmsBenificiaryTyp"-->
     <!--table="pms_benificiary_types"-->
     <!--&gt;-->
     <!--<id-->
@@ -939,7 +879,7 @@
 
     <!--</class>-->
     <!--<class-->
-    <!--name="eu.pms.project.database.PmsDatasourc"-->
+    <!--name="eu.pms.lookup.database.PmsDatasourc"-->
     <!--table="pms_datasources"-->
     <!--&gt;-->
     <!--<id-->
@@ -1374,7 +1314,7 @@
     <!--&lt;!&ndash; bi-directional many-to-one association to PmsDatasourc &ndash;&gt;-->
     <!--<many-to-one-->
     <!--name="pmsDatasourc"-->
-    <!--class="eu.pms.project.database.PmsDatasourc"-->
+    <!--class="eu.pms.lookup.database.PmsDatasourc"-->
     <!--not-null="true"-->
     <!--&gt;-->
     <!--<column name="dat_id" />-->
@@ -2943,7 +2883,7 @@
         <property name="prgId" column="prg_id" type="java.lang.String"/>
         <property name="devId" column="dev_id" type="java.lang.String"/>
         <property name="cluId" column="clu_id" type="java.lang.String"/>
-        <property name="proType" column="pro_type" type="java.lang.String"/>
+        <property name="cluType" column="clu_type" type="java.lang.String"/>
         <property name="preId" column="per_id" type="java.lang.String"/>
     </class>
 
@@ -3084,10 +3024,10 @@
     </class>
 
     <class name="eu.pms.project.database.PmsClusterTyp" table="pms_cluster_types">
-        <composite-id name="compId" class="eu.pms.project.database.PmsClusterTypPK">
-            <key-property name="cluId" column="clu_id" type="java.lang.String"/>
-            <key-property name="cluType" column="clu_type" type="java.lang.String"/>
-        </composite-id>
+        <id name="cluId" type="java.lang.String" column="clu_id">
+            <generator class="assigned"/>
+        </id>
+        <property name="cluType" type="java.lang.String" column="clu_type"/>
         <property name="cluDesc" type="java.lang.String" column="clu_desc"/>
         <property name="username" type="java.lang.String" column="username"/>
         <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
@@ -3240,11 +3180,11 @@
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
 
-    <class name="eu.pms.project.database.PmsBenificiaryTyp" table="pms_benificiary_types"  >
-    <id name="btpId" type="java.lang.String" column="btp_id" >
+    <class name="eu.pms.lookup.database.PmsBenificiaryTyp" table="pms_benificiary_types"  >
+    <id name="lookupId" type="java.lang.String" column="btp_id" >
     <generator class="assigned" />
     </id>
-    <property name="btpDesc" type="java.lang.String" column="btp_desc" />
+    <property name="lookupDesc" type="java.lang.String" column="btp_desc" />
     <property name="username" type="java.lang.String" column="username" />
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
@@ -3279,11 +3219,11 @@
     <property name="proId" type="java.lang.String" column="pro_id" />
     </class>
 
-    <class name="eu.pms.project.database.PmsDatasourc" table="pms_datasources" >
-    <id name="datId" type="java.lang.String" column="dat_id" >
+    <class name="eu.pms.lookup.database.PmsDatasourc" table="pms_datasources" >
+    <id name="lookupId" type="java.lang.String" column="dat_id" >
     <generator class="assigned" />
     </id>
-    <property name="datDesc" type="java.lang.String" column="dat_desc" />
+    <property name="lookupDesc" type="java.lang.String" column="dat_desc" />
     <property name="username" type="java.lang.String" column="username" />
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>

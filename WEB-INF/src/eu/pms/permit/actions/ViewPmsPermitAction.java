@@ -7,6 +7,7 @@ import eu.pms.activity.useCases.GetPmsInterventionUseCase;
 import eu.pms.benificiary.forms.PmsBenificiaryForm;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.permit.forms.PmsPermitForm;
 import eu.pms.permit.useCases.GetPmsPermitUseCase;
@@ -30,6 +31,10 @@ public class ViewPmsPermitAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         String perId = request.getParameter("perId");
         ArrayList inputs = new ArrayList();
         inputs.add(perId);

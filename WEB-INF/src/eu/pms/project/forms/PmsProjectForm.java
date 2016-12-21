@@ -7,6 +7,7 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.util.Date;
@@ -29,7 +30,7 @@ public class PmsProjectForm  extends ActionForm {
     private String prgId;
     private String devId;
     private String cluId;
-    private String proType;
+    private String cluType;
     private String preId;
 
     private String[] donorProjectList;
@@ -173,12 +174,12 @@ public class PmsProjectForm  extends ActionForm {
         this.cluId = cluId;
     }
 
-    public String getProType() {
-        return proType;
+    public String getCluType() {
+        return cluType;
     }
 
-    public void setProType(String proType) {
-        this.proType = proType;
+    public void setCluType(String cluType) {
+        this.cluType = cluType;
     }
 
     public String getPreId() {
@@ -235,6 +236,35 @@ public class PmsProjectForm  extends ActionForm {
 
     public void setIndicatorProjectList(String[] indicatorProjectList) {
         this.indicatorProjectList = indicatorProjectList;
+    }
+
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        proId=null;
+        proTitle=null;
+        proDescription=null;
+        proStatus=null;
+        proBudget=null;
+        proStartDate=null;
+        proEndDate=null;
+        proNeedPermit=null;
+        proHasCluster=null;
+        proNotes=null;
+        proArea=null;
+        username=null;
+        timeStamp=null;
+        prgId=null;
+        devId=null;
+        cluId=null;
+        cluType=null;
+        preId=null;
+
+        donorProjectList=null;
+        implementerProjectList=null;
+        locationProjectList=null;
+        communityProjectList=null;
+        benificiaryProjectList=null;
+        indicatorProjectList=null;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

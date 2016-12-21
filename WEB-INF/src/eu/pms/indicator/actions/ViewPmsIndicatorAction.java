@@ -7,6 +7,7 @@ import eu.pms.activity.useCases.GetPmsInterventionUseCase;
 import eu.pms.benificiary.forms.PmsBenificiaryForm;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.indicator.forms.PmsIndicatorForm;
 import eu.pms.indicator.useCases.GetPmsIndicatorUseCase;
 import eu.pms.indicator.useCases.GetPmsResultUseCase;
@@ -33,6 +34,10 @@ public class ViewPmsIndicatorAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
         List resultList = (List) new GetPmsResultUseCase().execute(null, request);
         request.setAttribute("resultList", resultList);
         String indId = request.getParameter("indId");

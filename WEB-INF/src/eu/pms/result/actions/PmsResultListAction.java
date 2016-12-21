@@ -6,6 +6,7 @@ import eu.pms.activity.useCases.PmsActivityListUseCase;
 import eu.pms.benificiary.forms.PmsBenificiarySearchForm;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.benificiary.useCases.PmsBenificiaryListUseCase;
+import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.useCases.PmsInterventionListUseCase;
 import eu.pms.objective.forms.PmsObjectiveSearchForm;
 import eu.pms.objective.useCases.PmsObjectiveListUseCase;
@@ -27,6 +28,10 @@ public class PmsResultListAction extends Action {
                                  ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        if (!(SessionTraker.isSessionExist(request)))
+            return mapping.findForward("invalidAccess");
+//        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
+//            return mapping.findForward("noPermission");
 
         ArrayList inputData = new ArrayList();
         PmsResultSearchForm pmsResultSearchForm = (PmsResultSearchForm) form;

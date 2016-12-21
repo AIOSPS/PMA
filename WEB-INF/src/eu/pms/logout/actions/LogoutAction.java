@@ -25,15 +25,9 @@ public class LogoutAction extends Action
                                HttpServletRequest request,
                                HttpServletResponse response) throws Exception
   {
-
-    String uType=request.getParameter("uType");
-
     HttpSession session = request.getSession();
     if(session != null)
       session.invalidate();
-
-    if(uType!=null && uType.equals("pg"))
-    return mapping.findForward("logoutPg");
 
     return mapping.findForward("logoutDone");
   }
