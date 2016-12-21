@@ -59,6 +59,9 @@
 
     <script src="/pages/resources/bootstrap/dateTimePicker/bootstrap-datetimepicker.min.js" ></script>
     <link rel="stylesheet" href="/pages/resources/bootstrap/dateTimePicker/bootstrap-datetimepicker.min.css">
+
+    <script src="/pages/resources/bootstrap/fileInput/fileinput.min.js" ></script>
+    <link rel="stylesheet" href="/pages/resources/bootstrap/fileInput/fileinput.min.css">
 </head>
 
 <BODY topmargin="0">

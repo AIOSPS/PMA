@@ -58,7 +58,7 @@
                                 <div class="col-sm-12">
                                     <html:select property="benificiaryType"
                                                  styleClass="selectpicker form-control">
-                                        <html:options collection="benificiaryTypeList" property="btpId" labelProperty="btpDesc"/>
+                                        <html:options collection="benificiaryTypeList" property="lookupId" labelProperty="lookupDesc"/>
                                     </html:select>
                                 </div>
                             </div>

@@ -108,6 +108,7 @@
                         <label for="proId" class="col-sm-3 col-form-label">Project ID:</label>
                         <div class="col-sm-9">
                             <html:text property="proId" styleClass="form-control" styleId="proId" disabled="true"/>
+                            <html:hidden property="proId"/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -235,11 +236,12 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="proType" class="col-sm-3 col-form-label">Project Type:</label>
+                        <label for="cluType" class="col-sm-3 col-form-label">Project Type:</label>
                         <div class="col-sm-9">
-                            <html:select property="proType" styleClass="selectpicker form-control">
-                                <html:option value="1">Humman</html:option>
-                                <html:option value="2">Development</html:option>
+                            <html:select property="cluType" styleClass="selectpicker form-control"
+                                         onchange="setProjectTypeConfig(this.value)">
+                                <html:option value="Hum">Humman</html:option>
+                                <html:option value="Dev">Development</html:option>
                             </html:select>
                         </div>
                     </div>
@@ -267,13 +269,13 @@
                                     <div>
 
                                         <label class="radio-inline">
-                                            <html:radio property="proHasCluster" value="1"/>
+                                            <html:radio property="proHasCluster" onclick="setProjectTypeConfig(this.value)" value="1"/>
                                             Yes
                                         </label>
 
 
                                         <label class="radio-inline">
-                                            <html:radio property="proHasCluster" value="0"/>
+                                            <html:radio property="proHasCluster" onclick="setProjectTypeConfig(this.value)" value="0"/>
                                             No
                                         </label>
 
@@ -286,9 +288,17 @@
                                 <label for="cluId" class="col-sm-3 col-form-label"> Cluster:</label>
                                 <div class="col-sm-9">
                                     <html:select property="cluId" styleClass="selectpicker form-control">
-                                        <logic:present name="clusterList">
-                                            <html:options collection="clusterList" property="compId.cluId"
-                                                          labelProperty="cluDesc"/>
+                                        <logic:present name="clusterHList">
+                                            <optgroup label="Humman" id="Humman">
+                                                <html:options collection="clusterHList" property="cluId"
+                                                              labelProperty="cluDesc"/>
+                                            </optgroup>
+                                        </logic:present>
+                                        <logic:present name="clusterDList">
+                                            <optgroup label="Development" id="Development">
+                                                <html:options collection="clusterDList" property="cluId"
+                                                              labelProperty="cluDesc"/>
+                                            </optgroup>
                                         </logic:present>
                                     </html:select>
                                 </div>
@@ -448,4 +458,41 @@
         defaultText: "Please Enter The Project Budjet ",
         emptyText: "Please Enter The Project Budjet ",
     });
+    //    *****************************project type**************
+    function setProjectTypeConfig(cluType) {
+        if(cluType=="Hum"){
+            document.getElementsByName("communityProjectList")[0].disabled = true;
+            document.getElementsByName("cluId")[0].disabled = false;
+            $('[name="cluId"]').eq(0).parent().removeClass("disabled");
+            $('[name="cluId"]').eq(0).parent().find('button').removeClass("disabled");
+            document.getElementsByName("proHasCluster")[0].disabled = true;
+            document.getElementsByName("proHasCluster")[1].disabled = true;
+            document.getElementsByName("proHasCluster")[1].checked  = true;
+            $('li[data-optgroup=1]').removeClass("disabled");
+            $('li[data-optgroup=2]').addClass("disabled");
+            $("#Development").prop("disabled", true);
+        }else if(cluType=="Dev"){
+            document.getElementsByName("proHasCluster")[0].disabled = false;
+            document.getElementsByName("proHasCluster")[1].disabled = false;
+            document.getElementsByName("proHasCluster")[0].checked  = true;
+            $('li[data-optgroup=1]').addClass("disabled");
+            $('li[data-optgroup=2]').removeClass("disabled");
+        }else if(cluType=="1"){
+            document.getElementsByName("communityProjectList")[0].disabled = true;
+            document.getElementsByName("cluId")[0].disabled = false;
+            $('[name="cluId"]').eq(0).parent().removeClass("disabled");
+            $('[name="cluId"]').eq(0).parent().find('button').removeClass("disabled");
+            $('li[data-optgroup=1]').addClass("disabled");
+            $('li[data-optgroup=2]').removeClass("disabled");
+        }else if(cluType=="0"){
+            document.getElementsByName("communityProjectList")[0].disabled = false;
+            $('[name="communityProjectList"]').eq(0).parent().removeClass("disabled");
+            $('[name="communityProjectList"]').eq(0).parent().find('button').removeClass("disabled");
+            document.getElementsByName("cluId")[0].disabled = true;
+            $('li[data-optgroup=1]').addClass("disabled");
+            $('li[data-optgroup=2]').addClass("disabled");
+        }
+    }
+
+    setProjectTypeConfig('Hum');
 </script>

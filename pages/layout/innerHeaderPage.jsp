@@ -1,3 +1,4 @@
+<%@ page import="eu.pms.login.database.SecUser" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/WEB-INF/lib/struts-tiles.tld" prefix="tiles" %>
 
@@ -26,17 +27,17 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-user"></i> Welcome Jason <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-user"></i> Welcome <%=((SecUser)request.getSession().getAttribute("userInfo")).getUsrName()%> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                            <a href="/viewLookupsAction.do"><i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="index.html"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="/logout.do"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>

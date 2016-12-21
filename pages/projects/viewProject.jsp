@@ -235,11 +235,11 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="proType" class="col-sm-3 col-form-label">Project Type:</label>
+                        <label for="cluType" class="col-sm-3 col-form-label">Project Type:</label>
                         <div class="col-sm-9">
-                            <html:select property="proType" styleClass="selectpicker form-control" disabled="true">
-                                <html:option value="1">Humman</html:option>
-                                <html:option value="2">Development</html:option>
+                            <html:select property="cluType" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="Hum">Humman</html:option>
+                                <html:option value="Dev">Development</html:option>
                             </html:select>
                         </div>
                     </div>
@@ -286,9 +286,17 @@
                                 <label for="cluId" class="col-sm-3 col-form-label"> Cluster:</label>
                                 <div class="col-sm-9">
                                     <html:select property="cluId" styleClass="selectpicker form-control" disabled="true">
-                                        <logic:present name="clusterList">
-                                            <html:options collection="clusterList" property="compId.cluId"
-                                                          labelProperty="cluDesc"/>
+                                        <logic:present name="clusterHList">
+                                            <optgroup label="Humman">
+                                                <html:options collection="clusterHList" property="cluId"
+                                                              labelProperty="cluDesc"/>
+                                            </optgroup>
+                                        </logic:present>
+                                        <logic:present name="clusterDList">
+                                            <optgroup label="Development">
+                                                <html:options collection="clusterDList" property="cluId"
+                                                              labelProperty="cluDesc"/>
+                                            </optgroup>
                                         </logic:present>
                                     </html:select>
                                 </div>

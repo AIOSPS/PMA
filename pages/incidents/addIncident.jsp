@@ -212,7 +212,7 @@
                                 <html:select property="datId"
                                 styleClass="selectpicker form-control">
                                     <logic:present name="dataSourceList">
-                                <html:options collection="dataSourceList" property="datId" labelProperty="datDesc"/>
+                                <html:options collection="dataSourceList" property="lookupId" labelProperty="lookupDesc"/>
                                     </logic:present>
                                 </html:select>
                         </div>

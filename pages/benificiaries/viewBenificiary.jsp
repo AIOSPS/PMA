@@ -68,7 +68,7 @@
                             <html:select property="btpId" disabled="true"
                                          styleClass="selectpicker form-control">
                                 <logic:present name="benificiaryTypeList">
-                                    <html:options collection="benificiaryTypeList" property="btpId" labelProperty="btpDesc"/>
+                                    <html:options collection="benificiaryTypeList" property="lookupId" labelProperty="lookupDesc"/>
                                 </logic:present>
                             </html:select>
                         </div>
