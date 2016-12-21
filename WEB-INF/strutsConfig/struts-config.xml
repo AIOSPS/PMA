@@ -544,6 +544,44 @@
                 parameter="pms.viewMapsLayer.tile"
         />
 
+        <!-- lookup -->
+        <action
+                path="/viewLookupsAction"
+                type="eu.pms.lookup.actions.ViewLookupsAction"
+                name="lookupForm"
+                validate="false">
+
+            <forward name="success" path="pms.viewLookupPage.tile" contextRelative="true"/>
+        </action>
+
+        <action
+                path="/insertLookupAction"
+                type="eu.pms.lookup.actions.InsertLookupAction"
+                name="lookupForm"
+                input="/viewLookupsAction.do">
+
+            <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
+        </action>
+
+        <action
+                path="/deleteLookupsAction"
+                type="eu.pms.lookup.actions.DeleteLookupAction"
+                name="lookupForm"
+                validate="false"
+        >
+            <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
+        </action>
+
+        <action
+                path="/updateLookupAction"
+                type="eu.pms.lookup.actions.UpdateLookupAction"
+                name="lookupForm"
+                input="/viewLookupsAction.do">
+
+            <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
+        </action>
+        <!-- end lookup -->
+
     </action-mappings>
 
     <!-- ========== Controller Configuration ================================ -->
