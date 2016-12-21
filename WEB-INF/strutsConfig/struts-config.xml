@@ -26,6 +26,7 @@
         <form-bean name="pmsResultSearchForm" type="eu.pms.result.forms.PmsResultSearchForm"/>
         <form-bean name="pmsIndicatorForm" type="eu.pms.indicator.forms.PmsIndicatorForm"/>
         <form-bean name="pmsIndicatorSearchForm" type="eu.pms.indicator.forms.PmsIndicatorSearchForm"/>
+        <form-bean name="lookupForm" type="eu.pms.lookup.forms.LookupForm"/>
 
     </form-beans>
 
@@ -36,7 +37,7 @@
     <!-- ========== Global Forward Definitions =============================== -->
 
     <global-forwards>
-        <!--<forward name="portalIndex" path="/portalLogin.do"/>-->
+        <forward name="invalidAccess" path="invalidAccess.tile" contextRelative="true" redirect="true"/>
     </global-forwards>
 
     <!-- ========== Action Mapping Definitions =============================== -->
@@ -44,25 +45,25 @@
     <action-mappings>
 
         <action
-            type="org.apache.struts.actions.ForwardAction"
-            path="/errorPageAction"
-            parameter="/pages/invalidPage.jsp"
-            />
+                type="org.apache.struts.actions.ForwardAction"
+                path="/errorPageAction"
+                parameter="/pages/invalidPage.jsp"
+        />
 
         <action
                 type="org.apache.struts.actions.ForwardAction"
                 path="/loginPage"
                 parameter="login.tile"
-                />
+        />
 
         <action
-            name="loginForm"
-            type="eu.pms.login.actions.LoginAction"
-            validate="true"
-            input="/loginPage.do"
-            path="/login"
-            >
-            <forward name="failed"   path="/loginPage.do"/>
+                name="loginForm"
+                type="eu.pms.login.actions.LoginAction"
+                validate="true"
+                input="/loginPage.do"
+                path="/login"
+        >
+            <forward name="fail"   path="/loginPage.do"/>
             <forward name="success" path="main.tile"/>
         </action>
         <action
@@ -72,9 +73,15 @@
         />
 
         <action
-            type="eu.pms.project.actions.PmsProjectListAction"
-            scope="request"
-            path="/pmsProjectList">
+                type="eu.pms.logout.actions.LogoutAction"
+                path="/logout">
+            <forward name="logoutDone" path="/loginPage.do" redirect="true"/>
+        </action>
+
+        <action
+                type="eu.pms.project.actions.PmsProjectListAction"
+                scope="request"
+                path="/pmsProjectList">
             <forward name="success" path="pms.projectList.tile" contextRelative="true"/>
         </action>
         <action
@@ -118,9 +125,9 @@
             <forward name="success" path="pms.editProject.tile"/>
         </action>
         <action
-            type="eu.pms.community.actions.PmsCommunityListAction"
-            scope="request"
-            path="/pmsCommunityList">
+                type="eu.pms.community.actions.PmsCommunityListAction"
+                scope="request"
+                path="/pmsCommunityList">
             <forward name="success" path="pms.communityList.tile" contextRelative="true"/>
         </action>
         <action
@@ -164,9 +171,9 @@
             <forward name="success" path="pms.editCommunity.tile"/>
         </action>
         <action
-            type="eu.pms.intervention.actions.PmsInterventionListAction"
-            scope="request"
-            path="/pmsInterventionList">
+                type="eu.pms.intervention.actions.PmsInterventionListAction"
+                scope="request"
+                path="/pmsInterventionList">
             <forward name="success" path="pms.interventionList.tile" contextRelative="true"/>
         </action>
         <action
@@ -210,16 +217,16 @@
             <forward name="success" path="pms.editIntervention.tile"/>
         </action>
         <action
-            type="eu.pms.activity.actions.PmsActivityListAction"
-            scope="request"
-            path="/pmsActivityList">
+                type="eu.pms.activity.actions.PmsActivityListAction"
+                scope="request"
+                path="/pmsActivityList">
             <forward name="success" path="pms.activityList.tile" contextRelative="true"/>
         </action>
         <action
-            type="eu.pms.activity.actions.PmsActivityListAction"
-            scope="request"
-            path="/searchActivity"
-            name="pmsActivitySearchForm"
+                type="eu.pms.activity.actions.PmsActivityListAction"
+                scope="request"
+                path="/searchActivity"
+                name="pmsActivitySearchForm"
         >
             <forward name="success" path="pms.activityList.tile" contextRelative="true"/>
         </action>
@@ -256,16 +263,16 @@
             <forward name="success" path="pms.editActivity.tile"/>
         </action>
         <action
-            type="eu.pms.benificiary.actions.PmsBenificiaryListAction"
-            scope="request"
-            path="/pmsBenificiaryList">
+                type="eu.pms.benificiary.actions.PmsBenificiaryListAction"
+                scope="request"
+                path="/pmsBenificiaryList">
             <forward name="success" path="pms.benificiaryList.tile" contextRelative="true"/>
         </action>
         <action
-            type="eu.pms.benificiary.actions.PmsBenificiaryListAction"
-            scope="request"
-            path="/searchBenificiary"
-            name="pmsBenificiarySearchForm"
+                type="eu.pms.benificiary.actions.PmsBenificiaryListAction"
+                scope="request"
+                path="/searchBenificiary"
+                name="pmsBenificiarySearchForm"
         >
             <forward name="success" path="pms.benificiaryList.tile" contextRelative="true"/>
         </action>
@@ -302,16 +309,16 @@
             <forward name="success" path="pms.editBenificiary.tile"/>
         </action>
         <action
-            type="eu.pms.permit.actions.PmsPermitListAction"
-            scope="request"
-            path="/pmsPermitList">
+                type="eu.pms.permit.actions.PmsPermitListAction"
+                scope="request"
+                path="/pmsPermitList">
             <forward name="success" path="pms.permitList.tile" contextRelative="true"/>
         </action>
         <action
-            type="eu.pms.permit.actions.PmsPermitListAction"
-            scope="request"
-            path="/searchPermit"
-            name="pmsPermitSearchForm"
+                type="eu.pms.permit.actions.PmsPermitListAction"
+                scope="request"
+                path="/searchPermit"
+                name="pmsPermitSearchForm"
         >
             <forward name="success" path="pms.permitList.tile" contextRelative="true"/>
         </action>
@@ -348,16 +355,16 @@
             <forward name="success" path="pms.editPermit.tile"/>
         </action>
         <action
-            type="eu.pms.incident.actions.PmsIncidentListAction"
-            scope="request"
-            path="/pmsIncidentList">
+                type="eu.pms.incident.actions.PmsIncidentListAction"
+                scope="request"
+                path="/pmsIncidentList">
             <forward name="success" path="pms.incidentList.tile" contextRelative="true"/>
         </action>
         <action
-            type="eu.pms.incident.actions.PmsIncidentListAction"
-            scope="request"
-            path="/searchIncident"
-            name="pmsIncidentSearchForm"
+                type="eu.pms.incident.actions.PmsIncidentListAction"
+                scope="request"
+                path="/searchIncident"
+                name="pmsIncidentSearchForm"
         >
             <forward name="success" path="pms.incidentList.tile" contextRelative="true"/>
         </action>
@@ -394,16 +401,16 @@
             <forward name="success" path="pms.editIncident.tile"/>
         </action>
         <action
-            type="eu.pms.objective.actions.PmsObjectiveListAction"
-            scope="request"
-            path="/pmsObjectiveList">
+                type="eu.pms.objective.actions.PmsObjectiveListAction"
+                scope="request"
+                path="/pmsObjectiveList">
             <forward name="success" path="pms.objectiveList.tile" contextRelative="true"/>
         </action>
         <action
-            type="eu.pms.objective.actions.PmsObjectiveListAction"
-            scope="request"
-            path="/searchObjective"
-            name="pmsObjectiveSearchForm"
+                type="eu.pms.objective.actions.PmsObjectiveListAction"
+                scope="request"
+                path="/searchObjective"
+                name="pmsObjectiveSearchForm"
         >
             <forward name="success" path="pms.objectiveList.tile" contextRelative="true"/>
         </action>
@@ -440,16 +447,16 @@
             <forward name="success" path="pms.editObjective.tile"/>
         </action>
         <action
-            type="eu.pms.result.actions.PmsResultListAction"
-            scope="request"
-            path="/pmsResultList">
+                type="eu.pms.result.actions.PmsResultListAction"
+                scope="request"
+                path="/pmsResultList">
             <forward name="success" path="pms.resultList.tile" contextRelative="true"/>
         </action>
         <action
-            type="eu.pms.result.actions.PmsResultListAction"
-            scope="request"
-            path="/searchResult"
-            name="pmsResultSearchForm"
+                type="eu.pms.result.actions.PmsResultListAction"
+                scope="request"
+                path="/searchResult"
+                name="pmsResultSearchForm"
         >
             <forward name="success" path="pms.resultList.tile" contextRelative="true"/>
         </action>
@@ -486,16 +493,16 @@
             <forward name="success" path="pms.editResult.tile"/>
         </action>
         <action
-            type="eu.pms.indicator.actions.PmsIndicatorListAction"
-            scope="request"
-            path="/pmsIndicatorList">
+                type="eu.pms.indicator.actions.PmsIndicatorListAction"
+                scope="request"
+                path="/pmsIndicatorList">
             <forward name="success" path="pms.indicatorList.tile" contextRelative="true"/>
         </action>
         <action
-            type="eu.pms.indicator.actions.PmsIndicatorListAction"
-            scope="request"
-            path="/searchIndicator"
-            name="pmsIndicatorSearchForm"
+                type="eu.pms.indicator.actions.PmsIndicatorListAction"
+                scope="request"
+                path="/searchIndicator"
+                name="pmsIndicatorSearchForm"
         >
             <forward name="success" path="pms.indicatorList.tile" contextRelative="true"/>
         </action>
@@ -531,7 +538,6 @@
         >
             <forward name="success" path="pms.editIndicator.tile"/>
         </action>
-
         <action
                 type="org.apache.struts.actions.ForwardAction"
                 path="/viewMaps"
