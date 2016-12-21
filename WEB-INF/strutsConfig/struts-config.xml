@@ -576,6 +576,7 @@
 
             <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
         </action>
+
         <!-- end lookup -->
 
     </action-mappings>
