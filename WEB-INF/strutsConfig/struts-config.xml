@@ -532,6 +532,18 @@
             <forward name="success" path="pms.editIndicator.tile"/>
         </action>
 
+        <action
+                type="org.apache.struts.actions.ForwardAction"
+                path="/viewMaps"
+                parameter="pms.viewMaps.tile"
+        />
+
+        <action
+                type="org.apache.struts.actions.ForwardAction"
+                path="/viewMapsLayer"
+                parameter="pms.viewMapsLayer.tile"
+        />
+
     </action-mappings>
 
     <!-- ========== Controller Configuration ================================ -->

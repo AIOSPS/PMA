@@ -150,5 +150,13 @@
         <put name="body" value="/pages/indicators/editIndicator.jsp"/>
     </definition>
 
+    <definition name="pms.viewMaps.tile" extends="innerLayout">
+        <put name="body" value="/pages/maps/viewMaps.jsp"/>
+    </definition>
+
+    <definition name="pms.viewMapsLayer.tile" extends="innerLayout">
+        <put name="body" value="/pages/maps/viewMapsLayer.jsp"/>
+    </definition>
+
 
 </tiles-definitions>
