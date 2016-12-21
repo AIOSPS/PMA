@@ -90,7 +90,7 @@
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Incident  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/viewAddIncident.do">Incident</a></li>
-                        <li><a href="#">Link to project</a></li>
+                        <%--<li><a href="#">Link to project</a></li>--%>
                     </ul>
                 </li>
                 <li class="dropdown">
