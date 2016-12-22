@@ -1,57 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dbb13ca-2d46-4815-b453-347fbebd02a5" name="Default" comment="change database user password">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/maps/viewMapsLayer.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/resources/css/ol.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/resources/js/loader.js" />
+    <list default="true" id="9dbb13ca-2d46-4815-b453-347fbebd02a5" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsBenificiaryTyp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsClusterTypPK.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsDatasourc.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/common/component/DataAccessObjectImpl.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/common/component/DataAccessObjectImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/common/component/DgfComponent.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/common/component/DgfComponent.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/common/tools/SessionTraker.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/common/tools/SessionTraker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/actions/LoginAction.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/actions/LoginAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/components/LoginComponent.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/components/LoginComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/database/SecUserRole.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/database/SecUserRole.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsActivity.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsActivityPK.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsActivityPK.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsBenificiary.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsBenificiary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsBenificiaryTyp.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsBenificiaryTyp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/database/SecUser.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/login/database/SecUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/logout/actions/LogoutAction.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/logout/actions/LogoutAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsClusterTyp.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsClusterTyp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsCommunity.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsCommunity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsCommunityTyp.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsCommunityTyp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsDevelopmentAgency.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsDevelopmentAgency.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsDonor.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsDonor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsImplementer.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsImplementer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIncident.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIncident.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIndicator.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIndicatorPK.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIndicatorPK.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIntervention.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsIntervention.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsInterventionPK.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsInterventionPK.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsLocation.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsLocation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsMasterPlan.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsMasterPlan.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsObjectiv.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsObjectiv.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsPermit.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsPermit.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProject.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectAlbum.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectAlbum.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectDonor.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectDonor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsBenificiary.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsBenificiary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsCommunity.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsCommunity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsImplementer.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsImplementer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsLocation.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsProjectsLocation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsResult.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsResultPK.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsResultPK.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsSector.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsSector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsStrategicPlanDocument.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsStrategicPlanDocument.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsSubSector.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsSubSector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsSubSectorPK.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/project/database/PmsSubSectorPK.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/testing/HqlQuery.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/eu/pms/testing/HqlQuery.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/hbm/pmsMapping.xml" afterPath="$PROJECT_DIR$/WEB-INF/classes/hbm/pmsMapping.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/hbm/pmsQueryMapping.xml" afterPath="$PROJECT_DIR$/WEB-INF/classes/hbm/pmsQueryMapping.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml" afterPath="$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml" afterPath="$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/layout/innerHeaderPage.jsp" afterPath="$PROJECT_DIR$/pages/layout/innerHeaderPage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/maps/viewMaps.jsp" afterPath="$PROJECT_DIR$/pages/maps/viewMaps.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pms.war.iml" afterPath="$PROJECT_DIR$/pms.war.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/hibernate.properties" afterPath="$PROJECT_DIR$/WEB-INF/classes/hibernate.properties" />
     </list>
     <ignored path="pms.war.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,95 +44,7 @@
     <favorites_list name="pms.war" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="struts-config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9061">
-              <caret line="533" column="0" lean-forward="true" selection-start-line="533" selection-start-column="0" selection-end-line="533" selection-end-column="0" />
-              <folding>
-                <marker date="1482348334310" expanded="true" signature="21485:21729" ph="..." />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tilesDef.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2567">
-              <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewMaps.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/maps/viewMaps.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="33" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="51" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="innerHeaderPage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/layout/innerHeaderPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="113" column="68" lean-forward="false" selection-start-line="113" selection-start-column="68" selection-end-line="113" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewMapsLayer.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/maps/viewMapsLayer.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1513">
-              <caret line="89" column="27" lean-forward="false" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hibernate.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/src/hibernate.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/resources/js/loader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6970">
-              <caret line="412" column="2" lean-forward="false" selection-start-line="412" selection-start-column="2" selection-end-line="412" selection-end-column="2" />
-              <folding>
-                <marker date="1482348306111" expanded="true" signature="366705:366711" ph="©" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ol.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/resources/css/ol.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -185,6 +62,14 @@
       <find>openlayers</find>
       <find>pms.editIndicator.tile</find>
       <find>text/javascript</find>
+      <find>map</find>
+      <find>log</find>
+      <find>loc</find>
+      <find>pmsLo</find>
+      <find>locI</find>
+      <find>locationList</find>
+      <find>getPmsLocation</find>
+      <find>permit</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -208,14 +93,17 @@
         <option value="$PROJECT_DIR$/WEB-INF/src/eu/pms/login/actions/LoginAction.java" />
         <option value="$PROJECT_DIR$/pages/login.jsp" />
         <option value="$PROJECT_DIR$/pages/test.html" />
-        <option value="$PROJECT_DIR$/WEB-INF/src/hbm/pmsQueryMapping.xml" />
         <option value="$PROJECT_DIR$/pages/resources/js/loader.js" />
         <option value="$PROJECT_DIR$/pages/maps/viewMaps.jsp" />
-        <option value="$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml" />
-        <option value="$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml" />
         <option value="$PROJECT_DIR$/pages/layout/innerHeaderPage.jsp" />
         <option value="$PROJECT_DIR$/pages/maps/viewMapsLayer.jsp" />
         <option value="$PROJECT_DIR$/WEB-INF/src/hibernate.properties" />
+        <option value="$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml" />
+        <option value="$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/eu/pms/project/useCases/GetPmsLocationUseCase.java" />
+        <option value="$PROJECT_DIR$/WEB-INF/src/hbm/pmsQueryMapping.xml" />
+        <option value="$PROJECT_DIR$/pages/communities/addCommunity.jsp" />
+        <option value="$PROJECT_DIR$/pages/results/listResult.jsp" />
       </list>
     </option>
   </component>
@@ -258,7 +146,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,9 +208,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hbm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pms.war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="results" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,7 +299,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="D:/external projects/BTC/portal_v2.war" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -350,6 +310,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="nodejs_interpreter_path" value="D:/external projects/BTC/Openlayers/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="D:\external projects\BTC\Openlayers\nodejs\node.exe" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="302" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="301" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="302" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="301" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="80" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="83" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="159" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="884" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -363,204 +339,6 @@
       <recent name="D:\jboss-4.0.5\server\pms\deploy\pms.war\WEB-INF\lib" />
       <recent name="D:\jboss-4.0.5\server\pms\deploy\pms.war\WEB-INF\src\eu\pms\project\database" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/activity/actions/AddPmsActivityAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/activity/actions/PmsActivityListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/activity/actions/ViewAddPmsActivityAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/activity/actions/ViewPmsActivityAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/benificiary/actions/AddPmsBenificiaryAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/benificiary/actions/PmsBenificiaryListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/benificiary/actions/ViewAddPmsBenificiaryAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/benificiary/actions/ViewPmsBenificiaryAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/common/component/DataAccessObjectImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/common/tools/SessionTraker.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/community/actions/AddPmsCommunityAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/community/actions/PmsCommunityListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/community/actions/ViewAddPmsCommunityAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/community/actions/ViewPmsCommunityAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/incident/actions/AddPmsIncidentAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/incident/actions/PmsIncidentListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/incident/actions/ViewAddPmsIncidentAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/incident/actions/ViewPmsIncidentAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/indicator/actions/AddPmsIndicatorAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/indicator/actions/PmsIndicatorListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/indicator/actions/ViewAddPmsIndicatorAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/indicator/actions/ViewPmsIndicatorAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/intervention/actions/AddPmsInterventionAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/intervention/actions/PmsInterventionListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/intervention/actions/ViewAddPmsInterventionAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/intervention/actions/ViewPmsInterventionAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/login/actions/LoginAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/login/database/SecUser.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/logout/actions/LogoutAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/objective/actions/AddPmsObjectiveAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/objective/actions/PmsObjectiveListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/objective/actions/ViewAddPmsObjectiveAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/objective/actions/ViewPmsObjectiveAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/permit/actions/AddPmsPermitAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/permit/actions/PmsPermitListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/permit/actions/ViewAddPmsPermitAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/permit/actions/ViewPmsPermitAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/actions/AddPmsProjectAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/actions/PmsProjectListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/actions/ViewAddPmsProjectAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/actions/ViewPmsProjectAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsClusterTyp.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsProject.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsProjectDonor.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsProjectDonorPK.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/forms/PmsProjectForm.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/useCases/AddPmsProjectUseCase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/result/actions/AddPmsResultAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/result/actions/PmsResultListAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/result/actions/ViewAddPmsResultAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/result/actions/ViewPmsResultAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/hbm/pmsMapping.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/hbm/pmsQueryMapping.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/benificiaries/addBenificiary.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/benificiaries/editBenificiary.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/benificiaries/listBenificiary.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/benificiaries/viewBenificiary.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/incidents/addIncident.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/incidents/editIncident.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/incidents/viewIncident.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/layout/innerHeaderPage.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/layout/innerLayout.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/projects/addProject.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/projects/editProject.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/projects/viewProject.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/resources/css/style.css</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/actions/DeleteLookupAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/actions/InsertLookupAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/actions/UpdateLookupAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/actions/ViewLookupsAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/component/LookupComponent.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/database/LookupObject.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/database/PmsBenificiaryTyp.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/database/PmsDatasourc.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/forms/LookupForm.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/useCase/DeleteLookupUseCase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/useCase/InsertLookupUseCase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/useCase/UpdateLookupUseCase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/lookup/useCase/ViewLookupUseCase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/lookup/lookup.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/publicPages/invalidAccessPage.jsp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/resources/bootstrap/fileInput/fileinput.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/resources/bootstrap/fileInput/fileinput.min.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsBenificiaryTyp.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsClusterTypPK.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsDatasourc.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages/publicPages/invalidPage.jsp</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="JBoss Server.Jboss-4.0.5">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1094,7 +872,8 @@
       <workItem from="1482055689155" duration="2263000" />
       <workItem from="1482171183859" duration="7312000" />
       <workItem from="1482218247182" duration="4116000" />
-      <workItem from="1482348149042" duration="368000" />
+      <workItem from="1482348149042" duration="6897000" />
+      <workItem from="1482386188090" duration="1490000" />
     </task>
     <task id="LOCAL-00001" summary="Test2">
       <created>1480847352600</created>
@@ -1152,11 +931,32 @@
       <option name="project" value="LOCAL" />
       <updated>1482231240254</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="change database user password">
+      <created>1482348631254</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1482348631254</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change database user password">
+      <created>1482349730950</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1482349730950</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update Result Label">
+      <created>1482386786573</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1482386786573</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66417000" />
+    <option name="totallyTimeSpent" value="74436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
@@ -1175,16 +975,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24919094" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.366171" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.401487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32713756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5437616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41527003" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54275095" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3527508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35841423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1194,7 +995,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4019231" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1237,10 +1037,13 @@
     <MESSAGE value="delete unwanted files" />
     <MESSAGE value="add maps page" />
     <MESSAGE value="change database user password" />
-    <option name="LAST_COMMIT_MESSAGE" value="change database user password" />
+    <MESSAGE value="update Result Label" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Result Label" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1248,102 +1051,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/admin/actions/MainPageAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/common/struct/ComboList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/common/tools/ExcelTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="158" column="10" lean-forward="false" selection-start-line="158" selection-start-column="10" selection-end-line="158" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config-admin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/common/constant/SystemConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/resources/images/logo-sm.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef-admin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/resources/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/resources/bootstrap/css/pmsNewStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="510" column="62" lean-forward="false" selection-start-line="510" selection-start-column="47" selection-end-line="510" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/resources/bootstrap/css/bootstrap-rtl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1123" column="28" lean-forward="false" selection-start-line="1123" selection-start-column="13" selection-end-line="1123" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/login/forms/LoginForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/layout/outerHeaderPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1449,21 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/login/actions/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/hbm/pmsMapping.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsResultPK.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1478,14 +1170,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/hbm/pmsQueryMapping.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="309" column="17" lean-forward="false" selection-start-line="309" selection-start-column="17" selection-end-line="309" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsClusterTyp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1493,13 +1177,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsClusterTypPK.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsClusterTypPK.java" />
     <entry file="file://$PROJECT_DIR$/pages/indicators/editIndicator.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-243">
@@ -1511,6 +1189,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-654">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1541,24 +1220,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/resources/css/ol.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/resources/js/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6970">
-          <caret line="412" column="2" lean-forward="false" selection-start-line="412" selection-start-column="2" selection-end-line="412" selection-end-column="2" />
-          <folding>
-            <marker date="1482348306111" expanded="true" signature="366705:366711" ph="©" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1569,32 +1231,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2567">
-          <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9061">
-          <caret line="533" column="0" lean-forward="true" selection-start-line="533" selection-start-column="0" selection-end-line="533" selection-end-column="0" />
-          <folding>
-            <marker date="1482348334310" expanded="true" signature="21485:21729" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/layout/innerHeaderPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
           <caret line="113" column="68" lean-forward="false" selection-start-line="113" selection-start-column="68" selection-end-line="113" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1602,15 +1242,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="33" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="51" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/maps/viewMapsLayer.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
+        <state relative-caret-position="17">
           <caret line="89" column="27" lean-forward="false" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1618,6 +1256,161 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/resources/js/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="412" column="2" lean-forward="false" selection-start-line="412" selection-start-column="2" selection-end-line="412" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/resources/css/ol.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/login/actions/ChangePasswordAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-601">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/tilesDef/tilesDef.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1863">
+          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/login/actions/LoginAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="50" column="54" lean-forward="false" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/common/component/DgfComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/useCases/GetPmsProgrammUseCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/WEB-INF/lib/struts.jar!/org/apache/struts/action/RequestProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="28" column="360" lean-forward="false" selection-start-line="28" selection-start-column="360" selection-end-line="28" selection-end-column="360" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/projects/addProject.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="235" column="42" lean-forward="true" selection-start-line="235" selection-start-column="42" selection-end-line="235" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/common/tools/SessionTraker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1002">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/common/component/DataAccessObjectImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="545" column="16" lean-forward="false" selection-start-line="545" selection-start-column="16" selection-end-line="545" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/actions/ViewAddPmsProjectAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/communities/addCommunity.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="223" column="70" lean-forward="false" selection-start-line="223" selection-start-column="58" selection-end-line="223" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/hbm/pmsQueryMapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="105" column="34" lean-forward="true" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/useCases/GetPmsLocationUseCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/community/actions/ViewAddPmsCommunityAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/hbm/pmsMapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="2961" column="48" lean-forward="false" selection-start-line="2961" selection-start-column="48" selection-end-line="2961" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/src/eu/pms/project/database/PmsLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WEB-INF/strutsConfig/struts-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="534" column="0" lean-forward="true" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/results/listResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="31" column="83" lean-forward="false" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/results/viewResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1641,7 +1434,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Struts</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
