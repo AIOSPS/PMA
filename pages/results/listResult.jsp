@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddResult.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Permit
+                        class="btn btn-primary fa fa-plus pull-right">Create Result
                 </button>
             </div>
         </div>
