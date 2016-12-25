@@ -113,11 +113,11 @@
                             <td width="20%" class="text-center"><bean:write name="pmsInterventionList" property="intEstimatedBudget"/></td>
                             <td width="25%" class="text-center"><bean:write name="pmsInterventionList" property="intSource"/></td>
                             <td width="5%" class="text-center">
-                                <a href="javaScript:parent.location = '/viewPmsIntervention.do?intId=<bean:write name="pmsInterventionList" property="compId.intId"/>&secId=<bean:write name="pmsInterventionList" property="compId.secId"/>&subId=<bean:write name="pmsInterventionList" property="compId.subId"/>'">
+                                <a href="javaScript:parent.location = '/viewPmsIntervention.do?intId=<bean:write name="pmsInterventionList" property="compId.intId"/>&secId=<bean:write name="pmsInterventionList" property="compId.secId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                 </a>
                                 &nbsp;
-                                <a href="javaScript:parent.location = '/viewEditIntervention.do?intId=<bean:write name="pmsInterventionList" property="compId.intId"/>&secId=<bean:write name="pmsInterventionList" property="compId.secId"/>&subId=<bean:write name="pmsInterventionList" property="compId.subId"/>'">
+                                <a href="javaScript:parent.location = '/viewEditIntervention.do?intId=<bean:write name="pmsInterventionList" property="compId.intId"/>&secId=<bean:write name="pmsInterventionList" property="compId.secId"/>'">
                                     <span class="glyphicon glyphicon-edit"></span>
                                 </a>
                             </td>

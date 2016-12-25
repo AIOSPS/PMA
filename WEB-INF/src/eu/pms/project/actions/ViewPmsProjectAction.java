@@ -30,18 +30,20 @@ public class ViewPmsProjectAction extends Action {
         List implementerList = (List) new GetPmsImplementerUseCase().execute(null, request);
         List developmentAgencyList = (List) new GetPmsDevelopmentAgencyUseCase().execute(null, request);
         List programmList = (List) new GetPmsProgrammUseCase().execute(null, request);
-        List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
+        //List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
         List clusterList = (List) new GetPmsClusterTypUseCase().execute(null, request);
         List clusterHList = new ArrayList();
         List clusterDList = new ArrayList();
         Iterator itr = clusterList.iterator();
-        PmsClusterTyp pmsClusterTyp = new PmsClusterTyp();
+        PmsSector pmsClusterTyp = new PmsSector();
         while (itr.hasNext()) {
-            pmsClusterTyp = (PmsClusterTyp) itr.next();
-            if (pmsClusterTyp.getCluType().equals("Hum"))
+            pmsClusterTyp = (PmsSector) itr.next();
+            if (pmsClusterTyp.getSecType().equals("Hum"))
                 clusterHList.add(pmsClusterTyp);
-            else if (pmsClusterTyp.getCluType().equals("Dev"))
+            else if (pmsClusterTyp.getSecType().equals("Dev"))
+                clusterDList.add(pmsClusterTyp);
+            else if (pmsClusterTyp.getSecType().equals("Other"))
                 clusterDList.add(pmsClusterTyp);
 
         }
@@ -52,7 +54,7 @@ public class ViewPmsProjectAction extends Action {
         request.setAttribute("implementerList", implementerList);
         request.setAttribute("developmentAgencyList", developmentAgencyList);
         request.setAttribute("programmList", programmList);
-        request.setAttribute("locationList", locationList);
+       // request.setAttribute("locationList", locationList);
         request.setAttribute("communityList", communityList);
         request.setAttribute("clusterHList", clusterHList);
         request.setAttribute("clusterDList", clusterDList);
@@ -91,15 +93,15 @@ public class ViewPmsProjectAction extends Action {
                     i++;
                 }
             }
-            List<PmsProjectsLocation> projectLocationList = (List) new GetPmsProjectLocationUseCase().execute(inputs, request);
-            if (projectLocationList != null && projectLocationList.size() > 0) {
-                projectLocationArr = new String[projectLocationList.size()];
-                int i = 0;
-                for (PmsProjectsLocation pmsProjectsLocation : projectLocationList) {
-                    projectLocationArr[i] = pmsProjectsLocation.getCompId().getLocId();
-                    i++;
-                }
-            }
+//            List<PmsProjectsLocation> projectLocationList = (List) new GetPmsProjectLocationUseCase().execute(inputs, request);
+//            if (projectLocationList != null && projectLocationList.size() > 0) {
+//                projectLocationArr = new String[projectLocationList.size()];
+//                int i = 0;
+//                for (PmsProjectsLocation pmsProjectsLocation : projectLocationList) {
+//                    projectLocationArr[i] = pmsProjectsLocation.getCompId().getLocId();
+//                    i++;
+//                }
+//            }
             List<PmsProjectsCommunity> projectCommunityList = (List) new GetPmsProjectCommunityUseCase().execute(inputs, request);
             if (projectCommunityList != null && projectCommunityList.size() > 0) {
                 projectCommunityArr = new String[projectCommunityList.size()];
@@ -147,14 +149,15 @@ public class ViewPmsProjectAction extends Action {
         pmsProjectForm.setDevId(pmsProject.getDevId());
         pmsProjectForm.setPrgId(pmsProject.getPrgId());
         pmsProjectForm.setProArea(pmsProject.getProArea());
-        pmsProjectForm.setCluType(pmsProject.getCluType());
         pmsProjectForm.setProHasCluster(pmsProject.getProHasCluster());
-        pmsProjectForm.setCluId(pmsProject.getCluId());
+        pmsProjectForm.setSecId(pmsProject.getSecId());
         pmsProjectForm.setProNeedPermit(pmsProject.getProNeedPermit());
         pmsProjectForm.setPreId(pmsProject.getPreId());
+        pmsProjectForm.setComLatitude(pmsProject.getComLatitude());
+        pmsProjectForm.setComLongitude(pmsProject.getComLongitude());
         pmsProjectForm.setDonorProjectList(projectDonorArr);
         pmsProjectForm.setImplementerProjectList(projectImplementerArr);
-        pmsProjectForm.setLocationProjectList(projectLocationArr);
+        //pmsProjectForm.setLocationProjectList(projectLocationArr);
         pmsProjectForm.setCommunityProjectList(projectCommunityArr);
         pmsProjectForm.setBenificiaryProjectList(projectBenificiryArr);
         pmsProjectForm.setIndicatorProjectList(projectIndicatorArr);

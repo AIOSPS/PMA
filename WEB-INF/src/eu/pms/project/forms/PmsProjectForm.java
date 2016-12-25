@@ -29,13 +29,15 @@ public class PmsProjectForm  extends ActionForm {
     private String timeStamp;
     private String prgId;
     private String devId;
-    private String cluId;
-    private String cluType;
+    private String secId;
+    private String secType;
     private String preId;
+    private String comLatitude;
+    private String comLongitude;
 
     private String[] donorProjectList;
     private String[] implementerProjectList;
-    private String[] locationProjectList;
+//    private String[] locationProjectList;
     private String[] communityProjectList;
     private String[] benificiaryProjectList;
     private String[] indicatorProjectList;
@@ -158,6 +160,22 @@ public class PmsProjectForm  extends ActionForm {
         this.prgId = prgId;
     }
 
+    public String getComLatitude() {
+        return comLatitude;
+    }
+
+    public void setComLatitude(String comLatitude) {
+        this.comLatitude = comLatitude;
+    }
+
+    public String getComLongitude() {
+        return comLongitude;
+    }
+
+    public void setComLongitude(String comLongitude) {
+        this.comLongitude = comLongitude;
+    }
+
     public String getDevId() {
         return devId;
     }
@@ -166,20 +184,20 @@ public class PmsProjectForm  extends ActionForm {
         this.devId = devId;
     }
 
-    public String getCluId() {
-        return cluId;
+    public String getSecId() {
+        return secId;
     }
 
-    public void setCluId(String cluId) {
-        this.cluId = cluId;
+    public void setSecId(String secId) {
+        this.secId = secId;
     }
 
-    public String getCluType() {
-        return cluType;
+    public String getSecType() {
+        return secType;
     }
 
-    public void setCluType(String cluType) {
-        this.cluType = cluType;
+    public void setSecType(String secType) {
+        this.secType = secType;
     }
 
     public String getPreId() {
@@ -206,13 +224,13 @@ public class PmsProjectForm  extends ActionForm {
         this.implementerProjectList = implementerProjectList;
     }
 
-    public String[] getLocationProjectList() {
-        return locationProjectList;
-    }
-
-    public void setLocationProjectList(String[] locationProjectList) {
-        this.locationProjectList = locationProjectList;
-    }
+//    public String[] getLocationProjectList() {
+//        return locationProjectList;
+//    }
+//
+//    public void setLocationProjectList(String[] locationProjectList) {
+//        this.locationProjectList = locationProjectList;
+//    }
 
     public String[] getCommunityProjectList() {
         return communityProjectList;
@@ -255,13 +273,15 @@ public class PmsProjectForm  extends ActionForm {
         timeStamp=null;
         prgId=null;
         devId=null;
-        cluId=null;
-        cluType=null;
+        secId=null;
+        secType=null;
         preId=null;
+        comLatitude=null;
+        comLongitude=null;
 
         donorProjectList=null;
         implementerProjectList=null;
-        locationProjectList=null;
+        //locationProjectList=null;
         communityProjectList=null;
         benificiaryProjectList=null;
         indicatorProjectList=null;

@@ -36,17 +36,18 @@ public class AddPmsProjectAction extends Action {
         String proHasCluster = pmsProjectForm.getProHasCluster();
         String proNotes = pmsProjectForm.getProNotes();
         String proArea = pmsProjectForm.getProArea();
-        String username = "";
+        String username = "pms";
         String timeStamp = "";
         String prgId = pmsProjectForm.getPrgId();
         String devId = pmsProjectForm.getDevId();
-        String cluId = pmsProjectForm.getCluId();
-        String cluType = pmsProjectForm.getCluType();
+        String secId = pmsProjectForm.getSecId();
+        String secType = pmsProjectForm.getSecType();
         String preId = pmsProjectForm.getPreId();
-
+        String comLatitude = pmsProjectForm.getComLatitude();
+        String comLongitude = pmsProjectForm.getComLongitude();
         String[] donorProjectList = pmsProjectForm.getDonorProjectList();
         String[] implementerProjectList = pmsProjectForm.getImplementerProjectList();
-        String[] locationProjectList = pmsProjectForm.getLocationProjectList();
+       // String[] locationProjectList = pmsProjectForm.getLocationProjectList();
         String[] communityProjectList = pmsProjectForm.getCommunityProjectList();
         String[] benificiaryProjectList = pmsProjectForm.getBenificiaryProjectList();
         String[] indicatorProjectList = pmsProjectForm.getIndicatorProjectList();
@@ -65,15 +66,18 @@ public class AddPmsProjectAction extends Action {
         inputs.add(proArea);
         inputs.add(prgId);
         inputs.add(devId);
-        inputs.add(cluId);
-        inputs.add(cluType);
+        inputs.add(secId);
+        inputs.add(secType);
         inputs.add(preId);
+        inputs.add(comLatitude);
+        inputs.add(comLongitude);
         inputs.add(donorProjectList);
         inputs.add(implementerProjectList);
-        inputs.add(locationProjectList);
+ //       inputs.add(locationProjectList);
         inputs.add(communityProjectList);
         inputs.add(benificiaryProjectList);
         inputs.add(indicatorProjectList);
+
 
         Collection result = new AddPmsProjectUseCase().execute(inputs, request);
         if (result != null && result.size() > 0) {

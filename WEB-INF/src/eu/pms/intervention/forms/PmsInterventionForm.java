@@ -15,7 +15,6 @@ import java.util.Date;
 /** @author Hibernate CodeGenerator */
 public class PmsInterventionForm extends ActionForm {
     private String intId;
-    private String subId;
     private String secId;
     private String masId;
     private String intDesc;
@@ -32,14 +31,6 @@ public class PmsInterventionForm extends ActionForm {
 
     public void setIntId(String intId) {
         this.intId = intId;
-    }
-
-    public String getSubId() {
-        return subId;
-    }
-
-    public void setSubId(String subId) {
-        this.subId = subId;
     }
 
     public String getSecId() {

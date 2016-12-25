@@ -5,6 +5,7 @@ import eu.pms.common.tools.SessionTraker;
 import eu.pms.community.forms.PmsCommunityForm;
 import eu.pms.community.useCases.GetPmsCommunityTypeUseCase;
 import eu.pms.community.useCases.GetPmsCommunityUseCase;
+import eu.pms.community.useCases.GetPmsGovernateUseCase;
 import eu.pms.project.database.PmsCommunity;
 import eu.pms.project.useCases.GetPmsLocationUseCase;
 import org.apache.struts.action.Action;
@@ -28,9 +29,9 @@ public class ViewPmsCommunityAction extends Action {
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
         List communityTypeList = (List) new GetPmsCommunityTypeUseCase().execute(null, request);
-        List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
+        List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
         request.setAttribute("communityTypeList", communityTypeList);
-        request.setAttribute("locationList", locationList);
+        request.setAttribute("governateList", governateList);
 
         String comId = request.getParameter("comId");
         ArrayList inputs = new ArrayList();
@@ -72,7 +73,9 @@ public class ViewPmsCommunityAction extends Action {
         pmsCommunityForm.setComRoadNetworkInfo(pmsCommunity.getComRoadNetworkInfo());
         pmsCommunityForm.setComTransportNetworkInfo(pmsCommunity.getComTransportNetworkInfo());
         pmsCommunityForm.setComEcnonomicActivitiesInfo(pmsCommunity.getComEcnonomicActivitiesInfo());
-        pmsCommunityForm.setLocId(pmsCommunity.getLocId());
+        pmsCommunityForm.setGovId(pmsCommunity.getGovId());
+        pmsCommunityForm.setComLatitude(pmsCommunity.getComLatitude());
+        pmsCommunityForm.setComLongitude(pmsCommunity.getComLongitude());
 
     }
 }

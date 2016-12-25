@@ -77,7 +77,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="devId" class="col-sm-3 col-form-label">D.A:</label>
+                        <label for="devId" class="col-sm-3 col-form-label">Development Agency:</label>
                         <div class="col-sm-9">
                             <html:select property="devId" styleClass="selectpicker form-control" disabled="true">
                                 <logic:present name="developmentAgencyList">
@@ -121,7 +121,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="proDescription" class="col-sm-3 col-form-label">Project Destination:</label>
+                        <label for="proDescription" class="col-sm-3 col-form-label">Project Description:</label>
                         <div class="col-sm-9">
                             <html:text property="proDescription" styleClass="form-control" styleId="proDescription" disabled="true"/>
                         </div>
@@ -207,19 +207,22 @@
 
                 <h2 class="titleSep"><span>Location</span></h2>
 
-
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="locationProjectList" class="col-sm-3 col-form-label"> GIS Location:</label>
+                        <label for="comLatitude" class="col-sm-3 col-form-label"> Latitude:</label>
                         <div class="col-sm-9">
-                            <html:select property="locationProjectList" multiple="true" disabled="true"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="locationList">
-                                    <html:options collection="locationList" property="locId" labelProperty="locLatitude"/>
-                                </logic:present>
-                            </html:select>
+                            <html:text property="comLatitude" styleClass="form-control" styleId="comLatitude"/>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <label for="comLongitude" class="col-sm-3 col-form-label"> Longitude:</label>
+                        <div class="col-sm-9">
+                            <html:text property="comLongitude" styleClass="form-control" styleId="comLongitude"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="proArea" class="col-sm-3 col-form-label">Project Area:</label>
                         <div class="col-sm-9">
@@ -235,9 +238,9 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="cluType" class="col-sm-3 col-form-label">Project Type:</label>
+                        <label for="secType" class="col-sm-3 col-form-label">Project Type:</label>
                         <div class="col-sm-9">
-                            <html:select property="cluType" styleClass="selectpicker form-control" disabled="true">
+                            <html:select property="secType" styleClass="selectpicker form-control" disabled="true">
                                 <html:option value="Hum">Humman</html:option>
                                 <html:option value="Dev">Development</html:option>
                             </html:select>
@@ -283,19 +286,19 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="cluId" class="col-sm-3 col-form-label"> Cluster:</label>
+                                <label for="cluId" class="col-sm-3 col-form-label"> Sector:</label>
                                 <div class="col-sm-9">
-                                    <html:select property="cluId" styleClass="selectpicker form-control" disabled="true">
+                                    <html:select property="secId" styleClass="selectpicker form-control" disabled="true">
                                         <logic:present name="clusterHList">
                                             <optgroup label="Humman">
-                                                <html:options collection="clusterHList" property="cluId"
-                                                              labelProperty="cluDesc"/>
+                                                <html:options collection="clusterHList" property="secId"
+                                                              labelProperty="secDesc"/>
                                             </optgroup>
                                         </logic:present>
                                         <logic:present name="clusterDList">
                                             <optgroup label="Development">
-                                                <html:options collection="clusterDList" property="cluId"
-                                                              labelProperty="cluDesc"/>
+                                                <html:options collection="clusterDList" property="secId"
+                                                              labelProperty="secDesc"/>
                                             </optgroup>
                                         </logic:present>
                                     </html:select>

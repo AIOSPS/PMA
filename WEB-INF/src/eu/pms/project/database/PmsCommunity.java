@@ -11,7 +11,7 @@ public class PmsCommunity implements Serializable {
 
     private String comId;
     private String govId;
-    private String locId;
+//    private String locId;
     private String typeId;
     private String comPcbsCode;
     private String comOchaCode;
@@ -36,8 +36,8 @@ public class PmsCommunity implements Serializable {
     private String comRoadNetworkInfo;
     private String comTransportNetworkInfo;
     private String comEcnonomicActivitiesInfo;
-    private java.math.BigDecimal locLatitude;
-    private java.math.BigDecimal locLongitude;
+    private java.math.BigDecimal comLatitude;
+    private java.math.BigDecimal comLongitude;
     private String username;
     private java.util.Date timeStamp;
 
@@ -238,20 +238,20 @@ public class PmsCommunity implements Serializable {
         this.comEcnonomicActivitiesInfo = comEcnonomicActivitiesInfo;
     }
 
-    public java.math.BigDecimal getLocLatitude() {
-        return this.locLatitude;
+    public java.math.BigDecimal getComLatitude() {
+        return this.comLatitude;
     }
 
-    public void setLocLatitude(java.math.BigDecimal locLatitude) {
-        this.locLatitude = locLatitude;
+    public void setComLatitude(java.math.BigDecimal comLatitude) {
+        this.comLatitude = comLatitude;
     }
 
-    public java.math.BigDecimal getLocLongitude() {
-        return this.locLongitude;
+    public java.math.BigDecimal getComLongitude() {
+        return this.comLongitude;
     }
 
-    public void setLocLongitude(java.math.BigDecimal locLongitude) {
-        this.locLongitude = locLongitude;
+    public void setComLongitude(java.math.BigDecimal comLongitude) {
+        this.comLongitude = comLongitude;
     }
 
     public String getUsername() {
@@ -278,13 +278,13 @@ public class PmsCommunity implements Serializable {
         this.govId = govId;
     }
 
-    public String getLocId() {
-        return locId;
-    }
-
-    public void setLocId(String locId) {
-        this.locId = locId;
-    }
+//    public String getLocId() {
+//        return locId;
+//    }
+//
+//    public void setLocId(String locId) {
+//        this.locId = locId;
+//    }
 
     public String getTypeId() {
         return typeId;

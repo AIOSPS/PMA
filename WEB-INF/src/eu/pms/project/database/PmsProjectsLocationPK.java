@@ -10,7 +10,8 @@ import java.io.Serializable;
 public class PmsProjectsLocationPK implements Serializable {
 
     private String proId;
-    private String locId;
+    private java.math.BigDecimal comLatitude;
+    private java.math.BigDecimal comLongitude;
 
     /**
      * default constructor
@@ -26,11 +27,19 @@ public class PmsProjectsLocationPK implements Serializable {
         this.proId = proId;
     }
 
-    public String getLocId() {
-        return locId;
+    public java.math.BigDecimal getComLatitude() {
+        return comLatitude;
     }
 
-    public void setLocId(String locId) {
-        this.locId = locId;
+    public void setComLatitude(java.math.BigDecimal comLatitude) {
+        this.comLatitude = comLatitude;
+    }
+
+    public java.math.BigDecimal getComLongitude() {
+        return comLongitude;
+    }
+
+    public void setComLongitude(java.math.BigDecimal comLongitude) {
+        this.comLongitude = comLongitude;
     }
 }

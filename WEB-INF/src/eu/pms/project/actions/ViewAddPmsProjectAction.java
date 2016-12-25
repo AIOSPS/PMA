@@ -2,7 +2,7 @@ package eu.pms.project.actions;
 
 
 import eu.pms.common.tools.SessionTraker;
-import eu.pms.project.database.PmsClusterTyp;
+import eu.pms.project.database.PmsSector;
 import eu.pms.project.useCases.*;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -30,18 +30,20 @@ public class ViewAddPmsProjectAction extends Action {
         List implementerList = (List) new GetPmsImplementerUseCase().execute(null, request);
         List developmentAgencyList = (List) new GetPmsDevelopmentAgencyUseCase().execute(null, request);
         List programmList = (List) new GetPmsProgrammUseCase().execute(null, request);
-        List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
+//        List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
         List clusterList = (List) new GetPmsClusterTypUseCase().execute(null, request);
         List clusterHList = new ArrayList();
         List clusterDList = new ArrayList();
         Iterator itr = clusterList.iterator();
-        PmsClusterTyp pmsClusterTyp = new PmsClusterTyp();
+        PmsSector pmsClusterTyp = new PmsSector();
         while (itr.hasNext()) {
-            pmsClusterTyp = (PmsClusterTyp) itr.next();
-            if (pmsClusterTyp.getCluType().equals("Hum"))
+            pmsClusterTyp = (PmsSector) itr.next();
+            if (pmsClusterTyp.getSecType().equals("Hum"))
                 clusterHList.add(pmsClusterTyp);
-            else if (pmsClusterTyp.getCluType().equals("Dev"))
+            else if (pmsClusterTyp.getSecType().equals("Dev"))
+                clusterDList.add(pmsClusterTyp);
+            else if (pmsClusterTyp.getSecType().equals("Other"))
                 clusterDList.add(pmsClusterTyp);
 
         }
@@ -52,7 +54,7 @@ public class ViewAddPmsProjectAction extends Action {
         request.setAttribute("implementerList", implementerList);
         request.setAttribute("developmentAgencyList", developmentAgencyList);
         request.setAttribute("programmList", programmList);
-        request.setAttribute("locationList", locationList);
+//        request.setAttribute("locationList", locationList);
         request.setAttribute("communityList", communityList);
         request.setAttribute("clusterHList", clusterHList);
         request.setAttribute("clusterDList", clusterDList);

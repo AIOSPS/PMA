@@ -47,7 +47,7 @@
         <![CDATA[
                 from eu.pms.project.database.PmsProjectsLocation a
                 where a.compId.proId = ?
-                order by a.compId.locId
+                order by a.compId.comLatitude
                   ]]>
     </query>
     <query
@@ -102,13 +102,13 @@
                 order by a.prgTitle
                   ]]>
     </query>
-    <query
-            name="getPmsLocation">
-        <![CDATA[
-                from eu.pms.project.database.PmsLocation a
-                order by a.locLatitude
-                  ]]>
-    </query>
+    <!--<query-->
+            <!--name="getPmsLocation">-->
+        <!--<![CDATA[-->
+                <!--from eu.pms.project.database.PmsLocation a-->
+                <!--order by a.locLatitude-->
+                  <!--]]>-->
+    <!--</query>-->
     <query
             name="getPmsCommunity">
         <![CDATA[
@@ -119,8 +119,8 @@
     <query
             name="getPmsClusterTyp">
         <![CDATA[
-                from eu.pms.project.database.PmsClusterTyp a
-                order by a.cluType,a.cluDesc
+                from eu.pms.project.database.PmsSector a
+                order by a.secType,a.secDesc
                   ]]>
     </query>
     <query
@@ -168,7 +168,6 @@
                 from eu.pms.project.database.PmsIntervention a
                 where a.compId.intId = ?
                 and a.compId.secId = ?
-                and a.compId.subId = ?
                 order by a.intDesc
                   ]]>
     </query>
@@ -193,13 +192,13 @@
                 order by a.secName
                   ]]>
     </query>
-    <query
-            name="getPmsSubSectors">
-        <![CDATA[
-                from eu.pms.project.database.PmsSubSector a
-                order by a.subName
-                  ]]>
-    </query>
+    <!--<query-->
+            <!--name="getPmsSubSectors">-->
+        <!--<![CDATA[-->
+                <!--from eu.pms.project.database.PmsSubSector a-->
+                <!--order by a.subName-->
+                  <!--]]>-->
+    <!--</query>-->
     <query
             name="getPmsInterventionList">
         <![CDATA[
@@ -343,6 +342,14 @@
                 and a.compId.resId=?
                 and a.compId.objId=?
                 order by a.indTitle
+                  ]]>
+    </query>
+
+    <query
+            name="getPmsGovernateList">
+        <![CDATA[
+                from eu.pms.lookup.database.PmsGovernate a
+                order by a.lookupDesc
                   ]]>
     </query>
 </hibernate-mapping>

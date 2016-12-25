@@ -3,6 +3,7 @@ package eu.pms.community.actions;
 
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.community.useCases.GetPmsCommunityTypeUseCase;
+import eu.pms.community.useCases.GetPmsGovernateUseCase;
 import eu.pms.project.useCases.*;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -25,9 +26,9 @@ public class ViewAddPmsCommunityAction extends Action
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
         List communityTypeList = (List) new GetPmsCommunityTypeUseCase().execute(null, request);
-        List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
+        List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
         request.setAttribute("communityTypeList", communityTypeList);
-        request.setAttribute("locationList", locationList);
+        request.setAttribute("governateList", governateList);
 
         return mapping.findForward("success");
     }
