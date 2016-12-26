@@ -100,3 +100,11 @@ ALTER TABLE `pms`.`pms_projects`
 DROP COLUMN `pro_timeStamp`,
 DROP COLUMN `pro_userId`;
 
+ALTER TABLE `pms`.`pms_activities`
+DROP FOREIGN KEY `fk_pms_activities_pms_interventions1`;
+ALTER TABLE `pms`.`pms_activities`
+ADD CONSTRAINT `fk_pms_activities_pms_interventions1`
+  FOREIGN KEY (`int_id` , `sec_id`)
+  REFERENCES `pms`.`pms_interventions` (`int_id` , `sec_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
