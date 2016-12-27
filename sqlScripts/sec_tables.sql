@@ -108,3 +108,14 @@ ADD CONSTRAINT `fk_pms_activities_pms_interventions1`
   REFERENCES `pms`.`pms_interventions` (`int_id` , `sec_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
+ALTER TABLE `pms`.`pms_interventions`
+DROP FOREIGN KEY `fk_pms_interventions_pms_master_plan1`;
+ALTER TABLE `pms`.`pms_interventions`
+CHANGE COLUMN `mas_id` `mas_id` VARCHAR(15) NULL ;
+ALTER TABLE `pms`.`pms_interventions`
+ADD CONSTRAINT `fk_pms_interventions_pms_master_plan1`
+  FOREIGN KEY (`mas_id`)
+  REFERENCES `pms`.`pms_master_plan` (`mas_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

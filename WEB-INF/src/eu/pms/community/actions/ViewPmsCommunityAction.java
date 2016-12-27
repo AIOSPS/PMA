@@ -76,6 +76,8 @@ public class ViewPmsCommunityAction extends Action {
         pmsCommunityForm.setGovId(pmsCommunity.getGovId());
         pmsCommunityForm.setComLatitude(pmsCommunity.getComLatitude());
         pmsCommunityForm.setComLongitude(pmsCommunity.getComLongitude());
+        pmsCommunityForm.setUsername(pmsCommunity.getUsername());
+        pmsCommunityForm.setTimeStamp(pmsCommunity.getTimeStamp());
 
     }
 }

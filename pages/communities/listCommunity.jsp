@@ -56,21 +56,6 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="communityOchaCode" class="col-sm-12 col-form-label">OCHA Code:</label>
-                                <div class="col-sm-12">
-                                    <html:text property="communityOchaCode" styleClass="form-control" styleId="communityOchaCode"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-
-                            <div class="col-md-4">
-                                <label for="communityTopology" class="col-sm-12 col-form-label">Community Topology:</label>
-                                <div class="col-sm-12">
-                                    <html:text property="communityTopology" styleClass="form-control" styleId="communityTopology"/>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
                                 <label for="communityGovId" class="col-sm-5 col-form-label">Governate:</label>
                                 <div class="col-sm-12">
                                     <html:select property="communityGovId"
@@ -79,6 +64,21 @@
                                     </html:select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <%--<label for="communityOchaCode" class="col-sm-12 col-form-label">OCHA Code:</label>--%>
+                                <%--<div class="col-sm-12">--%>
+                                <%--<html:text property="communityOchaCode" styleClass="form-control" styleId="communityOchaCode"/>--%>
+                                <%--</div>--%>
+                            </div>
+                            <div class="col-md-4">
+                                <%--<label for="communityTopology" class="col-sm-12 col-form-label">Community Topology:</label>--%>
+                                <%--<div class="col-sm-12">--%>
+                                    <%--<html:text property="communityTopology" styleClass="form-control" styleId="communityTopology"/>--%>
+                                <%--</div>--%>
+                            </div>
+
                             <div class="col-md-4">
                                 <label  class="col-sm-5 col-form-label">&nbsp;</label>
                                 <div class="col-sm-12">
@@ -95,7 +95,7 @@
                 <thead>
                 <tr>
                     <th class="text-center">Name</th>
-                    <th class="text-center">PCBS</th>
+                    <th class="text-center">ID</th>
                     <th class="text-center">OCHA</th>
                     <th class="text-center">Topology</th>
                     <th class="text-center"></th>
@@ -104,7 +104,7 @@
                 <tfoot>
                 <tr>
                     <th class="text-center">Name</th>
-                    <th class="text-center">PCBS</th>
+                    <th class="text-center">ID</th>
                     <th class="text-center">OCHA</th>
                     <th class="text-center">Topology</th>
                     <th class="text-center"></th>
@@ -116,7 +116,7 @@
                     <logic:iterate id="pmsCommunityList" name="pmsCommunityList" type="eu.pms.project.database.PmsCommunity">
                         <tr>
                             <td width="35%"><bean:write name="pmsCommunityList" property="comName"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comPcbsCode"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comId"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comOchaCode"/></td>
                             <td width="20%"><bean:write name="pmsCommunityList" property="comTopology"/></td>
                             <td width="5%" class="text-center">

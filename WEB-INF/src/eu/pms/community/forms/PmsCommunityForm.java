@@ -43,7 +43,8 @@ public class PmsCommunityForm extends ActionForm {
     private String comEcnonomicActivitiesInfo;
     private java.math.BigDecimal comLatitude;
     private java.math.BigDecimal comLongitude;
-
+    private String username;
+    private java.util.Date timeStamp;
     /** default constructor */
     public PmsCommunityForm() {
     }
@@ -280,6 +281,21 @@ public class PmsCommunityForm extends ActionForm {
         this.comLongitude = comLongitude;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Date getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(Date timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();

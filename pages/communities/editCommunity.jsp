@@ -79,6 +79,29 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
+                        <label for="typeId" class="col-sm-3 col-form-label">Type:</label>
+                        <div class="col-sm-9">
+                            <html:select property="typeId"
+                                         styleClass="selectpicker form-control">
+                                <logic:present name="communityTypeList">
+                                    <html:options collection="communityTypeList" property="typId" labelProperty="typDesc"/>
+                                </logic:present>
+                            </html:select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="govId" class="col-sm-3 col-form-label">Governate:</label>
+                        <div class="col-sm-9">
+                            <html:select property="govId"
+                                         styleClass="selectpicker form-control">
+                                <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
+                            </html:select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
                         <label for="comTotalAreaLand" class="col-sm-3 col-form-label">Totsl Area Land:</label>
                         <div class="col-sm-9">
                             <html:text property="comTotalAreaLand" styleClass="form-control" styleId="comTotalAreaLand"/>
@@ -224,28 +247,6 @@
                         <label for="comLongitude" class="col-sm-3 col-form-label">Longitude:</label>
                         <div class="col-sm-9">
                             <html:text property="comLongitude" styleClass="form-control" styleId="comLongitude"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="typeId" class="col-sm-3 col-form-label">Type ID:</label>
-                        <div class="col-sm-9">
-                            <html:select property="typeId"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="communityTypeList">
-                                    <html:options collection="communityTypeList" property="typId" labelProperty="typDesc"/>
-                                </logic:present>
-                            </html:select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="govId" class="col-sm-3 col-form-label">Governate:</label>
-                        <div class="col-sm-9">
-                            <html:select property="govId"
-                                         styleClass="selectpicker form-control">
-                                <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
-                            </html:select>
                         </div>
                     </div>
                 </div>
