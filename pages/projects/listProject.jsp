@@ -180,13 +180,17 @@
                             <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proStatusDesc"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proStartDateStr"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proEndDateStr"/></td>
-                            <td width="5%" class="text-center">
+                            <td width="10%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsProject.do?proId=<bean:write name="pmsProjectList" property="proId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                 </a>
                                 &nbsp;
                                 <a href="javaScript:parent.location = '/viewEditProject.do?proId=<bean:write name="pmsProjectList" property="proId"/>'">
                                     <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                &nbsp;
+                                <a href="javaScript:parent.location = '/viewAddAlbumProject.do?proId=<bean:write name="pmsProjectList" property="proId"/>'">
+                                    <span class="glyphicon glyphicon-picture"></span>
                                 </a>
                             </td>
                         </tr>
