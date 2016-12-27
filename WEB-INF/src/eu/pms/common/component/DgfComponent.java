@@ -18,7 +18,7 @@ package eu.pms.common.component;
 import eu.pms.common.exceptions.ComponentException;
 import eu.pms.common.utils.Count;
 import eu.pms.common.constant.ExceptionType;
-import oracle.jdbc.OracleTypes;
+//import oracle.jdbc.OracleTypes;
 import org.hibernate.*;
 import org.hibernate.Session;
 import org.hibernate.persister.entity.AbstractEntityPersister;
@@ -897,52 +897,52 @@ public abstract class DgfComponent
 
      return errorCode;
  }
-    public String callDBFunction(Object[] par, String funName) throws Exception {
-
-      int errorCode = 0;
-      int errorType=0;
-      String message=null;
-      String retVal="";
-
-
-     if (par.length > 0) {
-
-         Session session=null;
-
-         try {
-
-             String funParm = "";
-
-             for (int i = 0; i < par.length; i++) {
-                 funParm = funParm + "?,";
-             }
-             funParm = funParm.substring(0, funParm.lastIndexOf(","));
-             session =getSession();
-             CallableStatement st = session.connection().prepareCall("{? = call " + funName + " (" + funParm + ")}");
-             st.registerOutParameter(1, OracleTypes.VARCHAR);
-
-             for (int i = 0; i < par.length; i++) {
-                 st.setObject(i + 2, par[i]);
-             }
-
-             st.execute();
-             retVal = st.getString(1);
-
-         }
-         finally
-         {
-             if (session != null)
-             {
-                 try  { releaseSession(session); }
-                 catch (Exception e) { errorType=ExceptionType.CLOSE_SESSION_EXCEPTION;           message=e.getMessage(); }
-             }
-
-         }
-     }
-
-
-     return retVal;
- }
+//    public String callDBFunction(Object[] par, String funName) throws Exception {
+//
+//      int errorCode = 0;
+//      int errorType=0;
+//      String message=null;
+//      String retVal="";
+//
+//
+//     if (par.length > 0) {
+//
+//         Session session=null;
+//
+//         try {
+//
+//             String funParm = "";
+//
+//             for (int i = 0; i < par.length; i++) {
+//                 funParm = funParm + "?,";
+//             }
+//             funParm = funParm.substring(0, funParm.lastIndexOf(","));
+//             session =getSession();
+//             CallableStatement st = session.connection().prepareCall("{? = call " + funName + " (" + funParm + ")}");
+//             st.registerOutParameter(1, OracleTypes.VARCHAR);
+//
+//             for (int i = 0; i < par.length; i++) {
+//                 st.setObject(i + 2, par[i]);
+//             }
+//
+//             st.execute();
+//             retVal = st.getString(1);
+//
+//         }
+//         finally
+//         {
+//             if (session != null)
+//             {
+//                 try  { releaseSession(session); }
+//                 catch (Exception e) { errorType=ExceptionType.CLOSE_SESSION_EXCEPTION;           message=e.getMessage(); }
+//             }
+//
+//         }
+//     }
+//
+//
+//     return retVal;
+// }
 
 //   End Added By Ibrahim Assi date:14-9-2011
 }

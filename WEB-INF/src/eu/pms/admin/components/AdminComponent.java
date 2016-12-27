@@ -13,7 +13,6 @@ import java.io.IOException;
 import org.hibernate.*;
 import org.hibernate.lob.SerializableClob;
 import org.hibernate.Session;
-import oracle.sql.CLOB;
 
 /**
  * Created by IntelliJ IDEA.
