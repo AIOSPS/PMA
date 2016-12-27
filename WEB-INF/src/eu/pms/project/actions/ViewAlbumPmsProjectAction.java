@@ -2,11 +2,9 @@ package eu.pms.project.actions;
 
 
 import eu.pms.common.tools.SessionTraker;
-import eu.pms.project.database.PmsClusterTyp;
 import eu.pms.project.forms.PmsProjectAlbumForm;
 import eu.pms.project.useCases.*;
 import org.apache.struts.action.*;
-import org.apache.struts.upload.FormFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

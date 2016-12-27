@@ -8,6 +8,7 @@
         <form-bean name="loginForm" type="eu.pms.login.forms.LoginForm"/>
         <form-bean name="pmsProjectForm" type="eu.pms.project.forms.PmsProjectForm"/>
         <form-bean name="pmsProjectSearchForm" type="eu.pms.project.forms.PmsProjectSearchForm"/>
+        <form-bean name="pmsProjectAlbumForm" type="eu.pms.project.forms.PmsProjectAlbumForm"/>
         <form-bean name="pmsCommunityForm" type="eu.pms.community.forms.PmsCommunityForm"/>
         <form-bean name="pmsCommunitySearchForm" type="eu.pms.community.forms.PmsCommunitySearchForm"/>
         <form-bean name="pmsInterventionForm" type="eu.pms.intervention.forms.PmsInterventionForm"/>
@@ -124,6 +125,30 @@
         >
             <forward name="success" path="pms.editProject.tile"/>
         </action>
+
+        <action
+                name="pmsProjectAlbumForm"
+                type="eu.pms.project.actions.ViewAlbumPmsProjectAction"
+                validate="false"
+                path="/viewAddAlbumProject"
+        >
+            <forward name="success" path="pms.albumProject.tile"/>
+        </action>
+        <action
+                type="eu.pms.project.actions.DownloadImgAlbumAction"
+                path="/downloadImgAlbum"
+        >
+            <forward name="success" path="pms.albumProject.tile"/>
+        </action>
+        <action
+                name="pmsProjectAlbumForm"
+                type="eu.pms.project.actions.AddImgAlbumPmsProjectAction"
+                validate="false"
+                path="/addImageToAlbumProject"
+        >
+            <forward name="success" path="/viewAddAlbumProject.do" contextRelative="true"/>
+        </action>
+
         <action
                 type="eu.pms.community.actions.PmsCommunityListAction"
                 scope="request"

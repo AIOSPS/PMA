@@ -27,6 +27,24 @@
                   ]]>
     </query>
     <query
+            name="getAlbumPmsProjectList">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectAlbum a
+                where a.compId.proId = ?
+                order by a.compId.albId
+                  ]]>
+    </query>
+    <query
+            name="pms.getImgAlbum">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectAlbum a
+                where a.compId.proId = ?
+                and a.compId.albId = ?
+                order by a.compId.albId
+                  ]]>
+    </query>
+
+    <query
             name="getPmsProjectDonor">
         <![CDATA[
                 from eu.pms.project.database.PmsProjectDonor a

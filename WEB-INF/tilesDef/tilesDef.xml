@@ -162,4 +162,7 @@
     <definition name="pms.viewMapsLayer.tile" extends="innerLayout">
         <put name="body" value="/pages/maps/viewMapsLayer.jsp"/>
     </definition>
+    <definition name="pms.albumProject.tile" extends="innerLayout">
+        <put name="body" value="/pages/projects/albumProject.jsp"/>
+    </definition>
 </tiles-definitions>

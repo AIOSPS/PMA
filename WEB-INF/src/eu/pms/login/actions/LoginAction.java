@@ -9,6 +9,7 @@ package eu.pms.login.actions;
  * @version 1.0
  */
 
+import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.constant.SystemConstant;
 import eu.pms.login.components.LoginComponent;
 import eu.pms.login.database.SecUser;
@@ -41,11 +42,10 @@ public class LoginAction extends Action
         String name = loginForm.getUserId().trim();
         String pass = loginForm.getPassword().trim();
 
-        LoginComponent comp = new LoginComponent();
 
         try {
             try {
-                users = comp.getList("pms.getUser",new Object[]{name,pass});
+                users = new DataAccessObjectImpl().getList("pms.getUser",new Object[]{name,pass});
                 if(users!=null && users.size()>0){
                     SecUser secUser = (SecUser) users.iterator().next();
                     request.getSession().setAttribute("userInfo",secUser);
