@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsProjectAlbum implements Serializable {
 
-    private String proId;
+    private PmsProjectAlbumPK compId;
     private Blob albImage;
     private String username;
     private Date timeStamp;
@@ -19,12 +19,12 @@ public class PmsProjectAlbum implements Serializable {
     public PmsProjectAlbum() {
     }
 
-    public String getProId() {
-        return proId;
+    public PmsProjectAlbumPK getCompId() {
+        return compId;
     }
 
-    public void setProId(String proId) {
-        this.proId = proId;
+    public void setCompId(PmsProjectAlbumPK compId) {
+        this.compId = compId;
     }
 
     public Blob getAlbImage() {
