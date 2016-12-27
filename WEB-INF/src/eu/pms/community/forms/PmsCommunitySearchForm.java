@@ -14,6 +14,7 @@ public class PmsCommunitySearchForm extends ActionForm {
     private String communityOchaCode;
     private String communityName;
     private String communityTopology;
+    private String communityGovId;
 
     /** default constructor */
     public PmsCommunitySearchForm() {
@@ -49,6 +50,14 @@ public class PmsCommunitySearchForm extends ActionForm {
 
     public void setCommunityTopology(String communityTopology) {
         this.communityTopology = communityTopology;
+    }
+
+    public String getCommunityGovId() {
+        return communityGovId;
+    }
+
+    public void setCommunityGovId(String communityGovId) {
+        this.communityGovId = communityGovId;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

@@ -26,6 +26,7 @@ public class PmsCommunityListUseCase implements ComponentUseCase {
                 String comPcbsCode = (String)itr.next();
                 String comOchaCode = (String)itr.next();
                 String comTopology = (String) itr.next();
+                String comGovId = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(comName!=null && !comName.trim().equals("")){
                     cond += " and a.comName like '%"+comName+"%' ";
@@ -38,6 +39,9 @@ public class PmsCommunityListUseCase implements ComponentUseCase {
                 }
                 if(comTopology!=null && !comTopology.trim().equals("")){
                     cond += " and a.comTopology like '%"+comTopology+"%' ";
+                }
+                if(comGovId!=null && !comGovId.trim().equals("")){
+                    cond += " and a.govId = '"+comGovId+"' ";
                 }
                 String query = " from eu.pms.project.database.PmsCommunity a ";
                 query +=cond;

@@ -26,7 +26,6 @@ public class AddPmsInterventionAction extends Action {
 //            return mapping.findForward("noPermission");
         PmsInterventionForm pmsInterventionForm = (PmsInterventionForm) form;
         String intId = pmsInterventionForm.getIntId();
-        String subId = pmsInterventionForm.getSubId();
         String secId = pmsInterventionForm.getSecId();
         String masId = pmsInterventionForm.getMasId();
         String intDesc = pmsInterventionForm.getIntDesc();
@@ -36,7 +35,6 @@ public class AddPmsInterventionAction extends Action {
 
         ArrayList inputs = new ArrayList();
         inputs.add(intId);
-        inputs.add(subId);
         inputs.add(secId);
         inputs.add(masId);
         inputs.add(intDesc);

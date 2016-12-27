@@ -32,26 +32,27 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             String proArea = (String) itr.next();
             String prgId = (String) itr.next();
             String devId = (String) itr.next();
-            String cluId = (String) itr.next();
-            String cluType = (String) itr.next();
+            String secId = (String) itr.next();
+            String secType = (String) itr.next();
             String preId = (String) itr.next();
+            String comLatitude = (String) itr.next();
+            String comLongitude = (String) itr.next();
             String[] donorProjectArray = (String[]) itr.next();
             String[] implementerProjectArray = (String[]) itr.next();
-            String[] locationProjectArray = (String[]) itr.next();
             String[] communityProjectArray = (String[]) itr.next();
             String[] benificiaryProjectArray = (String[]) itr.next();
             String[] indicatorProjectArray = (String[]) itr.next();
 
             String username = "pms";
             Date timeStamp = new Date();
-            if(cluType!=null && cluType.equals("Hum")){
+            if(secType!=null && secType.equals("Hum")){
                 communityProjectArray = null;
                 proHasCluster = "0";
-            }else if(cluType!=null && cluType.equals("Dev")){
+            }else if(secType!=null && secType.equals("Dev")){
                 if(proHasCluster.equals("1")){
                     communityProjectArray = null;
                 }else if(proHasCluster.equals("0")){
-                    cluId = null;
+                    secId = null;
                 }
             }
             PmsProject pmsProject = new PmsProject();
@@ -68,8 +69,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             pmsProject.setProArea(proArea);
             pmsProject.setPrgId(prgId);
             pmsProject.setDevId(devId);
-            pmsProject.setCluId(cluId);
-            pmsProject.setCluType(cluType);
+            pmsProject.setSecId(secId);
             pmsProject.setPreId(preId);
             pmsProject.setUsername(username);
             pmsProject.setTimeStamp(timeStamp);
@@ -106,20 +106,19 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
                 }
             }
 
-            if (locationProjectArray != null && locationProjectArray.length > 0) {
-                PmsProjectsLocationPK pmsProjectsLocationPK = null;
-                PmsProjectsLocation pmsProjectsLocation = null;
-                for (String location : locationProjectArray) {
-                    pmsProjectsLocationPK = new PmsProjectsLocationPK();
-                    pmsProjectsLocation = new PmsProjectsLocation();
+
+
+                    PmsProjectsLocationPK pmsProjectsLocationPK = new PmsProjectsLocationPK();
+                    PmsProjectsLocation pmsProjectsLocation = new PmsProjectsLocation();
                     pmsProjectsLocationPK.setProId(proId);
-                    pmsProjectsLocationPK.setLocId(location);
+                    pmsProjectsLocationPK.setComLatitude(new BigDecimal(comLatitude));
+                    pmsProjectsLocationPK.setComLongitude(new BigDecimal(comLongitude));
                     pmsProjectsLocation.setCompId(pmsProjectsLocationPK);
                     pmsProjectsLocation.setUsername(username);
                     pmsProjectsLocation.setTimeStamp(timeStamp);
                     insertList.add(pmsProjectsLocation);
-                }
-            }
+
+
 
             if (communityProjectArray != null && communityProjectArray.length > 0) {
                 PmsProjectsCommunityPK pmsProjectsCommunityPK = null;

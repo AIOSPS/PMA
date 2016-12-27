@@ -1,4 +1,4 @@
-package eu.pms.project.useCases;
+package eu.pms.community.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.useCase.ComponentUseCase;
@@ -10,21 +10,20 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by alisa_000 on 12/5/2016.
+ * Created by orayyan on 12/25/2016.
  */
-public class GetPmsLocationUseCase implements ComponentUseCase {
+public class GetPmsGovernateUseCase implements ComponentUseCase {
     public Collection execute(Collection input, HttpServletRequest request)
             throws HibernateException {
 
         List retList = null;
 
         try {
-            retList= null;
-            //new DataAccessObjectImpl().getList("getPmsLocation");
+            retList=new DataAccessObjectImpl().getList("getPmsGovernateList");
         } catch (Exception ce) {
-            System.out.println("Error PMS Location list: " + ce);
+            System.out.println("Error PMS Gvernate list: " + ce);
             retList = new ArrayList();
-            retList.add(new String("\"Error Loading PMS Location list"));
+            retList.add(new String("\"Error Loading PMS Gvernate list"));
         }
         return retList;
     }

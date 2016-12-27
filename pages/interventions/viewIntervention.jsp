@@ -75,44 +75,26 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="subId" class="col-sm-3 col-form-label">Sub Sector:</label>
-                        <div class="col-sm-9">
-                            <html:select property="subId" disabled="true"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="subSectorsList">
-                                    <html:options collection="subSectorsList" property="compId.subId" labelProperty="subName"/>
-                                </logic:present>
-                            </html:select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
                         <label for="intDesc" class="col-sm-3 col-form-label">Description:</label>
                         <div class="col-sm-9">
                             <html:text property="intDesc" styleClass="form-control" styleId="intDesc" disabled="true"/>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="form-group row">
+
                     <div class="col-md-6">
                         <label for="intEstimatedBudget" class="col-sm-3 col-form-label">Estimated Budget:</label>
                         <div class="col-sm-9">
                             <html:text property="intEstimatedBudget" styleClass="form-control" styleId="intEstimatedBudget" disabled="true"/>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="intSource" class="col-sm-3 col-form-label">Source:</label>
                         <div class="col-sm-9">
                             <html:text property="intSource" styleClass="form-control" styleId="intSource" disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
-
                         </div>
                     </div>
                 </div>

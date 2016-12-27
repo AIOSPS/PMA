@@ -2882,8 +2882,7 @@
         <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
         <property name="prgId" column="prg_id" type="java.lang.String"/>
         <property name="devId" column="dev_id" type="java.lang.String"/>
-        <property name="cluId" column="clu_id" type="java.lang.String"/>
-        <property name="cluType" column="clu_type" type="java.lang.String"/>
+        <property name="secId" column="sec_id" type="java.lang.String"/>
         <property name="preId" column="per_id" type="java.lang.String"/>
     </class>
 
@@ -2959,20 +2958,11 @@
         <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
     </class>
 
-    <class name="eu.pms.project.database.PmsLocation" table="pms_locations">
-        <id name="locId" type="java.lang.String" column="loc_id">
-            <generator class="assigned"/>
-        </id>
-        <property name="locLatitude" column="loc_latitude" type="java.math.BigDecimal"/>
-        <property name="locLongitude" column="loc_longitude" type="java.math.BigDecimal"/>
-        <property name="username" column="username" type="java.lang.String"/>
-        <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
-    </class>
-
     <class name="eu.pms.project.database.PmsProjectsLocation" table="pms_projects_locations">
         <composite-id name="compId" class="eu.pms.project.database.PmsProjectsLocationPK">
             <key-property name="proId" column="pro_id" type="java.lang.String"/>
-            <key-property name="locId" column="loc_id" type="java.lang.String"/>
+            <key-property name="comLatitude" column="com_latitude" type="java.math.BigDecimal"/>
+            <key-property name="comLongitude" column="com_longitude" type="java.math.BigDecimal"/>
         </composite-id>
         <property name="username" column="username" type="java.lang.String"/>
         <property name="timeStamp" column="time_stamp" type="java.util.Date"/>
@@ -3005,12 +2995,11 @@
         <property name="comRoadNetworkInfo" type="java.lang.String" column="com_road_network_info"/>
         <property name="comTransportNetworkInfo" type="java.lang.String" column="com_transport_network_info"/>
         <property name="comEcnonomicActivitiesInfo" type="java.lang.String" column="com_ecnonomic_activities_info"/>
-        <!--<property name="locLatitude" type="java.math.BigDecimal" column="loc_latitude"/>-->
-        <!--<property name="locLongitude" type="java.math.BigDecimal" column="loc_longitude"/>-->
+        <property name="comLatitude" type="java.math.BigDecimal" column="com_latitude"/>
+        <property name="comLongitude" type="java.math.BigDecimal" column="com_longitude"/>
         <property name="username" type="java.lang.String" column="username"/>
         <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
         <property name="govId" type="java.lang.String" column="gov_id"/>
-        <property name="locId" type="java.lang.String" column="loc_id"/>
         <property name="typeId" type="java.lang.String" column="typ_id"/>
     </class>
 
@@ -3023,12 +3012,11 @@
         <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
 
-    <class name="eu.pms.project.database.PmsClusterTyp" table="pms_cluster_types">
-        <id name="cluId" type="java.lang.String" column="clu_id">
+    <class name="eu.pms.lookup.database.PmsGovernate" table="pms_governates">
+        <id name="lookupId" type="java.lang.String" column="gov_id">
             <generator class="assigned"/>
         </id>
-        <property name="cluType" type="java.lang.String" column="clu_type"/>
-        <property name="cluDesc" type="java.lang.String" column="clu_desc"/>
+        <property name="lookupDesc" type="java.lang.String" column="gov_desc"/>
         <property name="username" type="java.lang.String" column="username"/>
         <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
@@ -3110,7 +3098,6 @@
     <class name="eu.pms.project.database.PmsIntervention" table="pms_interventions" >
     <composite-id name="compId" class="eu.pms.project.database.PmsInterventionPK">
     <key-property name="intId" column="int_id" type="java.lang.String"/>
-    <key-property name="subId" column="sub_id" type="java.lang.String"/>
     <key-property name="secId" column="sec_id" type="java.lang.String"/>
     </composite-id>
     <property name="intDesc" type="java.lang.String" column="int_desc" />
@@ -3151,17 +3138,8 @@
     </id>
     <property name="secName" type="java.lang.String" column="sec_name" />
     <property name="secDesc" type="java.lang.String" column="sec_desc" />
-    <property name="username" type="java.lang.String" column="username" />
-    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
-    </class>
-
-    <class name="eu.pms.project.database.PmsSubSector" table="pms_sub_sectors" >
-    <composite-id name="compId" class="eu.pms.project.database.PmsSubSectorPK">
-    <key-property name="subId" column="sub_id" type="java.lang.String"/>
-    <key-property name="secId" column="sec_id" type="java.lang.String"/>
-    </composite-id>
-    <property name="subName" type="java.lang.String" column="sub_name" />
-    <property name="subDesc" type="java.lang.String" column="sub_desc" />
+    <property name="secType" type="java.lang.String" column="sec_type" />
+    <property name="secParentId" type="java.lang.String" column="sec_parent_id" />
     <property name="username" type="java.lang.String" column="username" />
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
@@ -3204,14 +3182,16 @@
     <property name="incDemolishedWomen" type="int" column="inc_Demolished_women" />
     <property name="incSourceLink" type="java.lang.String" column="inc_SourceLink" />
     <property name="incTimeStamp" type="java.util.Date" column="inc_timeStamp" />
-    <property name="locLatitude" type="java.math.BigDecimal" column="ocha_loc_latitude" />
-    <property name="locLongitude" type="java.math.BigDecimal" column="ocha_loc_longitude" />
+    <property name="ochaLocLatitude" type="java.math.BigDecimal" column="ocha_loc_latitude" />
+    <property name="ochaLocLongitude" type="java.math.BigDecimal" column="ocha_loc_longitude" />
     <property name="incDisplacedMen" type="int" column="inc_Displaced_men" />
     <property name="incDisplacedAdult" type="int" column="inc_Displaced_adult" />
     <property name="incDisplacedChildren" type="int"  column="inc_Displaced_children" />
     <property name="incDemolishedMen" type="int" column="inc_Demolished_men" />
     <property name="incDemolishedAdult" type="int" column="inc_Demolished_adult" />
     <property name="incDemolishedChildren" type="int" column="inc_Demolished_children" />
+    <property name="locLatitude" type="java.math.BigDecimal" column="loc_latitude" />
+    <property name="locLongitude" type="java.math.BigDecimal" column="loc_longitude" />
     <property name="username" type="java.lang.String" column="username" />
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     <property name="datId" type="java.lang.String" column="dat_id" />

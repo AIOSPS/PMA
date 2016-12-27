@@ -12,6 +12,8 @@ public class PmsSector implements Serializable {
     private String secId;
     private String secName;
     private String secDesc;
+    private String secType;
+    private String secParentId;
     private String username;
     private java.util.Date timeStamp;
 
@@ -41,6 +43,22 @@ public class PmsSector implements Serializable {
 
     public void setSecDesc(String secDesc) {
         this.secDesc = secDesc;
+    }
+
+    public String getSecType() {
+        return secType;
+    }
+
+    public void setSecType(String secType) {
+        this.secType = secType;
+    }
+
+    public String getSecParentId() {
+        return secParentId;
+    }
+
+    public void setSecParentId(String secParentId) {
+        this.secParentId = secParentId;
     }
 
     public String getUsername() {

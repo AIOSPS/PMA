@@ -19,7 +19,6 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String intId = (String) itr.next();
-            String subId = (String) itr.next();
             String secId = (String) itr.next();
             String masId = (String) itr.next();
             String intDesc = (String) itr.next();
@@ -33,7 +32,6 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
             PmsInterventionPK pmsInterventionPK = new PmsInterventionPK();
             pmsInterventionPK.setIntId(intId);
             pmsInterventionPK.setSecId(secId);
-            pmsInterventionPK.setSubId(subId);
             pmsIntervention.setCompId(pmsInterventionPK);
             pmsIntervention.setMasId(masId);
             pmsIntervention.setIntDesc(intDesc);

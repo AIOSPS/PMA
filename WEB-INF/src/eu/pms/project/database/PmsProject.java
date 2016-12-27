@@ -28,9 +28,10 @@ public class PmsProject implements Serializable {
     private Date timeStamp;
     private String prgId;
     private String devId;
-    private String cluId;
-    private String cluType;
+    private String secId;
     private String preId;
+    private String comLatitude;
+    private String comLongitude;
     /** default constructor */
     public PmsProject() {
     }
@@ -155,21 +156,14 @@ public class PmsProject implements Serializable {
         this.devId = devId;
     }
 
-    public String getCluId() {
-        return cluId;
+    public String getSecId() {
+        return secId;
     }
 
-    public void setCluId(String cluId) {
-        this.cluId = cluId;
+    public void setSecId(String SecId) {
+        this.secId = secId;
     }
 
-    public String getCluType() {
-        return cluType;
-    }
-
-    public void setCluType(String cluType) {
-        this.cluType = cluType;
-    }
 
     public String getPreId() {
         return preId;
@@ -212,6 +206,22 @@ public class PmsProject implements Serializable {
 
     public void setProEndDateStr(String proEndDateStr) {
         this.proEndDateStr = proEndDateStr;
+    }
+
+    public String getComLatitude() {
+        return comLatitude;
+    }
+
+    public void setComLatitude(String comLatitude) {
+        this.comLatitude = comLatitude;
+    }
+
+    public String getComLongitude() {
+        return comLongitude;
+    }
+
+    public void setComLongitude(String comLongitude) {
+        this.comLongitude = comLongitude;
     }
 
     public String toString() {

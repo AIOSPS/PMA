@@ -1,6 +1,7 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -26,14 +27,16 @@ public class PmsIncident implements Serializable {
     private String incType;
     private java.util.Date incTimeStamp;
     private String incTimeStampStr;
-    private java.math.BigDecimal locLatitude;
-    private java.math.BigDecimal locLongitude;
+    private java.math.BigDecimal ochaLocLatitude;
+    private java.math.BigDecimal ochaLocLongitude;
     private int incDisplacedMen;
     private int incDisplacedAdult;
     private int incDisplacedChildren;
     private int incDemolishedMen;
     private int incDemolishedAdult;
     private int incDemolishedChildren;
+    private java.math.BigDecimal locLatitude;
+    private java.math.BigDecimal locLongitude;
     private String username;
     private java.util.Date timeStamp;
 
@@ -201,6 +204,22 @@ public class PmsIncident implements Serializable {
 
     public void setIncDemolishedChildren(int incDemolishedChildren) {
         this.incDemolishedChildren = incDemolishedChildren;
+    }
+
+    public BigDecimal getOchaLocLatitude() {
+        return ochaLocLatitude;
+    }
+
+    public void setOchaLocLatitude(BigDecimal ochaLocLatitude) {
+        this.ochaLocLatitude = ochaLocLatitude;
+    }
+
+    public BigDecimal getOchaLocLongitude() {
+        return ochaLocLongitude;
+    }
+
+    public void setOchaLocLongitude(BigDecimal ochaLocLongitude) {
+        this.ochaLocLongitude = ochaLocLongitude;
     }
 
     public String getUsername() {

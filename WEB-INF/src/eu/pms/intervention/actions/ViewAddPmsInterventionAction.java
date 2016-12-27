@@ -29,10 +29,9 @@ public class ViewAddPmsInterventionAction extends Action
 //            return mapping.findForward("noPermission");
         List masterPlanList = (List) new GetPmsMasterPlanUseCase().execute(null, request);
         List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
-        List subSectorsList = (List) new GetPmsSubSectorsUseCase().execute(null, request);
+        //List subSectorsList = (List) new GetPmsSubSectorsUseCase().execute(null, request);
         request.setAttribute("masterPlanList", masterPlanList);
         request.setAttribute("sectorsList", sectorsList);
-        request.setAttribute("subSectorsList", subSectorsList);
 
         return mapping.findForward("success");
     }

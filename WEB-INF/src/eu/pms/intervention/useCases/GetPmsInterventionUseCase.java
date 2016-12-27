@@ -21,9 +21,8 @@ public class GetPmsInterventionUseCase implements ComponentUseCase {
         Iterator itr = input.iterator();
         String intId = (String) itr.next();
         String secId = (String) itr.next();
-        String subId = (String) itr.next();
         try {
-            retList = new DataAccessObjectImpl().getList("getPmsInterventionById", new Object[]{intId,secId,subId});
+            retList = new DataAccessObjectImpl().getList("getPmsInterventionById", new Object[]{intId,secId});
         } catch (Exception ce) {
             System.out.println("Error PmsIntervention: " + ce);
             retList = new ArrayList();

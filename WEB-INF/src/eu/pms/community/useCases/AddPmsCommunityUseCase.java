@@ -41,7 +41,9 @@ public class AddPmsCommunityUseCase implements ComponentUseCase {
             String comRoadNetworkInfo = (String) itr.next();
             String comTransportNetworkInfo = (String) itr.next();
             String comEcnonomicActivitiesInfo = (String) itr.next();
-            String locId = (String) itr.next();
+            String govId = (String) itr.next();
+            BigDecimal comLatitude = (BigDecimal) itr.next();
+            BigDecimal comLongitude = (BigDecimal) itr.next();
 
             String username = "pms";
             Date timeStamp = new Date();
@@ -70,7 +72,9 @@ public class AddPmsCommunityUseCase implements ComponentUseCase {
             pmsCommunity.setComRoadNetworkInfo(comRoadNetworkInfo);
             pmsCommunity.setComTransportNetworkInfo(comTransportNetworkInfo);
             pmsCommunity.setComEcnonomicActivitiesInfo(comEcnonomicActivitiesInfo);
-            pmsCommunity.setLocId(locId);
+            pmsCommunity.setGovId(govId);
+            pmsCommunity.setComLatitude(comLatitude);
+            pmsCommunity.setComLongitude(comLongitude);
             pmsCommunity.setUsername(username);
             pmsCommunity.setTimeStamp(timeStamp);
 

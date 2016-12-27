@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="communityPcbsCode" class="col-sm-12 col-form-label">PSBS Code:</label>
+                                <label for="communityPcbsCode" class="col-sm-12 col-form-label">PCBS Code:</label>
                                 <div class="col-sm-12">
                                     <html:text property="communityPcbsCode" styleClass="form-control" styleId="communityPcbsCode"/>
                                 </div>
@@ -71,10 +71,13 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <%--<label for="prNotes" class="col-sm-5 col-form-label">Has Cluster:</label>--%>
-                                <%--<div class="col-sm-12">--%>
-                                    <%--<input type="number" class="form-control" id="prBdget" placeholder="Budget"/>--%>
-                                <%--</div>--%>
+                                <label for="communityGovId" class="col-sm-5 col-form-label">Governate:</label>
+                                <div class="col-sm-12">
+                                    <html:select property="communityGovId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
+                                    </html:select>
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 <label  class="col-sm-5 col-form-label">&nbsp;</label>
@@ -92,7 +95,7 @@
                 <thead>
                 <tr>
                     <th class="text-center">Name</th>
-                    <th class="text-center">PSBS</th>
+                    <th class="text-center">PCBS</th>
                     <th class="text-center">OCHA</th>
                     <th class="text-center">Topology</th>
                     <th class="text-center"></th>
@@ -101,7 +104,7 @@
                 <tfoot>
                 <tr>
                     <th class="text-center">Name</th>
-                    <th class="text-center">PSBS</th>
+                    <th class="text-center">PCBS</th>
                     <th class="text-center">OCHA</th>
                     <th class="text-center">Topology</th>
                     <th class="text-center"></th>

@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -49,7 +50,9 @@ public class AddPmsCommunityAction extends Action {
         String comRoadNetworkInfo = pmsCommunityForm.getComRoadNetworkInfo();
         String comTransportNetworkInfo = pmsCommunityForm.getComTransportNetworkInfo();
         String comEcnonomicActivitiesInfo = pmsCommunityForm.getComEcnonomicActivitiesInfo();
-        String locId = pmsCommunityForm.getLocId();
+        String govId = pmsCommunityForm.getGovId();
+        BigDecimal comLatitude = pmsCommunityForm.getComLatitude();
+        BigDecimal comLongitude = pmsCommunityForm.getComLongitude();
 
 
         ArrayList inputs = new ArrayList();
@@ -76,7 +79,9 @@ public class AddPmsCommunityAction extends Action {
         inputs.add(comRoadNetworkInfo);
         inputs.add(comTransportNetworkInfo);
         inputs.add(comEcnonomicActivitiesInfo);
-        inputs.add(locId);
+        inputs.add(govId);
+        inputs.add(comLatitude);
+        inputs.add(comLongitude);
 
         Collection result = new AddPmsCommunityUseCase().execute(inputs, request);
         if (result != null && result.size() > 0) {

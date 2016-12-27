@@ -1,8 +1,10 @@
 package eu.pms.community.actions;
 
 
+import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.community.forms.PmsCommunitySearchForm;
+import eu.pms.community.useCases.GetPmsGovernateUseCase;
 import eu.pms.community.useCases.PmsCommunityListUseCase;
 import eu.pms.login.components.LoginComponent;
 import eu.pms.login.forms.LoginForm;
@@ -27,7 +29,8 @@ public class PmsCommunityListAction extends Action
             return mapping.findForward("invalidAccess");
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
-
+        List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
+        request.setAttribute("governateList", governateList);
         ArrayList inputData = new ArrayList();
         PmsCommunitySearchForm pmsCommunitySearchForm = (PmsCommunitySearchForm) form;
         if (pmsCommunitySearchForm != null) {
@@ -35,6 +38,7 @@ public class PmsCommunityListAction extends Action
             inputData.add(pmsCommunitySearchForm.getCommunityPcbsCode());
             inputData.add(pmsCommunitySearchForm.getCommunityOchaCode());
             inputData.add(pmsCommunitySearchForm.getCommunityTopology());
+            inputData.add(pmsCommunitySearchForm.getCommunityGovId());
         }
         request.setAttribute("pmsCommunityList", new PmsCommunityListUseCase().execute(inputData, request));
 

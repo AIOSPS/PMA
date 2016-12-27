@@ -16,7 +16,7 @@ import java.util.Date;
 public class PmsCommunityForm extends ActionForm {
     private String comId;
     private String govId;
-    private String locId;
+    //private String locId;
     private String typeId;
     private String comPcbsCode;
     private String comOchaCode;
@@ -41,8 +41,8 @@ public class PmsCommunityForm extends ActionForm {
     private String comRoadNetworkInfo;
     private String comTransportNetworkInfo;
     private String comEcnonomicActivitiesInfo;
-    private java.math.BigDecimal locLatitude;
-    private java.math.BigDecimal locLongitude;
+    private java.math.BigDecimal comLatitude;
+    private java.math.BigDecimal comLongitude;
 
     /** default constructor */
     public PmsCommunityForm() {
@@ -64,13 +64,13 @@ public class PmsCommunityForm extends ActionForm {
         this.govId = govId;
     }
 
-    public String getLocId() {
-        return locId;
-    }
-
-    public void setLocId(String locId) {
-        this.locId = locId;
-    }
+//    public String getLocId() {
+//        return locId;
+//    }
+//
+//    public void setLocId(String locId) {
+//        this.locId = locId;
+//    }
 
     public String getTypeId() {
         return typeId;
@@ -264,20 +264,20 @@ public class PmsCommunityForm extends ActionForm {
         this.comEcnonomicActivitiesInfo = comEcnonomicActivitiesInfo;
     }
 
-    public BigDecimal getLocLatitude() {
-        return locLatitude;
+    public BigDecimal getComLatitude() {
+        return comLatitude;
     }
 
-    public void setLocLatitude(BigDecimal locLatitude) {
-        this.locLatitude = locLatitude;
+    public void setComLatitude(BigDecimal comLatitude) {
+        this.comLatitude = comLatitude;
     }
 
-    public BigDecimal getLocLongitude() {
-        return locLongitude;
+    public BigDecimal getComLongitude() {
+        return comLongitude;
     }
 
-    public void setLocLongitude(BigDecimal locLongitude) {
-        this.locLongitude = locLongitude;
+    public void setComLongitude(BigDecimal comLongitude) {
+        this.comLongitude = comLongitude;
     }
 
 

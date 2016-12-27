@@ -9,13 +9,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class PmsInterventionPK implements Serializable {
 
     private String intId;
-    private String subId;
     private String secId;
 
     /** full constructor */
-    public PmsInterventionPK(String intId, String subId, String secId) {
+    public PmsInterventionPK(String intId, String secId) {
         this.intId = intId;
-        this.subId = subId;
         this.secId = secId;
     }
 
@@ -31,14 +29,6 @@ public class PmsInterventionPK implements Serializable {
         this.intId = intId;
     }
 
-    public String getSubId() {
-        return this.subId;
-    }
-
-    public void setSubId(String subId) {
-        this.subId = subId;
-    }
-
     public String getSecId() {
         return this.secId;
     }
@@ -50,7 +40,6 @@ public class PmsInterventionPK implements Serializable {
     public String toString() {
         return new ToStringBuilder(this)
             .append("intId", getIntId())
-            .append("subId", getSubId())
             .append("secId", getSecId())
             .toString();
     }
@@ -60,7 +49,6 @@ public class PmsInterventionPK implements Serializable {
         PmsInterventionPK castOther = (PmsInterventionPK) other;
         return new EqualsBuilder()
             .append(this.getIntId(), castOther.getIntId())
-            .append(this.getSubId(), castOther.getSubId())
             .append(this.getSecId(), castOther.getSecId())
             .isEquals();
     }
@@ -68,7 +56,6 @@ public class PmsInterventionPK implements Serializable {
     public int hashCode() {
         return new HashCodeBuilder()
             .append(getIntId())
-            .append(getSubId())
             .append(getSecId())
             .toHashCode();
     }
