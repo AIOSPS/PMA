@@ -2892,6 +2892,7 @@
         <property name="proTitle" column="pro_title" type="java.lang.String"/>
         <property name="proDescription" column="pro_description" type="java.lang.String"/>
         <property name="proStatus" column="pro_status" type="java.lang.String"/>
+        <property name="proStatusDesc" column="pro_status_desc" type="java.lang.String"/>
         <property name="proBudget" column="pro_budget" type="java.math.BigDecimal"/>
         <property name="proStartDate" column="pro_startDate" />
         <property name="proEndDate" column="pro_endDate" />

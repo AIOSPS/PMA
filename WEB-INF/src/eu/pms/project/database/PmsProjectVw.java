@@ -16,8 +16,8 @@ public class PmsProjectVw implements Serializable {
     private String proStatus;
     private String proStatusDesc;
     private java.math.BigDecimal proBudget;
-    private Date proStartDate;
-    private Date proEndDate;
+    private String proStartDate;
+    private String proEndDate;
     /** default constructor */
     public PmsProjectVw() {
     }
@@ -62,19 +62,19 @@ public class PmsProjectVw implements Serializable {
         this.proBudget = proBudget;
     }
 
-    public Date getProStartDate() {
+    public String getProStartDate() {
         return this.proStartDate;
     }
 
-    public void setProStartDate(Date proStartDate) {
+    public void setProStartDate(String proStartDate) {
         this.proStartDate = proStartDate;
     }
 
-    public Date getProEndDate() {
+    public String getProEndDate() {
         return this.proEndDate;
     }
 
-    public void setProEndDate(Date proEndDate) {
+    public void setProEndDate(String proEndDate) {
         this.proEndDate = proEndDate;
     }
 

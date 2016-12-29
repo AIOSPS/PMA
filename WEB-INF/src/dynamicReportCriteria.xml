@@ -66,7 +66,7 @@
         <WhereCondition>a.proStatus</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proStatus</LockupDisplayValue>
+            <LockupDisplayValue>a.proStatusDesc</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition>a.proStatusDesc</LockupWhereCondition>
         </LockupInfo>
