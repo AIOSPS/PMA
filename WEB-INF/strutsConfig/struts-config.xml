@@ -28,6 +28,7 @@
         <form-bean name="pmsIndicatorForm" type="eu.pms.indicator.forms.PmsIndicatorForm"/>
         <form-bean name="pmsIndicatorSearchForm" type="eu.pms.indicator.forms.PmsIndicatorSearchForm"/>
         <form-bean name="lookupForm" type="eu.pms.lookup.forms.LookupForm"/>
+        <form-bean name="dynamicReportForm" type="eu.pms.reporting.forms.DynaReportCriteriaForm"/>
 
     </form-beans>
 
@@ -612,6 +613,25 @@
             <forward name="success" path="/viewLookupsAction.do" contextRelative="true"/>
         </action>
         <!-- end lookup -->
+        <!--Dynamic Report-->
+        <action
+                name="dynamicReportForm"
+                type="eu.pms.reporting.actions.ViewDynaReportOptionsAction"
+                scope="request"
+                validate="false"
+                path="/viewDynamicReport">
+            <forward name="success" path="reports.viewDynamicReportPage.tile" contextRelative="true"/>
+        </action>
+
+        <action
+                name="dynamicReportForm"
+                type="eu.pms.reporting.actions.GenerateDynaReportAction"
+                scope="request"
+                validate="false"
+                path="/generateDynamicReport">
+            <forward name="success" path="reports.viewDynamicReportPage.tile" contextRelative="true"/>
+        </action>
+        <!--End Dynamic Report-->
 
     </action-mappings>
 

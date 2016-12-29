@@ -2885,6 +2885,17 @@
         <property name="secId" column="sec_id" type="java.lang.String"/>
         <property name="preId" column="per_id" type="java.lang.String"/>
     </class>
+    <class name="eu.pms.project.database.PmsProjectVw" table="pms_project_vw">
+        <id name="proId" column="pro_id" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+        <property name="proTitle" column="pro_title" type="java.lang.String"/>
+        <property name="proDescription" column="pro_description" type="java.lang.String"/>
+        <property name="proStatus" column="pro_status" type="java.lang.String"/>
+        <property name="proBudget" column="pro_budget" type="java.math.BigDecimal"/>
+        <property name="proStartDate" column="pro_startDate" />
+        <property name="proEndDate" column="pro_endDate" />
+    </class>
 
     <class name="eu.pms.project.database.PmsProjectAlbum" table="pms_project_album">
         <composite-id name="compId" class="eu.pms.project.database.PmsProjectAlbumPK">
