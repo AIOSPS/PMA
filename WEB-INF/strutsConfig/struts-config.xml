@@ -149,6 +149,13 @@
         >
             <forward name="success" path="/viewAddAlbumProject.do" contextRelative="true"/>
         </action>
+        <action
+                type="eu.pms.project.actions.DeleteImgAlbumPmsProjectAction"
+                path="/deleteImgAlbumProject"
+        >
+            <forward name="success" path="/viewAddAlbumProject.do" contextRelative="true"/>
+        </action>
+
 
         <action
                 type="eu.pms.community.actions.PmsCommunityListAction"
