@@ -121,13 +121,18 @@ ADD CONSTRAINT `fk_pms_interventions_pms_master_plan1`
   ON UPDATE NO ACTION;
 
 
-
-  CREATE  VIEW pms_project_vw AS
+create or replace  VIEW pms_project_vw AS
 select pro_id,
 pro_title,
 pro_description,
 pro_status,
+CASE pro_status
+WHEN 1 THEN 'New'
+WHEN 2 THEN 'Stopped'
+WHEN 2 THEN 'Completed'
+ELSE 'Unknown Status' end
+ pro_status_desc ,
 pro_budget,
-pro_startDate,
-pro_endDate
-from pms_projects;
+DATE_FORMAT(pro_startDate, '%d/%m/%Y') AS pro_startDate,
+DATE_FORMAT(pro_endDate, '%d/%m/%Y') AS pro_endDate
+from pms_projects
