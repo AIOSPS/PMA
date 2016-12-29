@@ -119,3 +119,15 @@ ADD CONSTRAINT `fk_pms_interventions_pms_master_plan1`
   REFERENCES `pms`.`pms_master_plan` (`mas_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
+
+
+  CREATE  VIEW pms_project_vw AS
+select pro_id,
+pro_title,
+pro_description,
+pro_status,
+pro_budget,
+pro_startDate,
+pro_endDate
+from pms_projects;
