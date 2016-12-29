@@ -1,6 +1,7 @@
 package eu.pms.project.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
+import eu.pms.common.exceptions.ComponentException;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
 import eu.pms.project.database.*;
@@ -14,6 +15,7 @@ import org.hibernate.lob.SerializableBlob;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -36,7 +38,7 @@ public class AddImgAlbumPmsProjectUseCase implements ComponentUseCase {
             PmsProjectAlbum pmsProjectAlbum = new PmsProjectAlbum();
             PmsProjectAlbumPK pmsProjectAlbumPK = new PmsProjectAlbumPK();
             pmsProjectAlbumPK.setProId(proId);
-            pmsProjectAlbumPK.setAlbId("1");
+            pmsProjectAlbumPK.setAlbId(getMaxAlbumID(request,proId));
             pmsProjectAlbum.setCompId(pmsProjectAlbumPK);
             if(img!=null&& img.getFileSize()>0){
                 pmsProjectAlbum.setAlbImage(Hibernate.createBlob(new byte[]{0}));
@@ -44,30 +46,20 @@ public class AddImgAlbumPmsProjectUseCase implements ComponentUseCase {
             pmsProjectAlbum.setUsername(username);
             pmsProjectAlbum.setTimeStamp(timeStamp);
 
+            String filePath = img.getFileName();
 
+            int lastIndexOfSlash = filePath.lastIndexOf("\\");
+            String filename = filePath.substring(lastIndexOfSlash+1);
+
+            // Convert FormFile to a byte Array
+            byte[] byteArray=img.getFileData();
+            // Convert this byteArray to a blob
+            Blob myblob=Hibernate.createBlob(byteArray);
+            pmsProjectAlbum.setAlbImage(myblob);
             hbSession = comp.getSession();
             hbSession.beginTransaction();
             comp.insert(pmsProjectAlbum);
 
-            hbSession.flush();
-            hbSession.refresh(pmsProjectAlbum, LockMode.UPGRADE);
-            SerializableBlob blob = null;
-            java.sql.Blob wrapBlob = null;
-            com.mysql.jdbc.Blob bb = null;
-            java.io.OutputStream pw = null;
-            if (img != null && img.getFileSize() > 0) {
-                blob = (SerializableBlob) pmsProjectAlbum.getAlbImage();
-                wrapBlob = blob.getWrappedBlob();
-                bb = (com.mysql.jdbc.Blob) wrapBlob;
-
-                pw = bb.setBinaryStream(0);
-                try {
-                    pw.write(img.getFileData());
-                    pw.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
             hbSession.getTransaction().commit();
 
         } catch (Exception ce) {
@@ -84,5 +76,20 @@ public class AddImgAlbumPmsProjectUseCase implements ComponentUseCase {
             }
         }
         return retList;
+    }
+
+    private String getMaxAlbumID(HttpServletRequest request,String proId) {
+        List retList = null;
+        try {
+            retList = new DataAccessObjectImpl().getList("pms.getMaxAlbumId",new Object[]{proId});
+        } catch (ComponentException e) {
+            e.printStackTrace();
+        }
+        PmsProjectAlbum pmsProjectAlbum = null;
+        if(retList!=null && retList.size()>0)
+            pmsProjectAlbum= (PmsProjectAlbum) retList.get(0);
+        if(pmsProjectAlbum!=null)
+            return ""+(Integer.parseInt(pmsProjectAlbum.getCompId().getAlbId())+1);
+        else return "1";
     }
 }

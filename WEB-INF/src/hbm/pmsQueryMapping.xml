@@ -370,4 +370,11 @@
                 order by a.lookupDesc
                   ]]>
     </query>
+    <query name="pms.getMaxAlbumId"><![CDATA[
+
+         from  eu.pms.project.database.PmsProjectAlbum a
+              where a.compId.proId=?
+              order by a.compId.albId desc
+        ]]>
+    </query>
 </hibernate-mapping>

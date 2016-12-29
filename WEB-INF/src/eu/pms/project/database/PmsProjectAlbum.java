@@ -11,12 +11,25 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class PmsProjectAlbum implements Serializable {
 
     private PmsProjectAlbumPK compId;
+    Integer maxId;
     private Blob albImage;
     private String username;
     private Date timeStamp;
 
     /** default constructor */
     public PmsProjectAlbum() {
+    }
+
+    public PmsProjectAlbum(Integer maxId) {
+        this.maxId = maxId;
+    }
+
+    public Integer getMaxId() {
+        return maxId;
+    }
+
+    public void setMaxId(Integer maxId) {
+        this.maxId = maxId;
     }
 
     public PmsProjectAlbumPK getCompId() {
