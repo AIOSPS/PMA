@@ -1,100 +1,4 @@
-ALTER TABLE `pms`.`pms_communities`
-DROP FOREIGN KEY `fk_pms_Communities_pms_locations1`;
-ALTER TABLE `pms`.`pms_communities`
-DROP INDEX `fk_pms_Communities_pms_locations1_idx` ;
 
-ALTER TABLE `pms`.`pms_communities`
-DROP COLUMN `loc_id`;
-ALTER TABLE `pms`.`pms_communities`
-ADD COLUMN `com_latitude` DECIMAL(18,14) NULL AFTER `time_stamp`,
-ADD COLUMN `com_longitude` DECIMAL(18,14) NULL AFTER `com_latitude`;
-ALTER TABLE `pms`.`pms_communities`
-CHANGE COLUMN `com_latitude` `com_latitude` DECIMAL(18,14) NULL DEFAULT NULL AFTER `com_ecnonomic_activities_info`,
-CHANGE COLUMN `com_longitude` `com_longitude` DECIMAL(18,14) NULL DEFAULT NULL AFTER `com_latitude`;
-
-
-ALTER TABLE `pms`.`pms_projects_locations`
-DROP FOREIGN KEY `fk_pms_locations_has_pms_projects_pms_locations1`;
-
-ALTER TABLE `pms`.`pms_projects_locations`
-DROP COLUMN `loc_id`,
-DROP PRIMARY KEY,
-ADD PRIMARY KEY (`pro_id`),
-DROP INDEX `fk_pms_locations_has_pms_projects_pms_locations1_idx` ;
-
-ALTER TABLE `pms`.`pms_projects_locations`
-ADD COLUMN `com_latitude` DECIMAL(18,14) NOT NULL AFTER `pro_id`,
-ADD COLUMN `com_longitude` DECIMAL(18,14) NOT NULL AFTER `com_latitude`,
-DROP PRIMARY KEY,
-ADD PRIMARY KEY (`pro_id`, `com_latitude`, `com_longitude`);
-
-
-ALTER TABLE `pms`.`pms_incidents`
-ADD COLUMN `inc_loc_latitude` DECIMAL(18,14) NULL AFTER `inc_Demolished_children`,
-ADD COLUMN `inc_loc_longitude` DECIMAL(18,14) NULL AFTER `inc_loc_latitude`;
-
-
-
-DROP TABLE `pms`.`pms_locations`;
-
-ALTER TABLE `pms`.`pms_projects`
-DROP FOREIGN KEY `fk_pms_projects_pms_cluster_types1`;
-ALTER TABLE `pms`.`pms_projects`
-DROP INDEX `fk_pms_projects_pms_cluster_types1_idx` ;
-
-
-ALTER TABLE `pms`.`pms_projects`
-CHANGE COLUMN `clu_id` `sec_id` VARCHAR(15) NULL DEFAULT NULL ,
-CHANGE COLUMN `clu_type` `sec_type` VARCHAR(3) NULL DEFAULT NULL COMMENT 'human 1-8 cluster\ndevelopment -location' ;
-
-
-ALTER TABLE `pms`.`pms_projects`
-DROP COLUMN `sec_type`;
-
-
-
-DROP TABLE `pms`.`pms_cluster_types`;
-
-DROP TABLE `pms`.`pms_sub_sectors`;
-
-ALTER TABLE `pms`.`pms_sectors`
-ADD COLUMN `sec_type` VARCHAR(3) NOT NULL AFTER `time_stamp`,
-ADD COLUMN `sec_parent_id` VARCHAR(15) NULL AFTER `sec_type`,
-ADD INDEX `sec_sec_self_fk_idx` (`sec_parent_id` ASC);
-ALTER TABLE `pms`.`pms_sectors`
-ADD CONSTRAINT `sec_sec_self_fk`
-  FOREIGN KEY (`sec_parent_id`)
-  REFERENCES `pms`.`pms_sectors` (`sec_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-
-
-ALTER TABLE `pms`.`pms_projects`
-ADD INDEX `fk_pms_projects_pms_sectors_idx` (`sec_id` ASC);
-ALTER TABLE `pms`.`pms_projects`
-ADD CONSTRAINT `fk_pms_projects_pms_sectors`
-  FOREIGN KEY (`sec_id`)
-  REFERENCES `pms`.`pms_sectors` (`sec_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-
-
-
-
-ALTER TABLE `pms`.`pms_interventions`
-DROP FOREIGN KEY `fk_pms_interventions_pms_sub_sectors1`;
-ALTER TABLE `pms`.`pms_interventions`
-DROP COLUMN `sub_id`,
-DROP PRIMARY KEY,
-ADD PRIMARY KEY (`int_id`, `sec_id`),
-DROP INDEX `fk_pms_interventions_pms_sub_sectors1_idx` ,
-ADD INDEX `fk_pms_interventions_pms_sub_sectors1_idx` (`sec_id` ASC);
-ALTER TABLE `pms`.`pms_interventions`
-ADD CONSTRAINT `fk_pms_intervention_sector`
-  FOREIGN KEY (`sec_id`)
-  REFERENCES `pms`.`pms_sectors` (`sec_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
 
 ALTER TABLE `pms`.`pms_projects`
 DROP COLUMN `pro_timeStamp`,
@@ -119,3 +23,103 @@ ADD CONSTRAINT `fk_pms_interventions_pms_master_plan1`
   REFERENCES `pms`.`pms_master_plan` (`mas_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+--------------------------------
+
+-- updates 28-12-2016
+
+ALTER TABLE `pms`.`pms_communities`
+ADD COLUMN `com_percent_area_c` VARCHAR(2) NULL AFTER `com_longitude`,
+ADD COLUMN `com_touching_border` VARCHAR(2) NULL AFTER `com_percent_area_c`;
+
+ALTER TABLE `pms`.`pms_interventions`
+ADD COLUMN `int_priority` VARCHAR(1) NULL AFTER `sec_id`;
+
+ALTER TABLE `pms`.`pms_interventions`
+CHANGE COLUMN `username` `username` VARCHAR(15) NOT NULL AFTER `int_priority`,
+CHANGE COLUMN `time_stamp` `time_stamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `username`;
+
+
+ALTER TABLE `pms`.`pms_projects`
+ADD COLUMN `sec_type` VARCHAR(3) NULL AFTER `per_id`;
+
+
+ALTER TABLE `pms`.`pms_projects_benificiaries`
+DROP FOREIGN KEY `fk_pms_projects_has_pms_benificiaries_pms_benificiaries1`;
+ALTER TABLE `pms`.`pms_projects_benificiaries`
+DROP INDEX `fk_pms_projects_has_pms_benificiaries_pms_benificiaries1_idx` ;
+
+
+
+ALTER TABLE `pms`.`pms_projects_benificiaries`
+ADD COLUMN `btp_id` VARCHAR(15) NULL AFTER `ben_id`,
+ADD COLUMN `ben_total` INT(11) NULL AFTER `btp_id`;
+
+
+ALTER TABLE `pms`.`pms_projects_benificiaries`
+DROP COLUMN `ben_id`,
+CHANGE COLUMN `btp_id` `btp_id` VARCHAR(15) NOT NULL ,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`pro_id`, `btp_id`);
+
+
+
+ALTER TABLE `pms`.`pms_projects_benificiaries`
+ADD INDEX `fk_pms_projects_benificiaries_types_idx` (`btp_id` ASC);
+ALTER TABLE `pms`.`pms_projects_benificiaries`
+ADD CONSTRAINT `fk_pms_projects_benificiaries_types`
+  FOREIGN KEY (`btp_id`)
+  REFERENCES `pms`.`pms_benificiary_types` (`btp_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+DROP TABLE `pms`.`pms_benificiaries`;
+
+
+ALTER TABLE `pms`.`pms_incidents`
+DROP COLUMN `inc_Demolished_children`,
+DROP COLUMN `inc_Demolished_adult`,
+DROP COLUMN `inc_Demolished_men`,
+DROP COLUMN `inc_Demolished_women`;
+
+
+ALTER TABLE `pms`.`pms_incidents`
+ADD COLUMN `inc_demolished_structure` INT(11) NULL AFTER `inc_loc_longitude`;
+
+
+ALTER TABLE `pms`.`pms_indicators`
+DROP COLUMN `ind_value`,
+DROP COLUMN `ind_target`;
+
+
+
+CREATE TABLE `pms`.`pms_indicator_measures` (
+  `ind_id` VARCHAR(15) NOT NULL,
+  `res_id` VARCHAR(15) NOT NULL,
+  `obj_id` VARCHAR(15) NOT NULL,
+  `msr_date` DATE NOT NULL,
+  `ind_target` INT(11) NOT NULL,
+  `ind_value` INT(11) NOT NULL,
+  `username` VARCHAR(15) NOT NULL,
+  `time_stamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ind_id`, `res_id`, `obj_id`, `msr_date`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+ALTER TABLE `pms`.`pms_indicator_measures`
+ADD CONSTRAINT `pms_ind_measures_pms_ind`
+  FOREIGN KEY (`ind_id` , `res_id` , `obj_id`)
+  REFERENCES `pms`.`pms_indicators` (`ind_id` , `res_id` , `obj_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+
+
+
+
+
