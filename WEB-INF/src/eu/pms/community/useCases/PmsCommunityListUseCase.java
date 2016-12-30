@@ -24,8 +24,8 @@ public class PmsCommunityListUseCase implements ComponentUseCase {
                 Iterator itr = input.iterator();
                 String comName = (String)itr.next();
                 String comPcbsCode = (String)itr.next();
-                String comOchaCode = (String)itr.next();
-                String comTopology = (String) itr.next();
+//                String comOchaCode = (String)itr.next();
+//                String comTopology = (String) itr.next();
                 String comGovId = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(comName!=null && !comName.trim().equals("")){
@@ -34,16 +34,16 @@ public class PmsCommunityListUseCase implements ComponentUseCase {
                 if(comPcbsCode!=null && !comPcbsCode.trim().equals("")){
                     cond += " and a.comPcbsCode like '%"+comPcbsCode+"%' ";
                 }
-                if(comOchaCode!=null && !comOchaCode.trim().equals("")){
-                    cond += " and a.comOchaCode like '%"+comOchaCode+"%' ";
-                }
-                if(comTopology!=null && !comTopology.trim().equals("")){
-                    cond += " and a.comTopology like '%"+comTopology+"%' ";
-                }
+//                if(comOchaCode!=null && !comOchaCode.trim().equals("")){
+//                    cond += " and a.comOchaCode like '%"+comOchaCode+"%' ";
+//                }
+//                if(comTopology!=null && !comTopology.trim().equals("")){
+//                    cond += " and a.comTopology like '%"+comTopology+"%' ";
+//                }
                 if(comGovId!=null && !comGovId.trim().equals("")){
                     cond += " and a.govId = '"+comGovId+"' ";
                 }
-                String query = " from eu.pms.project.database.PmsCommunity a ";
+                String query = " from eu.pms.project.database.PmsCommunitiesVw a ";
                 query +=cond;
                 query +=" order by a.comName ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);

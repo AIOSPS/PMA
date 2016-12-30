@@ -96,8 +96,8 @@
                 <tr>
                     <th class="text-center">Name</th>
                     <th class="text-center">ID</th>
-                    <th class="text-center">OCHA</th>
-                    <th class="text-center">Topology</th>
+                    <th class="text-center">Governate</th>
+                    <th class="text-center">Type</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
@@ -105,20 +105,20 @@
                 <tr>
                     <th class="text-center">Name</th>
                     <th class="text-center">ID</th>
-                    <th class="text-center">OCHA</th>
-                    <th class="text-center">Topology</th>
+                    <th class="text-center">Governate</th>
+                    <th class="text-center">Type</th>
                     <th class="text-center"></th>
 
                 </tr>
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsCommunityList">
-                    <logic:iterate id="pmsCommunityList" name="pmsCommunityList" type="eu.pms.project.database.PmsCommunity">
+                    <logic:iterate id="pmsCommunityList" name="pmsCommunityList" type="eu.pms.project.database.PmsCommunitiesVw">
                         <tr>
-                            <td width="35%"><bean:write name="pmsCommunityList" property="comName"/></td>
+                            <td width="35%" class="text-center"><bean:write name="pmsCommunityList" property="comName"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comId"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comOchaCode"/></td>
-                            <td width="20%"><bean:write name="pmsCommunityList" property="comTopology"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="govDesc"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="typDesc"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsCommunity.do?comId=<bean:write name="pmsCommunityList" property="comId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>

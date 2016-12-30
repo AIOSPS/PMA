@@ -168,7 +168,7 @@
     <query
             name="getPmsCommunityList">
         <![CDATA[
-                from eu.pms.project.database.PmsCommunity a
+                from eu.pms.project.database.PmsCommunitiesVw a
                 order by a.comName
                   ]]>
     </query>

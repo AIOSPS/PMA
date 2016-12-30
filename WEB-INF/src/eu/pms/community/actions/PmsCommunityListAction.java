@@ -36,8 +36,8 @@ public class PmsCommunityListAction extends Action
         if (pmsCommunitySearchForm != null) {
             inputData.add(pmsCommunitySearchForm.getCommunityName());
             inputData.add(pmsCommunitySearchForm.getCommunityPcbsCode());
-            inputData.add(pmsCommunitySearchForm.getCommunityOchaCode());
-            inputData.add(pmsCommunitySearchForm.getCommunityTopology());
+//            inputData.add(pmsCommunitySearchForm.getCommunityOchaCode());
+//            inputData.add(pmsCommunitySearchForm.getCommunityTopology());
             inputData.add(pmsCommunitySearchForm.getCommunityGovId());
         }
         request.setAttribute("pmsCommunityList", new PmsCommunityListUseCase().execute(inputData, request));

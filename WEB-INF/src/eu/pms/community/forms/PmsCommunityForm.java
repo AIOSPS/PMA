@@ -43,6 +43,8 @@ public class PmsCommunityForm extends ActionForm {
     private String comEcnonomicActivitiesInfo;
     private java.math.BigDecimal comLatitude;
     private java.math.BigDecimal comLongitude;
+    private String comPercentAreaC;
+    private String comTouchingBorder;
     private String username;
     private java.util.Date timeStamp;
     /** default constructor */
@@ -279,6 +281,22 @@ public class PmsCommunityForm extends ActionForm {
 
     public void setComLongitude(BigDecimal comLongitude) {
         this.comLongitude = comLongitude;
+    }
+
+    public String getComPercentAreaC() {
+        return comPercentAreaC;
+    }
+
+    public void setComPercentAreaC(String comPercentAreaC) {
+        this.comPercentAreaC = comPercentAreaC;
+    }
+
+    public String getComTouchingBorder() {
+        return comTouchingBorder;
+    }
+
+    public void setComTouchingBorder(String comTouchingBorder) {
+        this.comTouchingBorder = comTouchingBorder;
     }
 
     public String getUsername() {

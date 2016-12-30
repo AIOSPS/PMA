@@ -133,7 +133,17 @@ ADD CONSTRAINT `pms_ind_measures_pms_ind`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 
+create or replace  VIEW pms_communities_vw AS
+select com.com_id,
+com.com_name,
+comtyp.typ_desc,
+gov.gov_desc
 
+from pms_communities com,
+     pms_community_types comtyp,
+     pms_governates gov
+where com.typ_id = comtyp.typ_id
+  and com.gov_id = gov.gov_id
 
 
 

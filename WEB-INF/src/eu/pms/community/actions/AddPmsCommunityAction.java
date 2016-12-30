@@ -53,6 +53,8 @@ public class AddPmsCommunityAction extends Action {
         String govId = pmsCommunityForm.getGovId();
         BigDecimal comLatitude = pmsCommunityForm.getComLatitude();
         BigDecimal comLongitude = pmsCommunityForm.getComLongitude();
+        String comPercentAreaC = pmsCommunityForm.getComPercentAreaC();
+        String comTouchingBorder = pmsCommunityForm.getComTouchingBorder();
 
 
         ArrayList inputs = new ArrayList();
@@ -82,6 +84,8 @@ public class AddPmsCommunityAction extends Action {
         inputs.add(govId);
         inputs.add(comLatitude);
         inputs.add(comLongitude);
+        inputs.add(comPercentAreaC);
+        inputs.add(comTouchingBorder);
 
         Collection result = new AddPmsCommunityUseCase().execute(inputs, request);
         if (result != null && result.size() > 0) {

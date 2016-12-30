@@ -38,6 +38,8 @@ public class PmsCommunity implements Serializable {
     private String comEcnonomicActivitiesInfo;
     private java.math.BigDecimal comLatitude;
     private java.math.BigDecimal comLongitude;
+    private String comPercentAreaC;
+    private String comTouchingBorder;
     private String username;
     private java.util.Date timeStamp;
 
@@ -278,13 +280,21 @@ public class PmsCommunity implements Serializable {
         this.govId = govId;
     }
 
-//    public String getLocId() {
-//        return locId;
-//    }
-//
-//    public void setLocId(String locId) {
-//        this.locId = locId;
-//    }
+    public String getComPercentAreaC() {
+        return comPercentAreaC;
+    }
+
+    public void setComPercentAreaC(String comPercentAreaC) {
+        this.comPercentAreaC = comPercentAreaC;
+    }
+
+    public String getComTouchingBorder() {
+        return comTouchingBorder;
+    }
+
+    public void setComTouchingBorder(String comTouchingBorder) {
+        this.comTouchingBorder = comTouchingBorder;
+    }
 
     public String getTypeId() {
         return typeId;

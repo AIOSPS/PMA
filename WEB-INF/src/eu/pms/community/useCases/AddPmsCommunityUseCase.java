@@ -44,6 +44,8 @@ public class AddPmsCommunityUseCase implements ComponentUseCase {
             String govId = (String) itr.next();
             BigDecimal comLatitude = (BigDecimal) itr.next();
             BigDecimal comLongitude = (BigDecimal) itr.next();
+            String comPercentAreaC = (String) itr.next();
+            String comTouchingBorder = (String) itr.next();
 
             String username = "pms";
             Date timeStamp = new Date();
@@ -75,6 +77,8 @@ public class AddPmsCommunityUseCase implements ComponentUseCase {
             pmsCommunity.setGovId(govId);
             pmsCommunity.setComLatitude(comLatitude);
             pmsCommunity.setComLongitude(comLongitude);
+            pmsCommunity.setComPercentAreaC(comPercentAreaC);
+            pmsCommunity.setComTouchingBorder(comTouchingBorder);
             pmsCommunity.setUsername(username);
             pmsCommunity.setTimeStamp(timeStamp);
 

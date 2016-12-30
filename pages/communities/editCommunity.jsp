@@ -252,6 +252,30 @@
                 </div>
 
                 <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="comPercentAreaC" class="col-sm-3 col-form-label">Percent Area C:</label>
+                        <div class="col-sm-9">
+                            <html:select property="comPercentAreaC" styleClass="selectpicker form-control">
+                                <html:option value="1">> 50%</html:option>
+                                <html:option value="2">Between 50% and 100%</html:option>
+                                <html:option value="3">100%</html:option>
+                            </html:select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="comTouchingBorder" class="col-sm-3 col-form-label">Touching Border:</label>
+                        <div class="col-sm-9">
+                            <html:select property="comTouchingBorder" styleClass="selectpicker form-control">
+                                <html:option value="1">A</html:option>
+                                <html:option value="2">B</html:option>
+                                <html:option value="3">AB</html:option>
+                                <html:option value="4">ABEJ</html:option>
+                                <html:option value="5">EJ</html:option>
+                            </html:select>
+                        </div>
+                    </div>
+
+                <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                         <html:submit value="Submit" styleClass="btn btn-primary"/>
                     </div>
