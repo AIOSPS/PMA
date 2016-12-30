@@ -1,0 +1,137 @@
+<reportingCriteria>
+
+
+    <qItem>
+        <ItemId>1</ItemId>
+        <HdbFieldName>a.proId</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Project Id</DisplayName>
+        <WhereCondition>a.proId</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.proId</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition></LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+    <qItem>
+        <ItemId>2</ItemId>
+        <HdbFieldName>a.proTitle</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Project Title</DisplayName>
+        <WhereCondition>a.proTitle</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.proTitle</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition></LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+    <qItem>
+        <ItemId>3</ItemId>
+        <HdbFieldName>a.proDescription</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Project Description</DisplayName>
+        <WhereCondition>a.proDescription</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.proDescription</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition></LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+    <qItem>
+        <ItemId>4</ItemId>
+        <HdbFieldName>a.proStatus</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Project Status</DisplayName>
+        <WhereCondition>a.proStatus</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.proStatusDesc</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.proStatusDesc</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+    <qItem>
+        <ItemId>5</ItemId>
+        <HdbFieldName>a.proBudget</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Project Budget</DisplayName>
+        <WhereCondition>a.proBudget</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.proBudget</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition></LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+    <qItem>
+        <ItemId>6</ItemId>
+        <HdbFieldName>a.proStartDate</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Start Date</DisplayName>
+        <WhereCondition>a.proStartDate</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.proStartDate</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition></LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+    <qItem>
+        <ItemId>7</ItemId>
+        <HdbFieldName>a.proEndDate</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>End Date</DisplayName>
+        <WhereCondition>a.proEndDate</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.proEndDate</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition></LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+</reportingCriteria>

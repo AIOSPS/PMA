@@ -165,4 +165,7 @@
     <definition name="pms.albumProject.tile" extends="innerLayout">
         <put name="body" value="/pages/projects/albumProject.jsp"/>
     </definition>
+    <definition name="reports.viewDynamicReportPage.tile" extends="innerLayout">
+        <put name="body" value="/pages/reporting/dynamicReportCriteriaPage.jsp"/>
+    </definition>
 </tiles-definitions>

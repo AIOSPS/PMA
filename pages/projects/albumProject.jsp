@@ -71,42 +71,63 @@
                     </div>
                 </div>
             </html:form>
-            <table id="listProjectAlbumsTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th class="text-center">Title</th>
-                    <th class="text-center"></th>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <th class="text-center">Title</th>
-                    <th class="text-center"></th>
+            <logic:present name="pmsProjectAlbumList">
+            <div class="content-wrapper ">
 
-                </tr>
-                </tfoot>
-                <tbody>
-                <logic:present name="pmsProjectAlbumList">
-                    <logic:iterate id="pmsProjectAlbumList" name="pmsProjectAlbumList" type="eu.pms.project.database.PmsProjectAlbum">
-                        <tr>
-                            <td width="20%">
-                                <img style="overflow: hidden" width="260" height="380"  src="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">
-                            </td>
-                            <td width="10%" class="text-center">
-                                <a href="javaScript:parent.location = '/viewEditProject.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>'">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </a>
-                            </td>
-                        </tr>
-                    </logic:iterate>
-                </logic:present>
-                </tbody>
-            </table>
-            <script>
-                $(document).ready(function () {
-                    $('#listProjectAlbumsTbl').DataTable();
-                });
-            </script>
+                <logic:iterate id="pmsProjectAlbumList" name="pmsProjectAlbumList" type="eu.pms.project.database.PmsProjectAlbum">
+                    <div class="col-md-3 dsh-blocks dsh-projects sec1">
+                            <div class="dsh-bg">
+                                <img class="" width="200" height="140"  src="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">
+                                <div class="pull-right">
+                                    <a href="javaScript:parent.location = '/deleteImgAlbumProject.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>'">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
+                                </div>
+
+                            </div>
+                    </div>
+                </logic:iterate>
+
+
+            </div>
+            </logic:present>
+
+            <%--<table id="listProjectAlbumsTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">--%>
+                <%--<thead>--%>
+                <%--<tr>--%>
+                    <%--<th class="text-center">Title</th>--%>
+                    <%--<th class="text-center"></th>--%>
+                <%--</tr>--%>
+                <%--</thead>--%>
+                <%--<tfoot>--%>
+                <%--<tr>--%>
+                    <%--<th class="text-center">Title</th>--%>
+                    <%--<th class="text-center"></th>--%>
+
+                <%--</tr>--%>
+                <%--</tfoot>--%>
+                <%--<tbody>--%>
+                <%--<logic:present name="pmsProjectAlbumList">--%>
+                    <%--<logic:iterate id="pmsProjectAlbumList" name="pmsProjectAlbumList" type="eu.pms.project.database.PmsProjectAlbum">--%>
+                        <%--<tr>--%>
+                            <%--<td width="20%">--%>
+                                <%--<img style="overflow: hidden" width="100" height="70"  src="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">--%>
+                            <%--</td>--%>
+                            <%--<td width="10%" class="text-center">--%>
+                                <%--<a href="javaScript:parent.location = '/viewEditProject.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>'">--%>
+                                    <%--<span class="glyphicon glyphicon-trash"></span>--%>
+                                <%--</a>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
+                    <%--</logic:iterate>--%>
+                <%--</logic:present>--%>
+                <%--</tbody>--%>
+            <%--</table>--%>
+            <%--<script>--%>
+                <%--$(document).ready(function () {--%>
+                    <%--$('#listProjectAlbumsTbl').DataTable();--%>
+                <%--});--%>
+            <%--</script>--%>
         </div>
 
 

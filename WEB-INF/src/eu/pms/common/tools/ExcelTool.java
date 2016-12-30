@@ -65,7 +65,7 @@ public class ExcelTool
              for (int c=0; c<rowVal [r].length; c++)
              {
                  cell  = row.createCell((short)c);
-                 cell.setEncoding(HSSFCell.ENCODING_UTF_16);
+//                 cell.setEncoding(HSSFCell.ENCODING_UTF_16);
                  cell.setCellValue(new HSSFRichTextString(rowVal [r][c]));
              }
         }
@@ -139,7 +139,7 @@ public class ExcelTool
                 for (int c=0; c<rowVal [i].length; c++)
                 {
                     cell  = row.createCell((short)c);
-                    cell.setEncoding(HSSFCell.ENCODING_UTF_16);
+//                    cell.setEncoding(HSSFCell.ENCODING_UTF_16);
                     cell.setCellValue(new HSSFRichTextString(rowVal [i][c]));
                 }
            }

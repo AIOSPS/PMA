@@ -105,6 +105,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span>   Reports <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="QReport.html" target="_blank">Quartaliy Report</a></li>
+                        <li><a href="/viewDynamicReport.do">Dynamic Report</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
