@@ -67,12 +67,20 @@
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-desktop"></span>   Community Information<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/pmsCommunityList.do">Community</a></li>
-                        <li><a href="#">socio- economic data</a></li>
+                        <li class="dropdown-submenu ">
+                            <a   >Community socio- economic</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/pmsInterventionList.do">Basic socio</a></li>
+                                <li><a href="/pmsActivityList.do">Agriculture socio</a></li>
+                                <li><a href="/pmsActivityList.do">Water socio</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown-submenu ">
                             <a   >Master Plan </a>
                             <ul class="dropdown-menu">
                                 <li><a href="/pmsInterventionList.do">Interventions</a></li>
                                 <li><a href="/pmsActivityList.do">Activities</a></li>
+                                <li><a href="/pmsActivityList.do">Master Plan Info</a></li>
                             </ul>
                         </li>
                     </ul>
