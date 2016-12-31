@@ -424,4 +424,19 @@
                 order by a.agrArea
                   ]]>
     </query>
+    <query
+            name="getPmsWaterSocio">
+        <![CDATA[
+                from eu.pms.project.database.PmsWaterSocio a
+                order by a.watUseWatTanker
+                  ]]>
+    </query>
+    <query
+            name="getPmsWaterSocioByMasId">
+        <![CDATA[
+                from eu.pms.project.database.PmsWaterSocio a
+                where a.watId = ?
+                order by a.watUseWatTanker
+                  ]]>
+    </query>
 </hibernate-mapping>

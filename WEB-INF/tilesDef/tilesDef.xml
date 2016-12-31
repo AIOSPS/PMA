@@ -193,4 +193,16 @@
     <definition name="pms.editAgricultureSocio.tile" extends="innerLayout">
         <put name="body" value="/pages/agricultureSocio/editAgricultureSocio.jsp"/>
     </definition>
+    <definition name="pms.waterSocioList.tile" extends="innerLayout">
+        <put name="body" value="/pages/waterSocio/listWaterSocio.jsp"/>
+    </definition>
+    <definition name="pms.addWaterSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/waterSocio/addWaterSocio.jsp"/>
+    </definition>
+    <definition name="pms.viewWaterSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/waterSocio/viewWaterSocio.jsp"/>
+    </definition>
+    <definition name="pms.editWaterSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/waterSocio/editWaterSocio.jsp"/>
+    </definition>
 </tiles-definitions>

@@ -33,6 +33,8 @@
         <form-bean name="pmsMasterPlanSearchForm" type="eu.pms.masterPlan.forms.PmsMasterPlanSearchForm"/>
         <form-bean name="pmsAgricultureSocioForm" type="eu.pms.agricultureSocio.forms.PmsAgricultureSocioForm"/>
         <form-bean name="pmsAgricultureSocioSearchForm" type="eu.pms.agricultureSocio.forms.PmsAgricultureSocioSearchForm"/>
+        <form-bean name="pmsWaterSocioForm" type="eu.pms.waterSocio.forms.PmsWaterSocioForm"/>
+        <form-bean name="pmsWaterSocioSearchForm" type="eu.pms.waterSocio.forms.PmsWaterSocioSearchForm"/>
 
     </form-beans>
 
@@ -735,6 +737,52 @@
                 path="/viewEditAgricultureSocio"
         >
             <forward name="success" path="pms.editAgricultureSocio.tile"/>
+        </action>
+        <action
+                type="eu.pms.waterSocio.actions.PmsWaterSocioListAction"
+                scope="request"
+                path="/pmsWaterSocioList">
+            <forward name="success" path="pms.waterSocioList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.waterSocio.actions.PmsWaterSocioListAction"
+                scope="request"
+                path="/searchWaterSocio"
+                name="pmsWaterSocioSearchForm"
+        >
+            <forward name="success" path="pms.waterSocioList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsWaterSocioForm"
+                type="eu.pms.waterSocio.actions.ViewAddPmsWaterSocioAction"
+                validate="false"
+                path="/viewAddWaterSocio"
+        >
+            <forward name="success" path="pms.addWaterSocio.tile"/>
+        </action>
+        <action
+                name="pmsWaterSocioForm"
+                type="eu.pms.waterSocio.actions.AddPmsWaterSocioAction"
+                validate="false"
+                path="/addWaterSocio"
+        >
+            <forward name="success" path="/pmsWaterSocioList.do"/>
+        </action>
+        <action
+                name="pmsWaterSocioForm"
+                type="eu.pms.waterSocio.actions.ViewPmsWaterSocioAction"
+                validate="false"
+                path="/viewPmsWaterSocio"
+        >
+            <forward name="success" path="pms.viewWaterSocio.tile"/>
+        </action>
+        <action
+                name="pmsWaterSocioForm"
+                type="eu.pms.waterSocio.actions.ViewPmsWaterSocioAction"
+                validate="false"
+                path="/viewEditWaterSocio"
+        >
+            <forward name="success" path="pms.editWaterSocio.tile"/>
         </action>
 
     </action-mappings>

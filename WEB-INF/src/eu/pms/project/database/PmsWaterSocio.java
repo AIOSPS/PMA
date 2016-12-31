@@ -1,6 +1,8 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -19,6 +21,7 @@ public class PmsWaterSocio implements Serializable {
     private int watFillingPoint;
     private int watQuantity;
     private java.util.Date watSurveyDate;
+    private String watSurveyDateStr;
     private String username;
     private java.util.Date timeStamp;
     /** default constructor */
@@ -127,6 +130,14 @@ public class PmsWaterSocio implements Serializable {
 
     public void setTimeStamp(java.util.Date timeStamp) {
         this.timeStamp = timeStamp;
+    }
+
+    public String getWatSurveyDateStr() {
+        return watSurveyDate!=null? DateTool.decorateDate(watSurveyDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setWatSurveyDateStr(String watSurveyDateStr) {
+        this.watSurveyDateStr = watSurveyDateStr;
     }
 
     public String toString() {
