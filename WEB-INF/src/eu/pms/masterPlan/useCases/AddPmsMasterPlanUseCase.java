@@ -40,7 +40,7 @@ public class AddPmsMasterPlanUseCase implements ComponentUseCase {
             String[] donorMasterPlanArray = (String[]) itr.next();
             String[] communityMasterPlanArray = (String[]) itr.next();
 
-            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrName();
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             PmsMasterPlan pmsMasterPlan = new PmsMasterPlan();
