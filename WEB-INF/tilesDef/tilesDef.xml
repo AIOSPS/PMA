@@ -168,4 +168,17 @@
     <definition name="reports.viewDynamicReportPage.tile" extends="innerLayout">
         <put name="body" value="/pages/reporting/dynamicReportCriteriaPage.jsp"/>
     </definition>
+
+    <definition name="pms.masterPlanList.tile" extends="innerLayout">
+        <put name="body" value="/pages/masterPlan/listMasterPlan.jsp"/>
+    </definition>
+    <definition name="pms.addMasterPlan.tile" extends="innerLayout">
+        <put name="body" value="/pages/masterPlan/addMasterPlan.jsp"/>
+    </definition>
+    <definition name="pms.viewMasterPlan.tile" extends="innerLayout">
+        <put name="body" value="/pages/masterPlan/viewMasterPlan.jsp"/>
+    </definition>
+    <definition name="pms.editMasterPlan.tile" extends="innerLayout">
+        <put name="body" value="/pages/masterPlan/editMasterPlan.jsp"/>
+    </definition>
 </tiles-definitions>

@@ -5,29 +5,21 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 /** @author Hibernate CodeGenerator */
 public class PmsMasterPlanCommunity implements Serializable {
-
-    /** persistent field */
+private PmsMasterPlanCommunityPK compId;
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
 
-    /** persistent field */
-    private PmsMasterPlan pmsMasterPlan;
-
-    /** persistent field */
-    private PmsCommunity pmsCommunity;
-
-    /** full constructor */
-    public PmsMasterPlanCommunity(String username, java.util.Date timeStamp, PmsMasterPlan pmsMasterPlan, PmsCommunity pmsCommunity) {
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsMasterPlan = pmsMasterPlan;
-        this.pmsCommunity = pmsCommunity;
-    }
 
     /** default constructor */
     public PmsMasterPlanCommunity() {
+    }
+
+    public PmsMasterPlanCommunityPK getCompId() {
+        return compId;
+    }
+
+    public void setCompId(PmsMasterPlanCommunityPK compId) {
+        this.compId = compId;
     }
 
     public String getUsername() {
@@ -46,21 +38,6 @@ public class PmsMasterPlanCommunity implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public PmsMasterPlan getPmsMasterPlan() {
-        return this.pmsMasterPlan;
-    }
-
-    public void setPmsMasterPlan(PmsMasterPlan pmsMasterPlan) {
-        this.pmsMasterPlan = pmsMasterPlan;
-    }
-
-    public PmsCommunity getPmsCommunity() {
-        return this.pmsCommunity;
-    }
-
-    public void setPmsCommunity(PmsCommunity pmsCommunity) {
-        this.pmsCommunity = pmsCommunity;
-    }
 
     public String toString() {
         return new ToStringBuilder(this)

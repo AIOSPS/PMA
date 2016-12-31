@@ -29,6 +29,8 @@
         <form-bean name="pmsIndicatorSearchForm" type="eu.pms.indicator.forms.PmsIndicatorSearchForm"/>
         <form-bean name="lookupForm" type="eu.pms.lookup.forms.LookupForm"/>
         <form-bean name="dynamicReportForm" type="eu.pms.reporting.forms.DynaReportCriteriaForm"/>
+        <form-bean name="pmsMasterPlanForm" type="eu.pms.masterPlan.forms.PmsMasterPlanForm"/>
+        <form-bean name="pmsMasterPlanSearchForm" type="eu.pms.masterPlan.forms.PmsMasterPlanSearchForm"/>
 
     </form-beans>
 
@@ -639,6 +641,53 @@
             <forward name="success" path="reports.viewDynamicReportPage.tile" contextRelative="true"/>
         </action>
         <!--End Dynamic Report-->
+
+        <action
+                type="eu.pms.masterPlan.actions.PmsMasterPlanListAction"
+                scope="request"
+                path="/pmsMasterPlanList">
+            <forward name="success" path="pms.masterPlanList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.masterPlan.actions.PmsMasterPlanListAction"
+                scope="request"
+                path="/searchMasterPlan"
+                name="pmsMasterPlanSearchForm"
+        >
+            <forward name="success" path="pms.masterPlanList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsMasterPlanForm"
+                type="eu.pms.masterPlan.actions.ViewAddPmsMasterPlanAction"
+                validate="false"
+                path="/viewAddMasterPlan"
+        >
+            <forward name="success" path="pms.addMasterPlan.tile"/>
+        </action>
+        <action
+                name="pmsMasterPlanForm"
+                type="eu.pms.masterPlan.actions.AddPmsMasterPlanAction"
+                validate="false"
+                path="/addMasterPlan"
+        >
+            <forward name="success" path="/pmsMasterPlanList.do"/>
+        </action>
+        <action
+                name="pmsMasterPlanForm"
+                type="eu.pms.masterPlan.actions.ViewPmsMasterPlanAction"
+                validate="false"
+                path="/viewPmsMasterPlan"
+        >
+            <forward name="success" path="pms.viewMasterPlan.tile"/>
+        </action>
+        <action
+                name="pmsMasterPlanForm"
+                type="eu.pms.masterPlan.actions.ViewPmsMasterPlanAction"
+                validate="false"
+                path="/viewEditMasterPlan"
+        >
+            <forward name="success" path="pms.editMasterPlan.tile"/>
+        </action>
 
     </action-mappings>
 

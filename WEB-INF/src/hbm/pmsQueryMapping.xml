@@ -377,4 +377,36 @@
               order by a.compId.albId desc
         ]]>
     </query>
+
+    <query
+            name="getPmsMasterPlanList">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlan a
+                order by a.masMpName
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlanByMasId">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlan a
+                where a.masId = ?
+                order by a.masMpName
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlanDonor">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlanDonor a
+                where a.compId.masId = ?
+                order by a.compId.donId
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlanCommunity">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlanCommunity a
+                where a.compId.masId = ?
+                order by a.compId.comId
+                  ]]>
+    </query>
 </hibernate-mapping>

@@ -2977,6 +2977,24 @@
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     <property name="impId" type="java.lang.String" column="imp_id" />
     </class>
+    <class name="eu.pms.project.database.PmsMasterPlanCommunity" table="pms_master_plan_communities" >
+        <composite-id name="compId" class="eu.pms.project.database.PmsMasterPlanCommunityPK">
+            <key-property name="masId" column="mas_id" type="java.lang.String"/>
+            <key-property name="comId" column="com_id" type="java.lang.String"/>
+        </composite-id>
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsMasterPlanDonor" table="pms_master_plan_donors" >
+        <composite-id name="compId" class="eu.pms.project.database.PmsMasterPlanDonorPK">
+            <key-property name="masId" column="mas_id" type="java.lang.String"/>
+            <key-property name="donId" column="don_id" type="java.lang.String"/>
+        </composite-id>
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+
+    </class>
 
     <class name="eu.pms.project.database.PmsSector" table="pms_sectors" >
     <id name="secId" type="java.lang.String" column="sec_id" >

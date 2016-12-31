@@ -2,6 +2,8 @@ package eu.pms.project.database;
 
 import java.io.Serializable;
 import java.util.Set;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -16,13 +18,19 @@ public class PmsMasterPlan implements Serializable {
     private String masStatus;
     private String masStatusIca;
     private java.util.Date masFirstSubmitDateToIca;
+    private String masFirstSubmitDateToIcaStr;
     private java.util.Date masLastSubmitDateToIca;
+    private String masLastSubmitDateToIcaStr;
     private int masNoSessionWithIca;
     private String masSubmitToMod;
     private java.util.Date masApprovalDate;
+    private String masApprovalDateStr;
     private java.util.Date masPublicationDate;
+    private String masPublicationDateStr;
     private java.util.Date masLastDateForObjection;
+    private String masLastDateForObjectionStr;
     private java.util.Date masDateOfFinalPublication;
+    private String masDateOfFinalPublicationStr;
     private int masApprovedPlanedArea;
     private String masVillageAdminBoarder;
     private String masNote;
@@ -185,6 +193,54 @@ public class PmsMasterPlan implements Serializable {
 
     public void setImpId(String impId) {
         this.impId = impId;
+    }
+
+    public String getMasFirstSubmitDateToIcaStr() {
+        return masFirstSubmitDateToIca!=null? DateTool.decorateDate(masFirstSubmitDateToIca, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setMasFirstSubmitDateToIcaStr(String masFirstSubmitDateToIcaStr) {
+        this.masFirstSubmitDateToIcaStr = masFirstSubmitDateToIcaStr;
+    }
+
+    public String getMasLastSubmitDateToIcaStr() {
+        return masLastSubmitDateToIca!=null? DateTool.decorateDate(masLastSubmitDateToIca, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setMasLastSubmitDateToIcaStr(String masLastSubmitDateToIcaStr) {
+        this.masLastSubmitDateToIcaStr = masLastSubmitDateToIcaStr;
+    }
+
+    public String getMasApprovalDateStr() {
+        return masApprovalDate!=null? DateTool.decorateDate(masApprovalDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setMasApprovalDateStr(String masApprovalDateStr) {
+        this.masApprovalDateStr = masApprovalDateStr;
+    }
+
+    public String getMasPublicationDateStr() {
+        return masPublicationDate!=null? DateTool.decorateDate(masPublicationDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setMasPublicationDateStr(String masPublicationDateStr) {
+        this.masPublicationDateStr = masPublicationDateStr;
+    }
+
+    public String getMasLastDateForObjectionStr() {
+        return masLastDateForObjection!=null? DateTool.decorateDate(masLastDateForObjection, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setMasLastDateForObjectionStr(String masLastDateForObjectionStr) {
+        this.masLastDateForObjectionStr = masLastDateForObjectionStr;
+    }
+
+    public String getMasDateOfFinalPublicationStr() {
+        return masDateOfFinalPublication!=null? DateTool.decorateDate(masDateOfFinalPublication, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setMasDateOfFinalPublicationStr(String masDateOfFinalPublicationStr) {
+        this.masDateOfFinalPublicationStr = masDateOfFinalPublicationStr;
     }
 
     public String toString() {
