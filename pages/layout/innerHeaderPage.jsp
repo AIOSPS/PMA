@@ -71,7 +71,7 @@
                             <a   >Community socio- economic</a>
                             <ul class="dropdown-menu">
                                 <li><a href="/pmsInterventionList.do">Basic socio</a></li>
-                                <li><a href="/pmsActivityList.do">Agriculture socio</a></li>
+                                <li><a href="/pmsAgricultureSocioList.do">Agriculture socio</a></li>
                                 <li><a href="/pmsActivityList.do">Water socio</a></li>
                             </ul>
                         </li>
