@@ -192,9 +192,28 @@ CREATE TABLE `pms_communities` (
 
 LOCK TABLES `pms_communities` WRITE;
 /*!40000 ALTER TABLE `pms_communities` DISABLE KEYS */;
-INSERT INTO `pms_communities` VALUES ('001','1','001','00123','Salfit','1',10,'Near Nablus',12000,4000,0,2000,'no info','no info','no Info','city','3','no info','no info','no info','no info','no info','no info','no info',31.00002340000000,12.43434000000000,NULL,NULL,'pms','2016-12-25 22:57:08'),('002',NULL,'001','00123','Salfit','1',10,'Near Nablus',12000,4000,0,2000,'no info','no info','no Info','city','3','no info','no info','no info','no info','no info','no info','no info',31.00002340000000,12.43434000000000,NULL,NULL,'pms','2016-12-25 11:44:32');
+INSERT INTO `pms_communities` VALUES ('001','30','001','00123','Salfit','1',10,'Near Nablus',12000,4000,0,2000,'no info','no info','no Info','city','3','no info','no info','no info','no info','no info','no info','no info',31.00002340000000,12.43434000000000,'2','3','pms','2016-12-30 23:08:18'),('002','30','001','00123','Salfit','1',10,'Near Nablus',12000,4000,0,2000,'no info','no info','no Info','city','3','no info','no info','no info','no info','no info','no info','no info',31.00002340000000,12.43434000000000,NULL,NULL,'pms','2016-12-25 11:44:32'),('003','30','001','00123','Salfit','1',10,'Near Nablus',12000,4000,0,2000,'no info','no info','no Info','city','3','no info','no info','no info','no info','no info','no info','no info',31.00002340000000,12.43434000000000,'1','1','pms','2016-12-30 23:10:30');
 /*!40000 ALTER TABLE `pms_communities` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `pms_communities_vw`
+--
+
+DROP TABLE IF EXISTS `pms_communities_vw`;
+/*!50001 DROP VIEW IF EXISTS `pms_communities_vw`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `pms_communities_vw` AS SELECT
+ 1 AS `com_id`,
+ 1 AS `com_name`,
+ 1 AS `typ_desc`,
+ 1 AS `gov_desc`,
+ 1 AS `com_pcbs_code`,
+ 1 AS `com_ocha_code`,
+ 1 AS `gov_id`,
+ 1 AS `com_topology`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `pms_community_types`
@@ -358,7 +377,7 @@ CREATE TABLE `pms_governates` (
 
 LOCK TABLES `pms_governates` WRITE;
 /*!40000 ALTER TABLE `pms_governates` DISABLE KEYS */;
-INSERT INTO `pms_governates` VALUES ('1','Jenin','sys','2016-12-11 00:00:00'),('10','Bethlehem\r','Admin','2016-12-27 12:38:17'),('100','Tubas\r','Admin','2016-12-27 12:38:17'),('110','Tulkarm\r','Admin','2016-12-27 12:38:17'),('20','Hebron\r','Admin','2016-12-27 12:38:17'),('30','Jenin\r','Admin','2016-12-27 12:38:17'),('40','Jericho\r','Admin','2016-12-27 12:38:17'),('50','Jerusalem\r','Admin','2016-12-27 12:38:17'),('60','Nablus\r','Admin','2016-12-27 12:38:17'),('70','Qalqiliya\r','Admin','2016-12-27 12:38:17'),('80','Ramallah\r','Admin','2016-12-27 12:38:17'),('90','Salfit\r','Admin','2016-12-27 12:38:17');
+INSERT INTO `pms_governates` VALUES ('10','Bethlehem\r','Admin','2016-12-27 12:38:17'),('100','Tubas\r','Admin','2016-12-27 12:38:17'),('110','Tulkarm\r','Admin','2016-12-27 12:38:17'),('20','Hebron\r','Admin','2016-12-27 12:38:17'),('30','Jenin\r','Admin','2016-12-27 12:38:17'),('40','Jericho\r','Admin','2016-12-27 12:38:17'),('50','Jerusalem\r','Admin','2016-12-27 12:38:17'),('60','Nablus\r','Admin','2016-12-27 12:38:17'),('70','Qalqiliya\r','Admin','2016-12-27 12:38:17'),('80','Ramallah\r','Admin','2016-12-27 12:38:17'),('90','Salfit\r','Admin','2016-12-27 12:38:17');
 /*!40000 ALTER TABLE `pms_governates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -792,6 +811,25 @@ INSERT INTO `pms_project_donors` VALUES ('001','1','pms','2016-12-25 23:11:07');
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `pms_project_vw`
+--
+
+DROP TABLE IF EXISTS `pms_project_vw`;
+/*!50001 DROP VIEW IF EXISTS `pms_project_vw`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `pms_project_vw` AS SELECT
+ 1 AS `pro_id`,
+ 1 AS `pro_title`,
+ 1 AS `pro_description`,
+ 1 AS `pro_status`,
+ 1 AS `pro_status_desc`,
+ 1 AS `pro_budget`,
+ 1 AS `pro_startDate`,
+ 1 AS `pro_endDate`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `pms_projects`
 --
 
@@ -1201,6 +1239,42 @@ LOCK TABLES `sec_user_role` WRITE;
 /*!40000 ALTER TABLE `sec_user_role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sec_user_role` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Final view structure for view `pms_communities_vw`
+--
+
+/*!50001 DROP VIEW IF EXISTS `pms_communities_vw`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `pms_communities_vw` AS select `com`.`com_id` AS `com_id`,`com`.`com_name` AS `com_name`,`comtyp`.`typ_desc` AS `typ_desc`,`gov`.`gov_desc` AS `gov_desc`,`com`.`com_pcbs_code` AS `com_pcbs_code`,`com`.`com_ocha_code` AS `com_ocha_code`,`com`.`gov_id` AS `gov_id`,`com`.`com_topology` AS `com_topology` from ((`pms_communities` `com` join `pms_community_types` `comtyp`) join `pms_governates` `gov`) where ((`com`.`typ_id` = `comtyp`.`typ_id`) and (`com`.`gov_id` = `gov`.`gov_id`)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `pms_project_vw`
+--
+
+/*!50001 DROP VIEW IF EXISTS `pms_project_vw`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `pms_project_vw` AS select `pms_projects`.`pro_id` AS `pro_id`,`pms_projects`.`pro_title` AS `pro_title`,`pms_projects`.`pro_description` AS `pro_description`,`pms_projects`.`pro_status` AS `pro_status`,(case `pms_projects`.`pro_status` when 1 then 'New' when 2 then 'Stopped' when 2 then 'Completed' else 'Unknown Status' end) AS `pro_status_desc`,`pms_projects`.`pro_budget` AS `pro_budget`,date_format(`pms_projects`.`pro_startDate`,'%d/%m/%Y') AS `pro_startDate`,date_format(`pms_projects`.`pro_endDate`,'%d/%m/%Y') AS `pro_endDate` from `pms_projects` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1211,4 +1285,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-28 14:44:22
+-- Dump completed on 2016-12-31  8:41:39
