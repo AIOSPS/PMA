@@ -181,4 +181,16 @@
     <definition name="pms.editMasterPlan.tile" extends="innerLayout">
         <put name="body" value="/pages/masterPlan/editMasterPlan.jsp"/>
     </definition>
+    <definition name="pms.agricultureSocioList.tile" extends="innerLayout">
+        <put name="body" value="/pages/agricultureSocio/listAgricultureSocio.jsp"/>
+    </definition>
+    <definition name="pms.addAgricultureSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/agricultureSocio/addAgricultureSocio.jsp"/>
+    </definition>
+    <definition name="pms.viewAgricultureSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/agricultureSocio/viewAgricultureSocio.jsp"/>
+    </definition>
+    <definition name="pms.editAgricultureSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/agricultureSocio/editAgricultureSocio.jsp"/>
+    </definition>
 </tiles-definitions>

@@ -3127,4 +3127,39 @@
         <property name="comOchaCode" column="com_ocha_code" type="java.lang.String"/>
         <property name="comTopology" column="com_topology" type="java.lang.String"/>
     </class>
+
+    <class name="eu.pms.project.database.PmsAgricultureSocio" table="pms_agriculture_socio" >
+    <id name="agrId" type="java.lang.String" column="agr_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="agrArea" type="int" column="agr_area" />
+    <property name="agrNoCowYear" type="int" column="agr_no_cow_year" />
+    <property name="agrNoSheepYear" type="int" column="agr_no_sheep_year" />
+    <property name="agrCostWaterTank" type="int" column="agr_cost_water_tank" />
+    <property name="agrHerdingArea" type="int" column="agr_herding_area" />
+    <property name="agrMilitaryArea" type="int" column="agr_military_area" />
+    <property name="agrBypassRoadArea" type="int" column="agr_bypass_road_area" />
+    <property name="agrSurveyDate" type="java.util.Date" column="agr_survey_date" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+        <property name="comId" type="java.lang.String" column="com_id" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsWaterSocio" table="pms_water_socio" >
+    <id name="watId" type="java.lang.String" column="wat_id" >
+    <generator class="assigned" />
+    </id>
+    <property name="watIsconnected" type="java.lang.String" column="wat_isconnected" />
+    <property name="watNetwork" type="int" column="wat_network" />
+    <property name="watUseWatTanker" type="java.lang.String" column="wat_use_wat_tanker" />
+    <property name="watRainWaterWell" type="java.lang.String" column="wat_rain_water_well" />
+    <property name="watNoSprings" type="int" column="wat_no_springs" />
+    <property name="watPriceWater" type="java.math.BigDecimal" column="wat_price_water" />
+    <property name="watFillingPoint" type="int" column="wat_filling_point" />
+    <property name="watQuantity" type="int" column="wat_quantity" />
+    <property name="watSurveyDate" type="java.util.Date" column="wat_survey_date" />
+    <property name="username" type="java.lang.String" column="username" />
+    <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="comId" type="java.lang.String" column="com_id" />
+    </class>
 </hibernate-mapping>

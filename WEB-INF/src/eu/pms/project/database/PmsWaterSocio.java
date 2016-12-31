@@ -8,62 +8,19 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsWaterSocio implements Serializable {
 
-    /** identifier field */
     private String watId;
-
-    /** persistent field */
+    private String comId;
     private String watIsconnected;
-
-    /** persistent field */
     private int watNetwork;
-
-    /** persistent field */
     private String watUseWatTanker;
-
-    /** persistent field */
     private String watRainWaterWell;
-
-    /** persistent field */
     private int watNoSprings;
-
-    /** persistent field */
     private java.math.BigDecimal watPriceWater;
-
-    /** persistent field */
     private int watFillingPoint;
-
-    /** persistent field */
     private int watQuantity;
-
-    /** persistent field */
     private java.util.Date watSurveyDate;
-
-    /** persistent field */
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsCommunity pmsCommunity;
-
-    /** full constructor */
-    public PmsWaterSocio(String watId, String watIsconnected, int watNetwork, String watUseWatTanker, String watRainWaterWell, int watNoSprings, java.math.BigDecimal watPriceWater, int watFillingPoint, int watQuantity, java.util.Date watSurveyDate, String username, java.util.Date timeStamp, eu.pms.project.database.PmsCommunity pmsCommunity) {
-        this.watId = watId;
-        this.watIsconnected = watIsconnected;
-        this.watNetwork = watNetwork;
-        this.watUseWatTanker = watUseWatTanker;
-        this.watRainWaterWell = watRainWaterWell;
-        this.watNoSprings = watNoSprings;
-        this.watPriceWater = watPriceWater;
-        this.watFillingPoint = watFillingPoint;
-        this.watQuantity = watQuantity;
-        this.watSurveyDate = watSurveyDate;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsCommunity = pmsCommunity;
-    }
-
     /** default constructor */
     public PmsWaterSocio() {
     }
@@ -74,6 +31,14 @@ public class PmsWaterSocio implements Serializable {
 
     public void setWatId(String watId) {
         this.watId = watId;
+    }
+
+    public String getComId() {
+        return comId;
+    }
+
+    public void setComId(String comId) {
+        this.comId = comId;
     }
 
     public String getWatIsconnected() {
@@ -162,14 +127,6 @@ public class PmsWaterSocio implements Serializable {
 
     public void setTimeStamp(java.util.Date timeStamp) {
         this.timeStamp = timeStamp;
-    }
-
-    public eu.pms.project.database.PmsCommunity getPmsCommunity() {
-        return this.pmsCommunity;
-    }
-
-    public void setPmsCommunity(eu.pms.project.database.PmsCommunity pmsCommunity) {
-        this.pmsCommunity = pmsCommunity;
     }
 
     public String toString() {

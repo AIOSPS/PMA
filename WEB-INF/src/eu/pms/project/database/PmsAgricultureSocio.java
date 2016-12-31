@@ -1,6 +1,8 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -8,57 +10,19 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /** @author Hibernate CodeGenerator */
 public class PmsAgricultureSocio implements Serializable {
 
-    /** identifier field */
     private String agrId;
-
-    /** persistent field */
+    private String comId;
     private int agrArea;
-
-    /** persistent field */
     private int agrNoCowYear;
-
-    /** persistent field */
     private int agrNoSheepYear;
-
-    /** persistent field */
     private int agrCostWaterTank;
-
-    /** persistent field */
     private int agrHerdingArea;
-
-    /** persistent field */
     private int agrMilitaryArea;
-
-    /** persistent field */
     private int agrBypassRoadArea;
-
-    /** persistent field */
     private java.util.Date agrSurveyDate;
-
-    /** persistent field */
+    private String agrSurveyDateStr;
     private String username;
-
-    /** persistent field */
     private java.util.Date timeStamp;
-
-    /** persistent field */
-    private eu.pms.project.database.PmsCommunity pmsCommunity;
-
-    /** full constructor */
-    public PmsAgricultureSocio(String agrId, int agrArea, int agrNoCowYear, int agrNoSheepYear, int agrCostWaterTank, int agrHerdingArea, int agrMilitaryArea, int agrBypassRoadArea, java.util.Date agrSurveyDate, String username, java.util.Date timeStamp, eu.pms.project.database.PmsCommunity pmsCommunity) {
-        this.agrId = agrId;
-        this.agrArea = agrArea;
-        this.agrNoCowYear = agrNoCowYear;
-        this.agrNoSheepYear = agrNoSheepYear;
-        this.agrCostWaterTank = agrCostWaterTank;
-        this.agrHerdingArea = agrHerdingArea;
-        this.agrMilitaryArea = agrMilitaryArea;
-        this.agrBypassRoadArea = agrBypassRoadArea;
-        this.agrSurveyDate = agrSurveyDate;
-        this.username = username;
-        this.timeStamp = timeStamp;
-        this.pmsCommunity = pmsCommunity;
-    }
 
     /** default constructor */
     public PmsAgricultureSocio() {
@@ -70,6 +34,14 @@ public class PmsAgricultureSocio implements Serializable {
 
     public void setAgrId(String agrId) {
         this.agrId = agrId;
+    }
+
+    public String getComId() {
+        return comId;
+    }
+
+    public void setComId(String comId) {
+        this.comId = comId;
     }
 
     public int getAgrArea() {
@@ -152,12 +124,12 @@ public class PmsAgricultureSocio implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public eu.pms.project.database.PmsCommunity getPmsCommunity() {
-        return this.pmsCommunity;
+    public String getAgrSurveyDateStr() {
+        return agrSurveyDate!=null? DateTool.decorateDate(agrSurveyDate, DateTool.DD_MM_YYYY):"";
     }
 
-    public void setPmsCommunity(eu.pms.project.database.PmsCommunity pmsCommunity) {
-        this.pmsCommunity = pmsCommunity;
+    public void setAgrSurveyDateStr(String agrSurveyDateStr) {
+        this.agrSurveyDateStr = agrSurveyDateStr;
     }
 
     public String toString() {

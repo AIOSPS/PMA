@@ -31,6 +31,8 @@
         <form-bean name="dynamicReportForm" type="eu.pms.reporting.forms.DynaReportCriteriaForm"/>
         <form-bean name="pmsMasterPlanForm" type="eu.pms.masterPlan.forms.PmsMasterPlanForm"/>
         <form-bean name="pmsMasterPlanSearchForm" type="eu.pms.masterPlan.forms.PmsMasterPlanSearchForm"/>
+        <form-bean name="pmsAgricultureSocioForm" type="eu.pms.agricultureSocio.forms.PmsAgricultureSocioForm"/>
+        <form-bean name="pmsAgricultureSocioSearchForm" type="eu.pms.agricultureSocio.forms.PmsAgricultureSocioSearchForm"/>
 
     </form-beans>
 
@@ -687,6 +689,52 @@
                 path="/viewEditMasterPlan"
         >
             <forward name="success" path="pms.editMasterPlan.tile"/>
+        </action>
+        <action
+                type="eu.pms.agricultureSocio.actions.PmsAgricultureSocioListAction"
+                scope="request"
+                path="/pmsAgricultureSocioList">
+            <forward name="success" path="pms.agricultureSocioList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.agricultureSocio.actions.PmsAgricultureSocioListAction"
+                scope="request"
+                path="/searchAgricultureSocio"
+                name="pmsAgricultureSocioSearchForm"
+        >
+            <forward name="success" path="pms.agricultureSocioList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsAgricultureSocioForm"
+                type="eu.pms.agricultureSocio.actions.ViewAddPmsAgricultureSocioAction"
+                validate="false"
+                path="/viewAddAgricultureSocio"
+        >
+            <forward name="success" path="pms.addAgricultureSocio.tile"/>
+        </action>
+        <action
+                name="pmsAgricultureSocioForm"
+                type="eu.pms.agricultureSocio.actions.AddPmsAgricultureSocioAction"
+                validate="false"
+                path="/addAgricultureSocio"
+        >
+            <forward name="success" path="/pmsAgricultureSocioList.do"/>
+        </action>
+        <action
+                name="pmsAgricultureSocioForm"
+                type="eu.pms.agricultureSocio.actions.ViewPmsAgricultureSocioAction"
+                validate="false"
+                path="/viewPmsAgricultureSocio"
+        >
+            <forward name="success" path="pms.viewAgricultureSocio.tile"/>
+        </action>
+        <action
+                name="pmsAgricultureSocioForm"
+                type="eu.pms.agricultureSocio.actions.ViewPmsAgricultureSocioAction"
+                validate="false"
+                path="/viewEditAgricultureSocio"
+        >
+            <forward name="success" path="pms.editAgricultureSocio.tile"/>
         </action>
 
     </action-mappings>

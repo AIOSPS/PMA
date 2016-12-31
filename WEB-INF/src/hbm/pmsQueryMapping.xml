@@ -409,4 +409,19 @@
                 order by a.compId.comId
                   ]]>
     </query>
+    <query
+            name="getPmsAgricultureSocio">
+        <![CDATA[
+                from eu.pms.project.database.PmsAgricultureSocio a
+                order by a.agrArea
+                  ]]>
+    </query>
+    <query
+            name="getPmsAgricultureSocioByMasId">
+        <![CDATA[
+                from eu.pms.project.database.PmsAgricultureSocio a
+                where a.agrId = ?
+                order by a.agrArea
+                  ]]>
+    </query>
 </hibernate-mapping>
