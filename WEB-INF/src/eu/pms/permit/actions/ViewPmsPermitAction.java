@@ -1,19 +1,10 @@
 package eu.pms.permit.actions;
 
 
-import eu.pms.activity.forms.PmsActivityForm;
-import eu.pms.activity.useCases.GetPmsActivityUseCase;
-import eu.pms.activity.useCases.GetPmsInterventionUseCase;
-import eu.pms.benificiary.forms.PmsBenificiaryForm;
-import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
-import eu.pms.benificiary.useCases.GetPmsBenificiaryUseCase;
+
 import eu.pms.common.tools.SessionTraker;
-import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.permit.forms.PmsPermitForm;
 import eu.pms.permit.useCases.GetPmsPermitUseCase;
-import eu.pms.project.database.PmsActivity;
-import eu.pms.project.database.PmsBenificiary;
-import eu.pms.project.database.PmsIntervention;
 import eu.pms.project.database.PmsPermit;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
