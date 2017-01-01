@@ -135,7 +135,7 @@
                   ]]>
     </query>
     <query
-            name="getPmsClusterTyp">
+            name="getPmsSectorTyp">
         <![CDATA[
                 from eu.pms.project.database.PmsSector a
                 order by a.secType,a.secDesc

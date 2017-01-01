@@ -46,7 +46,6 @@ public class ViewAddPmsProjectAction extends Action {
                 clusterDList.add(pmsSecTyp);
             else if (pmsSecTyp.getSecType().equals("Oth"))
                 clusterOthList.add(pmsSecTyp);
-
         }
         List permitList = (List) new GetPmsPermitUseCase().execute(null, request);
         List benificiryTypeList = (List) new GetPmsBenificiaryUseCase().execute(null, request);

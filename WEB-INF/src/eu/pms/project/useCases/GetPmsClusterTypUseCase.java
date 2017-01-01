@@ -19,7 +19,7 @@ public class GetPmsClusterTypUseCase implements ComponentUseCase {
         List retList = null;
 
         try {
-            retList=new DataAccessObjectImpl().getList("getPmsClusterTyp");
+            retList=new DataAccessObjectImpl().getList("getPmsSectorTyp");
         } catch (Exception ce) {
             System.out.println("Error PMS ClusterTyp list: " + ce);
             retList = new ArrayList();

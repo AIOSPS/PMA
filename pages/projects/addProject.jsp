@@ -138,13 +138,19 @@
                                 <logic:present name="clusterHList">
                                     <optgroup label="Humman" id="Humman">
                                         <html:options collection="clusterHList" property="secId"
-                                                      labelProperty="secDesc"/>
+                                                      labelProperty="secName"/>
                                     </optgroup>
                                 </logic:present>
                                 <logic:present name="clusterDList">
                                     <optgroup label="Development" id="Development">
                                         <html:options collection="clusterDList" property="secId"
-                                                      labelProperty="secDesc"/>
+                                                      labelProperty="secName"/>
+                                    </optgroup>
+                                </logic:present>
+                                <logic:present name="clusterOthList">
+                                    <optgroup label="Others" id="Others">
+                                        <html:options collection="clusterOthList" property="secId"
+                                                      labelProperty="secName"/>
                                     </optgroup>
                                 </logic:present>
                             </html:select>
@@ -169,9 +175,13 @@
                         <label for="statusPr" class="col-sm-3 col-form-label">Status:</label>
                         <div class="col-sm-9">
                             <html:select property="proStatus" styleClass="selectpicker form-control">
-                                <html:option value="1">New</html:option>
-                                <html:option value="2">Stopped</html:option>
-                                <html:option value="3">Completed</html:option>
+                                <html:option value="1">Design / Approval</html:option>
+                                <html:option value="2">Ongoing</html:option>
+                                <html:option value="3">Delayed</html:option>
+                                <html:option value="4">Completed</html:option>
+                                <html:option value="5">On-Hold</html:option>
+                                <html:option value="6">Closed</html:option>
+                                <html:option value="7">Cancelled</html:option>
                             </html:select>
                         </div>
                     </div>
@@ -479,42 +489,42 @@
 
 
 //    *****************************project type**************
-    function setProjectTypeConfig(cluType) {
-        if(cluType=="Hum"){
+    function setProjectTypeConfig(secType) {
+        if(secType=="H"){
             document.getElementsByName("communityProjectList")[0].disabled = true;
-            document.getElementsByName("cluId")[0].disabled = false;
-            $('[name="cluId"]').eq(0).parent().removeClass("disabled");
-            $('[name="cluId"]').eq(0).parent().find('button').removeClass("disabled");
+            document.getElementsByName("secId")[0].disabled = false;
+            $('[name="secId"]').eq(0).parent().removeClass("disabled");
+            $('[name="secId"]').eq(0).parent().find('button').removeClass("disabled");
             document.getElementsByName("proHasCluster")[0].disabled = true;
             document.getElementsByName("proHasCluster")[1].disabled = true;
             document.getElementsByName("proHasCluster")[1].checked  = true;
             $('li[data-optgroup=1]').removeClass("disabled");
             $('li[data-optgroup=2]').addClass("disabled");
             $("#Development").prop("disabled", true);
-        }else if(cluType=="Dev"){
+        }else if(secType=="D"){
             document.getElementsByName("proHasCluster")[0].disabled = false;
             document.getElementsByName("proHasCluster")[1].disabled = false;
             document.getElementsByName("proHasCluster")[0].checked  = true;
             $('li[data-optgroup=1]').addClass("disabled");
             $('li[data-optgroup=2]').removeClass("disabled");
-        }else if(cluType=="1"){
+        }else if(secType=="1"){
             document.getElementsByName("communityProjectList")[0].disabled = true;
-            document.getElementsByName("cluId")[0].disabled = false;
-            $('[name="cluId"]').eq(0).parent().removeClass("disabled");
-            $('[name="cluId"]').eq(0).parent().find('button').removeClass("disabled");
+            document.getElementsByName("secId")[0].disabled = false;
+            $('[name="secId"]').eq(0).parent().removeClass("disabled");
+            $('[name="secId"]').eq(0).parent().find('button').removeClass("disabled");
             $('li[data-optgroup=1]').addClass("disabled");
             $('li[data-optgroup=2]').removeClass("disabled");
-        }else if(cluType=="0"){
+        }else if(secType=="0"){
             document.getElementsByName("communityProjectList")[0].disabled = false;
             $('[name="communityProjectList"]').eq(0).parent().removeClass("disabled");
             $('[name="communityProjectList"]').eq(0).parent().find('button').removeClass("disabled");
-            document.getElementsByName("cluId")[0].disabled = true;
+            document.getElementsByName("secId")[0].disabled = true;
             $('li[data-optgroup=1]').addClass("disabled");
             $('li[data-optgroup=2]').addClass("disabled");
         }
     }
 
-    setProjectTypeConfig('Hum');
+    setProjectTypeConfig('H');
 
 
 </script>
