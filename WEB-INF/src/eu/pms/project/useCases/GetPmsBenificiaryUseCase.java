@@ -19,7 +19,7 @@ public class GetPmsBenificiaryUseCase implements ComponentUseCase {
         List retList = null;
 
         try {
-            retList=new DataAccessObjectImpl().getList("getPmsBenificiary");
+            retList=new DataAccessObjectImpl().getList("getPmsBenificiaryTypeList");
         } catch (Exception ce) {
             System.out.println("Error PMS Benificiary list: " + ce);
             retList = new ArrayList();

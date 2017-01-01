@@ -81,7 +81,7 @@
         <![CDATA[
                 from eu.pms.project.database.PmsProjectsBenificiary a
                 where a.compId.proId = ?
-                order by a.compId.benId
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
@@ -151,8 +151,8 @@
     <query
             name="getPmsBenificiary">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiary a
-                order by a.benDesc
+                from eu.pms.project.database.PmsProjectsBenificiary a
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
@@ -251,16 +251,16 @@
     <query
             name="getPmsBenificiaryList">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiary a
-                order by a.benDesc
+                from eu.pms.project.database.PmsProjectsBenificiary a
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
             name="getPmsBenificiaryById">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiary a
-                where a.benId =?
-                order by a.benDesc
+                from eu.pms.project.database.PmsProjectsBenificiary a
+                where a.compId.btpId =?
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
@@ -406,7 +406,7 @@
         <![CDATA[
                 from eu.pms.project.database.PmsMasterPlanCommunity a
                 where a.compId.masId = ?
-                order by a.compId.comId
+                order by a.compId.masId
                   ]]>
     </query>
     <query

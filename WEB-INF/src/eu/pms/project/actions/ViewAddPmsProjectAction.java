@@ -35,20 +35,21 @@ public class ViewAddPmsProjectAction extends Action {
         List clusterList = (List) new GetPmsClusterTypUseCase().execute(null, request);
         List clusterHList = new ArrayList();
         List clusterDList = new ArrayList();
+        List clusterOthList = new ArrayList();
         Iterator itr = clusterList.iterator();
-        PmsSector pmsClusterTyp = new PmsSector();
+        PmsSector pmsSecTyp = new PmsSector();
         while (itr.hasNext()) {
-            pmsClusterTyp = (PmsSector) itr.next();
-            if (pmsClusterTyp.getSecType().equals("Hum"))
-                clusterHList.add(pmsClusterTyp);
-            else if (pmsClusterTyp.getSecType().equals("Dev"))
-                clusterDList.add(pmsClusterTyp);
-            else if (pmsClusterTyp.getSecType().equals("Other"))
-                clusterDList.add(pmsClusterTyp);
+            pmsSecTyp = (PmsSector) itr.next();
+            if (pmsSecTyp.getSecType().equals("H"))
+                clusterHList.add(pmsSecTyp);
+            else if (pmsSecTyp.getSecType().equals("D"))
+                clusterDList.add(pmsSecTyp);
+            else if (pmsSecTyp.getSecType().equals("Oth"))
+                clusterOthList.add(pmsSecTyp);
 
         }
         List permitList = (List) new GetPmsPermitUseCase().execute(null, request);
-        List benificiryList = (List) new GetPmsBenificiaryUseCase().execute(null, request);
+        List benificiryTypeList = (List) new GetPmsBenificiaryUseCase().execute(null, request);
         List indicatorList = (List) new GetPmsIndicatorListUseCase().execute(null, request);
         request.setAttribute("dononrList", dononrList);
         request.setAttribute("implementerList", implementerList);
@@ -58,8 +59,9 @@ public class ViewAddPmsProjectAction extends Action {
         request.setAttribute("communityList", communityList);
         request.setAttribute("clusterHList", clusterHList);
         request.setAttribute("clusterDList", clusterDList);
+        request.setAttribute("clusterOthList", clusterOthList);
         request.setAttribute("permitList", permitList);
-        request.setAttribute("benificiryList", benificiryList);
+        request.setAttribute("benificiryTypeList", benificiryTypeList);
         request.setAttribute("indicatorList", indicatorList);
 
         return mapping.findForward("success");

@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class PmsProjectsBenificiaryPK implements Serializable {
 
     private String proId;
-    private String benId;
+    private String btpId;
 
     /** default constructor */
     public PmsProjectsBenificiaryPK() {
@@ -22,11 +22,11 @@ public class PmsProjectsBenificiaryPK implements Serializable {
         this.proId = proId;
     }
 
-    public String getBenId() {
-        return benId;
+    public String getBtpId() {
+        return btpId;
     }
 
-    public void setBenId(String benId) {
-        this.benId = benId;
+    public void setBtpId(String btpId) {
+        this.btpId = btpId;
     }
 }

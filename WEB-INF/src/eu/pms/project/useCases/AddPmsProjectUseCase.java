@@ -45,6 +45,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
 
             String username = "pms";
             Date timeStamp = new Date();
+
             if(secType!=null && secType.equals("Hum")){
                 communityProjectArray = null;
                 proHasCluster = "0";
@@ -71,6 +72,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             pmsProject.setDevId(devId);
             pmsProject.setSecId(secId);
             pmsProject.setPreId(preId);
+            pmsProject.setSecType(secType);
             pmsProject.setUsername(username);
             pmsProject.setTimeStamp(timeStamp);
 
@@ -142,7 +144,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
                     pmsProjectsBenificiaryPK = new PmsProjectsBenificiaryPK();
                     pmsProjectsBenificiary = new PmsProjectsBenificiary();
                     pmsProjectsBenificiaryPK.setProId(proId);
-                    pmsProjectsBenificiaryPK.setBenId(benificiary);
+                    pmsProjectsBenificiaryPK.setBtpId(benificiary);
                     pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
                     pmsProjectsBenificiary.setUsername(username);
                     pmsProjectsBenificiary.setTimeStamp(timeStamp);

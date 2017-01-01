@@ -57,7 +57,11 @@
                             <div class="col-md-4">
                                 <label for="interventionSource" class="col-sm-12 col-form-label">Source:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="interventionSource" styleClass="form-control" styleId="interventionSource"/>
+                                    <html:select property="interventionSource" styleClass="selectpicker form-control">
+                                        <html:option value="MASTER">Master Plan</html:option>
+                                        <html:option value="ASSESS">Assessment</html:option>
+                                        <html:option value="COMM">Comunity Representative</html:option>
+                                    </html:select>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +115,7 @@
                         <tr>
                             <td width="50%"><bean:write name="pmsInterventionList" property="intDesc"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsInterventionList" property="intEstimatedBudget"/></td>
-                            <td width="25%" class="text-center"><bean:write name="pmsInterventionList" property="intSource"/></td>
+                            <td width="25%" class="text-center"><bean:write name="pmsInterventionList" property="intSourceDesc"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsIntervention.do?intId=<bean:write name="pmsInterventionList" property="compId.intId"/>&secId=<bean:write name="pmsInterventionList" property="compId.secId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>

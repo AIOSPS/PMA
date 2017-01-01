@@ -14,6 +14,8 @@ public class PmsIntervention implements Serializable {
     private String intDesc;
     private int intEstimatedBudget;
     private String intSource;
+    private String intPriority;
+    private String intSourceDesc;
     private String username;
     private java.util.Date timeStamp;
 
@@ -60,6 +62,32 @@ public class PmsIntervention implements Serializable {
 
     public void setIntSource(String intSource) {
         this.intSource = intSource;
+    }
+
+    public String getIntPriority() {
+        return intPriority;
+    }
+
+    public void setIntPriority(String intPriority) {
+        this.intPriority = intPriority;
+    }
+
+    public String getIntSourceDesc() {
+        if (this.intSource==null || this.intSource.isEmpty()){
+            intSourceDesc = "Unknown";
+        }else if(this.intSource.equals("MASTER")){
+            intSourceDesc = "Master Plan";
+        }else if(this.intSource.equals("ASSESS")){
+            intSourceDesc = "Assessment";
+        }else if(this.intSource.equals("COMM")){
+            intSourceDesc = "Community Representative";
+        }else{
+            intSourceDesc = "Unknown";
+        }
+        return intSourceDesc;
+    }
+    public void setIntSourceDesc(String intSourceDesc) {
+        this.intSourceDesc = intSourceDesc;
     }
 
     public String getUsername() {

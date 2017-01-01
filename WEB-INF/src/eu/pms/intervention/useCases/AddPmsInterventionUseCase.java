@@ -24,6 +24,7 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
             String intDesc = (String) itr.next();
             int intEstimatedBudget = (Integer) itr.next();
             String intSource = (String) itr.next();
+            String intPriority = (String) itr.next();
 
             String username = "pms";
             Date timeStamp = new Date();
@@ -37,6 +38,7 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
             pmsIntervention.setIntDesc(intDesc);
             pmsIntervention.setIntEstimatedBudget(intEstimatedBudget);
             pmsIntervention.setIntSource(intSource);
+            pmsIntervention.setIntPriority(intPriority);
             pmsIntervention.setUsername(username);
             pmsIntervention.setTimeStamp(timeStamp);
 

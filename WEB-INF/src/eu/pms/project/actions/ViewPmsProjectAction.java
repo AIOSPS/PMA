@@ -36,15 +36,15 @@ public class ViewPmsProjectAction extends Action {
         List clusterHList = new ArrayList();
         List clusterDList = new ArrayList();
         Iterator itr = clusterList.iterator();
-        PmsSector pmsClusterTyp = new PmsSector();
+        PmsSector pmsSecTyp = new PmsSector();
         while (itr.hasNext()) {
-            pmsClusterTyp = (PmsSector) itr.next();
-            if (pmsClusterTyp.getSecType().equals("Hum"))
-                clusterHList.add(pmsClusterTyp);
-            else if (pmsClusterTyp.getSecType().equals("Dev"))
-                clusterDList.add(pmsClusterTyp);
-            else if (pmsClusterTyp.getSecType().equals("Other"))
-                clusterDList.add(pmsClusterTyp);
+            pmsSecTyp = (PmsSector) itr.next();
+            if (pmsSecTyp.getSecType().equals("H"))
+                clusterHList.add(pmsSecTyp);
+            else if (pmsSecTyp.getSecType().equals("D"))
+                clusterDList.add(pmsSecTyp);
+            else if (pmsSecTyp.getSecType().equals("Oth"))
+                clusterDList.add(pmsSecTyp);
 
         }
         List permitList = (List) new GetPmsPermitUseCase().execute(null, request);
@@ -116,7 +116,7 @@ public class ViewPmsProjectAction extends Action {
                 projectBenificiryArr = new String[projectBenificiryList.size()];
                 int i = 0;
                 for (PmsProjectsBenificiary pmsProjectsBenificiary : projectBenificiryList) {
-                    projectBenificiryArr[i] = pmsProjectsBenificiary.getCompId().getBenId();
+                    projectBenificiryArr[i] = pmsProjectsBenificiary.getCompId().getBtpId();
                     i++;
                 }
             }
@@ -153,6 +153,7 @@ public class ViewPmsProjectAction extends Action {
         pmsProjectForm.setSecId(pmsProject.getSecId());
         pmsProjectForm.setProNeedPermit(pmsProject.getProNeedPermit());
         pmsProjectForm.setPreId(pmsProject.getPreId());
+        pmsProjectForm.setSecType(pmsProject.getSecType());
         pmsProjectForm.setComLatitude(pmsProject.getComLatitude());
         pmsProjectForm.setComLongitude(pmsProject.getComLongitude());
         pmsProjectForm.setDonorProjectList(projectDonorArr);

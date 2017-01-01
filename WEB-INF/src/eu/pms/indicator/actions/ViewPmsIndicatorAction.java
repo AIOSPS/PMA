@@ -71,8 +71,8 @@ public class ViewPmsIndicatorAction extends Action {
         pmsIndicatorForm.setIndFrequency(pmsIndicator.getIndFrequency());
         pmsIndicatorForm.setIndCollectionMethod(pmsIndicator.getIndCollectionMethod());
         pmsIndicatorForm.setIndStatisticalMethod(pmsIndicator.getIndStatisticalMethod());
-        pmsIndicatorForm.setIndTarget(pmsIndicator.getIndTarget());
-        pmsIndicatorForm.setIndValue(pmsIndicator.getIndValue());
+       // pmsIndicatorForm.setIndTarget(pmsIndicator.getIndTarget());
+       // pmsIndicatorForm.setIndValue(pmsIndicator.getIndValue());
     }
 }
 

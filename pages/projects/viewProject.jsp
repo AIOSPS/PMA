@@ -354,8 +354,8 @@
                         <div class="col-sm-9">
                             <html:select property="benificiaryProjectList" multiple="true" disabled="true"
                                          styleClass="selectpicker form-control">
-                                <logic:present name="benificiryList">
-                                    <html:options collection="benificiryList" property="benId" labelProperty="benDesc"/>
+                                <logic:present name="benificiryTypeList">
+                                    <html:options collection="benificiryTypeList" property="lookupId" labelProperty="lookupDesc"/>
                                 </logic:present>
                             </html:select>
                         </div>

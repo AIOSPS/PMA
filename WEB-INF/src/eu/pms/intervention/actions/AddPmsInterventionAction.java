@@ -31,6 +31,7 @@ public class AddPmsInterventionAction extends Action {
         String intDesc = pmsInterventionForm.getIntDesc();
         int intEstimatedBudget = pmsInterventionForm.getIntEstimatedBudget();
         String intSource = pmsInterventionForm.getIntSource();
+        String intPriority = pmsInterventionForm.getIntPriority();
 
 
         ArrayList inputs = new ArrayList();
@@ -40,6 +41,7 @@ public class AddPmsInterventionAction extends Action {
         inputs.add(intDesc);
         inputs.add(intEstimatedBudget);
         inputs.add(intSource);
+        inputs.add(intPriority);
 
         Collection result = new AddPmsInterventionUseCase().execute(inputs, request);
         if (result != null && result.size() > 0) {

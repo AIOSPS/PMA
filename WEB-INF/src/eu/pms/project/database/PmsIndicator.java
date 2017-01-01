@@ -36,12 +36,6 @@ public class PmsIndicator implements Serializable {
     private String indStatisticalMethod;
 
     /** persistent field */
-    private int indTarget;
-
-    /** persistent field */
-    private int indValue;
-
-    /** persistent field */
     private String username;
 
     /** persistent field */
@@ -118,22 +112,6 @@ public class PmsIndicator implements Serializable {
 
     public void setIndStatisticalMethod(String indStatisticalMethod) {
         this.indStatisticalMethod = indStatisticalMethod;
-    }
-
-    public int getIndTarget() {
-        return this.indTarget;
-    }
-
-    public void setIndTarget(int indTarget) {
-        this.indTarget = indTarget;
-    }
-
-    public int getIndValue() {
-        return this.indValue;
-    }
-
-    public void setIndValue(int indValue) {
-        this.indValue = indValue;
     }
 
     public String getUsername() {

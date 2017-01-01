@@ -64,19 +64,19 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/home.do"><span class="glyphicon glyphicon-home"></span> Home <span class="sr-only">(current)</span></a></li>
 
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-desktop"></span>   Community Information<span class="caret"></span></a>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-desktop"></span>   Community Information  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/pmsCommunityList.do">Community</a></li>
                         <li class="dropdown-submenu ">
-                            <a   >Community socio- economic</a>
+                            <a>Socio-economic Data</a>
                             <ul class="dropdown-menu">
-                                <li><a href="/pmsInterventionList.do">Basic socio</a></li>
+                                <li><a href="#">Basic socio</a></li>
                                 <li><a href="/pmsAgricultureSocioList.do">Agriculture socio</a></li>
                                 <li><a href="/pmsWaterSocioList.do">Water socio</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu ">
-                            <a   >Master Plan </a>
+                            <a>Master Plan </a>
                             <ul class="dropdown-menu">
                                 <li><a href="/pmsInterventionList.do">Interventions</a></li>
                                 <li><a href="/pmsActivityList.do">Activities</a></li>

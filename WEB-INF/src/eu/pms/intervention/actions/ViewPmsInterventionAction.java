@@ -60,6 +60,7 @@ public class ViewPmsInterventionAction extends Action {
         pmsInterventionForm.setIntDesc(pmsIntervention.getIntDesc());
         pmsInterventionForm.setIntEstimatedBudget(pmsIntervention.getIntEstimatedBudget());
         pmsInterventionForm.setIntSource(pmsIntervention.getIntSource());
+        pmsInterventionForm.setIntPriority(pmsIntervention.getIntPriority());
     }
 }
 

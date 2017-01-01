@@ -48,8 +48,8 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
             pmsIndicator.setIndFrequency(indFrequency);
             pmsIndicator.setIndCollectionMethod(indCollectionMethod);
             pmsIndicator.setIndStatisticalMethod(indStatisticalMethod);
-            pmsIndicator.setIndTarget(indTarget);
-            pmsIndicator.setIndValue(indValue);
+           // pmsIndicator.setIndTarget(indTarget);
+           // pmsIndicator.setIndValue(indValue);
             pmsIndicator.setUsername(username);
             pmsIndicator.setTimeStamp(timeStamp);
 

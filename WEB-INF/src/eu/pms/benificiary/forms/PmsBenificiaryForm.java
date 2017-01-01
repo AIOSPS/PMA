@@ -14,21 +14,20 @@ import java.util.Date;
 
 /** @author Hibernate CodeGenerator */
 public class PmsBenificiaryForm extends ActionForm {
-    private String benId;
+    private String proId;
     private String btpId;
-    private String benDesc;
     private int benTotal;
 
     /** default constructor */
     public PmsBenificiaryForm() {
     }
 
-    public String getBenId() {
-        return benId;
+    public String getProId() {
+        return proId;
     }
 
-    public void setBenId(String benId) {
-        this.benId = benId;
+    public void setProId(String proId) {
+        this.proId = proId;
     }
 
     public String getBtpId() {
@@ -37,14 +36,6 @@ public class PmsBenificiaryForm extends ActionForm {
 
     public void setBtpId(String btpId) {
         this.btpId = btpId;
-    }
-
-    public String getBenDesc() {
-        return benDesc;
-    }
-
-    public void setBenDesc(String benDesc) {
-        this.benDesc = benDesc;
     }
 
     public int getBenTotal() {

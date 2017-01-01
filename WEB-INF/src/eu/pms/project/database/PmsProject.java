@@ -32,6 +32,7 @@ public class PmsProject implements Serializable {
     private String preId;
     private String comLatitude;
     private String comLongitude;
+    private String secType;
     /** default constructor */
     public PmsProject() {
     }
@@ -222,6 +223,14 @@ public class PmsProject implements Serializable {
 
     public void setComLongitude(String comLongitude) {
         this.comLongitude = comLongitude;
+    }
+
+    public String getSecType() {
+        return secType;
+    }
+
+    public void setSecType(String secType) {
+        this.secType = secType;
     }
 
     public String toString() {

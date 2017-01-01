@@ -54,6 +54,7 @@
                             <html:select property="masId" disabled="true"
                                          styleClass="selectpicker form-control">
                                 <logic:present name="masterPlanList">
+                                    <html:option value="">Select</html:option>
                                     <html:options collection="masterPlanList" property="masId" labelProperty="masMpName"/>
                                 </logic:present>
                             </html:select>
@@ -94,7 +95,32 @@
                     <div class="col-md-6">
                         <label for="intSource" class="col-sm-3 col-form-label">Source:</label>
                         <div class="col-sm-9">
-                            <html:text property="intSource" styleClass="form-control" styleId="intSource" disabled="true"/>
+                            <html:select property="intSource" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="MASTER">Master Plan</html:option>
+                                <html:option value="ASSESS">Assessment</html:option>
+                                <html:option value="COMM">Comunity Representative</html:option>
+                            </html:select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+
+                    <div class="col-md-6">
+                        <label for="intEstimatedBudget" class="col-sm-3 col-form-label">Priority:</label>
+                        <div class="col-sm-9">
+                            <html:select property="intPriority" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="H">High</html:option>
+                                <html:option value="M">Medium</html:option>
+                                <html:option value="L">Low</html:option>
+
+                            </html:select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="intSource" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+
                         </div>
                     </div>
                 </div>

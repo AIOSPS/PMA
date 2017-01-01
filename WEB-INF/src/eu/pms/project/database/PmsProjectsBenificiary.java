@@ -7,11 +7,20 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class PmsProjectsBenificiary implements Serializable {
 
     private PmsProjectsBenificiaryPK compId;
+    private int benTotal;
     private String username;
     private java.util.Date timeStamp;
 
     /** default constructor */
     public PmsProjectsBenificiary() {
+    }
+
+    public int getBenTotal() {
+        return benTotal;
+    }
+
+    public void setBenTotal(int benTotal) {
+        this.benTotal = benTotal;
     }
 
     public String getUsername() {

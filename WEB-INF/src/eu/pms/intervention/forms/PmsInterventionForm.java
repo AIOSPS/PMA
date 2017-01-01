@@ -20,7 +20,7 @@ public class PmsInterventionForm extends ActionForm {
     private String intDesc;
     private int intEstimatedBudget;
     private String intSource;
-
+    private String intPriority;
     /** default constructor */
     public PmsInterventionForm() {
     }
@@ -71,6 +71,14 @@ public class PmsInterventionForm extends ActionForm {
 
     public void setIntSource(String intSource) {
         this.intSource = intSource;
+    }
+
+    public String getIntPriority() {
+        return intPriority;
+    }
+
+    public void setIntPriority(String intPriority) {
+        this.intPriority = intPriority;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

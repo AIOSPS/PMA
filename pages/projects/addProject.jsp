@@ -119,13 +119,44 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="proTitle" class="col-sm-3 col-form-label">Project Title:</label>
+                        <label for="secType" class="col-sm-3 col-form-label">Project Type:</label>
                         <div class="col-sm-9">
-                            <html:text property="proTitle" styleClass="form-control" styleId="proTitle"/>
+                            <html:select property="secType" styleClass="selectpicker form-control"
+                                         onchange="setProjectTypeConfig(this.value)">
+                                <html:option value="H">Humman</html:option>
+                                <html:option value="D">Development</html:option>
+                                <html:option value="Oth">Others</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
-
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="secId" class="col-sm-3 col-form-label"> Sector:</label>
+                        <div class="col-sm-9">
+                            <html:select property="secId" styleClass="selectpicker form-control">
+                                <logic:present name="clusterHList">
+                                    <optgroup label="Humman" id="Humman">
+                                        <html:options collection="clusterHList" property="secId"
+                                                      labelProperty="secDesc"/>
+                                    </optgroup>
+                                </logic:present>
+                                <logic:present name="clusterDList">
+                                    <optgroup label="Development" id="Development">
+                                        <html:options collection="clusterDList" property="secId"
+                                                      labelProperty="secDesc"/>
+                                    </optgroup>
+                                </logic:present>
+                            </html:select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                            <label for="proTitle" class="col-sm-3 col-form-label">Project Title:</label>
+                            <div class="col-sm-9">
+                                <html:text property="proTitle" styleClass="form-control" styleId="proTitle"/>
+                            </div>
+                    </div>
+                  </div>
 
                 <div class="form-group row">
                     <div class="col-md-6">
@@ -252,33 +283,6 @@
                 </div>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="cluType" class="col-sm-3 col-form-label">Project Type:</label>
-                        <div class="col-sm-9">
-                            <html:select property="secType" styleClass="selectpicker form-control"
-                                         onchange="setProjectTypeConfig(this.value)">
-                                <html:option value="Hum">Humman</html:option>
-                                <html:option value="Dev">Development</html:option>
-                            </html:select>
-                        </div>
-                    </div>
-                    <div class="col-md-6  ">
-                        <label for="communityProjectList" class="col-sm-3 col-form-label"> Community:</label>
-                        <div class="col-sm-9">
-
-                            <html:select property="communityProjectList" multiple="true"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="communityList">
-                                <html:options collection="communityList" property="comId" labelProperty="comName"/>
-                                </logic:present>
-                            </html:select>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="form-group row">
                     <div class="col-md-12">
                         <fieldset class="isClustr">
                             <legend> Cluster</legend>
@@ -303,23 +307,17 @@
                                 </fieldset>
                             </div>
 
-                            <div class="col-md-6">
-                                <label for="secId" class="col-sm-3 col-form-label"> Sector:</label>
+                            <div class="col-md-6  ">
+                                <label for="communityProjectList" class="col-sm-3 col-form-label"> Community:</label>
                                 <div class="col-sm-9">
-                                    <html:select property="secId" styleClass="selectpicker form-control">
-                                        <logic:present name="clusterHList">
-                                        <optgroup label="Humman" id="Humman">
-                                        <html:options collection="clusterHList" property="secId"
-                                                      labelProperty="secDesc"/>
-                                        </optgroup>
-                                        </logic:present>
-                                        <logic:present name="clusterDList">
-                                        <optgroup label="Development" id="Development">
-                                        <html:options collection="clusterDList" property="secId"
-                                                      labelProperty="secDesc"/>
-                                        </optgroup>
+
+                                    <html:select property="communityProjectList" multiple="true"
+                                                 styleClass="selectpicker form-control">
+                                        <logic:present name="communityList">
+                                            <html:options collection="communityList" property="comId" labelProperty="comName"/>
                                         </logic:present>
                                     </html:select>
+
                                 </div>
                             </div>
 
@@ -373,8 +371,8 @@
                         <div class="col-sm-9">
                             <html:select property="benificiaryProjectList" multiple="true"
                                          styleClass="selectpicker form-control">
-                                <logic:present name="benificiryList">
-                                <html:options collection="benificiryList" property="benId" labelProperty="benDesc"/>
+                                <logic:present name="benificiryTypeList">
+                                <html:options collection="benificiryTypeList" property="lookupId" labelProperty="lookupDesc"/>
                                 </logic:present>
                             </html:select>
                         </div>
@@ -386,7 +384,7 @@
                         <div class="col-sm-9">
                             <html:select property="indicatorProjectList" styleClass="selectpicker form-control">
                                 <logic:present name="indicatorList">
-                                <html:options collection="indicatorList" property="compId.compId"
+                                <html:options collection="indicatorList" property="compId.indId"
                                               labelProperty="indTitle"/>
                                 </logic:present>
                             </html:select>

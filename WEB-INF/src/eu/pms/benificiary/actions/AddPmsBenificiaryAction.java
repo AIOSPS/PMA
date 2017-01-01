@@ -29,15 +29,13 @@ public class AddPmsBenificiaryAction extends Action {
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
         PmsBenificiaryForm pmsBenificiaryForm = (PmsBenificiaryForm) form;
-        String benId = pmsBenificiaryForm.getBenId();
-        String benDesc = pmsBenificiaryForm.getBenDesc();
+        String proId = pmsBenificiaryForm.getProId();
         String btpId = pmsBenificiaryForm.getBtpId();
         int benTotal = pmsBenificiaryForm.getBenTotal();
 
 
         ArrayList inputs = new ArrayList();
-        inputs.add(benId);
-        inputs.add(benDesc);
+        inputs.add(proId);
         inputs.add(benTotal);
         inputs.add(btpId);
 
