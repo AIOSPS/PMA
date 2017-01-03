@@ -25,12 +25,12 @@ public class AddPmsIncidentUseCase implements ComponentUseCase {
             String proId = (String) itr.next();
             String incOchaId = (String) itr.next();
             String incDescription = (String) itr.next();
-            int incAffectedWomen = (Integer) itr.next();
-            int incAffectedMen = (Integer) itr.next();
-            int incAffectedAdaults = (Integer) itr.next();
-            int incAffectedChildren = (Integer) itr.next();
-            int incDisplacedWomen = (Integer) itr.next();
-            int incDemolishedWomen = (Integer) itr.next();
+            Integer incAffectedWomen = (Integer) itr.next();
+            Integer incAffectedMen = (Integer) itr.next();
+            Integer incAffectedAdaults = (Integer) itr.next();
+            Integer incAffectedChildren = (Integer) itr.next();
+            Integer incDisplacedWomen = (Integer) itr.next();
+            Integer incDemolishedStructure = (Integer) itr.next();
             String incSourceLink = (String) itr.next();
             String incType = (String) itr.next();
             String incTimeStamp = (String) itr.next();
@@ -39,9 +39,6 @@ public class AddPmsIncidentUseCase implements ComponentUseCase {
             int incDisplacedMen = (Integer) itr.next();
             int incDisplacedAdult = (Integer) itr.next();
             int incDisplacedChildren = (Integer) itr.next();
-            int incDemolishedMen = (Integer) itr.next();
-            int incDemolishedAdult = (Integer) itr.next();
-            int incDemolishedChildren = (Integer) itr.next();
 
             String username = "pms";
             Date timeStamp = new Date();
@@ -61,10 +58,7 @@ public class AddPmsIncidentUseCase implements ComponentUseCase {
             pmsIncident.setIncDisplacedMen(incDisplacedMen);
             pmsIncident.setIncDisplacedAdult(incDisplacedAdult);
             pmsIncident.setIncDisplacedChildren(incDisplacedChildren);
-            pmsIncident.setIncDemolishedWomen(incDemolishedWomen);
-            pmsIncident.setIncDemolishedMen(incDemolishedMen);
-            pmsIncident.setIncDemolishedAdult(incDemolishedAdult);
-            pmsIncident.setIncDemolishedChildren(incDemolishedChildren);
+            pmsIncident.setIncDemolishedStructure(incDemolishedStructure);
             pmsIncident.setIncType(incType);
             pmsIncident.setIncSourceLink(incSourceLink);
             pmsIncident.setIncTimeStamp(DateTool.convertStringToDate(incTimeStamp,DateTool.DD_MM_YYYY));

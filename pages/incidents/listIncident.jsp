@@ -105,10 +105,7 @@
                     <th class="text-center">Displaced Men</th>
                     <th class="text-center">Displaced Adults</th>
                     <th class="text-center">Displaced Children</th>
-                    <th class="text-center">Dimolished Women</th>
-                    <th class="text-center">Demolished Men</th>
-                    <th class="text-center">Demolished Adults</th>
-                    <th class="text-center">Demolished Children</th>
+                    <th class="text-center">Dimolished Structure</th>
                     <th class="text-center">Location Lattitude</th>
                     <th class="text-center">Location Longitude</th>
                     <th class="text-center"></th>
@@ -128,10 +125,7 @@
                     <th class="text-center">Displaced Men</th>
                     <th class="text-center">Displaced Adults</th>
                     <th class="text-center">Displaced Children</th>
-                    <th class="text-center">Dimolished Women</th>
-                    <th class="text-center">Demolished Men</th>
-                    <th class="text-center">Demolished Adults</th>
-                    <th class="text-center">Demolished Children</th>
+                    <th class="text-center">Dimolished Structure</th>
                     <th class="text-center">Location Lattitude</th>
                     <th class="text-center">Location Longitude</th>
                     <th class="text-center"></th>
@@ -154,10 +148,7 @@
                             <td ><bean:write name="pmsIncidentList" property="incDisplacedMen"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incDisplacedAdult"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incDisplacedChildren"/></td>
-                            <td ><bean:write name="pmsIncidentList" property="incDemolishedWomen"/></td>
-                            <td ><bean:write name="pmsIncidentList" property="incDemolishedMen"/></td>
-                            <td ><bean:write name="pmsIncidentList" property="incDemolishedAdult"/></td>
-                            <td ><bean:write name="pmsIncidentList" property="incDemolishedChildren"/></td>
+                            <td ><bean:write name="pmsIncidentList" property="incDemolishedStructure"/></td>
                             <td ><bean:write name="pmsIncidentList" property="locLatitude"/></td>
                             <td ><bean:write name="pmsIncidentList" property="locLongitude"/></td>
                             <td class="text-center">

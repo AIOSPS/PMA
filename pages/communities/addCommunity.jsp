@@ -21,6 +21,28 @@
         $("#comLocationShortDescription").prop('required', true);
         $("#comTopology").attr("placeholder", "Topology");
         $("#comTopology").prop('required', true);
+        $("#comSchoolsInfo").attr("placeholder", "Schools Information");
+        $("#comSchoolsInfo").prop('required', true);
+        $("#comHealthSchoolsInfo").attr("placeholder", "Health Schools Information");
+        $("#comHealthSchoolsInfo").prop('required', true);
+        $("#comReligionCenters").attr("placeholder", "Religion Centers");
+        $("#comReligionCenters").prop('required', true);
+        $("#comCemetery").attr("placeholder", "Cemetery");
+        $("#comCemetery").prop('required', true);
+        $("#comWaterNetworkInfo").attr("placeholder", "Water Network Information");
+        $("#comWaterNetworkInfo").prop('required', true);
+        $("#comSewerageNetworkInfo").attr("placeholder", "Sewerage Network Information");
+        $("#comSewerageNetworkInfo").prop('required', true);
+        $("#comElectricalNetworkInfo").attr("placeholder", "Electrical Network Information");
+        $("#comElectricalNetworkInfo").prop('required', true);
+        $("#comSolidWasteServiceInfo").attr("placeholder", "Solid Waste Service Information");
+        $("#comSolidWasteServiceInfo").prop('required', true);
+        $("#comRoadNetworkInfo").attr("placeholder", "Road Network Information");
+        $("#comRoadNetworkInfo").prop('required', true);
+        $("#comTransportNetworkInfo").attr("placeholder", "Transport Network Information");
+        $("#comTransportNetworkInfo").prop('required', true);
+        $("#comEcnonomicActivitiesInfo").attr("placeholder", "Economic Activities Information");
+        $("#comEcnonomicActivitiesInfo").prop('required', true);
     });
 </script>
 
@@ -258,9 +280,9 @@
                         <label for="comPercentAreaC" class="col-sm-3 col-form-label">Percent Area C:</label>
                         <div class="col-sm-9">
                             <html:select property="comPercentAreaC" styleClass="selectpicker form-control">
-                                <html:option value="1">> 50%</html:option>
-                                <html:option value="2">Between 50% and 100%</html:option>
-                                <html:option value="3">100%</html:option>
+                                <html:option value="1">Less than 50%</html:option>
+                                <html:option value="2">More than or equal 50% and less than 100%</html:option>
+                                <html:option value="3">Yes</html:option>
                             </html:select>
                         </div>
                     </div>
