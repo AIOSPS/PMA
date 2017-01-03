@@ -234,11 +234,11 @@
         <property name="comLocationShortDescription" type="java.lang.String" column="com_location_short_description"/>
         <!--<property name="comHistoricalBackground" type="java.lang.String" column="com_historical_background"/>-->
         <property name="comTopology" type="java.lang.String" column="com_topology"/>
-        <property name="comResidentsTotal" type="int" column="com_residents_total"/>
-        <property name="comMaleTotal" type="int" column="com_male_total"/>
-        <property name="comFemaleTotal" type="int" column="com_female_total"/>
+        <property name="comResidentsTotal" type="java.lang.Integer" column="com_residents_total"/>
+        <property name="comMaleTotal" type="java.lang.Integer" column="com_male_total"/>
+        <property name="comFemaleTotal" type="java.lang.Integer" column="com_female_total"/>
         <!--<property name="comYouthTotal" type="int" column="com_youth_total"/>-->
-        <property name="comKidsTotal" type="int" column="com_kids_total"/>
+        <property name="comKidsTotal" type="java.lang.Integer" column="com_kids_total"/>
         <property name="comSchoolsInfo" type="java.lang.String" column="com_schools_info"/>
         <property name="comHealthSchoolsInfo" type="java.lang.String" column="com_health_schools_info"/>
         <property name="comReligionCenters" type="java.lang.String" column="com_religion_centers"/>
