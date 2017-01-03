@@ -439,4 +439,13 @@
                 order by a.watUseWatTanker
                   ]]>
     </query>
+    <query
+            name="getPmsActivitiesByIntervention">
+        <![CDATA[
+                from eu.pms.project.database.PmsActivity a
+                where a.compId.intId = ?
+                and a.compId.secId = ?
+                order by a.actDesc
+                  ]]>
+    </query>
 </hibernate-mapping>

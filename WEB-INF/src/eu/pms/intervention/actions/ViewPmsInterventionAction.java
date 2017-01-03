@@ -3,10 +3,7 @@ package eu.pms.intervention.actions;
 
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.forms.PmsInterventionForm;
-import eu.pms.intervention.useCases.GetPmsInterventionUseCase;
-import eu.pms.intervention.useCases.GetPmsMasterPlanUseCase;
-import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
-import eu.pms.intervention.useCases.GetPmsSubSectorsUseCase;
+import eu.pms.intervention.useCases.*;
 import eu.pms.project.database.PmsIntervention;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -48,7 +45,8 @@ public class ViewPmsInterventionAction extends Action {
             PmsInterventionForm pmsInterventionForm = (PmsInterventionForm) form;
             fillPmsInterventionData(pmsInterventionForm, pmsIntervention);
         }
-
+        List activitiesList = (List) new GetPmsActivitiesByInterventionUseCase().execute(inputs, request);
+        request.setAttribute("activitiesList", activitiesList);
 
         return mapping.findForward("success");
     }

@@ -18,7 +18,7 @@ public class PmsInterventionForm extends ActionForm {
     private String secId;
     private String masId;
     private String intDesc;
-    private int intEstimatedBudget;
+    private Integer intEstimatedBudget;
     private String intSource;
     private String intPriority;
     /** default constructor */
@@ -57,11 +57,11 @@ public class PmsInterventionForm extends ActionForm {
         this.intDesc = intDesc;
     }
 
-    public int getIntEstimatedBudget() {
+    public Integer getIntEstimatedBudget() {
         return intEstimatedBudget;
     }
 
-    public void setIntEstimatedBudget(int intEstimatedBudget) {
+    public void setIntEstimatedBudget(Integer intEstimatedBudget) {
         this.intEstimatedBudget = intEstimatedBudget;
     }
 
@@ -81,6 +81,16 @@ public class PmsInterventionForm extends ActionForm {
         this.intPriority = intPriority;
     }
 
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        intId = null;
+        secId = null;
+        masId = null;
+        intDesc = null;
+        intEstimatedBudget = null;
+        intSource = null;
+        intPriority = null;
+    }
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         return errors;

@@ -2,6 +2,7 @@ package eu.pms.intervention.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.login.database.SecUser;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
 
@@ -25,8 +26,8 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
             int intEstimatedBudget = (Integer) itr.next();
             String intSource = (String) itr.next();
             String intPriority = (String) itr.next();
-
-            String username = "pms";
+            ArrayList activitiesList = (ArrayList) itr.next();
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             PmsIntervention pmsIntervention = new PmsIntervention();
@@ -44,12 +45,19 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
 
             List insertList = new ArrayList();
             insertList.add(pmsIntervention);
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsActivity a where a.compId.intId='"+intId+"' and a.compId.secId='"+secId+"'");
+            if(activitiesList!=null && activitiesList.size()>0) {
+                Iterator itrActv = activitiesList.iterator();
+                while (itrActv.hasNext()) {
+                    insertList.add((PmsActivity) itrActv.next());
+                }
+            }
             new DataAccessObjectImpl().insertOrUpdate(insertList);
 
         } catch (Exception ce) {
-            System.err.println("Error add a new PMS Intervention: " + ce);
+            System.err.println("Error add a new PMS Intervention and activities: " + ce);
             retList = new ArrayList();
-            retList.add(new String("Error add a new PMS Intervention :" + ce.getMessage()));
+            retList.add(new String("Error add a new PMS Intervention and activities :" + ce.getMessage()));
         }
         return retList;
     }
