@@ -7,25 +7,25 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#agrId").attr("placeholder", "agrId");
+        $("#agrId").attr("placeholder", "Agriculture Id");
         $("#agrId").prop('required', true);
-        $("#comId").attr("placeholder", "comId");
+        $("#comId").attr("placeholder", "Community");
         $("#comId").prop('required', true);
-        $("#agrArea").attr("placeholder", "agrArea");
+        $("#agrArea").attr("placeholder", "Agriculture Area");
         $("#agrArea").prop('required', true);
-        $("#agrNoCowYear").attr("placeholder", "agrNoCowYear");
+        $("#agrNoCowYear").attr("placeholder", "No Cow Year");
         $("#agrNoCowYear").prop('required', true);
-        $("#agrNoSheepYear").attr("placeholder", "agrNoSheepYear");
+        $("#agrNoSheepYear").attr("placeholder", "No Sheep Year");
         $("#agrNoSheepYear").prop('required', true);
-        $("#agrCostWaterTank").attr("placeholder", "agrCostWaterTank");
+        $("#agrCostWaterTank").attr("placeholder", "Cost Water Tank");
         $("#agrCostWaterTank").prop('required', true);
-        $("#agrHerdingArea").attr("placeholder", "agrHerdingArea");
+        $("#agrHerdingArea").attr("placeholder", "Herding Area");
         $("#agrHerdingArea").prop('required', true);
-        $("#agrMilitaryArea").attr("placeholder", "agrMilitaryArea");
+        $("#agrMilitaryArea").attr("placeholder", "Military Area");
         $("#agrMilitaryArea").prop('required', true);
-        $("#agrBypassRoadArea").attr("placeholder", "agrBypassRoadArea");
+        $("#agrBypassRoadArea").attr("placeholder", "Bypass Road Area");
         $("#agrBypassRoadArea").prop('required', true);
-        $("#agrSurveyDate").attr("placeholder", "agrSurveyDate");
+        $("#agrSurveyDate").attr("placeholder", "Survey Date");
         $("#agrSurveyDate").prop('required', true);
     });
 </script>
@@ -54,14 +54,14 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrId" class="col-sm-3 col-form-label">agrId:</label>
+                        <label for="agrId" class="col-sm-3 col-form-label">Agriculture Id:</label>
                         <div class="col-sm-9">
                             <html:text property="agrId" styleClass="form-control" styleId="agrId" disabled="true"/>
                             <html:hidden property="agrId"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comId" class="col-sm-3 col-form-label">comId:</label>
+                        <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
                             <html:select property="comId"
                                          styleClass="selectpicker form-control" disabled="true">
@@ -76,13 +76,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrArea" class="col-sm-3 col-form-label">agrArea:</label>
+                        <label for="agrArea" class="col-sm-3 col-form-label">Agriculture Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrArea" styleClass="form-control" styleId="agrArea" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrNoCowYear" class="col-sm-3 col-form-label">agrNoCowYear:</label>
+                        <label for="agrNoCowYear" class="col-sm-3 col-form-label">No Cow Year:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoCowYear" styleClass="form-control" styleId="agrNoCowYear" disabled="true"/>
                         </div>
@@ -90,13 +90,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label">agrNoSheepYear:</label>
+                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label">No Sheep Year:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoSheepYear" styleClass="form-control" styleId="agrNoSheepYear" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrCostWaterTank" class="col-sm-3 col-form-label">agrCostWaterTank:</label>
+                        <label for="agrCostWaterTank" class="col-sm-3 col-form-label">Cost Water Tank:</label>
                         <div class="col-sm-9">
                             <html:text property="agrCostWaterTank" styleClass="form-control" styleId="agrCostWaterTank" disabled="true"/>
                         </div>
@@ -104,13 +104,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrHerdingArea" class="col-sm-3 col-form-label">agrHerdingArea:</label>
+                        <label for="agrHerdingArea" class="col-sm-3 col-form-label">Herding Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrHerdingArea" styleClass="form-control" styleId="agrHerdingArea" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrMilitaryArea" class="col-sm-3 col-form-label">agrMilitaryArea:</label>
+                        <label for="agrMilitaryArea" class="col-sm-3 col-form-label">Military Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrMilitaryArea" styleClass="form-control" styleId="agrMilitaryArea" disabled="true"/>
                         </div>
@@ -121,13 +121,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">agrBypassRoadArea:</label>
+                        <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">BypassRoad Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrBypassRoadArea" styleClass="form-control" styleId="agrBypassRoadArea" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrSurveyDate" class="col-sm-3 col-form-label">agrSurveyDate:</label>
+                        <label for="agrSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>
 
                         <div class='input-group date col-sm-9' id='aSurveyDate'>
                             <html:text property="agrSurveyDate" styleClass="form-control" styleId="agrSurveyDate" disabled="true"/>
@@ -206,46 +206,46 @@
     })(window);
 
     InvalidInputHelper(document.getElementsByName("agrId")[0], {
-        defaultText: "Please Enter The agrId ",
-        emptyText: "Please Enter The agrId ",
+        defaultText: "Please Enter The Agriculture Id ",
+        emptyText: "Please Enter The Agriculture Id ",
 //        invalidText: function (input) {
 //            return 'The email address "' + input.value + '" is invalid!';
 //        }
     });
     InvalidInputHelper(document.getElementsByName("comId")[0], {
-        defaultText: "Please Enter The comId ",
-        emptyText: "Please Enter The comId ",
+        defaultText: "Please Enter The Community ",
+        emptyText: "Please Enter The Community ",
     });
     InvalidInputHelper(document.getElementsByName("agrArea")[0], {
-        defaultText: "Please Enter The agrArea ",
-        emptyText: "Please Enter The agrArea ",
+        defaultText: "Please Enter The Agriculture Area ",
+        emptyText: "Please Enter The Agriculture Area ",
     });
     InvalidInputHelper(document.getElementsByName("agrNoCowYear")[0], {
-        defaultText: "Please Enter The agrNoCowYear ",
-        emptyText: "Please Enter The agrNoCowYear ",
+        defaultText: "Please Enter The No Cow Year ",
+        emptyText: "Please Enter The No Cow Year ",
     });
     InvalidInputHelper(document.getElementsByName("agrNoSheepYear")[0], {
-        defaultText: "Please Enter The agrNoSheepYear ",
-        emptyText: "Please Enter The agrNoSheepYear ",
+        defaultText: "Please Enter The No Sheep Year ",
+        emptyText: "Please Enter The No Sheep Year ",
     });
     InvalidInputHelper(document.getElementsByName("agrCostWaterTank")[0], {
-        defaultText: "Please Enter The agrCostWaterTank ",
-        emptyText: "Please Enter The agrCostWaterTank ",
+        defaultText: "Please Enter The Cost Water Tank ",
+        emptyText: "Please Enter The Cost Water Tank ",
     });
     InvalidInputHelper(document.getElementsByName("agrHerdingArea")[0], {
-        defaultText: "Please Enter The agrHerdingArea ",
-        emptyText: "Please Enter The agrHerdingArea ",
+        defaultText: "Please Enter The Herding Area ",
+        emptyText: "Please Enter The Herding Area ",
     });
     InvalidInputHelper(document.getElementsByName("agrMilitaryArea")[0], {
-        defaultText: "Please Enter The agrMilitaryArea ",
-        emptyText: "Please Enter The agrMilitaryArea ",
+        defaultText: "Please Enter The Military Area ",
+        emptyText: "Please Enter The Military Area ",
     });
     InvalidInputHelper(document.getElementsByName("agrBypassRoadArea")[0], {
-        defaultText: "Please Enter The agrBypassRoadArea ",
-        emptyText: "Please Enter The agrBypassRoadArea ",
+        defaultText: "Please Enter The BypassRoad Area ",
+        emptyText: "Please Enter The BypassRoad Area ",
     });
     InvalidInputHelper(document.getElementsByName("agrSurveyDate")[0], {
-        defaultText: "Please Enter The agrSurveyDate ",
-        emptyText: "Please Enter The agrSurveyDate ",
+        defaultText: "Please Enter The Survey Date ",
+        emptyText: "Please Enter The Survey Date ",
     });
 </script>

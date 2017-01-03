@@ -125,7 +125,54 @@
                         </div>
                     </div>
                 </div>
+                <h2 class="titleSep"><span>Activity Information</span></h2>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                        <thead>
+                                        <tr >
+                                            <th width="15%" class="text-center">Activity ID</th>
+                                            <th width="35%" class="text-center">Description</th>
+                                            <th width="15%" class="text-center">Unit</th>
+                                            <th width="15%" class="text-center">Unit Qty</th>
+                                            <th width="15%" class="text-center">Estimated Budget</th>
+                                            <th width="5%" class="text-center">
+                                                <a id="add_row" class="btn btn-primary fa fa-plus"></a>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="actId">
+                                                <input type="text" id="actId0" name="actId0"  placeholder='Activity ID' class="form-control"/>
+                                            </td>
+                                            <td data-name="actDesc">
+                                                <input type="text" id="actDesc0" name="actDesc0" placeholder='Description' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnit">
+                                                <input type="text" id="actUnit0" name="actUnit0" placeholder='Unit' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnitQty">
+                                                <input type="text" id="actUnitQty0" name="actUnitQty0" placeholder='Unit Qty' class="form-control"/>
+                                            </td>
+                                            <td data-name="actEstimatedBudget">
+                                                <input type="text" id="actEstimatedBudget0" name="actEstimatedBudget0" placeholder='Estimated Budget' class="form-control"/>
+                                            </td>
+                                            <td data-name="del">
+                                                <button nam="del0" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                         <html:submit value="Submit" styleClass="btn btn-primary"/>
@@ -138,7 +185,10 @@
 
 
     </div>
-    </div>
+
+
+
+
 </article>
 
 
@@ -200,4 +250,93 @@
         defaultText: "Please Enter The Source ",
         emptyText: "Please Enter The Source ",
     });
+
+
+//   table script for activities
+    $(document).ready(function() {
+        $("#add_row").on("click", function() {
+            // Dynamic Rows Code
+
+            // Get max row id and set new id
+            var newid = 0;
+            $.each($("#tab_logic tr"), function() {
+                if (parseInt($(this).data("id")) > newid) {
+                    newid = parseInt($(this).data("id"));
+                }
+            });
+            newid++;
+
+            var tr = $("<tr></tr>", {
+                id: "addr"+newid,
+                "data-id": newid
+            });
+
+            // loop through each td and create new elements with name of newid
+            $.each($("#tab_logic tbody tr:nth(0) td"), function() {
+                var cur_td = $(this);
+
+                var children = cur_td.children();
+
+                // add new td and element if it has a nane
+                if ($(this).data("name") != undefined) {
+                    var td = $("<td></td>", {
+                        "data-name": $(cur_td).data("name")
+                    });
+
+                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
+                    c.attr("name", $(cur_td).data("name") + newid);
+                    c.attr("id", $(cur_td).data("name") + newid);
+                    c.appendTo($(td));
+                    td.appendTo($(tr));
+                } else {
+                    var td = $("<td></td>", {
+                        'text': $('#tab_logic tr').length
+                    }).appendTo($(tr));
+                }
+            });
+
+            // add delete button and td
+            /*
+             $("<td></td>").append(
+             $("<button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>")
+             .click(function() {
+             $(this).closest("tr").remove();
+             })
+             ).appendTo($(tr));
+             */
+
+            // add the new row
+            $(tr).appendTo($('#tab_logic'));
+
+            $(tr).find("td button.row-remove").on("click", function() {
+                $(this).closest("tr").remove();
+            });
+        });
+
+
+
+
+        // Sortable Code
+        var fixHelperModified = function(e, tr) {
+            var $originals = tr.children();
+            var $helper = tr.clone();
+
+            $helper.children().each(function(index) {
+                $(this).width($originals.eq(index).width())
+            });
+
+            return $helper;
+        };
+
+        $(".table-sortable tbody").sortable({
+            helper: fixHelperModified
+        }).disableSelection();
+
+        $(".table-sortable thead").disableSelection();
+
+
+
+        $("#add_row").trigger("click");
+    });
+
 </script>

@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="eu.pms.project.database.PmsActivity" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -45,6 +48,7 @@
                         <label for="intId" class="col-sm-3 col-form-label">Intervention ID:</label>
                         <div class="col-sm-9">
                             <html:text property="intId" styleClass="form-control" styleId="intId" disabled="true"/>
+                            <html:hidden property="intId"/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -66,7 +70,8 @@
                     <div class="col-md-6">
                         <label for="secId" class="col-sm-3 col-form-label">Sector:</label>
                         <div class="col-sm-9">
-                            <html:select property="secId"
+                            <html:hidden property="secId"/>
+                            <html:select property="secId" disabled="true"
                                          styleClass="selectpicker form-control">
                                 <logic:present name="sectorsList">
                                     <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
@@ -122,7 +127,88 @@
                         </div>
                     </div>
                 </div>
+                <h2 class="titleSep"><span>Activity Information</span></h2>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-striped table-bordered" id="tab_logic">
+                                        <thead>
+                                        <tr >
+                                            <th width="15%" class="text-center">Activity ID</th>
+                                            <th width="35%" class="text-center">Description</th>
+                                            <th width="15%" class="text-center">Unit</th>
+                                            <th width="15%" class="text-center">Unit Qty</th>
+                                            <th width="15%" class="text-center">Estimated Budget</th>
+                                            <th width="5%" class="text-center">
+                                                <a id="add_row" class="btn btn-primary fa fa-plus"></a>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="actId">
+                                                <input type="text" id="actId0" name="actId0"  placeholder='Activity ID' class="form-control"/>
+                                            </td>
+                                            <td data-name="actDesc">
+                                                <input type="text" id="actDesc0" name="actDesc0" placeholder='Description' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnit">
+                                                <input type="text" id="actUnit0" name="actUnit0" placeholder='Unit' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnitQty">
+                                                <input type="text" id="actUnitQty0" name="actUnitQty0" placeholder='Unit Qty' class="form-control"/>
+                                            </td>
+                                            <td data-name="actEstimatedBudget">
+                                                <input type="text" id="actEstimatedBudget0" name="actEstimatedBudget0" placeholder='Estimated Budget' class="form-control"/>
+                                            </td>
+                                            <td data-name="del">
+                                                <button nam="del0" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button>
+                                            </td>
+                                        </tr>
+                                        <logic:present name="activitiesList">
+                                        <% List activitiesList = (List) request.getAttribute("activitiesList");
+                                            int count = 1;
+                                            Iterator itr = activitiesList.iterator();
+                                            PmsActivity pmsActivity = null;
+                                            while (itr.hasNext()){
+                                                pmsActivity = (PmsActivity) itr.next();
+                                        %>
+                                        <tr id='addr<%=count%>' data-id="<%=count%>">
+                                            <td data-name="actId">
+                                                <input type="text" id="actId<%=count%>" name="actId<%=count%>" value="<%=pmsActivity.getCompId().getActId()%>"  placeholder='Activity ID' class="form-control"/>
+                                            </td>
+                                            <td data-name="actDesc">
+                                                <input type="text" id="actDesc<%=count%>" name="actDesc<%=count%>" value="<%=pmsActivity.getActDesc()%>" placeholder='Description' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnit">
+                                                <input type="text" id="actUnit<%=count%>" name="actUnit<%=count%>" value="<%=pmsActivity.getActUnit()%>" placeholder='Unit' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnitQty">
+                                                <input type="text" id="actUnitQty<%=count%>" name="actUnitQty<%=count%>" value="<%=pmsActivity.getActUnitQty()%>" placeholder='Unit Qty' class="form-control"/>
+                                            </td>
+                                            <td data-name="actEstimatedBudget">
+                                                <input type="text" id="actEstimatedBudget<%=count%>" name="actEstimatedBudget<%=count%>" value="<%=pmsActivity.getActEstimatedBudget()%>" placeholder='Estimated Budget' class="form-control"/>
+                                            </td>
+                                            <td data-name="del">
+                                                <button nam="del0" type="button" onclick="removeTr('del<%=count%>')" class="btn btn-danger glyphicon glyphicon-remove row-remove" value name="del<%=count%>" id="del<%=count%>"></button>
 
+                                            </td>
+                                        </tr>
+                                        <%
+                                                count++;
+                                            }
+                                        %>
+                                        </logic:present>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                         <html:submit value="Submit" styleClass="btn btn-primary"/>
@@ -196,4 +282,93 @@
         defaultText: "Please Enter The Source ",
         emptyText: "Please Enter The Source ",
     });
+    //   table script for activities
+    $(document).ready(function() {
+        $("#add_row").on("click", function() {
+            // Dynamic Rows Code
+
+            // Get max row id and set new id
+            var newid = 0;
+            $.each($("#tab_logic tr"), function() {
+                if (parseInt($(this).data("id")) > newid) {
+                    newid = parseInt($(this).data("id"));
+                }
+            });
+            newid++;
+
+            var tr = $("<tr></tr>", {
+                id: "addr"+newid,
+                "data-id": newid
+            });
+
+            // loop through each td and create new elements with name of newid
+            $.each($("#tab_logic tbody tr:nth(0) td"), function() {
+                var cur_td = $(this);
+
+                var children = cur_td.children();
+
+                // add new td and element if it has a nane
+                if ($(this).data("name") != undefined) {
+                    var td = $("<td></td>", {
+                        "data-name": $(cur_td).data("name")
+                    });
+
+                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
+                    c.attr("name", $(cur_td).data("name") + newid);
+                    c.attr("id", $(cur_td).data("name") + newid);
+                    c.appendTo($(td));
+                    td.appendTo($(tr));
+                } else {
+                    var td = $("<td></td>", {
+                        'text': $('#tab_logic tr').length
+                    }).appendTo($(tr));
+                }
+            });
+
+            // add delete button and td
+            /*
+             $("<td></td>").append(
+             $("<button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>")
+             .click(function() {
+             $(this).closest("tr").remove();
+             })
+             ).appendTo($(tr));
+             */
+
+            // add the new row
+            $(tr).appendTo($('#tab_logic'));
+
+            $(tr).find("td button.row-remove").on("click", function() {
+                $(this).closest("tr").remove();
+            });
+        });
+
+
+
+
+        // Sortable Code
+        var fixHelperModified = function(e, tr) {
+            var $originals = tr.children();
+            var $helper = tr.clone();
+
+            $helper.children().each(function(index) {
+                $(this).width($originals.eq(index).width())
+            });
+
+            return $helper;
+        };
+
+        $(".table-sortable tbody").sortable({
+            helper: fixHelperModified
+        }).disableSelection();
+
+        $(".table-sortable thead").disableSelection();
+
+
+
+        $("#add_row").trigger("click");
+    });
+    function removeTr(id) {
+        $('#'+id).closest("tr").remove();
+    }
 </script>

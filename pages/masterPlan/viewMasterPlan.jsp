@@ -7,39 +7,39 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#masId").attr("placeholder", "masId");
+        $("#masId").attr("placeholder", "Master Plan Id");
         $("#masId").prop('required', true);
-        $("#impId").attr("placeholder", "impId");
+        $("#impId").attr("placeholder", "Implementer");
         $("#impId").prop('required', true);
-        $("#masMpNo").attr("placeholder", "masMpNo");
+        $("#masMpNo").attr("placeholder", "Master Plan No");
         $("#masMpNo").prop('required', true);
-        $("#masMpName").attr("placeholder", "masMpName");
+        $("#masMpName").attr("placeholder", "Master Plan Name");
         $("#masMpName").prop('required', true);
-        $("#masStatus").attr("placeholder", "masStatus");
+        $("#masStatus").attr("placeholder", "Status");
         $("#masStatus").prop('required', true);
-        $("#masStatusIca").attr("placeholder", "masStatusIca");
+        $("#masStatusIca").attr("placeholder", "Status Ica");
         $("#masStatusIca").prop('required', true);
-        $("#masFirstSubmitDateToIca").attr("placeholder", "masFirstSubmitDateToIca");
+        $("#masFirstSubmitDateToIca").attr("placeholder", "First Submit Date To Ica");
         $("#masFirstSubmitDateToIca").prop('required', true);
-        $("#masLastSubmitDateToIca").attr("placeholder", "masLastSubmitDateToIca");
+        $("#masLastSubmitDateToIca").attr("placeholder", "Last Submit Date To Ica");
         $("#masLastSubmitDateToIca").prop('required', true);
-        $("#masNoSessionWithIca").attr("placeholder", "masNoSessionWithIca");
+        $("#masNoSessionWithIca").attr("placeholder", "No Session With Ica");
         $("#masNoSessionWithIca").prop('required', true);
-        $("#masSubmitToMod").attr("placeholder", "masSubmitToMod");
+        $("#masSubmitToMod").attr("placeholder", "Submit To Mod");
         $("#masSubmitToMod").prop('required', true);
-        $("#masApprovalDate").attr("placeholder", "masApprovalDate");
+        $("#masApprovalDate").attr("placeholder", "Approval Date");
         $("#masApprovalDate").prop('required', true);
-        $("#masPublicationDate").attr("placeholder", "masPublicationDate");
+        $("#masPublicationDate").attr("placeholder", "Publication Date");
         $("#masPublicationDate").prop('required', true);
-        $("#masLastDateForObjection").attr("placeholder", "masLastDateForObjection");
+        $("#masLastDateForObjection").attr("placeholder", "Last Date For Objection");
         $("#masLastDateForObjection").prop('required', true);
-        $("#masDateOfFinalPublication").attr("placeholder", "masDateOfFinalPublication");
+        $("#masDateOfFinalPublication").attr("placeholder", "Date Of Final Publication");
         $("#masDateOfFinalPublication").prop('required', true);
-        $("#masApprovedPlanedArea").attr("placeholder", "masApprovedPlanedArea");
+        $("#masApprovedPlanedArea").attr("placeholder", "Approved Planed Area");
         $("#masApprovedPlanedArea").prop('required', true);
-        $("#masVillageAdminBoarder").attr("placeholder", "masVillageAdminBoarder");
+        $("#masVillageAdminBoarder").attr("placeholder", "Village Admin Boarder");
         $("#masVillageAdminBoarder").prop('required', true);
-        $("#masNote").attr("placeholder", "masNote");
+        $("#masNote").attr("placeholder", "Note");
         $("#masNote").prop('required', true);
     });
 </script>
@@ -68,14 +68,14 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masId" class="col-sm-3 col-form-label">masId:</label>
+                        <label for="masId" class="col-sm-3 col-form-label">Master Plan Id:</label>
                         <div class="col-sm-9">
                             <html:text property="masId" styleClass="form-control" styleId="masId" disabled="true"/>
                             <html:hidden property="masId"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="impId" class="col-sm-3 col-form-label">impId:</label>
+                        <label for="impId" class="col-sm-3 col-form-label">Implementer:</label>
                         <div class="col-sm-9">
                             <html:select property="impId"
                                          styleClass="selectpicker form-control" disabled="true">
@@ -91,13 +91,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masMpNo" class="col-sm-3 col-form-label">masMpNo:</label>
+                        <label for="masMpNo" class="col-sm-3 col-form-label">Master Plan No:</label>
                         <div class="col-sm-9">
                             <html:text property="masMpNo" styleClass="form-control" styleId="masMpNo" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masMpName" class="col-sm-3 col-form-label">masMpName:</label>
+                        <label for="masMpName" class="col-sm-3 col-form-label">Master Plan Name:</label>
                         <div class="col-sm-9">
                             <html:text property="masMpName" styleClass="form-control" styleId="masMpName" disabled="true"/>
                         </div>
@@ -106,13 +106,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masStatus" class="col-sm-3 col-form-label">masStatus:</label>
+                        <label for="masStatus" class="col-sm-3 col-form-label">Status:</label>
                         <div class="col-sm-9">
                             <html:text property="masStatus" styleClass="form-control" styleId="masStatus" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masStatusIca" class="col-sm-3 col-form-label">masStatusIca:</label>
+                        <label for="masStatusIca" class="col-sm-3 col-form-label">Status Ica:</label>
                         <div class="col-sm-9">
                             <html:text property="masStatusIca" styleClass="form-control" styleId="masStatusIca" disabled="true"/>
                                 <%--<html:select property="proStatus" styleClass="selectpicker form-control">--%>
@@ -126,7 +126,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">masFirstSubmitDateToIca:</label>
+                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">First Submit Date To Ica:</label>
 
                         <div class='input-group date col-sm-9' id='mFirstSubmitDateToIca'>
                             <html:text property="masFirstSubmitDateToIca" styleClass="form-control" styleId="masFirstSubmitDateToIca" disabled="true"/>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">masLastSubmitDateToIca:</label>
+                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">Last Submit Date To Ica:</label>
 
                         <div class='input-group date col-sm-9' id='mLastSubmitDateToIca'>
                             <html:text property="masLastSubmitDateToIca" styleClass="form-control" styleId="masLastSubmitDateToIca" disabled="true"/>
@@ -160,13 +160,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masNoSessionWithIca" class="col-sm-3 col-form-label">masNoSessionWithIca:</label>
+                        <label for="masNoSessionWithIca" class="col-sm-3 col-form-label">No Session With Ica:</label>
                         <div class="col-sm-9">
                             <html:text property="masNoSessionWithIca" styleClass="form-control" styleId="masNoSessionWithIca" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masSubmitToMod" class="col-sm-3 col-form-label">masSubmitToMod:</label>
+                        <label for="masSubmitToMod" class="col-sm-3 col-form-label">Submit To Mod:</label>
                         <div class="col-sm-9">
                             <html:text property="masSubmitToMod" styleClass="form-control" styleId="masSubmitToMod" disabled="true"/>
                         </div>
@@ -174,7 +174,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masApprovalDate" class="col-sm-3 col-form-label">masApprovalDate:</label>
+                        <label for="masApprovalDate" class="col-sm-3 col-form-label">Approval Date:</label>
 
                         <div class='input-group date col-sm-9' id='mApprovalDate'>
                             <html:text property="masApprovalDate" styleClass="form-control" styleId="masApprovalDate" disabled="true"/>
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masPublicationDate" class="col-sm-3 col-form-label">masPublicationDate:</label>
+                        <label for="masPublicationDate" class="col-sm-3 col-form-label">Publication Date:</label>
 
                         <div class='input-group date col-sm-9' id='mPublicationDate'>
                             <html:text property="masPublicationDate" styleClass="form-control" styleId="masPublicationDate" disabled="true"/>
@@ -207,7 +207,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masLastDateForObjection" class="col-sm-3 col-form-label">masLastDateForObjection:</label>
+                        <label for="masLastDateForObjection" class="col-sm-3 col-form-label">Last Date For Objection:</label>
 
                         <div class='input-group date col-sm-9' id='mLastDateForObjection'>
                             <html:text property="masLastDateForObjection" styleClass="form-control" styleId="masLastDateForObjection" disabled="true"/>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">masDateOfFinalPublication:</label>
+                        <label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">Date Of Final Publication:</label>
 
                         <div class='input-group date col-sm-9' id='mDateOfFinalPublication'>
                             <html:text property="masDateOfFinalPublication" styleClass="form-control" styleId="masDateOfFinalPublication" disabled="true"/>
@@ -240,13 +240,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masApprovedPlanedArea" class="col-sm-3 col-form-label">masApprovedPlanedArea:</label>
+                        <label for="masApprovedPlanedArea" class="col-sm-3 col-form-label">Approved Planed Area:</label>
                         <div class="col-sm-9">
                             <html:text property="masApprovedPlanedArea" styleClass="form-control" styleId="masApprovedPlanedArea" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">masVillageAdminBoarder:</label>
+                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">Village Admin Boarder:</label>
                         <div class="col-sm-9">
                             <html:text property="masVillageAdminBoarder" styleClass="form-control" styleId="masVillageAdminBoarder" disabled="true"/>
                         </div>
@@ -255,7 +255,7 @@
                 <div class="form-group row">
 
                     <div class="col-md-6">
-                        <label for="masNote" class="col-sm-3 col-form-label">masNote:</label>
+                        <label for="masNote" class="col-sm-3 col-form-label">Note:</label>
                         <div class="col-sm-9">
                             <html:textarea property="masNote" styleClass="form-control" rows="6" disabled="true"/>
                         </div>
@@ -362,74 +362,74 @@
     })(window);
 
     InvalidInputHelper(document.getElementsByName("masId")[0], {
-        defaultText: "Please Enter The masId ",
-        emptyText: "Please Enter The masId ",
+        defaultText: "Please Enter The Master Plan Id ",
+        emptyText: "Please Enter The Master Plan Id ",
 //        invalidText: function (input) {
 //            return 'The email address "' + input.value + '" is invalid!';
 //        }
     });
     InvalidInputHelper(document.getElementsByName("impId")[0], {
-        defaultText: "Please Enter The impId ",
-        emptyText: "Please Enter The impId ",
+        defaultText: "Please Enter The Implementer ",
+        emptyText: "Please Enter The Implementer ",
     });
     InvalidInputHelper(document.getElementsByName("masMpNo")[0], {
-        defaultText: "Please Enter The masMpNo ",
-        emptyText: "Please Enter The masMpNo ",
+        defaultText: "Please Enter The Master Plan No ",
+        emptyText: "Please Enter The Master Plan No ",
     });
     InvalidInputHelper(document.getElementsByName("masMpName")[0], {
-        defaultText: "Please Enter The masMpName ",
-        emptyText: "Please Enter The masMpName ",
+        defaultText: "Please Enter The Master Plan Name ",
+        emptyText: "Please Enter The Master Plan Name ",
     });
     InvalidInputHelper(document.getElementsByName("masStatus")[0], {
-        defaultText: "Please Enter The masStatus ",
-        emptyText: "Please Enter The masStatus ",
+        defaultText: "Please Enter The mStatus ",
+        emptyText: "Please Enter The Status ",
     });
     InvalidInputHelper(document.getElementsByName("masStatusIca")[0], {
-        defaultText: "Please Enter The masStatusIca ",
-        emptyText: "Please Enter The masStatusIca ",
+        defaultText: "Please Enter The Status Ica ",
+        emptyText: "Please Enter The Status Ica ",
     });
     InvalidInputHelper(document.getElementsByName("masFirstSubmitDateToIca")[0], {
-        defaultText: "Please Enter The masFirstSubmitDateToIca ",
-        emptyText: "Please Enter The masFirstSubmitDateToIca ",
+        defaultText: "Please Enter The First Submit Date To Ica ",
+        emptyText: "Please Enter The First Submit Date To Ica ",
     });
     InvalidInputHelper(document.getElementsByName("masLastSubmitDateToIca")[0], {
-        defaultText: "Please Enter The masLastSubmitDateToIca ",
-        emptyText: "Please Enter The masLastSubmitDateToIca ",
+        defaultText: "Please Enter The Last Submit Date To Ica ",
+        emptyText: "Please Enter The Last Submit Date To Ica ",
     });
     InvalidInputHelper(document.getElementsByName("masNoSessionWithIca")[0], {
-        defaultText: "Please Enter The masNoSessionWithIca ",
-        emptyText: "Please Enter The masNoSessionWithIca ",
+        defaultText: "Please Enter The No Session With Ica ",
+        emptyText: "Please Enter The No Session With Ica ",
     });
     InvalidInputHelper(document.getElementsByName("masSubmitToMod")[0], {
-        defaultText: "Please Enter The masSubmitToMod ",
-        emptyText: "Please Enter The masSubmitToMod ",
+        defaultText: "Please Enter The Submit To Mod ",
+        emptyText: "Please Enter The Submit To Mod ",
     });
     InvalidInputHelper(document.getElementsByName("masApprovalDate")[0], {
-        defaultText: "Please Enter The masApprovalDate ",
-        emptyText: "Please Enter The masApprovalDate ",
+        defaultText: "Please Enter The Approval Date ",
+        emptyText: "Please Enter The Approval Date ",
     });
     InvalidInputHelper(document.getElementsByName("masPublicationDate")[0], {
-        defaultText: "Please Enter The masPublicationDate ",
-        emptyText: "Please Enter The masPublicationDate ",
+        defaultText: "Please Enter The Publication Date ",
+        emptyText: "Please Enter The Publication Date ",
     });
     InvalidInputHelper(document.getElementsByName("masLastDateForObjection")[0], {
-        defaultText: "Please Enter The masLastDateForObjection ",
-        emptyText: "Please Enter The masLastDateForObjection ",
+        defaultText: "Please Enter The Last Date For Objection ",
+        emptyText: "Please Enter The Last Date For Objection ",
     });
     InvalidInputHelper(document.getElementsByName("masDateOfFinalPublication")[0], {
-        defaultText: "Please Enter The masDateOfFinalPublication ",
-        emptyText: "Please Enter The masDateOfFinalPublication ",
+        defaultText: "Please Enter The Date Of Final Publication ",
+        emptyText: "Please Enter The Date Of Final Publication ",
     });
     InvalidInputHelper(document.getElementsByName("masApprovedPlanedArea")[0], {
-        defaultText: "Please Enter The masApprovedPlanedArea ",
-        emptyText: "Please Enter The masApprovedPlanedArea ",
+        defaultText: "Please Enter The Approved Planed Area ",
+        emptyText: "Please Enter The Approved Planed Area ",
     });
     InvalidInputHelper(document.getElementsByName("masVillageAdminBoarder")[0], {
-        defaultText: "Please Enter The masVillageAdminBoarder ",
-        emptyText: "Please Enter The masVillageAdminBoarder ",
+        defaultText: "Please Enter The Village Admin Boarder ",
+        emptyText: "Please Enter The Village Admin Boarder ",
     });
     InvalidInputHelper(document.getElementsByName("masNote")[0], {
-        defaultText: "Please Enter The masNote ",
-        emptyText: "Please Enter The masNote ",
+        defaultText: "Please Enter The Note ",
+        emptyText: "Please Enter The Note ",
     });
 </script>

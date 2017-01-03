@@ -5,8 +5,8 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 <script type="text/javascript">
     $(function () {
-        $("#agricultureArea").attr("placeholder", "agricultureArea");
-        $("#agricultureNoCowYear").attr("placeholder", "agricultureNoCowYear");
+        $("#agricultureArea").attr("placeholder", "Agriculture Area");
+        $("#agricultureNoCowYear").attr("placeholder", "No Cow Year");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -42,13 +42,13 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="agricultureArea" class="col-sm-12 col-form-label">agricultureArea:</label>
+                                <label for="agricultureArea" class="col-sm-12 col-form-label">Agriculture Area:</label>
                                 <div class="col-sm-12">
                                     <html:text property="agricultureArea" styleClass="form-control" styleId="agricultureArea"/>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="agricultureNoCowYear" class="col-sm-12 col-form-label">agricultureNoCowYear:</label>
+                                <label for="agricultureNoCowYear" class="col-sm-12 col-form-label">No Cow Year:</label>
                                 <div class="col-sm-12">
                                     <html:text property="agricultureNoCowYear" styleClass="form-control" styleId="agricultureNoCowYear"/>
                                 </div>
@@ -70,21 +70,21 @@
             <table id="listAgricultureSocioTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="text-center">agrArea</th>
-                    <th class="text-center">agrNoCowYear</th>
-                    <th class="text-center">agrNoSheepYear</th>
-                    <th class="text-center">agrCostWaterTank</th>
-                    <th class="text-center">agrSurveyDate</th>
+                    <th class="text-center">Agriculture Area</th>
+                    <th class="text-center">No Cow Year</th>
+                    <th class="text-center">No Sheep Year</th>
+                    <th class="text-center">Cost Water Tank</th>
+                    <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                    <th class="text-center">agrArea</th>
-                    <th class="text-center">agrNoCowYear</th>
-                    <th class="text-center">agrNoSheepYear</th>
-                    <th class="text-center">agrCostWaterTank</th>
-                    <th class="text-center">agrSurveyDate</th>
+                    <th class="text-center">Agriculture Area</th>
+                    <th class="text-center">No Cow Year</th>
+                    <th class="text-center">No Sheep Year</th>
+                    <th class="text-center">Cost Water Tank</th>
+                    <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
 
                 </tr>

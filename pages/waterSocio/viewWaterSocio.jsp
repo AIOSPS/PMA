@@ -7,27 +7,27 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#watId").attr("placeholder", "watId");
+        $("#watId").attr("placeholder", "Water Id");
         $("#watId").prop('required', true);
-        $("#comId").attr("placeholder", "comId");
+        $("#comId").attr("placeholder", "Community");
         $("#comId").prop('required', true);
-        $("#watIsconnected").attr("placeholder", "watIsconnected");
+        $("#watIsconnected").attr("placeholder", "Is connected");
         $("#watIsconnected").prop('required', true);
-        $("#watNetwork").attr("placeholder", "watNetwork");
+        $("#watNetwork").attr("placeholder", "Network");
         $("#watNetwork").prop('required', true);
-        $("#watUseWatTanker").attr("placeholder", "watUseWatTanker");
+        $("#watUseWatTanker").attr("placeholder", "Use Water Tanker");
         $("#watUseWatTanker").prop('required', true);
-        $("#watRainWaterWell").attr("placeholder", "watRainWaterWell");
+        $("#watRainWaterWell").attr("placeholder", "Rain Water Well");
         $("#watRainWaterWell").prop('required', true);
-        $("#watNoSprings").attr("placeholder", "watNoSprings");
+        $("#watNoSprings").attr("placeholder", "No Springs");
         $("#watNoSprings").prop('required', true);
-        $("#watPriceWater").attr("placeholder", "watPriceWater");
+        $("#watPriceWater").attr("placeholder", "Price Water");
         $("#watPriceWater").prop('required', true);
-        $("#watFillingPoint").attr("placeholder", "watFillingPoint");
+        $("#watFillingPoint").attr("placeholder", "Filling Point");
         $("#watFillingPoint").prop('required', true);
-        $("#watQuantity").attr("placeholder", "watQuantity");
+        $("#watQuantity").attr("placeholder", "Quantity");
         $("#watQuantity").prop('required', true);
-        $("#watSurveyDate").attr("placeholder", "watSurveyDate");
+        $("#watSurveyDate").attr("placeholder", "Survey Date");
         $("#watSurveyDate").prop('required', true);
     });
 </script>
@@ -56,14 +56,14 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watId" class="col-sm-3 col-form-label">watId:</label>
+                        <label for="watId" class="col-sm-3 col-form-label">Water Id:</label>
                         <div class="col-sm-9">
                             <html:text property="watId" styleClass="form-control" styleId="watId" disabled="true"/>
                             <html:hidden property="watId"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comId" class="col-sm-3 col-form-label">comId:</label>
+                        <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
                             <html:select property="comId"
                                          styleClass="selectpicker form-control" disabled="true">
@@ -78,13 +78,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watIsconnected" class="col-sm-3 col-form-label">watIsconnected:</label>
+                        <label for="watIsconnected" class="col-sm-3 col-form-label">Is connected:</label>
                         <div class="col-sm-9">
                             <html:text property="watIsconnected" styleClass="form-control" styleId="watIsconnected" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watNetwork" class="col-sm-3 col-form-label">watNetwork:</label>
+                        <label for="watNetwork" class="col-sm-3 col-form-label">Network:</label>
                         <div class="col-sm-9">
                             <html:text property="watNetwork" styleClass="form-control" styleId="watNetwork" disabled="true"/>
                         </div>
@@ -92,13 +92,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watUseWatTanker" class="col-sm-3 col-form-label">watUseWatTanker:</label>
+                        <label for="watUseWatTanker" class="col-sm-3 col-form-label">Use Water Tanker:</label>
                         <div class="col-sm-9">
                             <html:text property="watUseWatTanker" styleClass="form-control" styleId="watUseWatTanker" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watRainWaterWell" class="col-sm-3 col-form-label">watRainWaterWell:</label>
+                        <label for="watRainWaterWell" class="col-sm-3 col-form-label">Rain Water Well:</label>
                         <div class="col-sm-9">
                             <html:text property="watRainWaterWell" styleClass="form-control" styleId="watRainWaterWell" disabled="true"/>
                         </div>
@@ -106,13 +106,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watNoSprings" class="col-sm-3 col-form-label">watNoSprings:</label>
+                        <label for="watNoSprings" class="col-sm-3 col-form-label">No Springs:</label>
                         <div class="col-sm-9">
                             <html:text property="watNoSprings" styleClass="form-control" styleId="watNoSprings" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watPriceWater" class="col-sm-3 col-form-label">watPriceWater:</label>
+                        <label for="watPriceWater" class="col-sm-3 col-form-label">Price Water:</label>
                         <div class="col-sm-9">
                             <html:text property="watPriceWater" styleClass="form-control" styleId="watPriceWater" disabled="true"/>
                         </div>
@@ -120,13 +120,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watFillingPoint" class="col-sm-3 col-form-label">watFillingPoint:</label>
+                        <label for="watFillingPoint" class="col-sm-3 col-form-label">Filling Point:</label>
                         <div class="col-sm-9">
                             <html:text property="watFillingPoint" styleClass="form-control" styleId="watFillingPoint" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watQuantity" class="col-sm-3 col-form-label">watQuantity:</label>
+                        <label for="watQuantity" class="col-sm-3 col-form-label">Quantity:</label>
                         <div class="col-sm-9">
                             <html:text property="watQuantity" styleClass="form-control" styleId="watQuantity" disabled="true"/>
                         </div>
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watSurveyDate" class="col-sm-3 col-form-label">watSurveyDate:</label>
+                        <label for="watSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>
 
                         <div class='input-group date col-sm-9' id='wSurveyDate'>
                             <html:text property="watSurveyDate" styleClass="form-control" styleId="watSurveyDate" disabled="true"/>
@@ -221,50 +221,50 @@
     })(window);
 
     InvalidInputHelper(document.getElementsByName("watId")[0], {
-        defaultText: "Please Enter The watId ",
-        emptyText: "Please Enter The watId ",
+        defaultText: "Please Enter The Water Id ",
+        emptyText: "Please Enter The Water Id ",
 //        invalidText: function (input) {
 //            return 'The email address "' + input.value + '" is invalid!';
 //        }
     });
     InvalidInputHelper(document.getElementsByName("comId")[0], {
-        defaultText: "Please Enter The comId ",
-        emptyText: "Please Enter The comId ",
+        defaultText: "Please Enter The Community ",
+        emptyText: "Please Enter The Community ",
     });
     InvalidInputHelper(document.getElementsByName("watIsconnected")[0], {
-        defaultText: "Please Enter The watIsconnected ",
-        emptyText: "Please Enter The watIsconnected ",
+        defaultText: "Please Enter The Is connected ",
+        emptyText: "Please Enter The Is connected ",
     });
     InvalidInputHelper(document.getElementsByName("watNetwork")[0], {
-        defaultText: "Please Enter The watNetwork ",
-        emptyText: "Please Enter The watNetwork ",
+        defaultText: "Please Enter The Network ",
+        emptyText: "Please Enter The Network ",
     });
     InvalidInputHelper(document.getElementsByName("watUseWatTanker")[0], {
-        defaultText: "Please Enter The watUseWatTanker ",
-        emptyText: "Please Enter The watUseWatTanker ",
+        defaultText: "Please Enter The Use Water Tanker ",
+        emptyText: "Please Enter The Use Water Tanker ",
     });
     InvalidInputHelper(document.getElementsByName("watRainWaterWell")[0], {
-        defaultText: "Please Enter The watRainWaterWell ",
-        emptyText: "Please Enter The watRainWaterWell ",
+        defaultText: "Please Enter The Rain Water Well ",
+        emptyText: "Please Enter The Rain Water Well ",
     });
     InvalidInputHelper(document.getElementsByName("watNoSprings")[0], {
-        defaultText: "Please Enter The watNoSprings ",
-        emptyText: "Please Enter The watNoSprings ",
+        defaultText: "Please Enter The No Springs ",
+        emptyText: "Please Enter The No Springs ",
     });
     InvalidInputHelper(document.getElementsByName("watPriceWater")[0], {
-        defaultText: "Please Enter The watPriceWater ",
-        emptyText: "Please Enter The watPriceWater ",
+        defaultText: "Please Enter The Price Water ",
+        emptyText: "Please Enter The Price Water ",
     });
     InvalidInputHelper(document.getElementsByName("watFillingPoint")[0], {
-        defaultText: "Please Enter The watFillingPoint ",
-        emptyText: "Please Enter The watFillingPoint ",
+        defaultText: "Please Enter The Filling Point ",
+        emptyText: "Please Enter The Filling Point ",
     });
     InvalidInputHelper(document.getElementsByName("watQuantity")[0], {
-        defaultText: "Please Enter The watQuantity ",
-        emptyText: "Please Enter The watQuantity ",
+        defaultText: "Please Enter The Quantity ",
+        emptyText: "Please Enter The Quantity ",
     });
     InvalidInputHelper(document.getElementsByName("watSurveyDate")[0], {
-        defaultText: "Please Enter The watSurveyDate ",
-        emptyText: "Please Enter The watSurveyDate ",
+        defaultText: "Please Enter The Survey Date ",
+        emptyText: "Please Enter The Survey Date ",
     });
 </script>

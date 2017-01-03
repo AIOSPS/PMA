@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="eu.pms.project.database.PmsActivity" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -124,10 +127,82 @@
                         </div>
                     </div>
                 </div>
+                <h2 class="titleSep"><span>Activity Information</span></h2>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-striped table-bordered" id="tab_logic">
+                                        <thead>
+                                        <tr >
+                                            <th width="15%" class="text-center">Activity ID</th>
+                                            <th width="40%" class="text-center">Description</th>
+                                            <th width="15%" class="text-center">Unit</th>
+                                            <th width="15%" class="text-center">Unit Qty</th>
+                                            <th width="15%" class="text-center">Estimated Budget</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="actId">
+                                                <input type="text" id="actId0" name="actId0"  placeholder='Activity ID' class="form-control"/>
+                                            </td>
+                                            <td data-name="actDesc">
+                                                <input type="text" id="actDesc0" name="actDesc0" placeholder='Description' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnit">
+                                                <input type="text" id="actUnit0" name="actUnit0" placeholder='Unit' class="form-control"/>
+                                            </td>
+                                            <td data-name="actUnitQty">
+                                                <input type="text" id="actUnitQty0" name="actUnitQty0" placeholder='Unit Qty' class="form-control"/>
+                                            </td>
+                                            <td data-name="actEstimatedBudget">
+                                                <input type="text" id="actEstimatedBudget0" name="actEstimatedBudget0" placeholder='Estimated Budget' class="form-control"/>
+                                            </td>
+                                        </tr>
+                                        <logic:present name="activitiesList">
+                                            <% List activitiesList = (List) request.getAttribute("activitiesList");
+                                                System.out.println("**********************"+activitiesList.size());
+                                                int count = 1;
+                                                Iterator itr = activitiesList.iterator();
+                                                PmsActivity pmsActivity = null;
+                                                while (itr.hasNext()){
+                                                    pmsActivity = (PmsActivity) itr.next();
+                                            %>
+                                            <tr id='addr<%=count%>' data-id="<%=count%>">
+                                                <td data-name="actId">
+                                                    <input type="text" disabled="true" id="actId<%=count%>" name="actId<%=count%>" value="<%=pmsActivity.getCompId().getActId()%>"  placeholder='Activity ID' class="form-control"/>
+                                                </td>
+                                                <td data-name="actDesc">
+                                                    <input type="text" disabled="true" id="actDesc<%=count%>" name="actDesc<%=count%>" value="<%=pmsActivity.getActDesc()%>" placeholder='Description' class="form-control"/>
+                                                </td>
+                                                <td data-name="actUnit">
+                                                    <input type="text" disabled="true" id="actUnit<%=count%>" name="actUnit<%=count%>" value="<%=pmsActivity.getActUnit()%>" placeholder='Unit' class="form-control"/>
+                                                </td>
+                                                <td data-name="actUnitQty">
+                                                    <input type="text" disabled="true" id="actUnitQty<%=count%>" name="actUnitQty<%=count%>" value="<%=pmsActivity.getActUnitQty()%>" placeholder='Unit Qty' class="form-control"/>
+                                                </td>
+                                                <td data-name="actEstimatedBudget">
+                                                    <input type="text" disabled="true" id="actEstimatedBudget<%=count%>" name="actEstimatedBudget<%=count%>" value="<%=pmsActivity.getActEstimatedBudget()%>" placeholder='Estimated Budget' class="form-control"/>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    count++;
+                                                }
+                                            %>
+                                        </logic:present>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="button" onclick="javaScript:parent.location = '/viewEditIntervention.do'"
+                        <button type="button" onclick="javaScript:parent.location = '/viewEditIntervention.do?intId=<%=request.getParameter("intId")%>&secId=<%=request.getParameter("secId")%>'"
                                 class="btn btn-primary">Edit
                         </button>
                         <button type="button" onclick="javaScript:window.history.back();"

@@ -5,8 +5,8 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 <script type="text/javascript">
     $(function () {
-        $("#waterUseWatTanker").attr("placeholder", "waterUseWatTanker");
-        $("#waterRainWaterWell").attr("placeholder", "waterRainWaterWell");
+        $("#waterUseWatTanker").attr("placeholder", "Use Water Tanker");
+        $("#waterRainWaterWell").attr("placeholder", "Rain Water Well");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -42,13 +42,13 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="waterUseWatTanker" class="col-sm-12 col-form-label">waterUseWatTanker:</label>
+                                <label for="waterUseWatTanker" class="col-sm-12 col-form-label">Use Water Tanker:</label>
                                 <div class="col-sm-12">
                                     <html:text property="waterUseWatTanker" styleClass="form-control" styleId="waterUseWatTanker"/>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="waterRainWaterWell" class="col-sm-12 col-form-label">waterRainWaterWell:</label>
+                                <label for="waterRainWaterWell" class="col-sm-12 col-form-label">Rain Water Well:</label>
                                 <div class="col-sm-12">
                                     <html:text property="waterRainWaterWell" styleClass="form-control" styleId="waterRainWaterWell"/>
                                 </div>
@@ -70,21 +70,21 @@
             <table id="listWaterSocioTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="text-center">watIsconnected</th>
-                    <th class="text-center">watNetwork</th>
-                    <th class="text-center">watUseWatTanker</th>
-                    <th class="text-center">watRainWaterWell</th>
-                    <th class="text-center">watSurveyDate</th>
+                    <th class="text-center">Is connected</th>
+                    <th class="text-center">Network</th>
+                    <th class="text-center">Use Water Tanker</th>
+                    <th class="text-center">Rain Water Well</th>
+                    <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                    <th class="text-center">watIsconnected</th>
-                    <th class="text-center">watNetwork</th>
-                    <th class="text-center">watUseWatTanker</th>
-                    <th class="text-center">watRainWaterWell</th>
-                    <th class="text-center">watSurveyDate</th>
+                    <th class="text-center">Is connected</th>
+                    <th class="text-center">Network</th>
+                    <th class="text-center">Use Water Tanker</th>
+                    <th class="text-center">Rain Water Well</th>
+                    <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
 
                 </tr>

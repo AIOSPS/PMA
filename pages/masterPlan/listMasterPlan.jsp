@@ -5,8 +5,8 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 <script type="text/javascript">
     $(function () {
-        $("#masterPlanNo").attr("placeholder", "masterPlanNo");
-        $("#masterPlanName").attr("placeholder", "masterPlanName");
+        $("#masterPlanNo").attr("placeholder", "Master Plan No");
+        $("#masterPlanName").attr("placeholder", "Master Plan Name");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -42,13 +42,13 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="masterPlanNo" class="col-sm-12 col-form-label">masterPlanNo:</label>
+                                <label for="masterPlanNo" class="col-sm-12 col-form-label">Master Plan No:</label>
                                 <div class="col-sm-12">
                                     <html:text property="masterPlanNo" styleClass="form-control" styleId="masterPlanNo"/>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="masterPlanName" class="col-sm-12 col-form-label">masterPlanName:</label>
+                                <label for="masterPlanName" class="col-sm-12 col-form-label">Master Plan Name:</label>
                                 <div class="col-sm-12">
                                     <html:text property="masterPlanName" styleClass="form-control" styleId="masterPlanName"/>
                                 </div>
@@ -70,21 +70,21 @@
             <table id="listMasterPlanTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="text-center">masMpNo</th>
-                    <th class="text-center">masMpName</th>
-                    <th class="text-center">masStatus</th>
-                    <th class="text-center">masFirstSubmitDateToIca</th>
-                    <th class="text-center">masLastSubmitDateToIca</th>
+                    <th class="text-center">Master Plan No</th>
+                    <th class="text-center">Master Plan Name</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">First Submit Date To Ica</th>
+                    <th class="text-center">Last Submit Date To Ica</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                    <th class="text-center">masMpNo</th>
-                    <th class="text-center">masMpName</th>
-                    <th class="text-center">masStatus</th>
-                    <th class="text-center">masFirstSubmitDateToIca</th>
-                    <th class="text-center">masLastSubmitDateToIca</th>
+                    <th class="text-center">Master Plan No</th>
+                    <th class="text-center">Master Plan Name</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">First Submit Date To Ica</th>
+                    <th class="text-center">Last Submit Date To Ica</th>
                     <th class="text-center"></th>
 
                 </tr>
