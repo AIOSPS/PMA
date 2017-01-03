@@ -43,6 +43,7 @@ public class ViewPmsResultAction extends Action {
         String resId = request.getParameter("resId");
         String objId = request.getParameter("objId");
         ArrayList inputs = new ArrayList();
+        inputs.add(resId);
         inputs.add(objId);
         List resultList = (List) new GetPmsResultUseCase().execute(inputs, request);
         PmsResult pmsResult = null;

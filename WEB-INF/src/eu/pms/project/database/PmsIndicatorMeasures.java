@@ -14,10 +14,10 @@ public class PmsIndicatorMeasures implements Serializable {
     private PmsIndicatorMeasuresPK compId;
 
     /** persistent field */
-    private String indTarget;
+    private int indTarget;
 
     /** persistent field */
-    private String indValue;
+    private int indValue;
 
     /** persistent field */
     private String username;
@@ -40,19 +40,19 @@ public class PmsIndicatorMeasures implements Serializable {
         this.compId = compId;
     }
 
-    public String getIndTarget() {
+    public int getIndTarget() {
         return indTarget;
     }
 
-    public void setIndTarget(String indTarget) {
+    public void setIndTarget(int indTarget) {
         this.indTarget = indTarget;
     }
 
-    public String getIndValue() {
+    public int getIndValue() {
         return indValue;
     }
 
-    public void setIndValue(String indValue) {
+    public void setIndValue(int indValue) {
         this.indValue = indValue;
     }
 
@@ -79,9 +79,9 @@ public class PmsIndicatorMeasures implements Serializable {
 
         PmsIndicatorMeasures that = (PmsIndicatorMeasures) o;
 
+        if (indTarget != that.indTarget) return false;
+        if (indValue != that.indValue) return false;
         if (compId != null ? !compId.equals(that.compId) : that.compId != null) return false;
-        if (indTarget != null ? !indTarget.equals(that.indTarget) : that.indTarget != null) return false;
-        if (indValue != null ? !indValue.equals(that.indValue) : that.indValue != null) return false;
         if (username != null ? !username.equals(that.username) : that.username != null) return false;
         return timeStamp != null ? timeStamp.equals(that.timeStamp) : that.timeStamp == null;
     }
@@ -89,8 +89,8 @@ public class PmsIndicatorMeasures implements Serializable {
     @Override
     public int hashCode() {
         int result = compId != null ? compId.hashCode() : 0;
-        result = 31 * result + (indTarget != null ? indTarget.hashCode() : 0);
-        result = 31 * result + (indValue != null ? indValue.hashCode() : 0);
+        result = 31 * result + indTarget;
+        result = 31 * result + indValue;
         result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (timeStamp != null ? timeStamp.hashCode() : 0);
         return result;

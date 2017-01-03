@@ -53,8 +53,21 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
             pmsIndicator.setUsername(username);
             pmsIndicator.setTimeStamp(timeStamp);
 
+            PmsIndicatorMeasures pmsIndicatorMeasure = new PmsIndicatorMeasures();
+            PmsIndicatorMeasuresPK pmsIndicatorMeasurePK = new PmsIndicatorMeasuresPK();
+            pmsIndicatorMeasurePK.setIndId(indId);
+            pmsIndicatorMeasurePK.setResId(resCompId[0]);
+            pmsIndicatorMeasurePK.setObjId(resCompId[1]);
+            pmsIndicatorMeasurePK.setMsrDate(timeStamp);
+            pmsIndicatorMeasure.setCompId(pmsIndicatorMeasurePK);
+            pmsIndicatorMeasure.setIndTarget(indTarget);
+            pmsIndicatorMeasure.setIndValue(indValue);
+            pmsIndicatorMeasure.setUsername(username);
+            pmsIndicatorMeasure.setTimeStamp(timeStamp);
+
             List insertList = new ArrayList();
             insertList.add(pmsIndicator);
+            insertList.add(pmsIndicatorMeasure);
             new DataAccessObjectImpl().insertOrUpdate(insertList);
 
         } catch (Exception ce) {
