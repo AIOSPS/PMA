@@ -3,6 +3,7 @@ package eu.pms.project.useCases;
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.login.database.SecUser;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
 
@@ -35,17 +36,13 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             String secId = (String) itr.next();
             String secType = (String) itr.next();
             String preId = (String) itr.next();
-            String comLatitude = (String) itr.next();
-            String comLongitude = (String) itr.next();
             String[] donorProjectArray = (String[]) itr.next();
             String[] implementerProjectArray = (String[]) itr.next();
             String[] communityProjectArray = (String[]) itr.next();
-            //String[] benificiaryProjectArray = (String[]) itr.next();
-            String btpId =(String) itr.next();
-            Integer benTotal = (Integer) itr.next();
             String[] indicatorProjectArray = (String[]) itr.next();
-
-            String username = "pms";
+            ArrayList locationList = (ArrayList) itr.next();
+            ArrayList penificiaryList = (ArrayList) itr.next();
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             if(secType!=null && secType.equals("H")){
@@ -85,17 +82,6 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             List insertList = new ArrayList();
             insertList.add(pmsProject);
 
-            PmsProjectsBenificiaryPK pmsProjectsBenificiaryPK = new PmsProjectsBenificiaryPK();
-            PmsProjectsBenificiary pmsProjectsBenificiary = new PmsProjectsBenificiary();
-
-            pmsProjectsBenificiaryPK.setProId(proId);
-            pmsProjectsBenificiaryPK.setBtpId(btpId);
-            pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
-            pmsProjectsBenificiary.setBenTotal(benTotal);
-            pmsProjectsBenificiary.setUsername(username);
-            pmsProjectsBenificiary.setTimeStamp(timeStamp);
-            insertList.add(pmsProjectsBenificiary);
-
             if (donorProjectArray != null && donorProjectArray.length > 0) {
                 PmsProjectDonorPK pmsProjectDonorPK = null;
                 PmsProjectDonor pmsProjectDonor = null;
@@ -128,18 +114,6 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
 
 
 
-                    PmsProjectsLocationPK pmsProjectsLocationPK = new PmsProjectsLocationPK();
-                    PmsProjectsLocation pmsProjectsLocation = new PmsProjectsLocation();
-                    pmsProjectsLocationPK.setProId(proId);
-                    pmsProjectsLocationPK.setComLatitude(new BigDecimal(comLatitude));
-                    pmsProjectsLocationPK.setComLongitude(new BigDecimal(comLongitude));
-                    pmsProjectsLocation.setCompId(pmsProjectsLocationPK);
-                    pmsProjectsLocation.setUsername(username);
-                    pmsProjectsLocation.setTimeStamp(timeStamp);
-                    insertList.add(pmsProjectsLocation);
-
-
-
             if (communityProjectArray != null && communityProjectArray.length > 0) {
                 PmsProjectsCommunityPK pmsProjectsCommunityPK = null;
                 PmsProjectsCommunity pmsProjectsCommunity = null;
@@ -154,21 +128,6 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
                     insertList.add(pmsProjectsCommunity);
                 }
             }
-
-//            if (benificiaryProjectArray != null && benificiaryProjectArray.length > 0) {
-//                PmsProjectsBenificiaryPK pmsProjectsBenificiaryPK = null;
-//                PmsProjectsBenificiary pmsProjectsBenificiary = null;
-//                for (String benificiary : benificiaryProjectArray) {
-//                    pmsProjectsBenificiaryPK = new PmsProjectsBenificiaryPK();
-//                    pmsProjectsBenificiary = new PmsProjectsBenificiary();
-//                    pmsProjectsBenificiaryPK.setProId(proId);
-//                    pmsProjectsBenificiaryPK.setBtpId(benificiary);
-//                    pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
-//                    pmsProjectsBenificiary.setUsername(username);
-//                    pmsProjectsBenificiary.setTimeStamp(timeStamp);
-//                    insertList.add(pmsProjectsBenificiary);
-//                }
-//            }
 
             if (indicatorProjectArray != null && indicatorProjectArray.length > 0) {
                 PmsProjectsIndicatorPK pmsProjectsIndicatorPK = null;
@@ -190,10 +149,25 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
 
             new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectDonor a where a.compId.proId='"+proId+"'");
             new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsImplementer a where a.compId.proId='"+proId+"'");
-            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsLocation a where a.compId.proId='"+proId+"'");
             new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsCommunity a where a.compId.proId='"+proId+"'");
-            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsBenificiary a where a.compId.proId='"+proId+"'");
             new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsIndicator a where a.compId.proId='"+proId+"'");
+
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsLocation a where a.compId.proId='"+proId+"'");
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsProjectsBenificiary a where a.compId.proId='"+proId+"'");
+
+            if(locationList!=null && locationList.size()>0) {
+                Iterator itrInd = locationList.iterator();
+                while (itrInd.hasNext()) {
+                    insertList.add((PmsProjectsLocation) itrInd.next());
+                }
+            }
+            if(penificiaryList!=null && penificiaryList.size()>0) {
+                Iterator itrInd = penificiaryList.iterator();
+                while (itrInd.hasNext()) {
+                    insertList.add((PmsProjectsBenificiary) itrInd.next());
+                }
+            }
+
             new DataAccessObjectImpl().insertOrUpdate(insertList);
 
         } catch (Exception ce) {
