@@ -47,24 +47,38 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="projectTitle" class="col-sm-12 col-form-label">Project Title:</label>
+                                <label class="col-sm-12 col-form-label">Donor:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="projectTitle" styleClass="form-control" styleId="projectTitle"/>
+                                    <html:select property="donorId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <logic:present name="dononrList">
+                                            <html:options collection="dononrList" property="donId" labelProperty="donName"/>
+                                        </logic:present>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="projectDescription" class="col-sm-12 col-form-label">Project Desc:</label>
+                                <label class="col-sm-12 col-form-label">Sector:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="projectDescription" styleClass="form-control" styleId="projectDescription"/>
+                                    <html:select property="sectorId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <logic:present name="sectorsList">
+                                            <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
+                                        </logic:present>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="projectStatus" class="col-sm-12 col-form-label">Project Status:</label>
+                                <label  class="col-sm-5 col-form-label">Governate:</label>
                                 <div class="col-sm-12">
-                                    <html:select property="projectStatus" styleClass="selectpicker form-control">
-                                        <html:option value="1">New</html:option>
-                                        <html:option value="2">Stopped</html:option>
-                                        <html:option value="3">Completed</html:option>
+                                    <html:select property="governateId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <logic:present name="governateList">
+                                        <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
+                                        </logic:present>
                                     </html:select>
                                 </div>
                             </div>
@@ -72,79 +86,35 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="projectStartDate" class="col-sm-12 col-form-label">From Date:</label>
-                                <div class='input-group date col-sm-12' id='pStartDate'>
-                                    <html:text property="projectStartDate" styleClass="form-control" styleId="projectStartDate"/>
-                                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="projectEndDate" class="col-sm-12 col-form-label">To Date:</label>
-                                <div class='input-group date col-sm-12' id='pEndDate'>
-                                    <html:text property="projectEndDate" styleClass="form-control" styleId="projectEndDate"/>
-                                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                                </div>
-                                <script type="text/javascript">
-                                    $(function () {
-                                        $('#pStartDate').datetimepicker({
-                                            format: 'DD/MM/YYYY'
-                                        });
-                                        $('#pEndDate').datetimepicker({
-                                            format: 'DD/MM/YYYY'
-                                        });
-                                    });
-                                </script>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="col-sm-12 col-form-label">&nbsp;</label>
+                                <label class="col-sm-12 col-form-label">Community:</label>
                                 <div class="col-sm-12">
+                                    <html:select property="communityId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <logic:present name="communityList">
+                                            <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                        </logic:present>
+                                    </html:select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-
                             <div class="col-md-4">
-                                <label for="projectNeedPermit" class="col-sm-12 col-form-label">Need Permit:</label>
-                                    <fieldset class="col-sm-12" id="PermitNeed">
-                                        <div>
-                                            <label class="radio-inline">
-                                                <html:radio property="projectNeedPermit" value="1"/>
-                                                Yes
-                                            </label>
-                                            <label class="radio-inline">
-                                                <html:radio property="projectNeedPermit" value="0"/>
-                                                No
-                                            </label>
-                                        </div>
-                                    </fieldset>
+                                <label class="col-sm-12 col-form-label">Status:</label>
+                                <div class="col-sm-12">
+                                    <html:select property="statusId" styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:option value="1">New</html:option>
+                                        <html:option value="2">Stopped</html:option>
+                                        <html:option value="3">Completed</html:option>
+                                    </html:select>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="projectHasCluster" class="col-sm-5 col-form-label">Has Cluster:</label>
-                                    <fieldset class="col-sm-12" id="isCluster">
-                                        <div>
-                                            <label class="radio-inline">
-                                                <html:radio property="projectHasCluster" value="1"/>
-                                                Yes
-                                            </label>
-                                            <label class="radio-inline">
-                                                <html:radio property="projectHasCluster" value="0"/>
-                                                No
-                                            </label>
-                                        </div>
-                                    </fieldset>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="prNotes" class="col-sm-5 col-form-label">&nbsp;</label>
+                                <label class="col-sm-5 col-form-label">&nbsp;</label>
                                 <div class="col-sm-12">
                                     <button type="submit" class="btn btn-primary">Search</button>
                                 </div>
                             </div>
                         </div>
-
                     </fieldset>
                 </div>
             </div>
@@ -178,8 +148,8 @@
                             <td width="20%"><bean:write name="pmsProjectList" property="proTitle"/></td>
                             <td width="40%"><bean:write name="pmsProjectList" property="proDescription"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proStatusDesc"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proStartDateStr"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proEndDateStr"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proStartDate"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsProjectList" property="proEndDate"/></td>
                             <td width="10%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsProject.do?proId=<bean:write name="pmsProjectList" property="proId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
