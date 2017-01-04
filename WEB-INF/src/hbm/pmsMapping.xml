@@ -553,7 +553,28 @@
     <property name="agrSurveyDate" type="java.util.Date" column="agr_survey_date" />
     <property name="username" type="java.lang.String" column="username" />
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    <property name="comId" type="java.lang.String" column="com_id" />
+    </class>
+
+    <class name="eu.pms.project.database.PmsAgricultureSocioVw" table="pms_agriculture_socio_vw" >
+        <id name="agrId" type="java.lang.String" column="agr_id" >
+            <generator class="assigned" />
+        </id>
+        <property name="agrArea" type="int" column="agr_area" />
+        <property name="agrNoCowYear" type="int" column="agr_no_cow_year" />
+        <property name="agrNoSheepYear" type="int" column="agr_no_sheep_year" />
+        <property name="agrCostWaterTank" type="int" column="agr_cost_water_tank" />
+        <property name="agrHerdingArea" type="int" column="agr_herding_area" />
+        <property name="agrMilitaryArea" type="int" column="agr_military_area" />
+        <property name="agrBypassRoadArea" type="int" column="agr_bypass_road_area" />
+        <property name="agrSurveyDate" type="java.util.Date" column="agr_survey_date" />
+        <property name="username" type="java.lang.String" column="username" />
+        <property name="timeStamp" type="java.util.Date" column="time_stamp" />
         <property name="comId" type="java.lang.String" column="com_id" />
+        <property name="comName" type="java.lang.String" column="com_name" />
+        <property name="govId" type="java.lang.String" column="gov_id" />
+        <property name="govDesc" type="java.lang.String" column="gov_desc" />
+
     </class>
 
     <class name="eu.pms.project.database.PmsWaterSocio" table="pms_water_socio" >

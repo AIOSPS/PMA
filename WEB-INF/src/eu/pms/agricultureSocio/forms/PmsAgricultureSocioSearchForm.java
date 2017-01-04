@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 public class PmsAgricultureSocioSearchForm extends ActionForm {
     private String agricultureArea;
     private String agricultureNoCowYear;
+    private String comId;
+    private String govId;
     /** default constructor */
     public PmsAgricultureSocioSearchForm() {
     }
@@ -29,6 +31,22 @@ public class PmsAgricultureSocioSearchForm extends ActionForm {
 
     public void setAgricultureNoCowYear(String agricultureNoCowYear) {
         this.agricultureNoCowYear = agricultureNoCowYear;
+    }
+
+    public String getComId() {
+        return comId;
+    }
+
+    public void setComId(String comId) {
+        this.comId = comId;
+    }
+
+    public String getGovId() {
+        return govId;
+    }
+
+    public void setGovId(String govId) {
+        this.govId = govId;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

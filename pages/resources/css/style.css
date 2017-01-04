@@ -223,7 +223,7 @@ header .fastMnu > ul > li > a {
 .branding .logo a:hover, .branding .logo a span:hover { text-decoration:none; color: #030202; }
 .branding .logo  img {  width:90px; padding:2px; border:1px solid #9ab7ca;}
 .branding .slogan .s1 {
-    padding-top:8px;
+    /*padding-top:8px;*/
     font-size: 24px;
     font-family: verdana-bold;
     margin: 0 0 3px;

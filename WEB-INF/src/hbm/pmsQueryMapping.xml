@@ -412,7 +412,7 @@
     <query
             name="getPmsAgricultureSocio">
         <![CDATA[
-                from eu.pms.project.database.PmsAgricultureSocio a
+                from eu.pms.project.database.PmsAgricultureSocioVw a
                 order by a.agrArea
                   ]]>
     </query>

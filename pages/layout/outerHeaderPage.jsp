@@ -7,7 +7,7 @@
         <div class="logo text-center" >
             <a href="#" title="European Union">
                 <img alt="European logo"  src="/pages/resources/images/logo-sm.jpg">
-                <br><span>europa.eu</span>
+                <%--<br><span>europa.eu</span>--%>
             </a>
         </div>
         <div class="slogan">
