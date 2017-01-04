@@ -160,7 +160,7 @@ public class ViewPmsProjectAction extends Action {
         pmsProjectForm.setImplementerProjectList(projectImplementerArr);
         //pmsProjectForm.setLocationProjectList(projectLocationArr);
         pmsProjectForm.setCommunityProjectList(projectCommunityArr);
-        pmsProjectForm.setBenificiaryProjectList(projectBenificiryArr);
+        //pmsProjectForm.setBenificiaryProjectList(projectBenificiryArr);
         pmsProjectForm.setIndicatorProjectList(projectIndicatorArr);
 
     }

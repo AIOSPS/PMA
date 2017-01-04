@@ -39,7 +39,9 @@ public class PmsProjectForm  extends ActionForm {
     private String[] implementerProjectList;
 //    private String[] locationProjectList;
     private String[] communityProjectList;
-    private String[] benificiaryProjectList;
+   // private String[] benificiaryProjectList;
+    private String btpId;
+    private Integer benTotal;
     private String[] indicatorProjectList;
 
 
@@ -240,12 +242,29 @@ public class PmsProjectForm  extends ActionForm {
         this.communityProjectList = communityProjectList;
     }
 
-    public String[] getBenificiaryProjectList() {
-        return benificiaryProjectList;
+//    public String[] getBenificiaryProjectList() {
+//        return benificiaryProjectList;
+//    }
+//
+//    public void setBenificiaryProjectList(String[] benificiaryProjectList) {
+//        this.benificiaryProjectList = benificiaryProjectList;
+//    }
+
+
+    public String getBtpId() {
+        return btpId;
     }
 
-    public void setBenificiaryProjectList(String[] benificiaryProjectList) {
-        this.benificiaryProjectList = benificiaryProjectList;
+    public void setBtpId(String btpId) {
+        this.btpId = btpId;
+    }
+
+    public Integer getBenTotal() {
+        return benTotal;
+    }
+
+    public void setBenTotal(Integer benTotal) {
+        this.benTotal = benTotal;
     }
 
     public String[] getIndicatorProjectList() {
@@ -283,7 +302,7 @@ public class PmsProjectForm  extends ActionForm {
         implementerProjectList=null;
         //locationProjectList=null;
         communityProjectList=null;
-        benificiaryProjectList=null;
+       // benificiaryProjectList=null;
         indicatorProjectList=null;
     }
 

@@ -49,7 +49,9 @@ public class AddPmsProjectAction extends Action {
         String[] implementerProjectList = pmsProjectForm.getImplementerProjectList();
        // String[] locationProjectList = pmsProjectForm.getLocationProjectList();
         String[] communityProjectList = pmsProjectForm.getCommunityProjectList();
-        String[] benificiaryProjectList = pmsProjectForm.getBenificiaryProjectList();
+       // String[] benificiaryProjectList = pmsProjectForm.getBenificiaryProjectList();
+        String benificiaryType = pmsProjectForm.getBtpId();
+        Integer benificiaryTotal = pmsProjectForm.getBenTotal();
         String[] indicatorProjectList = pmsProjectForm.getIndicatorProjectList();
 
         ArrayList inputs = new ArrayList();
@@ -75,7 +77,9 @@ public class AddPmsProjectAction extends Action {
         inputs.add(implementerProjectList);
  //       inputs.add(locationProjectList);
         inputs.add(communityProjectList);
-        inputs.add(benificiaryProjectList);
+      //  inputs.add(benificiaryProjectList);
+        inputs.add(benificiaryType);
+        inputs.add(benificiaryTotal);
         inputs.add(indicatorProjectList);
 
 

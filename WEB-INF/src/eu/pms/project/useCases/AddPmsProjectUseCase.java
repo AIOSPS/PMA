@@ -40,21 +40,26 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             String[] donorProjectArray = (String[]) itr.next();
             String[] implementerProjectArray = (String[]) itr.next();
             String[] communityProjectArray = (String[]) itr.next();
-            String[] benificiaryProjectArray = (String[]) itr.next();
+            //String[] benificiaryProjectArray = (String[]) itr.next();
+            String btpId =(String) itr.next();
+            Integer benTotal = (Integer) itr.next();
             String[] indicatorProjectArray = (String[]) itr.next();
 
             String username = "pms";
             Date timeStamp = new Date();
 
-            if(secType!=null && secType.equals("Hum")){
+            if(secType!=null && secType.equals("H")){
                 communityProjectArray = null;
                 proHasCluster = "0";
-            }else if(secType!=null && secType.equals("Dev")){
+            }else if(secType!=null && secType.equals("D")){
                 if(proHasCluster.equals("1")){
                     communityProjectArray = null;
                 }else if(proHasCluster.equals("0")){
                     secId = null;
                 }
+            }else if(secType!=null && secType.equals("Oth")){
+                communityProjectArray = null;
+                proHasCluster = "0";
             }
             PmsProject pmsProject = new PmsProject();
             pmsProject.setProId(proId);
@@ -76,8 +81,21 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             pmsProject.setUsername(username);
             pmsProject.setTimeStamp(timeStamp);
 
+
             List insertList = new ArrayList();
             insertList.add(pmsProject);
+
+            PmsProjectsBenificiaryPK pmsProjectsBenificiaryPK = new PmsProjectsBenificiaryPK();
+            PmsProjectsBenificiary pmsProjectsBenificiary = new PmsProjectsBenificiary();
+
+            pmsProjectsBenificiaryPK.setProId(proId);
+            pmsProjectsBenificiaryPK.setBtpId(btpId);
+            pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
+            pmsProjectsBenificiary.setBenTotal(benTotal);
+            pmsProjectsBenificiary.setUsername(username);
+            pmsProjectsBenificiary.setTimeStamp(timeStamp);
+            insertList.add(pmsProjectsBenificiary);
+
             if (donorProjectArray != null && donorProjectArray.length > 0) {
                 PmsProjectDonorPK pmsProjectDonorPK = null;
                 PmsProjectDonor pmsProjectDonor = null;
@@ -137,20 +155,20 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
                 }
             }
 
-            if (benificiaryProjectArray != null && benificiaryProjectArray.length > 0) {
-                PmsProjectsBenificiaryPK pmsProjectsBenificiaryPK = null;
-                PmsProjectsBenificiary pmsProjectsBenificiary = null;
-                for (String benificiary : benificiaryProjectArray) {
-                    pmsProjectsBenificiaryPK = new PmsProjectsBenificiaryPK();
-                    pmsProjectsBenificiary = new PmsProjectsBenificiary();
-                    pmsProjectsBenificiaryPK.setProId(proId);
-                    pmsProjectsBenificiaryPK.setBtpId(benificiary);
-                    pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
-                    pmsProjectsBenificiary.setUsername(username);
-                    pmsProjectsBenificiary.setTimeStamp(timeStamp);
-                    insertList.add(pmsProjectsBenificiary);
-                }
-            }
+//            if (benificiaryProjectArray != null && benificiaryProjectArray.length > 0) {
+//                PmsProjectsBenificiaryPK pmsProjectsBenificiaryPK = null;
+//                PmsProjectsBenificiary pmsProjectsBenificiary = null;
+//                for (String benificiary : benificiaryProjectArray) {
+//                    pmsProjectsBenificiaryPK = new PmsProjectsBenificiaryPK();
+//                    pmsProjectsBenificiary = new PmsProjectsBenificiary();
+//                    pmsProjectsBenificiaryPK.setProId(proId);
+//                    pmsProjectsBenificiaryPK.setBtpId(benificiary);
+//                    pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
+//                    pmsProjectsBenificiary.setUsername(username);
+//                    pmsProjectsBenificiary.setTimeStamp(timeStamp);
+//                    insertList.add(pmsProjectsBenificiary);
+//                }
+//            }
 
             if (indicatorProjectArray != null && indicatorProjectArray.length > 0) {
                 PmsProjectsIndicatorPK pmsProjectsIndicatorPK = null;

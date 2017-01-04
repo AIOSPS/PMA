@@ -377,10 +377,9 @@
 
                 <div class="form-group row">
                     <div class="col-md-6  ">
-                        <label for="benificiaryProjectList" class="col-sm-3 col-form-label">Benificiaries:</label>
+                        <label for="btpId" class="col-sm-3 col-form-label">Benificiary Type:</label>
                         <div class="col-sm-9">
-                            <html:select property="benificiaryProjectList" multiple="true"
-                                         styleClass="selectpicker form-control">
+                            <html:select property="btpId" styleClass="selectpicker form-control">
                                 <logic:present name="benificiryTypeList">
                                 <html:options collection="benificiryTypeList" property="lookupId" labelProperty="lookupDesc"/>
                                 </logic:present>
@@ -388,7 +387,15 @@
                         </div>
 
                     </div>
+                    <div class="col-md-6  ">
+                        <label for="benTotal" class="col-sm-3 col-form-label">Benificiary Total:</label>
+                        <div class="col-sm-9">
+                            <html:text property="benTotal" styleClass="form-control" styleId="benTotal"/>
+                        </div>
 
+                    </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6  ">
                         <label for="indicatorProjectList" class="col-sm-3 col-form-label">Indicators:</label>
                         <div class="col-sm-9">
@@ -398,6 +405,13 @@
                                               labelProperty="indTitle"/>
                                 </logic:present>
                             </html:select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6  ">
+                        <label  class="col-sm-3 col-form-label">&nbsp;</label>
+                        <div class="col-sm-9">
+                            &nbsp;
                         </div>
 
                     </div>
