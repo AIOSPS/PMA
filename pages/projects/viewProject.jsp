@@ -1,3 +1,8 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="eu.pms.project.database.PmsProjectsBenificiary" %>
+<%@ page import="eu.pms.project.database.PmsProjectsLocation" %>
+<%@ page import="eu.pms.lookup.database.PmsBenificiaryTyp" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -206,18 +211,53 @@
 
 
                 <h2 class="titleSep"><span>Location</span></h2>
-
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="comLatitude" class="col-sm-3 col-form-label"> Latitude:</label>
-                        <div class="col-sm-9">
-                            <html:text property="comLatitude" styleClass="form-control" styleId="comLatitude"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="comLongitude" class="col-sm-3 col-form-label"> Longitude:</label>
-                        <div class="col-sm-9">
-                            <html:text property="comLongitude" styleClass="form-control" styleId="comLongitude"/>
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                        <thead>
+                                        <tr >
+                                            <th width="50%" class="text-center">Latitude</th>
+                                            <th width="50%" class="text-center">Longitude</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="comLatitude">
+                                                <input type="text" id="comLatitude0" name="comLatitude0"  placeholder='Latitude' class="form-control"/>
+                                            </td>
+                                            <td data-name="comLongitude">
+                                                <input type="text" id="comLongitude0" name="comLongitude0" placeholder='Longitude' class="form-control"/>
+                                            </td>
+                                        </tr>
+                                        <logic:present name="projectLocationList">
+                                            <% List projectLocationList = (List) request.getAttribute("projectLocationList");
+                                                int count = 1;
+                                                Iterator itr = projectLocationList.iterator();
+                                                PmsProjectsLocation pmsProjectsLocation = null;
+                                                while (itr.hasNext()){
+                                                    pmsProjectsLocation = (PmsProjectsLocation) itr.next();
+                                            %>
+                                            <tr id='addr<%=count%>' data-id="<%=count%>">
+                                                <td data-name="comLatitude">
+                                                    <input type="text" disabled="true" id="comLatitude<%=count%>" name="comLatitude<%=count%>" value="<%=pmsProjectsLocation.getCompId().getComLatitude()%>"  placeholder='Latitude' class="form-control"/>
+                                                </td>
+                                                <td data-name="comLongitude">
+                                                    <input type="text" disabled="true" id="comLongitude<%=count%>" name="comLongitude<%=count%>" value="<%=pmsProjectsLocation.getCompId().getComLongitude()%>" placeholder='Longitude' class="form-control"/>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    count++;
+                                                }
+                                            %>
+                                        </logic:present>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -347,21 +387,83 @@
                     </div>
                 </div>
                 <h2 class="titleSep"><span>Benificiaries</span></h2>
-
                 <div class="form-group row">
-                    <div class="col-md-6  ">
-                        <label for="benificiaryProjectList" class="col-sm-3 col-form-label">Benificiaries:</label>
-                        <div class="col-sm-9">
-                            <html:select property="benificiaryProjectList" multiple="true" disabled="true"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="benificiryTypeList">
-                                    <html:options collection="benificiryTypeList" property="lookupId" labelProperty="lookupDesc"/>
-                                </logic:present>
-                            </html:select>
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic2">
+                                        <thead>
+                                        <tr >
+                                            <th width="50%" class="text-center">Benificiary Type</th>
+                                            <th width="50%" class="text-center">Benificiary Total</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="btpId">
+
+                                                <select  class="form-control" id="btpId0" name="btpId0"  >
+                                                    <logic:present name="benificiryTypeList">
+                                                    <% List benificiryTypeList = (List) request.getAttribute("benificiryTypeList");%>
+                                                        <%
+                                                            for (int i = 0; i < benificiryTypeList.size(); i++) {
+                                                                PmsBenificiaryTyp obj = (PmsBenificiaryTyp) benificiryTypeList.get(i);
+                                                        %>
+                                                        <option value="<%=obj.getLookupId()%>"><%=obj.getLookupDesc()%></option>
+                                                        <%}%>
+
+                                                    </logic:present>
+                                                </select>
+                                            </td>
+                                            <td data-name="benTotal">
+                                                <input type="text" id="benTotal0" name="benTotal0" placeholder='Benificiary Total' class="form-control"/>
+                                            </td>
+                                        </tr>
+                                        <logic:present name="projectBenificiryList">
+                                            <% List projectBenificiryList = (List) request.getAttribute("projectBenificiryList");
+                                                int count = 1;
+                                                Iterator itr = projectBenificiryList.iterator();
+                                                PmsProjectsBenificiary pmsProjectsBenificiary = null;
+                                                while (itr.hasNext()){
+                                                    pmsProjectsBenificiary = (PmsProjectsBenificiary) itr.next();
+                                            %>
+                                            <tr id='addr<%=count%>' data-id="<%=count%>">
+                                                <td data-name="btpId">
+                                                    <select  class="form-control" disabled="'true" id="btpId<%=count%>" name="btpId<%=count%>" >
+                                                        <logic:present name="benificiryTypeList">
+                                                            <% List benificiryTypeList = (List) request.getAttribute("benificiryTypeList");%>
+                                                            <%
+                                                                for (int i = 0; i < benificiryTypeList.size(); i++) {
+                                                                    PmsBenificiaryTyp obj = (PmsBenificiaryTyp) benificiryTypeList.get(i);
+                                                                    if(pmsProjectsBenificiary.getCompId().getBtpId().equals(obj.getLookupId())){
+                                                            %>
+                                                            <option selected value="<%=obj.getLookupId()%>"><%=obj.getLookupDesc()%></option>
+                                                            <%}else{%>
+                                                            <option value="<%=obj.getLookupId()%>"><%=obj.getLookupDesc()%></option>
+                                                            <% }}%>
+
+                                                        </logic:present>
+                                                    </select>
+                                                  </td>
+                                                <td data-name="benTotal">
+                                                    <input type="text" disabled="'true" id="benTotal<%=count%>" name="benTotal<%=count%>" value="<%=pmsProjectsBenificiary.getBenTotal()%>" placeholder='Benificiary Total' class="form-control"/>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    count++;
+                                                }
+                                            %>
+                                        </logic:present>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
                         </div>
-
                     </div>
-
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6  ">
                         <label for="indicatorProjectList" class="col-sm-3 col-form-label">Indicators:</label>
                         <div class="col-sm-9">
@@ -374,12 +476,18 @@
                         </div>
 
                     </div>
+                    <div class="col-md-6  ">
+                        <label  class="col-sm-3 col-form-label">&nbsp;</label>
+                        <div class="col-sm-9">
+                        </div>
+
+                    </div>
                 </div>
 
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="button" onclick="javaScript:parent.location = '/viewEditProject.do'"
+                        <button type="button" onclick="javaScript:parent.location = '/viewEditProject.do?proId=<%=request.getParameter("proId")%>'"
                                 class="btn btn-primary">Edit
                         </button>
                         <button type="button" onclick="javaScript:window.history.back();"
