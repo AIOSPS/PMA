@@ -98,7 +98,6 @@
                     </div>
                     <div class="col-md-6">
                         <label for="incAffectedChildren" class="col-sm-3 col-form-label">Affected Children:</label>
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
                         <div class="col-sm-9">
                             <html:text property="incAffectedChildren" styleClass="form-control" styleId="incAffectedChildren"/>
                         </div>
@@ -128,7 +127,6 @@
                     </div>
                     <div class="col-md-6">
                         <label for="incDisplacedChildren" class="col-sm-3 col-form-label">Displaced Children:</label>
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
                         <div class="col-sm-9">
                             <html:text property="incDisplacedChildren" styleClass="form-control" styleId="incDisplacedChildren"/>
                         </div>
@@ -136,50 +134,29 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="incDemolishedWomen" class="col-sm-3 col-form-label">Demolished Women:</label>
+                        <label for="incDemolishedStructure" class="col-sm-3 col-form-label">Demolished Structure:</label>
                         <div class="col-sm-9">
-                            <html:text property="incDemolishedWomen" styleClass="form-control" styleId="incDemolishedWomen"/>
+                            <html:text property="incDemolishedStructure" styleClass="form-control" styleId="incDemolishedStructure"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <label for="incDemolishedMen" class="col-sm-3 col-form-label">Demolished Men:</label>
-                        <div class="col-sm-9">
-                            <html:text property="incDemolishedMen" styleClass="form-control" styleId="incDemolishedMen"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="incDemolishedAdult" class="col-sm-3 col-form-label">Demolished Adult:</label>
-                        <div class="col-sm-9">
-                            <html:text property="incDemolishedAdult" styleClass="form-control" styleId="incDemolishedAdult"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="incDemolishedChildren" class="col-sm-3 col-form-label">Demolished Children:</label>
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
-                            <html:text property="incDemolishedChildren" styleClass="form-control" styleId="incDemolishedChildren"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="incSourceLink" class="col-sm-3 col-form-label">Source Link:</label>
                         <div class="col-sm-9">
                             <html:text property="incSourceLink" styleClass="form-control" styleId="incSourceLink"/>
                         </div>
                     </div>
+                </div>
+
+                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="incTimeStamp" class="col-sm-3 col-form-label">Incident Date:</label>
-                        <div class="col-sm-9">
                             <div class='input-group date col-sm-9' id='pIncidentDate'>
                                 <html:text property="incTimeStamp" styleClass="form-control" styleId="incTimeStamp"/>
                                 <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+                                 <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
                             </div>
+                        </div>
                             <script type="text/javascript">
                                 $(function () {
                                     $('#pIncidentDate').datetimepicker({
@@ -187,36 +164,34 @@
                                     });
                                 });
                             </script>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
+
                     <div class="col-md-6">
                         <label for="locLatitude" class="col-sm-3 col-form-label">Location Latitude:</label>
                         <div class="col-sm-9">
                             <html:text property="locLatitude" styleClass="form-control" styleId="locLatitude"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="locLongitude" class="col-sm-3 col-form-label">Location Longitude:</label>
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
                         <div class="col-sm-9">
                             <html:text property="locLongitude" styleClass="form-control" styleId="locLongitude"/>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="datId" class="col-sm-3 col-form-label">Data Sources:</label>
                         <div class="col-sm-9">
-                                <html:select property="datId"
-                                styleClass="selectpicker form-control">
-                                    <logic:present name="dataSourceList">
-                                <html:options collection="dataSourceList" property="lookupId" labelProperty="lookupDesc"/>
-                                    </logic:present>
-                                </html:select>
+                            <html:select property="datId"
+                                         styleClass="selectpicker form-control">
+                                <logic:present name="dataSourceList">
+                                    <html:options collection="dataSourceList" property="lookupId" labelProperty="lookupDesc"/>
+                                </logic:present>
+                            </html:select>
                         </div>
                     </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
@@ -228,22 +203,15 @@
                             </html:select>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="proId" class="col-sm-3 col-form-label">Project:</label>
                         <div class="col-sm-9">
                             <html:select property="proId"
                                          styleClass="selectpicker form-control">
                                 <logic:present name="projectList">
-                                <html:options collection="projectList" property="proId" labelProperty="proTitle"/>
+                                    <html:options collection="projectList" property="proId" labelProperty="proTitle"/>
                                 </logic:present>
                             </html:select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label  class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
                         </div>
                     </div>
                 </div>

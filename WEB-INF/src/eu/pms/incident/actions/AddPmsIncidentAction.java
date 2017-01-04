@@ -40,7 +40,7 @@ public class AddPmsIncidentAction extends Action {
         int incAffectedAdaults = pmsIncidentForm.getIncAffectedAdaults();
         int incAffectedChildren = pmsIncidentForm.getIncAffectedChildren();
         int incDisplacedWomen = pmsIncidentForm.getIncDisplacedWomen();
-        int incDemolishedWomen = pmsIncidentForm.getIncDemolishedWomen();
+        int incDemolishedStructure = pmsIncidentForm.getIncDemolishedStructure();
         String incSourceLink = pmsIncidentForm.getIncSourceLink();
         String incType = pmsIncidentForm.getIncType();
         String incTimeStamp = pmsIncidentForm.getIncDescription();
@@ -49,10 +49,6 @@ public class AddPmsIncidentAction extends Action {
         int incDisplacedMen = pmsIncidentForm.getIncDisplacedMen();
         int incDisplacedAdult = pmsIncidentForm.getIncDisplacedAdult();
         int incDisplacedChildren = pmsIncidentForm.getIncDisplacedChildren();
-        int incDemolishedMen = pmsIncidentForm.getIncDemolishedMen();
-        int incDemolishedAdult = pmsIncidentForm.getIncDemolishedAdult();
-        int incDemolishedChildren = pmsIncidentForm.getIncDemolishedChildren();
-
 
         ArrayList inputs = new ArrayList();
         inputs.add(incId);
@@ -66,7 +62,7 @@ public class AddPmsIncidentAction extends Action {
         inputs.add(incAffectedAdaults);
         inputs.add(incAffectedChildren);
         inputs.add(incDisplacedWomen);
-        inputs.add(incDemolishedWomen);
+        inputs.add(incDemolishedStructure);
         inputs.add(incSourceLink);
         inputs.add(incType);
         inputs.add(incTimeStamp);
@@ -75,9 +71,6 @@ public class AddPmsIncidentAction extends Action {
         inputs.add(incDisplacedMen);
         inputs.add(incDisplacedAdult);
         inputs.add(incDisplacedChildren);
-        inputs.add(incDemolishedMen);
-        inputs.add(incDemolishedAdult);
-        inputs.add(incDemolishedChildren);
 
         Collection result = new AddPmsIncidentUseCase().execute(inputs, request);
         if (result != null && result.size() > 0) {

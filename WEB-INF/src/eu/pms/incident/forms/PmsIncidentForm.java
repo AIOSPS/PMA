@@ -21,7 +21,7 @@ public class PmsIncidentForm extends ActionForm {
     private int incAffectedAdaults;
     private int incAffectedChildren;
     private int incDisplacedWomen;
-    private int incDemolishedWomen;
+    private int incDemolishedStructure;
     private String incSourceLink;
     private String incType;
     private String incTimeStamp;
@@ -30,9 +30,6 @@ public class PmsIncidentForm extends ActionForm {
     private int incDisplacedMen;
     private int incDisplacedAdult;
     private int incDisplacedChildren;
-    private int incDemolishedMen;
-    private int incDemolishedAdult;
-    private int incDemolishedChildren;
 
     /** default constructor */
     public PmsIncidentForm() {
@@ -126,15 +123,7 @@ public class PmsIncidentForm extends ActionForm {
         this.incDisplacedWomen = incDisplacedWomen;
     }
 
-    public int getIncDemolishedWomen() {
-        return incDemolishedWomen;
-    }
-
-    public void setIncDemolishedWomen(int incDemolishedWomen) {
-        this.incDemolishedWomen = incDemolishedWomen;
-    }
-
-    public String getIncSourceLink() {
+      public String getIncSourceLink() {
         return incSourceLink;
     }
 
@@ -198,28 +187,12 @@ public class PmsIncidentForm extends ActionForm {
         this.incDisplacedChildren = incDisplacedChildren;
     }
 
-    public int getIncDemolishedMen() {
-        return incDemolishedMen;
+    public int getIncDemolishedStructure() {
+        return incDemolishedStructure;
     }
 
-    public void setIncDemolishedMen(int incDemolishedMen) {
-        this.incDemolishedMen = incDemolishedMen;
-    }
-
-    public int getIncDemolishedAdult() {
-        return incDemolishedAdult;
-    }
-
-    public void setIncDemolishedAdult(int incDemolishedAdult) {
-        this.incDemolishedAdult = incDemolishedAdult;
-    }
-
-    public int getIncDemolishedChildren() {
-        return incDemolishedChildren;
-    }
-
-    public void setIncDemolishedChildren(int incDemolishedChildren) {
-        this.incDemolishedChildren = incDemolishedChildren;
+    public void setIncDemolishedStructure(int incDemolishedStructure) {
+        this.incDemolishedStructure = incDemolishedStructure;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

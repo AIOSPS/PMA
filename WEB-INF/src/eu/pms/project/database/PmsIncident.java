@@ -17,24 +17,21 @@ public class PmsIncident implements Serializable {
     private String proId;
     private String incOchaId;
     private String incDescription;
-    private int incAffectedWomen;
-    private int incAffectedMen;
-    private int incAffectedAdaults;
-    private int incAffectedChildren;
-    private int incDisplacedWomen;
-    private int incDemolishedWomen;
+    private Integer incAffectedWomen;
+    private Integer incAffectedMen;
+    private Integer incAffectedAdaults;
+    private Integer incAffectedChildren;
+    private Integer incDisplacedWomen;
+    private Integer incDemolishedStructure;
     private String incSourceLink;
     private String incType;
     private java.util.Date incTimeStamp;
     private String incTimeStampStr;
     private java.math.BigDecimal ochaLocLatitude;
     private java.math.BigDecimal ochaLocLongitude;
-    private int incDisplacedMen;
-    private int incDisplacedAdult;
-    private int incDisplacedChildren;
-    private int incDemolishedMen;
-    private int incDemolishedAdult;
-    private int incDemolishedChildren;
+    private Integer incDisplacedMen;
+    private Integer incDisplacedAdult;
+    private Integer incDisplacedChildren;
     private java.math.BigDecimal locLatitude;
     private java.math.BigDecimal locLongitude;
     private String username;
@@ -110,12 +107,12 @@ public class PmsIncident implements Serializable {
         this.incDisplacedWomen = incDisplacedWomen;
     }
 
-    public int getIncDemolishedWomen() {
-        return this.incDemolishedWomen;
+    public int getIncDemolishedStructure() {
+        return this.incDemolishedStructure;
     }
 
-    public void setIncDemolishedWomen(int incDemolishedWomen) {
-        this.incDemolishedWomen = incDemolishedWomen;
+    public void setIncDemolishedStructure(int incDemolishedStructure) {
+        this.incDemolishedStructure = incDemolishedStructure;
     }
 
     public String getIncSourceLink() {
@@ -158,52 +155,28 @@ public class PmsIncident implements Serializable {
         this.locLongitude = locLongitude;
     }
 
-    public int getIncDisplacedMen() {
+    public Integer getIncDisplacedMen() {
         return this.incDisplacedMen;
     }
 
-    public void setIncDisplacedMen(int incDisplacedMen) {
+    public void setIncDisplacedMen(Integer incDisplacedMen) {
         this.incDisplacedMen = incDisplacedMen;
     }
 
-    public int getIncDisplacedAdult() {
+    public Integer getIncDisplacedAdult() {
         return this.incDisplacedAdult;
     }
 
-    public void setIncDisplacedAdult(int incDisplacedAdult) {
+    public void setIncDisplacedAdult(Integer incDisplacedAdult) {
         this.incDisplacedAdult = incDisplacedAdult;
     }
 
-    public int getIncDisplacedChildren() {
+    public Integer getIncDisplacedChildren() {
         return this.incDisplacedChildren;
     }
 
-    public void setIncDisplacedChildren(int incDisplacedChildren) {
+    public void setIncDisplacedChildren(Integer incDisplacedChildren) {
         this.incDisplacedChildren = incDisplacedChildren;
-    }
-
-    public int getIncDemolishedMen() {
-        return this.incDemolishedMen;
-    }
-
-    public void setIncDemolishedMen(int incDemolishedMen) {
-        this.incDemolishedMen = incDemolishedMen;
-    }
-
-    public int getIncDemolishedAdult() {
-        return this.incDemolishedAdult;
-    }
-
-    public void setIncDemolishedAdult(int incDemolishedAdult) {
-        this.incDemolishedAdult = incDemolishedAdult;
-    }
-
-    public int getIncDemolishedChildren() {
-        return this.incDemolishedChildren;
-    }
-
-    public void setIncDemolishedChildren(int incDemolishedChildren) {
-        this.incDemolishedChildren = incDemolishedChildren;
     }
 
     public BigDecimal getOchaLocLatitude() {

@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="account-wall">
-                    <img class="profile-img" src="/pages/resources/images/European_Commission.png" alt="">
+                    <img class="profile-img" src="/pages/resources/images/logo.jpg" alt="">
                     <html:form action="login" focus="userId">
                         <div class="form-signin">
                     <%--<form class="form-signin" action="home.html">--%>

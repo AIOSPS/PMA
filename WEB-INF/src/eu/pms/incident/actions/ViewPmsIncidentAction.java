@@ -72,10 +72,7 @@ public class ViewPmsIncidentAction extends Action {
         pmsIncidentForm.setIncDisplacedMen(pmsIncident.getIncDisplacedMen());
         pmsIncidentForm.setIncDisplacedAdult(pmsIncident.getIncDisplacedAdult());
         pmsIncidentForm.setIncDisplacedChildren(pmsIncident.getIncDisplacedChildren());
-        pmsIncidentForm.setIncDemolishedWomen(pmsIncident.getIncDemolishedWomen());
-        pmsIncidentForm.setIncDemolishedMen(pmsIncident.getIncDemolishedMen());
-        pmsIncidentForm.setIncDemolishedAdult(pmsIncident.getIncDemolishedAdult());
-        pmsIncidentForm.setIncDemolishedChildren(pmsIncident.getIncDemolishedChildren());
+        pmsIncidentForm.setIncDemolishedStructure(pmsIncident.getIncDemolishedStructure());
         pmsIncidentForm.setIncType(pmsIncident.getIncType());
         pmsIncidentForm.setIncSourceLink(pmsIncident.getIncSourceLink());
         pmsIncidentForm.setIncTimeStamp(pmsIncident.getIncTimeStampStr());

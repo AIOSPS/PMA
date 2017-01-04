@@ -136,34 +136,19 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="incDemolishedWomen" class="col-sm-3 col-form-label">Demolished Women:</label>
+                        <label for="incDemolishedStructure" class="col-sm-3 col-form-label">Demolished Structure:</label>
                         <div class="col-sm-9">
-                            <html:text property="incDemolishedWomen" styleClass="form-control" styleId="incDemolishedWomen" disabled="true"/>
+                            <html:text property="incDemolishedStructure" styleClass="form-control" styleId="incDemolishedStructure" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="incDemolishedMen" class="col-sm-3 col-form-label">Demolished Men:</label>
+                        <label for="incDemolishedMen" class="col-sm-3 col-form-label">&nbsp;</label>
                         <div class="col-sm-9">
-                            <html:text property="incDemolishedMen" styleClass="form-control" styleId="incDemolishedMen" disabled="true"/>
+                            &nbsp;
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="incDemolishedAdult" class="col-sm-3 col-form-label">Demolished Adult:</label>
-                        <div class="col-sm-9">
-                            <html:text property="incDemolishedAdult" styleClass="form-control" styleId="incDemolishedAdult" disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="incDemolishedChildren" class="col-sm-3 col-form-label">Demolished Children:</label>
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
-                            <html:text property="incDemolishedChildren" styleClass="form-control" styleId="incDemolishedChildren" disabled="true"/>
-                        </div>
-                    </div>
-                </div>
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="incSourceLink" class="col-sm-3 col-form-label">Source Link:</label>

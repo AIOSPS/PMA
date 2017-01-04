@@ -66,8 +66,8 @@
                         <div class="col-sm-9">
                             <html:select property="perType"
                                          styleClass="selectpicker form-control">
-                                <html:option value="1">Type one</html:option>
-                                <html:option value="2">Type two</html:option>
+                                <html:option value="1">PA</html:option>
+                                <html:option value="2">ICA</html:option>
                             </html:select>
                         </div>
                     </div>
@@ -76,8 +76,11 @@
                         <div class="col-sm-9">
                             <html:select property="perStatus"
                                          styleClass="selectpicker form-control">
-                                <html:option value="1">Status one</html:option>
-                                <html:option value="2">Status two</html:option>
+                                <html:option value="1">Approved</html:option>
+                                <html:option value="2">Stuck</html:option>
+                                <html:option value="3">Refused</html:option>
+                                <html:option value="4">Submitted</html:option>
+                                <html:option value="5">Rejected</html:option>
                             </html:select>
                         </div>
                     </div>
