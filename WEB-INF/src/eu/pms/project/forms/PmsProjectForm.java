@@ -32,16 +32,10 @@ public class PmsProjectForm  extends ActionForm {
     private String secId;
     private String secType;
     private String preId;
-    private String comLatitude;
-    private String comLongitude;
 
     private String[] donorProjectList;
     private String[] implementerProjectList;
-//    private String[] locationProjectList;
     private String[] communityProjectList;
-   // private String[] benificiaryProjectList;
-    private String btpId;
-    private Integer benTotal;
     private String[] indicatorProjectList;
 
 
@@ -162,22 +156,6 @@ public class PmsProjectForm  extends ActionForm {
         this.prgId = prgId;
     }
 
-    public String getComLatitude() {
-        return comLatitude;
-    }
-
-    public void setComLatitude(String comLatitude) {
-        this.comLatitude = comLatitude;
-    }
-
-    public String getComLongitude() {
-        return comLongitude;
-    }
-
-    public void setComLongitude(String comLongitude) {
-        this.comLongitude = comLongitude;
-    }
-
     public String getDevId() {
         return devId;
     }
@@ -226,13 +204,6 @@ public class PmsProjectForm  extends ActionForm {
         this.implementerProjectList = implementerProjectList;
     }
 
-//    public String[] getLocationProjectList() {
-//        return locationProjectList;
-//    }
-//
-//    public void setLocationProjectList(String[] locationProjectList) {
-//        this.locationProjectList = locationProjectList;
-//    }
 
     public String[] getCommunityProjectList() {
         return communityProjectList;
@@ -242,30 +213,6 @@ public class PmsProjectForm  extends ActionForm {
         this.communityProjectList = communityProjectList;
     }
 
-//    public String[] getBenificiaryProjectList() {
-//        return benificiaryProjectList;
-//    }
-//
-//    public void setBenificiaryProjectList(String[] benificiaryProjectList) {
-//        this.benificiaryProjectList = benificiaryProjectList;
-//    }
-
-
-    public String getBtpId() {
-        return btpId;
-    }
-
-    public void setBtpId(String btpId) {
-        this.btpId = btpId;
-    }
-
-    public Integer getBenTotal() {
-        return benTotal;
-    }
-
-    public void setBenTotal(Integer benTotal) {
-        this.benTotal = benTotal;
-    }
 
     public String[] getIndicatorProjectList() {
         return indicatorProjectList;
@@ -295,14 +242,10 @@ public class PmsProjectForm  extends ActionForm {
         secId=null;
         secType=null;
         preId=null;
-        comLatitude=null;
-        comLongitude=null;
 
         donorProjectList=null;
         implementerProjectList=null;
-        //locationProjectList=null;
         communityProjectList=null;
-       // benificiaryProjectList=null;
         indicatorProjectList=null;
     }
 

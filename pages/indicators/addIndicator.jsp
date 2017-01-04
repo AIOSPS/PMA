@@ -62,7 +62,7 @@
                             <html:select property="resId"
                                          styleClass="selectpicker form-control">
                                 <logic:present name="resultList">
-                                <html:options collection="resultList" property="compId.compId" labelProperty="resDesc"/>
+                                    <html:options collection="resultList" property="compId.compId" labelProperty="resDesc"/>
                                 </logic:present>
                             </html:select>
                         </div>
@@ -146,9 +146,8 @@
                                     <table class="table table-bordered table-hover table-sortable" id="tab_logic">
                                         <thead>
                                         <tr >
-                                            <th width="35%" class="text-center">Date</th>
-                                            <th width="30%" class="text-center">Target</th>
-                                            <th width="30%" class="text-center">Value</th>
+                                            <th width="48%" class="text-center">Target</th>
+                                            <th width="47%" class="text-center">Value</th>
                                             <th width="5%" class="text-center">
                                                 <a id="add_row" class="btn btn-primary fa fa-plus"></a>
                                             </th>
@@ -156,9 +155,6 @@
                                         </thead>
                                         <tbody>
                                         <tr id='addr0' data-id="0" class="hidden">
-                                            <td data-name="msrDate">
-                                                <input type="text" id="msrDate0" name="msrDate0"  placeholder='dd/mm/yyyy' class="form-control"/>
-                                            </td>
                                             <td data-name="indTarget">
                                                 <input type="text" id="indTarget0" name="indTarget0" placeholder='Target' class="form-control"/>
                                             </td>

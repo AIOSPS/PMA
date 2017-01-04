@@ -69,9 +69,7 @@ public class ViewPmsProjectAction extends Action {
         PmsProject pmsProject = null;
         String[] projectDonorArr = null;
         String[] projectImplementerArr = null;
-        String[] projectLocationArr = null;
         String[] projectCommunityArr = null;
-        String[] projectBenificiryArr = null;
         String[] projectIndicatorArr = null;
         if (projectList != null && projectList.size() > 0 && projectList.get(0) instanceof PmsProject) {
             pmsProject = (PmsProject) projectList.get(0);
@@ -93,30 +91,13 @@ public class ViewPmsProjectAction extends Action {
                     i++;
                 }
             }
-//            List<PmsProjectsLocation> projectLocationList = (List) new GetPmsProjectLocationUseCase().execute(inputs, request);
-//            if (projectLocationList != null && projectLocationList.size() > 0) {
-//                projectLocationArr = new String[projectLocationList.size()];
-//                int i = 0;
-//                for (PmsProjectsLocation pmsProjectsLocation : projectLocationList) {
-//                    projectLocationArr[i] = pmsProjectsLocation.getCompId().getLocId();
-//                    i++;
-//                }
-//            }
+
             List<PmsProjectsCommunity> projectCommunityList = (List) new GetPmsProjectCommunityUseCase().execute(inputs, request);
             if (projectCommunityList != null && projectCommunityList.size() > 0) {
                 projectCommunityArr = new String[projectCommunityList.size()];
                 int i = 0;
                 for (PmsProjectsCommunity pmsProjectsCommunity : projectCommunityList) {
                     projectCommunityArr[i] = pmsProjectsCommunity.getCompId().getComId();
-                    i++;
-                }
-            }
-            List<PmsProjectsBenificiary> projectBenificiryList = (List) new GetPmsProjectBenificiaryUseCase().execute(inputs, request);
-            if (projectBenificiryList != null && projectBenificiryList.size() > 0) {
-                projectBenificiryArr = new String[projectBenificiryList.size()];
-                int i = 0;
-                for (PmsProjectsBenificiary pmsProjectsBenificiary : projectBenificiryList) {
-                    projectBenificiryArr[i] = pmsProjectsBenificiary.getCompId().getBtpId();
                     i++;
                 }
             }
@@ -130,14 +111,21 @@ public class ViewPmsProjectAction extends Action {
                 }
             }
             PmsProjectForm pmsProjectForm = (PmsProjectForm) form;
-            fillPmsProjectData(pmsProjectForm, pmsProject, projectDonorArr, projectImplementerArr, projectLocationArr, projectCommunityArr, projectBenificiryArr, projectIndicatorArr);
+            fillPmsProjectData(pmsProjectForm, pmsProject, projectDonorArr, projectImplementerArr, projectCommunityArr, projectIndicatorArr);
+
+            List<PmsProjectsLocation> projectLocationList = (List) new GetPmsProjectLocationUseCase().execute(inputs, request);
+            request.setAttribute("projectLocationList", projectLocationList);
+            List<PmsProjectsBenificiary> projectBenificiryList = (List) new GetPmsProjectBenificiaryUseCase().execute(inputs, request);
+            request.setAttribute("projectBenificiryList", projectBenificiryList);
+            List benificiryTypeList = (List) new GetPmsBenificiaryUseCase().execute(null, request);
+            request.setAttribute("benificiryTypeList", benificiryTypeList);
         }
 
 
         return mapping.findForward("success");
     }
 
-    private void fillPmsProjectData(PmsProjectForm pmsProjectForm, PmsProject pmsProject, String[] projectDonorArr, String[] projectImplementerArr, String[] projectLocationArr, String[] projectCommunityArr, String[] projectBenificiryArr, String[] projectIndicatorArr) {
+    private void fillPmsProjectData(PmsProjectForm pmsProjectForm, PmsProject pmsProject, String[] projectDonorArr, String[] projectImplementerArr, String[] projectCommunityArr,  String[] projectIndicatorArr) {
         pmsProjectForm.setProId(pmsProject.getProId());
         pmsProjectForm.setProTitle(pmsProject.getProTitle());
         pmsProjectForm.setProDescription(pmsProject.getProDescription());
@@ -154,13 +142,9 @@ public class ViewPmsProjectAction extends Action {
         pmsProjectForm.setProNeedPermit(pmsProject.getProNeedPermit());
         pmsProjectForm.setPreId(pmsProject.getPreId());
         pmsProjectForm.setSecType(pmsProject.getSecType());
-        pmsProjectForm.setComLatitude(pmsProject.getComLatitude());
-        pmsProjectForm.setComLongitude(pmsProject.getComLongitude());
         pmsProjectForm.setDonorProjectList(projectDonorArr);
         pmsProjectForm.setImplementerProjectList(projectImplementerArr);
-        //pmsProjectForm.setLocationProjectList(projectLocationArr);
         pmsProjectForm.setCommunityProjectList(projectCommunityArr);
-        //pmsProjectForm.setBenificiaryProjectList(projectBenificiryArr);
         pmsProjectForm.setIndicatorProjectList(projectIndicatorArr);
 
     }

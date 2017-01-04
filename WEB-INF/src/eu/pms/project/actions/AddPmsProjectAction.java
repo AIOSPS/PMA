@@ -1,7 +1,13 @@
 package eu.pms.project.actions;
 
 
+import eu.pms.common.tools.DateTool;
 import eu.pms.common.tools.SessionTraker;
+import eu.pms.login.database.SecUser;
+import eu.pms.project.database.PmsProjectsBenificiary;
+import eu.pms.project.database.PmsProjectsBenificiaryPK;
+import eu.pms.project.database.PmsProjectsLocation;
+import eu.pms.project.database.PmsProjectsLocationPK;
 import eu.pms.project.forms.PmsProjectForm;
 import eu.pms.project.useCases.AddPmsProjectUseCase;
 import org.apache.struts.action.Action;
@@ -11,8 +17,13 @@ import org.apache.struts.action.ActionMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
+import java.util.Map;
 
 public class AddPmsProjectAction extends Action {
 
@@ -36,22 +47,14 @@ public class AddPmsProjectAction extends Action {
         String proHasCluster = pmsProjectForm.getProHasCluster();
         String proNotes = pmsProjectForm.getProNotes();
         String proArea = pmsProjectForm.getProArea();
-        String username = "pms";
-        String timeStamp = "";
         String prgId = pmsProjectForm.getPrgId();
         String devId = pmsProjectForm.getDevId();
         String secId = pmsProjectForm.getSecId();
         String secType = pmsProjectForm.getSecType();
         String preId = pmsProjectForm.getPreId();
-        String comLatitude = pmsProjectForm.getComLatitude();
-        String comLongitude = pmsProjectForm.getComLongitude();
         String[] donorProjectList = pmsProjectForm.getDonorProjectList();
         String[] implementerProjectList = pmsProjectForm.getImplementerProjectList();
-       // String[] locationProjectList = pmsProjectForm.getLocationProjectList();
         String[] communityProjectList = pmsProjectForm.getCommunityProjectList();
-       // String[] benificiaryProjectList = pmsProjectForm.getBenificiaryProjectList();
-        String benificiaryType = pmsProjectForm.getBtpId();
-        Integer benificiaryTotal = pmsProjectForm.getBenTotal();
         String[] indicatorProjectList = pmsProjectForm.getIndicatorProjectList();
 
         ArrayList inputs = new ArrayList();
@@ -71,17 +74,59 @@ public class AddPmsProjectAction extends Action {
         inputs.add(secId);
         inputs.add(secType);
         inputs.add(preId);
-        inputs.add(comLatitude);
-        inputs.add(comLongitude);
         inputs.add(donorProjectList);
         inputs.add(implementerProjectList);
- //       inputs.add(locationProjectList);
         inputs.add(communityProjectList);
-      //  inputs.add(benificiaryProjectList);
-        inputs.add(benificiaryType);
-        inputs.add(benificiaryTotal);
         inputs.add(indicatorProjectList);
 
+        ArrayList locationList=new ArrayList();
+        Map<String, String[]> parameters = request.getParameterMap();
+        String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
+        Date timeStamp = new Date();
+        int count=1;
+        for(String parameter : parameters.keySet()) {
+            PmsProjectsLocationPK pmsProjectsLocationPK= new PmsProjectsLocationPK();
+            PmsProjectsLocation pmsProjectsLocation= new PmsProjectsLocation();
+            if(parameters.containsKey("comLatitude"+count)) {
+                pmsProjectsLocationPK.setProId(proId);
+                DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+                symbols.setGroupingSeparator(',');
+                symbols.setDecimalSeparator('.');
+                String pattern = "#,##0.0#";
+                DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
+                decimalFormat.setParseBigDecimal(true);
+                BigDecimal comLatitude = (BigDecimal) decimalFormat.parse(parameters.get("comLatitude"+count)[0]);
+                pmsProjectsLocationPK.setComLatitude(comLatitude);
+                BigDecimal comLongitude = (BigDecimal) decimalFormat.parse(parameters.get("comLongitude"+count)[0]);
+                pmsProjectsLocationPK.setComLongitude(comLongitude);
+                pmsProjectsLocation.setCompId(pmsProjectsLocationPK);
+                pmsProjectsLocation.setUsername(username);
+                pmsProjectsLocation.setTimeStamp(timeStamp);
+                locationList.add(pmsProjectsLocation);
+                count++;
+            }
+        }
+        inputs.add(locationList);
+
+        ArrayList penificiaryList=new ArrayList();
+        count=1;
+        for(String parameter : parameters.keySet()) {
+            PmsProjectsBenificiaryPK pmsProjectsBenificiaryPK= new PmsProjectsBenificiaryPK();
+            PmsProjectsBenificiary pmsProjectsBenificiary= new PmsProjectsBenificiary();
+            if(parameters.containsKey("btpId"+count)) {
+                pmsProjectsBenificiaryPK.setProId(proId);
+                pmsProjectsBenificiaryPK.setBtpId(parameters.get("btpId"+count)[0]);
+                pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
+                String benTotalStr =parameters.get("benTotal"+count)[0];
+                Integer benTotal =Integer.parseInt(benTotalStr);
+                pmsProjectsBenificiary.setBenTotal(benTotal);
+                pmsProjectsBenificiary.setUsername(username);
+                pmsProjectsBenificiary.setTimeStamp(timeStamp);
+                penificiaryList.add(pmsProjectsBenificiary);
+                count++;
+            }
+        }
+        inputs.add(penificiaryList);
 
         Collection result = new AddPmsProjectUseCase().execute(inputs, request);
         if (result != null && result.size() > 0) {

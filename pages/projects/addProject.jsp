@@ -246,7 +246,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="prNotes" class="col-sm-3 col-form-label">Project Images:</label>
+                        <label class="col-sm-3 col-form-label">&nbsp;</label>
                         <div class="col-sm-9">
                             <%--<img id="prImage" src="resources/images/pro1.jpg" height="168"></img>--%>
                                 <%--<label class="control-label">Select File</label>--%>
@@ -264,16 +264,37 @@
                 <h2 class="titleSep"><span>Location</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="comLatitude" class="col-sm-3 col-form-label"> Latitude:</label>
-                        <div class="col-sm-9">
-                            <html:text property="comLatitude" styleClass="form-control" styleId="comLatitude"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="comLongitude" class="col-sm-3 col-form-label"> Longitude:</label>
-                        <div class="col-sm-9">
-                            <html:text property="comLongitude" styleClass="form-control" styleId="comLongitude"/>
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                        <thead>
+                                        <tr >
+                                            <th width="47%" class="text-center">Latitude</th>
+                                            <th width="48%" class="text-center">Longitude</th>
+                                            <th width="5%" class="text-center">
+                                                <a id="add_row" class="btn btn-primary fa fa-plus"></a>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="comLatitude">
+                                                <input type="text" id="comLatitude0" name="comLatitude0"  placeholder='Latitude' class="form-control"/>
+                                            </td>
+                                            <td data-name="comLongitude">
+                                                <input type="text" id="comLongitude0" name="comLongitude0" placeholder='Longitude' class="form-control"/>
+                                            </td>
+                                            <td data-name="del">
+                                                <button nam="del0" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -375,24 +396,63 @@
                 </div>
                 <h2 class="titleSep"><span>Benificiaries</span></h2>
 
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6  ">--%>
+                        <%--<label for="btpId" class="col-sm-3 col-form-label">Benificiary Type:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:select property="btpId" styleClass="selectpicker form-control">--%>
+                                <%--<logic:present name="benificiryTypeList">--%>
+                                <%--<html:options collection="benificiryTypeList" property="lookupId" labelProperty="lookupDesc"/>--%>
+                                <%--</logic:present>--%>
+                            <%--</html:select>--%>
+                        <%--</div>--%>
+
+                    <%--</div>--%>
+                    <%--<div class="col-md-6  ">--%>
+                        <%--<label for="benTotal" class="col-sm-3 col-form-label">Benificiary Total:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="benTotal" styleClass="form-control" styleId="benTotal"/>--%>
+                        <%--</div>--%>
+
+                    <%--</div>--%>
+                <%--</div>--%>
                 <div class="form-group row">
-                    <div class="col-md-6  ">
-                        <label for="btpId" class="col-sm-3 col-form-label">Benificiary Type:</label>
-                        <div class="col-sm-9">
-                            <html:select property="btpId" styleClass="selectpicker form-control">
-                                <logic:present name="benificiryTypeList">
-                                <html:options collection="benificiryTypeList" property="lookupId" labelProperty="lookupDesc"/>
-                                </logic:present>
-                            </html:select>
-                        </div>
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic2">
+                                        <thead>
+                                        <tr >
+                                            <th width="47%" class="text-center">Benificiary Type</th>
+                                            <th width="48%" class="text-center">Benificiary Total</th>
+                                            <th width="5%" class="text-center">
+                                                <a id="add_row2" class="btn btn-primary fa fa-plus"></a>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="btpId">benificiryTypeList
+                                                <select  class="form-control" id="btpId0" name="btpId0"  >
+                                                    <logic:iterate id="benificiryTypeList" name="benificiryTypeList">
+                                                        <option value=<bean:write name="benificiryTypeList" property="lookupId"/>><bean:write name="benificiryTypeList" property="lookupDesc"/></option>
+                                                    </logic:iterate>
+                                                </select>
+                                            </td>
+                                            <td data-name="benTotal">
+                                                <input type="text" id="benTotal0" name="benTotal0" placeholder='Benificiary Total' class="form-control"/>
+                                            </td>
+                                            <td data-name="del">
+                                                <button nam="del0" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
-                    </div>
-                    <div class="col-md-6  ">
-                        <label for="benTotal" class="col-sm-3 col-form-label">Benificiary Total:</label>
-                        <div class="col-sm-9">
-                            <html:text property="benTotal" styleClass="form-control" styleId="benTotal"/>
                         </div>
-
                     </div>
                 </div>
                 <div class="form-group row">
@@ -401,7 +461,7 @@
                         <div class="col-sm-9">
                             <html:select property="indicatorProjectList" styleClass="selectpicker form-control">
                                 <logic:present name="indicatorList">
-                                <html:options collection="indicatorList" property="compId.indId"
+                                <html:options collection="indicatorList" property="compId.compId"
                                               labelProperty="indTitle"/>
                                 </logic:present>
                             </html:select>
@@ -540,6 +600,110 @@
 
     setProjectTypeConfig('H');
 
+    //   table script for location
+    $(document).ready(function() {
+        $("#add_row").on("click", function() {
+            var newid = 0;
+            $.each($("#tab_logic tr"), function() {
+                if (parseInt($(this).data("id")) > newid) {
+                    newid = parseInt($(this).data("id"));
+                }
+            });
+            newid++;
+            var tr = $("<tr></tr>", {
+                id: "addr"+newid,
+                "data-id": newid
+            });
+            $.each($("#tab_logic tbody tr:nth(0) td"), function() {
+                var cur_td = $(this);
+
+                var children = cur_td.children();
+                if ($(this).data("name") != undefined) {
+                    var td = $("<td></td>", {
+                        "data-name": $(cur_td).data("name")
+                    });
+
+                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
+                    c.attr("name", $(cur_td).data("name") + newid);
+                    c.attr("id", $(cur_td).data("name") + newid);
+                    c.appendTo($(td));
+                    td.appendTo($(tr));
+                } else {
+                    var td = $("<td></td>", {
+                        'text': $('#tab_logic tr').length
+                    }).appendTo($(tr));
+                }
+            });
+            $(tr).appendTo($('#tab_logic'));
+
+            $(tr).find("td button.row-remove").on("click", function() {
+                $(this).closest("tr").remove();
+            });
+        });
+        $("#add_row2").on("click", function() {
+            var newid = 0;
+            $.each($("#tab_logic2 tr"), function() {
+                if (parseInt($(this).data("id")) > newid) {
+                    newid = parseInt($(this).data("id"));
+                }
+            });
+            newid++;
+            var tr = $("<tr></tr>", {
+                id: "addr"+newid,
+                "data-id": newid
+            });
+            $.each($("#tab_logic2 tbody tr:nth(0) td"), function() {
+                var cur_td = $(this);
+
+                var children = cur_td.children();
+                if ($(this).data("name") != undefined) {
+                    var td = $("<td></td>", {
+                        "data-name": $(cur_td).data("name")
+                    });
+
+                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
+                    c.attr("name", $(cur_td).data("name") + newid);
+                    c.attr("id", $(cur_td).data("name") + newid);
+                    c.appendTo($(td));
+                    td.appendTo($(tr));
+                } else {
+                    var td = $("<td></td>", {
+                        'text': $('#tab_logic2 tr').length
+                    }).appendTo($(tr));
+                }
+            });
+            $(tr).appendTo($('#tab_logic2'));
+
+            $(tr).find("td button.row-remove").on("click", function() {
+                $(this).closest("tr").remove();
+            });
+        });
+
+
+
+
+        // Sortable Code
+        var fixHelperModified = function(e, tr) {
+            var $originals = tr.children();
+            var $helper = tr.clone();
+
+            $helper.children().each(function(index) {
+                $(this).width($originals.eq(index).width())
+            });
+
+            return $helper;
+        };
+
+        $(".table-sortable tbody").sortable({
+            helper: fixHelperModified
+        }).disableSelection();
+
+        $(".table-sortable thead").disableSelection();
+
+
+
+        $("#add_row").trigger("click");
+    });
 
 </script>
 
