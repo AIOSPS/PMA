@@ -9,71 +9,53 @@ import java.math.BigDecimal;
 
 /** @author Hibernate CodeGenerator */
 public class PmsProjectSearchForm extends ActionForm {
-    private String projectTitle;
-    private String projectDescription;
-    private String projectStatus;
-    private String projectStartDate;
-    private String projectEndDate;
-    private String projectNeedPermit;
-    private String projectHasCluster;
+    private String donorId;
+    private String sectorId;
+    private String governateId;
+    private String communityId;
+    private String statusId;
     /** default constructor */
     public PmsProjectSearchForm() {
     }
 
-    public String getProjectTitle() {
-        return projectTitle;
+    public String getDonorId() {
+        return donorId;
     }
 
-    public void setProjectTitle(String projectTitle) {
-        this.projectTitle = projectTitle;
+    public void setDonorId(String donorId) {
+        this.donorId = donorId;
     }
 
-    public String getProjectDescription() {
-        return projectDescription;
+    public String getSectorId() {
+        return sectorId;
     }
 
-    public void setProjectDescription(String projectDescription) {
-        this.projectDescription = projectDescription;
+    public void setSectorId(String sectorId) {
+        this.sectorId = sectorId;
     }
 
-    public String getProjectStatus() {
-        return projectStatus;
+    public String getGovernateId() {
+        return governateId;
     }
 
-    public void setProjectStatus(String projectStatus) {
-        this.projectStatus = projectStatus;
+    public void setGovernateId(String governateId) {
+        this.governateId = governateId;
     }
 
-    public String getProjectStartDate() {
-        return projectStartDate;
+    public String getCommunityId() {
+        return communityId;
     }
 
-    public void setProjectStartDate(String projectStartDate) {
-        this.projectStartDate = projectStartDate;
+    public void setCommunityId(String communityId) {
+        this.communityId = communityId;
     }
 
-    public String getProjectEndDate() {
-        return projectEndDate;
+    public String getStatusId() {
+        return statusId;
     }
 
-    public void setProjectEndDate(String projectEndDate) {
-        this.projectEndDate = projectEndDate;
-    }
-
-    public String getProjectNeedPermit() {
-        return projectNeedPermit;
-    }
-
-    public void setProjectNeedPermit(String projectNeedPermit) {
-        this.projectNeedPermit = projectNeedPermit;
-    }
-
-    public String getProjectHasCluster() {
-        return projectHasCluster;
-    }
-
-    public void setProjectHasCluster(String projectHasCluster) {
-        this.projectHasCluster = projectHasCluster;
+    public void setStatusId(String statusId) {
+        this.statusId = statusId;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

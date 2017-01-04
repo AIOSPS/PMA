@@ -18,6 +18,16 @@ public class PmsProjectVw implements Serializable {
     private java.math.BigDecimal proBudget;
     private String proStartDate;
     private String proEndDate;
+    private String donorId;
+    private String donorName;
+    private String governateId;
+    private String governateDesc;
+    private String communityId;
+    private String communityName;
+    private String sectorId;
+    private String sectorName;
+
+
     /** default constructor */
     public PmsProjectVw() {
     }
@@ -78,6 +88,69 @@ public class PmsProjectVw implements Serializable {
         this.proEndDate = proEndDate;
     }
 
+    public String getDonorId() {
+        return donorId;
+    }
+
+    public void setDonorId(String donorId) {
+        this.donorId = donorId;
+    }
+
+    public String getDonorName() {
+        return donorName;
+    }
+
+    public void setDonorName(String donorName) {
+        this.donorName = donorName;
+    }
+
+    public String getGovernateId() {
+        return governateId;
+    }
+
+    public void setGovernateId(String governateId) {
+        this.governateId = governateId;
+    }
+
+    public String getGovernateDesc() {
+        return governateDesc;
+    }
+
+    public void setGovernateDesc(String governateDesc) {
+        this.governateDesc = governateDesc;
+    }
+
+    public String getCommunityId() {
+        return communityId;
+    }
+
+    public void setCommunityId(String communityId) {
+        this.communityId = communityId;
+    }
+
+    public String getCommunityName() {
+        return communityName;
+    }
+
+    public void setCommunityName(String communityName) {
+        this.communityName = communityName;
+    }
+
+    public String getSectorId() {
+        return sectorId;
+    }
+
+    public void setSectorId(String sectorId) {
+        this.sectorId = sectorId;
+    }
+
+    public String getSectorName() {
+        return sectorName;
+    }
+
+    public void setSectorName(String sectorName) {
+        this.sectorName = sectorName;
+    }
 
     public String getProStatusDesc() {
         if (this.proStatus==null || this.proStatus.isEmpty()){

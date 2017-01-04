@@ -138,6 +138,14 @@
         <property name="proBudget" column="pro_budget" type="java.math.BigDecimal"/>
         <property name="proStartDate" column="pro_startDate" />
         <property name="proEndDate" column="pro_endDate" />
+        <property name="donorId" column="doner_id" />
+        <property name="donorName" column="donor_name" />
+        <property name="governateId" column="gov_id" />
+        <property name="governateDesc" column="gov_desc" />
+        <property name="communityId" column="com_id" />
+        <property name="communityName" column="com_name" />
+        <property name="sectorId" column="sec_id" />
+        <property name="sectorName" column="sec_desc" />
     </class>
 
     <class name="eu.pms.project.database.PmsProjectAlbum" table="pms_project_album">

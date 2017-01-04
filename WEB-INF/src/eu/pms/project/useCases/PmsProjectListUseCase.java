@@ -22,36 +22,28 @@ public class PmsProjectListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String projectTitle= (String) itr.next();
-                String projectDescription= (String) itr.next();
-                String projectStatus= (String) itr.next();
-                String projectStartDate= (String) itr.next();
-                String projectEndDate= (String) itr.next();
-                String projectNeedPermit= (String) itr.next();
-                String projectHasCluster= (String) itr.next();
+                String donorId= (String) itr.next();
+                String sectorId= (String) itr.next();
+                String governateId= (String) itr.next();
+                String communityId= (String) itr.next();
+                String statusId= (String) itr.next();
                 String cond = " where 1=1 ";
-                if(projectTitle!=null && !projectTitle.trim().equals("")){
-                    cond += " and a.proTitle like '%"+projectTitle+"%' ";
+                if(donorId!=null && !donorId.trim().equals("")){
+                    cond += " and a.donorId = '"+donorId+"' ";
                 }
-                if(projectDescription!=null && !projectDescription.trim().equals("")){
-                    cond += " and a.proDescription like '%"+projectDescription+"%' ";
+                if(sectorId!=null && !sectorId.trim().equals("")){
+                    cond += " and a.sectorId = '"+sectorId+"' ";
                 }
-                if(projectStatus!=null && !projectStatus.trim().equals("")){
-                    cond += " and a.proStatus = '"+projectStatus+"' ";
+                if(governateId!=null && !governateId.trim().equals("")){
+                    cond += " and a.governateId = '"+governateId+"' ";
                 }
-                if(projectNeedPermit!=null && !projectNeedPermit.equals("")){
-                    cond += " and a.proNeedPermit = "+projectNeedPermit+" ";
+                if(communityId!=null && !communityId.trim().equals("")){
+                    cond += " and a.communityId = '"+communityId+"' ";
                 }
-                if(projectHasCluster!=null && !projectHasCluster.equals("")){
-                    cond += " and a.proHasCluster = "+projectHasCluster+" ";
+                if(statusId!=null && !statusId.trim().equals("")){
+                    cond += " and a.proStatus = '"+statusId+"' ";
                 }
-                if(projectStartDate!=null && !projectStartDate.equals("")){
-                    cond += " and a.proStartDate = STR_TO_DATE('" + projectStartDate + "','%d/%m/%Y') ";;
-                }
-                if(projectEndDate!=null && !projectEndDate.equals("")){
-                    cond += " and a.proEndDate = STR_TO_DATE('" + projectEndDate + "','%d/%m/%Y') ";
-                }
-                String query = " from eu.pms.project.database.PmsProject a ";
+                String query = " from eu.pms.project.database.PmsProjectVw a ";
                 query +=cond;
                 query +=" order by a.proTitle ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);

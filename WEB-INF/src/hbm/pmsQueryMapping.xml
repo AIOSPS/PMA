@@ -14,7 +14,7 @@
     <query
             name="getPmsProjectList">
         <![CDATA[
-                from eu.pms.project.database.PmsProject a
+                from eu.pms.project.database.PmsProjectVw a
                 order by a.proStartDate,proEndDate,proTitle
                   ]]>
     </query>
