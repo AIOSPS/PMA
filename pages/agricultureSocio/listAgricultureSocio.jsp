@@ -42,15 +42,25 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="agricultureArea" class="col-sm-12 col-form-label">Agriculture Area:</label>
+                                <label for="comId" class="col-sm-12 col-form-label">Community:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="agricultureArea" styleClass="form-control" styleId="agricultureArea"/>
+                                    <html:select property="comId"
+                                                 styleClass="selectpicker form-control">
+                                        <logic:present name="communityList">
+                                            <html:option value="">Select</html:option>
+                                            <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                        </logic:present>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="agricultureNoCowYear" class="col-sm-12 col-form-label">No Cow Year:</label>
+                                <label for="govId" class="col-sm-12 col-form-label">Governorate:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="agricultureNoCowYear" styleClass="form-control" styleId="agricultureNoCowYear"/>
+                                    <html:select property="govId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -70,20 +80,28 @@
             <table id="listAgricultureSocioTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
+                    <th class="text-center">Community</th>
                     <th class="text-center">Agriculture Area</th>
-                    <th class="text-center">No Cow Year</th>
-                    <th class="text-center">No Sheep Year</th>
-                    <th class="text-center">Cost Water Tank</th>
+                    <th class="text-center">No of Cow Per Year</th>
+                    <th class="text-center">No of Sheep Per Year</th>
+                    <th class="text-center">Cost of Water Tank</th>
+                    <th class="text-center">Herding Area</th>
+                    <th class="text-center">Military Area</th>
+                    <th class="text-center">Bypass Road Area</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
+                    <th class="text-center">Community</th>
                     <th class="text-center">Agriculture Area</th>
-                    <th class="text-center">No Cow Year</th>
-                    <th class="text-center">No Sheep Year</th>
-                    <th class="text-center">Cost Water Tank</th>
+                    <th class="text-center">No of Cow Per Year</th>
+                    <th class="text-center">No of Sheep Per Year</th>
+                    <th class="text-center">Cost of Water Tank</th>
+                    <th class="text-center">Herding Area</th>
+                    <th class="text-center">Military Area</th>
+                    <th class="text-center">Bypass Road Area</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
 
@@ -91,13 +109,17 @@
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsAgricultureSocioList">
-                    <logic:iterate id="pmsAgricultureSocioList" name="pmsAgricultureSocioList" type="eu.pms.project.database.PmsAgricultureSocio">
+                    <logic:iterate id="pmsAgricultureSocioList" name="pmsAgricultureSocioList" type="eu.pms.project.database.PmsAgricultureSocioVw">
                         <tr>
-                            <td width="20%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrArea"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrNoCowYear"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrNoSheepYear"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrCostWaterTank"/></td>
-                            <td width="15%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrSurveyDateStr"/></td>
+                            <td width="15%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="comName"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrArea"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrNoCowYear"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrNoSheepYear"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrCostWaterTank"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrHerdingArea"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrMilitaryArea"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrBypassRoadArea"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsAgricultureSocioList" property="agrSurveyDateStr"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsAgricultureSocio.do?agrId=<bean:write name="pmsAgricultureSocioList" property="agrId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>

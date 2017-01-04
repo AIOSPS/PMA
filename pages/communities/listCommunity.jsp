@@ -56,10 +56,11 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="communityGovId" class="col-sm-5 col-form-label">Governate:</label>
+                                <label for="communityGovId" class="col-sm-5 col-form-label">Governorate:</label>
                                 <div class="col-sm-12">
                                     <html:select property="communityGovId"
                                                  styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
                                         <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
                                     </html:select>
                                 </div>
@@ -95,8 +96,8 @@
                 <thead>
                 <tr>
                     <th class="text-center">Name</th>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Governate</th>
+                    <th class="text-center">PCBS Code</th>
+                    <th class="text-center">Governorate</th>
                     <th class="text-center">Type</th>
                     <th class="text-center"></th>
                 </tr>
@@ -104,8 +105,8 @@
                 <tfoot>
                 <tr>
                     <th class="text-center">Name</th>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Governate</th>
+                    <th class="text-center">PCBS Code</th>
+                    <th class="text-center">Governorate</th>
                     <th class="text-center">Type</th>
                     <th class="text-center"></th>
 
@@ -115,8 +116,8 @@
                 <logic:present name="pmsCommunityList">
                     <logic:iterate id="pmsCommunityList" name="pmsCommunityList" type="eu.pms.project.database.PmsCommunitiesVw">
                         <tr>
-                            <td width="35%" class="text-center"><bean:write name="pmsCommunityList" property="comName"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comId"/></td>
+                            <td width="35%" class="text-left"><bean:write name="pmsCommunityList" property="comName"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comPcbsCode"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="govDesc"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="typDesc"/></td>
                             <td width="5%" class="text-center">

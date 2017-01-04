@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="govId" class="col-sm-3 col-form-label">Governate:</label>
+                        <label for="govId" class="col-sm-3 col-form-label">Governorate:</label>
                         <div class="col-sm-9">
                             <html:select property="govId" disabled="true"
                                          styleClass="selectpicker form-control">

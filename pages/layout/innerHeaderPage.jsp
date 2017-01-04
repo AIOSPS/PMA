@@ -8,7 +8,7 @@
         <div class="logo text-center" >
             <a href="#" title="European Union">
                 <img alt="European logo"  src="/pages/resources/images/logo-sm.jpg">
-                <br><span>europa.eu</span>
+                <%--<br><span>europa.eu</span>--%>
             </a>
         </div>
         <div class="slogan">
@@ -70,7 +70,7 @@
                         <li class="dropdown-submenu ">
                             <a>Socio-economic Data</a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Basic socio</a></li>
+                                <%--<li><a href="#">Basic socio</a></li>--%>
                                 <li><a href="/pmsAgricultureSocioList.do">Agriculture socio</a></li>
                                 <li><a href="/pmsWaterSocioList.do">Water socio</a></li>
                             </ul>

@@ -22,16 +22,16 @@ public class PmsAgricultureSocioListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String agricultureArea= (String) itr.next();
-                String agricultureNoCowYear= (String) itr.next();
+                String comId= (String) itr.next();
+                String govId= (String) itr.next();
                 String cond = " where 1=1 ";
-                if(agricultureArea!=null && !agricultureArea.trim().equals("")){
-                    cond += " and a.agrArea like '%"+agricultureArea+"%' ";
+                if(comId!=null && !comId.trim().equals("")){
+                    cond += " and a.comId = '"+comId+"' ";
                 }
-                if(agricultureNoCowYear!=null && !agricultureNoCowYear.trim().equals("")){
-                    cond += " and a.agrNoCowYear like '%"+agricultureNoCowYear+"%' ";
+                if(govId!=null && !govId.trim().equals("")){
+                    cond += " and a.govId = '"+govId+"' ";
                 }
-                String query = " from eu.pms.project.database.PmsAgricultureSocio a ";
+                String query = " from eu.pms.project.database.PmsAgricultureSocioVw a ";
                 query +=cond;
                 query +=" order by a.agrArea ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);

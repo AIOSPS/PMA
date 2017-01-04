@@ -13,11 +13,11 @@
         $("#comId").prop('required', true);
         $("#agrArea").attr("placeholder", "Agriculture Area");
         $("#agrArea").prop('required', true);
-        $("#agrNoCowYear").attr("placeholder", "No Cow Year");
+        $("#agrNoCowYear").attr("placeholder", "No of Cow PerYear");
         $("#agrNoCowYear").prop('required', true);
-        $("#agrNoSheepYear").attr("placeholder", "No Sheep Year");
+        $("#agrNoSheepYear").attr("placeholder", "No of Sheep Per Year");
         $("#agrNoSheepYear").prop('required', true);
-        $("#agrCostWaterTank").attr("placeholder", "Cost Water Tank");
+        $("#agrCostWaterTank").attr("placeholder", "Cost of Water Tank");
         $("#agrCostWaterTank").prop('required', true);
         $("#agrHerdingArea").attr("placeholder", "Herding Area");
         $("#agrHerdingArea").prop('required', true);
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrNoCowYear" class="col-sm-3 col-form-label">No Cow Year:</label>
+                        <label for="agrNoCowYear" class="col-sm-3 col-form-label">No of Cow Per Year:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoCowYear" styleClass="form-control" styleId="agrNoCowYear" disabled="true"/>
                         </div>
@@ -90,13 +90,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label">No Sheep Year:</label>
+                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label">No of Sheep Per Year:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoSheepYear" styleClass="form-control" styleId="agrNoSheepYear" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrCostWaterTank" class="col-sm-3 col-form-label">Cost Water Tank:</label>
+                        <label for="agrCostWaterTank" class="col-sm-3 col-form-label">Cost of Water Tank:</label>
                         <div class="col-sm-9">
                             <html:text property="agrCostWaterTank" styleClass="form-control" styleId="agrCostWaterTank" disabled="true"/>
                         </div>
@@ -121,7 +121,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">BypassRoad Area:</label>
+                        <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">Bypass Road Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrBypassRoadArea" styleClass="form-control" styleId="agrBypassRoadArea" disabled="true"/>
                         </div>
