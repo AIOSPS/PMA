@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 public class PmsWaterSocioSearchForm extends ActionForm {
     private String waterUseWatTanker;
     private String waterRainWaterWell;
+    private String comId;
+    private String govId;
     /** default constructor */
     public PmsWaterSocioSearchForm() {
     }
@@ -29,6 +31,22 @@ public class PmsWaterSocioSearchForm extends ActionForm {
 
     public void setWaterRainWaterWell(String waterRainWaterWell) {
         this.waterRainWaterWell = waterRainWaterWell;
+    }
+
+    public String getComId() {
+        return comId;
+    }
+
+    public void setComId(String comId) {
+        this.comId = comId;
+    }
+
+    public String getGovId() {
+        return govId;
+    }
+
+    public void setGovId(String govId) {
+        this.govId = govId;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

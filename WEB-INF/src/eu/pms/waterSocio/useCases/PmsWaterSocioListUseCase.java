@@ -22,16 +22,16 @@ public class PmsWaterSocioListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String waterUseWatTanker= (String) itr.next();
-                String waterRainWaterWell= (String) itr.next();
+                String comId= (String) itr.next();
+                String govId= (String) itr.next();
                 String cond = " where 1=1 ";
-                if(waterUseWatTanker!=null && !waterUseWatTanker.trim().equals("")){
-                    cond += " and a.watUseWatTanker like '%"+waterUseWatTanker+"%' ";
+                if(comId!=null && !comId.trim().equals("")){
+                    cond += " and a.comId = '"+comId+"' ";
                 }
-                if(waterRainWaterWell!=null && !waterRainWaterWell.trim().equals("")){
-                    cond += " and a.watRainWaterWell like '%"+waterRainWaterWell+"%' ";
+                if(govId!=null && !govId.trim().equals("")){
+                    cond += " and a.govId = '"+govId+"' ";
                 }
-                String query = " from eu.pms.project.database.PmsWaterSocio a ";
+                String query = " from eu.pms.project.database.PmsWaterSocioVw a ";
                 query +=cond;
                 query +=" order by a.watUseWatTanker ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);

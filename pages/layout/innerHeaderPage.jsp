@@ -78,9 +78,9 @@
                         <li class="dropdown-submenu ">
                             <a>Master Plan </a>
                             <ul class="dropdown-menu">
+                                <li><a href="/pmsMasterPlanList.do">Master Plan Info</a></li>
                                 <li><a href="/pmsInterventionList.do">Interventions</a></li>
                                 <li><a href="/pmsActivityList.do">Activities</a></li>
-                                <li><a href="/pmsMasterPlanList.do">Master Plan Info</a></li>
                             </ul>
                         </li>
                     </ul>

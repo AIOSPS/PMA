@@ -42,15 +42,25 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="waterUseWatTanker" class="col-sm-12 col-form-label">Use Water Tanker:</label>
+                                <label for="comId" class="col-sm-12 col-form-label">Community:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="waterUseWatTanker" styleClass="form-control" styleId="waterUseWatTanker"/>
+                                    <html:select property="comId"
+                                                 styleClass="selectpicker form-control">
+                                        <logic:present name="communityList">
+                                            <html:option value="">Select</html:option>
+                                            <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                        </logic:present>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="waterRainWaterWell" class="col-sm-12 col-form-label">Rain Water Well:</label>
+                                <label for="govId" class="col-sm-12 col-form-label">Governorate:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="waterRainWaterWell" styleClass="form-control" styleId="waterRainWaterWell"/>
+                                    <html:select property="govId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -91,7 +101,7 @@
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsWaterSocioList">
-                    <logic:iterate id="pmsWaterSocioList" name="pmsWaterSocioList" type="eu.pms.project.database.PmsWaterSocio">
+                    <logic:iterate id="pmsWaterSocioList" name="pmsWaterSocioList" type="eu.pms.project.database.PmsWaterSocioVw">
                         <tr>
                             <td width="20%" class="text-center"><bean:write name="pmsWaterSocioList" property="watIsconnected"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsWaterSocioList" property="watNetwork"/></td>

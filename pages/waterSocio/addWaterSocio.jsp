@@ -19,7 +19,7 @@
         $("#watUseWatTanker").prop('required', true);
         $("#watRainWaterWell").attr("placeholder", "Rain Water Well");
         $("#watRainWaterWell").prop('required', true);
-        $("#watNoSprings").attr("placeholder", "No Springs");
+        $("#watNoSprings").attr("placeholder", "Number of Springs");
         $("#watNoSprings").prop('required', true);
         $("#watPriceWater").attr("placeholder", "Price Water");
         $("#watPriceWater").prop('required', true);
@@ -80,7 +80,21 @@
                     <div class="col-md-6">
                         <label for="watIsconnected" class="col-sm-3 col-form-label">Is connected:</label>
                         <div class="col-sm-9">
-                            <html:text property="watIsconnected" styleClass="form-control" styleId="watIsconnected"/>
+                            <fieldset class="col-sm-9" id="watIsconnected">
+                                <div>
+
+                                    <label class="radio-inline">
+                                        <html:radio property="watIsconnected" value="1"/>
+                                        Yes
+                                    </label>
+
+
+                                    <label class="radio-inline">
+                                        <html:radio property="watIsconnected" value="0"/>
+                                        No
+                                    </label>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -94,7 +108,21 @@
                     <div class="col-md-6">
                         <label for="watUseWatTanker" class="col-sm-3 col-form-label">Use Water Tanker:</label>
                         <div class="col-sm-9">
-                            <html:text property="watUseWatTanker" styleClass="form-control" styleId="watUseWatTanker"/>
+                            <fieldset class="col-sm-9" id="watUseWatTanker">
+                                <div>
+
+                                    <label class="radio-inline">
+                                        <html:radio property="watUseWatTanker" value="1"/>
+                                        Yes
+                                    </label>
+
+
+                                    <label class="radio-inline">
+                                        <html:radio property="watUseWatTanker" value="0"/>
+                                        No
+                                    </label>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -106,7 +134,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watNoSprings" class="col-sm-3 col-form-label">No Springs:</label>
+                        <label for="watNoSprings" class="col-sm-3 col-form-label">Number of Springs:</label>
                         <div class="col-sm-9">
                             <html:text property="watNoSprings" styleClass="form-control" styleId="watNoSprings"/>
                         </div>

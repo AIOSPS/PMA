@@ -594,4 +594,25 @@
     <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     <property name="comId" type="java.lang.String" column="com_id" />
     </class>
+
+    <class name="eu.pms.project.database.PmsWaterSocioVw" table="pms_water_socio_vw" >
+        <id name="watId" type="java.lang.String" column="wat_id" >
+            <generator class="assigned" />
+        </id>
+        <property name="watIsconnected" type="java.lang.String" column="wat_isconnected" />
+        <property name="watNetwork" type="int" column="wat_network" />
+        <property name="watUseWatTanker" type="java.lang.String" column="wat_use_wat_tanker" />
+        <property name="watRainWaterWell" type="java.lang.String" column="wat_rain_water_well" />
+        <property name="watNoSprings" type="int" column="wat_no_springs" />
+        <property name="watPriceWater" type="java.math.BigDecimal" column="wat_price_water" />
+        <property name="watFillingPoint" type="int" column="wat_filling_point" />
+        <property name="watQuantity" type="int" column="wat_quantity" />
+        <property name="watSurveyDate" type="java.util.Date" column="wat_survey_date" />
+        <property name="username" type="java.lang.String" column="username" />
+        <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+        <property name="comId" type="java.lang.String" column="com_id" />
+        <property name="comName" type="java.lang.String" column="com_name" />
+        <property name="govId" type="java.lang.String" column="gov_id" />
+        <property name="govDesc" type="java.lang.String" column="gov_desc" />
+    </class>
 </hibernate-mapping>
