@@ -82,7 +82,7 @@ public class AddPmsIndicatorAction extends Action {
             PmsIndicatorMeasuresPK pmsIndicatorMeasuresPK= new PmsIndicatorMeasuresPK();
             PmsIndicatorMeasures pmsIndicatorMeasures= new PmsIndicatorMeasures();
             if(parameters.containsKey("msrDate"+count)) {
-                pmsIndicatorMeasuresPK.setMsrDate(DateTool.convertStringToDate(parameters.get("msrDate"+count)[0],DateTool.DD_MM_YYYY));
+                pmsIndicatorMeasuresPK.setMsrDate(new Date());
                 pmsIndicatorMeasuresPK.setIndId(indId);
                 pmsIndicatorMeasuresPK.setResId(resId);
                 pmsIndicatorMeasuresPK.setObjId(objId);
