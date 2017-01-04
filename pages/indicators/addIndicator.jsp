@@ -23,10 +23,6 @@
         $("#indCollectionMethod").prop('required', true);
         $("#indStatisticalMethod").attr("placeholder", "Statistical Method");
         $("#indStatisticalMethod").prop('required', true);
-        $("#indTarget").attr("placeholder", "Target");
-        $("#indTarget").prop('required', true);
-        $("#indValue").attr("placeholder", "Value");
-        $("#indValue").prop('required', true);
     });
 </script>
 
@@ -136,26 +132,51 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="indTarget" class="col-sm-3 col-form-label">Target:</label>
-                        <div class="col-sm-9">
-                            <html:text property="indTarget" styleClass="form-control" styleId="indTarget"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="indValue" class="col-sm-3 col-form-label">Value:</label>
-                        <div class="col-sm-9">
-                            <html:text property="indValue" styleClass="form-control" styleId="indValue"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label class="col-sm-3 col-form-label">&nbsp;</label>
                         <div class="col-sm-9">
                         </div>
                     </div>
                 </div>
+                <h2 class="titleSep"><span>Indicator Measures Information</span></h2>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                        <thead>
+                                        <tr >
+                                            <th width="35%" class="text-center">Date</th>
+                                            <th width="30%" class="text-center">Target</th>
+                                            <th width="30%" class="text-center">Value</th>
+                                            <th width="5%" class="text-center">
+                                                <a id="add_row" class="btn btn-primary fa fa-plus"></a>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="msrDate">
+                                                <input type="text" id="msrDate0" name="msrDate0"  placeholder='dd/mm/yyyy' class="form-control"/>
+                                            </td>
+                                            <td data-name="indTarget">
+                                                <input type="text" id="indTarget0" name="indTarget0" placeholder='Target' class="form-control"/>
+                                            </td>
+                                            <td data-name="indValue">
+                                                <input type="text" id="indValue0" name="indValue0" placeholder='Value' class="form-control"/>
+                                            </td>
+                                            <td data-name="del">
+                                                <button nam="del0" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                         <html:submit value="Submit" styleClass="btn btn-primary"/>
@@ -244,12 +265,91 @@
         defaultText: "Please Enter The Statistical Method ",
         emptyText: "Please Enter The Statistical Method ",
     });
-    InvalidInputHelper(document.getElementsByName("indTarget")[0], {
-        defaultText: "Please Enter The Target ",
-        emptyText: "Please Enter The Target ",
-    });
-    InvalidInputHelper(document.getElementsByName("indValue")[0], {
-        defaultText: "Please Enter The Value ",
-        emptyText: "Please Enter The Value ",
+
+    //   table script for activities
+    $(document).ready(function() {
+        $("#add_row").on("click", function() {
+            // Dynamic Rows Code
+
+            // Get max row id and set new id
+            var newid = 0;
+            $.each($("#tab_logic tr"), function() {
+                if (parseInt($(this).data("id")) > newid) {
+                    newid = parseInt($(this).data("id"));
+                }
+            });
+            newid++;
+
+            var tr = $("<tr></tr>", {
+                id: "addr"+newid,
+                "data-id": newid
+            });
+
+            // loop through each td and create new elements with name of newid
+            $.each($("#tab_logic tbody tr:nth(0) td"), function() {
+                var cur_td = $(this);
+
+                var children = cur_td.children();
+
+                // add new td and element if it has a nane
+                if ($(this).data("name") != undefined) {
+                    var td = $("<td></td>", {
+                        "data-name": $(cur_td).data("name")
+                    });
+
+                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
+                    c.attr("name", $(cur_td).data("name") + newid);
+                    c.attr("id", $(cur_td).data("name") + newid);
+                    c.appendTo($(td));
+                    td.appendTo($(tr));
+                } else {
+                    var td = $("<td></td>", {
+                        'text': $('#tab_logic tr').length
+                    }).appendTo($(tr));
+                }
+            });
+
+            // add delete button and td
+            /*
+             $("<td></td>").append(
+             $("<button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>")
+             .click(function() {
+             $(this).closest("tr").remove();
+             })
+             ).appendTo($(tr));
+             */
+
+            // add the new row
+            $(tr).appendTo($('#tab_logic'));
+
+            $(tr).find("td button.row-remove").on("click", function() {
+                $(this).closest("tr").remove();
+            });
+        });
+
+
+
+
+        // Sortable Code
+        var fixHelperModified = function(e, tr) {
+            var $originals = tr.children();
+            var $helper = tr.clone();
+
+            $helper.children().each(function(index) {
+                $(this).width($originals.eq(index).width())
+            });
+
+            return $helper;
+        };
+
+        $(".table-sortable tbody").sortable({
+            helper: fixHelperModified
+        }).disableSelection();
+
+        $(".table-sortable thead").disableSelection();
+
+
+
+        $("#add_row").trigger("click");
     });
 </script>

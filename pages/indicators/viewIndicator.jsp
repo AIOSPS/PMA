@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="eu.pms.project.database.PmsIndicatorMeasures" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -21,10 +24,6 @@
         $("#indCollectionMethod").prop('required', true);
         $("#indStatisticalMethod").attr("placeholder", "Statistical Method");
         $("#indStatisticalMethod").prop('required', true);
-        $("#indTarget").attr("placeholder", "Target");
-        $("#indTarget").prop('required', true);
-        $("#indValue").attr("placeholder", "Value");
-        $("#indValue").prop('required', true);
     });
 </script>
 
@@ -135,28 +134,81 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="indTarget" class="col-sm-3 col-form-label">Target:</label>
-                        <div class="col-sm-9">
-                            <html:text property="indTarget" styleClass="form-control" styleId="indTarget" disabled="true"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="indValue" class="col-sm-3 col-form-label">Value:</label>
-                        <div class="col-sm-9">
-                            <html:text property="indValue" styleClass="form-control" styleId="indValue" disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label class="col-sm-3 col-form-label">&nbsp;</label>
                         <div class="col-sm-9">
                         </div>
                     </div>
                 </div>
+                <h2 class="titleSep"><span>Indicator Measures Information</span></h2>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                        <thead>
+                                        <tr >
+                                            <th width="35%" class="text-center">Date</th>
+                                            <th width="33%" class="text-center">Target</th>
+                                            <th width="32%" class="text-center">Value</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id='addr0' data-id="0" class="hidden">
+                                            <td data-name="msrDate">
+                                                    <%--<div class='input-group date col-sm-9' id='msrDate0'>--%>
+                                                    <%--<input type='text'  name="msrDate0"  placeholder='Date' class="form-control" />--%>
+                                                    <%--<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>--%>
+                                                    <%--</div>--%>
+                                                    <%--<script type="text/javascript">--%>
+                                                    <%--$(function () {--%>
+                                                    <%--$('#msrDate0').datetimepicker();--%>
+                                                    <%--});--%>
+                                                    <%--</script>--%>
+                                                <input type="text" id="msrDate0" name="msrDate0"  placeholder='Date' class="form-control"/>
+                                            </td>
+                                            <td data-name="indTarget">
+                                                <input type="text" id="indTarget0" name="indTarget0" placeholder='Target' class="form-control"/>
+                                            </td>
+                                            <td data-name="indValue">
+                                                <input type="text" id="indValue0" name="indValue0" placeholder='Value' class="form-control"/>
+                                            </td>
+                                        </tr>
+                                        <logic:present name="indicatorMeasuresList">
+                                            <% List indicatorMeasuresList = (List) request.getAttribute("indicatorMeasuresList");
+                                                int count = 1;
+                                                Iterator itr = indicatorMeasuresList.iterator();
+                                                PmsIndicatorMeasures pmsIndicatorMeasures = null;
+                                                while (itr.hasNext()){
+                                                    pmsIndicatorMeasures = (PmsIndicatorMeasures) itr.next();
+                                            %>
+                                            <tr id='addr<%=count%>' data-id="<%=count%>">
+                                                <td data-name="msrDate">
+                                                    <input type="text" disabled="true" id="msrDate<%=count%>" name="msrDate<%=count%>" value="<%=pmsIndicatorMeasures.getCompId().getMsrDateStr()%>"  placeholder='dd/mm/yyyy' class="form-control"/>
+                                                </td>
+                                                <td data-name="indTarget">
+                                                    <input type="text" disabled="true" id="indTarget<%=count%>" name="indTarget<%=count%>" value="<%=pmsIndicatorMeasures.getIndTarget()%>" placeholder='Target' class="form-control"/>
+                                                </td>
+                                                <td data-name="indValue">
+                                                    <input type="text" disabled="true" id="indValue<%=count%>" name="indValue<%=count%>" value="<%=pmsIndicatorMeasures.getIndValue()%>" placeholder='Value' class="form-control"/>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    count++;
+                                                }
+                                            %>
+                                        </logic:present>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="button" onclick="javaScript:parent.location = '/viewEditIndicator.do'"
+                        <button type="button" onclick="javaScript:parent.location = '/viewEditIndicator.do?indId=<%=request.getParameter("indId")%>&resId=<%=request.getParameter("resId")%>&objId=<%=request.getParameter("objId")%>'"
                                 class="btn btn-primary">Edit
                         </button>
                         <button type="button" onclick="javaScript:window.history.back();"
