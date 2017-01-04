@@ -3,6 +3,7 @@ package eu.pms.indicator.useCases;
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.login.database.SecUser;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
 
@@ -21,6 +22,7 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
             Iterator itr = input.iterator();
             String indId = (String) itr.next();
             String resId = (String) itr.next();
+            String objId = (String) itr.next();
             String indTitle = (String) itr.next();
             String indDate = (String) itr.next();
             String indLongDesc = (String) itr.next();
@@ -28,18 +30,15 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
             int indFrequency = (Integer) itr.next();
             String indCollectionMethod = (String) itr.next();
             String indStatisticalMethod = (String) itr.next();
-            int indTarget = (Integer) itr.next();
-            int indValue = (Integer) itr.next();
-
-            String username = "pms";
+            ArrayList indicatorMeasuresList = (ArrayList) itr.next();
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             PmsIndicator pmsIndicator = new PmsIndicator();
             PmsIndicatorPK pmsIndicatorPK = new PmsIndicatorPK();
             pmsIndicatorPK.setIndId(indId);
-            String []resCompId= resId.split("_");
-            pmsIndicatorPK.setResId(resCompId[0]);
-            pmsIndicatorPK.setObjId(resCompId[1]);
+            pmsIndicatorPK.setResId(resId);
+            pmsIndicatorPK.setObjId(objId);
             pmsIndicator.setCompId(pmsIndicatorPK);
             pmsIndicator.setIndTitle(indTitle);
             pmsIndicator.setIndDate(DateTool.convertStringToDate(indDate,DateTool.DD_MM_YYYY));
@@ -48,26 +47,20 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
             pmsIndicator.setIndFrequency(indFrequency);
             pmsIndicator.setIndCollectionMethod(indCollectionMethod);
             pmsIndicator.setIndStatisticalMethod(indStatisticalMethod);
-           // pmsIndicator.setIndTarget(indTarget);
-           // pmsIndicator.setIndValue(indValue);
             pmsIndicator.setUsername(username);
             pmsIndicator.setTimeStamp(timeStamp);
 
-            PmsIndicatorMeasures pmsIndicatorMeasure = new PmsIndicatorMeasures();
-            PmsIndicatorMeasuresPK pmsIndicatorMeasurePK = new PmsIndicatorMeasuresPK();
-            pmsIndicatorMeasurePK.setIndId(indId);
-            pmsIndicatorMeasurePK.setResId(resCompId[0]);
-            pmsIndicatorMeasurePK.setObjId(resCompId[1]);
-            pmsIndicatorMeasurePK.setMsrDate(timeStamp);
-            pmsIndicatorMeasure.setCompId(pmsIndicatorMeasurePK);
-            pmsIndicatorMeasure.setIndTarget(indTarget);
-            pmsIndicatorMeasure.setIndValue(indValue);
-            pmsIndicatorMeasure.setUsername(username);
-            pmsIndicatorMeasure.setTimeStamp(timeStamp);
+
 
             List insertList = new ArrayList();
             insertList.add(pmsIndicator);
-            insertList.add(pmsIndicatorMeasure);
+            new DataAccessObjectImpl().deleteAsSelect("from eu.pms.project.database.PmsIndicatorMeasures a where a.compId.indId='"+indId+"' and a.compId.resId='"+resId+"' and a.compId.objId='"+objId+"'");
+            if(indicatorMeasuresList!=null && indicatorMeasuresList.size()>0) {
+                Iterator itrInd = indicatorMeasuresList.iterator();
+                while (itrInd.hasNext()) {
+                    insertList.add((PmsIndicatorMeasures) itrInd.next());
+                }
+            }
             new DataAccessObjectImpl().insertOrUpdate(insertList);
 
         } catch (Exception ce) {

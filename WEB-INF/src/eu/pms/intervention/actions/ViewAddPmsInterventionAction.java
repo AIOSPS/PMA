@@ -2,7 +2,6 @@ package eu.pms.intervention.actions;
 
 
 import eu.pms.common.tools.SessionTraker;
-import eu.pms.intervention.useCases.GetPmsActivitiesByInterventionUseCase;
 import eu.pms.intervention.useCases.GetPmsMasterPlanUseCase;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import org.apache.struts.action.Action;

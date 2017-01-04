@@ -448,4 +448,14 @@
                 order by a.actDesc
                   ]]>
     </query>
+    <query
+            name="getPmsIndicatorMeasuresByInd">
+        <![CDATA[
+                from eu.pms.project.database.PmsIndicatorMeasures a
+                where a.compId.indId = ?
+                and a.compId.resId = ?
+                and a.compId.objId = ?
+                order by a.compId.msrDate
+                  ]]>
+    </query>
 </hibernate-mapping>

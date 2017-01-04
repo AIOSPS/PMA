@@ -1,5 +1,6 @@
 package eu.pms.project.database;
 
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -11,27 +12,11 @@ import java.util.Date;
  * Created by orayyan on 1/1/2017.
  */
 public class PmsIndicatorMeasuresPK implements Serializable{
-    /** identifier field */
     private String indId;
-
-    /** identifier field */
     private String resId;
-
-    /** identifier field */
     private String objId;
-
-    /** identifier field */
     private Date msrDate;
-    private String compId;
-
-    /** full constructor */
-    public PmsIndicatorMeasuresPK(String indId, String resId, String objId, Date msrDate) {
-        this.indId = indId;
-        this.resId = resId;
-        this.objId = objId;
-        this.msrDate = msrDate;
-        this.compId = indId+"_"+resId+"_"+objId+"_"+msrDate;
-    }
+    private String msrDateStr;
 
     /** default constructor */
     public PmsIndicatorMeasuresPK() {
@@ -61,20 +46,20 @@ public class PmsIndicatorMeasuresPK implements Serializable{
         this.objId = objId;
     }
 
-    public String getCompId() {
-        return indId+"_"+resId+"_"+objId;
-    }
-
-    public void setCompId(String compId) {
-        this.compId = compId;
-    }
-
     public Date getMsrDate() {
         return msrDate;
     }
 
     public void setMsrDate(Date msrDate) {
         this.msrDate = msrDate;
+    }
+
+    public String getMsrDateStr() {
+        return msrDate!=null? DateTool.decorateDate(msrDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setMsrDateStr(String msrDateStr) {
+        this.msrDateStr = msrDateStr;
     }
 
     public String toString() {

@@ -9,6 +9,7 @@ import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryUseCase;
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.indicator.forms.PmsIndicatorForm;
+import eu.pms.indicator.useCases.GetPmsIndicatorMeasuresByIndUseCase;
 import eu.pms.indicator.useCases.GetPmsIndicatorUseCase;
 import eu.pms.indicator.useCases.GetPmsResultUseCase;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
@@ -55,7 +56,8 @@ public class ViewPmsIndicatorAction extends Action {
             PmsIndicatorForm pmsIndicatorForm = (PmsIndicatorForm) form;
             fillPmsIndicatorData(pmsIndicatorForm, pmsIndicator);
         }
-
+        List indicatorMeasuresList = (List) new GetPmsIndicatorMeasuresByIndUseCase().execute(inputs, request);
+        request.setAttribute("indicatorMeasuresList", indicatorMeasuresList);
 
         return mapping.findForward("success");
     }
@@ -71,8 +73,6 @@ public class ViewPmsIndicatorAction extends Action {
         pmsIndicatorForm.setIndFrequency(pmsIndicator.getIndFrequency());
         pmsIndicatorForm.setIndCollectionMethod(pmsIndicator.getIndCollectionMethod());
         pmsIndicatorForm.setIndStatisticalMethod(pmsIndicator.getIndStatisticalMethod());
-       // pmsIndicatorForm.setIndTarget(pmsIndicator.getIndTarget());
-       // pmsIndicatorForm.setIndValue(pmsIndicator.getIndValue());
     }
 }
 

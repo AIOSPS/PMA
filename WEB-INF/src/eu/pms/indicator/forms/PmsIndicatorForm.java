@@ -24,8 +24,6 @@ public class PmsIndicatorForm extends ActionForm {
     private int indFrequency;
     private String indCollectionMethod;
     private String indStatisticalMethod;
-    private int indTarget;
-    private int indValue;
 
     /** default constructor */
     public PmsIndicatorForm() {
@@ -111,21 +109,6 @@ public class PmsIndicatorForm extends ActionForm {
         this.indStatisticalMethod = indStatisticalMethod;
     }
 
-    public int getIndTarget() {
-        return indTarget;
-    }
-
-    public void setIndTarget(int indTarget) {
-        this.indTarget = indTarget;
-    }
-
-    public int getIndValue() {
-        return indValue;
-    }
-
-    public void setIndValue(int indValue) {
-        this.indValue = indValue;
-    }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
