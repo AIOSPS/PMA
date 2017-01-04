@@ -60,6 +60,7 @@
                                 <div class="col-sm-12">
                                     <html:select property="communityGovId"
                                                  styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
                                         <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
                                     </html:select>
                                 </div>
