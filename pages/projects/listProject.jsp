@@ -143,7 +143,7 @@
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsProjectList">
-                    <logic:iterate id="pmsProjectList" name="pmsProjectList" type="eu.pms.project.database.PmsProject">
+                    <logic:iterate id="pmsProjectList" name="pmsProjectList" type="eu.pms.project.database.PmsProjectVw">
                         <tr>
                             <td width="20%"><bean:write name="pmsProjectList" property="proTitle"/></td>
                             <td width="40%"><bean:write name="pmsProjectList" property="proDescription"/></td>
