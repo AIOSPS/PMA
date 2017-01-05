@@ -52,7 +52,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
                 if(proHasCluster.equals("1")){
                     communityProjectArray = null;
                 }else if(proHasCluster.equals("0")){
-                    secId = null;
+                 //   secId = null;
                 }
             }else if(secType!=null && secType.equals("Oth")){
                 communityProjectArray = null;

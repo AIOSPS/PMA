@@ -11,6 +11,7 @@ public class PmsBenificiarySearchForm extends ActionForm {
     private String benificiaryDesc;
     private int BenificiaryTotal;
     private String BenificiaryType;
+    private String proId;
 
     /** default constructor */
     public PmsBenificiarySearchForm() {
@@ -38,6 +39,14 @@ public class PmsBenificiarySearchForm extends ActionForm {
 
     public void setBenificiaryType(String benificiaryType) {
         BenificiaryType = benificiaryType;
+    }
+
+    public String getProId() {
+        return proId;
+    }
+
+    public void setProId(String proId) {
+        this.proId = proId;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

@@ -102,9 +102,13 @@
                                 <div class="col-sm-12">
                                     <html:select property="statusId" styleClass="selectpicker form-control">
                                         <html:option value="">Select</html:option>
-                                        <html:option value="1">New</html:option>
-                                        <html:option value="2">Stopped</html:option>
-                                        <html:option value="3">Completed</html:option>
+                                        <html:option value="1">Design / Approval</html:option>
+                                        <html:option value="2">Ongoing</html:option>
+                                        <html:option value="3">Delayed</html:option>
+                                        <html:option value="4">Completed</html:option>
+                                        <html:option value="5">On-Hold</html:option>
+                                        <html:option value="6">Closed</html:option>
+                                        <html:option value="7">Cancelled</html:option>
                                     </html:select>
                                 </div>
                             </div>

@@ -22,22 +22,22 @@ public class PmsBenificiaryListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String benificiaryDesc = (String)itr.next();
-                Integer benificiaryTotal = (Integer)itr.next();
-                String benificiaryType = (String) itr.next();
+                String proId = (String)itr.next();
+//                Integer benificiaryTotal = (Integer)itr.next();
+//                String benificiaryType = (String) itr.next();
                 String cond = " where 1=1 ";
-                if(benificiaryDesc!=null && !benificiaryDesc.trim().equals("")){
-                    cond += " and a.benDesc like '%"+benificiaryDesc+"%' ";
+                if(proId!=null && !proId.trim().equals("")){
+                    cond += " and a.proId like '%"+proId+"%' ";
                 }
-                if(benificiaryType!=null && !benificiaryType.trim().equals("")){
-                    cond += " and a.btpId like '%"+benificiaryType+"%' ";
-                }
-                if(benificiaryTotal!=null && !benificiaryTotal.equals("")&& benificiaryTotal!=0 ){
-                    cond += " and a.benTotal= "+benificiaryTotal+" ";
-                }
-                String query = " from eu.pms.project.database.PmsBenificiary a ";
+//                if(benificiaryType!=null && !benificiaryType.trim().equals("")){
+//                    cond += " and a.btpId like '%"+benificiaryType+"%' ";
+//                }
+//                if(benificiaryTotal!=null && !benificiaryTotal.equals("")&& benificiaryTotal!=0 ){
+//                    cond += " and a.benTotal= "+benificiaryTotal+" ";
+//                }
+                String query = " from eu.pms.project.database.PmsProjectsBenificiary a ";
                 query +=cond;
-                query +=" order by a.benDesc ";
+                query +=" order by a.compId.btpId ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);
             }else {
                 retList = new DataAccessObjectImpl().getList("getPmsBenificiaryList");

@@ -42,25 +42,28 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="benificiaryDesc" class="col-sm-12 col-form-label">Description:</label>
+                                <label for="proId" class="col-sm-12 col-form-label">Project:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="benificiaryDesc" styleClass="form-control" styleId="benificiaryDesc"/>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="benificiaryTotal" class="col-sm-12 col-form-label">Benificiary Total:</label>
-                                <div class="col-sm-12">
-                                    <html:text property="benificiaryTotal" styleClass="form-control" styleId="benificiaryTotal"/>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="benificiaryType" class="col-sm-12 col-form-label">Benificiary Type:</label>
-                                <div class="col-sm-12">
-                                    <html:select property="benificiaryType"
+                                    <html:select property="projectList"
                                                  styleClass="selectpicker form-control">
-                                        <html:options collection="benificiaryTypeList" property="lookupId" labelProperty="lookupDesc"/>
+                                        <html:options collection="projectList" property="proId" labelProperty="proTitle"/>
                                     </html:select>
                                 </div>
+                            </div>
+                            <div class="col-md-4">
+                                <%--<label for="benificiaryTotal" class="col-sm-12 col-form-label">Benificiary Total:</label>--%>
+                                <%--<div class="col-sm-12">--%>
+                                    <%--<html:text property="benificiaryTotal" styleClass="form-control" styleId="benificiaryTotal"/>--%>
+                                <%--</div>--%>
+                            </div>
+                            <div class="col-md-4">
+                                <%--<label for="benificiaryType" class="col-sm-12 col-form-label">Benificiary Type:</label>--%>
+                                <%--<div class="col-sm-12">--%>
+                                    <%--<html:select property="benificiaryType"--%>
+                                                 <%--styleClass="selectpicker form-control">--%>
+                                        <%--<html:options collection="benificiaryTypeList" property="lookupId" labelProperty="lookupDesc"/>--%>
+                                    <%--</html:select>--%>
+                                <%--</div>--%>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -107,16 +110,18 @@
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsBenificiaryList">
-                    <logic:iterate id="pmsBenificiaryList" name="pmsBenificiaryList" type="eu.pms.project.database.PmsBenificiary">
+                    <logic:iterate id="pmsBenificiaryList" name="pmsBenificiaryList" type="eu.pms.project.database.PmsProjectsBenificiary">
                         <tr>
-                            <td width="50%"><bean:write name="pmsBenificiaryList" property="benDesc"/></td>
+                            <td width="50%">
+                                <bean:write name="pmsBenificiaryList" property="compId.btpId"/>
+                            </td>
                             <td width="20%" class="text-center"><bean:write name="pmsBenificiaryList" property="benTotal"/></td>
                             <td width="5%" class="text-center">
-                                <a href="javaScript:parent.location = '/viewPmsBenificiary.do?actId=<bean:write name="pmsBenificiaryList" property="benId"/>'">
+                                <a href="javaScript:parent.location = '/viewPmsBenificiary.do?actId=<bean:write name="pmsBenificiaryList" property="compId.proId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                 </a>
                                 &nbsp;
-                                <a href="javaScript:parent.location = '/viewEditBenificiary.do?actId=<bean:write name="pmsBenificiaryList" property="benId"/>'">
+                                <a href="javaScript:parent.location = '/viewEditBenificiary.do?actId=<bean:write name="pmsBenificiaryList" property="compId.proId"/>'">
                                     <span class="glyphicon glyphicon-edit"></span>
                                 </a>
                             </td>
