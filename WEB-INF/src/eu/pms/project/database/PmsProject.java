@@ -178,11 +178,19 @@ public class PmsProject implements Serializable {
         if (this.proStatus==null || this.proStatus.isEmpty()){
             proStatusDesc = "Unknown";
         }else if(this.proStatus.equals("1")){
-            proStatusDesc = "New";
+            proStatusDesc = "Design / Approval";
         }else if(this.proStatus.equals("2")){
-            proStatusDesc = "Stopped";
+            proStatusDesc = "Ongoing";
         }else if(this.proStatus.equals("3")){
+            proStatusDesc = "Delayed";
+        }else if(this.proStatus.equals("4")){
             proStatusDesc = "Completed";
+        }else if(this.proStatus.equals("5")){
+            proStatusDesc = "On-Hold";
+        }else if(this.proStatus.equals("6")){
+            proStatusDesc = "Closed";
+        }else if(this.proStatus.equals("7")){
+            proStatusDesc = "Cancelled";
         }else{
             proStatusDesc = "Unknown";
         }
