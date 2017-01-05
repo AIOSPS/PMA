@@ -134,4 +134,79 @@
         </JoinWith>
     </qItem>
 
+
+    <qItem>
+        <ItemId>8</ItemId>
+        <HdbFieldName>a.governateId</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Governate</DisplayName>
+        <WhereCondition>a.governateId</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.governateDesc</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.governateDesc</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
+    <qItem>
+        <ItemId>9</ItemId>
+        <HdbFieldName>a.communityId</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Community</DisplayName>
+        <WhereCondition>a.communityId</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.communityName</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.communityName</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+    <qItem>
+        <ItemId>10</ItemId>
+        <HdbFieldName>a.sectorId</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Sector</DisplayName>
+        <WhereCondition>a.sectorId</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.sectorName</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.sectorName</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+    <qItem>
+        <ItemId>11</ItemId>
+        <HdbFieldName>a.donorId</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Donor</DisplayName>
+        <WhereCondition>a.donorId</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.donorName</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.donorName</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
 </reportingCriteria>
