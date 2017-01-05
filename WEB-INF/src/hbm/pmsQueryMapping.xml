@@ -427,7 +427,7 @@
     <query
             name="getPmsWaterSocio">
         <![CDATA[
-                from eu.pms.project.database.PmsWaterSocio a
+                from eu.pms.project.database.PmsWaterSocioVw a
                 order by a.watUseWatTanker
                   ]]>
     </query>
