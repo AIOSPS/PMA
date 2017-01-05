@@ -386,6 +386,7 @@
                         <div class="col-sm-9">
                             <html:select property="preId" styleClass="selectpicker form-control">
                                 <logic:present name="permitList">
+                                 <html:option value="">Select</html:option>
                                 <html:options collection="permitList" property="perId" labelProperty="perTitle"/>
                                 </logic:present>
                             </html:select>
@@ -564,38 +565,38 @@
 
 //    *****************************project type**************
     function setProjectTypeConfig(secType) {
-        if(secType=="H"){
-            document.getElementsByName("communityProjectList")[0].disabled = true;
-            document.getElementsByName("secId")[0].disabled = false;
-            $('[name="secId"]').eq(0).parent().removeClass("disabled");
-            $('[name="secId"]').eq(0).parent().find('button').removeClass("disabled");
-            document.getElementsByName("proHasCluster")[0].disabled = true;
-            document.getElementsByName("proHasCluster")[1].disabled = true;
-            document.getElementsByName("proHasCluster")[1].checked  = true;
-            $('li[data-optgroup=1]').removeClass("disabled");
-            $('li[data-optgroup=2]').addClass("disabled");
-            $("#Development").prop("disabled", true);
-        }else if(secType=="D"){
-            document.getElementsByName("proHasCluster")[0].disabled = false;
-            document.getElementsByName("proHasCluster")[1].disabled = false;
-            document.getElementsByName("proHasCluster")[0].checked  = true;
-            $('li[data-optgroup=1]').addClass("disabled");
-            $('li[data-optgroup=2]').removeClass("disabled");
-        }else if(secType=="1"){
-            document.getElementsByName("communityProjectList")[0].disabled = true;
-            document.getElementsByName("secId")[0].disabled = false;
-            $('[name="secId"]').eq(0).parent().removeClass("disabled");
-            $('[name="secId"]').eq(0).parent().find('button').removeClass("disabled");
-            $('li[data-optgroup=1]').addClass("disabled");
-            $('li[data-optgroup=2]').removeClass("disabled");
-        }else if(secType=="0"){
-            document.getElementsByName("communityProjectList")[0].disabled = false;
-            $('[name="communityProjectList"]').eq(0).parent().removeClass("disabled");
-            $('[name="communityProjectList"]').eq(0).parent().find('button').removeClass("disabled");
-            document.getElementsByName("secId")[0].disabled = true;
-            $('li[data-optgroup=1]').addClass("disabled");
-            $('li[data-optgroup=2]').addClass("disabled");
-        }
+//        if(secType=="H"){
+//            document.getElementsByName("communityProjectList")[0].disabled = true;
+//            document.getElementsByName("secId")[0].disabled = false;
+//            $('[name="secId"]').eq(0).parent().removeClass("disabled");
+//            $('[name="secId"]').eq(0).parent().find('button').removeClass("disabled");
+//            document.getElementsByName("proHasCluster")[0].disabled = true;
+//            document.getElementsByName("proHasCluster")[1].disabled = true;
+//            document.getElementsByName("proHasCluster")[1].checked  = true;
+//            $('li[data-optgroup=1]').removeClass("disabled");
+//            $('li[data-optgroup=2]').addClass("disabled");
+//            $("#Development").prop("disabled", true);
+//        }else if(secType=="D"){
+//            document.getElementsByName("proHasCluster")[0].disabled = false;
+//            document.getElementsByName("proHasCluster")[1].disabled = false;
+//            document.getElementsByName("proHasCluster")[0].checked  = true;
+//            $('li[data-optgroup=1]').addClass("disabled");
+//            $('li[data-optgroup=2]').removeClass("disabled");
+//        }else if(secType=="1"){
+//            document.getElementsByName("communityProjectList")[0].disabled = true;
+//            document.getElementsByName("secId")[0].disabled = false;
+//            $('[name="secId"]').eq(0).parent().removeClass("disabled");
+//            $('[name="secId"]').eq(0).parent().find('button').removeClass("disabled");
+//            $('li[data-optgroup=1]').addClass("disabled");
+//            $('li[data-optgroup=2]').removeClass("disabled");
+//        }else if(secType=="0"){
+//            document.getElementsByName("communityProjectList")[0].disabled = false;
+//            $('[name="communityProjectList"]').eq(0).parent().removeClass("disabled");
+//            $('[name="communityProjectList"]').eq(0).parent().find('button').removeClass("disabled");
+//            document.getElementsByName("secId")[0].disabled = true;
+//            $('li[data-optgroup=1]').addClass("disabled");
+//            $('li[data-optgroup=2]').addClass("disabled");
+//        }
     }
 
     setProjectTypeConfig('H');
