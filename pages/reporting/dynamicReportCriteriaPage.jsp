@@ -1,3 +1,8 @@
+<%@ page import="java.util.List" %>
+<%@ page import="eu.pms.project.database.PmsDonor" %>
+<%@ page import="eu.pms.lookup.database.PmsGovernate" %>
+<%@ page import="eu.pms.project.database.PmsCommunity" %>
+<%@ page import="eu.pms.project.database.PmsSector" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -171,6 +176,120 @@
                         $('#prEnDate').datetimepicker({format: 'DD/MM/YYYY'});
                     });
                 </script>
+
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label for="8_val1" class="col-sm-3 col-form-label">
+                            <input type="checkbox" name="inputItems" value="8" class="checkBox">
+                            Governate</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="8_whereCondType" value="0">
+                            <select id="8_val1" name="8_val1" class="form-control input-sm">
+                                <logic:present name="governateList">
+                                    <% List governateList = (List) request.getAttribute("governateList");%>
+                                    <%
+                                        for (int i = 0; i < governateList.size(); i++) {
+                                            PmsGovernate obj = (PmsGovernate) governateList.get(i);
+                                    %>
+                                    <option value="<%=obj.getLookupId()%>"><%=obj.getLookupDesc()%></option>
+                                    <% }%>
+
+                                </logic:present>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="8" class="checkBox" checked>
+                            Governate</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label for="9_val1" class="col-sm-3 col-form-label">
+                            <input type="checkbox" name="inputItems" value="9" class="checkBox">
+                            Community</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="9_whereCondType" value="0">
+                            <select id="9_val1" name="9_val1" class="form-control input-sm">
+                                <logic:present name="communityList">
+                                    <% List communityList = (List) request.getAttribute("communityList");%>
+                                    <%
+                                        for (int i = 0; i < communityList.size(); i++) {
+                                            PmsCommunity obj = (PmsCommunity) communityList.get(i);
+                                    %>
+                                    <option value="<%=obj.getComId()%>"><%=obj.getComName()%></option>
+                                    <% }%>
+
+                                </logic:present>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="9" class="checkBox" checked>
+                            Community</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label for="8_val1" class="col-sm-3 col-form-label">
+                            <input type="checkbox" name="inputItems" value="10" class="checkBox">
+                            Sector</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="10_whereCondType" value="0">
+                            <select id="10_val1" name="10_val1" class="form-control input-sm">
+                                <logic:present name="sectorsList">
+                                    <% List sectorsList = (List) request.getAttribute("sectorsList");%>
+                                    <%
+                                        for (int i = 0; i < sectorsList.size(); i++) {
+                                            PmsSector obj = (PmsSector) sectorsList.get(i);
+                                    %>
+                                    <option value="<%=obj.getSecId()%>"><%=obj.getSecDesc()%></option>
+                                    <% }%>
+
+                                </logic:present>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="10" class="checkBox" checked>
+                            Sector</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label for="11_val1" class="col-sm-3 col-form-label">
+                            <input type="checkbox" name="inputItems" value="11" class="checkBox">
+                            Donor</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="11_whereCondType" value="0">
+                            <select id="11_val1" name="11_val1" class="form-control input-sm">
+                                <logic:present name="dononrList">
+                                    <% List dononrList = (List) request.getAttribute("dononrList");%>
+                                    <%
+                                        for (int i = 0; i < dononrList.size(); i++) {
+                                            PmsDonor obj = (PmsDonor) dononrList.get(i);
+                                    %>
+                                    <option value="<%=obj.getDonId()%>"><%=obj.getDonName()%></option>
+                                    <% }%>
+
+                                </logic:present>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="11" class="checkBox" checked>
+                            Donor</label>
+                    </div>
+                </div>
+
 
                 <div class="form-group row">
                     <div class="col-md-8">
