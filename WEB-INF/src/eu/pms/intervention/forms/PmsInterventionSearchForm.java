@@ -11,7 +11,8 @@ public class PmsInterventionSearchForm extends ActionForm {
     private String interventionDesc;
     private int interventionEstimatedBudget;
     private String interventionSource;
-
+    private String secId;
+    private String intPriority;
     /** default constructor */
     public PmsInterventionSearchForm() {
     }
@@ -38,6 +39,22 @@ public class PmsInterventionSearchForm extends ActionForm {
 
     public void setInterventionSource(String interventionSource) {
         this.interventionSource = interventionSource;
+    }
+
+    public String getSecId() {
+        return secId;
+    }
+
+    public void setSecId(String secId) {
+        this.secId = secId;
+    }
+
+    public String getIntPriority() {
+        return intPriority;
+    }
+
+    public void setIntPriority(String intPriority) {
+        this.intPriority = intPriority;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

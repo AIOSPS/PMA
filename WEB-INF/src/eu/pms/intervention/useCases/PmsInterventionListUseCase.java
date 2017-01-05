@@ -22,18 +22,18 @@ public class PmsInterventionListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String intDesc = (String)itr.next();
-                Integer intEstimateBudget = (Integer)itr.next();
+                String secId = (String)itr.next();
+                String intPriority = (String)itr.next();
                 String intSource = (String) itr.next();
                 String cond = " where 1=1 ";
-                if(intDesc!=null && !intDesc.trim().equals("")){
-                    cond += " and a.intDesc like '%"+intDesc+"%' ";
+                if(secId!=null && !secId.trim().equals("")){
+                    cond += " and a.compId.secId = '"+secId+"' ";
                 }
-                if(intEstimateBudget!=null && !intEstimateBudget.equals("")&& intEstimateBudget!=0){
-                    cond += " and a.intEstimatedBudget= "+intEstimateBudget+" ";
+                if(intPriority!=null && !intPriority.equals("")){
+                    cond += " and a.intPriority = '"+intPriority+"' ";
                 }
                 if(intSource!=null && !intSource.trim().equals("") ){
-                    cond += " and a.intSource like '%"+intSource+"%' ";
+                    cond += " and a.intSource = '"+intSource+"' ";
                 }
                 String query = " from eu.pms.project.database.PmsIntervention a ";
                 query +=cond;

@@ -80,20 +80,28 @@
             <table id="listWaterSocioTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
+                    <th class="text-center">Community</th>
                     <th class="text-center">Is connected</th>
                     <th class="text-center">Network</th>
                     <th class="text-center">Use Water Tanker</th>
                     <th class="text-center">Rain Water Well</th>
+                    <th class="text-center">Number of Springs</th>
+                    <th class="text-center">Price Water</th>
+                    <th class="text-center">Filling Point</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
+                    <th class="text-center">Community</th>
                     <th class="text-center">Is connected</th>
                     <th class="text-center">Network</th>
                     <th class="text-center">Use Water Tanker</th>
                     <th class="text-center">Rain Water Well</th>
+                    <th class="text-center">Number of Springs</th>
+                    <th class="text-center">Price Water</th>
+                    <th class="text-center">Filling Point</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
 
@@ -103,11 +111,15 @@
                 <logic:present name="pmsWaterSocioList">
                     <logic:iterate id="pmsWaterSocioList" name="pmsWaterSocioList" type="eu.pms.project.database.PmsWaterSocioVw">
                         <tr>
-                            <td width="20%" class="text-center"><bean:write name="pmsWaterSocioList" property="watIsconnected"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsWaterSocioList" property="watNetwork"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsWaterSocioList" property="watUseWatTanker"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsWaterSocioList" property="watRainWaterWell"/></td>
-                            <td width="15%" class="text-center"><bean:write name="pmsWaterSocioList" property="watSurveyDateStr"/></td>
+                            <td width="15%" class="text-center"><bean:write name="pmsWaterSocioList" property="comName"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watIsconnected"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watNetwork"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watUseWatTanker"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watRainWaterWell"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watNoSprings"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watPriceWater"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watFillingPoint"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsWaterSocioList" property="watSurveyDateStr"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsWaterSocio.do?watId=<bean:write name="pmsWaterSocioList" property="watId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>

@@ -113,10 +113,11 @@
                         <label for="intEstimatedBudget" class="col-sm-3 col-form-label">Priority:</label>
                         <div class="col-sm-9">
                             <html:select property="intPriority" styleClass="selectpicker form-control">
-                                <html:option value="H">High</html:option>
-                                <html:option value="M">Medium</html:option>
+                                <html:option value="O">Very Low</html:option>
                                 <html:option value="L">Low</html:option>
-
+                                <html:option value="H">High</html:option>
+                                <html:option value="V">Very High</html:option>
+                                <html:option value="U">Urgent</html:option>
                             </html:select>
                         </div>
                     </div>

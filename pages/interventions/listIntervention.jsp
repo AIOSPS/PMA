@@ -43,21 +43,36 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="interventionDesc" class="col-sm-12 col-form-label">Description:</label>
+                                <label for="secId" class="col-sm-12 col-form-label">Sector:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="interventionDesc" styleClass="form-control" styleId="interventionDesc"/>
+                                    <html:select property="secId"
+                                                 styleClass="selectpicker form-control">
+                                        <logic:present name="sectorsList">
+                                            <html:option value="">Select</html:option>
+                                            <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
+                                        </logic:present>
+
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="interventionEstimatedBudget" class="col-sm-12 col-form-label">Estimated Budget:</label>
+                                <label for="intPriority" class="col-sm-12 col-form-label">Priority:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="interventionEstimatedBudget" styleClass="form-control" styleId="interventionEstimatedBudget"/>
+                                    <html:select property="intPriority" styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:option value="O">Very Low</html:option>
+                                        <html:option value="L">Low</html:option>
+                                        <html:option value="H">High</html:option>
+                                        <html:option value="V">Very High</html:option>
+                                        <html:option value="U">Urgent</html:option>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <label for="interventionSource" class="col-sm-12 col-form-label">Source:</label>
                                 <div class="col-sm-12">
                                     <html:select property="interventionSource" styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
                                         <html:option value="MASTER">Master Plan</html:option>
                                         <html:option value="ASSESS">Assessment</html:option>
                                         <html:option value="COMM">Comunity Representative</html:option>
