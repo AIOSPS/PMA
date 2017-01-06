@@ -230,13 +230,15 @@ public class Templates {
         VerticalListBuilder centerHeaderPart = cmp.verticalList();
         VerticalListBuilder rightHeaderPart = cmp.verticalList();
 
-        centerHeaderPart.add(cmp.text("جامعة القدس المفتوحة   ").setStyle(stl.style(bold22CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
-        centerHeaderPart.add(cmp.text(repHeaderInfo.getCenterTitle()+" / "+repHeaderInfo.getLeftTitle()).setStyle(stl.style(bold18CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
-        centerHeaderPart.add(cmp.text(repHeaderInfo.getRightTitle() + "").setStyle(stl.style(bold12CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
-        rightHeaderPart.add(cmp.image(Templates.class.getResource("alumniLogo.png"))).setFixedDimension(new Integer(100), new Integer(80));
+//        centerHeaderPart.add(cmp.text("جامعة القدس المفتوحة   ").setStyle(stl.style(bold22CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
+//        centerHeaderPart.add(cmp.text(repHeaderInfo.getCenterTitle()+" / "+repHeaderInfo.getLeftTitle()).setStyle(stl.style(bold18CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
+//        centerHeaderPart.add(cmp.text(repHeaderInfo.getRightTitle() + "").setStyle(stl.style(bold12CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
+        rightHeaderPart.add(cmp.image(Templates.class.getResource("logo-sm.jpg"))).setFixedDimension(new Integer(100), new Integer(80));
+//        rightHeaderPart.add(cmp.text(DynamicReportDesign.userName).setStyle(stl.style(boldCenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.LEFT)));
 //        rightHeaderPart.add(cmp.text("طبع من خلال بوابة الخريجين").setStyle(stl.style(boldCenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.LEFT)));
-        leftHeaderPart.add(cmp.image(Templates.class.getResource("qoulogo.jpg"))).setFixedDimension(new Integer(60), new Integer(60));
-//        leftHeaderPart.add(cmp.text(repHeaderInfo.getCurrentDateAr() + "").setStyle(stl.style(boldCenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)));
+//        leftHeaderPart.add(cmp.image(Templates.class.getResource("logo-sm.jpg"))).setFixedDimension(new Integer(100), new Integer(80));
+        leftHeaderPart.add(cmp.text(DynamicReportDesign.userName).setStyle(stl.style(boldCenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)));
+        leftHeaderPart.add(cmp.text(repHeaderInfo.getCurrentDateAr() + "").setStyle(stl.style(boldCenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)));
 //        leftHeaderPart.add(cmp.text(repHeaderInfo.getCenterTitle() + "").setStyle(stl.style(bold18CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)));
 //        leftHeaderPart.add(cmp.text(repHeaderInfo.getLeftTitle() + "").setStyle(stl.style(bold12CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)));
 //        leftHeaderPart.add(cmp.text(repHeaderInfo.getRightTitle() + "").setStyle(stl.style(bold12CenteredStyle).setBackgroundColor(new Color(255,255,255)).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)));

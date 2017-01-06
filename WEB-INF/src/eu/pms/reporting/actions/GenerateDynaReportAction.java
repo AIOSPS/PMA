@@ -1,6 +1,7 @@
 package eu.pms.reporting.actions;
 
 import eu.pms.common.tools.SessionTraker;
+import eu.pms.login.database.SecUser;
 import eu.pms.reporting.engine.DynamicReportingEngine;
 import eu.pms.reporting.entity.PresenationDynaQueryItemInfo;
 import eu.pms.reporting.forms.DynaReportCriteriaForm;
@@ -77,7 +78,7 @@ public class GenerateDynaReportAction extends Action
         }
 
         DynamicReportingEngine dynaReportEngine = new DynamicReportingEngine(request.getSession().getServletContext().getInitParameter("webInfPath") + "/classes/dynamicReportCriteria.xml");
-        JasperReportBuilder reportBuilder = dynaReportEngine.createReport(inputsList, outputsList);
+        JasperReportBuilder reportBuilder = dynaReportEngine.createReport(inputsList, outputsList,"By User: "+((SecUser)request.getSession().getAttribute("userInfo")).getUsrName());
         OutputStream out = response.getOutputStream();
 
 //        response.setContentType("application/vnd.ms-excel;charset=UTF-8");

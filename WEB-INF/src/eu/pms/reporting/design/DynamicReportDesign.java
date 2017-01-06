@@ -1,6 +1,7 @@
 package eu.pms.reporting.design;
 
 import eu.pms.reporting.dataSources.DynamicReportDataSource;
+import eu.pms.reporting.entity.HeaderInfo;
 import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.constant.PageOrientation;
@@ -17,7 +18,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * Created by alisa_000 on 12/28/2016.
  */
 public class DynamicReportDesign implements ReportDesign<DynamicReportDataSource> {
-
+    public static String userName="";
     public void configureReport(ReportBuilder<?> rb, DynamicReportDataSource invoiceData, List<String> header) throws DRException {
         Object[] h = header.toArray(new Object[header.size()]);
 
@@ -40,6 +41,15 @@ public class DynamicReportDesign implements ReportDesign<DynamicReportDataSource
         rb.setIgnorePageWidth(true);
         rb.setIgnorePagination(true);
         rb.setBackgroundStyle(stl.style(Templates.subtotalStyle)) ;
+
+        HeaderInfo repHeaderInfo = new HeaderInfo();
+        repHeaderInfo.setLayoutPage(PageOrientation.PORTRAIT);
+        repHeaderInfo.setCenterTitle(userName);
+        repHeaderInfo.setLeftTitle("قسم متابعة الخريجين");
+        repHeaderInfo.setRightTitle("تقرير احصائيات الخريجين");
+
+        repHeaderInfo.setListLeftText(new String[]{repHeaderInfo.getCurrentDateAr()});
+        rb.pageHeader(Templates.getReportHeader(repHeaderInfo));
     }
 
 

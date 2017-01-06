@@ -4,6 +4,7 @@ import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.exceptions.BusinessException;
 import eu.pms.common.tools.XmlParser;
 import eu.pms.common.utils.XMLItemEntity;
+import eu.pms.login.database.SecUser;
 import eu.pms.reporting.dataSources.DynamicReportDataSource;
 import eu.pms.reporting.design.DynamicReportDesign;
 import eu.pms.reporting.entity.PresenationDynaQueryItemInfo;
@@ -30,7 +31,7 @@ public class DynamicReportingEngine {
 
     }
 
-    public JasperReportBuilder createReport(List<PresenationDynaQueryItemInfo> inputItems, List<PresenationDynaQueryItemInfo> outputItems) throws BusinessException
+    public JasperReportBuilder createReport(List<PresenationDynaQueryItemInfo> inputItems, List<PresenationDynaQueryItemInfo> outputItems,String userName) throws BusinessException
     {
         StringBuffer query = buildQuery(inputItems, outputItems);
 
@@ -54,6 +55,7 @@ public class DynamicReportingEngine {
         JasperReportBuilder reportBuilder = null;
         if(qResult != null && qResult.size() > 0)
         {
+            DynamicReportDesign.userName = userName;
             reportBuilder=    generateReport(qResult, tableHeader);
         }
 //        return reportObject;

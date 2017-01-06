@@ -81,7 +81,7 @@ public class HeaderInfo {
 
     public String getCurrentDateAr() {
 
-        String currentDate=" طبع بتاريخ : ";
+        String currentDate="By Date: ";
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         currentDate+=formatter.format(new Date());
 
