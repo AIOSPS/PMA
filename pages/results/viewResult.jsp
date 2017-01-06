@@ -119,8 +119,8 @@
                         <div class="col-sm-9">
                             <html:select property="resStatus" disabled="true"
                                          styleClass="selectpicker form-control">
-                                <html:option value="1">Status one</html:option>
-                                <html:option value="2">Status two</html:option>
+                                <html:option value="1">Achived</html:option>
+                                <html:option value="2">Not Achived</html:option>
                             </html:select>
                         </div>
                     </div>

@@ -66,8 +66,17 @@
                         <div class="col-sm-9">
                             <html:select property="perType"
                                          styleClass="selectpicker form-control">
-                                <html:option value="1">PA</html:option>
-                                <html:option value="2">ICA</html:option>
+                                <html:select property="perType"
+                                             styleClass="selectpicker form-control">
+                                    <html:option value="1">ICA</html:option>
+                                    <html:option value="2">MOLG</html:option>
+                                    <html:option value="3">MOA</html:option>
+                                    <html:option value="4">MOHE</html:option>
+                                    <html:option value="5">MON</html:option>
+                                    <html:option value="6">MOC</html:option>
+                                    <html:option value="7">PWA</html:option>
+                                    <html:option value="8">PENRA</html:option>
+                                </html:select>
                             </html:select>
                         </div>
                     </div>
@@ -77,10 +86,9 @@
                             <html:select property="perStatus"
                                          styleClass="selectpicker form-control">
                                 <html:option value="1">Approved</html:option>
-                                <html:option value="2">Stuck</html:option>
-                                <html:option value="3">Refused</html:option>
-                                <html:option value="4">Submitted</html:option>
-                                <html:option value="5">Rejected</html:option>
+                                <html:option value="2">Rejected</html:option>
+                                <html:option value="3">Stuck</html:option>
+                                <html:option value="4">Stopped</html:option>
                             </html:select>
                         </div>
                     </div>

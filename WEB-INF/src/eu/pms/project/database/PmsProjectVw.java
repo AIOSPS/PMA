@@ -153,17 +153,6 @@ public class PmsProjectVw implements Serializable {
     }
 
     public String getProStatusDesc() {
-        if (this.proStatus==null || this.proStatus.isEmpty()){
-            proStatusDesc = "Unknown";
-        }else if(this.proStatus.equals("1")){
-            proStatusDesc = "New";
-        }else if(this.proStatus.equals("2")){
-            proStatusDesc = "Stopped";
-        }else if(this.proStatus.equals("3")){
-            proStatusDesc = "Completed";
-        }else{
-            proStatusDesc = "Unknown";
-        }
         return proStatusDesc;
     }
 
