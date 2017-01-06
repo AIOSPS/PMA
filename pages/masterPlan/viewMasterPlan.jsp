@@ -17,13 +17,13 @@
         $("#masMpName").prop('required', true);
         $("#masStatus").attr("placeholder", "Status");
         $("#masStatus").prop('required', true);
-        $("#masStatusIca").attr("placeholder", "Status Ica");
+        $("#masStatusIca").attr("placeholder", "Status ICA");
         $("#masStatusIca").prop('required', true);
-        $("#masFirstSubmitDateToIca").attr("placeholder", "First Submit Date To Ica");
+        $("#masFirstSubmitDateToIca").attr("placeholder", "First Submit Date To ICA");
         $("#masFirstSubmitDateToIca").prop('required', true);
-        $("#masLastSubmitDateToIca").attr("placeholder", "Last Submit Date To Ica");
+        $("#masLastSubmitDateToIca").attr("placeholder", "Last Submit Date To ICA");
         $("#masLastSubmitDateToIca").prop('required', true);
-        $("#masNoSessionWithIca").attr("placeholder", "No Session With Ica");
+        $("#masNoSessionWithIca").attr("placeholder", "No Session With ICA");
         $("#masNoSessionWithIca").prop('required', true);
         $("#masSubmitToMod").attr("placeholder", "Submit To Mod");
         $("#masSubmitToMod").prop('required', true);
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masStatusIca" class="col-sm-3 col-form-label">Status Ica:</label>
+                        <label for="masStatusIca" class="col-sm-3 col-form-label">Status ICA:</label>
                         <div class="col-sm-9">
                             <html:text property="masStatusIca" styleClass="form-control" styleId="masStatusIca" disabled="true"/>
                                 <%--<html:select property="proStatus" styleClass="selectpicker form-control">--%>
@@ -126,7 +126,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">First Submit Date To Ica:</label>
+                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">First Submit Date To ICA:</label>
 
                         <div class='input-group date col-sm-9' id='mFirstSubmitDateToIca'>
                             <html:text property="masFirstSubmitDateToIca" styleClass="form-control" styleId="masFirstSubmitDateToIca" disabled="true"/>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">Last Submit Date To Ica:</label>
+                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">Last Submit Date To ICA:</label>
 
                         <div class='input-group date col-sm-9' id='mLastSubmitDateToIca'>
                             <html:text property="masLastSubmitDateToIca" styleClass="form-control" styleId="masLastSubmitDateToIca" disabled="true"/>
@@ -160,7 +160,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masNoSessionWithIca" class="col-sm-3 col-form-label">No Session With Ica:</label>
+                        <label for="masNoSessionWithIca" class="col-sm-3 col-form-label">No Session With ICA:</label>
                         <div class="col-sm-9">
                             <html:text property="masNoSessionWithIca" styleClass="form-control" styleId="masNoSessionWithIca" disabled="true"/>
                         </div>
@@ -385,20 +385,20 @@
         emptyText: "Please Enter The Status ",
     });
     InvalidInputHelper(document.getElementsByName("masStatusIca")[0], {
-        defaultText: "Please Enter The Status Ica ",
-        emptyText: "Please Enter The Status Ica ",
+        defaultText: "Please Enter The Status ICA ",
+        emptyText: "Please Enter The Status ICA ",
     });
     InvalidInputHelper(document.getElementsByName("masFirstSubmitDateToIca")[0], {
-        defaultText: "Please Enter The First Submit Date To Ica ",
-        emptyText: "Please Enter The First Submit Date To Ica ",
+        defaultText: "Please Enter The First Submit Date To ICA ",
+        emptyText: "Please Enter The First Submit Date To ICA ",
     });
     InvalidInputHelper(document.getElementsByName("masLastSubmitDateToIca")[0], {
-        defaultText: "Please Enter The Last Submit Date To Ica ",
-        emptyText: "Please Enter The Last Submit Date To Ica ",
+        defaultText: "Please Enter The Last Submit Date To ICA ",
+        emptyText: "Please Enter The Last Submit Date To ICA ",
     });
     InvalidInputHelper(document.getElementsByName("masNoSessionWithIca")[0], {
-        defaultText: "Please Enter The No Session With Ica ",
-        emptyText: "Please Enter The No Session With Ica ",
+        defaultText: "Please Enter The No Session With ICA ",
+        emptyText: "Please Enter The No Session With ICA ",
     });
     InvalidInputHelper(document.getElementsByName("masSubmitToMod")[0], {
         defaultText: "Please Enter The Submit To Mod ",

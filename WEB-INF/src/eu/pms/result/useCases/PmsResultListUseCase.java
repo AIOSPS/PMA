@@ -23,13 +23,13 @@ public class PmsResultListUseCase implements ComponentUseCase {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
                 String resultDesc = (String)itr.next();
-                String resultLongDesc = (String) itr.next();
+                String resStatus = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(resultDesc!=null && !resultDesc.trim().equals("")){
                     cond += " and a.resDesc like '%"+resultDesc+"%' ";
                 }
-                if(resultLongDesc!=null && !resultLongDesc.trim().equals("")){
-                    cond += " and a.resLongDesc like '%"+resultLongDesc+"%' ";
+                if(resStatus!=null && !resStatus.trim().equals("")){
+                    cond += " and a.resStatus like '%"+resStatus+"%' ";
                 }
                 String query = " from eu.pms.project.database.PmsResult a ";
                 query +=cond;

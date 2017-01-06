@@ -5,8 +5,8 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 <script type="text/javascript">
     $(function () {
-        $("#masterPlanNo").attr("placeholder", "Master Plan No");
-        $("#masterPlanName").attr("placeholder", "Master Plan Name");
+        $("#communityId").attr("placeholder", "Community");
+        $("#status").attr("placeholder", "Status");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -42,15 +42,21 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="masterPlanNo" class="col-sm-12 col-form-label">Master Plan No:</label>
+                                <label for="communityId" class="col-sm-12 col-form-label">Community:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="masterPlanNo" styleClass="form-control" styleId="masterPlanNo"/>
+                                    <html:select property="communityId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <logic:present name="communityList">
+                                            <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                        </logic:present>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="masterPlanName" class="col-sm-12 col-form-label">Master Plan Name:</label>
+                                <label for="status" class="col-sm-12 col-form-label">Status:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="masterPlanName" styleClass="form-control" styleId="masterPlanName"/>
+                                    <html:text property="status" styleClass="form-control" styleId="status"/>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -73,8 +79,8 @@
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
                     <th class="text-center">Status</th>
-                    <th class="text-center">First Submit Date To Ica</th>
-                    <th class="text-center">Last Submit Date To Ica</th>
+                    <th class="text-center">First Submit Date To ICA</th>
+                    <th class="text-center">Last Submit Date To ICA</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
@@ -83,8 +89,8 @@
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
                     <th class="text-center">Status</th>
-                    <th class="text-center">First Submit Date To Ica</th>
-                    <th class="text-center">Last Submit Date To Ica</th>
+                    <th class="text-center">First Submit Date To ICA</th>
+                    <th class="text-center">Last Submit Date To ICA</th>
                     <th class="text-center"></th>
 
                 </tr>

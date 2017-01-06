@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 public class PmsResultSearchForm extends ActionForm {
     private String resultDesc;
     private String resultLongDesc;
+    private String resStatus;
 
     /** default constructor */
     public PmsResultSearchForm() {
@@ -29,6 +30,14 @@ public class PmsResultSearchForm extends ActionForm {
 
     public void setResultLongDesc(String resultLongDesc) {
         this.resultLongDesc = resultLongDesc;
+    }
+
+    public String getResStatus() {
+        return resStatus;
+    }
+
+    public void setResStatus(String resStatus) {
+        this.resStatus = resStatus;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

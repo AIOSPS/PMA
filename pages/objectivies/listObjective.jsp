@@ -6,7 +6,7 @@
 <script type="text/javascript">
     $(function () {
         $("#objectiveDesc").attr("placeholder", "Objective Description");
-        $("#objectiveLongDesc").attr("placeholder", "Long Description");
+        $("#objectiveLongDesc").attr("placeholder", "Ojective Status");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -48,9 +48,13 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="objectiveLongDesc" class="col-sm-12 col-form-label">Long Description:</label>
+                                <label for="objStatus" class="col-sm-12 col-form-label">Status:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="objectiveLongDesc" styleClass="form-control" styleId="objectiveLongDesc"/>
+                                    <html:select property="objStatus"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="1">Adapted</html:option>
+                                        <html:option value="2">Not adapted </html:option>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">

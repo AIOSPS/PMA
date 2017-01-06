@@ -6,7 +6,7 @@
 <script type="text/javascript">
     $(function () {
         $("#resultDesc").attr("placeholder", "Result Description");
-        $("#resultLongDesc").attr("placeholder", "Long Description");
+        $("#resultLongDesc").attr("placeholder", "Result Status");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -48,9 +48,13 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="resultLongDesc" class="col-sm-12 col-form-label">Long Description:</label>
+                                <label for="resStatus" class="col-sm-12 col-form-label">Status:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="resultLongDesc" styleClass="form-control" styleId="resultLongDesc"/>
+                                    <html:select property="resStatus"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="1">Achived</html:option>
+                                        <html:option value="2">Not Achived</html:option>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">

@@ -22,16 +22,16 @@ public class PmsMasterPlanListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String masterPlanNo= (String) itr.next();
-                String masterPlanName= (String) itr.next();
+                String comId= (String) itr.next();
+                String masStatus= (String) itr.next();
                 String cond = " where 1=1 ";
-                if(masterPlanNo!=null && !masterPlanNo.trim().equals("")){
-                    cond += " and a.masMpNo like '%"+masterPlanNo+"%' ";
+                if(comId!=null && !comId.trim().equals("")){
+                    cond += " and a.comId like '%"+comId+"%' ";
                 }
-                if(masterPlanName!=null && !masterPlanName.trim().equals("")){
-                    cond += " and a.masMpName like '%"+masterPlanName+"%' ";
+                if(masStatus!=null && !masStatus.trim().equals("")){
+                    cond += " and a.masStatus like '%"+masStatus+"%' ";
                 }
-                String query = " from eu.pms.project.database.PmsMasterPlan a ";
+                String query = " from eu.pms.project.database.PmsMasterPlanVw a ";
                 query +=cond;
                 query +=" order by a.masMpName ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);

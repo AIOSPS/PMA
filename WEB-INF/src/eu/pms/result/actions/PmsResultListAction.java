@@ -37,7 +37,7 @@ public class PmsResultListAction extends Action {
         PmsResultSearchForm pmsResultSearchForm = (PmsResultSearchForm) form;
         if (pmsResultSearchForm != null) {
             inputData.add(pmsResultSearchForm.getResultDesc());
-            inputData.add(pmsResultSearchForm.getResultLongDesc());
+            inputData.add(pmsResultSearchForm.getResStatus());
         }
         request.setAttribute("pmsResultList", new PmsResultListUseCase().execute(inputData, request));
 

@@ -35,7 +35,7 @@ public class PmsObjectiveListAction extends Action {
         PmsObjectiveSearchForm pmsObjectiveSearchForm = (PmsObjectiveSearchForm) form;
         if (pmsObjectiveSearchForm != null) {
             inputData.add(pmsObjectiveSearchForm.getObjectiveDesc());
-            inputData.add(pmsObjectiveSearchForm.getObjectiveLongDesc());
+            inputData.add(pmsObjectiveSearchForm.getObjStatus());
         }
         request.setAttribute("pmsObjectiveList", new PmsObjectiveListUseCase().execute(inputData, request));
 

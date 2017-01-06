@@ -48,10 +48,10 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="indicatorLongDesc" class="col-sm-12 col-form-label">Long Description:</label>
-                                <div class="col-sm-12">
-                                    <html:text property="indicatorLongDesc" styleClass="form-control" styleId="indicatorLongDesc"/>
-                                </div>
+                                <%--<label for="indicatorLongDesc" class="col-sm-12 col-form-label">Long Description:</label>--%>
+                                <%--<div class="col-sm-12">--%>
+                                    <%--<html:text property="indicatorLongDesc" styleClass="form-control" styleId="indicatorLongDesc"/>--%>
+                                <%--</div>--%>
                             </div>
                             <div class="col-md-4">
                                 <label  class="col-sm-5 col-form-label">&nbsp;</label>

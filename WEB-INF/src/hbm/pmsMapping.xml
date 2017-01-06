@@ -419,6 +419,32 @@
 
     </class>
 
+    <class name="eu.pms.project.database.PmsMasterPlanVw" table="pms_master_plan_vw" >
+        <id name="masId" type="java.lang.String" column="mas_id" >
+            <generator class="assigned" />
+        </id>
+        <property name="masMpNo" type="java.lang.String" column="mas_mp_no" />
+        <property name="masMpName" type="java.lang.String" column="mas_mp_name" />
+        <property name="masStatus" type="java.lang.String" column="mas_status" />
+        <property name="masStatusIca" type="java.lang.String" column="mas_status_ica" />
+        <property name="masFirstSubmitDateToIca" type="java.util.Date" column="mas_first_submit_date_to_ica" />
+        <property name="masLastSubmitDateToIca" type="java.util.Date" column="mas_last_submit_date_to_ica" />
+        <property name="masNoSessionWithIca" type="int" column="mas_no_session_with_ica" />
+        <property name="masSubmitToMod" type="java.lang.String" column="mas_submit_to_mod" />
+        <property name="masApprovalDate" type="java.util.Date" column="mas_approval_date" />
+        <property name="masPublicationDate" type="java.util.Date" column="mas_publication_date" />
+        <property name="masLastDateForObjection" type="java.util.Date" column="mas_last_date_for_objection" />
+        <property name="masDateOfFinalPublication" type="java.util.Date" column="mas_date_of_final_publication" />
+        <property name="masApprovedPlanedArea" type="int" column="mas_approved_planed_area" />
+        <property name="masVillageAdminBoarder" type="java.lang.String" column="mas_village_admin_boarder" />
+        <property name="masNote" type="java.lang.String" column="mas_note" />
+        <property name="username" type="java.lang.String" column="username" />
+        <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+        <property name="impId" type="java.lang.String" column="imp_id" />
+        <property name="comId" type="java.lang.String" column="com_id" />
+        <property name="comName" type="java.lang.String" column="com_name" />
+    </class>
+
     <class name="eu.pms.project.database.PmsSector" table="pms_sectors" >
     <id name="secId" type="java.lang.String" column="sec_id" >
     <generator class="assigned" />

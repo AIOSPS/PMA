@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 public class PmsMasterPlanSearchForm extends ActionForm {
     private String masterPlanNo;
     private String masterPlanName;
+    private String communityId;
+    private String status;
     /** default constructor */
     public PmsMasterPlanSearchForm() {
     }
@@ -29,6 +31,22 @@ public class PmsMasterPlanSearchForm extends ActionForm {
 
     public void setMasterPlanName(String masterPlanName) {
         this.masterPlanName = masterPlanName;
+    }
+
+    public String getCommunityId() {
+        return communityId;
+    }
+
+    public void setCommunityId(String communityId) {
+        this.communityId = communityId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

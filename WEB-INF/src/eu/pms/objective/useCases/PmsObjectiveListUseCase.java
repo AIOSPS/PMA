@@ -23,13 +23,13 @@ public class PmsObjectiveListUseCase implements ComponentUseCase {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
                 String objectiveDesc = (String)itr.next();
-                String objectiveLongDesc = (String) itr.next();
+                String objStatus = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(objectiveDesc!=null && !objectiveDesc.trim().equals("")){
                     cond += " and a.objDesc like '%"+objectiveDesc+"%' ";
                 }
-                if(objectiveLongDesc!=null && !objectiveLongDesc.trim().equals("")){
-                    cond += " and a.objLongDesc like '%"+objectiveLongDesc+"%' ";
+                if(objStatus!=null && !objStatus.trim().equals("")){
+                    cond += " and a.objStatus like '%"+objStatus+"%' ";
                 }
                 String query = " from eu.pms.project.database.PmsObjectiv a ";
                 query +=cond;

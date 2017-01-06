@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 public class PmsObjectiveSearchForm extends ActionForm {
     private String objectiveDesc;
     private String objectiveLongDesc;
+    private String objStatus;
 
     /** default constructor */
     public PmsObjectiveSearchForm() {
@@ -29,6 +30,14 @@ public class PmsObjectiveSearchForm extends ActionForm {
 
     public void setObjectiveLongDesc(String objectiveLongDesc) {
         this.objectiveLongDesc = objectiveLongDesc;
+    }
+
+    public String getObjStatus() {
+        return objStatus;
+    }
+
+    public void setObjStatus(String objStatus) {
+        this.objStatus = objStatus;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
