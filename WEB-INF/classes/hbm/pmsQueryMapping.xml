@@ -381,7 +381,7 @@
     <query
             name="getPmsMasterPlanList">
         <![CDATA[
-                from eu.pms.project.database.PmsMasterPlan a
+                from eu.pms.project.database.PmsMasterPlanVw a
                 order by a.masMpName
                   ]]>
     </query>
