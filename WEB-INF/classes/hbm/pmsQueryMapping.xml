@@ -3,9 +3,18 @@
 <hibernate-mapping>
 
     <query
+            name="pms.getUser">
+        <![CDATA[
+                from eu.pms.login.database.SecUser a
+                where a.usrId = ?
+                and a.usrPassword = ?
+                order by a.usrName
+                  ]]>
+    </query>
+    <query
             name="getPmsProjectList">
         <![CDATA[
-                from eu.pms.project.database.PmsProject a
+                from eu.pms.project.database.PmsProjectVw a
                 order by a.proStartDate,proEndDate,proTitle
                   ]]>
     </query>
@@ -17,6 +26,24 @@
                 order by a.proStartDate,proEndDate,proTitle
                   ]]>
     </query>
+    <query
+            name="getAlbumPmsProjectList">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectAlbum a
+                where a.compId.proId = ?
+                order by a.compId.albId
+                  ]]>
+    </query>
+    <query
+            name="pms.getImgAlbum">
+        <![CDATA[
+                from eu.pms.project.database.PmsProjectAlbum a
+                where a.compId.proId = ?
+                and a.compId.albId = ?
+                order by a.compId.albId
+                  ]]>
+    </query>
+
     <query
             name="getPmsProjectDonor">
         <![CDATA[
@@ -38,7 +65,7 @@
         <![CDATA[
                 from eu.pms.project.database.PmsProjectsLocation a
                 where a.compId.proId = ?
-                order by a.compId.locId
+                order by a.compId.comLatitude
                   ]]>
     </query>
     <query
@@ -54,7 +81,7 @@
         <![CDATA[
                 from eu.pms.project.database.PmsProjectsBenificiary a
                 where a.compId.proId = ?
-                order by a.compId.benId
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
@@ -93,13 +120,13 @@
                 order by a.prgTitle
                   ]]>
     </query>
-    <query
-            name="getPmsLocation">
-        <![CDATA[
-                from eu.pms.project.database.PmsLocation a
-                order by a.locLatitude
-                  ]]>
-    </query>
+    <!--<query-->
+            <!--name="getPmsLocation">-->
+        <!--<![CDATA[-->
+                <!--from eu.pms.project.database.PmsLocation a-->
+                <!--order by a.locLatitude-->
+                  <!--]]>-->
+    <!--</query>-->
     <query
             name="getPmsCommunity">
         <![CDATA[
@@ -108,10 +135,10 @@
                   ]]>
     </query>
     <query
-            name="getPmsClusterTyp">
+            name="getPmsSectorTyp">
         <![CDATA[
-                from eu.pms.project.database.PmsClusterTyp a
-                order by a.cluDesc
+                from eu.pms.project.database.PmsSector a
+                order by a.secType,a.secDesc
                   ]]>
     </query>
     <query
@@ -124,8 +151,8 @@
     <query
             name="getPmsBenificiary">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiary a
-                order by a.benDesc
+                from eu.pms.project.database.PmsProjectsBenificiary a
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
@@ -141,7 +168,7 @@
     <query
             name="getPmsCommunityList">
         <![CDATA[
-                from eu.pms.project.database.PmsCommunity a
+                from eu.pms.project.database.PmsCommunitiesVw a
                 order by a.comName
                   ]]>
     </query>
@@ -159,7 +186,6 @@
                 from eu.pms.project.database.PmsIntervention a
                 where a.compId.intId = ?
                 and a.compId.secId = ?
-                and a.compId.subId = ?
                 order by a.intDesc
                   ]]>
     </query>
@@ -184,13 +210,13 @@
                 order by a.secName
                   ]]>
     </query>
-    <query
-            name="getPmsSubSectors">
-        <![CDATA[
-                from eu.pms.project.database.PmsSubSector a
-                order by a.subName
-                  ]]>
-    </query>
+    <!--<query-->
+            <!--name="getPmsSubSectors">-->
+        <!--<![CDATA[-->
+                <!--from eu.pms.project.database.PmsSubSector a-->
+                <!--order by a.subName-->
+                  <!--]]>-->
+    <!--</query>-->
     <query
             name="getPmsInterventionList">
         <![CDATA[
@@ -218,23 +244,23 @@
     <query
             name="getPmsBenificiaryTypeList">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiaryTyp a
-                order by a.btpDesc
+                from eu.pms.lookup.database.PmsBenificiaryTyp a
+                order by a.lookupDesc
                   ]]>
     </query>
     <query
             name="getPmsBenificiaryList">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiary a
-                order by a.benDesc
+                from eu.pms.project.database.PmsProjectsBenificiary a
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
             name="getPmsBenificiaryById">
         <![CDATA[
-                from eu.pms.project.database.PmsBenificiary a
-                where a.benId =?
-                order by a.benDesc
+                from eu.pms.project.database.PmsProjectsBenificiary a
+                where a.compId.btpId =?
+                order by a.compId.btpId
                   ]]>
     </query>
     <query
@@ -270,8 +296,8 @@
     <query
             name="getPmsDataSourceList">
         <![CDATA[
-                from eu.pms.project.database.PmsDatasourc a
-                order by a.datDesc
+                from eu.pms.lookup.database.PmsDatasourc a
+                order by a.lookupDesc
                   ]]>
     </query>
     <query
@@ -334,6 +360,102 @@
                 and a.compId.resId=?
                 and a.compId.objId=?
                 order by a.indTitle
+                  ]]>
+    </query>
+
+    <query
+            name="getPmsGovernateList">
+        <![CDATA[
+                from eu.pms.lookup.database.PmsGovernate a
+                order by a.lookupDesc
+                  ]]>
+    </query>
+    <query name="pms.getMaxAlbumId"><![CDATA[
+
+         from  eu.pms.project.database.PmsProjectAlbum a
+              where a.compId.proId=?
+              order by a.compId.albId desc
+        ]]>
+    </query>
+
+    <query
+            name="getPmsMasterPlanList">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlan a
+                order by a.masMpName
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlanByMasId">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlan a
+                where a.masId = ?
+                order by a.masMpName
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlanDonor">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlanDonor a
+                where a.compId.masId = ?
+                order by a.compId.donId
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlanCommunity">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlanCommunity a
+                where a.compId.masId = ?
+                order by a.compId.masId
+                  ]]>
+    </query>
+    <query
+            name="getPmsAgricultureSocio">
+        <![CDATA[
+                from eu.pms.project.database.PmsAgricultureSocioVw a
+                order by a.agrArea
+                  ]]>
+    </query>
+    <query
+            name="getPmsAgricultureSocioByMasId">
+        <![CDATA[
+                from eu.pms.project.database.PmsAgricultureSocio a
+                where a.agrId = ?
+                order by a.agrArea
+                  ]]>
+    </query>
+    <query
+            name="getPmsWaterSocio">
+        <![CDATA[
+                from eu.pms.project.database.PmsWaterSocioVw a
+                order by a.watUseWatTanker
+                  ]]>
+    </query>
+    <query
+            name="getPmsWaterSocioByMasId">
+        <![CDATA[
+                from eu.pms.project.database.PmsWaterSocio a
+                where a.watId = ?
+                order by a.watUseWatTanker
+                  ]]>
+    </query>
+    <query
+            name="getPmsActivitiesByIntervention">
+        <![CDATA[
+                from eu.pms.project.database.PmsActivity a
+                where a.compId.intId = ?
+                and a.compId.secId = ?
+                order by a.actDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsIndicatorMeasuresByInd">
+        <![CDATA[
+                from eu.pms.project.database.PmsIndicatorMeasures a
+                where a.compId.indId = ?
+                and a.compId.resId = ?
+                and a.compId.objId = ?
+                order by a.compId.msrDate
                   ]]>
     </query>
 </hibernate-mapping>
