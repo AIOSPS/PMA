@@ -231,7 +231,7 @@ public class Templates {
         VerticalListBuilder rightHeaderPart = cmp.verticalList();
 
 //        centerHeaderPart.add(cmp.text("جامعة القدس المفتوحة   ").setStyle(stl.style(bold22CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
-//        centerHeaderPart.add(cmp.text(repHeaderInfo.getCenterTitle()+" / "+repHeaderInfo.getLeftTitle()).setStyle(stl.style(bold18CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
+        centerHeaderPart.add(cmp.text(repHeaderInfo.getCenterTitle()).setStyle(stl.style(bold18CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
 //        centerHeaderPart.add(cmp.text(repHeaderInfo.getRightTitle() + "").setStyle(stl.style(bold12CenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)));
         rightHeaderPart.add(cmp.image(Templates.class.getResource("logo-sm.jpg"))).setFixedDimension(new Integer(100), new Integer(80));
 //        rightHeaderPart.add(cmp.text(DynamicReportDesign.userName).setStyle(stl.style(boldCenteredStyle).setBackgroundColor(new Color(255, 255, 255)).setHorizontalTextAlignment(HorizontalTextAlignment.LEFT)));

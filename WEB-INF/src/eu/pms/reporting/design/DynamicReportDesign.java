@@ -44,9 +44,9 @@ public class DynamicReportDesign implements ReportDesign<DynamicReportDataSource
 
         HeaderInfo repHeaderInfo = new HeaderInfo();
         repHeaderInfo.setLayoutPage(PageOrientation.PORTRAIT);
-        repHeaderInfo.setCenterTitle(userName);
-        repHeaderInfo.setLeftTitle("قسم متابعة الخريجين");
-        repHeaderInfo.setRightTitle("تقرير احصائيات الخريجين");
+        repHeaderInfo.setCenterTitle("Add Hoc Report");
+//        repHeaderInfo.setLeftTitle("Add Hoc Report");
+//        repHeaderInfo.setRightTitle("تقرير احصائيات الخريجين");
 
         repHeaderInfo.setListLeftText(new String[]{repHeaderInfo.getCurrentDateAr()});
         rb.pageHeader(Templates.getReportHeader(repHeaderInfo));
