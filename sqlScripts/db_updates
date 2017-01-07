@@ -34,7 +34,7 @@ VIEW `pms_master_plan_vw` AS
             AND (`mpc`.`com_id` = `com`.`com_id`))
 
 
-            //********************** ali modify**********
+            /********************** ali modify**********/
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `pms_new2`.`pms_project_vw` AS
 select `pro`.`pro_id` AS `pro_id`,

@@ -573,7 +573,7 @@ CREATE TABLE `pms_indicators` (
 
 LOCK TABLES `pms_indicators` WRITE;
 /*!40000 ALTER TABLE `pms_indicators` DISABLE KEYS */;
-INSERT INTO `pms_indicators` VALUES ('001','001','001','indicator1','2017-01-01','indicator one',10,2,'1','1','pms','2017-01-01 14:41:20'),('002','001','001','indicator2','2017-01-02','indicator two',100,2,'1','1','pms','2017-01-01 14:59:36');
+INSERT INTO `pms_indicators` VALUES ('001','001','001','indicator1','2017-01-01','indicator one',10,2,'1','1','pms','2017-01-07 01:10:30'),('002','001','001','indicator2','2017-01-02','indicator two',100,2,'1','1','pms','2017-01-01 14:59:36');
 /*!40000 ALTER TABLE `pms_indicators` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -710,6 +710,38 @@ LOCK TABLES `pms_master_plan_donors` WRITE;
 /*!40000 ALTER TABLE `pms_master_plan_donors` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pms_master_plan_donors` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `pms_master_plan_vw`
+--
+
+DROP TABLE IF EXISTS `pms_master_plan_vw`;
+/*!50001 DROP VIEW IF EXISTS `pms_master_plan_vw`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `pms_master_plan_vw` AS SELECT
+ 1 AS `mas_id`,
+ 1 AS `mas_mp_no`,
+ 1 AS `mas_mp_name`,
+ 1 AS `mas_status`,
+ 1 AS `mas_status_ica`,
+ 1 AS `mas_first_submit_date_to_ica`,
+ 1 AS `mas_last_submit_date_to_ica`,
+ 1 AS `mas_no_session_with_ica`,
+ 1 AS `mas_submit_to_mod`,
+ 1 AS `mas_approval_date`,
+ 1 AS `mas_publication_date`,
+ 1 AS `mas_last_date_for_objection`,
+ 1 AS `mas_date_of_final_publication`,
+ 1 AS `mas_approved_planed_area`,
+ 1 AS `mas_village_admin_boarder`,
+ 1 AS `mas_note`,
+ 1 AS `imp_id`,
+ 1 AS `username`,
+ 1 AS `time_stamp`,
+ 1 AS `com_id`,
+ 1 AS `com_name`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `pms_objectives`
@@ -885,7 +917,13 @@ SET character_set_client = utf8;
  1 AS `com_id`,
  1 AS `com_name`,
  1 AS `sec_id`,
- 1 AS `sec_desc`*/;
+ 1 AS `sec_desc`,
+ 1 AS `pro_needPermit`,
+ 1 AS `pro_needPermit_desc`,
+ 1 AS `btp_id`,
+ 1 AS `btp_desc`,
+ 1 AS `imp_id`,
+ 1 AS `imp_name`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1386,6 +1424,24 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `pms_master_plan_vw`
+--
+
+/*!50001 DROP VIEW IF EXISTS `pms_master_plan_vw`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `pms_master_plan_vw` AS select `mp`.`mas_id` AS `mas_id`,`mp`.`mas_mp_no` AS `mas_mp_no`,`mp`.`mas_mp_name` AS `mas_mp_name`,`mp`.`mas_status` AS `mas_status`,`mp`.`mas_status_ica` AS `mas_status_ica`,`mp`.`mas_first_submit_date_to_ica` AS `mas_first_submit_date_to_ica`,`mp`.`mas_last_submit_date_to_ica` AS `mas_last_submit_date_to_ica`,`mp`.`mas_no_session_with_ica` AS `mas_no_session_with_ica`,`mp`.`mas_submit_to_mod` AS `mas_submit_to_mod`,`mp`.`mas_approval_date` AS `mas_approval_date`,`mp`.`mas_publication_date` AS `mas_publication_date`,`mp`.`mas_last_date_for_objection` AS `mas_last_date_for_objection`,`mp`.`mas_date_of_final_publication` AS `mas_date_of_final_publication`,`mp`.`mas_approved_planed_area` AS `mas_approved_planed_area`,`mp`.`mas_village_admin_boarder` AS `mas_village_admin_boarder`,`mp`.`mas_note` AS `mas_note`,`mp`.`imp_id` AS `imp_id`,`mp`.`username` AS `username`,`mp`.`time_stamp` AS `time_stamp`,`mpc`.`com_id` AS `com_id`,`com`.`com_name` AS `com_name` from ((`pms_master_plan` `mp` join `pms_master_plan_communities` `mpc`) join `pms_communities` `com`) where ((`mp`.`mas_id` = `mpc`.`mas_id`) and (`mpc`.`com_id` = `com`.`com_id`)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `pms_project_vw`
 --
 
@@ -1398,7 +1454,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `pms_project_vw` AS select `pro`.`pro_id` AS `pro_id`,`pro`.`pro_title` AS `pro_title`,`pro`.`pro_description` AS `pro_description`,`pro`.`pro_status` AS `pro_status`,(case `pro`.`pro_status` when 1 then 'Design / Approval' when 2 then 'Ongoing' when 3 then 'Delayed' when 4 then 'Completed' when 5 then 'On-Hold' when 6 then 'Closed' when 7 then 'Cancelled' else 'Unknown Status' end) AS `pro_status_desc`,`pro`.`pro_budget` AS `pro_budget`,date_format(`pro`.`pro_startDate`,'%d/%m/%Y') AS `pro_startDate`,date_format(`pro`.`pro_endDate`,'%d/%m/%Y') AS `pro_endDate`,`pro_don`.`don_id` AS `doner_id`,`don`.`don_name` AS `donor_name`,`gov`.`gov_desc` AS `gov_desc`,`com`.`gov_id` AS `gov_id`,`pro_com`.`com_id` AS `com_id`,`com`.`com_name` AS `com_name`,`pro`.`sec_id` AS `sec_id`,`sec`.`sec_desc` AS `sec_desc` from ((((((`pms_projects_communities` `pro_com` join `pms_project_donors` `pro_don`) join `pms_projects` `pro`) join `pms_donors` `don`) join `pms_governates` `gov`) join `pms_communities` `com`) join `pms_sectors` `sec`) where ((`pro`.`pro_id` = `pro_com`.`pro_id`) and (`pro_com`.`com_id` = `com`.`com_id`) and (`pro_don`.`pro_id` = `pro`.`pro_id`) and (`pro_don`.`don_id` = `don`.`don_id`) and (`com`.`gov_id` = `gov`.`gov_id`) and (`pro`.`sec_id` = `sec`.`sec_id`)) */;
+/*!50001 VIEW `pms_project_vw` AS select `pro`.`pro_id` AS `pro_id`,`pro`.`pro_title` AS `pro_title`,`pro`.`pro_description` AS `pro_description`,`pro`.`pro_status` AS `pro_status`,(case `pro`.`pro_status` when 1 then 'Design / Approval' when 2 then 'Ongoing' when 3 then 'Delayed' when 4 then 'Completed' when 5 then 'On-Hold' when 6 then 'Closed' when 7 then 'Cancelled' else 'Unknown Status' end) AS `pro_status_desc`,`pro`.`pro_budget` AS `pro_budget`,date_format(`pro`.`pro_startDate`,'%d/%m/%Y') AS `pro_startDate`,date_format(`pro`.`pro_endDate`,'%d/%m/%Y') AS `pro_endDate`,`pro_don`.`don_id` AS `doner_id`,`don`.`don_name` AS `donor_name`,`gov`.`gov_desc` AS `gov_desc`,`com`.`gov_id` AS `gov_id`,`pro_com`.`com_id` AS `com_id`,`com`.`com_name` AS `com_name`,`pro`.`sec_id` AS `sec_id`,`sec`.`sec_desc` AS `sec_desc`,`pro`.`pro_needPermit` AS `pro_needPermit`,(case `pro`.`pro_needPermit` when 1 then 'Yes' when 0 then 'No' else 'Unknown' end) AS `pro_needPermit_desc`,`pro_bent`.`btp_id` AS `btp_id`,`bent`.`btp_desc` AS `btp_desc`,`pro_imp`.`imp_id` AS `imp_id`,`imp`.`imp_name` AS `imp_name` from ((((((((((`pms_projects_communities` `pro_com` join `pms_project_donors` `pro_don`) join `pms_projects` `pro`) join `pms_donors` `don`) join `pms_governates` `gov`) join `pms_communities` `com`) join `pms_sectors` `sec`) join `pms_projects_benificiaries` `pro_bent`) join `pms_benificiary_types` `bent`) join `pms_projects_implementers` `pro_imp`) join `pms_implementers` `imp`) where ((`pro`.`pro_id` = `pro_com`.`pro_id`) and (`pro_com`.`com_id` = `com`.`com_id`) and (`pro_don`.`pro_id` = `pro`.`pro_id`) and (`pro_don`.`don_id` = `don`.`don_id`) and (`com`.`gov_id` = `gov`.`gov_id`) and (`pro`.`sec_id` = `sec`.`sec_id`) and (`pro_bent`.`pro_id` = `pro`.`pro_id`) and (`pro_bent`.`btp_id` = `bent`.`btp_id`) and (`pro_imp`.`pro_id` = `pro`.`pro_id`) and (`pro_imp`.`imp_id` = `imp`.`imp_id`)) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1430,4 +1486,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-06 22:23:59
+-- Dump completed on 2017-01-07 14:29:11
