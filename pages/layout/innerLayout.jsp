@@ -62,6 +62,14 @@
 
     <script src="/pages/resources/bootstrap/fileInput/fileinput.min.js" ></script>
     <link rel="stylesheet" href="/pages/resources/bootstrap/fileInput/fileinput.min.css">
+
+    <style>
+        .dropdown-menu.open  {
+            position: relative;
+            top:0px;
+        }
+    </style>
+
 </head>
 
 <BODY topmargin="0">
