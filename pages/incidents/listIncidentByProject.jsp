@@ -3,7 +3,12 @@
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
 <%@ taglib uri="/WEB-INF/lib/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
-
+<script type="text/javascript">
+    $(function () {
+        $("#incidentOcha").attr("placeholder", "Incident Ocha");
+        $("#incidentDescription").attr("placeholder", "Incident Description");
+    });
+</script>
 <div class="content-wrapper breadcrumb brd2">
     <div class="container clearfix">
         <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Incident Tracking </a><span
@@ -23,51 +28,39 @@
                 <h1>List Of Incidents</h1>
             </div>
             <div class="col-md-4 pd15 create ">
-                <button type="button" onclick="javaScript:parent.location = '/viewAddIncident.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Incident
-                </button>
+                <%--<button type="button" onclick="javaScript:parent.location = '/viewAddIncident.do'"--%>
+                        <%--class="btn btn-primary fa fa-plus pull-right">Create Incident--%>
+                <%--</button>--%>
             </div>
         </div>
         <div class="content-wrapper formWrapper  col-md-12 pd15 ">
-<html:form action="/searchIncident.do" method="POST" focus="incidentType">
-            <div class="form-group row">
-                <div class="col-md-12">
-                    <fieldset class="isClustr">
-                        <legend>Search incident</legend>
-                        <div class="form-group row">
+            <html:form action="/searchIncidentByProject.do" method="POST" focus="proId">
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <fieldset class="isClustr">
+                            <legend>Search incident</legend>
+                            <div class="form-group row">
 
-                            <div class="col-md-4">
-                                <label  class="col-sm-12 col-form-label">Incident Type:</label>
-                                <div class="col-sm-12">
-                                    <html:select property="incidentType"
-                                                 styleClass="selectpicker form-control">
-                                        <html:option value="1">Type one</html:option>
-                                        <html:option value="2">Type two</html:option>
-                                    </html:select>
+                                <div class="col-md-10">
+                                    <label  class="col-sm-1 col-form-label">Project:</label>
+                                    <div class="col-sm-11">
+                                        <html:select property="proId"
+                                                     styleClass="selectpicker form-control">
+                                            <html:options collection="projectList" property="proId" labelProperty="proTitle"/>
+                                        </html:select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary">Search</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <label  class="col-sm-12 col-form-label">Community:</label>
-                                <div class="col-sm-12">
-                                    <html:select property="communityId"
-                                                 styleClass="selectpicker form-control">
-                                        <html:options collection="communityList" property="comId" labelProperty="comName"/>
-                                    </html:select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label  class="col-sm-12 col-form-label">&nbsp;</label>
-                                <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-primary">Search</button>
-                                </div>
-                            </div>
-                        </div>
 
-
-                    </fieldset>
+                        </fieldset>
+                    </div>
                 </div>
-            </div>
-    </html:form>
+            </html:form>
             <table id="listIncidentsTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
@@ -86,7 +79,6 @@
                     <th class="text-center">Dimolished Structure</th>
                     <th class="text-center">Location Lattitude</th>
                     <th class="text-center">Location Longitude</th>
-                    <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
@@ -106,7 +98,6 @@
                     <th class="text-center">Dimolished Structure</th>
                     <th class="text-center">Location Lattitude</th>
                     <th class="text-center">Location Longitude</th>
-                    <th class="text-center"></th>
 
                 </tr>
                 </tfoot>
@@ -129,15 +120,6 @@
                             <td ><bean:write name="pmsIncidentList" property="incDemolishedStructure"/></td>
                             <td ><bean:write name="pmsIncidentList" property="locLatitude"/></td>
                             <td ><bean:write name="pmsIncidentList" property="locLongitude"/></td>
-                            <td class="text-center">
-                                <a href="javaScript:parent.location = '/viewPmsIncident.do?incId=<bean:write name="pmsIncidentList" property="incId"/>'">
-                                    <span class="glyphicon glyphicon-list-alt"></span>
-                                </a>
-                                &nbsp;
-                                <a href="javaScript:parent.location = '/viewEditIncident.do?incId=<bean:write name="pmsIncidentList" property="incId"/>'">
-                                    <span class="glyphicon glyphicon-edit"></span>
-                                </a>
-                            </td>
                         </tr>
                     </logic:iterate>
                 </logic:present>
