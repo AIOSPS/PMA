@@ -32,3 +32,45 @@ VIEW `pms_master_plan_vw` AS
     WHERE
         ((`mp`.`mas_id` = `mpc`.`mas_id`)
             AND (`mpc`.`com_id` = `com`.`com_id`))
+
+
+            //********************** ali modify**********
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `pms_new2`.`pms_project_vw` AS
+select `pro`.`pro_id` AS `pro_id`,
+`pro`.`pro_title` AS `pro_title`,
+`pro`.`pro_description` AS `pro_description`,
+`pro`.`pro_status` AS `pro_status`,(case `pro`.`pro_status` when 1 then 'Design / Approval' when 2 then 'Ongoing' when 3 then 'Delayed' when 4 then 'Completed' when 5 then 'On-Hold' when 6 then 'Closed' when 7 then 'Cancelled' else 'Unknown Status' end) AS `pro_status_desc`,
+`pro`.`pro_budget` AS `pro_budget`,
+date_format(`pro`.`pro_startDate`,'%d/%m/%Y') AS `pro_startDate`
+,date_format(`pro`.`pro_endDate`,'%d/%m/%Y') AS `pro_endDate`
+,`pro_don`.`don_id` AS `doner_id`,`don`.`don_name` AS `donor_name`,
+`gov`.`gov_desc` AS `gov_desc`,`com`.`gov_id` AS `gov_id`,
+`pro_com`.`com_id` AS `com_id`,`com`.`com_name` AS `com_name`,
+`pro`.`sec_id` AS `sec_id`,`sec`.`sec_desc` AS `sec_desc`,
+`pro`.`pro_needPermit` AS `pro_needPermit`,
+(case `pro`.`pro_needPermit` when 1 then 'Yes' when 0 then 'No' else 'Unknown' end) AS `pro_needPermit_desc`,
+`pro_benT`.`btp_id` AS `btp_id`,`benT`.`btp_desc` AS `btp_desc`,
+`pro_Imp`.`imp_id` AS `imp_id`,`imp`.`imp_name` AS `imp_name`
+from ((((((((((`pms_projects_communities` `pro_com`
+join `pms_project_donors` `pro_don`)
+join `pms_projects` `pro`)
+join `pms_donors` `don`)
+join `pms_governates` `gov`)
+join `pms_communities` `com`)
+join `pms_sectors` `sec`)
+join `pms_projects_benificiaries` `pro_benT`)
+join `pms_benificiary_types` `benT`)
+join `pms_projects_implementers` `pro_Imp`)
+join `pms_implementers` `imp`)
+where ((`pro`.`pro_id` = `pro_com`.`pro_id`)
+and (`pro_com`.`com_id` = `com`.`com_id`)
+and (`pro_don`.`pro_id` = `pro`.`pro_id`)
+and (`pro_don`.`don_id` = `don`.`don_id`)
+and (`com`.`gov_id` = `gov`.`gov_id`)
+and (`pro`.`sec_id` = `sec`.`sec_id`))
+and (`pro_benT`.`pro_id` = `pro`.`pro_id`)
+and (`pro_benT`.`btp_id` = `benT`.`btp_id`)
+and (`pro_Imp`.`pro_id` = `pro`.`pro_id`)
+and (`pro_Imp`.`imp_id` = `imp`.`imp_id`)
+
