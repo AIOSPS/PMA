@@ -94,7 +94,7 @@
                             <td width="40%" ><bean:write name="pmsIndicatorList" property="indLongDesc"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsIndicatorList" property="indDate" format="dd/MM/yyyy"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsIndicatorList" property="indBaseline"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsIndicatorList" property="indFrequency"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsIndicatorList" property="indFrequencyDesc"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsIndicator.do?indId=<bean:write name="pmsIndicatorList" property="compId.indId"/>&resId=<bean:write name="pmsIndicatorList" property="compId.resId"/>&objId=<bean:write name="pmsIndicatorList" property="compId.objId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
