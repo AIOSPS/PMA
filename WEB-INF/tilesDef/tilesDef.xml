@@ -208,4 +208,7 @@
     <definition name="pms.editWaterSocio.tile" extends="innerLayout">
         <put name="body" value="/pages/waterSocio/editWaterSocio.jsp"/>
     </definition>
+    <definition name="pms.askToAddAlbum.tile" extends="innerLayout">
+        <put name="body" value="/pages/projects/askToAddAlbum.jsp"/>
+    </definition>
 </tiles-definitions>

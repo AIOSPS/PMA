@@ -133,7 +133,8 @@ public class AddPmsProjectAction extends Action {
 
         }
         pmsProjectForm.reset(mapping, request);
-        return mapping.findForward("success");
+        return new ActionForward(mapping.findForward("success").getPath()+"?proId="+proId);
+//        return mapping.findForward("success");
     }
 }
 

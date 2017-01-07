@@ -115,8 +115,13 @@
                 validate="false"
                 path="/addProject"
         >
-            <forward name="success" path="/pmsProjectList.do"/>
+            <forward name="success" path="askToAddAlbum"/>
         </action>
+        <action
+                type="org.apache.struts.actions.ForwardAction"
+                path="/askToAddAlbum"
+                parameter="pms.askToAddAlbum.tile"
+        />
         <action
                 name="pmsProjectForm"
                 type="eu.pms.project.actions.ViewPmsProjectAction"
