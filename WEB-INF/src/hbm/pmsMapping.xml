@@ -146,6 +146,13 @@
         <property name="communityName" column="com_name" />
         <property name="sectorId" column="sec_id" />
         <property name="sectorName" column="sec_desc" />
+        <property name="hasPermit" column="pro_needPermit" />
+        <property name="pDesc" column="pro_needPermit_desc" />
+        <property name="btpId" column="btp_id" />
+        <property name="btpDesc" column="btp_desc" />
+        <property name="impId" column="imp_id" />
+        <property name="impName" column="imp_name" />
+
     </class>
 
     <class name="eu.pms.project.database.PmsProjectAlbum" table="pms_project_album">

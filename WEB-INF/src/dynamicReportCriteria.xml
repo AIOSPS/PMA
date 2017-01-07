@@ -209,4 +209,60 @@
         </JoinWith>
     </qItem>
 
+
+    <qItem>
+        <ItemId>12</ItemId>
+        <HdbFieldName>a.hasPermit</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Has Permit</DisplayName>
+        <WhereCondition>a.hasPermit</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.pDesc</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.pDesc</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+    <qItem>
+        <ItemId>13</ItemId>
+        <HdbFieldName>a.btpId</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Benificiary Type</DisplayName>
+        <WhereCondition>a.btpId</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.btpDesc</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.btpDesc</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+    <qItem>
+        <ItemId>14</ItemId>
+        <HdbFieldName>a.impId</HdbFieldName>
+        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <DisplayName>Implementer</DisplayName>
+        <WhereCondition>a.impId</WhereCondition>
+        <HasLockup>Y</HasLockup>
+        <LockupInfo>
+            <LockupDisplayValue>a.impName</LockupDisplayValue>
+            <LockupTable></LockupTable>
+            <LockupWhereCondition>a.impName</LockupWhereCondition>
+        </LockupInfo>
+        <HasJoin>N</HasJoin>
+        <JoinWith>
+            <JoinWithTable></JoinWithTable>
+            <JoinWithCondition></JoinWithCondition>
+        </JoinWith>
+    </qItem>
+
 </reportingCriteria>

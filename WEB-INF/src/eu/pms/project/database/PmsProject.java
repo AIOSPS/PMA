@@ -161,7 +161,7 @@ public class PmsProject implements Serializable {
         return secId;
     }
 
-    public void setSecId(String SecId) {
+    public void setSecId(String secId) {
         this.secId = secId;
     }
 

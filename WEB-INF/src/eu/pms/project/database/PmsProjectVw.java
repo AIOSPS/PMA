@@ -26,7 +26,12 @@ public class PmsProjectVw implements Serializable {
     private String communityName;
     private String sectorId;
     private String sectorName;
-
+    private String hasPermit;
+    private String pDesc;
+    private String btpId;
+    private String btpDesc;
+    private String impId;
+    private String impName;
 
     /** default constructor */
     public PmsProjectVw() {
@@ -160,6 +165,51 @@ public class PmsProjectVw implements Serializable {
         this.proStatusDesc = proStatusDesc;
     }
 
+    public String getHasPermit() {
+        return hasPermit;
+    }
 
+    public void setHasPermit(String hasPermit) {
+        this.hasPermit = hasPermit;
+    }
 
+    public String getpDesc() {
+        return pDesc;
+    }
+
+    public void setpDesc(String pDesc) {
+        this.pDesc = pDesc;
+    }
+
+    public String getBtpId() {
+        return btpId;
+    }
+
+    public void setBtpId(String btpId) {
+        this.btpId = btpId;
+    }
+
+    public String getBtpDesc() {
+        return btpDesc;
+    }
+
+    public void setBtpDesc(String btpDesc) {
+        this.btpDesc = btpDesc;
+    }
+
+    public String getImpId() {
+        return impId;
+    }
+
+    public void setImpId(String impId) {
+        this.impId = impId;
+    }
+
+    public String getImpName() {
+        return impName;
+    }
+
+    public void setImpName(String impName) {
+        this.impName = impName;
+    }
 }

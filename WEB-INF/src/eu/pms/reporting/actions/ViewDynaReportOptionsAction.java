@@ -1,10 +1,12 @@
 package eu.pms.reporting.actions;
 
+import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.community.useCases.GetPmsGovernateUseCase;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.project.useCases.GetPmsCommunityUseCase;
 import eu.pms.project.useCases.GetPmsDonorsUseCase;
+import eu.pms.project.useCases.GetPmsImplementerUseCase;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -44,6 +46,10 @@ public class ViewDynaReportOptionsAction extends Action {
         request.setAttribute("governateList", governateList);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
         request.setAttribute("communityList", communityList);
+        List benificiaryTypeList = (List) new GetPmsBenificiaryTypeUseCase().execute(null, request);
+        request.setAttribute("benificiaryTypeList", benificiaryTypeList);
+        List implementerList = (List) new GetPmsImplementerUseCase().execute(null, request);
+        request.setAttribute("implementerList", implementerList);
 
 
         return mapping.findForward("success");
