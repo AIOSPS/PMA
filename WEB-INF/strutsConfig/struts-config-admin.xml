@@ -1171,7 +1171,7 @@
     </action-mappings>
 
     <!-- ========== Controller Configuration ================================ -->
-    <controller nocache="true" maxFileSize="2M"/>
+    <controller nocache="true" maxFileSize="16M"/>
 
     <!-- ========== Message Resources Definitions ============================ -->
     <!-- ========== Plug Ins Configuration ================================= -->

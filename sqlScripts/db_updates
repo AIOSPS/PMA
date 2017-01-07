@@ -81,4 +81,10 @@ select  `pro_benT`.`pro_id` AS `pro_id`,`pro_benT`.`ben_total` AS `ben_total`,
 from (`pms_projects_benificiaries` `pro_benT`
 join `pms_benificiary_types` `benT`)
 where (`pro_benT`.`btp_id` = `benT`.`btp_id`)
+/************* Ola Change Blob Size ************/
+ALTER TABLE `pms`.`pms_project_album`
+CHANGE COLUMN `alb_image` `alb_image` MEDIUMBLOB NOT NULL ;
+
+ALTER TABLE `pms`.`pms_strategic_plan_documents`
+CHANGE COLUMN `str_document` `str_document` MEDIUMBLOB NOT NULL ;
 

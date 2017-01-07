@@ -97,7 +97,7 @@
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsMasterPlanList">
-                    <logic:iterate id="pmsMasterPlanList" name="pmsMasterPlanList" type="eu.pms.project.database.PmsMasterPlan">
+                    <logic:iterate id="pmsMasterPlanList" name="pmsMasterPlanList" type="eu.pms.project.database.PmsMasterPlanVw">
                         <tr>
                             <td width="20%"><bean:write name="pmsMasterPlanList" property="masMpNo"/></td>
                             <td width="40%"><bean:write name="pmsMasterPlanList" property="masMpName"/></td>

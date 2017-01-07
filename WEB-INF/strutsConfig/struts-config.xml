@@ -808,7 +808,7 @@
     </action-mappings>
 
     <!-- ========== Controller Configuration ================================ -->
-    <controller nocache="true" maxFileSize="1M"/>
+    <controller nocache="true" maxFileSize="16M"/>
 
     <!-- ========== Message Resources Definitions ============================ -->
     <message-resources parameter="ApplicationResources"/>
