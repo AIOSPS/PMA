@@ -3,6 +3,8 @@
 <%@ page import="eu.pms.lookup.database.PmsGovernate" %>
 <%@ page import="eu.pms.project.database.PmsCommunity" %>
 <%@ page import="eu.pms.project.database.PmsSector" %>
+<%@ page import="eu.pms.lookup.database.PmsBenificiaryTyp" %>
+<%@ page import="eu.pms.project.database.PmsImplementer" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -29,7 +31,7 @@
         </div>
         <div class="content-wrapper formWrapper ">
 
-            <html:form action="generateDynamicReport">
+            <html:form action="generateDynamicReport" target="_blank">
                 <h2 class="titleSep"><span>Select inputs and outputs report</span></h2>
 
                 <div class="form-group row">
@@ -38,58 +40,6 @@
                     </div>
                     <div class="col-md-4">
                         <label  class="col-sm-3 col-form-label">Outputs</label>
-                    </div>
-                </div>
-
-
-                <div class="form-group row">
-                    <div class="col-md-8">
-                        <label for="1_val1" class="col-sm-3 col-form-label">
-                            <input type="checkbox" name="inputItems" value="1" class="checkBox">
-                            Project ID</label>
-                        <div class="col-sm-9">
-                            <input type="hidden" name="1_whereCondType" value="0">
-                            <input type="text" id="1_val1" name="1_val1" class="form-control input-sm">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="1" class="checkBox" checked>
-                            Project ID</label>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-8">
-                        <label for="2_val1" class="col-sm-3 col-form-label">
-                            <input type="checkbox" name="inputItems" value="2" class="checkBox">
-                            Project Title</label>
-                        <div class="col-sm-9">
-                            <input type="hidden" name="2_whereCondType" value="5">
-                            <input type="text" id="2_val1" name="2_val1" class="form-control input-sm">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="2" class="checkBox" checked>
-                            Project Title</label>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-8">
-                        <label for="3_val1" class="col-sm-3 col-form-label">
-                            <input type="checkbox" name="inputItems" value="3" class="checkBox">
-                            Project Description</label>
-                        <div class="col-sm-9">
-                            <input type="hidden" name="3_whereCondType" value="5">
-                            <input type="text" id="3_val1" name="3_val1" class="form-control input-sm">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="3" class="checkBox" checked>
-                            Project Description</label>
                     </div>
                 </div>
 
@@ -111,23 +61,6 @@
                         <label class="col-sm-12 col-form-label">
                             <input type="checkbox" name="outputItems" value="4" class="checkBox" checked>
                             Project Status</label>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-8">
-                        <label for="5_val1" class="col-sm-3 col-form-label">
-                            <input type="checkbox" name="inputItems" value="5" class="checkBox">
-                            Project Budget</label>
-                        <div class="col-sm-9">
-                            <input type="hidden" name="5_whereCondType" value="5">
-                            <input type="text" id="5_val1" name="5_val1" class="form-control input-sm">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="5" class="checkBox" checked>
-                            Project Budget</label>
                     </div>
                 </div>
 
@@ -290,7 +223,148 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label for="12_val1" class="col-sm-3 col-form-label">
+                            <input type="checkbox" name="inputItems" value="12" class="checkBox">
+                            Has Permit</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="12_whereCondType" value="0">
+                            <select id="12_val1" name="12_val1" class="form-control input-sm">
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="12" class="checkBox" checked>
+                            Has Permit</label>
+                    </div>
+                </div>
 
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label for="13_val1" class="col-sm-3 col-form-label">
+                            <input type="checkbox" name="inputItems" value="13" class="checkBox">
+                            Benificiary Type</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="13_whereCondType" value="0">
+                            <select id="13_val1" name="13_val1" class="form-control input-sm">
+                                <logic:present name="benificiaryTypeList">
+                                    <% List benificiaryTypeList = (List) request.getAttribute("benificiaryTypeList");%>
+                                    <%
+                                        for (int i = 0; i < benificiaryTypeList.size(); i++) {
+                                            PmsBenificiaryTyp obj = (PmsBenificiaryTyp) benificiaryTypeList.get(i);
+                                    %>
+                                    <option value="<%=obj.getLookupId()%>"><%=obj.getLookupDesc()%></option>
+                                    <% }%>
+
+                                </logic:present>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="13" class="checkBox" checked>
+                            Benificiary Type</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label for="14_val1" class="col-sm-3 col-form-label">
+                            <input type="checkbox" name="inputItems" value="14" class="checkBox">
+                            Implementer</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="14_whereCondType" value="0">
+                            <select id="14_val1" name="14_val1" class="form-control input-sm">
+                                <logic:present name="implementerList">
+                                    <% List implementerList = (List) request.getAttribute("implementerList");%>
+                                    <%
+                                        for (int i = 0; i < implementerList.size(); i++) {
+                                            PmsImplementer obj = (PmsImplementer) implementerList.get(i);
+                                    %>
+                                    <option value="<%=obj.getImpId()%>"><%=obj.getImpName()%></option>
+                                    <% }%>
+
+                                </logic:present>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="14" class="checkBox" checked>
+                            Implementer</label>
+                    </div>
+                </div>
+                    <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-8">--%>
+                    <%--<label for="1_val1" class="col-sm-3 col-form-label">--%>
+                    <%--<input type="checkbox" name="inputItems" value="1" class="checkBox">--%>
+                    <%--Project ID</label>--%>
+                    <%--<div class="col-sm-9">--%>
+                    <%--<input type="hidden" name="1_whereCondType" value="0">--%>
+                    <%--<input type="text" id="1_val1" name="1_val1" class="form-control input-sm">--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-4">--%>
+                    <%--<label class="col-sm-12 col-form-label">--%>
+                    <%--<input type="checkbox" name="outputItems" value="1" class="checkBox" checked>--%>
+                    <%--Project ID</label>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                            <%--<label for="2_val1" class="col-sm-3 col-form-label">--%>
+                            <%--<input type="checkbox" name="inputItems" value="2" class="checkBox">--%>
+                            <%--Project Title</label>--%>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input type="hidden" name="2_whereCondType" value="5">--%>
+                            <%--<input type="text" id="2_val1" name="2_val1" class="form-control input-sm">--%>
+                            <%--</div>--%>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="2" class="checkBox" checked>
+                            Project Title</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                            <%--<label for="3_val1" class="col-sm-3 col-form-label">--%>
+                            <%--<input type="checkbox" name="inputItems" value="3" class="checkBox">--%>
+                            <%--Project Description</label>--%>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input type="hidden" name="3_whereCondType" value="5">--%>
+                            <%--<input type="text" id="3_val1" name="3_val1" class="form-control input-sm">--%>
+                            <%--</div>--%>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="3" class="checkBox" checked>
+                            Project Description</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-8">
+                            <%--<label for="5_val1" class="col-sm-3 col-form-label">--%>
+                            <%--<input type="checkbox" name="inputItems" value="5" class="checkBox">--%>
+                            <%--Project Budget</label>--%>
+                            <%--<div class="col-sm-9">--%>
+                            <%--<input type="hidden" name="5_whereCondType" value="5">--%>
+                            <%--<input type="text" id="5_val1" name="5_val1" class="form-control input-sm">--%>
+                            <%--</div>--%>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="outputItems" value="5" class="checkBox" checked>
+                            Project Budget</label>
+                    </div>
+                </div>
+                <h2 class="titleSep"><span>Export report</span></h2>
                 <div class="form-group row">
                     <div class="col-md-8">
                         <label class="col-sm-3 col-form-label">
