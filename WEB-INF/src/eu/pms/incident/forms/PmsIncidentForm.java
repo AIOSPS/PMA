@@ -16,20 +16,20 @@ public class PmsIncidentForm extends ActionForm {
     private String proId;
     private String incOchaId;
     private String incDescription;
-    private int incAffectedWomen;
-    private int incAffectedMen;
-    private int incAffectedAdaults;
-    private int incAffectedChildren;
-    private int incDisplacedWomen;
-    private int incDemolishedStructure;
+    private Integer incAffectedWomen;
+    private Integer incAffectedMen;
+    private Integer incAffectedAdaults;
+    private Integer incAffectedChildren;
+    private Integer incDisplacedWomen;
+    private Integer incDemolishedStructure;
     private String incSourceLink;
     private String incType;
     private String incTimeStamp;
     private java.math.BigDecimal locLatitude;
     private java.math.BigDecimal locLongitude;
-    private int incDisplacedMen;
-    private int incDisplacedAdult;
-    private int incDisplacedChildren;
+    private Integer incDisplacedMen;
+    private Integer incDisplacedAdult;
+    private Integer incDisplacedChildren;
 
     /** default constructor */
     public PmsIncidentForm() {
@@ -83,43 +83,43 @@ public class PmsIncidentForm extends ActionForm {
         this.incDescription = incDescription;
     }
 
-    public int getIncAffectedWomen() {
+    public Integer getIncAffectedWomen() {
         return incAffectedWomen;
     }
 
-    public void setIncAffectedWomen(int incAffectedWomen) {
+    public void setIncAffectedWomen(Integer incAffectedWomen) {
         this.incAffectedWomen = incAffectedWomen;
     }
 
-    public int getIncAffectedMen() {
+    public Integer getIncAffectedMen() {
         return incAffectedMen;
     }
 
-    public void setIncAffectedMen(int incAffectedMen) {
+    public void setIncAffectedMen(Integer incAffectedMen) {
         this.incAffectedMen = incAffectedMen;
     }
 
-    public int getIncAffectedAdaults() {
+    public Integer getIncAffectedAdaults() {
         return incAffectedAdaults;
     }
 
-    public void setIncAffectedAdaults(int incAffectedAdaults) {
+    public void setIncAffectedAdaults(Integer incAffectedAdaults) {
         this.incAffectedAdaults = incAffectedAdaults;
     }
 
-    public int getIncAffectedChildren() {
+    public Integer getIncAffectedChildren() {
         return incAffectedChildren;
     }
 
-    public void setIncAffectedChildren(int incAffectedChildren) {
+    public void setIncAffectedChildren(Integer incAffectedChildren) {
         this.incAffectedChildren = incAffectedChildren;
     }
 
-    public int getIncDisplacedWomen() {
+    public Integer getIncDisplacedWomen() {
         return incDisplacedWomen;
     }
 
-    public void setIncDisplacedWomen(int incDisplacedWomen) {
+    public void setIncDisplacedWomen(Integer incDisplacedWomen) {
         this.incDisplacedWomen = incDisplacedWomen;
     }
 
@@ -163,35 +163,35 @@ public class PmsIncidentForm extends ActionForm {
         this.locLongitude = locLongitude;
     }
 
-    public int getIncDisplacedMen() {
+    public Integer getIncDisplacedMen() {
         return incDisplacedMen;
     }
 
-    public void setIncDisplacedMen(int incDisplacedMen) {
+    public void setIncDisplacedMen(Integer incDisplacedMen) {
         this.incDisplacedMen = incDisplacedMen;
     }
 
-    public int getIncDisplacedAdult() {
+    public Integer getIncDisplacedAdult() {
         return incDisplacedAdult;
     }
 
-    public void setIncDisplacedAdult(int incDisplacedAdult) {
+    public void setIncDisplacedAdult(Integer incDisplacedAdult) {
         this.incDisplacedAdult = incDisplacedAdult;
     }
 
-    public int getIncDisplacedChildren() {
+    public Integer getIncDisplacedChildren() {
         return incDisplacedChildren;
     }
 
-    public void setIncDisplacedChildren(int incDisplacedChildren) {
+    public void setIncDisplacedChildren(Integer incDisplacedChildren) {
         this.incDisplacedChildren = incDisplacedChildren;
     }
 
-    public int getIncDemolishedStructure() {
+    public Integer getIncDemolishedStructure() {
         return incDemolishedStructure;
     }
 
-    public void setIncDemolishedStructure(int incDemolishedStructure) {
+    public void setIncDemolishedStructure(Integer incDemolishedStructure) {
         this.incDemolishedStructure = incDemolishedStructure;
     }
 

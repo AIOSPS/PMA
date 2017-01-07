@@ -7,11 +7,13 @@ import eu.pms.common.tools.SessionTraker;
 import eu.pms.incident.forms.PmsIncidentSearchForm;
 import eu.pms.incident.useCases.PmsIncidentListUseCase;
 import eu.pms.intervention.useCases.PmsInterventionListUseCase;
+import eu.pms.project.useCases.GetPmsCommunityUseCase;
 import org.apache.struts.action.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class PmsIncidentListAction extends Action {
@@ -24,12 +26,14 @@ public class PmsIncidentListAction extends Action {
             return mapping.findForward("invalidAccess");
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
+
+        List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
+        request.setAttribute("communityList", communityList);
         ArrayList inputData = new ArrayList();
         PmsIncidentSearchForm pmsIncidentSearchForm = (PmsIncidentSearchForm) form;
         if (pmsIncidentSearchForm != null) {
             inputData.add(pmsIncidentSearchForm.getIncidentType());
-            inputData.add(pmsIncidentSearchForm.getIncidentOcha());
-            inputData.add(pmsIncidentSearchForm.getIncidentDescription());
+            inputData.add(pmsIncidentSearchForm.getCommunityId());
         }
         request.setAttribute("pmsIncidentList", new PmsIncidentListUseCase().execute(inputData, request));
 

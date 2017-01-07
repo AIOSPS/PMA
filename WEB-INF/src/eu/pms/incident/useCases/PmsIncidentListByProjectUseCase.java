@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by alisa_000 on 12/6/2016.
  */
-public class PmsIncidentListUseCase implements ComponentUseCase {
+public class PmsIncidentListByProjectUseCase implements ComponentUseCase {
     public Collection execute(Collection input, HttpServletRequest request)
             throws HibernateException {
 
@@ -22,21 +22,17 @@ public class PmsIncidentListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String incidentType = (String)itr.next();
-                String communityId = (String)itr.next();
+                String proId = (String)itr.next();
                 String cond = " where 1=1 ";
-                if(incidentType!=null && !incidentType.trim().equals("")){
-                    cond += " and a.incType like '%"+incidentType+"%' ";
-                }
-                if(communityId!=null && !communityId.trim().equals("")){
-                    cond += " and a.comId like '%"+communityId+"%' ";
+                if(proId!=null && !proId.trim().equals("")){
+                    cond += " and a.proId = '"+proId+"' ";
                 }
                 String query = " from eu.pms.project.database.PmsIncident a ";
                 query +=cond;
                 query +=" order by a.incDescription ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);
             }else {
-                retList = new DataAccessObjectImpl().getList("getPmsIncidentList");
+                retList = null;//new DataAccessObjectImpl().getList("getPmsIncidentList");
             }
         } catch (Exception ce) {
             System.out.println("Error PmsIncidentList: " + ce);

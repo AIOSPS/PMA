@@ -23,24 +23,16 @@ public class PmsBenificiaryListUseCase implements ComponentUseCase {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
                 String proId = (String)itr.next();
-//                Integer benificiaryTotal = (Integer)itr.next();
-//                String benificiaryType = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(proId!=null && !proId.trim().equals("")){
-                    cond += " and a.proId like '%"+proId+"%' ";
+                    cond += " and a.compId.proId like '%"+proId+"%' ";
                 }
-//                if(benificiaryType!=null && !benificiaryType.trim().equals("")){
-//                    cond += " and a.btpId like '%"+benificiaryType+"%' ";
-//                }
-//                if(benificiaryTotal!=null && !benificiaryTotal.equals("")&& benificiaryTotal!=0 ){
-//                    cond += " and a.benTotal= "+benificiaryTotal+" ";
-//                }
-                String query = " from eu.pms.project.database.PmsProjectsBenificiary a ";
+                String query = " from eu.pms.project.database.PmsProjectsBenificiaryVw a ";
                 query +=cond;
                 query +=" order by a.compId.btpId ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);
             }else {
-                retList = new DataAccessObjectImpl().getList("getPmsBenificiaryList");
+                retList = null;//new DataAccessObjectImpl().getList("getPmsBenificiaryList");
             }
         } catch (Exception ce) {
             System.out.println("Error PmsBenificiaryList: " + ce);

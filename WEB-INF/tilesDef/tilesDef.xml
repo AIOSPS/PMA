@@ -104,6 +104,9 @@
     <definition name="pms.editPermit.tile" extends="innerLayout">
         <put name="body" value="/pages/permits/editPermit.jsp"/>
     </definition>
+    <definition name="pms.incidentByProjectList.tile" extends="innerLayout">
+        <put name="body" value="/pages/incidents/listIncidentByProject.jsp"/>
+    </definition>
     <definition name="pms.incidentList.tile" extends="innerLayout">
         <put name="body" value="/pages/incidents/listIncident.jsp"/>
     </definition>

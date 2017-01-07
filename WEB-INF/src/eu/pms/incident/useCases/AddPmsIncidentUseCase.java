@@ -3,6 +3,7 @@ package eu.pms.incident.useCases;
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.login.database.SecUser;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
 
@@ -40,7 +41,7 @@ public class AddPmsIncidentUseCase implements ComponentUseCase {
             int incDisplacedAdult = (Integer) itr.next();
             int incDisplacedChildren = (Integer) itr.next();
 
-            String username = "pms";
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             PmsIncident pmsIncident = new PmsIncident();

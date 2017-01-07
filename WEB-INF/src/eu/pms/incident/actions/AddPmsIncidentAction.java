@@ -43,7 +43,7 @@ public class AddPmsIncidentAction extends Action {
         int incDemolishedStructure = pmsIncidentForm.getIncDemolishedStructure();
         String incSourceLink = pmsIncidentForm.getIncSourceLink();
         String incType = pmsIncidentForm.getIncType();
-        String incTimeStamp = pmsIncidentForm.getIncDescription();
+        String incTimeStamp = pmsIncidentForm.getIncTimeStamp();
         java.math.BigDecimal locLatitude = pmsIncidentForm.getLocLatitude();
         java.math.BigDecimal locLongitude = pmsIncidentForm.getLocLongitude();
         int incDisplacedMen = pmsIncidentForm.getIncDisplacedMen();

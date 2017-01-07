@@ -21,6 +21,7 @@
         <form-bean name="pmsPermitSearchForm" type="eu.pms.permit.forms.PmsPermitSearchForm"/>
         <form-bean name="pmsIncidentForm" type="eu.pms.incident.forms.PmsIncidentForm"/>
         <form-bean name="pmsIncidentSearchForm" type="eu.pms.incident.forms.PmsIncidentSearchForm"/>
+        <form-bean name="pmsIncidentByProjectSearchForm" type="eu.pms.incident.forms.PmsIncidentByProjectSearchForm"/>
         <form-bean name="pmsObjectiveForm" type="eu.pms.objective.forms.PmsObjectiveForm"/>
         <form-bean name="pmsObjectiveSearchForm" type="eu.pms.objective.forms.PmsObjectiveSearchForm"/>
         <form-bean name="pmsResultForm" type="eu.pms.result.forms.PmsResultForm"/>
@@ -392,6 +393,20 @@
                 path="/viewEditPermit"
         >
             <forward name="success" path="pms.editPermit.tile"/>
+        </action>
+        <action
+                type="eu.pms.incident.actions.PmsIncidentListByProjectAction"
+                scope="request"
+                path="/pmsIncidentByProjectList">
+            <forward name="success" path="pms.incidentByProjectList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.incident.actions.PmsIncidentListByProjectAction"
+                scope="request"
+                path="/searchIncidentByProject"
+                name="pmsIncidentByProjectSearchForm"
+        >
+            <forward name="success" path="pms.incidentByProjectList.tile" contextRelative="true"/>
         </action>
         <action
                 type="eu.pms.incident.actions.PmsIncidentListAction"

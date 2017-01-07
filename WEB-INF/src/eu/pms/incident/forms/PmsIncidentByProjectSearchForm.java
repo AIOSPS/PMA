@@ -1,4 +1,4 @@
-package eu.pms.benificiary.forms;
+package eu.pms.incident.forms;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -7,11 +7,11 @@ import org.apache.struts.action.ActionMapping;
 import javax.servlet.http.HttpServletRequest;
 
 /** @author Hibernate CodeGenerator */
-public class PmsBenificiarySearchForm extends ActionForm {
+public class PmsIncidentByProjectSearchForm extends ActionForm {
     private String proId;
 
     /** default constructor */
-    public PmsBenificiarySearchForm() {
+    public PmsIncidentByProjectSearchForm() {
     }
 
 

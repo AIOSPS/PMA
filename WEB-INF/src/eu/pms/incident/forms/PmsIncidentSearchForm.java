@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 /** @author Hibernate CodeGenerator */
 public class PmsIncidentSearchForm extends ActionForm {
     private String incidentType;
-    private String incidentOcha;
-    private int incidentDescription;
+    private String communityId;
 
     /** default constructor */
     public PmsIncidentSearchForm() {
@@ -24,20 +23,12 @@ public class PmsIncidentSearchForm extends ActionForm {
         this.incidentType = incidentType;
     }
 
-    public String getIncidentOcha() {
-        return incidentOcha;
+    public String getCommunityId() {
+        return communityId;
     }
 
-    public void setIncidentOcha(String incidentOcha) {
-        this.incidentOcha = incidentOcha;
-    }
-
-    public int getIncidentDescription() {
-        return incidentDescription;
-    }
-
-    public void setIncidentDescription(int incidentDescription) {
-        this.incidentDescription = incidentDescription;
+    public void setCommunityId(String communityId) {
+        this.communityId = communityId;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
