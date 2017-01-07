@@ -117,13 +117,32 @@
                     <div class="col-md-6">
                         <label for="indFrequency" class="col-sm-3 col-form-label">Frequency:</label>
                         <div class="col-sm-9">
-                            <html:text property="indFrequency" styleClass="form-control" styleId="indFrequency"/>
+                            <html:select property="indFrequency"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">semi-annually</html:option>
+                                <html:option value="2">annually</html:option>
+                                <html:option value="3">periodically</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="indCollectionMethod" class="col-sm-3 col-form-label">Collection Method:</label>
                         <div class="col-sm-9">
-                            <html:text property="indCollectionMethod" styleClass="form-control" styleId="indCollectionMethod"/>
+                            <html:select property="indCollectionMethod"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">Observation</html:option>
+                                <html:option value="2">Document analysis</html:option>
+                                <html:option value="3">Interview</html:option>
+                                <html:option value="4">Group Discussion</html:option>
+                                <html:option value="5">Group Assessment</html:option>
+                                <html:option value="6">Survey</html:option>
+                                <html:option value="7">Case Study</html:option>
+                                <html:option value="8">Journal Keeping</html:option>
+                                <html:option value="9">Testimonials</html:option>
+                                <html:option value="10">Self-assessment</html:option>
+                                <html:option value="11">Studies</html:option>
+                                <html:option value="12">Photograph/video logs</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>

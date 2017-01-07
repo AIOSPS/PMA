@@ -146,6 +146,13 @@
         <property name="communityName" column="com_name" />
         <property name="sectorId" column="sec_id" />
         <property name="sectorName" column="sec_desc" />
+        <property name="hasPermit" column="pro_needPermit" />
+        <property name="pDesc" column="pro_needPermit_desc" />
+        <property name="btpId" column="btp_id" />
+        <property name="btpDesc" column="btp_desc" />
+        <property name="impId" column="imp_id" />
+        <property name="impName" column="imp_name" />
+
     </class>
 
     <class name="eu.pms.project.database.PmsProjectAlbum" table="pms_project_album">
@@ -308,6 +315,16 @@
             <key-property name="btpId" column="btp_id" type="java.lang.String"/>
         </composite-id>
         <property name="benTotal" type="int" column="ben_total"/>
+        <property name="username" type="java.lang.String" column="username"/>
+        <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
+    </class>
+    <class name="eu.pms.project.database.PmsProjectsBenificiaryVw" table="pms_projects_benificiaries_vw">
+        <composite-id name="compId" class="eu.pms.project.database.PmsProjectsBenificiaryVwPK">
+            <key-property name="proId" column="pro_id" type="java.lang.String"/>
+            <key-property name="btpId" column="btp_id" type="java.lang.String"/>
+        </composite-id>
+        <property name="benTotal" type="int" column="ben_total"/>
+        <property name="btnDesc" type="java.lang.String" column="btp_desc"/>
         <property name="username" type="java.lang.String" column="username"/>
         <property name="timeStamp" type="java.util.Date" column="time_stamp"/>
     </class>
@@ -496,6 +513,7 @@
     <property name="incTimeStamp" type="java.util.Date" column="inc_timeStamp" />
     <property name="ochaLocLatitude" type="java.math.BigDecimal" column="ocha_loc_latitude" />
     <property name="ochaLocLongitude" type="java.math.BigDecimal" column="ocha_loc_longitude" />
+    <property name="incDisplacedWomen" type="java.lang.Integer" column="inc_Displaced_women" />
     <property name="incDisplacedMen" type="java.lang.Integer" column="inc_Displaced_men" />
     <property name="incDisplacedAdult" type="java.lang.Integer" column="inc_Displaced_adult" />
     <property name="incDisplacedChildren" type="java.lang.Integer"  column="inc_Displaced_children" />

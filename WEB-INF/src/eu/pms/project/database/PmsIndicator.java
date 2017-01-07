@@ -29,6 +29,7 @@ public class PmsIndicator implements Serializable {
     /** persistent field */
     private int indFrequency;
 
+    private String indFrequencyDesc;
     /** persistent field */
     private String indCollectionMethod;
 
@@ -144,5 +145,24 @@ public class PmsIndicator implements Serializable {
 
     public void setIndDateStr(String indDateStr) {
         this.indDateStr = indDateStr;
+    }
+
+    public String getIndFrequencyDesc() {
+        if (this.indFrequency==0){
+            indFrequencyDesc = "Unknown";
+        }else if(this.indFrequency == 1){
+            indFrequencyDesc = "semi-annually";
+        }else if(this.indFrequency == 2){
+            indFrequencyDesc = "annually";
+        }else if(this.indFrequency == 3){
+            indFrequencyDesc = "periodically";
+        }else{
+            indFrequencyDesc = "Unknown";
+        }
+        return indFrequencyDesc;
+    }
+
+    public void setIndFrequencyDesc(String indFrequencyDesc) {
+        this.indFrequencyDesc = indFrequencyDesc;
     }
 }
