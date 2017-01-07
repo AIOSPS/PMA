@@ -74,3 +74,11 @@ and (`pro_benT`.`btp_id` = `benT`.`btp_id`)
 and (`pro_Imp`.`pro_id` = `pro`.`pro_id`)
 and (`pro_Imp`.`imp_id` = `imp`.`imp_id`)
 
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `pms_new2`.`pms_projects_benificiaries_vw` AS
+select  `pro_benT`.`pro_id` AS `pro_id`,`pro_benT`.`ben_total` AS `ben_total`,
+`pro_benT`.`btp_id` AS `btp_id`,`benT`.`btp_desc` AS `btp_desc`,`pro_benT`.`username` AS `username`,`pro_benT`.`time_stamp` AS `time_stamp`
+from (`pms_projects_benificiaries` `pro_benT`
+join `pms_benificiary_types` `benT`)
+where (`pro_benT`.`btp_id` = `benT`.`btp_id`)
+
