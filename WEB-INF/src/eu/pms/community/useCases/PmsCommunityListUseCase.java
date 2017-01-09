@@ -2,6 +2,7 @@ package eu.pms.community.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.common.utils.CommonFilter;
 import org.hibernate.HibernateException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +30,7 @@ public class PmsCommunityListUseCase implements ComponentUseCase {
                 String comGovId = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(comName!=null && !comName.trim().equals("")){
+                    comName =  CommonFilter.cleanQeuryParam(comName);
                     cond += " and a.comName like '%"+comName+"%' ";
                 }
                 if(comPcbsCode!=null && !comPcbsCode.trim().equals("")){

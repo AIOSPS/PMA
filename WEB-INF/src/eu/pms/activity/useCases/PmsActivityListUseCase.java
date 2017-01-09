@@ -2,6 +2,7 @@ package eu.pms.activity.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.common.utils.CommonFilter;
 import org.hibernate.HibernateException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,9 +28,11 @@ public class PmsActivityListUseCase implements ComponentUseCase {
                 Integer estimateBudget = (Integer) itr.next();
                 String cond = " where 1=1 ";
                 if(activityDesc!=null && !activityDesc.trim().equals("")){
+                    activityDesc =  CommonFilter.cleanQeuryParam(activityDesc);
                     cond += " and a.actDesc like '%"+activityDesc+"%' ";
                 }
                 if(activityUnit!=null && !activityUnit.trim().equals("")){
+                    activityUnit =  CommonFilter.cleanQeuryParam(activityUnit);
                     cond += " and a.actUnit like '%"+activityUnit+"%' ";
                 }
                 if(estimateBudget!=null && !estimateBudget.equals("")&& estimateBudget!=0 ){

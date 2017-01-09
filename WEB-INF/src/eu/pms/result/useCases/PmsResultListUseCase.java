@@ -2,6 +2,7 @@ package eu.pms.result.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.common.utils.CommonFilter;
 import org.hibernate.HibernateException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +27,7 @@ public class PmsResultListUseCase implements ComponentUseCase {
                 String resStatus = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(resultDesc!=null && !resultDesc.trim().equals("")){
+                    resultDesc = CommonFilter.cleanQeuryParam(resultDesc);
                     cond += " and a.resDesc like '%"+resultDesc+"%' ";
                 }
                 if(resStatus!=null && !resStatus.trim().equals("")){

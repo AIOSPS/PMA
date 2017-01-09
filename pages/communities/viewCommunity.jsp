@@ -22,7 +22,7 @@
         $("#comTopology").prop('required', true);
         $("#comSchoolsInfo").attr("placeholder", "Schools Information");
         $("#comSchoolsInfo").prop('required', true);
-        $("#comHealthSchoolsInfo").attr("placeholder", "Health Schools Information");
+        $("#comHealthSchoolsInfo").attr("placeholder", "Health Information");
         $("#comHealthSchoolsInfo").prop('required', true);
         $("#comReligionCenters").attr("placeholder", "Religion Centers");
         $("#comReligionCenters").prop('required', true);
@@ -185,7 +185,7 @@
 
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <label for="comHealthSchoolsInfo" class="col-sm-3 col-form-label">Health Schools Information:</label>
+                            <label for="comHealthSchoolsInfo" class="col-sm-3 col-form-label">Health Information:</label>
                             <div class="col-sm-9">
                                 <html:text property="comHealthSchoolsInfo" styleClass="form-control" styleId="comHealthSchoolsInfo" disabled="true"/>
                             </div>
@@ -279,7 +279,7 @@
                                 <html:select property="comPercentAreaC" styleClass="selectpicker form-control" disabled="true">
                                     <html:option value="1">Less than 50%</html:option>
                                     <html:option value="2">More than or equal 50% and less than 100%</html:option>
-                                    <html:option value="3">Yes</html:option>
+                                    <html:option value="3">100%</html:option>
                                 </html:select>
                             </div>
                         </div>

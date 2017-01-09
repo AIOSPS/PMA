@@ -2,6 +2,7 @@ package eu.pms.permit.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.common.utils.CommonFilter;
 import org.hibernate.HibernateException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,7 @@ public class PmsPermitListUseCase implements ComponentUseCase {
                 String permitStatus = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(permitTitle!=null && !permitTitle.trim().equals("")){
+                    permitTitle = CommonFilter.cleanQeuryParam(permitTitle);
                     cond += " and a.perTitle like '%"+permitTitle+"%' ";
                 }
                 if(permitType!=null && !permitType.trim().equals("")){

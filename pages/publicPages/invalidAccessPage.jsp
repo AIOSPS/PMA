@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="account-wall">
-                    <img class="profile-img" src="/pages/resources/images/European_Commission.png" alt="">
+                    <img class="profile-img" src="/pages/resources/images/logo.jpg" alt="">
                     <%--<html:form action="loginPage">--%>
                         <div class="form-signin">
                             <div class="alert alert-danger">

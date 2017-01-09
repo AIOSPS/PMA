@@ -2,6 +2,7 @@ package eu.pms.indicator.useCases;
 
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.common.utils.CommonFilter;
 import org.hibernate.HibernateException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +27,7 @@ public class PmsIndicatorListUseCase implements ComponentUseCase {
                 String indicatorLongDesc = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(indicatorTitle!=null && !indicatorTitle.trim().equals("")){
+                    indicatorTitle = CommonFilter.cleanQeuryParam(indicatorTitle);
                     cond += " and a.indTitle like '%"+indicatorTitle+"%' ";
                 }
                 if(indicatorLongDesc!=null && !indicatorLongDesc.trim().equals("")){

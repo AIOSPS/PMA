@@ -185,7 +185,7 @@
                                         for (int i = 0; i < sectorsList.size(); i++) {
                                             PmsSector obj = (PmsSector) sectorsList.get(i);
                                     %>
-                                    <option value="<%=obj.getSecId()%>"><%=obj.getSecDesc()%></option>
+                                    <option value="<%=obj.getSecId()%>"><%=obj.getSecName()%></option>
                                     <% }%>
 
                                 </logic:present>
