@@ -122,7 +122,7 @@
                             Governate</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="8_whereCondType" value="0">
-                            <select id="8_val1" name="8_val1" class="form-control input-sm">
+                            <select id="8_val1" name="8_val1" class="selectpicker form-control input-sm" data-live-search="true">
                                 <logic:present name="governateList">
                                     <% List governateList = (List) request.getAttribute("governateList");%>
                                     <%
@@ -150,7 +150,7 @@
                             Community</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="9_whereCondType" value="0">
-                            <select id="9_val1" name="9_val1" class="form-control input-sm">
+                            <select id="9_val1" name="9_val1" class="selectpicker form-control input-sm" data-live-search="true">
                                 <logic:present name="communityList">
                                     <% List communityList = (List) request.getAttribute("communityList");%>
                                     <%
@@ -178,7 +178,7 @@
                             Sector</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="10_whereCondType" value="0">
-                            <select id="10_val1" name="10_val1" class="form-control input-sm">
+                            <select id="10_val1" name="10_val1" class="selectpicker form-control input-sm" data-live-search="true">
                                 <logic:present name="sectorsList">
                                     <% List sectorsList = (List) request.getAttribute("sectorsList");%>
                                     <%
@@ -206,7 +206,7 @@
                             Donor</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="11_whereCondType" value="0">
-                            <select id="11_val1" name="11_val1" class="form-control input-sm">
+                            <select id="11_val1" name="11_val1" class="selectpicker form-control input-sm" data-live-search="true">
                                 <logic:present name="dononrList">
                                     <% List dononrList = (List) request.getAttribute("dononrList");%>
                                     <%
@@ -254,7 +254,7 @@
                             Benificiary Type</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="13_whereCondType" value="0">
-                            <select id="13_val1" name="13_val1" class="form-control input-sm">
+                            <select id="13_val1" name="13_val1" class="selectpicker form-control input-sm" data-live-search="true">
                                 <logic:present name="benificiaryTypeList">
                                     <% List benificiaryTypeList = (List) request.getAttribute("benificiaryTypeList");%>
                                     <%
@@ -282,7 +282,7 @@
                             Implementer</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="14_whereCondType" value="0">
-                            <select id="14_val1" name="14_val1" class="form-control input-sm">
+                            <select id="14_val1" name="14_val1" class="selectpicker form-control input-sm" data-live-search="true">
                                 <logic:present name="implementerList">
                                     <% List implementerList = (List) request.getAttribute("implementerList");%>
                                     <%

@@ -495,8 +495,54 @@
 
                     </div>
                 </div>
+                <h2 class="titleSep"><span>List fo Incidents</span></h2>
+                <div class="form-group row">
+                    <div class="col-md-12 table-responsive">
+                        <table id="listIncidentsTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Ocha ID</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Incident Date</th>
+                                <th class="text-center">Source Link</th>
+                                <th class="text-center">Location Lattitude</th>
+                                <th class="text-center">Location Longitude</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th class="text-center">Ocha ID</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Incident Date</th>
+                                <th class="text-center">Source Link</th>
+                                <th class="text-center">Location Lattitude</th>
+                                <th class="text-center">Location Longitude</th>
 
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <logic:present name="incidentList">
+                                <logic:iterate id="incidentList" name="incidentList" type="eu.pms.project.database.PmsIncident">
+                                    <tr>
+                                        <td ><bean:write name="incidentList" property="incOchaId"/></td>
+                                        <td ><bean:write name="incidentList" property="incDescription"/></td>
+                                        <td ><bean:write name="incidentList" property="incTimeStampStr"/></td>
+                                        <td ><bean:write name="incidentList" property="incSourceLink"/></td>
+                                        <td ><bean:write name="incidentList" property="locLatitude"/></td>
+                                        <td ><bean:write name="incidentList" property="locLongitude"/></td>
+                                    </tr>
+                                </logic:iterate>
+                            </logic:present>
+                            </tbody>
+                        </table>
+                        <script>
+                            $(document).ready(function () {
+                                $('#listIncidentsTbl').DataTable();
+                            });
+                        </script>
+                    </div>
 
+                </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                         <button type="button" onclick="javaScript:parent.location = '/viewEditProject.do?proId=<%=request.getParameter("proId")%>'"
