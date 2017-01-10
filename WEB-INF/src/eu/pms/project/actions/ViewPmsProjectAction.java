@@ -2,6 +2,7 @@ package eu.pms.project.actions;
 
 
 import eu.pms.common.tools.SessionTraker;
+import eu.pms.incident.useCases.PmsIncidentListByProjectUseCase;
 import eu.pms.project.database.*;
 import eu.pms.project.forms.PmsProjectForm;
 import eu.pms.project.useCases.*;
@@ -119,6 +120,10 @@ public class ViewPmsProjectAction extends Action {
             request.setAttribute("projectBenificiryList", projectBenificiryList);
             List benificiryTypeList = (List) new GetPmsBenificiaryUseCase().execute(null, request);
             request.setAttribute("benificiryTypeList", benificiryTypeList);
+            inputs.clear();
+            inputs.add(proId);
+            List incidentList = (List) new PmsIncidentListByProjectUseCase().execute(inputs, request);
+            request.setAttribute("incidentList", incidentList);
         }
 
 
