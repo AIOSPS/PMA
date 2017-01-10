@@ -59,6 +59,11 @@
                                 </logic:present>
 
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="masId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -75,6 +80,11 @@
                                 </logic:present>
 
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="secId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-6">

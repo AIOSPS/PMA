@@ -56,6 +56,11 @@
                                             <html:options collection="dononrList" property="donId" labelProperty="donName"/>
                                         </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="donorId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -68,6 +73,11 @@
                                             <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
                                         </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="sectorId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -80,6 +90,11 @@
                                         <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
                                         </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="governateId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -95,6 +110,11 @@
                                             <html:options collection="communityList" property="comId" labelProperty="comName"/>
                                         </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="communityId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-md-4">

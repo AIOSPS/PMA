@@ -110,6 +110,11 @@
                                     <html:options collection="communityTypeList" property="typId" labelProperty="typDesc"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="typeId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
 
@@ -120,6 +125,11 @@
                                          styleClass="selectpicker form-control">
                                 <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="govId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

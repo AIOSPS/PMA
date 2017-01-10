@@ -68,6 +68,11 @@
                                     <html:options collection="inertventionList" property="compId.intId" labelProperty="intDesc"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="intId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -79,6 +84,11 @@
                                     <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="secId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

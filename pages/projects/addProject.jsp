@@ -56,6 +56,11 @@
                                     <html:options collection="dononrList" property="donId" labelProperty="donName"/>
                                     </logic:present>
                                 </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="donorProjectList"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
 
                         </div>
 
@@ -73,6 +78,11 @@
                                                   labelProperty="impName"/>
                                     </logic:present>
                                 </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="implementerProjectList"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
 
                         </div>
 
@@ -90,6 +100,11 @@
                                               labelProperty="devAbbName"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="devId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
 
                         </div>
                     </div>
@@ -103,6 +118,11 @@
                                 <html:options collection="programmList" property="prgId" labelProperty="prgTitle"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="prgId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
 
                         </div>
                     </div>
@@ -154,6 +174,11 @@
                                     </optgroup>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="secId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -348,6 +373,11 @@
                                             <html:options collection="communityList" property="comId" labelProperty="comName"/>
                                         </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="communityProjectList"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
 
                                 </div>
                             </div>
@@ -390,6 +420,11 @@
                                 <html:options collection="permitList" property="perId" labelProperty="perTitle"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="preId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
 
                         </div>
 
@@ -435,7 +470,7 @@
                                         <tbody>
                                         <tr id='addr0' data-id="0" class="hidden">
                                             <td data-name="btpId">benificiryTypeList
-                                                <select  class="form-control" id="btpId0" name="btpId0"  >
+                                                <select  class="form-control" id="btpId0" name="btpId0" >
                                                     <logic:iterate id="benificiryTypeList" name="benificiryTypeList">
                                                         <option value=<bean:write name="benificiryTypeList" property="lookupId"/>><bean:write name="benificiryTypeList" property="lookupDesc"/></option>
                                                     </logic:iterate>
@@ -467,6 +502,11 @@
                                               labelProperty="indTitle"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="indicatorProjectList"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
 
                     </div>

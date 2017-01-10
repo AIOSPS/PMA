@@ -76,6 +76,11 @@
                                     <html:options collection="strategicPlanDocList" property="strDocId" labelProperty="strPlanTitle"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="strDocId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

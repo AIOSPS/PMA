@@ -61,6 +61,11 @@
                                     <html:options collection="masterPlanList" property="masId" labelProperty="masMpName"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="masId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -77,6 +82,11 @@
                                     <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="secId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-6">

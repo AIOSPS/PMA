@@ -68,6 +68,11 @@
                                     <html:options collection="resultList" property="compId.compId" labelProperty="resDesc"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="resId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

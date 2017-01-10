@@ -71,6 +71,11 @@
                                 <html:options collection="benificiaryTypeList" property="lookupId" labelProperty="lookupDesc"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="btpId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

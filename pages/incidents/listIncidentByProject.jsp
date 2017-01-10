@@ -48,6 +48,11 @@
                                                      styleClass="selectpicker form-control">
                                             <html:options collection="projectList" property="proId" labelProperty="proTitle"/>
                                         </html:select>
+                                        <script>
+                                            $(function () {
+                                                $('[name="proId"]').eq(0).attr("data-live-search", "true");
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                                 <div class="col-md-2">

@@ -61,6 +61,11 @@
                                 <html:options collection="objectiveList" property="objId" labelProperty="objDesc"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="objId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

@@ -51,6 +51,11 @@
                                             <html:options collection="communityList" property="comId" labelProperty="comName"/>
                                         </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="comId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -61,6 +66,11 @@
                                         <html:option value="">Select</html:option>
                                         <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="govId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-md-4">

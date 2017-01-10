@@ -84,6 +84,11 @@
                                                   labelProperty="impName"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="impId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -280,6 +285,11 @@
                                     <html:options collection="dononrList" property="donId" labelProperty="donName"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="donorMasterPlanList"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
 
                         </div>
 
@@ -296,6 +306,11 @@
                                     <html:options collection="communityList" property="comId" labelProperty="comName"/>
                                 </logic:present>
                             </html:select>
+                            <script>
+                            $(function () {
+                                $('[name="communityMasterPlanList"]').eq(0).attr("data-live-search", "true");
+                            });
+                            </script>
 
                         </div>
 
