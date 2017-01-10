@@ -7,8 +7,8 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#agrId").attr("placeholder", "Agriculture Id");
-        $("#agrId").prop('required', true);
+//        $("#agrId").attr("placeholder", "Agriculture Id");
+//        $("#agrId").prop('required', true);
         $("#comId").attr("placeholder", "Community");
         $("#comId").prop('required', true);
         $("#agrArea").attr("placeholder", "Agriculture Area");
@@ -54,12 +54,12 @@
                 <h2 class="titleSep"><span>Agriculture Socio Information</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="agrId" class="col-sm-3 col-form-label">Agriculture Id:</label>
-                        <div class="col-sm-9">
-                            <html:text property="agrId" styleClass="form-control" styleId="agrId"/>
-                        </div>
-                    </div>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="agrId" class="col-sm-3 col-form-label">Agriculture Id:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="agrId" styleClass="form-control" styleId="agrId"/>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
                     <div class="col-md-6">
                         <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
@@ -76,61 +76,62 @@
                             </script>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="agrArea" class="col-sm-3 col-form-label">Agriculture Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrArea" styleClass="form-control" styleId="agrArea"/>
                         </div>
                     </div>
+                </div>
+
+
+                <div class="form-group row">
+
                     <div class="col-md-6">
                         <label for="agrNoCowYear" class="col-sm-3 col-form-label">No of Cow Per Year:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoCowYear" styleClass="form-control" styleId="agrNoCowYear"/>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="agrNoSheepYear" class="col-sm-3 col-form-label">No of Sheep Per Year:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoSheepYear" styleClass="form-control" styleId="agrNoSheepYear"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group row">
+
                     <div class="col-md-6">
                         <label for="agrCostWaterTank" class="col-sm-3 col-form-label">Cost of Water Tank:</label>
                         <div class="col-sm-9">
                             <html:text property="agrCostWaterTank" styleClass="form-control" styleId="agrCostWaterTank"/>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="agrHerdingArea" class="col-sm-3 col-form-label">Herding Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrHerdingArea" styleClass="form-control" styleId="agrHerdingArea"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group row">
+
                     <div class="col-md-6">
                         <label for="agrMilitaryArea" class="col-sm-3 col-form-label">Military Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrMilitaryArea" styleClass="form-control" styleId="agrMilitaryArea"/>
                         </div>
                     </div>
-                </div>
-
-
-
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">Bypass Road Area:</label>
                         <div class="col-sm-9">
                             <html:text property="agrBypassRoadArea" styleClass="form-control" styleId="agrBypassRoadArea"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group row">
+
                     <div class="col-md-6">
                         <label for="agrSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>
 
@@ -148,7 +149,9 @@
                             });
                         });
                     </script>
+                    <div class="col-md-6">
 
+                    </div>
                 </div>
 
 
@@ -207,13 +210,13 @@
     })(window);
 
 
-    InvalidInputHelper(document.getElementsByName("agrId")[0], {
-        defaultText: "Please Enter The Agriculture Id ",
-        emptyText: "Please Enter The Agriculture Id ",
+//    InvalidInputHelper(document.getElementsByName("agrId")[0], {
+//        defaultText: "Please Enter The Agriculture Id ",
+//        emptyText: "Please Enter The Agriculture Id ",
 //        invalidText: function (input) {
 //            return 'The email address "' + input.value + '" is invalid!';
 //        }
-    });
+//    });
     InvalidInputHelper(document.getElementsByName("comId")[0], {
         defaultText: "Please Enter The Community ",
         emptyText: "Please Enter The Community ",

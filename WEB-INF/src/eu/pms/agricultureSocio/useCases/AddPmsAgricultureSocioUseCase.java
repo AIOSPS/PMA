@@ -29,7 +29,9 @@ public class AddPmsAgricultureSocioUseCase implements ComponentUseCase {
             Integer agrMilitaryArea = (Integer) itr.next();
             Integer agrBypassRoadArea = (Integer) itr.next();
             String agrSurveyDate = (String) itr.next();
-
+            if (agrId == null || agrId.equals("")){
+                agrId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
