@@ -70,17 +70,19 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comId" class="col-sm-3 col-form-label">Community ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="comId" styleClass="form-control" styleId="comId" disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label for="comName" class="col-sm-3 col-form-label">Community Name:</label>
                         <div class="col-sm-9">
                             <html:text property="comName" styleClass="form-control" styleId="comName" disabled="true"/>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <html:hidden property="comId"/>
+                        <%--<label for="comId" class="col-sm-3 col-form-label">Community ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="comId" styleClass="form-control" styleId="comId" disabled="true"/>--%>
+                        <%--</div>--%>
+                    </div>
+
                 </div>
 
 
@@ -313,7 +315,7 @@
 
                     <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                            <button type="button" onclick="javaScript:parent.location = '/viewEditCommunity.do'"
+                            <button type="button" onclick="javaScript:parent.location = '/viewEditCommunity.do?comId=<%=request.getParameter("comId")%>'"
                                     class="btn btn-primary">Edit
                             </button>
                             <button type="button" onclick="javaScript:window.history.back();"
