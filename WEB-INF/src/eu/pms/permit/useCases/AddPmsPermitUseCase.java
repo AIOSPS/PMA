@@ -3,6 +3,7 @@ package eu.pms.permit.useCases;
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.login.database.SecUser;
 import eu.pms.project.database.*;
 import org.hibernate.HibernateException;
 
@@ -20,6 +21,9 @@ public class AddPmsPermitUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String perId = (String) itr.next();
+            if (perId == null || perId.equals("")){
+                perId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String perTitle = (String) itr.next();
             String perType = (String) itr.next();
             String perSubmitDate = (String) itr.next();
@@ -28,7 +32,7 @@ public class AddPmsPermitUseCase implements ComponentUseCase {
             String perStatus = (String) itr.next();
             String perIssuingAgency = (String) itr.next();
 
-            String username = "pms";
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             PmsPermit pmsPermit = new PmsPermit();
