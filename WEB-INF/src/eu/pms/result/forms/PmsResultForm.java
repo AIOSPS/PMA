@@ -82,6 +82,17 @@ public class PmsResultForm extends ActionForm {
         this.resCloseDate = resCloseDate;
     }
 
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        resId = null;
+        objId = null;
+        resDesc = null;
+        resLongDesc = null;
+        resDefineDate = null;
+        resStatus = null;
+        resCloseDate = null;
+    }
+
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         return errors;

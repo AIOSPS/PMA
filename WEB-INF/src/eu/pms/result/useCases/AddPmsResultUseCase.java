@@ -20,6 +20,9 @@ public class AddPmsResultUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String resId = (String) itr.next();
+            if (resId == null || resId.equals("")){
+                resId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String objId = (String) itr.next();
             String resDesc = (String) itr.next();
             String resLongDesc = (String) itr.next();

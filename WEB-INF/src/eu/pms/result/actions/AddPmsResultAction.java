@@ -58,7 +58,7 @@ public class AddPmsResultAction extends Action {
         if (result != null && result.size() > 0) {
 
         }
-
+        pmsResultForm.reset(mapping, request);
         return mapping.findForward("success");
     }
 }
