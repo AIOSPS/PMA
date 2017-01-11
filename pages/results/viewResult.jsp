@@ -45,12 +45,13 @@
                     <h2 class="titleSep"><span>Result Information</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="resId" class="col-sm-3 col-form-label">Result ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="resId" styleClass="form-control" styleId="resId" disabled="true"/>
-                        </div>
-                    </div>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="resId" class="col-sm-3 col-form-label">Result ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="resId" styleClass="form-control" styleId="resId" disabled="true"/>--%>
+                            <%--<html:hidden property="resId"/>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
                     <div class="col-md-6">
                         <label for="objId" class="col-sm-3 col-form-label">Objective:</label>
                         <div class="col-sm-9">
@@ -62,6 +63,16 @@
                             </html:select>
                         </div>
                     </div>
+                        <div class="col-md-6">
+                            <label for="resStatus" class="col-sm-3 col-form-label">Status:</label>
+                            <div class="col-sm-9">
+                                <html:select property="resStatus" disabled="true"
+                                             styleClass="selectpicker form-control">
+                                    <html:option value="1">Achived</html:option>
+                                    <html:option value="2">Not Achived</html:option>
+                                </html:select>
+                            </div>
+                        </div>
                 </div>
 
 
@@ -113,27 +124,27 @@
                     </script>
 
                 </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="resStatus" class="col-sm-3 col-form-label">Status:</label>
-                        <div class="col-sm-9">
-                            <html:select property="resStatus" disabled="true"
-                                         styleClass="selectpicker form-control">
-                                <html:option value="1">Achived</html:option>
-                                <html:option value="2">Not Achived</html:option>
-                            </html:select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label  class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="resStatus" class="col-sm-3 col-form-label">Status:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:select property="resStatus" disabled="true"--%>
+                                         <%--styleClass="selectpicker form-control">--%>
+                                <%--<html:option value="1">Achived</html:option>--%>
+                                <%--<html:option value="2">Not Achived</html:option>--%>
+                            <%--</html:select>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label  class="col-sm-3 col-form-label">&nbsp;</label>--%>
+                        <%--<div class="col-sm-9">--%>
 
-                        </div>
-                    </div>
-                </div>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="button" onclick="javaScript:parent.location = '/viewEditResult.do'"
+                        <button type="button" onclick="javaScript:parent.location = '/viewEditResult.do?resId?<%=request.getParameter("resId")%>'"
                                 class="btn btn-primary">Edit
                         </button>
                         <button type="button" onclick="javaScript:window.history.back();"
