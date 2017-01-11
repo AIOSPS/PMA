@@ -51,10 +51,10 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="indId" class="col-sm-3 col-form-label">Indicator ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="indId" styleClass="form-control" styleId="indId"/>
-                        </div>
+                        <%--<label for="indId" class="col-sm-3 col-form-label">Indicator ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="indId" styleClass="form-control" styleId="indId"/>--%>
+                        <%--</div>--%>
                     </div>
                     <div class="col-md-6">
                         <label for="resId" class="col-sm-3 col-form-label">Result:</label>
