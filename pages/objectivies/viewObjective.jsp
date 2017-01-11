@@ -46,16 +46,17 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="objId" class="col-sm-3 col-form-label">Objective ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="objId" styleClass="form-control" styleId="objId" disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label for="objDesc" class="col-sm-3 col-form-label">Objective Description:</label>
                         <div class="col-sm-9">
                             <html:text property="objDesc" styleClass="form-control" styleId="objDesc" disabled="true"/>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <%--<label for="objId" class="col-sm-3 col-form-label">Objective ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="objId" styleClass="form-control" styleId="objId" disabled="true"/>--%>
+                            <html:hidden property="objId"/>
+                        <%--</div>--%>
                     </div>
                 </div>
 
@@ -133,7 +134,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="button" onclick="javaScript:parent.location = '/viewEditObjective.do'"
+                        <button type="button" onclick="javaScript:parent.location = '/viewEditObjective.do?objId=<%=request.getParameter("objId")%>'"
                                 class="btn btn-primary">Edit
                         </button>
                         <button type="button" onclick="javaScript:window.history.back();"

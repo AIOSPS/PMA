@@ -46,15 +46,16 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="objId" class="col-sm-3 col-form-label">Objective ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="objId" styleClass="form-control" styleId="objId" disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label for="objDesc" class="col-sm-3 col-form-label">Objective Description:</label>
                         <div class="col-sm-9">
                             <html:text property="objDesc" styleClass="form-control" styleId="objDesc"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <%--<label for="objId" class="col-sm-3 col-form-label">Objective ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="objId" styleClass="form-control" styleId="objId" disabled="true"/>--%>
+                            <html:hidden property="objId"/>
                         </div>
                     </div>
                 </div>
