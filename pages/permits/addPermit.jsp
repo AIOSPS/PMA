@@ -47,17 +47,18 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="perId" class="col-sm-3 col-form-label">Permit ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="perId" styleClass="form-control" styleId="perId"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label for="perTitle" class="col-sm-3 col-form-label">Permit Title:</label>
                         <div class="col-sm-9">
                             <html:text property="perTitle" styleClass="form-control" styleId="perTitle"/>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <%--<label for="perId" class="col-sm-3 col-form-label">Permit ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="perId" styleClass="form-control" styleId="perId"/>--%>
+                        <%--</div>--%>
+                    </div>
+
                 </div>
 
 
