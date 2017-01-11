@@ -142,7 +142,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="button" onclick="javaScript:parent.location = '/viewEditPermit.do'"
+                        <button type="button" onclick="javaScript:parent.location = '/viewEditPermit.do?perId=<%=request.getParameter("perId")%>'"
                                 class="btn btn-primary">Edit
                         </button>
                         <button type="button" onclick="javaScript:window.history.back();"
