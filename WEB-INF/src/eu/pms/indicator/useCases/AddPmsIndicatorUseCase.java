@@ -21,13 +21,16 @@ public class AddPmsIndicatorUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String indId = (String) itr.next();
+            if (indId == null || indId.equals("")){
+                indId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String resId = (String) itr.next();
             String objId = (String) itr.next();
             String indTitle = (String) itr.next();
             String indDate = (String) itr.next();
             String indLongDesc = (String) itr.next();
-            int indBaseline = (Integer) itr.next();
-            int indFrequency = (Integer) itr.next();
+            Integer indBaseline = (Integer) itr.next();
+            Integer indFrequency = (Integer) itr.next();
             String indCollectionMethod = (String) itr.next();
             String indStatisticalMethod = (String) itr.next();
             ArrayList indicatorMeasuresList = (ArrayList) itr.next();

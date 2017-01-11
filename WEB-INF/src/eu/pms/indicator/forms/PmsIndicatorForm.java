@@ -20,8 +20,8 @@ public class PmsIndicatorForm extends ActionForm {
     private String indTitle;
     private String indDate;
     private String indLongDesc;
-    private int indBaseline;
-    private int indFrequency;
+    private Integer indBaseline;
+    private Integer indFrequency;
     private String indCollectionMethod;
     private String indStatisticalMethod;
 
@@ -77,19 +77,19 @@ public class PmsIndicatorForm extends ActionForm {
         this.indLongDesc = indLongDesc;
     }
 
-    public int getIndBaseline() {
+    public Integer getIndBaseline() {
         return indBaseline;
     }
 
-    public void setIndBaseline(int indBaseline) {
+    public void setIndBaseline(Integer indBaseline) {
         this.indBaseline = indBaseline;
     }
 
-    public int getIndFrequency() {
+    public Integer getIndFrequency() {
         return indFrequency;
     }
 
-    public void setIndFrequency(int indFrequency) {
+    public void setIndFrequency(Integer indFrequency) {
         this.indFrequency = indFrequency;
     }
 
@@ -109,6 +109,19 @@ public class PmsIndicatorForm extends ActionForm {
         this.indStatisticalMethod = indStatisticalMethod;
     }
 
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        indId = null;
+        resId = null;
+        objId = null;
+        indTitle = null;
+        indDate = null;
+        indLongDesc = null;
+        indBaseline = null;
+        indFrequency = null;
+        indCollectionMethod = null;
+        indStatisticalMethod = null;
+    }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();

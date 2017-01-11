@@ -106,7 +106,7 @@ public class AddPmsIndicatorAction extends Action {
         if (result != null && result.size() > 0) {
 
         }
-
+pmsIndicatorForm.reset(mapping, request);
         return mapping.findForward("success");
     }
 }
