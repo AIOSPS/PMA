@@ -57,7 +57,7 @@ public class AddPmsObjectiveAction extends Action {
         if (result != null && result.size() > 0) {
 
         }
-
+        pmsObjectiveForm.reset(mapping, request);
         return mapping.findForward("success");
     }
 }

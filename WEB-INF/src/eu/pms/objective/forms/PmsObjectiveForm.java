@@ -91,6 +91,18 @@ public class PmsObjectiveForm extends ActionForm {
         this.ojbUserId = ojbUserId;
     }
 
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        objId = null;
+        strDocId = null;
+        objDesc = null;
+        objLongDesc = null;
+        objDefineDate = null;
+        objStatus = null;
+        objCloseDate = null;
+        ojbUserId = null;
+    }
+
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         return errors;

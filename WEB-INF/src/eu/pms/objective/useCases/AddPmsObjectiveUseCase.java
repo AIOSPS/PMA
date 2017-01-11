@@ -20,6 +20,9 @@ public class AddPmsObjectiveUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String objId = (String) itr.next();
+            if (objId == null || objId.equals("")){
+                objId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String objDesc = (String) itr.next();
             String objLongDesc = (String) itr.next();
             String objDefineDate = (String) itr.next();
