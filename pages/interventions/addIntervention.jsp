@@ -42,12 +42,12 @@
                 <h2 class="titleSep"><span>Intervention Information</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="intId" class="col-sm-3 col-form-label">Intervention ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="intId" styleClass="form-control" styleId="intId"/>
-                        </div>
-                    </div>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="intId" class="col-sm-3 col-form-label">Intervention ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="intId" styleClass="form-control" styleId="intId"/>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
                     <div class="col-md-6">
                         <label for="masId" class="col-sm-3 col-form-label">Master Plan:</label>
                         <div class="col-sm-9">
@@ -66,6 +66,12 @@
                             </script>
                         </div>
                     </div>
+                        <div class="col-md-6">
+                            <label for="intDesc" class="col-sm-3 col-form-label">Description:</label>
+                            <div class="col-sm-9">
+                                <html:text property="intDesc" styleClass="form-control" styleId="intDesc"/>
+                            </div>
+                        </div>
                 </div>
 
 
@@ -88,11 +94,18 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="intDesc" class="col-sm-3 col-form-label">Description:</label>
+                        <label for="intPriority" class="col-sm-3 col-form-label">Priority:</label>
                         <div class="col-sm-9">
-                            <html:text property="intDesc" styleClass="form-control" styleId="intDesc"/>
+                            <html:select property="intPriority" styleClass="selectpicker form-control">
+                                <html:option value="O">Very Low</html:option>
+                                <html:option value="L">Low</html:option>
+                                <html:option value="H">High</html:option>
+                                <html:option value="V">Very High</html:option>
+                                <html:option value="U">Urgent</html:option>
+                            </html:select>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="form-group row">
@@ -115,27 +128,27 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
+                <%--<div class="form-group row">--%>
 
-                    <div class="col-md-6">
-                        <label for="intPriority" class="col-sm-3 col-form-label">Priority:</label>
-                        <div class="col-sm-9">
-                            <html:select property="intPriority" styleClass="selectpicker form-control">
-                                <html:option value="O">Very Low</html:option>
-                                <html:option value="L">Low</html:option>
-                                <html:option value="H">High</html:option>
-                                <html:option value="V">Very High</html:option>
-                                <html:option value="U">Urgent</html:option>
-                            </html:select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="intPriority" class="col-sm-3 col-form-label">Priority:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:select property="intPriority" styleClass="selectpicker form-control">--%>
+                                <%--<html:option value="O">Very Low</html:option>--%>
+                                <%--<html:option value="L">Low</html:option>--%>
+                                <%--<html:option value="H">High</html:option>--%>
+                                <%--<html:option value="V">Very High</html:option>--%>
+                                <%--<html:option value="U">Urgent</html:option>--%>
+                            <%--</html:select>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label class="col-sm-3 col-form-label">&nbsp;</label>--%>
+                        <%--<div class="col-sm-9">--%>
 
-                        </div>
-                    </div>
-                </div>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
                 <h2 class="titleSep"><span>Activity Information</span></h2>
                 <div class="form-group row">
                     <div class="col-sm-12">
@@ -145,8 +158,8 @@
                                     <table class="table table-bordered table-hover table-sortable" id="tab_logic">
                                         <thead>
                                         <tr >
-                                            <th width="15%" class="text-center">Activity ID</th>
-                                            <th width="35%" class="text-center">Description</th>
+                                            <%--<th width="15%" class="text-center">Activity ID</th>--%>
+                                            <th width="50%" class="text-center">Description</th>
                                             <th width="15%" class="text-center">Unit</th>
                                             <th width="15%" class="text-center">Unit Qty</th>
                                             <th width="15%" class="text-center">Estimated Budget</th>
@@ -157,9 +170,9 @@
                                         </thead>
                                         <tbody>
                                         <tr id='addr0' data-id="0" class="hidden">
-                                            <td data-name="actId">
-                                                <input type="text" id="actId0" name="actId0"  placeholder='Activity ID' class="form-control"/>
-                                            </td>
+                                            <%--<td data-name="actId">--%>
+                                                <%--<input type="text" id="actId0" name="actId0"  placeholder='Activity ID' class="form-control"/>--%>
+                                            <%--</td>--%>
                                             <td data-name="actDesc">
                                                 <input type="text" id="actDesc0" name="actDesc0" placeholder='Description' class="form-control"/>
                                             </td>
