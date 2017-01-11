@@ -58,13 +58,6 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watId" class="col-sm-3 col-form-label">Water Id:</label>
-                        <div class="col-sm-9">
-                            <html:text property="watId" styleClass="form-control" styleId="watId" disabled="true"/>
-                            <html:hidden property="watId"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
                             <html:select property="comId"
@@ -80,6 +73,30 @@
                             </script>
                         </div>
                     </div>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="watId" class="col-sm-3 col-form-label">Water Id:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="watId" styleClass="form-control" styleId="watId" disabled="true"/>--%>
+                            <html:hidden property="watId"/>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <div class="col-md-6">
+                        <label for="watSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>
+
+                        <div class='input-group date col-sm-9' id='wSurveyDate'>
+                            <html:text property="watSurveyDate" styleClass="form-control" styleId="watSurveyDate"/>
+                            <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#wSurveyDate').datetimepicker({
+                                format: 'DD/MM/YYYY'
+                            });
+                        });
+                    </script>
                 </div>
 
 
@@ -170,31 +187,31 @@
 
 
 
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="watSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label class="col-sm-3 col-form-label">&nbsp;</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="watSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>--%>
 
-                        <div class='input-group date col-sm-9' id='wSurveyDate'>
-                            <html:text property="watSurveyDate" styleClass="form-control" styleId="watSurveyDate"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#wSurveyDate').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                        });
-                    </script>
+                        <%--<div class='input-group date col-sm-9' id='wSurveyDate'>--%>
+                            <%--<html:text property="watSurveyDate" styleClass="form-control" styleId="watSurveyDate"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<script type="text/javascript">--%>
+                        <%--$(function () {--%>
+                            <%--$('#wSurveyDate').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                        <%--});--%>
+                    <%--</script>--%>
 
-                </div>
+                <%--</div>--%>
 
 
 
