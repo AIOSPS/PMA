@@ -21,15 +21,15 @@ public class PmsCommunityForm extends ActionForm {
     private String comPcbsCode;
     private String comOchaCode;
     private String comName;
-    private int comTotalAreaLand;
+    private Integer comTotalAreaLand;
     private String comLocationShortDescription;
     private String comHistoricalBackground;
     private String comTopology;
-    private int comResidentsTotal;
-    private int comMaleTotal;
-    private int comFemaleTotal;
-    private int comYouthTotal;
-    private int comKidsTotal;
+    private Integer comResidentsTotal;
+    private Integer comMaleTotal;
+    private Integer comFemaleTotal;
+    private Integer comYouthTotal;
+    private Integer comKidsTotal;
     private String comSchoolsInfo;
     private String comHealthSchoolsInfo;
     private String comReligionCenters;
@@ -107,11 +107,11 @@ public class PmsCommunityForm extends ActionForm {
         this.comName = comName;
     }
 
-    public int getComTotalAreaLand() {
+    public Integer getComTotalAreaLand() {
         return comTotalAreaLand;
     }
 
-    public void setComTotalAreaLand(int comTotalAreaLand) {
+    public void setComTotalAreaLand(Integer comTotalAreaLand) {
         this.comTotalAreaLand = comTotalAreaLand;
     }
 
@@ -139,43 +139,43 @@ public class PmsCommunityForm extends ActionForm {
         this.comTopology = comTopology;
     }
 
-    public int getComResidentsTotal() {
+    public Integer getComResidentsTotal() {
         return comResidentsTotal;
     }
 
-    public void setComResidentsTotal(int comResidentsTotal) {
+    public void setComResidentsTotal(Integer comResidentsTotal) {
         this.comResidentsTotal = comResidentsTotal;
     }
 
-    public int getComMaleTotal() {
+    public Integer getComMaleTotal() {
         return comMaleTotal;
     }
 
-    public void setComMaleTotal(int comMaleTotal) {
+    public void setComMaleTotal(Integer comMaleTotal) {
         this.comMaleTotal = comMaleTotal;
     }
 
-    public int getComFemaleTotal() {
+    public Integer getComFemaleTotal() {
         return comFemaleTotal;
     }
 
-    public void setComFemaleTotal(int comFemaleTotal) {
+    public void setComFemaleTotal(Integer comFemaleTotal) {
         this.comFemaleTotal = comFemaleTotal;
     }
 
-    public int getComYouthTotal() {
+    public Integer getComYouthTotal() {
         return comYouthTotal;
     }
 
-    public void setComYouthTotal(int comYouthTotal) {
+    public void setComYouthTotal(Integer comYouthTotal) {
         this.comYouthTotal = comYouthTotal;
     }
 
-    public int getComKidsTotal() {
+    public Integer getComKidsTotal() {
         return comKidsTotal;
     }
 
-    public void setComKidsTotal(int comKidsTotal) {
+    public void setComKidsTotal(Integer comKidsTotal) {
         this.comKidsTotal = comKidsTotal;
     }
 
@@ -314,7 +314,37 @@ public class PmsCommunityForm extends ActionForm {
     public void setTimeStamp(Date timeStamp) {
         this.timeStamp = timeStamp;
     }
-
+    @Override
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        comId = null;
+        comPcbsCode = null;
+        comOchaCode = null;
+        comName = null;
+        typeId = null;
+        comTotalAreaLand = null;
+        comLocationShortDescription = null;
+        comTopology = null;
+        comResidentsTotal = null;
+        comMaleTotal = null;
+        comFemaleTotal = null;
+        comKidsTotal = null;
+        comSchoolsInfo = null;
+        comHealthSchoolsInfo = null;
+        comReligionCenters = null;
+        comCemetery = null;
+        comWaterNetworkInfo = null;
+        comSewerageNetworkInfo = null;
+        comElectricalNetworkInfo = null;
+        comSolidWasteServiceInfo = null;
+        comRoadNetworkInfo = null;
+        comTransportNetworkInfo = null;
+        comEcnonomicActivitiesInfo = null;
+        govId = null;
+        comLatitude = null;
+        comLongitude = null;
+        comPercentAreaC = null;
+        comTouchingBorder = null;
+    }
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         return errors;

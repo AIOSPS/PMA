@@ -32,13 +32,13 @@ public class AddPmsCommunityAction extends Action {
         String comOchaCode = pmsCommunityForm.getComOchaCode();
         String comName = pmsCommunityForm.getComName();
         String typeId = pmsCommunityForm.getTypeId();
-        int comTotalAreaLand = pmsCommunityForm.getComTotalAreaLand();
+        Integer comTotalAreaLand = pmsCommunityForm.getComTotalAreaLand();
         String comLocationShortDescription = pmsCommunityForm.getComLocationShortDescription();
         String comTopology = pmsCommunityForm.getComTopology();
-        int comResidentsTotal = pmsCommunityForm.getComResidentsTotal();
-        int comMaleTotal = pmsCommunityForm.getComMaleTotal();
-        int comFemaleTotal = pmsCommunityForm.getComFemaleTotal();
-        int comKidsTotal = pmsCommunityForm.getComKidsTotal();
+        Integer comResidentsTotal = pmsCommunityForm.getComResidentsTotal();
+        Integer comMaleTotal = pmsCommunityForm.getComMaleTotal();
+        Integer comFemaleTotal = pmsCommunityForm.getComFemaleTotal();
+        Integer comKidsTotal = pmsCommunityForm.getComKidsTotal();
         String comSchoolsInfo = pmsCommunityForm.getComSchoolsInfo();
         String comHealthSchoolsInfo = pmsCommunityForm.getComHealthSchoolsInfo();
         String comReligionCenters = pmsCommunityForm.getComReligionCenters();
@@ -91,7 +91,7 @@ public class AddPmsCommunityAction extends Action {
         if (result != null && result.size() > 0) {
 
         }
-
+        pmsCommunityForm.reset(mapping, request);
         return mapping.findForward("success");
     }
 }

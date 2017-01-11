@@ -19,17 +19,20 @@ public class AddPmsCommunityUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String comId = (String) itr.next();
+            if (comId == null || comId.equals("")){
+                comId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String comPcbsCode = (String) itr.next();
             String comOchaCode = (String) itr.next();
             String comName = (String) itr.next();
             String typeId = (String) itr.next();
-            int comTotalAreaLand = (Integer) itr.next();
+            Integer comTotalAreaLand = (Integer) itr.next();
             String comLocationShortDescription = (String) itr.next();
             String comTopology = (String) itr.next();
-            int comResidentsTotal = (Integer) itr.next();
-            int comMaleTotal = (Integer) itr.next();
-            int comFemaleTotal = (Integer) itr.next();
-            int comKidsTotal = (Integer) itr.next();
+            Integer comResidentsTotal = (Integer) itr.next();
+            Integer comMaleTotal = (Integer) itr.next();
+            Integer comFemaleTotal = (Integer) itr.next();
+            Integer comKidsTotal = (Integer) itr.next();
             String comSchoolsInfo = (String) itr.next();
             String comHealthSchoolsInfo = (String) itr.next();
             String comReligionCenters = (String) itr.next();
