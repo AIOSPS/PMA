@@ -20,6 +20,9 @@ public class AddPmsWaterSocioUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String watId = (String) itr.next();
+            if (watId == null || watId.equals("")){
+                watId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String comId = (String) itr.next();
             String watIsconnected = (String) itr.next();
             Integer watNetwork = (Integer) itr.next();
