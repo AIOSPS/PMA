@@ -41,12 +41,6 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="incId" class="col-sm-3 col-form-label">Incident ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="incId" styleClass="form-control" styleId="incId" disabled="true"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label for="incType" class="col-sm-3 col-form-label">Incident Type:</label>
                         <div class="col-sm-9">
                             <html:select property="incType"
@@ -55,6 +49,13 @@
                                 <html:option value="2">Type two</html:option>
                             </html:select>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <%--<label for="incId" class="col-sm-3 col-form-label">Incident ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="incId" styleClass="form-control" styleId="incId" disabled="true"/>--%>
+                            <html:hidden property="incId"/>
+                        <%--</div>--%>
                     </div>
                 </div>
 

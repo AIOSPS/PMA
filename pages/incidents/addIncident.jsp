@@ -40,12 +40,7 @@
                 <h2 class="titleSep"><span>Incident Information</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="incId" class="col-sm-3 col-form-label">Incident ID:</label>
-                        <div class="col-sm-9">
-                            <html:text property="incId" styleClass="form-control" styleId="incId"/>
-                        </div>
-                    </div>
+
                     <div class="col-md-6">
                         <label for="incType" class="col-sm-3 col-form-label">Incident Type:</label>
                         <div class="col-sm-9">
@@ -55,6 +50,12 @@
                                 <html:option value="2">Type two</html:option>
                             </html:select>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <%--<label for="incId" class="col-sm-3 col-form-label">Incident ID:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="incId" styleClass="form-control" styleId="incId"/>--%>
+                        <%--</div>--%>
                     </div>
                 </div>
 
