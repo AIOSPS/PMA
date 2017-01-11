@@ -56,7 +56,7 @@
                         <%--<div class="col-sm-9">--%>
                             <%--<html:text property="objId" styleClass="form-control" styleId="objId" disabled="true"/>--%>
                             <html:hidden property="objId"/>
-                        </div>
+                        <%--</div>--%>
                     </div>
                 </div>
 
