@@ -21,6 +21,9 @@ public class AddPmsIncidentUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String incId = (String) itr.next();
+            if (incId == null || incId.equals("")){
+                incId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String datId = (String) itr.next();
             String comId = (String) itr.next();
             String proId = (String) itr.next();
