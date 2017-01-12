@@ -63,8 +63,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="4" class="checkBox" checked>
-                            Project Status</label>
+                            <input type="checkbox" name="outputItems" value="2" class="checkBox" checked>
+                            Project Title</label>
                     </div>
                 </div>
 
@@ -83,8 +83,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="6" class="checkBox" checked>
-                            Start Date</label>
+                            <input type="checkbox" name="outputItems" value="3" class="checkBox" checked>
+                            Project Description</label>
                     </div>
                 </div>
 
@@ -103,17 +103,10 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="7" class="checkBox" checked>
-                            End Date</label>
+                            <input type="checkbox" name="outputItems" value="8" class="checkBox" checked>
+                            Governate</label>
                     </div>
                 </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#prStDate').datetimepicker({format: 'DD/MM/YYYY'});
-                        $('#prEnDate').datetimepicker({format: 'DD/MM/YYYY'});
-                    });
-                </script>
-
 
                 <div class="form-group row">
                     <div class="col-md-8">
@@ -138,11 +131,10 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="8" class="checkBox" checked>
-                            Governate</label>
+                            <input type="checkbox" name="outputItems" value="9" class="checkBox" checked>
+                            Community</label>
                     </div>
                 </div>
-
                 <div class="form-group row">
                     <div class="col-md-8">
                         <label for="9_val1" class="col-sm-3 col-form-label">
@@ -166,8 +158,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="9" class="checkBox" checked>
-                            Community</label>
+                            <input type="checkbox" name="outputItems" value="11" class="checkBox" checked>
+                            Donor</label>
                     </div>
                 </div>
 
@@ -222,8 +214,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="11" class="checkBox" checked>
-                            Donor</label>
+                            <input type="checkbox" name="outputItems" value="14" class="checkBox" checked>
+                            Implementer</label>
                     </div>
                 </div>
 
@@ -242,8 +234,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="12" class="checkBox" checked>
-                            Has Permit</label>
+                            <input type="checkbox" name="outputItems" value="5" class="checkBox" checked>
+                            Project Budget</label>
                     </div>
                 </div>
 
@@ -270,8 +262,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="13" class="checkBox" checked>
-                            Benificiary Type</label>
+                            <input type="checkbox" name="outputItems" value="12" class="checkBox" checked>
+                            Has Permit</label>
                     </div>
                 </div>
 
@@ -298,9 +290,10 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="14" class="checkBox" checked>
-                            Implementer</label>
+                            <input type="checkbox" name="outputItems" value="6" class="checkBox" checked>
+                            Start Date</label>
                     </div>
+
                 </div>
                     <%--<div class="form-group row">--%>
                     <%--<div class="col-md-8">--%>
@@ -331,10 +324,17 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="2" class="checkBox" checked>
-                            Project Title</label>
+                            <input type="checkbox" name="outputItems" value="7" class="checkBox" checked>
+                            End Date</label>
                     </div>
+
                 </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#prStDate').datetimepicker({format: 'DD/MM/YYYY'});
+                        $('#prEdDate').datetimepicker({format: 'DD/MM/YYYY'});
+                    });
+                </script>
 
                 <div class="form-group row">
                     <div class="col-md-8">
@@ -348,8 +348,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="3" class="checkBox" checked>
-                            Project Description</label>
+                            <input type="checkbox" name="outputItems" value="4" class="checkBox" checked>
+                            Project Status</label>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -364,8 +364,8 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="5" class="checkBox" checked>
-                            Project Budget</label>
+                            <input type="checkbox" name="outputItems" value="13" class="checkBox" checked>
+                            Benificiary Type</label>
                     </div>
                 </div>
                 <h2 class="titleSep"><span>Export report</span></h2>
