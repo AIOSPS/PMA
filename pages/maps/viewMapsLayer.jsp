@@ -1,184 +1,236 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
 <%@ taglib uri="/WEB-INF/lib/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 
-<link rel="stylesheet" href="/pages/resources/css/ol.css" type="text/css">
-
-<script src="/pages/resources/js/loader.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="https://openlayers.org/en/v3.20.0/css/ol.css" type="text/css">
-<!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-<script src="https://openlayers.org/en/v3.20.0/build/ol.js"></script>
-
-<div class="content-wrapper breadcrumb brd2">
-    <div class="container clearfix">
-        <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Maps
-        </a><span class=""> > </span><span>View Maps Layer</span></nav>
-    </div>
-</div>
+    <link rel="stylesheet" type="text/css" href="https://extjs.cachefly.net/ext/gpl/5.1.0/packages/ext-theme-classic/build/resources/ext-theme-classic-all-debug.css"/>
+    <link rel="stylesheet" type="text/css" href="http://openlayers.org/en/v3.11.2/css/ol.css"/>
+    <link rel="stylesheet" type="text/css" href="/pages/resources/css/LayerControl.css"/>
 
 
 
-<article class="FormPage">
-    <div class="container">
-        <div class="col-md-12  pd15 titleArea">
-            <div class="form-group row">
-                <div class="col-md-12">
-                    <h1>View Maps Layers</h1>
-                </div>
-                <div class="col-md-12 ">
-                    <div id="map" class="map"></div>
-                    <div id="info">&nbsp;</div>
-                    <script>
-                        var style = new ol.style.Style({
-                            fill: new ol.style.Fill({
-                                color: 'rgba(255, 255, 255, 0.6)'
-                            }),
-                            stroke: new ol.style.Stroke({
-                                color: '#319FD3',
-                                width: 1
-                            }),
-                            text: new ol.style.Text({
-                                font: '12px Calibri,sans-serif',
-                                fill: new ol.style.Fill({
-                                    color: '#000'
-                                }),
-                                stroke: new ol.style.Stroke({
-                                    color: '#fff',
-                                    width: 3
-                                })
-                            })
-                        });
-//
-//                        var vectorLayer = new ol.layer.Vector({
-//                            source: new ol.source.Vector({
-//                                url: 'https://openlayers.org/en/v3.20.0/examples/data/geojson/countries.geojson',
-//                                format: new ol.format.GeoJSON()
-//                            }),
-//                            style: function(feature, resolution) {
-//                                style.getText().setText(resolution < 5000 ? feature.get('name') : '');
-//                                return style;
-//                            }
-//                        });
-//--------------------------------------------
-                     //   http://localhost:8080/geoserver/crs_4281/ows?service=WFS&version=1.0.0&
-                            // request=GetFeature&typeName=crs_4281:Area_ABC_09_4281&maxFeatures=50&
-                        // outputFormat=text%2Fjavascript
-                        var map;
+    <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/5.1.0/build/ext-all-debug.js" ></script>
+    <script type="text/javascript" src="http://openlayers.org/en/v3.11.2/build/ol-debug.js" ></script>
+    <script type="text/javascript" src="/pages/resources/js/LayerControl.js" ></script>
+    <script type="text/javascript" src="/pages/resources/js/LayerControlLang.js" ></script>
 
-                        var map = new ol.Map({
-                            target: 'map',
-                            renderer: ol.RendererHint.CANVAS,
-                            view: new ol.View2D({
-                                center: ol.proj.transform([16.37, 48.21], 'EPSG:4326', 'EPSG:3857'),
-                                zoom: 11
-                            }),
-                            layers: [
-                                new ol.layer.Tile({
-                                    source: new ol.source.MapQuestOpenAerial()
-                                }),
-                                new ol.layer.Vector({
-                                    source: new ol.source.Vector({
-                                        url: 'http://ginyu.at:8080/geoserver/wienbike/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=wienbike%3Ainput2&maxfeatures=50&outputformat=json',
-                                        parser: new ol.parser.GeoJSON()
-                                    })
-                                })
-                            ]
-                        });
-//--------------------------------------------
+    <script type="text/javascript">
+        Ext.onReady(function() {
+            var variable = 5000;
+            var map = new ol.Map({
+                controls: ol.control.defaults({
+                    attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+                        collapsible: true
+                    })
+                }).extend([
+                    new ol.control.LayerControl({
+                        title          : "Layers on map",
+                        draggable      : true,
+                        width          : 250,
+                        mapdivid       : 'map',
+                        mapconstrained : true ,
+                        lang           : 'en'
+                    })
+                ]),
+                layers: [
+                    new ol.layer.Tile({
+                        title:"OSM Layer",
+                        source: new ol.source.OSM(),
+                        lyrControlOpt : {
+                            legendGroup : 'Tile Layers',
+                            legendnodeid: 'osmid',
+                            legendTitle : "Open Street Map",
+                            legendImgUrl: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    }),
+                    /*  new ol.layer.Tile({
+                     source: new ol.source.BingMaps({
+                     key: 'Ak-dzM4wZjSqTlzveKz5u0d4IQ4bRzVI309GxmkgSVr1ewS6iPSrOvOKhA-CJlm3',
+                     imagerySet: 'Aerial'
+                     }),
+                     title:'Bing Layer',
+                     lyrControlOpt : {
+                     legendGroup : 'Tile Layers',
+                     legendnodeid: 'bingid',
+                     legendTitle : "Bing Layer",
+                     legendImgUrl: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                     }
+                     }),
+                     new ol.layer.Tile({
+                     source: new ol.source.MapQuest({layer: 'osm'}),
+                     lyrControlOpt : {
+                     legendGroup  : 'Tile Layers',
+                     legendnodeid : 'mqosmid',
+                     legendTitle  : "MapQuest Open Street Map",
+                     legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                     }
+                     }),
+                     new ol.layer.Image({
+                     //  extent: [-13884991, 2870341, -7455066, 6338219],
+                     source: new ol.source.ImageWMS({
+                     url: 'http://suite.opengeo.org/geoserver/wms',
+                     params: {'LAYERS': 'opengeo:countries'},
+                     serverType: 'geoserver'
+                     }),
+                     lyrControlOpt : {
+                     legendGroup  : 'Wms Layers',
+                     legendnodeid : 'wms1',
+                     legendTitle  : "opengeo:countries",
+                     legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                     }
+                     }),
+                     new ol.layer.Tile({
+                     extent: [-13884991, 2870341, -7455066, 6338219],
+                     source: new ol.source.TileWMS({
+                     url: 'http://suite.opengeo.org/geoserver/wms',
+                     params: {'LAYERS': 'usa:states', 'TILED': true},
+                     serverType: 'geoserver'
+                     }),
+                     lyrControlOpt : {
+                     legendGroup  : 'Wms Layers',
+                     legendnodeid : 'wms2',
+                     legendTitle  : "usa:states",
+                     legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                     }
+                     }), */
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/BTC_GIS/wms',
+                            params: {LAYERS: 'BTC_GIS:Area_ABC', 'transparent':'true', VERSION: '1.1.0'},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms1',
+                            legendTitle  : "BTC_GIS:Area_ABC",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    })	,
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/BTC_GIS/wms',
+                            params: {LAYERS: 'BTC_GIS:Areas_Closed_ByTheWall_Once_Completed', 'transparent':'true', VERSION: '1.1.0'},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms2',
+                            legendTitle  : "BTC_GIS:Areas_Closed_ByTheWall_Once_Completed",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    }),
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/BTC_GIS/wms',
+                            params: {LAYERS: 'BTC_GIS:Areas_ClosedbyTheWall', 'transparent':'true', VERSION: '1.1.0'},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms3',
+                            legendTitle  : "BTC_GIS:Areas_ClosedbyTheWall",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    }),
 
-                        var map = new ol.Map({
-                            layers: [
-                                new ol.layer.Tile({
-                                    source: new ol.source.OSM()
-                                }),
-                                vectorLayer
-                            ],
-                            target: 'map',
-                            view: new ol.View({
-                                center: [0, 0],
-                                zoom: 1
-                            })
-                        });
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/BTC_GIS/wms',
+                            params: {LAYERS: 'BTC_GIS:Annexation_Wall', 'transparent':'true', VERSION: '1.1.0'},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms4',
+                            legendTitle  : "BTC_GIS:Annexation_Wall",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    }),
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/BTC_GIS/wms',
+                            params: {LAYERS: 'BTC_GIS:Isreali_Outposts', 'transparent':'true', VERSION: '1.1.0'},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms5',
+                            legendTitle  : "BTC_GIS:Isreali_Outposts",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    }),
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/BTC_GIS/wms',
+                            params: {LAYERS: 'BTC_GIS:Israeli_Colonies_Boundaries', 'transparent':'true', VERSION: '1.1.0'},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms6',
+                            legendTitle  : "Israeli Colonies Boundaries",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    }),
 
-                        var highlightStyleCache = {};
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/crs_4281/wms',
+                            params: {LAYERS: 'crs_4281:pms_projects_gis_view', 'transparent':'true', VERSION: '1.1.0', viewparams:'p_sec:' + variable},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms8',
+                            legendTitle  : "Projects Locations",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    }),
 
-                        var featureOverlay = new ol.layer.Vector({
-                            source: new ol.source.Vector(),
-                            map: map,
-                            style: function(feature, resolution) {
-                                var text = resolution < 5000 ? feature.get('name') : '';
-                                if (!highlightStyleCache[text]) {
-                                    highlightStyleCache[text] = new ol.style.Style({
-                                        stroke: new ol.style.Stroke({
-                                            color: '#f00',
-                                            width: 1
-                                        }),
-                                        fill: new ol.style.Fill({
-                                            color: 'rgba(255,0,0,0.1)'
-                                        }),
-                                        text: new ol.style.Text({
-                                            font: '12px Calibri,sans-serif',
-                                            text: text,
-                                            fill: new ol.style.Fill({
-                                                color: '#000'
-                                            }),
-                                            stroke: new ol.style.Stroke({
-                                                color: '#f00',
-                                                width: 3
-                                            })
-                                        })
-                                    });
-                                }
-                                return highlightStyleCache[text];
-                            }
-                        });
+                    new ol.layer.Tile({
+                        title: 'Global Imagery',
+                        source: new ol.source.TileWMS({
+                            projection: 'EPSG:4281',
+                            url: 'http://localhost:8080/geoserver/BTC/wms',
+                            params: {LAYERS: 'crs_4281:area_abc_new', 'transparent':'true', VERSION: '1.1.0'},
+                            serverType: 'geoserver'
+                        }),
+                        lyrControlOpt : {
+                            legendGroup  : 'Wms Layers',
+                            legendnodeid : 'wms9',
+                            legendTitle  : "BTC:area_abc_new",
+                            legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                        }
+                    })
+                ],
+                target: 'map',
+                view: new ol.View({
+                    center: ol.proj.transform([35, 32], 'EPSG:4326', 'EPSG:3857'),
+                    zoom: 8,
+                    'transparent':'true',
+                    rotation: 0
+                })
+            });
+        });
+    </script>
+    <title></title>
 
-                        var highlight;
-                        var displayFeatureInfo = function(pixel) {
 
-                            var feature = map.forEachFeatureAtPixel(pixel, function(feature) {
-                                return feature;
-                            });
+<div id="map" style="width:100%;height:97%"></div>
 
-                            var info = document.getElementById('info');
-                            if (feature) {
-                                info.innerHTML = feature.getId() + ': ' + feature.get('name');
-                            } else {
-                                info.innerHTML = '&nbsp;';
-                            }
-
-                            if (feature !== highlight) {
-                                if (highlight) {
-                                    featureOverlay.getSource().removeFeature(highlight);
-                                }
-                                if (feature) {
-                                    featureOverlay.getSource().addFeature(feature);
-                                }
-                                highlight = feature;
-                            }
-
-                        };
-
-                        map.on('pointermove', function(evt) {
-                            if (evt.dragging) {
-                                return;
-                            }
-                            var pixel = map.getEventPixel(evt.originalEvent);
-                            displayFeatureInfo(pixel);
-                        });
-
-                        map.on('click', function(evt) {
-                            displayFeatureInfo(evt.pixel);
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</article>
 
