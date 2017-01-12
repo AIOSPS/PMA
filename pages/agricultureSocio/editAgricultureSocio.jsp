@@ -13,9 +13,9 @@
         $("#comId").prop('required', true);
         $("#agrArea").attr("placeholder", "Agriculture Area");
         $("#agrArea").prop('required', true);
-        $("#agrNoCowYear").attr("placeholder", "No of Cow Per Year");
+        $("#agrNoCowYear").attr("placeholder", "No of Cow");
         $("#agrNoCowYear").prop('required', true);
-        $("#agrNoSheepYear").attr("placeholder", "No of Sheep Per Year");
+        $("#agrNoSheepYear").attr("placeholder", "No of Sheep");
         $("#agrNoSheepYear").prop('required', true);
         $("#agrCostWaterTank").attr("placeholder", "Cost Water Tank");
         $("#agrCostWaterTank").prop('required', true);
@@ -87,13 +87,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrNoCowYear" class="col-sm-3 col-form-label">No of Cow Per Year:</label>
+                        <label for="agrNoCowYear" class="col-sm-3 col-form-label">No of Cow:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoCowYear" styleClass="form-control" styleId="agrNoCowYear"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label">No of Sheep Per Year:</label>
+                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label">No of Sheep:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoSheepYear" styleClass="form-control" styleId="agrNoSheepYear"/>
                         </div>
@@ -223,12 +223,12 @@
         emptyText: "Please Enter The Agriculture Area ",
     });
     InvalidInputHelper(document.getElementsByName("agrNoCowYear")[0], {
-        defaultText: "Please Enter The No Cow Year ",
-        emptyText: "Please Enter The No Cow Year ",
+        defaultText: "Please Enter The No Cow ",
+        emptyText: "Please Enter The No Cow ",
     });
     InvalidInputHelper(document.getElementsByName("agrNoSheepYear")[0], {
-        defaultText: "Please Enter The No Sheep Year ",
-        emptyText: "Please Enter The No Sheep Year ",
+        defaultText: "Please Enter The No Sheep ",
+        emptyText: "Please Enter The No Sheep ",
     });
     InvalidInputHelper(document.getElementsByName("agrCostWaterTank")[0], {
         defaultText: "Please Enter The Cost Water Tank ",

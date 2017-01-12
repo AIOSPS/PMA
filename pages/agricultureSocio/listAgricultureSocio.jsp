@@ -6,7 +6,7 @@
 <script type="text/javascript">
     $(function () {
         $("#agricultureArea").attr("placeholder", "Agriculture Area");
-        $("#agricultureNoCowYear").attr("placeholder", "No Cow Year");
+        $("#agricultureNoCowYear").attr("placeholder", "No Cow");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -92,8 +92,8 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Agriculture Area</th>
-                    <th class="text-center">No of Cow Per Year</th>
-                    <th class="text-center">No of Sheep Per Year</th>
+                    <th class="text-center">No of Cow</th>
+                    <th class="text-center">No of Sheep</th>
                     <th class="text-center">Cost of Water Tank</th>
                     <th class="text-center">Herding Area</th>
                     <th class="text-center">Military Area</th>
@@ -106,8 +106,8 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Agriculture Area</th>
-                    <th class="text-center">No of Cow Per Year</th>
-                    <th class="text-center">No of Sheep Per Year</th>
+                    <th class="text-center">No of Cow</th>
+                    <th class="text-center">No of Sheep</th>
                     <th class="text-center">Cost of Water Tank</th>
                     <th class="text-center">Herding Area</th>
                     <th class="text-center">Military Area</th>
