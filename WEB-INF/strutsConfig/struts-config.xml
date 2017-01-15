@@ -115,7 +115,7 @@
                 validate="false"
                 path="/addProject"
         >
-            <forward name="success" path="askToAddAlbum"/>
+            <forward name="success" path="/askToAddAlbum.do"/>
         </action>
         <action
                 type="org.apache.struts.actions.ForwardAction"
