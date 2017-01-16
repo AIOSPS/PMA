@@ -124,6 +124,8 @@ public class ViewPmsProjectAction extends Action {
             inputs.add(proId);
             List incidentList = (List) new PmsIncidentListByProjectUseCase().execute(inputs, request);
             request.setAttribute("incidentList", incidentList);
+
+            request.setAttribute("pmsProjectAlbumList", new GetImgsAlbumPmsProjectListUseCase().execute(inputs, request));
         }
 
 
