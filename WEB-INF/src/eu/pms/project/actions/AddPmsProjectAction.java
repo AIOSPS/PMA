@@ -4,12 +4,10 @@ package eu.pms.project.actions;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.login.database.SecUser;
-import eu.pms.project.database.PmsProjectsBenificiary;
-import eu.pms.project.database.PmsProjectsBenificiaryPK;
-import eu.pms.project.database.PmsProjectsLocation;
-import eu.pms.project.database.PmsProjectsLocationPK;
+import eu.pms.project.database.*;
 import eu.pms.project.forms.PmsProjectForm;
 import eu.pms.project.useCases.AddPmsProjectUseCase;
+import org.apache.commons.lang.StringUtils;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -58,6 +56,21 @@ public class AddPmsProjectAction extends Action {
         String[] indicatorProjectList = pmsProjectForm.getIndicatorProjectList();
 
         ArrayList inputs = new ArrayList();
+      if (proId == null || proId.equals("")){
+          String donorId = "";
+          if (donorProjectList != null && donorProjectList.length > 0) {
+              int i = 0;
+              for ( String donor : donorProjectList) {
+                  if (i++ == 0)
+                      donorId = donor;
+                   else
+                      donorId = "XX";
+              }
+          }
+
+          String serial = eu.pms.common.tools.Randomizer.randomIntegers(5).toString();
+          proId = donorId+ StringUtils.leftPad(secType, 8, '0')+secId+serial;
+      }
         inputs.add(proId);
         inputs.add(proTitle);
         inputs.add(proDescription);
@@ -118,8 +131,14 @@ public class AddPmsProjectAction extends Action {
                 pmsProjectsBenificiaryPK.setBtpId(parameters.get("btpId"+count)[0]);
                 pmsProjectsBenificiary.setCompId(pmsProjectsBenificiaryPK);
                 String benTotalStr =parameters.get("benTotal"+count)[0];
-                Integer benTotal =Integer.parseInt(benTotalStr);
-                pmsProjectsBenificiary.setBenTotal(benTotal);
+                Integer benTotal=null;
+                try {
+                      benTotal = Integer.parseInt(benTotalStr);
+                      pmsProjectsBenificiary.setBenTotal(benTotal);
+                }catch (NumberFormatException nfe){
+
+                }
+
                 pmsProjectsBenificiary.setUsername(username);
                 pmsProjectsBenificiary.setTimeStamp(timeStamp);
                 penificiaryList.add(pmsProjectsBenificiary);

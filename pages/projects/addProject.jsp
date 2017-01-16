@@ -7,8 +7,8 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#proId").attr("placeholder", "Project ID");
-        $("#proId").prop('required', true);
+//        $("#proId").attr("placeholder", "Project ID");
+//        $("#proId").prop('required', true);
         $("#proTitle").attr("placeholder", "Project Title");
         $("#proTitle").prop('required', true);
         $("#proDescription").attr("placeholder", "Project Description");
@@ -135,7 +135,7 @@
                     <div class="col-md-6">
                         <label for="proId" class="col-sm-3 col-form-label">Project ID:</label>
                         <div class="col-sm-9">
-                            <html:text property="proId" styleClass="form-control" styleId="proId"/>
+                            <html:text property="proId" styleClass="form-control" styleId="proId" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -575,13 +575,13 @@
     })(window);
 
 
-    InvalidInputHelper(document.getElementsByName("proId")[0], {
-        defaultText: "Please Enter The Project ID ",
-        emptyText: "Please Enter The Project ID ",
+//    InvalidInputHelper(document.getElementsByName("proId")[0], {
+//        defaultText: "Please Enter The Project ID ",
+//        emptyText: "Please Enter The Project ID ",
 //        invalidText: function (input) {
 //            return 'The email address "' + input.value + '" is invalid!';
 //        }
-    });
+//    });
     InvalidInputHelper(document.getElementsByName("proTitle")[0], {
         defaultText: "Please Enter The Project Title ",
         emptyText: "Please Enter The Project Title ",

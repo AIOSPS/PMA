@@ -14,7 +14,7 @@
 <div class="content-wrapper breadcrumb brd2">
     <div class="container clearfix">
         <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Community Tracking </a><span
-                class=""> > </span><span> List Community</span></nav>
+                class=""> > </span><span>List of Communities</span></nav>
     </div>
 </div>
 
@@ -27,7 +27,7 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Communities</h1>
+                <h1>List of Communities</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddCommunity.do'"
@@ -40,7 +40,7 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <fieldset class="isClustr">
-                        <legend>Search community</legend>
+                        <legend>Search Communitiy</legend>
                         <div class="form-group row">
 
                             <div class="col-md-4">

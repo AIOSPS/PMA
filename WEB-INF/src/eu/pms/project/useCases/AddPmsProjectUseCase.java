@@ -46,16 +46,16 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             Date timeStamp = new Date();
 
             if(secType!=null && secType.equals("H")){
-                communityProjectArray = null;
-                proHasCluster = "0";
+               // communityProjectArray = null;
+               // proHasCluster = "0";
             }else if(secType!=null && secType.equals("D")){
                 if(proHasCluster.equals("1")){
-                    communityProjectArray = null;
+                 //   communityProjectArray = null;
                 }else if(proHasCluster.equals("0")){
                  //   secId = null;
                 }
             }else if(secType!=null && secType.equals("Oth")){
-                communityProjectArray = null;
+                //communityProjectArray = null;
                 proHasCluster = "0";
             }
             PmsProject pmsProject = new PmsProject();

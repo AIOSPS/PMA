@@ -13,7 +13,7 @@
     <div class="container">
 
         <div class="col-md-12 pd15 titleArea">
-            <h1>Dashboard</h1>
+            <h1>Welcome to the EU-PMS </h1>
         </div>
 
         <div class="content-wrapper ">
@@ -29,7 +29,7 @@
             <div class="col-md-4 dsh-blocks dsh-communities sec2">
                 <div class="dsh-bg">
                     <div class="pull-right"><span class="fa fa-home  "></span></div>
-                    <p class="dsh-title"><a href="/pmsCommunityList.do">communities</a></p>
+                    <p class="dsh-title"><a href="/pmsIncidentList.do">Incidents</a></p>
                     <p class="dsh-txt">
                         Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
                     </p>
@@ -38,7 +38,7 @@
             <div class="col-md-4 dsh-blocks dsh-reports sec3">
                 <div class="dsh-bg">
                     <div class="pull-right"><span class="fa fa-file-text  "></span></div>
-                    <p class="dsh-title"><a href="/viewDynamicReport.do">reports</a></p>
+                    <p class="dsh-title"><a href="/pmsCommunityList.do">communities</a></p>
                     <p class="dsh-txt">
                         Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
                     </p>
@@ -51,16 +51,16 @@
             <div class="col-md-4 dsh-blocks dsh-indecators sec1">
                 <div class="dsh-bg">
                     <div class="pull-right"><span class="fa fa-codepen  "></span></div>
-                    <p class="dsh-title"><a href="/pmsIndicatorList.do">indecators</a></p>
+                    <p class="dsh-title">SOCIO-ECONOMIC{ Basic  Information, <a href="/pmsAgricultureSocioList.do">Agriculture</a>, <a href="/pmsWaterSocioList.do">Water</a>}</p>
                     <p class="dsh-txt">
-                        Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
+                        Ul laborties ac lacos at fementom.
                     </p>
                 </div>
             </div>
             <div class="col-md-4 dsh-blocks dsh-statistics sec2">
                 <div class="dsh-bg">
                     <div class="pull-right"><span class="fa fa-lock   "></span></div>
-                    <p class="dsh-title"><a href="/pmsIncidentList.do">Incidents</a></p>
+                    <p class="dsh-title"><a href="/viewDynamicReport.do">reports</a></p>
                     <p class="dsh-txt">
                         Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
                     </p>
