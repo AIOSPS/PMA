@@ -129,7 +129,13 @@
                 <%--});--%>
             <%--</script>--%>
         </div>
-
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="button" onclick="javaScript:parent.location = '/pmsProjectList.do'"
+                        class="btn btn-primary">Go To Projects List
+                </button>
+            </div>
+        </div>
 
     </div>
     </div>

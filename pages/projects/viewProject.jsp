@@ -9,7 +9,6 @@
 <%@ taglib uri="/WEB-INF/lib/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 
-
 <script type="text/javascript">
     $(function () {
         $("#proId").attr("placeholder", "Project ID");
@@ -244,7 +243,55 @@
                     <div class="col-md-6">
                         <label for="prNotes" class="col-sm-3 col-form-label">Project Images:</label>
                         <div class="col-sm-9">
-                            <img id="prImage" src="resources/images/pro1.jpg" height="168"></img>
+                            <%--************* start album *************--%>
+                                <link rel="stylesheet" href="/pages/resources/album//blueimp-gallery.min.css">
+                                    <div id="links">
+                                        <logic:present name="pmsProjectAlbumList">
+                                                <logic:iterate id="pmsProjectAlbumList" name="pmsProjectAlbumList" type="eu.pms.project.database.PmsProjectAlbum">
+                                                    <div class="col-md-3 col-xs-2">
+                                                    <a data-gallery="" title="" href="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">
+                                                        <img class="thumbnail img-responsive" width="80px" height="80px" src="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">
+                                                    </a>
+                                                    </div>
+                                                </logic:iterate>
+                                        </logic:present>
+                                    </div>
+                                <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+                                <div id="blueimp-gallery" class="blueimp-gallery">
+                                    <!-- The container for the modal slides -->
+                                    <div class="slides"></div>
+                                    <!-- Controls for the borderless lightbox -->
+                                    <h3 class="title"></h3>
+                                    <a class="prev">‹</a>
+                                    <a class="next">›</a>
+                                    <a class="close">×</a>
+                                    <a class="play-pause"></a>
+                                    <ol class="indicator"></ol>
+                                    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+                                    <div class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title"></h4>
+                                                </div>
+                                                <div class="modal-body next"></div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default pull-left prev">
+                                                        <i class="glyphicon glyphicon-chevron-left"></i>
+                                                        Previous
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary next">
+                                                        Next
+                                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script src="/pages/resources/album/jquery.blueimp-gallery.min.js"></script>
+                                    <%--************* end album *************--%>
                         </div>
                     </div>
                 </div>
