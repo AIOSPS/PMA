@@ -125,7 +125,7 @@
                             <td ><bean:write name="pmsIncidentList" property="incOchaId"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incDescription"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incTimeStampStr"/></td>
-                            <td ><a><bean:write name="pmsIncidentList" property="incSourceLink"/></a></td>
+                            <td ><a href="<bean:write name="pmsIncidentList" property="incSourceLink"/>"><bean:write name="pmsIncidentList" property="incSourceLink"/></a></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedWomen"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedMen"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedAdaults"/></td>
