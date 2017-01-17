@@ -157,7 +157,7 @@
                     <div class="col-md-6">
                         <label for="incSourceLink" class="col-sm-3 col-form-label">Source Link:</label>
                         <div class="col-sm-9">
-                            <html:text property="incSourceLink" styleClass="form-control" styleId="incSourceLink" disabled="true"/>
+                            <html:link property="incSourceLink" styleClass="form-control" styleId="incSourceLink" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
