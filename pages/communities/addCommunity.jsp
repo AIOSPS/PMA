@@ -21,27 +21,27 @@
         $("#comLocationShortDescription").prop('required', true);
         $("#comTopology").attr("placeholder", "Topology");
         $("#comTopology").prop('required', true);
-        $("#comSchoolsInfo").attr("placeholder", "Schools Information");
+        $("#comSchoolsInfo").attr("placeholder", "Schools");
         $("#comSchoolsInfo").prop('required', true);
-        $("#comHealthSchoolsInfo").attr("placeholder", "Health Information");
+        $("#comHealthSchoolsInfo").attr("placeholder", "Health Center");
         $("#comHealthSchoolsInfo").prop('required', true);
-        $("#comReligionCenters").attr("placeholder", "Religion Centers");
+        $("#comReligionCenters").attr("placeholder", "Religious Center");
         $("#comReligionCenters").prop('required', true);
         $("#comCemetery").attr("placeholder", "Cemetery");
         $("#comCemetery").prop('required', true);
-        $("#comWaterNetworkInfo").attr("placeholder", "Water Network Information");
+        $("#comWaterNetworkInfo").attr("placeholder", "Water Network");
         $("#comWaterNetworkInfo").prop('required', true);
-        $("#comSewerageNetworkInfo").attr("placeholder", "Sewerage Network Information");
+        $("#comSewerageNetworkInfo").attr("placeholder", "Sewerage Network");
         $("#comSewerageNetworkInfo").prop('required', true);
-        $("#comElectricalNetworkInfo").attr("placeholder", "Electrical Network Information");
+        $("#comElectricalNetworkInfo").attr("placeholder", "Electrical Network");
         $("#comElectricalNetworkInfo").prop('required', true);
-        $("#comSolidWasteServiceInfo").attr("placeholder", "Solid Waste Service Information");
+        $("#comSolidWasteServiceInfo").attr("placeholder", "Soild Waste service");
         $("#comSolidWasteServiceInfo").prop('required', true);
-        $("#comRoadNetworkInfo").attr("placeholder", "Road Network Information");
+        $("#comRoadNetworkInfo").attr("placeholder", "Road Network");
         $("#comRoadNetworkInfo").prop('required', true);
-        $("#comTransportNetworkInfo").attr("placeholder", "Transport Network Information");
+        $("#comTransportNetworkInfo").attr("placeholder", "Transport Network");
         $("#comTransportNetworkInfo").prop('required', true);
-        $("#comEcnonomicActivitiesInfo").attr("placeholder", "Economic Activities Information");
+        $("#comEcnonomicActivitiesInfo").attr("placeholder", "Main Economic Activity ");
         $("#comEcnonomicActivitiesInfo").prop('required', true);
     });
 </script>
@@ -137,10 +137,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comTotalAreaLand" class="col-sm-3 col-form-label">Totsl Area Land:</label>
-                        <div class="col-sm-9">
+                        <label for="comTotalAreaLand" class="col-sm-3 col-form-label">Total Area Land:</label>
+                        <div class='input-group date  col-sm-9' >
                             <html:text property="comTotalAreaLand" styleClass="form-control" styleId="comTotalAreaLand"/>
-                        </div>
+                            <span class="input-group-addon input-group-addon1">
+                               Dunum
+                            </span>
+                    </div>
                     </div>
                     <div class="col-md-6">
                         <label for="comLocationShortDescription" class="col-sm-3 col-form-label">Location Short Description:</label>
@@ -158,7 +161,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comResidentsTotal" class="col-sm-3 col-form-label">Residents Total:</label>
+                        <label for="comResidentsTotal" class="col-sm-3 col-form-label">Residents #:</label>
                         <div class="col-sm-9">
                             <html:text property="comResidentsTotal" styleClass="form-control" styleId="comResidentsTotal"/>
                         </div>
@@ -168,13 +171,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comMaleTotal" class="col-sm-3 col-form-label">Male Total:</label>
+                        <label for="comMaleTotal" class="col-sm-3 col-form-label">Male #:</label>
                         <div class="col-sm-9">
                             <html:text property="comMaleTotal" styleClass="form-control" styleId="comMaleTotal"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comResidentsTotal" class="col-sm-3 col-form-label">Femal Total:</label>
+                        <label for="comResidentsTotal" class="col-sm-3 col-form-label">Female #:</label>
                         <div class="col-sm-9">
                             <html:text property="comResidentsTotal" styleClass="form-control" styleId="comResidentsTotal"/>
                         </div>
@@ -183,13 +186,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comKidsTotal" class="col-sm-3 col-form-label">Kids Total:</label>
+                        <label for="comKidsTotal" class="col-sm-3 col-form-label">Children #:</label>
                         <div class="col-sm-9">
                             <html:text property="comKidsTotal" styleClass="form-control" styleId="comKidsTotal"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comSchoolsInfo" class="col-sm-3 col-form-label">Schools Information:</label>
+                        <label for="comSchoolsInfo" class="col-sm-3 col-form-label">Schools:</label>
                         <div class="col-sm-9">
                             <html:text property="comSchoolsInfo" styleClass="form-control" styleId="comSchoolsInfo"/>
                         </div>
@@ -198,13 +201,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comHealthSchoolsInfo" class="col-sm-3 col-form-label">Health Information:</label>
+                        <label for="comHealthSchoolsInfo" class="col-sm-3 col-form-label">Health Center:</label>
                         <div class="col-sm-9">
                             <html:text property="comHealthSchoolsInfo" styleClass="form-control" styleId="comHealthSchoolsInfo"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comReligionCenters" class="col-sm-3 col-form-label">Religion Centers:</label>
+                        <label for="comReligionCenters" class="col-sm-3 col-form-label">Religious Center:</label>
                         <div class="col-sm-9">
                             <html:text property="comReligionCenters" styleClass="form-control" styleId="comReligionCenters"/>
                         </div>
@@ -219,7 +222,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comWaterNetworkInfo" class="col-sm-3 col-form-label">Water Network Information:</label>
+                        <label for="comWaterNetworkInfo" class="col-sm-3 col-form-label">Water Network:</label>
                         <div class="col-sm-9">
                             <html:text property="comWaterNetworkInfo" styleClass="form-control" styleId="comWaterNetworkInfo"/>
                         </div>
@@ -228,13 +231,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comSewerageNetworkInfo" class="col-sm-3 col-form-label">Sewerage Network Information:</label>
+                        <label for="comSewerageNetworkInfo" class="col-sm-3 col-form-label">Sewerage Network:</label>
                         <div class="col-sm-9">
                             <html:text property="comSewerageNetworkInfo" styleClass="form-control" styleId="comSewerageNetworkInfo"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comElectricalNetworkInfo" class="col-sm-3 col-form-label">Electrical Network Information:</label>
+                        <label for="comElectricalNetworkInfo" class="col-sm-3 col-form-label">Electrical Network:</label>
                         <div class="col-sm-9">
                             <html:text property="comElectricalNetworkInfo" styleClass="form-control" styleId="comElectricalNetworkInfo"/>
                         </div>
@@ -243,13 +246,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comSolidWasteServiceInfo" class="col-sm-3 col-form-label">Solid Waste Service Information:</label>
+                        <label for="comSolidWasteServiceInfo" class="col-sm-3 col-form-label">Soild Waste service:</label>
                         <div class="col-sm-9">
                             <html:text property="comSolidWasteServiceInfo" styleClass="form-control" styleId="comSolidWasteServiceInfo"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comRoadNetworkInfo" class="col-sm-3 col-form-label">Road Network Information:</label>
+                        <label for="comRoadNetworkInfo" class="col-sm-3 col-form-label">Road Network:</label>
                         <div class="col-sm-9">
                             <html:text property="comRoadNetworkInfo" styleClass="form-control" styleId="comRoadNetworkInfo"/>
                         </div>
@@ -258,13 +261,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comTransportNetworkInfo" class="col-sm-3 col-form-label">Transport Network Information:</label>
+                        <label for="comTransportNetworkInfo" class="col-sm-3 col-form-label">Transport Network:</label>
                         <div class="col-sm-9">
                             <html:text property="comTransportNetworkInfo" styleClass="form-control" styleId="comTransportNetworkInfo"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comEcnonomicActivitiesInfo" class="col-sm-3 col-form-label">Economic Activities Information:</label>
+                        <label for="comEcnonomicActivitiesInfo" class="col-sm-3 col-form-label">Main Economic Activity:</label>
                         <div class="col-sm-9">
                             <html:text property="comEcnonomicActivitiesInfo" styleClass="form-control" styleId="comEcnonomicActivitiesInfo"/>
                         </div>
@@ -288,7 +291,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="comPercentAreaC" class="col-sm-3 col-form-label">Percent Area C:</label>
+                        <label for="comPercentAreaC" class="col-sm-3 col-form-label">% in Area C:</label>
                         <div class="col-sm-9">
                             <html:select property="comPercentAreaC" styleClass="selectpicker form-control">
                                 <html:option value="1">Less than 50%</html:option>
