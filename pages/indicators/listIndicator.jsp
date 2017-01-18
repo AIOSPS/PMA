@@ -25,11 +25,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Indicators</h1>
+                <h1>List of Indicators</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddIndicator.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Indicator
+                        class="btn btn-primary fa fa-plus pull-right">Add Indicator
                 </button>
             </div>
         </div>

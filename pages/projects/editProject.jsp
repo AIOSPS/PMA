@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#proId").attr("placeholder", "Project ID");
+        $("#proId").attr("placeholder", "Project Number");
         $("#proId").prop('required', true);
         $("#proTitle").attr("placeholder", "Project Title");
         $("#proTitle").prop('required', true);

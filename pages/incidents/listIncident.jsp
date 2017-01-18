@@ -20,11 +20,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Incidents</h1>
+                <h1>List of Incidents</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddIncident.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Incident
+                        class="btn btn-primary fa fa-plus pull-right">Add Incident
                 </button>
             </div>
         </div>

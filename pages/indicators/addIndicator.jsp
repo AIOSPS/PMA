@@ -38,7 +38,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Create a New Indicator</h1>
+                <h1>Add Indicator</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>

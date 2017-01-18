@@ -7,7 +7,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#perId").attr("placeholder", "Permit ID");
+        $("#perId").attr("placeholder", "Permit Number");
         $("#perId").prop('required', true);
         $("#perTitle").attr("placeholder", "Permit Title");
         $("#perTitle").prop('required', true);
@@ -34,7 +34,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Create a New Permit</h1>
+                <h1>Add Permit</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -47,18 +47,17 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
+                        <label for="perId" class="col-sm-3 col-form-label">Permit Number:</label>
+                        <div class="col-sm-9">
+                            <html:text property="perId" styleClass="form-control" styleId="perId"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <label for="perTitle" class="col-sm-3 col-form-label">Permit Title:</label>
                         <div class="col-sm-9">
                             <html:text property="perTitle" styleClass="form-control" styleId="perTitle"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <%--<label for="perId" class="col-sm-3 col-form-label">Permit ID:</label>--%>
-                        <%--<div class="col-sm-9">--%>
-                            <%--<html:text property="perId" styleClass="form-control" styleId="perId"/>--%>
-                        <%--</div>--%>
-                    </div>
-
                 </div>
 
 

@@ -25,11 +25,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Water Socio</h1>
+                <h1>List of Water Socio</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddWaterSocio.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Water Socio
+                        class="btn btn-primary fa fa-plus pull-right">Add Water Socio
                 </button>
             </div>
         </div>
@@ -92,12 +92,12 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Is connected</th>
-                    <th class="text-center">Network</th>
-                    <th class="text-center">Use Water Tanker</th>
+                    <th class="text-center">Local Network exist (Yes, No, Partially)</th>
+                    <th class="text-center">Uses Water Tanker (Yes, No)</th>
                     <th class="text-center">Rain Water Well</th>
                     <th class="text-center">Number of Springs</th>
-                    <th class="text-center">Price Water</th>
-                    <th class="text-center">Filling Point</th>
+                    <th class="text-center">Price of M3 Water</th>
+                    <th class="text-center">Distance to the Filling Point (Within 5KM, Beyond 5KM)</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
                 </tr>
@@ -106,12 +106,12 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Is connected</th>
-                    <th class="text-center">Network</th>
-                    <th class="text-center">Use Water Tanker</th>
+                    <th class="text-center">Local Network exist (Yes, No, Partially)</th>
+                    <th class="text-center">Uses Water Tanker (Yes, No)</th>
                     <th class="text-center">Rain Water Well</th>
                     <th class="text-center">Number of Springs</th>
-                    <th class="text-center">Price Water</th>
-                    <th class="text-center">Filling Point</th>
+                    <th class="text-center">Price of M3 Water</th>
+                    <th class="text-center">Distance to the Filling Point (Within 5KM, Beyond 5KM)</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
 

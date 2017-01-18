@@ -21,9 +21,9 @@ public class AddPmsPermitUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String perId = (String) itr.next();
-            if (perId == null || perId.equals("")){
-                perId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
-            }
+//            if (perId == null || perId.equals("")){
+//                perId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+//            }
             String perTitle = (String) itr.next();
             String perType = (String) itr.next();
             String perSubmitDate = (String) itr.next();

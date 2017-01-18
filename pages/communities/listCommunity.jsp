@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddCommunity.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Community
+                        class="btn btn-primary fa fa-plus pull-right">Add Community
                 </button>
             </div>
         </div>

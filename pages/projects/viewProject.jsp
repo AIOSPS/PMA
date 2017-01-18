@@ -11,7 +11,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#proId").attr("placeholder", "Project ID");
+        $("#proId").attr("placeholder", "Project Number");
         $("#proId").prop('required', true);
         $("#proTitle").attr("placeholder", "Project Title");
         $("#proTitle").prop('required', true);
@@ -109,7 +109,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="proId" class="col-sm-3 col-form-label">Project ID:</label>
+                        <label for="proId" class="col-sm-3 col-form-label">Project Number:</label>
                         <div class="col-sm-9">
                             <html:text property="proId" styleClass="form-control" styleId="proId" disabled="true"/>
                         </div>
@@ -574,7 +574,7 @@
                                         <td ><bean:write name="incidentList" property="incOchaId"/></td>
                                         <td ><bean:write name="incidentList" property="incDescription"/></td>
                                         <td ><bean:write name="incidentList" property="incTimeStampStr"/></td>
-                                        <td ><a target="_blank" href="<bean:write name="incidentList" property="incSourceLink"/>"><bean:write name="incidentList" property="incSourceLink"/></a></td>
+                                        <td ><a target="_blank" href="<bean:write name="pmsIncidentList" property="incSourceLink"/>"><bean:write name="pmsIncidentList" property="incSourceLink"/></a></td>
                                         <td ><bean:write name="incidentList" property="locLatitude"/></td>
                                         <td ><bean:write name="incidentList" property="locLongitude"/></td>
                                     </tr>

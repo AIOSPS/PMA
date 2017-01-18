@@ -13,19 +13,19 @@
         $("#comId").prop('required', true);
         $("#watIsconnected").attr("placeholder", "Is connected");
         $("#watIsconnected").prop('required', true);
-        $("#watNetwork").attr("placeholder", "Network");
+        $("#watNetwork").attr("placeholder", "Local Network exist (Yes, No, Partially)");
         $("#watNetwork").prop('required', true);
-        $("#watUseWatTanker").attr("placeholder", "Use Water Tanker");
+        $("#watUseWatTanker").attr("placeholder", "Uses Water Tanker (Yes, No)");
         $("#watUseWatTanker").prop('required', true);
         $("#watRainWaterWell").attr("placeholder", "Rain Water Well");
         $("#watRainWaterWell").prop('required', true);
         $("#watNoSprings").attr("placeholder", "Number of Springs");
         $("#watNoSprings").prop('required', true);
-        $("#watPriceWater").attr("placeholder", "Price Water");
+        $("#watPriceWater").attr("placeholder", "Price of M3 Water:");
         $("#watPriceWater").prop('required', true);
-        $("#watFillingPoint").attr("placeholder", "Filling Point");
+        $("#watFillingPoint").attr("placeholder", "Distance to the Filling Point (Within 5KM, Beyond 5KM) ");
         $("#watFillingPoint").prop('required', true);
-        $("#watQuantity").attr("placeholder", "Quantity");
+        $("#watQuantity").attr("placeholder", "Concerns of  Quality of Water (Good, Bad, Need treatment)");
         $("#watQuantity").prop('required', true);
         $("#watSurveyDate").attr("placeholder", "Survey Date");
         $("#watSurveyDate").prop('required', true);
@@ -44,7 +44,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Create a New Water Socio</h1>
+                <h1>Add Water Socio</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watNetwork" class="col-sm-3 col-form-label">Network:</label>
+                        <label for="watNetwork" class="col-sm-3 col-form-label">Local Network exist (Yes, No, Partially):</label>
                         <div class="col-sm-9">
                             <html:text property="watNetwork" styleClass="form-control" styleId="watNetwork"/>
                         </div>
@@ -129,7 +129,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watUseWatTanker" class="col-sm-3 col-form-label">Use Water Tanker:</label>
+                        <label for="watUseWatTanker" class="col-sm-3 col-form-label">Uses Water Tanker (Yes, No):</label>
                         <div class="col-sm-9">
                             <fieldset class="col-sm-9" id="watUseWatTanker">
                                 <div>
@@ -163,21 +163,24 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watPriceWater" class="col-sm-3 col-form-label">Price Water:</label>
-                        <div class="col-sm-9">
-                            <html:text property="watPriceWater" styleClass="form-control" styleId="watPriceWater"/>
+                        <label for="watPriceWater" class="col-sm-3 col-form-label">Price of M3 Water:</label>
+                            <div class="input-group date  col-sm-9">
+                                <html:text property="watPriceWater" styleClass="form-control" styleId="watPriceWater"/>
+                                <span class="input-group-addon input-group-addon1">
+                               NIS
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watFillingPoint" class="col-sm-3 col-form-label">Filling Point:</label>
+                        <label for="watFillingPoint" class="col-sm-3 col-form-label">Distance to the Filling Point (Within 5KM, Beyond 5KM):</label>
                         <div class="col-sm-9">
                             <html:text property="watFillingPoint" styleClass="form-control" styleId="watFillingPoint"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watQuantity" class="col-sm-3 col-form-label">Quantity:</label>
+                        <label for="watQuantity" class="col-sm-3 col-form-label">Concerns of  Quality of Water (Good, Bad, Need treatment):</label>
                         <div class="col-sm-9">
                             <html:text property="watQuantity" styleClass="form-control" styleId="watQuantity"/>
                         </div>

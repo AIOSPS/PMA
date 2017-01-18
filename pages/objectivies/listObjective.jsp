@@ -25,11 +25,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Objectives</h1>
+                <h1>List of Objectives</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddObjective.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Objective
+                        class="btn btn-primary fa fa-plus pull-right">Add Objective
                 </button>
             </div>
         </div>

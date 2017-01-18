@@ -13,9 +13,9 @@
         $("#resDesc").prop('required', true);
         $("#resLongDesc").attr("placeholder", "Long Description");
         $("#resLongDesc").prop('required', true);
-        $("#resDefineDate").attr("placeholder", "Define Date");
+        $("#resDefineDate").attr("placeholder", "Define Result Date");
         $("#resDefineDate").prop('required', true);
-        $("#resCloseDate").attr("placeholder", "Close Date");
+        $("#resCloseDate").attr("placeholder", "Date of Validity");
         $("#resCloseDate").prop('required', true);
     });
 </script>
@@ -93,7 +93,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="resDefineDate" class="col-sm-3 col-form-label">Define Date:</label>
+                        <label for="resDefineDate" class="col-sm-3 col-form-label">Define Result Date:</label>
 
                         <div class='input-group date col-sm-9' id='rDefineDate'>
                             <html:text property="resDefineDate" styleClass="form-control" styleId="resDefineDate" disabled="true"/>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="resCloseDate" class="col-sm-3 col-form-label">Close Date:</label>
+                        <label for="resCloseDate" class="col-sm-3 col-form-label">Date of Validity:</label>
 
                         <div class='input-group date col-sm-9' id='rCloseDate'>
                             <html:text property="resCloseDate" styleClass="form-control" styleId="resCloseDate" disabled="true"/>

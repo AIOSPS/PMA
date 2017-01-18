@@ -17,15 +17,15 @@
         $("#masMpName").prop('required', true);
         $("#masStatus").attr("placeholder", "Status");
         $("#masStatus").prop('required', true);
-        $("#masStatusIca").attr("placeholder", "Status ICA");
+        $("#masStatusIca").attr("placeholder", "ICA Status");
         $("#masStatusIca").prop('required', true);
-        $("#masFirstSubmitDateToIca").attr("placeholder", "First Submit Date To ICA");
+        $("#masFirstSubmitDateToIca").attr("placeholder", "First Submission Date To ICA");
         $("#masFirstSubmitDateToIca").prop('required', true);
-        $("#masLastSubmitDateToIca").attr("placeholder", "Last Submit Date To ICA");
+        $("#masLastSubmitDateToIca").attr("placeholder", "Last Submission Date To ICA");
         $("#masLastSubmitDateToIca").prop('required', true);
         $("#masNoSessionWithIca").attr("placeholder", "No Session With ICA");
         $("#masNoSessionWithIca").prop('required', true);
-        $("#masSubmitToMod").attr("placeholder", "Submit To Mod");
+        $("#masSubmitToMod").attr("placeholder", "Submission to Ministry of Defense ");
         $("#masSubmitToMod").prop('required', true);
         $("#masApprovalDate").attr("placeholder", "Approval Date");
         $("#masApprovalDate").prop('required', true);
@@ -33,11 +33,11 @@
         $("#masPublicationDate").prop('required', true);
         $("#masLastDateForObjection").attr("placeholder", "Last Date For Objection");
         $("#masLastDateForObjection").prop('required', true);
-        $("#masDateOfFinalPublication").attr("placeholder", "Date Of Final Publication");
+        $("#masDateOfFinalPublication").attr("placeholder", "Date of Final Publication");
         $("#masDateOfFinalPublication").prop('required', true);
         $("#masApprovedPlanedArea").attr("placeholder", "Approved Planed Area");
         $("#masApprovedPlanedArea").prop('required', true);
-        $("#masVillageAdminBoarder").attr("placeholder", "Village Admin Boarder");
+        $("#masVillageAdminBoarder").attr("placeholder", "Boarder ( C, C&B, C&A, C,B,&A, JER)");
         $("#masVillageAdminBoarder").prop('required', true);
         $("#masNote").attr("placeholder", "Note");
         $("#masNote").prop('required', true);
@@ -56,7 +56,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Create a New Master Plan</h1>
+                <h1>Add Master Plan</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masStatusIca" class="col-sm-3 col-form-label">Status ICA:</label>
+                        <label for="masStatusIca" class="col-sm-3 col-form-label">ICA Status:</label>
                         <div class="col-sm-9">
                             <html:text property="masStatusIca" styleClass="form-control" styleId="masStatusIca"/>
                             <%--<html:select property="proStatus" styleClass="selectpicker form-control">--%>
@@ -131,7 +131,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">First Submit Date To ICA:</label>
+                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">First Submission Date To ICA:</label>
 
                         <div class='input-group date col-sm-9' id='mFirstSubmitDateToIca'>
                             <html:text property="masFirstSubmitDateToIca" styleClass="form-control" styleId="masFirstSubmitDateToIca"/>
@@ -141,7 +141,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">Last Submit Date To ICA:</label>
+                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">Last Submission Date To ICA:</label>
 
                         <div class='input-group date col-sm-9' id='mLastSubmitDateToIca'>
                             <html:text property="masLastSubmitDateToIca" styleClass="form-control" styleId="masLastSubmitDateToIca"/>
@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masSubmitToMod" class="col-sm-3 col-form-label">Submit To Mod:</label>
+                        <label for="masSubmitToMod" class="col-sm-3 col-form-label">Submission to Ministry of Defense:</label>
                         <div class="col-sm-9">
                             <html:text property="masSubmitToMod" styleClass="form-control" styleId="masSubmitToMod"/>
                         </div>
@@ -222,7 +222,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">Date Of Final Publication:</label>
+                        <label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">Date of Final Publication:</label>
 
                         <div class='input-group date col-sm-9' id='mDateOfFinalPublication'>
                             <html:text property="masDateOfFinalPublication" styleClass="form-control" styleId="masDateOfFinalPublication"/>
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">Village Admin Boarder:</label>
+                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">Boarder ( C, C&B, C&A, C,B,&A, JER):</label>
                         <div class="col-sm-9">
                             <html:text property="masVillageAdminBoarder" styleClass="form-control" styleId="masVillageAdminBoarder"/>
                         </div>

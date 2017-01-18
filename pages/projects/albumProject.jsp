@@ -37,7 +37,7 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Images</h1>
+                <h1>List of Project Pictures</h1>
             </div>
             <div class="col-md-4 pd15 create ">
             </div>

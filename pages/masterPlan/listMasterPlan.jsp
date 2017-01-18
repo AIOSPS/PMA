@@ -12,7 +12,7 @@
 <div class="content-wrapper breadcrumb brd2">
     <div class="container clearfix">
         <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Master Plan Tracking </a><span
-                class=""> > </span><span> List Master plan</span></nav>
+                class=""> > </span><span> List Master plans</span></nav>
     </div>
 </div>
 
@@ -25,11 +25,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Master Plan</h1>
+                <h1>List of Master Plans</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddMasterPlan.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Master Plan
+                        class="btn btn-primary fa fa-plus pull-right">Add Master Plan
                 </button>
             </div>
         </div>
@@ -84,8 +84,8 @@
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
                     <th class="text-center">Status</th>
-                    <th class="text-center">First Submit Date To ICA</th>
-                    <th class="text-center">Last Submit Date To ICA</th>
+                    <th class="text-center">First Submission Date to ICA</th>
+                    <th class="text-center">Last Submission Date To ICA</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
@@ -94,8 +94,8 @@
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
                     <th class="text-center">Status</th>
-                    <th class="text-center">First Submit Date To ICA</th>
-                    <th class="text-center">Last Submit Date To ICA</th>
+                    <th class="text-center">First Submission Date to ICA</th>
+                    <th class="text-center">Last Submission Date To ICA</th>
                     <th class="text-center"></th>
 
                 </tr>

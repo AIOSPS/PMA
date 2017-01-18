@@ -5,7 +5,7 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 <script type="text/javascript">
     $(function () {
-        $("#perId").attr("placeholder", "Permit ID");
+        $("#perId").attr("placeholder", "Permit Number");
         $("#perId").prop('required', true);
         $("#perTitle").attr("placeholder", "Permit Title");
         $("#perTitle").prop('required', true);
@@ -46,19 +46,19 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
+                        <label for="perId" class="col-sm-3 col-form-label">Permit Number:</label>
+                        <div class="col-sm-9">
+                            <html:text property="perId" styleClass="form-control" styleId="perId" disabled="true"/>
+                                <%--<html:hidden property="perId"/>--%>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
                         <label for="perTitle" class="col-sm-3 col-form-label">Permit Title:</label>
                         <div class="col-sm-9">
                             <html:text property="perTitle" styleClass="form-control" styleId="perTitle"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <%--<label for="perId" class="col-sm-3 col-form-label">Permit ID:</label>--%>
-                        <%--<div class="col-sm-9">--%>
-                            <%--<html:text property="perId" styleClass="form-control" styleId="perId" disabled="true"/>--%>
-                    <html:hidden property="perId"/>
-                        <%--</div>--%>
-                    </div>
-
                 </div>
 
 
@@ -68,8 +68,6 @@
                         <div class="col-sm-9">
                             <html:select property="perType"
                                          styleClass="selectpicker form-control">
-                                <html:select property="perType"
-                                             styleClass="selectpicker form-control">
                                     <html:option value="1">ICA</html:option>
                                     <html:option value="2">MOLG</html:option>
                                     <html:option value="3">MOA</html:option>
@@ -78,7 +76,6 @@
                                     <html:option value="6">MOC</html:option>
                                     <html:option value="7">PWA</html:option>
                                     <html:option value="8">PENRA</html:option>
-                                </html:select>
                             </html:select>
                         </div>
                     </div>

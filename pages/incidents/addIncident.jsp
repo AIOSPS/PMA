@@ -10,7 +10,7 @@
         $("#incId").attr("placeholder", "Incident ID");
         $("#incId").prop('required', true);
         $("#incOchaId").attr("placeholder", "Incident OCHA");
-        $("#incOchaId").prop('required', true);
+//        $("#incOchaId").prop('required', true);
         $("#incDescription").attr("placeholder", "Description");
         $("#incDescription").prop('required', true);
     });
@@ -28,7 +28,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Create a New Incident</h1>
+                <h1>Add Incident</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>

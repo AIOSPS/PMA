@@ -25,11 +25,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Results</h1>
+                <h1>List of Results</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddResult.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Result
+                        class="btn btn-primary fa fa-plus pull-right">Add Result
                 </button>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 <tr>
                     <th class="text-center">Description</th>
                     <th class="text-center">Long Description</th>
-                    <th class="text-center">Define Date</th>
+                    <th class="text-center">Define Result Date</th>
                     <th class="text-center">Close Date</th>
                     <th class="text-center"></th>
                 </tr>
@@ -83,7 +83,7 @@
                     <th class="text-center">Description</th>
                     <th class="text-center">Long Description</th>
                     <th class="text-center">Define Date</th>
-                    <th class="text-center">Close Date</th>
+                    <th class="text-center">Date of Validity</th>
                     <th class="text-center"></th>
 
                 </tr>
