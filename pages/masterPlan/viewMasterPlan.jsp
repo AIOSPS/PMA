@@ -108,18 +108,22 @@
                     <div class="col-md-6">
                         <label for="masStatus" class="col-sm-3 col-form-label">Status:</label>
                         <div class="col-sm-9">
-                            <html:text property="masStatus" styleClass="form-control" styleId="masStatus" disabled="true"/>
+                            <html:select property="masStatus" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">Public Objection</html:option>
+                                <html:option value="2">Fully Authorized</html:option>
+                                <html:option value="3">Technical Discussion</html:option>
+                                <html:option value="4">Data collection and Plan Preparation</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="masStatusIca" class="col-sm-3 col-form-label">ICA Status:</label>
                         <div class="col-sm-9">
-                            <html:text property="masStatusIca" styleClass="form-control" styleId="masStatusIca" disabled="true"/>
-                                <%--<html:select property="proStatus" styleClass="selectpicker form-control">--%>
-                                <%--<html:option value="1">New</html:option>--%>
-                                <%--<html:option value="2">Stopped</html:option>--%>
-                                <%--<html:option value="3">Completed</html:option>--%>
-                                <%--</html:select>--%>
+                            <html:select property="masStatusIca" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">Progressing</html:option>
+                                <html:option value="2">Stuck</html:option>
+                                <html:option value="3">Rejected</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -246,9 +250,15 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">Boarder ( C, C&B, C&A, C,B,&A, JER):</label>
+                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">Boarder:</label>
                         <div class="col-sm-9">
-                            <html:text property="masVillageAdminBoarder" styleClass="form-control" styleId="masVillageAdminBoarder" disabled="true"/>
+                            <html:select property="masVillageAdminBoarder" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">C</html:option>
+                                <html:option value="2">C&B</html:option>
+                                <html:option value="3">C&A</html:option>
+                                <html:option value="4">C,B,&A</html:option>
+                                <html:option value="5">JER</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
