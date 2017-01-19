@@ -36,7 +36,7 @@ public class AddPmsResultAction extends Action {
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
         PmsResultForm pmsResultForm = (PmsResultForm) form;
-        String resId = pmsResultForm.getObjId();
+        String resId = pmsResultForm.getResId();
         String objId = pmsResultForm.getObjId();
         String resDesc = pmsResultForm.getResDesc();
         String resLongDesc = pmsResultForm.getResLongDesc();
