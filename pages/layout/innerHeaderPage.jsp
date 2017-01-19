@@ -116,8 +116,8 @@
                         <li class="dropdown-submenu ">
                             <a>Pre-defined Reports </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Quartarly Report</a></li>
-                                <li><a href="#">Doner Report</a></li>
+                                <li><a href="/pages/resources/docs/REPORT1.pdf" target="_blank">Report1</a></li>
+                                <li><a href="/pages/resources/docs/REPORT1.pdf" target="_blank">Report2</a></li>
                             </ul>
                         </li>
                     </ul>
