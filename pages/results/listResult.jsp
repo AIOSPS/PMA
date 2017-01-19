@@ -6,7 +6,7 @@
 <script type="text/javascript">
     $(function () {
         $("#resultDesc").attr("placeholder", "Result Description");
-        $("#resultLongDesc").attr("placeholder", "Result Status");
+        $("#objId").attr("placeholder", "Objective");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -25,11 +25,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Results</h1>
+                <h1>List of Results</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddResult.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Result
+                        class="btn btn-primary fa fa-plus pull-right">Add Result
                 </button>
             </div>
         </div>
@@ -48,14 +48,27 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="resStatus" class="col-sm-12 col-form-label">Status:</label>
+                                <label for="objId" class="col-sm-12 col-form-label">Objective:</label>
                                 <div class="col-sm-12">
-                                    <html:select property="resStatus"
+                                    <html:select property="objId"
                                                  styleClass="selectpicker form-control">
-                                        <html:option value="1">Achived</html:option>
-                                        <html:option value="2">Not Achived</html:option>
+                                        <logic:present name="objectiveList">
+                                            <html:options collection="objectiveList" property="objId" labelProperty="objDesc"/>
+                                        </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="objId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
+                                <%--<div class="col-sm-12">--%>
+                                    <%--<html:select property="resStatus"--%>
+                                                 <%--styleClass="selectpicker form-control">--%>
+                                        <%--<html:option value="1">Achived</html:option>--%>
+                                        <%--<html:option value="2">Not Achived</html:option>--%>
+                                    <%--</html:select>--%>
+                                <%--</div>--%>
                             </div>
                             <div class="col-md-4">
                                 <label  class="col-sm-5 col-form-label">&nbsp;</label>
@@ -73,7 +86,7 @@
                 <tr>
                     <th class="text-center">Description</th>
                     <th class="text-center">Long Description</th>
-                    <th class="text-center">Define Date</th>
+                    <th class="text-center">Define Result Date</th>
                     <th class="text-center">Close Date</th>
                     <th class="text-center"></th>
                 </tr>
@@ -83,7 +96,7 @@
                     <th class="text-center">Description</th>
                     <th class="text-center">Long Description</th>
                     <th class="text-center">Define Date</th>
-                    <th class="text-center">Close Date</th>
+                    <th class="text-center">Date of Validity</th>
                     <th class="text-center"></th>
 
                 </tr>

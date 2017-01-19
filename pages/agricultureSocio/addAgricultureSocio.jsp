@@ -13,17 +13,17 @@
         $("#comId").prop('required', true);
         $("#agrArea").attr("placeholder", "Agriculture Area");
         $("#agrArea").prop('required', true);
-        $("#agrNoCowYear").attr("placeholder", "No of Cow");
+        $("#agrNoCowYear").attr("placeholder", "# Cows at date");
         $("#agrNoCowYear").prop('required', true);
-        $("#agrNoSheepYear").attr("placeholder", "No of Sheep");
+        $("#agrNoSheepYear").attr("placeholder", "# Sheep at date ");
         $("#agrNoSheepYear").prop('required', true);
-        $("#agrCostWaterTank").attr("placeholder", "Cost Water Tank");
+        $("#agrCostWaterTank").attr("placeholder", "Cost of M3 Water");
         $("#agrCostWaterTank").prop('required', true);
         $("#agrHerdingArea").attr("placeholder", "Herding Area");
         $("#agrHerdingArea").prop('required', true);
         $("#agrMilitaryArea").attr("placeholder", "Military Area");
         $("#agrMilitaryArea").prop('required', true);
-        $("#agrBypassRoadArea").attr("placeholder", "Bypass Road Area");
+        $("#agrBypassRoadArea").attr("placeholder", "Bypass Road");
         $("#agrBypassRoadArea").prop('required', true);
         $("#agrSurveyDate").attr("placeholder", "Survey Date");
         $("#agrSurveyDate").prop('required', true);
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Create a New Agriculture Socio</h1>
+                <h1>Add Agriculture Socio</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -78,8 +78,11 @@
                     </div>
                     <div class="col-md-6">
                         <label for="agrArea" class="col-sm-3 col-form-label">Agriculture Area:</label>
-                        <div class="col-sm-9">
+                        <div class="input-group date  col-sm-9">
                             <html:text property="agrArea" styleClass="form-control" styleId="agrArea"/>
+                            <span class="input-group-addon input-group-addon1">
+                               Dunum
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -88,13 +91,13 @@
                 <div class="form-group row">
 
                     <div class="col-md-6">
-                        <label for="agrNoCowYear" class="col-sm-3 col-form-label">No of Cow:</label>
+                        <label for="agrNoCowYear" class="col-sm-3 col-form-label"># Cows at date:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoCowYear" styleClass="form-control" styleId="agrNoCowYear"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label">No of Sheep:</label>
+                        <label for="agrNoSheepYear" class="col-sm-3 col-form-label"># Sheep at date:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoSheepYear" styleClass="form-control" styleId="agrNoSheepYear"/>
                         </div>
@@ -103,15 +106,21 @@
                 <div class="form-group row">
 
                     <div class="col-md-6">
-                        <label for="agrCostWaterTank" class="col-sm-3 col-form-label">Cost of Water Tank:</label>
-                        <div class="col-sm-9">
+                        <label for="agrCostWaterTank" class="col-sm-3 col-form-label">Cost of M3 Water:</label>
+                        <div class="input-group date  col-sm-9">
                             <html:text property="agrCostWaterTank" styleClass="form-control" styleId="agrCostWaterTank"/>
+                            <span class="input-group-addon input-group-addon1">
+                               NIS
+                            </span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="agrHerdingArea" class="col-sm-3 col-form-label">Herding Area:</label>
-                        <div class="col-sm-9">
+                        <div class="input-group date  col-sm-9">
                             <html:text property="agrHerdingArea" styleClass="form-control" styleId="agrHerdingArea"/>
+                            <span class="input-group-addon input-group-addon1">
+                               Dunum
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -119,12 +128,15 @@
 
                     <div class="col-md-6">
                         <label for="agrMilitaryArea" class="col-sm-3 col-form-label">Military Area:</label>
-                        <div class="col-sm-9">
+                        <div class="input-group date  col-sm-9">
                             <html:text property="agrMilitaryArea" styleClass="form-control" styleId="agrMilitaryArea"/>
+                            <span class="input-group-addon input-group-addon1">
+                               Dunum
+                            </span>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">Bypass Road Area:</label>
+                        <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">Bypass Road:</label>
                         <div class="col-sm-9">
                             <html:text property="agrBypassRoadArea" styleClass="form-control" styleId="agrBypassRoadArea"/>
                         </div>
@@ -226,12 +238,12 @@
         emptyText: "Please Enter The Agriculture Area ",
     });
     InvalidInputHelper(document.getElementsByName("agrNoCowYear")[0], {
-        defaultText: "Please Enter The No Cow ",
-        emptyText: "Please Enter The No Cow ",
+        defaultText: "Please Enter The # Cow at date",
+        emptyText: "Please Enter The # Cow at date",
     });
     InvalidInputHelper(document.getElementsByName("agrNoSheepYear")[0], {
-        defaultText: "Please Enter The No Sheep ",
-        emptyText: "Please Enter The No Sheep ",
+        defaultText: "Please Enter The # Sheep at date",
+        emptyText: "Please Enter The # Sheep at date",
     });
     InvalidInputHelper(document.getElementsByName("agrCostWaterTank")[0], {
         defaultText: "Please Enter The Cost Water Tank ",

@@ -826,3 +826,9 @@ footer  .fa-caret-right:before {
     overflow: hidden;
     background-color: transparent;
 }
+
+.input-group-addon1{
+    background-color : #ffffff !important;
+    border: 0px !important;
+    cursor: none !important;
+}

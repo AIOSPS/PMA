@@ -139,7 +139,7 @@
         <ItemId>8</ItemId>
         <HdbFieldName>a.governateId</HdbFieldName>
         <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
-        <DisplayName>Governate</DisplayName>
+        <DisplayName>Governorate</DisplayName>
         <WhereCondition>a.governateId</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>

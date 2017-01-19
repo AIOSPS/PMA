@@ -25,11 +25,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Agriculture Socio</h1>
+                <h1>List of Agriculture Socio</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddAgricultureSocio.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Agriculture Socio
+                        class="btn btn-primary fa fa-plus pull-right">Add Agriculture Socio
                 </button>
             </div>
         </div>
@@ -92,12 +92,12 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Agriculture Area</th>
-                    <th class="text-center">No of Cow</th>
-                    <th class="text-center">No of Sheep</th>
-                    <th class="text-center">Cost of Water Tank</th>
+                    <th class="text-center"># Cows at date</th>
+                    <th class="text-center"># Sheep at date</th>
+                    <th class="text-center">Cost of M3 Water</th>
                     <th class="text-center">Herding Area</th>
                     <th class="text-center">Military Area</th>
-                    <th class="text-center">Bypass Road Area</th>
+                    <th class="text-center">Bypass Road</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
                 </tr>
@@ -106,12 +106,12 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Agriculture Area</th>
-                    <th class="text-center">No of Cow</th>
-                    <th class="text-center">No of Sheep</th>
-                    <th class="text-center">Cost of Water Tank</th>
+                    <th class="text-center"># Cows at date</th>
+                    <th class="text-center"># Sheep at date</th>
+                    <th class="text-center">Cost of M3 Water</th>
                     <th class="text-center">Herding Area</th>
                     <th class="text-center">Military Area</th>
-                    <th class="text-center">Bypass Road Area</th>
+                    <th class="text-center">Bypass Road</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
 

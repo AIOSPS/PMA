@@ -11,6 +11,7 @@ public class PmsResultSearchForm extends ActionForm {
     private String resultDesc;
     private String resultLongDesc;
     private String resStatus;
+    private String objId;
 
     /** default constructor */
     public PmsResultSearchForm() {
@@ -38,6 +39,14 @@ public class PmsResultSearchForm extends ActionForm {
 
     public void setResStatus(String resStatus) {
         this.resStatus = resStatus;
+    }
+
+    public String getObjId() {
+        return objId;
+    }
+
+    public void setObjId(String objId) {
+        this.objId = objId;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

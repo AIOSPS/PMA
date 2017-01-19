@@ -25,7 +25,7 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Incidents</h1>
+                <h1>List of Incidents</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" onclick="javaScript:parent.location = '/viewAddIncident.do'"--%>
@@ -113,7 +113,7 @@
                             <td ><bean:write name="pmsIncidentList" property="incOchaId"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incDescription"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incTimeStampStr"/></td>
-                            <td ><bean:write name="pmsIncidentList" property="incSourceLink"/></td>
+                            <td ><a target="_blank" href="<bean:write name="pmsIncidentList" property="incSourceLink"/>"><bean:write name="pmsIncidentList" property="incSourceLink"/></a></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedWomen"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedMen"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedAdaults"/></td>

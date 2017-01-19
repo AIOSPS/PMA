@@ -20,11 +20,11 @@
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>List Of Incidents</h1>
+                <h1>List of Incidents</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddIncident.do'"
-                        class="btn btn-primary fa fa-plus pull-right">Create Incident
+                        class="btn btn-primary fa fa-plus pull-right">Add Incident
                 </button>
             </div>
         </div>
@@ -41,8 +41,11 @@
                                 <div class="col-sm-12">
                                     <html:select property="incidentType"
                                                  styleClass="selectpicker form-control">
-                                        <html:option value="1">Type one</html:option>
-                                        <html:option value="2">Type two</html:option>
+                                        <html:option value="1">Sealing</html:option>
+                                        <html:option value="2">Demolition</html:option>
+                                        <html:option value="3">Confiscation</html:option>
+                                        <html:option value="4">Demolition and Confiscation</html:option>
+                                        <html:option value="5">Demoltion (partial)</html:option>
                                     </html:select>
                                 </div>
                             </div>
@@ -122,7 +125,7 @@
                             <td ><bean:write name="pmsIncidentList" property="incOchaId"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incDescription"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incTimeStampStr"/></td>
-                            <td ><bean:write name="pmsIncidentList" property="incSourceLink"/></td>
+                            <td ><a target="_blank" href="<bean:write name="pmsIncidentList" property="incSourceLink"/>"><bean:write name="pmsIncidentList" property="incSourceLink"/></a></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedWomen"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedMen"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incAffectedAdaults"/></td>

@@ -104,7 +104,7 @@
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
                             <input type="checkbox" name="outputItems" value="8" class="checkBox" checked>
-                            Governate</label>
+                            Governorate</label>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
                     <div class="col-md-8">
                         <label for="8_val1" class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="8" class="checkBox">
-                            Governate</label>
+                            Governorate</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="8_whereCondType" value="0">
                             <select id="8_val1" name="8_val1" class="selectpicker form-control input-sm" data-live-search="true">

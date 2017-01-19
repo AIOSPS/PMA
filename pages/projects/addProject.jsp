@@ -7,8 +7,8 @@
 
 <script type="text/javascript">
     $(function () {
-//        $("#proId").attr("placeholder", "Project ID");
-//        $("#proId").prop('required', true);
+//        $("#donorProjectList").attr("placeholder", "Doners");
+//        $("#donorProjectList").prop('required', true);
         $("#proTitle").attr("placeholder", "Project Title");
         $("#proTitle").prop('required', true);
         $("#proDescription").attr("placeholder", "Project Description");
@@ -34,7 +34,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Create a New Project</h1>
+                <h1>Add Project</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -133,7 +133,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="proId" class="col-sm-3 col-form-label">Project ID:</label>
+                        <label for="proId" class="col-sm-3 col-form-label">Project Number:</label>
                         <div class="col-sm-9">
                             <html:text property="proId" styleClass="form-control" styleId="proId" disabled="true"/>
                         </div>
@@ -250,8 +250,16 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="proBudget" class="col-sm-3 col-form-label">Budget:</label>
-                        <div class="col-sm-9">
+                        <div class="input-group date  col-sm-9">
                             <html:text property="proBudget" styleClass="form-control" styleId="proBudget"/>
+                            <span class="input-group-addon input-group-addon1">
+                               €
+                            </span>
+                            <script>
+                                $(function() {
+                                    $('.proBudget').mask('000.000.000.000.000,00', {reverse: true});
+                                })
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-6">

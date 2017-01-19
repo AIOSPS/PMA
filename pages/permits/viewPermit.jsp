@@ -5,7 +5,7 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 <script type="text/javascript">
     $(function () {
-        $("#perId").attr("placeholder", "Permit ID");
+        $("#perId").attr("placeholder", "Permit Number");
         $("#perId").prop('required', true);
         $("#perTitle").attr("placeholder", "Permit Title");
         $("#perTitle").prop('required', true);
@@ -46,19 +46,18 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
+                        <label for="perId" class="col-sm-3 col-form-label">Permit Number:</label>
+                        <div class="col-sm-9">
+                            <html:text property="perId" styleClass="form-control" styleId="perId" disabled="true"/>
+                                <%--<html:hidden property="perId"/>--%>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <label for="perTitle" class="col-sm-3 col-form-label">Permit Title:</label>
                         <div class="col-sm-9">
                             <html:text property="perTitle" styleClass="form-control" styleId="perTitle" disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <%--<label for="perId" class="col-sm-3 col-form-label">Permit ID:</label>--%>
-                        <%--<div class="col-sm-9">--%>
-                            <%--<html:text property="perId" styleClass="form-control" styleId="perId" disabled="true"/>--%>
-                            <html:hidden property="perId"/>
-                        <%--</div>--%>
-                    </div>
-
                 </div>
 
 

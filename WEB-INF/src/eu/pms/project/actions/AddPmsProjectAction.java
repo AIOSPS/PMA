@@ -69,7 +69,8 @@ public class AddPmsProjectAction extends Action {
           }
 
           String serial = eu.pms.common.tools.Randomizer.randomIntegers(5).toString();
-          proId = donorId+ StringUtils.leftPad(secType, 8, '0')+secId+serial;
+          proId = donorId+ StringUtils.leftPad(secType, 7
+                  , '0')+secId+serial;
       }
         inputs.add(proId);
         inputs.add(proTitle);

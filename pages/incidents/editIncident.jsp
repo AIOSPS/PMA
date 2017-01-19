@@ -45,8 +45,11 @@
                         <div class="col-sm-9">
                             <html:select property="incType"
                                          styleClass="selectpicker form-control">
-                                <html:option value="1">Type one</html:option>
-                                <html:option value="2">Type two</html:option>
+                                <html:option value="1">Sealing</html:option>
+                                <html:option value="2">Demolition</html:option>
+                                <html:option value="3">Confiscation</html:option>
+                                <html:option value="4">Demolition and Confiscation</html:option>
+                                <html:option value="5">Demoltion (partial)</html:option>
                             </html:select>
                         </div>
                     </div>

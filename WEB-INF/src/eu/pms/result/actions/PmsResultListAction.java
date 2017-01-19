@@ -13,6 +13,7 @@ import eu.pms.objective.useCases.PmsObjectiveListUseCase;
 import eu.pms.permit.forms.PmsPermitSearchForm;
 import eu.pms.permit.useCases.PmsPermitListUseCase;
 import eu.pms.result.forms.PmsResultSearchForm;
+import eu.pms.result.useCases.GetPmsObjectivesUseCase;
 import eu.pms.result.useCases.PmsResultListUseCase;
 import org.apache.struts.action.*;
 
@@ -33,14 +34,16 @@ public class PmsResultListAction extends Action {
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
 
+        List objectiveList = (List) new GetPmsObjectivesUseCase().execute(null, request);
+
         ArrayList inputData = new ArrayList();
         PmsResultSearchForm pmsResultSearchForm = (PmsResultSearchForm) form;
         if (pmsResultSearchForm != null) {
             inputData.add(pmsResultSearchForm.getResultDesc());
-            inputData.add(pmsResultSearchForm.getResStatus());
+            inputData.add(pmsResultSearchForm.getObjId());
         }
         request.setAttribute("pmsResultList", new PmsResultListUseCase().execute(inputData, request));
-
+        request.setAttribute("objectiveList", objectiveList);
         return mapping.findForward("success");
     }
 }

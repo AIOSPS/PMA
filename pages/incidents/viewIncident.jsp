@@ -1,3 +1,4 @@
+<%@ page import="eu.pms.incident.forms.PmsIncidentForm" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -45,8 +46,11 @@
                         <div class="col-sm-9">
                             <html:select property="incType" disabled="true"
                                          styleClass="selectpicker form-control">
-                                <html:option value="1">Type one</html:option>
-                                <html:option value="2">Type two</html:option>
+                                <html:option value="1">Sealing</html:option>
+                                <html:option value="2">Demolition</html:option>
+                                <html:option value="3">Confiscation</html:option>
+                                <html:option value="4">Demolition and Confiscation</html:option>
+                                <html:option value="5">Demoltion (partial)</html:option>
                             </html:select>
                         </div>
                     </div>
@@ -154,7 +158,10 @@
                     <div class="col-md-6">
                         <label for="incSourceLink" class="col-sm-3 col-form-label">Source Link:</label>
                         <div class="col-sm-9">
-                            <html:text property="incSourceLink" styleClass="form-control" styleId="incSourceLink" disabled="true"/>
+                            <%
+                                PmsIncidentForm theForm = (PmsIncidentForm) session.getAttribute("pmsIncidentForm");
+                            %>
+                            <html:link href="<%= theForm.getIncSourceLink() %>" styleClass="form-control" styleId="incSourceLink"><%= theForm.getIncSourceLink() %></html:link>
                         </div>
                     </div>
                     <div class="col-md-6">

@@ -22,7 +22,7 @@
                     <div class="pull-right"><span class="fa fa-connectdevelop "></span></div>
                     <p class="dsh-title"><a href="/pmsProjectList.do">projects</a></p>
                     <p class="dsh-txt">
-                        Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
+                        Provides access to project data input screens.
                     </p>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <div class="pull-right"><span class="fa fa-home  "></span></div>
                     <p class="dsh-title"><a href="/pmsIncidentList.do">Incidents</a></p>
                     <p class="dsh-txt">
-                        Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
+                        Provides access to incident data input screens.
                     </p>
                 </div>
             </div>
@@ -40,20 +40,17 @@
                     <div class="pull-right"><span class="fa fa-file-text  "></span></div>
                     <p class="dsh-title"><a href="/pmsCommunityList.do">communities</a></p>
                     <p class="dsh-txt">
-                        Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
+                        Provides access to community data input screens.
                     </p>
                 </div>
             </div>
 
-
-
-
             <div class="col-md-4 dsh-blocks dsh-indecators sec1">
                 <div class="dsh-bg">
                     <div class="pull-right"><span class="fa fa-codepen  "></span></div>
-                    <p class="dsh-title">SOCIO-ECONOMIC{ Basic  Information, <a href="/pmsAgricultureSocioList.do">Agriculture</a>, <a href="/pmsWaterSocioList.do">Water</a>}</p>
+                    <p class="dsh-title">SOCIO-ECONOMIC</p>
                     <p class="dsh-txt">
-                        Ul laborties ac lacos at fementom.
+                        Basic  Information - <a href="/pmsAgricultureSocioList.do">Agriculture</a> - <a href="/pmsWaterSocioList.do">Water</a>
                     </p>
                 </div>
             </div>
@@ -62,7 +59,7 @@
                     <div class="pull-right"><span class="fa fa-lock   "></span></div>
                     <p class="dsh-title"><a href="/viewDynamicReport.do">reports</a></p>
                     <p class="dsh-txt">
-                        Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
+                        Provides options for customised reports based on user information needs.
                     </p>
                 </div>
             </div>
@@ -71,7 +68,7 @@
                     <div class="pull-right"><span class="fa fa-th-large  "></span></div>
                     <p class="dsh-title"><a href="/viewMaps.do">maps</a></p>
                     <p class="dsh-txt">
-                        Ul laborties ac lacos at fementom. Nulla nec commodo lectus. Proecent semper acru.
+                        Provides geolocation of project, incident and community information.
                     </p>
                 </div>
             </div>

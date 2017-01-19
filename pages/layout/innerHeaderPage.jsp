@@ -71,12 +71,12 @@
                             <a>Socio-economic Data</a>
                             <ul class="dropdown-menu">
                                 <%--<li><a href="#">Basic socio</a></li>--%>
-                                <li><a href="/pmsAgricultureSocioList.do">Agriculture socio</a></li>
-                                <li><a href="/pmsWaterSocioList.do">Water socio</a></li>
+                                <li><a href="/pmsAgricultureSocioList.do">Agriculture</a></li>
+                                <li><a href="/pmsWaterSocioList.do">Water</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu ">
-                            <a>Master Plan </a>
+                            <a>Master Plan Data </a>
                             <ul class="dropdown-menu">
                                 <li><a href="/pmsMasterPlanList.do">Master Plan Info</a></li>
                                 <li><a href="/pmsInterventionList.do">Interventions</a></li>
