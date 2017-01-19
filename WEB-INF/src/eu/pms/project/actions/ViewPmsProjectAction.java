@@ -140,6 +140,7 @@ public class ViewPmsProjectAction extends Action {
         pmsProjectForm.setProStartDate(pmsProject.getProStartDateStr());
         pmsProjectForm.setProEndDate(pmsProject.getProEndDateStr());
         pmsProjectForm.setProBudget(pmsProject.getProBudget());
+        pmsProjectForm.setProBudgetTxt(""+pmsProject.getProBudget());
         pmsProjectForm.setProNotes(pmsProject.getProNotes());
         pmsProjectForm.setDevId(pmsProject.getDevId());
         pmsProjectForm.setPrgId(pmsProject.getPrgId());

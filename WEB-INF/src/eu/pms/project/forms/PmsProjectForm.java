@@ -18,6 +18,7 @@ public class PmsProjectForm  extends ActionForm {
     private String proTitle;
     private String proDescription;
     private String proStatus;
+    private String proBudgetTxt;
     private java.math.BigDecimal proBudget;
     private String proStartDate;
     private String proEndDate;
@@ -220,6 +221,14 @@ public class PmsProjectForm  extends ActionForm {
 
     public void setIndicatorProjectList(String[] indicatorProjectList) {
         this.indicatorProjectList = indicatorProjectList;
+    }
+
+    public String getProBudgetTxt() {
+        return proBudgetTxt;
+    }
+
+    public void setProBudgetTxt(String proBudgetTxt) {
+        this.proBudgetTxt = proBudgetTxt;
     }
 
     @Override

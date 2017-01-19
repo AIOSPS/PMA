@@ -246,7 +246,8 @@
                     <div class="col-md-6">
                         <label for="proBudget" class="col-sm-3 col-form-label">Budget:</label>
                         <div class="input-group date  col-sm-9">
-                            <html:text property="proBudget" styleClass="form-control" styleId="proBudget"/>
+                            <html:text property="proBudgetTxt" styleClass="form-control" styleId="proBudget"/>
+                            <html:hidden property="proBudget"/>
                             <span class="input-group-addon input-group-addon1">
                                €
                             </span>
@@ -787,5 +788,17 @@
     });
     function removeTr(id) {
         $('#'+id).closest("tr").remove();
+    }
+
+
+    document.getElementsByName("proBudgetTxt")[0].onblur =function (){
+
+        //number-format the user input
+        this.value = parseFloat(this.value.replace(/,/g, ""))
+                .toFixed(2)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementsByName("proBudget")[0].value = this.value.replace(/,/g, "")
     }
 </script>
