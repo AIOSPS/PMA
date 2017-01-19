@@ -1,2 +1,45 @@
 ALTER TABLE `pms`.`pms_incidents`
 CHANGE COLUMN `inc_SourceLink` `inc_SourceLink` VARCHAR(150) NULL DEFAULT NULL ;
+----------------------
+CREATE or replace
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `pms_water_socio_vw` AS
+    SELECT
+        `wat`.`wat_id` AS `wat_id`,
+        (CASE `wat`.`wat_isconnected`
+            WHEN 1 THEN 'Yes'
+            ELSE 'No'
+        END) AS `wat_isconnected`,
+        (CASE `wat`.`wat_network`
+            WHEN 1 THEN 'Yes'
+            WHEN 2 THEN 'No'
+            ELSE 'Partially'
+        END) AS `wat_network`,
+        (CASE `wat`.`wat_use_wat_tanker`
+            WHEN 1 THEN 'Yes'
+            ELSE 'No'
+        END) AS `wat_use_wat_tanker`,
+        `wat`.`wat_rain_water_well` AS `wat_rain_water_well`,
+        `wat`.`wat_no_springs` AS `wat_no_springs`,
+        `wat`.`wat_price_water` AS `wat_price_water`,
+        (CASE `wat`.`wat_filling_point`
+            WHEN 1 THEN 'Within 5KM'
+            ELSE 'Beyond 5KM'
+        END) AS `wat_filling_point`,
+        `wat`.`wat_quantity` AS `wat_quantity`,
+        `wat`.`wat_survey_date` AS `wat_survey_date`,
+        `wat`.`username` AS `username`,
+        `wat`.`time_stamp` AS `time_stamp`,
+        `wat`.`com_id` AS `com_id`,
+        `com`.`com_name` AS `com_name`,
+        `gov`.`gov_id` AS `gov_id`,
+        `gov`.`gov_desc` AS `gov_desc`
+    FROM
+        ((`pms_water_socio` `wat`
+        JOIN `pms_communities` `com`)
+        JOIN `pms_governates` `gov`)
+    WHERE
+        ((`wat`.`com_id` = `com`.`com_id`)
+            AND (`com`.`gov_id` = `gov`.`gov_id`))
