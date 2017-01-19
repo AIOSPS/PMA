@@ -220,8 +220,11 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="proBudget" class="col-sm-3 col-form-label">Budget:</label>
-                        <div class="col-sm-9">
+                        <div class="input-group date  col-sm-9">
                             <html:text property="proBudget" styleClass="form-control" styleId="proBudget" disabled="true"/>
+                            <span class="input-group-addon input-group-addon1">
+                               €
+                            </span>
                         </div>
                     </div>
                     <div class="col-md-6">

@@ -7,8 +7,8 @@
 
 <script type="text/javascript">
     $(function () {
-//        $("#proId").attr("placeholder", "Project ID");
-//        $("#proId").prop('required', true);
+//        $("#donorProjectList").attr("placeholder", "Doners");
+//        $("#donorProjectList").prop('required', true);
         $("#proTitle").attr("placeholder", "Project Title");
         $("#proTitle").prop('required', true);
         $("#proDescription").attr("placeholder", "Project Description");
@@ -250,8 +250,16 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="proBudget" class="col-sm-3 col-form-label">Budget:</label>
-                        <div class="col-sm-9">
+                        <div class="input-group date  col-sm-9">
                             <html:text property="proBudget" styleClass="form-control" styleId="proBudget"/>
+                            <span class="input-group-addon input-group-addon1">
+                               €
+                            </span>
+                            <script>
+                                $(function() {
+                                    $('.proBudget').mask('000.000.000.000.000,00', {reverse: true});
+                                })
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-6">

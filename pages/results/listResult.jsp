@@ -6,7 +6,7 @@
 <script type="text/javascript">
     $(function () {
         $("#resultDesc").attr("placeholder", "Result Description");
-        $("#resultLongDesc").attr("placeholder", "Result Status");
+        $("#objId").attr("placeholder", "Objective");
     });
 </script>
 <div class="content-wrapper breadcrumb brd2">
@@ -48,14 +48,27 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="resStatus" class="col-sm-12 col-form-label">Status:</label>
+                                <label for="objId" class="col-sm-12 col-form-label">Objective:</label>
                                 <div class="col-sm-12">
-                                    <html:select property="resStatus"
+                                    <html:select property="objId"
                                                  styleClass="selectpicker form-control">
-                                        <html:option value="1">Achived</html:option>
-                                        <html:option value="2">Not Achived</html:option>
+                                        <logic:present name="objectiveList">
+                                            <html:options collection="objectiveList" property="objId" labelProperty="objDesc"/>
+                                        </logic:present>
                                     </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="objId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
+                                <%--<div class="col-sm-12">--%>
+                                    <%--<html:select property="resStatus"--%>
+                                                 <%--styleClass="selectpicker form-control">--%>
+                                        <%--<html:option value="1">Achived</html:option>--%>
+                                        <%--<html:option value="2">Not Achived</html:option>--%>
+                                    <%--</html:select>--%>
+                                <%--</div>--%>
                             </div>
                             <div class="col-md-4">
                                 <label  class="col-sm-5 col-form-label">&nbsp;</label>
