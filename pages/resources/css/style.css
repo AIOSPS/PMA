@@ -447,7 +447,7 @@ nav.dashboardMnu.navbar { margin-bottom:0px; background-color: #2c2c2c; }
 
 #navbar-main-menu .navbar-nav>.active>a , #navbar-main-menu .navbar-nav >.open>a {  background-color:#f5f3ef; color:#2c3856;}
 #navbar-main-menu .navbar-nav>.active>a {border-bottom: 2px solid #26a69a;   }
-#navbar-main-menu .dropdown-menu {    width: 100%; }
+/*#navbar-main-menu .dropdown-menu {    width: 100%; }*/
 
 #navbar-main-menu .navbar-nav > li > a  span:before { color : #acbd01 !important; }
 
