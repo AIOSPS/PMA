@@ -46,7 +46,17 @@
     <script src="/pages/resources/bootstrap/select/bootstrap-select.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/pages/resources/bootstrap/dataTable/datatables.min.css"/>
 
+
     <script type="text/javascript" src="/pages/resources/bootstrap/dataTable/datatables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/pages/resources/bootstrap/dataTable/buttons.bootstrap.min.css"/>
+    <script type="text/javascript" src="/pages/resources/bootstrap/dataTable/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="/pages/resources/bootstrap/dataTable/jszip.min.js"></script>
+    <script type="text/javascript" src="/pages/resources/bootstrap/dataTable/pdfmake.min.js"></script>
+    <script type="text/javascript" src="/pages/resources/bootstrap/dataTable/vfs_fonts.js"></script>
+    <script type="text/javascript" src="/pages/resources/bootstrap/dataTable/buttons.html5.min.js"></script>
+    <%--<script type="text/javascript" src="/pages/resources/bootstrap/dataTable/buttons.bootstrap.min.css"></script>--%>
+
+
 
     <!-- additional scripts -->
     <script src="/pages/resources/js/script.js"></script>

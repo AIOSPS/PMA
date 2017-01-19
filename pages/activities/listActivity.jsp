@@ -128,7 +128,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listActivitiesTbl').DataTable();
+                    $('#listActivitiesTbl').DataTable(  {
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>
