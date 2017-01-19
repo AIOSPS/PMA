@@ -194,7 +194,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listProjectsTbl').DataTable();
+                    $('#listProjectsTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

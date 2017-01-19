@@ -132,7 +132,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listIncidentsTbl').DataTable();
+                    $('#listIncidentsTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

@@ -152,7 +152,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listInterventionsTbl').DataTable();
+                    $('#listInterventionsTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

@@ -125,7 +125,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listResultsTbl').DataTable();
+                    $('#listResultsTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

@@ -141,7 +141,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listCommunitiesTbl').DataTable();
+                    $('#listCommunitiesTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

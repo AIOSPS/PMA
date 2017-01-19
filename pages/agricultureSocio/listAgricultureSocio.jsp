@@ -146,7 +146,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listAgricultureSocioTbl').DataTable();
+                    $('#listAgricultureSocioTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

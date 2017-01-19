@@ -111,7 +111,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listIndicatorsTbl').DataTable();
+                    $('#listIndicatorsTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

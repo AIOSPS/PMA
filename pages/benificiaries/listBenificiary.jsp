@@ -101,7 +101,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listbenificiariesTbl').DataTable();
+                    $('#listbenificiariesTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

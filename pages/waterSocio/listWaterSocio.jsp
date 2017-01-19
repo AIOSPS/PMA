@@ -146,7 +146,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listWaterSocioTbl').DataTable();
+                    $('#listWaterSocioTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

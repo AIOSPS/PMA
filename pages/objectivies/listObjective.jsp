@@ -115,7 +115,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listObjectivesTbl').DataTable();
+                    $('#listObjectivesTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

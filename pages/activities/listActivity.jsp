@@ -129,7 +129,7 @@
             <script>
                 $(document).ready(function () {
                     $('#listActivitiesTbl').DataTable(  {
-                        dom: 'Bfrtip',
+                        dom: 'lBfrtip',
                         buttons: [
                             'excelHtml5',
                             'pdfHtml5'

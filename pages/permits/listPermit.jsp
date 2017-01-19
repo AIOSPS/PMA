@@ -148,7 +148,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listPermitsTbl').DataTable();
+                    $('#listPermitsTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>

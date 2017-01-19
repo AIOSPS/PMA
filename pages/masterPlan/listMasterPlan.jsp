@@ -125,7 +125,13 @@
             </table>
             <script>
                 $(document).ready(function () {
-                    $('#listMasterPlanTbl').DataTable();
+                    $('#listMasterPlanTbl').DataTable(  {
+                        dom: 'lBfrtip',
+                        buttons: [
+                            'excelHtml5',
+                            'pdfHtml5'
+                        ]
+                    }  );
                 });
             </script>
         </div>
