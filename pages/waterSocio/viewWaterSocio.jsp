@@ -115,9 +115,13 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watNetwork" class="col-sm-3 col-form-label">Local Network exist (Yes, No, Partially):</label>
+                        <label for="watNetwork" class="col-sm-3 col-form-label">Local Network exist:</label>
                         <div class="col-sm-9">
-                            <html:text property="watNetwork" styleClass="form-control" styleId="watNetwork" disabled="true"/>
+                            <html:select property="watNetwork" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">Yes</html:option>
+                                <html:option value="2">No</html:option>
+                                <html:option value="3">Partially</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -185,9 +189,13 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="watQuantity" class="col-sm-3 col-form-label">Concerns of  Quality of Water (Good, Bad, Need treatment):</label>
+                        <label for="watQuantity" class="col-sm-3 col-form-label">Concerns of  Quality of Water:</label>
                         <div class="col-sm-9">
-                            <html:text property="watQuantity" styleClass="form-control" styleId="watQuantity" disabled="true"/>
+                            <html:select property="watQuantity" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">Good</html:option>
+                                <html:option value="2">Bad</html:option>
+                                <html:option value="3">Need treatment</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>

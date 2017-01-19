@@ -652,7 +652,7 @@
             <generator class="assigned" />
         </id>
         <property name="watIsconnected" type="java.lang.String" column="wat_isconnected" />
-        <property name="watNetwork" type="int" column="wat_network" />
+        <property name="watNetwork" type="java.lang.String" column="wat_network" />
         <property name="watUseWatTanker" type="java.lang.String" column="wat_use_wat_tanker" />
         <property name="watRainWaterWell" type="java.lang.String" column="wat_rain_water_well" />
         <property name="watNoSprings" type="int" column="wat_no_springs" />
