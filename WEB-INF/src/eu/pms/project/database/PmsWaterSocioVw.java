@@ -13,7 +13,7 @@ public class PmsWaterSocioVw {
     private String watId;
     private String comId;
     private String watIsconnected;
-    private int watNetwork;
+    private String watNetwork;
     private String watUseWatTanker;
     private String watRainWaterWell;
     private int watNoSprings;
@@ -55,11 +55,11 @@ public class PmsWaterSocioVw {
         this.watIsconnected = watIsconnected;
     }
 
-    public int getWatNetwork() {
+    public String getWatNetwork() {
         return this.watNetwork;
     }
 
-    public void setWatNetwork(int watNetwork) {
+    public void setWatNetwork(String watNetwork) {
         this.watNetwork = watNetwork;
     }
 
