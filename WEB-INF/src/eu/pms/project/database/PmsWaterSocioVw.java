@@ -18,7 +18,7 @@ public class PmsWaterSocioVw {
     private String watRainWaterWell;
     private int watNoSprings;
     private java.math.BigDecimal watPriceWater;
-    private int watFillingPoint;
+    private String watFillingPoint;
     private int watQuantity;
     private java.util.Date watSurveyDate;
     private String watSurveyDateStr;
@@ -95,11 +95,11 @@ public class PmsWaterSocioVw {
         this.watPriceWater = watPriceWater;
     }
 
-    public int getWatFillingPoint() {
+    public String getWatFillingPoint() {
         return this.watFillingPoint;
     }
 
-    public void setWatFillingPoint(int watFillingPoint) {
+    public void setWatFillingPoint(String watFillingPoint) {
         this.watFillingPoint = watFillingPoint;
     }
 

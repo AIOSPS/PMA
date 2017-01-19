@@ -577,7 +577,7 @@
                                         <td ><bean:write name="incidentList" property="incOchaId"/></td>
                                         <td ><bean:write name="incidentList" property="incDescription"/></td>
                                         <td ><bean:write name="incidentList" property="incTimeStampStr"/></td>
-                                        <td ><a target="_blank" href="<bean:write name="pmsIncidentList" property="incSourceLink"/>"><bean:write name="pmsIncidentList" property="incSourceLink"/></a></td>
+                                        <td ><a target="_blank" href="<bean:write name="incidentList" property="incSourceLink"/>"><bean:write name="incidentList" property="incSourceLink"/></a></td>
                                         <td ><bean:write name="incidentList" property="locLatitude"/></td>
                                         <td ><bean:write name="incidentList" property="locLongitude"/></td>
                                     </tr>

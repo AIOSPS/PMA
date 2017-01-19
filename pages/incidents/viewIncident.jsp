@@ -1,3 +1,4 @@
+<%@ page import="eu.pms.incident.forms.PmsIncidentForm" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -157,7 +158,10 @@
                     <div class="col-md-6">
                         <label for="incSourceLink" class="col-sm-3 col-form-label">Source Link:</label>
                         <div class="col-sm-9">
-                            <html:link property="incSourceLink" styleClass="form-control" styleId="incSourceLink" disabled="true"/>
+                            <%
+                                PmsIncidentForm theForm = (PmsIncidentForm) session.getAttribute("pmsIncidentForm");
+                            %>
+                            <html:link href="<%= theForm.getIncSourceLink() %>" styleClass="form-control" styleId="incSourceLink"><%= theForm.getIncSourceLink() %></html:link>
                         </div>
                     </div>
                     <div class="col-md-6">

@@ -92,12 +92,12 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Is connected</th>
-                    <th class="text-center">Local Network exist (Yes, No, Partially)</th>
-                    <th class="text-center">Uses Water Tanker (Yes, No)</th>
+                    <th class="text-center">Local Network exist</th>
+                    <th class="text-center">Uses Water Tanker</th>
                     <th class="text-center">Rain Water Well</th>
                     <th class="text-center">Number of Springs</th>
                     <th class="text-center">Price of M3 Water</th>
-                    <th class="text-center">Distance to the Filling Point (Within 5KM, Beyond 5KM)</th>
+                    <th class="text-center">Distance to the Filling Point</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
                 </tr>
@@ -106,12 +106,12 @@
                 <tr>
                     <th class="text-center">Community</th>
                     <th class="text-center">Is connected</th>
-                    <th class="text-center">Local Network exist (Yes, No, Partially)</th>
-                    <th class="text-center">Uses Water Tanker (Yes, No)</th>
+                    <th class="text-center">Local Network exist</th>
+                    <th class="text-center">Uses Water Tanker</th>
                     <th class="text-center">Rain Water Well</th>
                     <th class="text-center">Number of Springs</th>
                     <th class="text-center">Price of M3 Water</th>
-                    <th class="text-center">Distance to the Filling Point (Within 5KM, Beyond 5KM)</th>
+                    <th class="text-center">Distance to the Filling Point</th>
                     <th class="text-center">Survey Date</th>
                     <th class="text-center"></th>
 

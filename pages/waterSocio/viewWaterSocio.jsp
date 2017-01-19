@@ -13,9 +13,9 @@
         $("#comId").prop('required', true);
         $("#watIsconnected").attr("placeholder", "Is connected");
         $("#watIsconnected").prop('required', true);
-        $("#watNetwork").attr("placeholder", "Local Network exist (Yes, No, Partially)");
+        $("#watNetwork").attr("placeholder", "Local Network exist");
         $("#watNetwork").prop('required', true);
-        $("#watUseWatTanker").attr("placeholder", "Uses Water Tanker (Yes, No)");
+        $("#watUseWatTanker").attr("placeholder", "Uses Water Tanker");
         $("#watUseWatTanker").prop('required', true);
         $("#watRainWaterWell").attr("placeholder", "Rain Water Well");
         $("#watRainWaterWell").prop('required', true);
@@ -23,9 +23,9 @@
         $("#watNoSprings").prop('required', true);
         $("#watPriceWater").attr("placeholder", "Price of M3 Water");
         $("#watPriceWater").prop('required', true);
-        $("#watFillingPoint").attr("placeholder", "Distance to the Filling Point (Within 5KM, Beyond 5KM)");
+        $("#watFillingPoint").attr("placeholder", "Distance to the Filling Point");
         $("#watFillingPoint").prop('required', true);
-        $("#watQuantity").attr("placeholder", "Concerns of  Quality of Water (Good, Bad, Need treatment)");
+        $("#watQuantity").attr("placeholder", "Concerns of  Quality of Water");
         $("#watQuantity").prop('required', true);
         $("#watSurveyDate").attr("placeholder", "Survey Date");
         $("#watSurveyDate").prop('required', true);
@@ -123,7 +123,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watUseWatTanker" class="col-sm-3 col-form-label">Uses Water Tanker (Yes, No):</label>
+                        <label for="watUseWatTanker" class="col-sm-3 col-form-label">Uses Water Tanker:</label>
                         <div class="col-sm-9">
                         <fieldset class="col-sm-9" id="watUseWatTanker">
                             <div>
@@ -168,9 +168,20 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="watFillingPoint" class="col-sm-3 col-form-label">Distance to the Filling Point (Within 5KM, Beyond 5KM):</label>
+                        <label for="watFillingPoint" class="col-sm-3 col-form-label">Distance to the Filling Point:</label>
                         <div class="col-sm-9">
-                            <html:text property="watFillingPoint" styleClass="form-control" styleId="watFillingPoint" disabled="true"/>
+                            <fieldset class="col-sm-9" id="watFillingPoint">
+                                <div>
+                                    <label class="radio-inline">
+                                        <html:radio property="watFillingPoint" value="1" disabled="true"/>
+                                        Within 5KM
+                                    </label>
+                                    <label class="radio-inline">
+                                        <html:radio property="watFillingPoint" value="0" disabled="true"/>
+                                        Beyond 5KM
+                                    </label>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="col-md-6">
