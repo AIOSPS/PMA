@@ -54,9 +54,14 @@ public class LoginAction extends Action
             } catch (Exception e) {
                 e.printStackTrace();
             }
-//            if (name.equals("pms") && pass.equals("123")) {
+//            if (name.equals("orayyan") && pass.equals("123")) {
 //
-//                String fullPath = "success";
+//                SecUser secUser = new SecUser();
+//                secUser.setUsrName("orayyan");
+//                secUser.setUsrPassword("123");
+//                request.getSession().setAttribute("userInfo",secUser);
+//                forward = "success";
+//            }
 //
 //
 //                Cookie loginCookie = new Cookie("pmsportal", session.getId());
