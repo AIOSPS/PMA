@@ -172,7 +172,18 @@
                     <div class="col-md-6">
                         <label for="masSubmitToMod" class="col-sm-3 col-form-label">Submission to Ministry of Defense:</label>
                         <div class="col-sm-9">
-                            <html:text property="masSubmitToMod" styleClass="form-control" styleId="masSubmitToMod" disabled="true"/>
+                            <fieldset class="col-sm-9" id="masSubmitToMod">
+                                <div>
+                                    <label class="radio-inline">
+                                        <html:radio property="masSubmitToMod" value="1" disabled="true"/>
+                                        Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                        <html:radio property="masSubmitToMod" value="0" disabled="true"/>
+                                        No
+                                    </label>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
