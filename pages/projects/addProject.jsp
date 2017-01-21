@@ -19,6 +19,8 @@
         $("#proEndDate").prop('required', true);
         $("#proBudget").attr("placeholder", "Project Budget");
 //        $("#proBudget").attr("pattern", "\\d*\\.?\\d*");
+        $('input[name=proHasCluster][value="1"]').attr('checked', true);
+        $('input[name=proNeedPermit][value="1"]').attr('checked', true);
         $("#proBudget").prop('required', true);
     });
 </script>

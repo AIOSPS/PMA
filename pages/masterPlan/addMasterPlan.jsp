@@ -27,6 +27,7 @@
         $("#masNoSessionWithIca").prop('required', true);
         $("#masSubmitToMod").attr("placeholder", "Submission to Ministry of Defense ");
         $("#masSubmitToMod").prop('required', true);
+        $('input[name=masSubmitToMod][value="1"]').attr('checked', true);
         $("#masApprovalDate").attr("placeholder", "Approval Date");
         $("#masApprovalDate").prop('required', true);
         $("#masPublicationDate").attr("placeholder", "Publication Date");
@@ -175,9 +176,10 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+
                         <label for="masSubmitToMod" class="col-sm-3 col-form-label">Submission to Ministry of Defense:</label>
                         <div class="col-sm-9">
-                            <fieldset class="col-sm-9" id="masSubmitToMod">
+                            <fieldset class="col-sm-9" id="masSubmitToMod" >
                                 <div>
                                     <label class="radio-inline">
                                         <html:radio property="masSubmitToMod" value="1"/>

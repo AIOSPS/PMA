@@ -13,10 +13,12 @@
         $("#comId").prop('required', true);
         $("#watIsconnected").attr("placeholder", "Is connected");
         $("#watIsconnected").prop('required', true);
+        $('input[name=watIsconnected][value="1"]').attr('checked', true);
         $("#watNetwork").attr("placeholder", "Local Network exist");
         $("#watNetwork").prop('required', true);
         $("#watUseWatTanker").attr("placeholder", "Uses Water Tanker");
         $("#watUseWatTanker").prop('required', true);
+        $('input[name=watUseWatTanker][value="1"]').attr('checked', true);
         $("#watRainWaterWell").attr("placeholder", "Rain Water Well");
         $("#watRainWaterWell").prop('required', true);
         $("#watNoSprings").attr("placeholder", "Number of Springs");
@@ -25,6 +27,7 @@
         $("#watPriceWater").prop('required', true);
         $("#watFillingPoint").attr("placeholder", "Distance to the Filling Point");
         $("#watFillingPoint").prop('required', true);
+        $('input[name=watFillingPoint][value="1"]').attr('checked', true);
         $("#watQuantity").attr("placeholder", "Concerns of  Quality of Water");
         $("#watQuantity").prop('required', true);
         $("#watSurveyDate").attr("placeholder", "Survey Date");
