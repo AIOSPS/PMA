@@ -112,7 +112,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor"></span>   Reports   <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/viewDynamicReport.do">Add Hoc Report</a></li>
+                        <li><a href="/viewDynamicReport.do">Ad Hoc Report</a></li>
                         <li class="dropdown-submenu ">
                             <a>Pre-defined Reports </a>
                             <ul class="dropdown-menu">
