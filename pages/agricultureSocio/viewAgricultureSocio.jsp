@@ -43,7 +43,8 @@
             <div class="col-md-8">
                 <h1>View Agriculture Socio</h1>
             </div>
-            <div class="col-md-4 pd15 create ">
+            <div class="col-md-4 pd15 create hidden-print">
+                <a class="btn btn-primary pull-right" href="javascript:window.print()">Print</a>
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
             </div>
         </div>
@@ -60,7 +61,7 @@
                             <%--<html:hidden property="agrId"/>--%>
                         <%--</div>--%>
                     <%--</div>--%>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
                             <html:select property="comId"
@@ -71,7 +72,7 @@
                             </html:select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrArea" class="col-sm-3 col-form-label">Agriculture Area:</label>
                         <div class="input-group date  col-sm-9">
                             <html:text property="agrArea" styleClass="form-control" styleId="agrArea" disabled="true"/>
@@ -85,13 +86,13 @@
 
                 <div class="form-group row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrNoCowYear" class="col-sm-3 col-form-label"># Cows at date:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoCowYear" styleClass="form-control" styleId="agrNoCowYear" disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrNoSheepYear" class="col-sm-3 col-form-label"># Sheep at date:</label>
                         <div class="col-sm-9">
                             <html:text property="agrNoSheepYear" styleClass="form-control" styleId="agrNoSheepYear" disabled="true"/>
@@ -99,7 +100,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrCostWaterTank" class="col-sm-3 col-form-label">Cost of M3 Water:</label>
                         <div class="input-group date  col-sm-9">
                             <html:text property="agrCostWaterTank" styleClass="form-control" styleId="agrCostWaterTank" disabled="true"/>
@@ -108,7 +109,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrHerdingArea" class="col-sm-3 col-form-label">Herding Area:</label>
                         <div class="input-group date  col-sm-9">
                             <html:text property="agrHerdingArea" styleClass="form-control" styleId="agrHerdingArea" disabled="true"/>
@@ -119,7 +120,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrMilitaryArea" class="col-sm-3 col-form-label">Military Area:</label>
                         <div class="input-group date  col-sm-9">
                             <html:text property="agrMilitaryArea" styleClass="form-control" styleId="agrMilitaryArea" disabled="true"/>
@@ -128,7 +129,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrBypassRoadArea" class="col-sm-3 col-form-label">Bypass Road:</label>
                         <div class="col-sm-9">
                             <html:text property="agrBypassRoadArea" styleClass="form-control" styleId="agrBypassRoadArea" disabled="true"/>
@@ -139,7 +140,7 @@
 
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="agrSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>
 
                         <div class='input-group date col-sm-9' id='aSurveyDate'>
@@ -156,12 +157,12 @@
                             });
                         });
                     </script>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
 
                     </div>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row hidden-print">
                     <div class="offset-sm-2 col-sm-10">
                         <button type="button" onclick="javaScript:parent.location = '/viewEditAgricultureSocio.do?agrId=<%=request.getParameter("agrId")%>'"
                                 class="btn btn-primary">Edit

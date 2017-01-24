@@ -145,15 +145,25 @@
                 </tbody>
             </table>
             <script>
-                $(document).ready(function () {
-                    $('#listWaterSocioTbl').DataTable(  {
-                        dom: 'lBfrtip',
-                        buttons: [
-                            'excelHtml5',
-                            'pdfHtml5'
-                        ]
-                    }  );
-                });
+//                $(document).ready(function () {
+//                    $('#listWaterSocioTbl').DataTable(  {
+//                        dom: 'lBfrtip',
+//                        buttons: [
+//                            'excelHtml5',
+//                            'pdfHtml5'
+//                        ]
+//                    }  );
+//                });
+$(document).ready(function() {
+    var table = $('#listWaterSocioTbl').DataTable( {
+        lengthChange: false,
+//        dom: 'Bftrip',
+        buttons: ['excel', 'pdf']
+    } );
+
+    table.buttons().container()
+            .appendTo( '#listWaterSocioTbl_wrapper .col-sm-6:eq(0)' );
+} );
             </script>
         </div>
 

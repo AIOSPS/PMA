@@ -140,15 +140,25 @@
                 </tbody>
             </table>
             <script>
-                $(document).ready(function () {
-                    $('#listCommunitiesTbl').DataTable(  {
-                        dom: 'lBfrtip',
-                        buttons: [
-                            'excelHtml5',
-                            'pdfHtml5'
-                        ]
-                    }  );
-                });
+//                $(document).ready(function () {
+//                    $('#listCommunitiesTbl').DataTable(  {
+//                        dom: 'lBfrtip',
+//                        buttons: [
+//                            'excelHtml5',
+//                            'pdfHtml5'
+//                        ]
+//                    }  );
+//                });
+$(document).ready(function() {
+    var table = $('#listCommunitiesTbl').DataTable( {
+        lengthChange: false,
+//        dom: 'Bftrip',
+        buttons: ['excel', 'pdf']
+    } );
+
+    table.buttons().container()
+            .appendTo( '#listCommunitiesTbl_wrapper .col-sm-6:eq(0)' );
+} );
             </script>
         </div>
 

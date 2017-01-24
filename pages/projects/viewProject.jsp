@@ -40,7 +40,8 @@
             <div class="col-md-8">
                 <h1>View Project</h1>
             </div>
-            <div class="col-md-4 pd15 create ">
+            <div class="col-md-4 pd15 create hidden-print">
+                <a class="btn btn-primary pull-right" href="javascript:window.print()">Print</a>
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
             </div>
         </div>
@@ -50,7 +51,7 @@
                 <h2 class="titleSep"><span>Administration</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="donorProjectList" class="col-sm-3 col-form-label">Donor:</label>
                         <div class="col-sm-9">
                             <html:select property="donorProjectList" multiple="true" disabled="true"
@@ -63,7 +64,7 @@
 
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
 
                         <label for="implementerProjectList" class="col-sm-3 col-form-label">Implementer:</label>
                         <div class="col-sm-9">
@@ -80,7 +81,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="devId" class="col-sm-3 col-form-label">Development Agency:</label>
                         <div class="col-sm-9">
                             <html:select property="devId" styleClass="selectpicker form-control" disabled="true">
@@ -92,7 +93,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="prgId" class="col-sm-3 col-form-label">Programme:</label>
                         <div class="col-sm-9">
                             <html:select property="prgId" styleClass="selectpicker form-control" disabled="true">
@@ -108,7 +109,7 @@
                 <h2 class="titleSep"><span>Project Information</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="proId" class="col-sm-3 col-form-label">Project Number:</label>
                         <div class="col-sm-9">
                             <html:text property="proId" styleClass="form-control" styleId="proId" disabled="true"/>
@@ -127,7 +128,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="secId" class="col-sm-3 col-form-label"> Sector:</label>
                         <div class="col-sm-9">
                             <html:select property="secId" styleClass="selectpicker form-control" disabled="true">
@@ -152,7 +153,7 @@
                             </html:select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="proTitle" class="col-sm-3 col-form-label">Project Title:</label>
                         <div class="col-sm-9">
                             <html:text property="proTitle" styleClass="form-control" styleId="proTitle" disabled="true"/>
@@ -161,13 +162,13 @@
                 </div>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="proDescription" class="col-sm-3 col-form-label">Project Description:</label>
                         <div class="col-sm-9">
                             <html:text property="proDescription" styleClass="form-control" styleId="proDescription" disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="statusPr" class="col-sm-3 col-form-label">Status:</label>
                         <div class="col-sm-9">
                             <html:select property="proStatus" styleClass="selectpicker form-control" disabled="true">
@@ -184,7 +185,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="prStDate" class="col-sm-3 col-form-label">Start Date:</label>
 
                         <div class='input-group date col-sm-9' id='pStartDate'>
@@ -194,7 +195,7 @@
                     </span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="prEnDate" class="col-sm-3 col-form-label">End Date:</label>
 
                         <div class='input-group date col-sm-9' id='pEndDate'>
@@ -218,7 +219,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="proBudget" class="col-sm-3 col-form-label">Budget:</label>
                         <div class="input-group date  col-sm-9">
                             <html:text property="proBudgetTxt" styleClass="form-control" styleId="proBudget" disabled="true"/>
@@ -228,7 +229,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
 
                         <div class="col-sm-9">
                         </div>
@@ -238,13 +239,13 @@
 
                 <div class="form-group row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="prNotes" class="col-sm-3 col-form-label">Project Notes:</label>
                         <div class="col-sm-9">
                             <html:textarea property="proNotes" styleClass="form-control" rows="6" disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="prNotes" class="col-sm-3 col-form-label">Project Images:</label>
                         <div class="col-sm-9">
                             <%--************* start album *************--%>
@@ -594,7 +595,7 @@
                     </div>
 
                 </div>
-                <div class="form-group row">
+                <div class="form-group row hidden-print">
                     <div class="offset-sm-2 col-sm-10">
                         <button type="button" onclick="javaScript:parent.location = '/viewEditProject.do?proId=<%=request.getParameter("proId")%>'"
                                 class="btn btn-primary">Edit
@@ -685,11 +686,11 @@
 //    document.getElementsByName("proBudgetTxt")[0].onblur =function (){
 
         //number-format the user input
-    proBudgetTxt.value = parseFloat(proBudgetTxt.value.replace(/,/g, ""))
+    document.getElementsByName("proBudgetTxt")[0].value = parseFloat(document.getElementsByName("proBudgetTxt")[0].value.replace(/,/g, ""))
             .toFixed(2)
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-        document.getElementsByName("proBudget")[0].value = proBudgetTxt.value.replace(/,/g, "")
+        document.getElementsByName("proBudget")[0].value = document.getElementsByName("proBudgetTxt")[0].value.replace(/,/g, "")
 //    }
 </script>

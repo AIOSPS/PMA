@@ -135,15 +135,25 @@
                 </tbody>
             </table>
             <script>
-                $(document).ready(function () {
-                    $('#listMasterPlanTbl').DataTable(  {
-                        dom: 'lBfrtip',
-                        buttons: [
-                            'excelHtml5',
-                            'pdfHtml5'
-                        ]
-                    }  );
-                });
+//                $(document).ready(function () {
+//                    $('#listMasterPlanTbl').DataTable(  {
+//                        dom: 'lBfrtip',
+//                        buttons: [
+//                            'excelHtml5',
+//                            'pdfHtml5'
+//                        ]
+//                    }  );
+//                });
+$(document).ready(function() {
+    var table = $('#listMasterPlanTbl').DataTable( {
+        lengthChange: false,
+//        dom: 'Bftrip',
+        buttons: ['excel', 'pdf']
+    } );
+
+    table.buttons().container()
+            .appendTo( '#listMasterPlanTbl_wrapper .col-sm-6:eq(0)' );
+} );
             </script>
         </div>
 

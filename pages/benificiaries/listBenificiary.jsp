@@ -100,15 +100,25 @@
                 </tbody>
             </table>
             <script>
-                $(document).ready(function () {
-                    $('#listbenificiariesTbl').DataTable(  {
-                        dom: 'lBfrtip',
-                        buttons: [
-                            'excelHtml5',
-                            'pdfHtml5'
-                        ]
-                    }  );
-                });
+//                $(document).ready(function () {
+//                    $('#listbenificiariesTbl').DataTable(  {
+//                        dom: 'lBfrtip',
+//                        buttons: [
+//                            'excelHtml5',
+//                            'pdfHtml5'
+//                        ]
+//                    }  );
+//                });
+$(document).ready(function() {
+    var table = $('#listbenificiariesTbl').DataTable( {
+        lengthChange: false,
+//        dom: 'Bftrip',
+        buttons: ['excel', 'pdf']
+    } );
+
+    table.buttons().container()
+            .appendTo( '#listbenificiariesTbl_wrapper .col-sm-6:eq(0)' );
+} );
             </script>
         </div>
 

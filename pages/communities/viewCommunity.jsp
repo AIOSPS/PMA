@@ -59,7 +59,8 @@
             <div class="col-md-8">
                 <h1>View Community</h1>
             </div>
-            <div class="col-md-4 pd15 create ">
+            <div class="col-md-4 pd15 create hidden-print">
+                <a class="btn btn-primary pull-right" href="javascript:window.print()">Print</a>
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
             </div>
         </div>
@@ -69,13 +70,13 @@
                     <h2 class="titleSep"><span>Community Information</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="comName" class="col-sm-3 col-form-label">Community Name:</label>
                         <div class="col-sm-9">
                             <html:text property="comName" styleClass="form-control" styleId="comName" disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <html:hidden property="comId"/>
                         <%--<label for="comId" class="col-sm-3 col-form-label">Community ID:</label>--%>
                         <%--<div class="col-sm-9">--%>
@@ -87,13 +88,13 @@
 
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="comPcbsCode" class="col-sm-3 col-form-label">PCBS Code:</label>
                         <div class="col-sm-9">
                             <html:text property="comPcbsCode" styleClass="form-control" styleId="comPcbsCode" disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="comOchaCode" class="col-sm-3 col-form-label">OCHA Code:</label>
                         <div class="col-sm-9">
                             <html:text property="comOchaCode" styleClass="form-control" styleId="comOchaCode" disabled="true"/>
@@ -102,7 +103,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="typeId" class="col-sm-3 col-form-label">Type:</label>
                         <div class="col-sm-9">
                             <html:select property="typeId" disabled="true"
@@ -113,7 +114,7 @@
                             </html:select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="govId" class="col-sm-3 col-form-label">Governorate:</label>
                         <div class="col-sm-9">
                             <html:select property="govId" disabled="true"
@@ -125,7 +126,7 @@
                 </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comTotalAreaLand" class="col-sm-3 col-form-label">Total Area Land:</label>
                             <div class='input-group date  col-sm-9' >
                                 <html:text property="comTotalAreaLand" styleClass="form-control" styleId="comTotalAreaLand" disabled="true"/>
@@ -134,7 +135,7 @@
                             </span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comLocationShortDescription" class="col-sm-3 col-form-label">Location Short Description:</label>
                             <div class="col-sm-9">
                                 <html:text property="comLocationShortDescription" styleClass="form-control" styleId="comLocationShortDescription" disabled="true"/>
@@ -143,13 +144,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comTopology" class="col-sm-3 col-form-label">Topology:</label>
                             <div class="col-sm-9">
                                 <html:text property="comTopology" styleClass="form-control" styleId="comTopology" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comResidentsTotal" class="col-sm-3 col-form-label">Residents #:</label>
                             <div class="col-sm-9">
                                 <html:text property="comResidentsTotal" styleClass="form-control" styleId="comResidentsTotal" disabled="true"/>
@@ -159,13 +160,13 @@
 
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comMaleTotal" class="col-sm-3 col-form-label">Male #:</label>
                             <div class="col-sm-9">
                                 <html:text property="comMaleTotal" styleClass="form-control" styleId="comMaleTotal" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comFemaleTotal" class="col-sm-3 col-form-label">Female #:</label>
                             <div class="col-sm-9">
                                 <html:text property="comFemaleTotal" styleClass="form-control" styleId="comFemaleTotal" disabled="true"/>
@@ -174,13 +175,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comKidsTotal" class="col-sm-3 col-form-label">Children #:</label>
                             <div class="col-sm-9">
                                 <html:text property="comKidsTotal" styleClass="form-control" styleId="comKidsTotal" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comSchoolsInfo" class="col-sm-3 col-form-label">Schools:</label>
                             <div class="col-sm-9">
                                 <html:text property="comSchoolsInfo" styleClass="form-control" styleId="comSchoolsInfo" disabled="true"/>
@@ -189,13 +190,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comHealthSchoolsInfo" class="col-sm-3 col-form-label">Health Center:</label>
                             <div class="col-sm-9">
                                 <html:text property="comHealthSchoolsInfo" styleClass="form-control" styleId="comHealthSchoolsInfo" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comReligionCenters" class="col-sm-3 col-form-label">Religious Center:</label>
                             <div class="col-sm-9">
                                 <html:text property="comReligionCenters" styleClass="form-control" styleId="comReligionCenters" disabled="true"/>
@@ -204,13 +205,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comCemetery" class="col-sm-3 col-form-label">Cemetery:</label>
                             <div class="col-sm-9">
                                 <html:text property="comCemetery" styleClass="form-control" styleId="comCemetery" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comWaterNetworkInfo" class="col-sm-3 col-form-label">Water Network:</label>
                             <div class="col-sm-9">
                                 <html:text property="comWaterNetworkInfo" styleClass="form-control" styleId="comWaterNetworkInfo" disabled="true"/>
@@ -219,13 +220,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comSewerageNetworkInfo" class="col-sm-3 col-form-label">Sewerage Network:</label>
                             <div class="col-sm-9">
                                 <html:text property="comSewerageNetworkInfo" styleClass="form-control" styleId="comSewerageNetworkInfo" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comElectricalNetworkInfo" class="col-sm-3 col-form-label">Electrical Network:</label>
                             <div class="col-sm-9">
                                 <html:text property="comElectricalNetworkInfo" styleClass="form-control" styleId="comElectricalNetworkInfo" disabled="true"/>
@@ -234,13 +235,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comSolidWasteServiceInfo" class="col-sm-3 col-form-label">Soild Waste service:</label>
                             <div class="col-sm-9">
                                 <html:text property="comSolidWasteServiceInfo" styleClass="form-control" styleId="comSolidWasteServiceInfo" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comRoadNetworkInfo" class="col-sm-3 col-form-label">Road Network:</label>
                             <div class="col-sm-9">
                                 <html:text property="comRoadNetworkInfo" styleClass="form-control" styleId="comRoadNetworkInfo" disabled="true"/>
@@ -249,13 +250,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comTransportNetworkInfo" class="col-sm-3 col-form-label">Transport Network:</label>
                             <div class="col-sm-9">
                                 <html:text property="comTransportNetworkInfo" styleClass="form-control" styleId="comTransportNetworkInfo" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comEcnonomicActivitiesInfo" class="col-sm-3 col-form-label">Main Economic Activity:</label>
                             <div class="col-sm-9">
                                 <html:text property="comEcnonomicActivitiesInfo" styleClass="form-control" styleId="comEcnonomicActivitiesInfo" disabled="true"/>
@@ -263,13 +264,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comLatitude" class="col-sm-3 col-form-label">Latitude:</label>
                             <div class="col-sm-9">
                                 <html:text property="comLatitude" styleClass="form-control" styleId="comLatitude" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comLongitude" class="col-sm-3 col-form-label">Longitude:</label>
                             <div class="col-sm-9">
                                 <html:text property="comLongitude" styleClass="form-control" styleId="comLongitude" disabled="true"/>
@@ -278,7 +279,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comPercentAreaC" class="col-sm-3 col-form-label">% in Area C:</label>
                             <div class="col-sm-9">
                                 <html:select property="comPercentAreaC" styleClass="selectpicker form-control" disabled="true">
@@ -288,7 +289,7 @@
                                 </html:select>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="comTouchingBorder" class="col-sm-3 col-form-label">Touching Border:</label>
                             <div class="col-sm-9">
                                 <html:select property="comTouchingBorder" styleClass="selectpicker form-control" disabled="true">
@@ -302,13 +303,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="username" class="col-sm-3 col-form-label">User Name:</label>
                             <div class="col-sm-9">
                                 <html:text property="username" styleClass="form-control" styleId="username" disabled="true"/>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <label for="timeStamp" class="col-sm-3 col-form-label">Time Stamp:</label>
                             <div class="col-sm-9">
                                 <html:text property="timeStamp" styleClass="form-control" styleId="timeStamp" disabled="true"/>
@@ -316,7 +317,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row hidden-print">
                         <div class="offset-sm-2 col-sm-10">
                             <button type="button" onclick="javaScript:parent.location = '/viewEditCommunity.do?comId=<%=request.getParameter("comId")%>'"
                                     class="btn btn-primary">Edit

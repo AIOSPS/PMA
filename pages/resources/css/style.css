@@ -832,3 +832,9 @@ footer  .fa-caret-right:before {
     border: 0px !important;
     cursor: none !important;
 }
+
+@media print {
+    .hidden-print {
+        display: none !important
+    }
+}

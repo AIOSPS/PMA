@@ -114,15 +114,25 @@
                 </tbody>
             </table>
             <script>
-                $(document).ready(function () {
-                    $('#listObjectivesTbl').DataTable(  {
-                        dom: 'lBfrtip',
-                        buttons: [
-                            'excelHtml5',
-                            'pdfHtml5'
-                        ]
-                    }  );
-                });
+//                $(document).ready(function () {
+//                    $('#listObjectivesTbl').DataTable(  {
+//                        dom: 'lBfrtip',
+//                        buttons: [
+//                            'excelHtml5',
+//                            'pdfHtml5'
+//                        ]
+//                    }  );
+//                });
+$(document).ready(function() {
+    var table = $('#listObjectivesTbl').DataTable( {
+        lengthChange: false,
+//        dom: 'Bftrip',
+        buttons: ['excel', 'pdf']
+    } );
+
+    table.buttons().container()
+            .appendTo( '#listObjectivesTbl_wrapper .col-sm-6:eq(0)' );
+} );
             </script>
         </div>
 

@@ -110,9 +110,10 @@
 
                 <div class="form-group row">
                     <div class="col-md-8">
-                        <label for="8_val1" class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="8" class="checkBox">
-                            Governorate</label>
+                            Governorate
+                        </label>
                         <div class="col-sm-9">
                             <input type="hidden" name="8_whereCondType" value="0">
                             <select id="8_val1" name="8_val1" class="selectpicker form-control input-sm" data-live-search="true">
@@ -137,7 +138,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-8">
-                        <label for="9_val1" class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="9" class="checkBox">
                             Community</label>
                         <div class="col-sm-9">
@@ -165,7 +166,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-8">
-                        <label for="8_val1" class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="10" class="checkBox">
                             Sector</label>
                         <div class="col-sm-9">
@@ -193,7 +194,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-8">
-                        <label for="11_val1" class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="11" class="checkBox">
                             Donor</label>
                         <div class="col-sm-9">
@@ -221,7 +222,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-8">
-                        <label for="12_val1" class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="12" class="checkBox">
                             Has Permit</label>
                         <div class="col-sm-9">
@@ -241,7 +242,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-8">
-                        <label for="13_val1" class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="13" class="checkBox">
                             Benificiary Type</label>
                         <div class="col-sm-9">
@@ -269,7 +270,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-8">
-                        <label for="14_val1" class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="14" class="checkBox">
                             Implementer</label>
                         <div class="col-sm-9">

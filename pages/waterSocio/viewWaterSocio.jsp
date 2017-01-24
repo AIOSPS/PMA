@@ -45,7 +45,8 @@
             <div class="col-md-8">
                 <h1>View Water Socio</h1>
             </div>
-            <div class="col-md-4 pd15 create ">
+            <div class="col-md-4 pd15 create hidden-print">
+                <a class="btn btn-primary pull-right" href="javascript:window.print()">Print</a>
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
             </div>
         </div>
@@ -55,7 +56,7 @@
                 <h2 class="titleSep"><span>Water Socio Information</span></h2>
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
                             <html:select property="comId"
@@ -73,7 +74,7 @@
                             <html:hidden property="watId"/>
                         <%--</div>--%>
                     <%--</div>--%>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watSurveyDate" class="col-sm-3 col-form-label">Survey Date:</label>
 
                         <div class='input-group date col-sm-9' id='wSurveyDate'>
@@ -94,7 +95,7 @@
 
 
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watIsconnected" class="col-sm-3 col-form-label">Is connected:</label>
                         <div class="col-sm-9">
                             <fieldset class="col-sm-9" id="watIsconnected">
@@ -114,7 +115,7 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watNetwork" class="col-sm-3 col-form-label">Local Network exist:</label>
                         <div class="col-sm-9">
                             <html:select property="watNetwork" styleClass="selectpicker form-control" disabled="true">
@@ -126,7 +127,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watUseWatTanker" class="col-sm-3 col-form-label">Uses Water Tanker:</label>
                         <div class="col-sm-9">
                         <fieldset class="col-sm-9" id="watUseWatTanker">
@@ -146,7 +147,7 @@
                         </div>
                         </fieldset>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watRainWaterWell" class="col-sm-3 col-form-label">Rain Water Well:</label>
                         <div class="col-sm-9">
                             <html:text property="watRainWaterWell" styleClass="form-control" styleId="watRainWaterWell" disabled="true"/>
@@ -154,13 +155,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watNoSprings" class="col-sm-3 col-form-label">Number of Springs:</label>
                         <div class="col-sm-9">
                             <html:text property="watNoSprings" styleClass="form-control" styleId="watNoSprings" disabled="true"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watPriceWater" class="col-sm-3 col-form-label">Price of M3 Water:</label>
                         <div class="input-group date  col-sm-9">
                             <html:text property="watPriceWater" styleClass="form-control" styleId="watPriceWater" disabled="true"/>
@@ -171,7 +172,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watFillingPoint" class="col-sm-3 col-form-label">Distance to the Filling Point:</label>
                         <div class="col-sm-9">
                             <fieldset class="col-sm-9" id="watFillingPoint">
@@ -188,7 +189,7 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="watQuantity" class="col-sm-3 col-form-label">Concerns of  Quality of Water:</label>
                         <div class="col-sm-9">
                             <html:select property="watQuantity" styleClass="selectpicker form-control" disabled="true">
@@ -228,7 +229,7 @@
 
                 <%--</div>--%>
 
-                <div class="form-group row">
+                <div class="form-group row hidden-print">
                     <div class="offset-sm-2 col-sm-10">
                         <button type="button" onclick="javaScript:parent.location = '/viewEditWaterSocio.do?watId=<%=request.getParameter("watId")%>'"
                                 class="btn btn-primary">Edit

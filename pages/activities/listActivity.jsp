@@ -127,15 +127,26 @@
                 </tbody>
             </table>
             <script>
-                $(document).ready(function () {
-                    $('#listActivitiesTbl').DataTable(  {
-                        dom: 'lBfrtip',
-                        buttons: [
-                            'excelHtml5',
-                            'pdfHtml5'
-                        ]
-                    }  );
-                });
+//                $(document).ready(function () {
+//                    $('#listActivitiesTbl').DataTable(  {
+//                        lengthChange: false,
+//                        dom: 'Bftrip',
+//                        buttons: [
+//                            'excelHtml5',
+//                            'pdfHtml5'
+//                        ]
+//                    }  );
+//                });
+$(document).ready(function() {
+    var table = $('#listActivitiesTbl').DataTable( {
+        lengthChange: false,
+//        dom: 'Bftrip',
+        buttons: ['excel', 'pdf']
+    } );
+
+    table.buttons().container()
+            .appendTo( '#listActivitiesTbl_wrapper .col-sm-6:eq(0)' );
+} );
             </script>
         </div>
 
