@@ -221,7 +221,8 @@
                     <div class="col-md-6">
                         <label for="proBudget" class="col-sm-3 col-form-label">Budget:</label>
                         <div class="input-group date  col-sm-9">
-                            <html:text property="proBudget" styleClass="form-control" styleId="proBudget" disabled="true"/>
+                            <html:text property="proBudgetTxt" styleClass="form-control" styleId="proBudget" disabled="true"/>
+                            <html:hidden property="proBudget"/>
                             <span class="input-group-addon input-group-addon1">
                                €
                             </span>
@@ -680,4 +681,15 @@
         defaultText: "Please Enter The Project Budjet ",
         emptyText: "Please Enter The Project Budjet ",
     });
+
+//    document.getElementsByName("proBudgetTxt")[0].onblur =function (){
+
+        //number-format the user input
+    proBudgetTxt.value = parseFloat(proBudgetTxt.value.replace(/,/g, ""))
+            .toFixed(2)
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementsByName("proBudget")[0].value = proBudgetTxt.value.replace(/,/g, "")
+//    }
 </script>
