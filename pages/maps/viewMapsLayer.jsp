@@ -18,6 +18,7 @@
 <script type="text/javascript">
     Ext.onReady(function() {
         var variable = 5000;
+        var p_com_var = 50;
         var map = new ol.Map({
             controls: ol.control.defaults({
                 attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
@@ -200,7 +201,40 @@
                         legendTitle  : "Projects Locations",
                         legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
                     }
+                }),
+
+                new ol.layer.Tile({
+                    title: 'Global Imagery',
+                    source: new ol.source.TileWMS({
+                        projection: 'EPSG:4281',
+                        url: 'http://btcweb.ddns.net:8080/geoserver/crs_4281/wms',
+                        params: {LAYERS: 'crs_4281:pms_communities_loc_vw', 'transparent':'true', VERSION: '1.1.0', viewparams:'p_com:' + p_com_var},
+                        serverType: 'geoserver'
+                    }),
+                    lyrControlOpt : {
+                        legendGroup  : 'Wms Layers',
+                        legendnodeid : 'wms9',
+                        legendTitle  : "Communities",
+                        legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                    }
+                }) ,
+
+                new ol.layer.Tile({
+                    title: 'Global Imagery',
+                    source: new ol.source.TileWMS({
+                        projection: 'EPSG:4281',
+                        url: 'http://btcweb.ddns.net:8080/geoserver/crs_4281/wms',
+                        params: {LAYERS: 'crs_4281:pms_incidents_gis_view', 'transparent':'true', VERSION: '1.1.0'},
+                        serverType: 'geoserver'
+                    }),
+                    lyrControlOpt : {
+                        legendGroup  : 'Wms Layers',
+                        legendnodeid : 'wms10',
+                        legendTitle  : "Incidents",
+                        legendImgUrl : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+                    }
                 })
+
 //                    ,
 //
 //                    new ol.layer.Tile({
@@ -222,7 +256,7 @@
             target: 'map',
             view: new ol.View({
                 center: ol.proj.transform([35, 32], 'EPSG:4326', 'EPSG:3857'),
-                zoom: 8,
+                zoom: 9,
                 'transparent':'true',
                 rotation: 0
             })
