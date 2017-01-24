@@ -177,9 +177,9 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="comResidentsTotal" class="col-sm-3 col-form-label">Female #:</label>
+                        <label for="comFemaleTotal" class="col-sm-3 col-form-label">Female #:</label>
                         <div class="col-sm-9">
-                            <html:text property="comResidentsTotal" styleClass="form-control" styleId="comResidentsTotal"/>
+                            <html:text property="comFemaleTotal" styleClass="form-control" styleId="comFemaleTotal"/>
                         </div>
                     </div>
                 </div>

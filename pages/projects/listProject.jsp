@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label  class="col-sm-5 col-form-label">Governate:</label>
+                                <label  class="col-sm-5 col-form-label">Governorate:</label>
                                 <div class="col-sm-12">
                                     <html:select property="governateId"
                                                  styleClass="selectpicker form-control">
