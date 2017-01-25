@@ -125,8 +125,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span> Maps <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/viewMaps.do"> Maps </a></li>
-                        <li><a href="/viewMapsLayer.do"> Maps Layers </a></li>
+                        <%--<li><a href="/viewMaps.do"> Maps </a></li>--%>
+                        <li><a href="/viewMapsLayer.do"> Map</a></li>
                     </ul>
                 </li>
 
