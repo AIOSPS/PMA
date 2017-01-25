@@ -28,6 +28,9 @@ public class AddPmsInterventionAction extends Action {
 //            return mapping.findForward("noPermission");
         PmsInterventionForm pmsInterventionForm = (PmsInterventionForm) form;
         String intId = pmsInterventionForm.getIntId();
+        if (intId == null || intId.equals("")){
+            intId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+        }
         String secId = pmsInterventionForm.getSecId();
         String masId = pmsInterventionForm.getMasId();
         String intDesc = pmsInterventionForm.getIntDesc();
@@ -56,8 +59,8 @@ public class AddPmsInterventionAction extends Action {
 
             PmsActivityPK pmsActivityPK= new PmsActivityPK();
             PmsActivity pmsActivity= new PmsActivity();
-            if(parameters.containsKey("actId"+count)) {
-                pmsActivityPK.setActId(parameters.get("actId"+count)[0]);
+            if(parameters.containsKey("actDesc"+count)) {
+                pmsActivityPK.setActId(eu.pms.common.tools.Randomizer.randomIntegers(10).toString());
                 pmsActivityPK.setIntId(intId);
                 pmsActivityPK.setSecId(secId);
                 pmsActivity.setCompId(pmsActivityPK);

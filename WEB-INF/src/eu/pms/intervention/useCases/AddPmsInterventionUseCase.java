@@ -20,9 +20,6 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String intId = (String) itr.next();
-            if (intId == null || intId.equals("")){
-                intId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
-            }
             String secId = (String) itr.next();
             String masId = (String) itr.next();
             String intDesc = (String) itr.next();
