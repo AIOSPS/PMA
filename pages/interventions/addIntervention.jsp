@@ -254,14 +254,6 @@
         exports.InvalidInputHelper = InvalidInputHelper;
     })(window);
 
-
-    InvalidInputHelper(document.getElementsByName("intId")[0], {
-        defaultText: "Please Enter The Intervention ID ",
-        emptyText: "Please Enter The Intervention ID ",
-//        invalidText: function (input) {
-//            return 'The email address "' + input.value + '" is invalid!';
-//        }
-    });
     InvalidInputHelper(document.getElementsByName("intDesc")[0], {
         defaultText: "Please Enter The Description ",
         emptyText: "Please Enter The Description ",

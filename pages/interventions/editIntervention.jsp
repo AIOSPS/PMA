@@ -159,7 +159,7 @@
                                     <table class="table table-striped table-bordered" id="tab_logic">
                                         <thead>
                                         <tr >
-                                            <th width="15%" class="text-center">Activity ID</th>
+                                            <%--<th width="15%" class="text-center">Activity ID</th>--%>
                                             <th width="35%" class="text-center">Description</th>
                                             <th width="15%" class="text-center">Unit</th>
                                             <th width="15%" class="text-center">Unit Qty</th>
@@ -171,9 +171,9 @@
                                         </thead>
                                         <tbody>
                                         <tr id='addr0' data-id="0" class="hidden">
-                                            <td data-name="actId">
-                                                <input type="text" id="actId0" name="actId0"  placeholder='Activity ID' class="form-control"/>
-                                            </td>
+                                            <%--<td data-name="actId">--%>
+                                                <%--<input type="text" id="actId0" name="actId0"  placeholder='Activity ID' class="form-control"/>--%>
+                                            <%--</td>--%>
                                             <td data-name="actDesc">
                                                 <input type="text" id="actDesc0" name="actDesc0" placeholder='Description' class="form-control"/>
                                             </td>
@@ -199,9 +199,9 @@
                                                 pmsActivity = (PmsActivity) itr.next();
                                         %>
                                         <tr id='addr<%=count%>' data-id="<%=count%>">
-                                            <td data-name="actId">
-                                                <input type="text" id="actId<%=count%>" name="actId<%=count%>" value="<%=pmsActivity.getCompId().getActId()%>"  placeholder='Activity ID' class="form-control"/>
-                                            </td>
+                                            <%--<td data-name="actId">--%>
+                                                <%--<input type="text" id="actId<%=count%>" name="actId<%=count%>" value="<%=pmsActivity.getCompId().getActId()%>"  placeholder='Activity ID' class="form-control"/>--%>
+                                            <%--</td>--%>
                                             <td data-name="actDesc">
                                                 <input type="text" id="actDesc<%=count%>" name="actDesc<%=count%>" value="<%=pmsActivity.getActDesc()%>" placeholder='Description' class="form-control"/>
                                             </td>
@@ -286,13 +286,6 @@
         exports.InvalidInputHelper = InvalidInputHelper;
     })(window);
 
-    InvalidInputHelper(document.getElementsByName("intId")[0], {
-        defaultText: "Please Enter The Intervention ID ",
-        emptyText: "Please Enter The Intervention ID ",
-//        invalidText: function (input) {
-//            return 'The email address "' + input.value + '" is invalid!';
-//        }
-    });
     InvalidInputHelper(document.getElementsByName("intDesc")[0], {
         defaultText: "Please Enter The Description ",
         emptyText: "Please Enter The Description ",
