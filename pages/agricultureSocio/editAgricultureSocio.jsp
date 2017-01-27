@@ -57,7 +57,7 @@
                         <%--<label for="agrId" class="col-sm-3 col-form-label">Agriculture Id:</label>--%>
                         <%--<div class="col-sm-9">--%>
                             <%--<html:text property="agrId" styleClass="form-control" styleId="agrId" disabled="true"/>--%>
-                            <%--<html:hidden property="agrId"/>--%>
+                            <html:hidden property="agrId"/>
                         <%--</div>--%>
                     <%--</div>--%>
                     <div class="col-md-6">

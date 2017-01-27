@@ -44,7 +44,7 @@ public class DynamicReportDesign implements ReportDesign<DynamicReportDataSource
 
         HeaderInfo repHeaderInfo = new HeaderInfo();
         repHeaderInfo.setLayoutPage(PageOrientation.PORTRAIT);
-        repHeaderInfo.setCenterTitle("Ad Hoc Report");
+        repHeaderInfo.setCenterTitle("Ad-Hoc Report");
 //        repHeaderInfo.setLeftTitle("Ad Hoc Report");
 //        repHeaderInfo.setRightTitle("تقرير احصائيات الخريجين");
 

@@ -211,4 +211,17 @@
     <definition name="pms.askToAddAlbum.tile" extends="innerLayout">
         <put name="body" value="/pages/projects/askToAddAlbum.jsp"/>
     </definition>
+
+    <definition name="pms.economicSocioList.tile" extends="innerLayout">
+        <put name="body" value="/pages/economicSocio/listEconomicSocio.jsp"/>
+    </definition>
+    <definition name="pms.addEconomicSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/economicSocio/addEconomicSocio.jsp"/>
+    </definition>
+    <definition name="pms.viewEconomicSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/economicSocio/viewEconomicSocio.jsp"/>
+    </definition>
+    <definition name="pms.editEconomicSocio.tile" extends="innerLayout">
+        <put name="body" value="/pages/economicSocio/editEconomicSocio.jsp"/>
+    </definition>
 </tiles-definitions>

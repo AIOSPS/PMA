@@ -36,6 +36,8 @@
         <form-bean name="pmsAgricultureSocioSearchForm" type="eu.pms.agricultureSocio.forms.PmsAgricultureSocioSearchForm"/>
         <form-bean name="pmsWaterSocioForm" type="eu.pms.waterSocio.forms.PmsWaterSocioForm"/>
         <form-bean name="pmsWaterSocioSearchForm" type="eu.pms.waterSocio.forms.PmsWaterSocioSearchForm"/>
+        <form-bean name="pmsEconomicSocioForm" type="eu.pms.economicSocio.forms.PmsEconomicSocioForm"/>
+        <form-bean name="pmsEconomicSocioSearchForm" type="eu.pms.economicSocio.forms.PmsEconomicSocioSearchForm"/>
 
     </form-beans>
 
@@ -803,6 +805,53 @@
                 path="/viewEditWaterSocio"
         >
             <forward name="success" path="pms.editWaterSocio.tile"/>
+        </action>
+
+        <action
+                type="eu.pms.economicSocio.actions.PmsEconomicSocioListAction"
+                scope="request"
+                path="/pmsEconomicSocioList">
+            <forward name="success" path="pms.economicSocioList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.economicSocio.actions.PmsEconomicSocioListAction"
+                scope="request"
+                path="/searchEconomicSocio"
+                name="pmsEconomicSocioSearchForm"
+        >
+            <forward name="success" path="pms.economicSocioList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsEconomicSocioForm"
+                type="eu.pms.economicSocio.actions.ViewAddPmsEconomicSocioAction"
+                validate="false"
+                path="/viewAddEconomicSocio"
+        >
+            <forward name="success" path="pms.addEconomicSocio.tile"/>
+        </action>
+        <action
+                name="pmsEconomicSocioForm"
+                type="eu.pms.economicSocio.actions.AddPmsEconomicSocioAction"
+                validate="false"
+                path="/addEconomicSocio"
+        >
+            <forward name="success" path="/pmsEconomicSocioList.do"/>
+        </action>
+        <action
+                name="pmsEconomicSocioForm"
+                type="eu.pms.economicSocio.actions.ViewPmsEconomicSocioAction"
+                validate="false"
+                path="/viewPmsEconomicSocio"
+        >
+            <forward name="success" path="pms.viewEconomicSocio.tile"/>
+        </action>
+        <action
+                name="pmsEconomicSocioForm"
+                type="eu.pms.economicSocio.actions.ViewPmsEconomicSocioAction"
+                validate="false"
+                path="/viewEditEconomicSocio"
+        >
+            <forward name="success" path="pms.editEconomicSocio.tile"/>
         </action>
 
     </action-mappings>

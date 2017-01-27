@@ -86,3 +86,23 @@ VIEW `pms_master_plan_vw` AS
         ((`pms_master_plan` `mp`
         left JOIN `pms_master_plan_communities` `mpc` on  (`mp`.`mas_id` = `mpc`.`mas_id`))
         left JOIN `pms_communities` `com` ON ((`mpc`.`com_id` = `com`.`com_id`)));
+---------------
+drop TABLE if exists `pms_economic_socio` ;
+CREATE TABLE `pms_economic_socio` (
+  `eco_id` varchar(15) NOT NULL,
+  `com_id` varchar(15) NOT NULL,
+  `men_livelihood_source1` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
+  `men_livelihood_source2` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
+  `men_livelihood_source3` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
+  `women_livelihood_source1` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
+  `women_livelihood_source2` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
+  `women_livelihood_source3` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
+  `access_to_lands_military` char(1) NOT NULL COMMENT 'Yes or No',
+  `access_to_lands_checkpoints` char(1) NOT NULL COMMENT 'Yes or No',
+  `family_avg_size` int(11) NOT NULL,
+  `family_avg_income` decimal(5,3) NOT NULL,
+  `username` varchar(15) NOT NULL,
+  `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`com_id`,`eco_id`),
+  CONSTRAINT `pms_econmic_socio_pms_com_fk` FOREIGN KEY (`com_id`) REFERENCES `pms_communities` (`com_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

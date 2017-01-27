@@ -458,4 +458,19 @@
                 order by a.compId.msrDate
                   ]]>
     </query>
+    <query
+            name="getPmsEconomicSocio">
+        <![CDATA[
+                from eu.pms.project.database.PmsEconomicSocio a
+                order by a.familyAvgSize
+                  ]]>
+    </query>
+    <query
+            name="getPmsEconomicSocioByEcoId">
+        <![CDATA[
+                from eu.pms.project.database.PmsEconomicSocio a
+                where a.compId.ecoId = ?
+                order by a.familyAvgSize
+                  ]]>
+    </query>
 </hibernate-mapping>

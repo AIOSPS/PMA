@@ -30,8 +30,9 @@
                     draggable      : true,
                     width          : 250,
                     mapdivid       : 'map',
-                    mapconstrained : true ,
-                    lang           : 'en'
+                    mapconstrained : true
+
+
                 })
             ]),
             layers: [
@@ -43,6 +44,9 @@
                         legendnodeid: 'osmid',
                         legendTitle : "Open Street Map",
                         legendImgUrl: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuc6e1CN-FTgOjxnG0YLjQ-vxQ4T9jHXdhimbTHn1NmbXxzDJa"
+
+
+
                     }
                 }),
                 /*  new ol.layer.Tile({
