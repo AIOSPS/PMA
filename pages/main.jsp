@@ -18,7 +18,7 @@
 
         <div class="content-wrapper ">
             <div class="pd15 titleArea">
-                <img src="/pages/resources/images/mainPage.png">
+                <img src="/pages/resources/images/mainPage.png" width="90%" height="90%">
             </div>
             <%--<div class="col-md-4 dsh-blocks dsh-projects sec1">--%>
                 <%--<div class="dsh-bg">--%>
