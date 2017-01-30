@@ -25,8 +25,10 @@
         $("#womenLivelihoodSource3").prop('required', true);
         $("#accessToLandsMilitary").attr("placeholder", "Access to Lands Military");
         $("#accessToLandsMilitary").prop('required', true);
+        $('input[name=accessToLandsMilitary][value="1"]').attr('checked', true);
         $("#accessToLandsCheckpoints").attr("placeholder", "Access to Lands Checkpoints");
         $("#accessToLandsCheckpoints").prop('required', true);
+        $('input[name=accessToLandsCheckpoints][value="1"]').attr('checked', true);
         $("#familyAvgSize").attr("placeholder", "Family Average Size");
         $("#familyAvgSize").prop('required', true);
         $("#familyAvgIncome").attr("placeholder", "family Average Income");
@@ -83,7 +85,12 @@
                     <div class="col-md-6">
                         <label for="menLivelihoodSource1" class="col-sm-3 col-form-label">Men Livelihood Source1:</label>
                         <div class="col-sm-9">
-                            <html:text property="menLivelihoodSource1" styleClass="form-control" styleId="menLivelihoodSource1"/>
+                            <html:select property="menLivelihoodSource1" styleClass="selectpicker form-control">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -94,13 +101,23 @@
                     <div class="col-md-6">
                         <label for="menLivelihoodSource2" class="col-sm-3 col-form-label">Men Livelihood Source2:</label>
                         <div class="col-sm-9">
-                            <html:text property="menLivelihoodSource2" styleClass="form-control" styleId="menLivelihoodSource2"/>
+                            <html:select property="menLivelihoodSource2" styleClass="selectpicker form-control">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="menLivelihoodSource3" class="col-sm-3 col-form-label">Men Livelihood Source3:</label>
                         <div class="col-sm-9">
-                            <html:text property="menLivelihoodSource3" styleClass="form-control" styleId="menLivelihoodSource3"/>
+                            <html:select property="menLivelihoodSource3" styleClass="selectpicker form-control">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -109,13 +126,23 @@
                     <div class="col-md-6">
                         <label for="womenLivelihoodSource1" class="col-sm-3 col-form-label">Women Livelihood Source1:</label>
                         <div class="col-sm-9">
-                            <html:text property="womenLivelihoodSource1" styleClass="form-control" styleId="womenLivelihoodSource1"/>
+                            <html:select property="womenLivelihoodSource1" styleClass="selectpicker form-control">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="womenLivelihoodSource2" class="col-sm-3 col-form-label">Women Livelihood Source2:</label>
                         <div class="col-sm-9">
-                            <html:text property="womenLivelihoodSource2" styleClass="form-control" styleId="womenLivelihoodSource2"/>
+                            <html:select property="womenLivelihoodSource2" styleClass="selectpicker form-control">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -124,13 +151,34 @@
                     <div class="col-md-6">
                         <label for="womenLivelihoodSource3" class="col-sm-3 col-form-label">Women Livelihood Source3:</label>
                         <div class="col-sm-9">
-                            <html:text property="womenLivelihoodSource3" styleClass="form-control" styleId="womenLivelihoodSource3"/>
+                            <html:select property="womenLivelihoodSource3" styleClass="selectpicker form-control">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="accessToLandsMilitary" class="col-sm-3 col-form-label">Access to Lands Military:</label>
                         <div class="col-sm-9">
-                            <html:text property="accessToLandsMilitary" styleClass="form-control" styleId="accessToLandsMilitary"/>
+                            <fieldset class="col-sm-9" id="accessToLandsMilitary">
+                                <div>
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsMilitary" value="1"/>
+                                        Yes
+                                    </label>
+
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsMilitary"  value="0"/>
+                                        No
+                                    </label>
+
+
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
@@ -139,13 +187,32 @@
                     <div class="col-md-6">
                         <label for="accessToLandsCheckpoints" class="col-sm-3 col-form-label">Access to Lands Checkpoints:</label>
                         <div class='col-sm-9'>
-                            <html:text property="accessToLandsCheckpoints" styleClass="form-control" styleId="accessToLandsCheckpoints"/>
+                            <fieldset class="col-sm-9" id="accessToLandsCheckpoints">
+                                <div>
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsCheckpoints" value="1"/>
+                                        Yes
+                                    </label>
+
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsCheckpoints"  value="0"/>
+                                        No
+                                    </label>
+
+
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="familyAvgSize" class="col-sm-3 col-form-label">Family Average Size:</label>
-                        <div class='col-sm-9'>
+                        <div class='input-group date  col-sm-9'>
                             <html:text property="familyAvgSize" styleClass="form-control" styleId="familyAvgSize"/>
+                            <span class="input-group-addon input-group-addon1">
+                               Person
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -153,8 +220,11 @@
 
                     <div class="col-md-6">
                         <label for="familyAvgIncome" class="col-sm-3 col-form-label">Family Average Income:</label>
-                        <div class='col-sm-9'>
+                        <div class='input-group date  col-sm-9'>
                             <html:text property="familyAvgIncome" styleClass="form-control" styleId="familyAvgIncome"/>
+                            <span class="input-group-addon input-group-addon1">
+                               NIS
+                            </span>
                         </div>
                     </div>
                     <div class="col-md-6">

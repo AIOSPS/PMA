@@ -49,8 +49,8 @@
                 <div class="dsh-bg">
                     <div class="pull-right"><span class="fa fa-codepen  "></span></div>
                     <p class="dsh-title">SOCIO-ECONOMIC</p>
-                    <p class="dsh-txt">
-                        Basic  Information - <a href="/pmsAgricultureSocioList.do">Agriculture</a> - <a href="/pmsWaterSocioList.do">Water</a>
+                    <a class="dsh-txt">
+                        <a href="/pmsEconomicSocioList.do"> Basic  Information</a> - <a href="/pmsAgricultureSocioList.do">Agriculture</a> - <a href="/pmsWaterSocioList.do">Water</a>
                     </p>
                 </div>
             </div>

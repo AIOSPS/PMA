@@ -686,4 +686,23 @@
         <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
 
+    <class name="eu.pms.project.database.PmsEconomicSocioVw" table="pms_economic_socio_vw" >
+        <composite-id name="compId" class="eu.pms.project.database.PmsEconomicSocioVwPK">
+            <key-property name="ecoId" column="eco_id" type="java.lang.String"/>
+            <key-property name="comId" column="com_id" type="java.lang.String"/>
+        </composite-id>
+        <property name="menLivelihoodSource1" type="java.lang.String" column="men_livelihood_source1" />
+        <property name="menLivelihoodSource2" type="java.lang.String" column="men_livelihood_source2" />
+        <property name="menLivelihoodSource3" type="java.lang.String" column="men_livelihood_source3" />
+        <property name="womenLivelihoodSource1" type="java.lang.String" column="women_livelihood_source1" />
+        <property name="womenLivelihoodSource2" type="java.lang.String" column="women_livelihood_source2" />
+        <property name="womenLivelihoodSource3" type="java.lang.String" column="women_livelihood_source3" />
+        <property name="accessToLandsMilitary" type="java.lang.String" column="access_to_lands_military" />
+        <property name="accessToLandsCheckpoints" type="java.lang.String" column="access_to_lands_checkpoints" />
+        <property name="familyAvgSize" type="java.lang.Integer" column="family_avg_size" />
+        <property name="familyAvgIncome" type="java.math.BigDecimal" column="family_avg_income" />
+        <property name="username" type="java.lang.String" column="username" />
+        <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+    </class>
+
 </hibernate-mapping>

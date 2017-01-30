@@ -104,7 +104,7 @@
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsEconomicSocioList">
-                    <logic:iterate id="pmsEconomicSocioList" name="pmsEconomicSocioList" type="eu.pms.project.database.PmsEconomicSocio">
+                    <logic:iterate id="pmsEconomicSocioList" name="pmsEconomicSocioList" type="eu.pms.project.database.PmsEconomicSocioVw">
                         <tr>
                             <td width="10%" class="text-center"><bean:write name="pmsEconomicSocioList" property="menLivelihoodSource1"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsEconomicSocioList" property="menLivelihoodSource2"/></td>

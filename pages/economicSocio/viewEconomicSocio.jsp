@@ -48,7 +48,8 @@
             <div class="col-md-8">
                 <h1>View Basic Socio</h1>
             </div>
-            <div class="col-md-4 pd15 create ">
+            <div class="col-md-4 pd15 create hidden-print">
+                <a class="btn btn-primary pull-right" href="javascript:window.print()">Print</a>
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
             </div>
         </div>
@@ -65,7 +66,7 @@
                     <html:hidden property="ecoId"/>
                         <%--</div>--%>
                         <%--</div>--%>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="comId" class="col-sm-3 col-form-label">Community:</label>
                         <div class="col-sm-9">
                             <html:select property="comId"
@@ -81,10 +82,15 @@
                             </script>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="menLivelihoodSource1" class="col-sm-3 col-form-label">Men Livelihood Source1:</label>
                         <div class="col-sm-9">
-                            <html:text property="menLivelihoodSource1" styleClass="form-control" styleId="menLivelihoodSource1" disabled="true"/>
+                            <html:select property="menLivelihoodSource1" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -92,73 +98,136 @@
 
                 <div class="form-group row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="menLivelihoodSource2" class="col-sm-3 col-form-label">Men Livelihood Source2:</label>
                         <div class="col-sm-9">
-                            <html:text property="menLivelihoodSource2" styleClass="form-control" styleId="menLivelihoodSource2" disabled="true"/>
+                            <html:select property="menLivelihoodSource2" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="menLivelihoodSource3" class="col-sm-3 col-form-label">Men Livelihood Source3:</label>
                         <div class="col-sm-9">
-                            <html:text property="menLivelihoodSource3" styleClass="form-control" styleId="menLivelihoodSource3" disabled="true"/>
+                            <html:select property="menLivelihoodSource3" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="womenLivelihoodSource1" class="col-sm-3 col-form-label">Women Livelihood Source1:</label>
                         <div class="col-sm-9">
-                            <html:text property="womenLivelihoodSource1" styleClass="form-control" styleId="womenLivelihoodSource1" disabled="true"/>
+                            <html:select property="womenLivelihoodSource1" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="womenLivelihoodSource2" class="col-sm-3 col-form-label">Women Livelihood Source2:</label>
                         <div class="col-sm-9">
-                            <html:text property="womenLivelihoodSource2" styleClass="form-control" styleId="womenLivelihoodSource2" disabled="true"/>
+                            <html:select property="womenLivelihoodSource2" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="womenLivelihoodSource3" class="col-sm-3 col-form-label">Women Livelihood Source3:</label>
                         <div class="col-sm-9">
-                            <html:text property="womenLivelihoodSource3" styleClass="form-control" styleId="womenLivelihoodSource3" disabled="true"/>
+                            <html:select property="womenLivelihoodSource3" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">work in settlements</html:option>
+                                <html:option value="2">PA employee</html:option>
+                                <html:option value="3">Farming</html:option>
+                                <html:option value="4">Handicrafts</html:option>
+                            </html:select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="accessToLandsMilitary" class="col-sm-3 col-form-label">Access to Lands Military:</label>
                         <div class="col-sm-9">
-                            <html:text property="accessToLandsMilitary" styleClass="form-control" styleId="accessToLandsMilitary" disabled="true"/>
+                            <fieldset class="col-sm-9" id="accessToLandsMilitary">
+                                <div>
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsMilitary" value="1" disabled="true"/>
+                                        Yes
+                                    </label>
+
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsMilitary"  value="0" disabled="true"/>
+                                        No
+                                    </label>
+
+
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="accessToLandsCheckpoints" class="col-sm-3 col-form-label">Access to Lands Checkpoints:</label>
                         <div class='col-sm-9'>
-                            <html:text property="accessToLandsCheckpoints" styleClass="form-control" styleId="accessToLandsCheckpoints" disabled="true"/>
+                            <fieldset class="col-sm-9" id="accessToLandsCheckpoints">
+                                <div>
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsCheckpoints" value="1" disabled="true"/>
+                                        Yes
+                                    </label>
+
+
+                                    <label class="radio-inline">
+                                        <html:radio property="accessToLandsCheckpoints"  value="0" disabled="true"/>
+                                        No
+                                    </label>
+
+
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="familyAvgSize" class="col-sm-3 col-form-label">Family Average Size:</label>
-                        <div class='col-sm-9'>
+                        <div class='input-group date  col-sm-9'>
                             <html:text property="familyAvgSize" styleClass="form-control" styleId="familyAvgSize" disabled="true"/>
+                            <span class="input-group-addon input-group-addon1">
+                               Person
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="familyAvgIncome" class="col-sm-3 col-form-label">Family Average Income:</label>
-                        <div class='col-sm-9'>
+                        <div class='input-group date  col-sm-9'>
                             <html:text property="familyAvgIncome" styleClass="form-control" styleId="familyAvgIncome" disabled="true"/>
+                            <span class="input-group-addon input-group-addon1">
+                               NIS
+                            </span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
 
                     </div>
                 </div>

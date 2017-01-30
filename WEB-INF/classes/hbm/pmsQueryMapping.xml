@@ -461,7 +461,7 @@
     <query
             name="getPmsEconomicSocio">
         <![CDATA[
-                from eu.pms.project.database.PmsEconomicSocio a
+                from eu.pms.project.database.PmsEconomicSocioVw a
                 order by a.familyAvgSize
                   ]]>
     </query>

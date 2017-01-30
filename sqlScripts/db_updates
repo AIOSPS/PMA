@@ -106,3 +106,70 @@ CREATE TABLE `pms_economic_socio` (
   PRIMARY KEY (`com_id`,`eco_id`),
   CONSTRAINT `pms_econmic_socio_pms_com_fk` FOREIGN KEY (`com_id`) REFERENCES `pms_communities` (`com_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+------------------------
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `pms_economic_socio_vw` AS
+    SELECT
+        `pms_economic_socio`.`eco_id` AS `eco_id`,
+        `pms_economic_socio`.`com_id` AS `com_id`,
+        (CASE `pms_economic_socio`.`men_livelihood_source1`
+            WHEN 1 THEN 'work in settlements'
+            WHEN 2 THEN 'PA employee'
+            WHEN 3 THEN 'Farming'
+            WHEN 4 THEN 'Handicrafts'
+            ELSE 'N/A'
+        END) AS `men_livelihood_source1`,
+        (CASE `pms_economic_socio`.`men_livelihood_source2`
+            WHEN 1 THEN 'work in settlements'
+            WHEN 2 THEN 'PA employee'
+            WHEN 3 THEN 'Farming'
+            WHEN 4 THEN 'Handicrafts'
+            ELSE 'N/A'
+        END) AS `men_livelihood_source2`,
+        (CASE `pms_economic_socio`.`men_livelihood_source3`
+            WHEN 1 THEN 'work in settlements'
+            WHEN 2 THEN 'PA employee'
+            WHEN 3 THEN 'Farming'
+            WHEN 4 THEN 'Handicrafts'
+            ELSE 'N/A'
+        END) AS `men_livelihood_source3`,
+        (CASE `pms_economic_socio`.`women_livelihood_source1`
+            WHEN 1 THEN 'work in settlements'
+            WHEN 2 THEN 'PA employee'
+            WHEN 3 THEN 'Farming'
+            WHEN 4 THEN 'Handicrafts'
+            ELSE 'N/A'
+        END) AS `women_livelihood_source1`,
+        (CASE `pms_economic_socio`.`women_livelihood_source2`
+            WHEN 1 THEN 'work in settlements'
+            WHEN 2 THEN 'PA employee'
+            WHEN 3 THEN 'Farming'
+            WHEN 4 THEN 'Handicrafts'
+            ELSE 'N/A'
+        END) AS `women_livelihood_source2`,
+        (CASE `pms_economic_socio`.`women_livelihood_source3`
+            WHEN 1 THEN 'work in settlements'
+            WHEN 2 THEN 'PA employee'
+            WHEN 3 THEN 'Farming'
+            WHEN 4 THEN 'Handicrafts'
+            ELSE 'N/A'
+        END) AS `women_livelihood_source3`,
+        (CASE `pms_economic_socio`.`access_to_lands_military`
+            WHEN 1 THEN 'Yes'
+            WHEN 0 THEN 'No'
+            ELSE 'N/A'
+        END) AS `access_to_lands_military`,
+        (CASE `pms_economic_socio`.`access_to_lands_checkpoints`
+            WHEN 1 THEN 'Yes'
+            WHEN 0 THEN 'No'
+            ELSE 'N/A'
+        END) AS `access_to_lands_checkpoints`,
+        `pms_economic_socio`.`family_avg_size` AS `family_avg_size`,
+        `pms_economic_socio`.`family_avg_income` AS `family_avg_income`,
+        `pms_economic_socio`.`username` AS `username`,
+        `pms_economic_socio`.`time_stamp` AS `time_stamp`
+    FROM
+        `pms_economic_socio`
