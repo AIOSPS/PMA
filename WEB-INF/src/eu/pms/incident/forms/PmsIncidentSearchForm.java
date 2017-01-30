@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 public class PmsIncidentSearchForm extends ActionForm {
     private String incidentType;
     private String communityId;
-
+    private String govId;
+    private String incFromDate;
+    private String incToDate;
     /** default constructor */
     public PmsIncidentSearchForm() {
     }
@@ -29,6 +31,30 @@ public class PmsIncidentSearchForm extends ActionForm {
 
     public void setCommunityId(String communityId) {
         this.communityId = communityId;
+    }
+
+    public String getGovId() {
+        return govId;
+    }
+
+    public void setGovId(String govId) {
+        this.govId = govId;
+    }
+
+    public String getIncFromDate() {
+        return incFromDate;
+    }
+
+    public void setIncFromDate(String incFromDate) {
+        this.incFromDate = incFromDate;
+    }
+
+    public String getIncToDate() {
+        return incToDate;
+    }
+
+    public void setIncToDate(String incToDate) {
+        this.incToDate = incToDate;
     }
 
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

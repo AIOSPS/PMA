@@ -41,6 +41,7 @@
                                 <div class="col-sm-12">
                                     <html:select property="incidentType"
                                                  styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
                                         <html:option value="1">Sealing</html:option>
                                         <html:option value="2">Demolition</html:option>
                                         <html:option value="3">Confiscation</html:option>
@@ -54,6 +55,7 @@
                                 <div class="col-sm-12">
                                     <html:select property="communityId"
                                                  styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
                                         <html:options collection="communityList" property="comId" labelProperty="comName"/>
                                     </html:select>
                                     <script>
@@ -63,6 +65,56 @@
                                     </script>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <label for="govId" class="col-sm-12 col-form-label">Governorate:</label>
+                                <div class="col-sm-12">
+                                    <html:select property="govId"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
+                                    </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="govId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="incFromDate" class="col-sm-12 col-form-label">From Date:</label>
+                                <div class='input-group date col-sm-12' id='incFromDate'>
+                                    <html:text property="incFromDate" styleClass="form-control" styleId="incFromDate"/>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#incFromDate').datetimepicker({
+                                        format: 'DD/MM/YYYY'
+                                    });
+                                });
+                            </script>
+                            <div class="col-md-4">
+                                <label for="incToDate" class="col-sm-12 col-form-label">To Date:</label>
+                                <div class='input-group date col-sm-12' id='incToDate'>
+                                    <html:text property="incToDate" styleClass="form-control" styleId="incToDate"/>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#incToDate').datetimepicker({
+                                        format: 'DD/MM/YYYY'
+                                    });
+                                });
+                            </script>
                             <div class="col-md-4">
                                 <label  class="col-sm-12 col-form-label">&nbsp;</label>
                                 <div class="col-sm-12">
@@ -120,7 +172,7 @@
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsIncidentList">
-                    <logic:iterate id="pmsIncidentList" name="pmsIncidentList" type="eu.pms.project.database.PmsIncident">
+                    <logic:iterate id="pmsIncidentList" name="pmsIncidentList" type="eu.pms.project.database.PmsIncidentVw">
                         <tr>
                             <td ><bean:write name="pmsIncidentList" property="incOchaId"/></td>
                             <td ><bean:write name="pmsIncidentList" property="incDescription"/></td>
