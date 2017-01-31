@@ -1,7 +1,7 @@
 /*!
  * additional css styles */
 
-
+@page{margin: 15px}
 @font-face {
     font-family: 'awesome';
     font-style: normal;
@@ -834,6 +834,9 @@ footer  .fa-caret-right:before {
 }
 
 @media print {
+    a[href]:after {
+        content: none !important;
+    }
     .hidden-print {
         display: none !important
     }
