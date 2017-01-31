@@ -18,12 +18,15 @@ public class PmsProjectForm  extends ActionForm {
     private String proTitle;
     private String proDescription;
     private String proStatus;
+    private String proStatusDesc;
     private String proBudgetTxt;
     private java.math.BigDecimal proBudget;
     private String proStartDate;
     private String proEndDate;
     private String proNeedPermit;
+    private String proNeedPermitDesc;
     private String proHasCluster;
+    private String proHasClusterDesc;
     private String proNotes;
     private String proArea;
     private String username;
@@ -225,6 +228,61 @@ public class PmsProjectForm  extends ActionForm {
 
     public String getProBudgetTxt() {
         return proBudgetTxt;
+    }
+
+    public String getProStatusDesc() {
+        if(getProStatus()!=null) {
+            if (getProStatus().equals("1")) {
+                proStatusDesc = "Design / Approval";
+            } else if (getProStatus().equals("2")) {
+                proStatusDesc = "Ongoing";
+            } else if (getProStatus().equals("3")) {
+                proStatusDesc = "Delayed";
+            } else if (getProStatus().equals("4")) {
+                proStatusDesc = "Completed";
+            } else if (getProStatus().equals("5")) {
+                proStatusDesc = "On-Hold";
+            } else if (getProStatus().equals("6")) {
+                proStatusDesc = "Closed";
+            } else if (getProStatus().equals("7")) {
+                proStatusDesc = "Cancelled";
+            }
+        }else proStatusDesc="";
+        return proStatusDesc;
+    }
+
+    public void setProStatusDesc(String proStatusDesc) {
+        this.proStatusDesc = proStatusDesc;
+    }
+
+    public String getProNeedPermitDesc() {
+        if(getProNeedPermit()!=null) {
+            if (getProNeedPermit().equals("0")) {
+                proNeedPermitDesc = "No";
+            } else if (getProNeedPermit().equals("1")) {
+                proNeedPermitDesc = "Yes";
+            }
+        }else proNeedPermitDesc="";
+        return proNeedPermitDesc;
+    }
+
+    public void setProNeedPermitDesc(String proNeedPermitDesc) {
+        this.proNeedPermitDesc = proNeedPermitDesc;
+    }
+
+    public String getProHasClusterDesc() {
+        if(getProHasCluster()!=null) {
+            if (getProHasCluster().equals("0")) {
+                proHasClusterDesc = "No";
+            } else if (getProHasCluster().equals("1")) {
+                proHasClusterDesc = "Yes";
+            }
+        }else proHasClusterDesc="";
+        return proHasClusterDesc;
+    }
+
+    public void setProHasClusterDesc(String proHasClusterDesc) {
+        this.proHasClusterDesc = proHasClusterDesc;
     }
 
     public void setProBudgetTxt(String proBudgetTxt) {
