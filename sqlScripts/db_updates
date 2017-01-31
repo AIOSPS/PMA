@@ -173,3 +173,40 @@ VIEW `pms_economic_socio_vw` AS
         `pms_economic_socio`.`time_stamp` AS `time_stamp`
     FROM
         `pms_economic_socio`
+--------------------------------
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `pms_incidents_communities_vw` AS
+    SELECT
+        `inc`.`inc_id` AS `inc_id`,
+        `inc`.`inc_type` AS `inc_type`,
+        `inc`.`inc_ocha_id` AS `inc_ocha_id`,
+        `inc`.`inc_description` AS `inc_description`,
+        `inc`.`inc_Affected_women` AS `inc_Affected_women`,
+        `inc`.`inc_Affected_men` AS `inc_Affected_men`,
+        `inc`.`inc_Affected_adaults` AS `inc_Affected_adaults`,
+        `inc`.`inc_Affected_children` AS `inc_Affected_children`,
+        `inc`.`inc_Displaced_women` AS `inc_Displaced_women`,
+        `inc`.`inc_SourceLink` AS `inc_SourceLink`,
+        `inc`.`inc_timeStamp` AS `inc_timeStamp`,
+        `inc`.`dat_id` AS `dat_id`,
+        `inc`.`com_id` AS `com_id`,
+        `inc`.`ocha_loc_latitude` AS `ocha_loc_latitude`,
+        `inc`.`ocha_loc_longitude` AS `ocha_loc_longitude`,
+        `inc`.`pro_id` AS `pro_id`,
+        `inc`.`inc_Displaced_men` AS `inc_Displaced_men`,
+        `inc`.`inc_Displaced_adult` AS `inc_Displaced_adult`,
+        `inc`.`inc_Displaced_children` AS `inc_Displaced_children`,
+        `inc`.`inc_loc_latitude` AS `inc_loc_latitude`,
+        `inc`.`inc_loc_longitude` AS `inc_loc_longitude`,
+        `inc`.`inc_demolished_structure` AS `inc_demolished_structure`,
+        `inc`.`username` AS `username`,
+        `inc`.`time_stamp` AS `time_stamp`,
+        `com`.`gov_id` AS `gov_id`
+    FROM
+        (`pms_incidents` `inc`
+        JOIN `pms_communities` `com`)
+    WHERE
+        (`inc`.`com_id` = `com`.`com_id`)

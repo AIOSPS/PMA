@@ -12,13 +12,13 @@
 <article class="dashboard">
     <div class="container">
 
-        <div class="col-md-12 pd15 titleArea">
-            <h1>Welcome to the EU-PMS </h1>
-        </div>
+        <%--<div class="col-md-12 pd15 titleArea">--%>
+            <%--<h1>Welcome to the EU-PMS </h1>--%>
+        <%--</div>--%>
 
         <div class="content-wrapper ">
             <div class="pd15 titleArea">
-                <img src="/pages/resources/images/mainPage.png">
+               <img src="/pages/resources/images/mainPage.png" class="img-responsive center-block" width="80%">
             </div>
             <%--<div class="col-md-4 dsh-blocks dsh-projects sec1">--%>
                 <%--<div class="dsh-bg">--%>

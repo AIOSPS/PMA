@@ -281,7 +281,7 @@
     <query
             name="getPmsIncidentList">
         <![CDATA[
-                from eu.pms.project.database.PmsIncident a
+                from eu.pms.project.database.PmsIncidentVw a
                 order by a.incDescription
                   ]]>
     </query>

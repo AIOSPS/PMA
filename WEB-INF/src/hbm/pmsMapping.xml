@@ -526,6 +526,37 @@
     <property name="proId" type="java.lang.String" column="pro_id" />
     </class>
 
+    <class name="eu.pms.project.database.PmsIncidentVw" table="pms_incidents_communities_vw" >
+        <id name="incId" type="java.lang.String" column="inc_id" >
+            <generator class="assigned" />
+        </id>
+        <property name="incType" type="java.lang.String" column="inc_type" />
+        <property name="incOchaId" type="java.lang.String" column="inc_ocha_id" />
+        <property name="incDescription" type="java.lang.String" column="inc_description" />
+        <property name="incAffectedWomen" type="java.lang.Integer" column="inc_Affected_women" />
+        <property name="incAffectedMen" type="java.lang.Integer" column="inc_Affected_men" />
+        <property name="incAffectedAdaults" type="java.lang.Integer" column="inc_Affected_adaults" />
+        <property name="incAffectedChildren" type="java.lang.Integer" column="inc_Affected_children" />
+        <property name="incDemolishedStructure" type="java.lang.Integer" column="inc_demolished_structure" />
+        <property name="incSourceLink" type="java.lang.String" column="inc_SourceLink" />
+        <property name="incTimeStamp" type="java.util.Date" column="inc_timeStamp" />
+        <property name="ochaLocLatitude" type="java.math.BigDecimal" column="ocha_loc_latitude" />
+        <property name="ochaLocLongitude" type="java.math.BigDecimal" column="ocha_loc_longitude" />
+        <property name="incDisplacedWomen" type="java.lang.Integer" column="inc_Displaced_women" />
+        <property name="incDisplacedMen" type="java.lang.Integer" column="inc_Displaced_men" />
+        <property name="incDisplacedAdult" type="java.lang.Integer" column="inc_Displaced_adult" />
+        <property name="incDisplacedChildren" type="java.lang.Integer"  column="inc_Displaced_children" />
+        <property name="locLatitude" type="java.math.BigDecimal" column="`inc_loc_latitude`" />
+        <property name="locLongitude" type="java.math.BigDecimal" column="inc_loc_longitude" />
+        <property name="username" type="java.lang.String" column="username" />
+        <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+        <property name="datId" type="java.lang.String" column="dat_id" />
+        <property name="comId" type="java.lang.String" column="com_id" />
+        <property name="proId" type="java.lang.String" column="pro_id" />
+        <property name="govId" type="java.lang.String" column="gov_id" />
+
+    </class>
+
     <class name="eu.pms.lookup.database.PmsDatasourc" table="pms_datasources" >
     <id name="lookupId" type="java.lang.String" column="dat_id" >
     <generator class="assigned" />
