@@ -128,7 +128,96 @@ public class ViewPmsProjectAction extends Action {
             request.setAttribute("pmsProjectAlbumList", new GetImgsAlbumPmsProjectListUseCase().execute(inputs, request));
         }
 
+//****************************************** for print project****************
+        String donorName = "";
+        request.setAttribute("donorName",donorName);
+        if(dononrList!=null&&dononrList.size()>0) {
+            if(projectDonorArr!=null&&projectDonorArr.length>0){
+            for (int i = 0; i < dononrList.size(); i++) {
+                PmsDonor obj = (PmsDonor) dononrList.get(i);
 
+                for(int j = 0;j< projectDonorArr.length;j++)
+                    if(obj.getDonId().equals(projectDonorArr[j])){
+                        donorName +=obj.getDonName()+" | ";
+                }
+            }
+            request.setAttribute("donorName",donorName.substring(0,donorName.lastIndexOf("|")));}
+        }
+        String impName = "";
+        request.setAttribute("impName",impName);
+        if(implementerList!=null&&implementerList.size()>0) {
+            if(projectImplementerArr!=null&&projectImplementerArr.length>0){
+            for (int i = 0; i < implementerList.size(); i++) {
+                PmsImplementer obj = (PmsImplementer) implementerList.get(i);
+                for(int j = 0;j< projectImplementerArr.length;j++)
+                    if(obj.getImpId().equals(projectImplementerArr[j])){
+                        impName +=obj.getImpName()+" | ";
+                }
+            }
+            request.setAttribute("impName",impName.substring(0,impName.lastIndexOf("|")));}
+        }
+        String comName = "";
+        request.setAttribute("comName",comName);
+        if(communityList!=null&&communityList.size()>0) {
+            if(projectCommunityArr!=null&&projectCommunityArr.length>0){
+            for (int i = 0; i < communityList.size(); i++) {
+                PmsCommunity obj = (PmsCommunity) communityList.get(i);
+                for(int j = 0;j< projectCommunityArr.length;j++)
+                    if(obj.getComId().equals(projectCommunityArr[j])){
+                        comName +=obj.getComName()+" | ";
+                }
+            }
+            request.setAttribute("comName",comName.substring(0,comName.lastIndexOf("|")));}
+        }
+        String indTitle = "";
+        request.setAttribute("indTitle",indTitle);
+        if(indicatorList!=null&&indicatorList.size()>0) {
+            if(projectIndicatorArr!=null&&projectIndicatorArr.length>0){
+            for (int i = 0; i < indicatorList.size(); i++) {
+                PmsIndicator obj = (PmsIndicator) indicatorList.get(i);
+                for(int j = 0;j< projectIndicatorArr.length;j++)
+                    if(obj.getCompId().getIndId().equals(projectIndicatorArr[j])){
+                        indTitle +=obj.getIndTitle()+" | ";
+                }
+            }
+            request.setAttribute("indTitle",indTitle.substring(0,indTitle.lastIndexOf("|")));}
+        }
+        request.setAttribute("devDesc","");
+        if(developmentAgencyList!=null&&developmentAgencyList.size()>0) {
+            for (int i = 0; i < developmentAgencyList.size(); i++) {
+                PmsDevelopmentAgency obj = (PmsDevelopmentAgency) developmentAgencyList.get(i);
+                if(obj.getDevId().equals(pmsProject.getDevId())){
+                    request.setAttribute("devDesc",obj.getDevDesc());
+                }
+            }
+        }
+        request.setAttribute("prgDesc","");
+        if(programmList!=null&&programmList.size()>0) {
+            for (int i = 0; i < programmList.size(); i++) {
+                PmsProgramm obj = (PmsProgramm) programmList.get(i);
+                if(obj.getPrgId().equals(pmsProject.getPrgId())){
+                    request.setAttribute("prgDesc",obj.getPrgDesc());
+                }
+            }
+        }
+        request.setAttribute("secName","");
+        if(clusterList!=null&&clusterList.size()>0) {
+            for (int i = 0; i < clusterList.size(); i++) {
+                PmsSector obj = (PmsSector) clusterList.get(i);
+                if(obj.getSecId().equals(pmsProject.getSecId())){
+                    request.setAttribute("secName",obj.getSecName());
+                }
+            }
+        }
+        request.setAttribute("perTitle","");
+        if(permitList!=null&&permitList.size()>0) {
+            for (int i = 0; i < permitList.size(); i++) {
+                PmsPermit obj = (PmsPermit) permitList.get(i);
+                if(obj.getPerId().equals(pmsProject.getPreId())){
+                    request.setAttribute("perTitle",obj.getPerTitle());
+                }
+            }
+        }
         return mapping.findForward("success");
     }
 
