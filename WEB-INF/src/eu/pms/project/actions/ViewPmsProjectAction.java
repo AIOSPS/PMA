@@ -180,7 +180,7 @@ public class ViewPmsProjectAction extends Action {
                         indTitle +=obj.getIndTitle()+" | ";
                 }
             }
-            request.setAttribute("indTitle",indTitle.substring(0,indTitle.lastIndexOf("|")));}
+            request.setAttribute("indTitle",indTitle);}
         }
         request.setAttribute("devDesc","");
         if(developmentAgencyList!=null&&developmentAgencyList.size()>0) {

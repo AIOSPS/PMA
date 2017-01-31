@@ -236,7 +236,7 @@
                                             <logic:iterate id="pmsProjectAlbumList" name="pmsProjectAlbumList" type="eu.pms.project.database.PmsProjectAlbum">
                                                 <div class="col-md-6 col-xs-6">
                                                     <a data-gallery="" title="" href="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">
-                                                        <img class="thumbnail img-responsive" width="300px" height="250px" src="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">
+                                                        <img class="thumbnail img-responsive center-block"  src="/downloadImgAlbum.do?proId=<bean:write name="pmsProjectAlbumList" property="compId.proId"/>&albId=<bean:write name="pmsProjectAlbumList" property="compId.albId"/>">
                                                     </a>
                                                 </div>
                                             </logic:iterate>
