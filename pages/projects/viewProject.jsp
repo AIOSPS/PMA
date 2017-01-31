@@ -1,10 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="eu.pms.project.database.PmsProjectsBenificiary" %>
-<%@ page import="eu.pms.project.database.PmsProjectsLocation" %>
 <%@ page import="eu.pms.lookup.database.PmsBenificiaryTyp" %>
-<%@ page import="eu.pms.project.database.PmsProjectDonor" %>
-<%@ page import="eu.pms.project.database.PmsProjectsImplementer" %>
+<%@ page import="eu.pms.project.database.*" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -32,7 +29,7 @@
 <div class="content-wrapper breadcrumb brd2  hidden-print">
     <div class="container clearfix">
         <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Project Information
-        </a><span class=""> > </span><span>Projects</span></nav>
+        </a><span class=""> > </span><span>View Project</span></nav>
     </div>
 </div>
 
@@ -58,15 +55,15 @@
                             <tbody>
                             <tr>
                                 <td width="12%"><B>Donor</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="donorProjectList" /></td>
+                                <td width="33%"><%=request.getAttribute("donorName")%></td>
                                 <td width="12%"><B>Development Agency</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="devId" /></td>
+                                <td width="33%"><%=request.getAttribute("devDesc")%></td>
                             </tr>
                             <tr>
                                 <td width="12%"><B>Implementer</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="implementerProjectList" /></td>
+                                <td width="33%"><%=request.getAttribute("impName")%></td>
                                 <td width="12%"><B>Programme</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="prgId" /></td>
+                                <td width="33%"><%=request.getAttribute("prgDesc")%></td>
                             </tr>
                             </tbody>
                             </table>
@@ -83,9 +80,9 @@
                             </tr>
                             <tr>
                                 <td><B>Sector</B></td>
-                                <td><bean:write name="pmsProjectForm" property="secId" /></td>
+                                <td><%=request.getAttribute("secName")%></td>
                                 <td><B>Status</B></td>
-                                <td><bean:write name="pmsProjectForm" property="proStatus" /></td>
+                                <td><bean:write name="pmsProjectForm" property="proStatusDesc" /></td>
                             </tr>
                             <tr>
                                 <td><B>Budget</B></td>
@@ -137,9 +134,9 @@
                             </logic:notPresent>
                             <tr>
                                 <td width="12%"><B>Cluster Project</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="proHasCluster" /></td>
+                                <td width="33%"><bean:write name="pmsProjectForm" property="proHasClusterDesc" /></td>
                                 <td width="12%"><B>Community</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="communityProjectList" /></td>
+                                <td width="33%"><%=request.getAttribute("comName")%></td>
                             </tr>
                             </tbody>
                         </table>
@@ -150,9 +147,9 @@
                             <tbody>
                             <tr>
                                 <td width="12%"><B>Permit Need</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="proNeedPermit" /></td>
+                                <td width="33%"><bean:write name="pmsProjectForm" property="proNeedPermitDesc" /></td>
                                 <td width="12%"><B>Permit Number</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="preId" /></td>
+                                <td width="33%"><%=request.getAttribute("perTitle")%></td>
                             </tr>
                             <tr >
                                 <td colspan="2" class="text-center"><B>Beneficiary</B></td>
@@ -166,7 +163,20 @@
                                         pmsProjectsBenificiary = (PmsProjectsBenificiary) itr.next();
                                 %>
                                 <tr>
-                                    <td><%=pmsProjectsBenificiary.getCompId().getBtpId()%></td>
+                                    <td><%
+                                        List benificiryTypeList = (List)request.getAttribute("benificiryTypeList");
+
+                                        if(benificiryTypeList!=null&&benificiryTypeList.size()>0) {
+                                            for (int i = 0; i < benificiryTypeList.size(); i++) {
+                                                PmsBenificiaryTyp obj = (PmsBenificiaryTyp) benificiryTypeList.get(i);
+                                                if(obj.getLookupId().equals(pmsProjectsBenificiary.getCompId().getBtpId())){
+                                                    request.setAttribute("benificiaryTyp",obj.getLookupDesc());
+                                                }
+                                            }
+                                        }
+                                    %>
+                                        <%=request.getAttribute("benificiaryTyp")%>
+                                    </td>
                                     <td><%=pmsProjectsBenificiary.getBenTotal()%></td>
                                 </tr>
                                 <%}%>
@@ -185,7 +195,7 @@
                             <tbody>
                             <tr>
                                 <td width="12%"><B>Indicator</B></td>
-                                <td width="88%"><bean:write name="pmsProjectForm" property="indicatorProjectList" /></td>
+                                <td width="88%"><%=request.getAttribute("indTitle")%></td>
                             </tr>
                             </tbody>
                         </table>
