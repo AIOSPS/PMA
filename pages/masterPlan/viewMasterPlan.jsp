@@ -7,16 +7,16 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#masId").attr("placeholder", "Master Plan Id");
-        $("#masId").prop('required', true);
+//        $("#masId").attr("placeholder", "Master Plan Id");
+//        $("#masId").prop('required', true);
         $("#impId").attr("placeholder", "Implementer");
         $("#impId").prop('required', true);
         $("#masMpNo").attr("placeholder", "Master Plan No");
         $("#masMpNo").prop('required', true);
         $("#masMpName").attr("placeholder", "Master Plan Name");
         $("#masMpName").prop('required', true);
-        $("#masStatus").attr("placeholder", "Status");
-        $("#masStatus").prop('required', true);
+//        $("#masStatus").attr("placeholder", "Status");
+//        $("#masStatus").prop('required', true);
         $("#masStatusIca").attr("placeholder", "Status ICA");
         $("#masStatusIca").prop('required', true);
         $("#masFirstSubmitDateToIca").attr("placeholder", "First Submission Date To ICA");
@@ -27,14 +27,14 @@
         $("#masNoSessionWithIca").prop('required', true);
         $("#masSubmitToMod").attr("placeholder", "Submission to Ministry of Defense");
         $("#masSubmitToMod").prop('required', true);
-        $("#masApprovalDate").attr("placeholder", "Approval Date");
-        $("#masApprovalDate").prop('required', true);
-        $("#masPublicationDate").attr("placeholder", "Publication Date");
-        $("#masPublicationDate").prop('required', true);
-        $("#masLastDateForObjection").attr("placeholder", "Last Date For Objection");
-        $("#masLastDateForObjection").prop('required', true);
-        $("#masDateOfFinalPublication").attr("placeholder", "Date of Final Publication");
-        $("#masDateOfFinalPublication").prop('required', true);
+//        $("#masApprovalDate").attr("placeholder", "Approval Date");
+//        $("#masApprovalDate").prop('required', true);
+//        $("#masPublicationDate").attr("placeholder", "Publication Date");
+//        $("#masPublicationDate").prop('required', true);
+//        $("#masLastDateForObjection").attr("placeholder", "Last Date For Objection");
+//        $("#masLastDateForObjection").prop('required', true);
+//        $("#masDateOfFinalPublication").attr("placeholder", "Date of Final Publication");
+//        $("#masDateOfFinalPublication").prop('required', true);
         $("#masApprovedPlanedArea").attr("placeholder", "Approved Planed Area");
         $("#masApprovedPlanedArea").prop('required', true);
         $("#masVillageAdminBoarder").attr("placeholder", "Boarder ( C, C&B, C&A, C,B,&A, JER)");
@@ -75,6 +75,35 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <label for="communityMasterPlanList" class="col-sm-3 col-form-label"> Community:</label>
+                        <div class="col-sm-9">
+
+                            <html:select property="communityMasterPlanList" multiple="true"
+                                         styleClass="selectpicker form-control" disabled="true">
+                                <logic:present name="communityList">
+                                    <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                </logic:present>
+                            </html:select>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="donorMasterPlanList" class="col-sm-3 col-form-label">Donor:</label>
+                        <div class="col-sm-9">
+
+                            <html:select property="donorMasterPlanList" multiple="true"
+                                         styleClass="selectpicker form-control" disabled="true">
+                                <logic:present name="dononrList">
+                                    <html:options collection="dononrList" property="donId" labelProperty="donName"/>
+                                </logic:present>
+                            </html:select>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                         <label for="impId" class="col-sm-3 col-form-label">Implementer:</label>
                         <div class="col-sm-9">
                             <html:select property="impId"
@@ -86,9 +115,8 @@
                             </html:select>
                         </div>
                     </div>
+
                 </div>
-
-
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="masMpNo" class="col-sm-3 col-form-label">Master Plan No:</label>
@@ -106,17 +134,6 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masStatus" class="col-sm-3 col-form-label">Status:</label>
-                        <div class="col-sm-9">
-                            <html:select property="masStatus" styleClass="selectpicker form-control" disabled="true">
-                                <html:option value="1">Public Objection</html:option>
-                                <html:option value="2">Fully Authorized</html:option>
-                                <html:option value="3">Technical Discussion</html:option>
-                                <html:option value="4">Data collection and Plan Preparation</html:option>
-                            </html:select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label for="masStatusIca" class="col-sm-3 col-form-label">ICA Status:</label>
                         <div class="col-sm-9">
                             <html:select property="masStatusIca" styleClass="selectpicker form-control" disabled="true">
@@ -124,6 +141,21 @@
                                 <html:option value="2">Stuck</html:option>
                                 <html:option value="3">Rejected</html:option>
                             </html:select>
+                        </div>
+                        <%--<label for="masStatus" class="col-sm-3 col-form-label">Status:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:select property="masStatus" styleClass="selectpicker form-control" disabled="true">--%>
+                                <%--<html:option value="1">Public Objection</html:option>--%>
+                                <%--<html:option value="2">Fully Authorized</html:option>--%>
+                                <%--<html:option value="3">Technical Discussion</html:option>--%>
+                                <%--<html:option value="4">Data collection and Plan Preparation</html:option>--%>
+                            <%--</html:select>--%>
+                        <%--</div>--%>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="masMajorObjection" class="col-sm-3 col-form-label">Major Objection:</label>
+                        <div class="col-sm-9">
+                            <html:text property="masMajorObjection" styleClass="form-control" styleId="masMajorObjection" disabled="true"/>
                         </div>
                     </div>
                 </div>
@@ -187,72 +219,72 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masApprovalDate" class="col-sm-3 col-form-label">Approval Date:</label>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masApprovalDate" class="col-sm-3 col-form-label">Approval Date:</label>--%>
 
-                        <div class='input-group date col-sm-9' id='mApprovalDate'>
-                            <html:text property="masApprovalDate" styleClass="form-control" styleId="masApprovalDate" disabled="true"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masPublicationDate" class="col-sm-3 col-form-label">Publication Date:</label>
+                        <%--<div class='input-group date col-sm-9' id='mApprovalDate'>--%>
+                            <%--<html:text property="masApprovalDate" styleClass="form-control" styleId="masApprovalDate" disabled="true"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masPublicationDate" class="col-sm-3 col-form-label">Publication Date:</label>--%>
 
-                        <div class='input-group date col-sm-9' id='mPublicationDate'>
-                            <html:text property="masPublicationDate" styleClass="form-control" styleId="masPublicationDate" disabled="true"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#mApprovalDate').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                            $('#mPublicationDate').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                        });
-                    </script>
+                        <%--<div class='input-group date col-sm-9' id='mPublicationDate'>--%>
+                            <%--<html:text property="masPublicationDate" styleClass="form-control" styleId="masPublicationDate" disabled="true"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<script type="text/javascript">--%>
+                        <%--$(function () {--%>
+                            <%--$('#mApprovalDate').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                            <%--$('#mPublicationDate').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                        <%--});--%>
+                    <%--</script>--%>
 
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masLastDateForObjection" class="col-sm-3 col-form-label">Last Date For Objection:</label>
+                <%--</div>--%>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masLastDateForObjection" class="col-sm-3 col-form-label">Last Date For Objection:</label>--%>
 
-                        <div class='input-group date col-sm-9' id='mLastDateForObjection'>
-                            <html:text property="masLastDateForObjection" styleClass="form-control" styleId="masLastDateForObjection" disabled="true"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">Date of Final Publication:</label>
+                        <%--<div class='input-group date col-sm-9' id='mLastDateForObjection'>--%>
+                            <%--<html:text property="masLastDateForObjection" styleClass="form-control" styleId="masLastDateForObjection" disabled="true"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">Date of Final Publication:</label>--%>
 
-                        <div class='input-group date col-sm-9' id='mDateOfFinalPublication'>
-                            <html:text property="masDateOfFinalPublication" styleClass="form-control" styleId="masDateOfFinalPublication" disabled="true"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#mLastDateForObjection').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                            $('#mDateOfFinalPublication').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                        });
-                    </script>
+                        <%--<div class='input-group date col-sm-9' id='mDateOfFinalPublication'>--%>
+                            <%--<html:text property="masDateOfFinalPublication" styleClass="form-control" styleId="masDateOfFinalPublication" disabled="true"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<script type="text/javascript">--%>
+                        <%--$(function () {--%>
+                            <%--$('#mLastDateForObjection').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                            <%--$('#mDateOfFinalPublication').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                        <%--});--%>
+                    <%--</script>--%>
 
-                </div>
+                <%--</div>--%>
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="masApprovedPlanedArea" class="col-sm-3 col-form-label">Approved Planed Area:</label>
@@ -289,39 +321,8 @@
                 </div>
 
 
-                <h2 class="titleSep"><span></span></h2>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="donorMasterPlanList" class="col-sm-3 col-form-label">Donor:</label>
-                        <div class="col-sm-9">
+                <%--<h2 class="titleSep"><span></span></h2>--%>
 
-                            <html:select property="donorMasterPlanList" multiple="true"
-                                         styleClass="selectpicker form-control" disabled="true">
-                                <logic:present name="dononrList">
-                                    <html:options collection="dononrList" property="donId" labelProperty="donName"/>
-                                </logic:present>
-                            </html:select>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <label for="communityMasterPlanList" class="col-sm-3 col-form-label"> Community:</label>
-                        <div class="col-sm-9">
-
-                            <html:select property="communityMasterPlanList" multiple="true"
-                                         styleClass="selectpicker form-control" disabled="true">
-                                <logic:present name="communityList">
-                                    <html:options collection="communityList" property="comId" labelProperty="comName"/>
-                                </logic:present>
-                            </html:select>
-
-                        </div>
-
-                    </div>
-                </div>
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">

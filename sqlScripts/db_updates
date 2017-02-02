@@ -233,3 +233,6 @@ VIEW `pms_communities_vw` AS
     WHERE
         ((`com`.`typ_id` = `comtyp`.`typ_id`)
             AND (`com`.`gov_id` = `gov`.`gov_id`))
+--------------------------
+ALTER TABLE `pms`.`pms_master_plan`
+ADD COLUMN `mas_major_objection` VARCHAR(100) NULL AFTER `mas_status_ica`;

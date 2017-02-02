@@ -7,18 +7,19 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#masId").attr("placeholder", "Master Plan Id");
-        $("#masId").prop('required', true);
+//        $("#masId").attr("placeholder", "Master Plan Id");
+//        $("#masId").prop('required', true);
         $("#impId").attr("placeholder", "Implementer");
         $("#impId").prop('required', true);
         $("#masMpNo").attr("placeholder", "Master Plan No");
 //        $("#masMpNo").prop('required', true);
         $("#masMpName").attr("placeholder", "Master Plan Name");
         $("#masMpName").prop('required', true);
-        $("#masStatus").attr("placeholder", "Status");
-        $("#masStatus").prop('required', true);
+//        $("#masStatus").attr("placeholder", "Status");
+//        $("#masStatus").prop('required', true);
         $("#masStatusIca").attr("placeholder", "ICA Status");
         $("#masStatusIca").prop('required', true);
+        $("#masMajorObjection").attr("placeholder", "Major Objection");
         $("#masFirstSubmitDateToIca").attr("placeholder", "First Submission Date To ICA");
         $("#masFirstSubmitDateToIca").prop('required', true);
         $("#masLastSubmitDateToIca").attr("placeholder", "Last Submission Date To ICA");
@@ -28,13 +29,13 @@
         $("#masSubmitToMod").attr("placeholder", "Submission to Ministry of Defense ");
         $("#masSubmitToMod").prop('required', true);
         $('input[name=masSubmitToMod][value="1"]').attr('checked', true);
-        $("#masApprovalDate").attr("placeholder", "Approval Date");
+//        $("#masApprovalDate").attr("placeholder", "Approval Date");
 //        $("#masApprovalDate").prop('required', true);
-        $("#masPublicationDate").attr("placeholder", "Publication Date");
+//        $("#masPublicationDate").attr("placeholder", "Publication Date");
 //        $("#masPublicationDate").prop('required', true);
-        $("#masLastDateForObjection").attr("placeholder", "Last Date For Objection");
+//        $("#masLastDateForObjection").attr("placeholder", "Last Date For Objection");
 //        $("#masLastDateForObjection").prop('required', true);
-        $("#masDateOfFinalPublication").attr("placeholder", "Date of Final Publication");
+//        $("#masDateOfFinalPublication").attr("placeholder", "Date of Final Publication");
 //        $("#masDateOfFinalPublication").prop('required', true);
         $("#masApprovedPlanedArea").attr("placeholder", "Approved Planed Area");
 //        $("#masApprovedPlanedArea").prop('required', true);
@@ -68,236 +69,39 @@
             <html:form action="addMasterPlan">
                 <h2 class="titleSep"><span>Master Plan Information</span></h2>
 
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masId" class="col-sm-3 col-form-label">Master Plan Id:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="masId" styleClass="form-control" styleId="masId"/>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+
+                    <%--</div>--%>
+                <%--</div>--%>
+
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="masId" class="col-sm-3 col-form-label">Master Plan Id:</label>
+
+                        <label for="communityMasterPlanList" class="col-sm-3 col-form-label"> Community:</label>
                         <div class="col-sm-9">
-                            <html:text property="masId" styleClass="form-control" styleId="masId"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="impId" class="col-sm-3 col-form-label">Implementer:</label>
-                        <div class="col-sm-9">
-                            <html:select property="impId"
+
+                            <html:select property="communityMasterPlanList" multiple="true"
                                          styleClass="selectpicker form-control">
-                                <logic:present name="implementerList">
-                                    <html:options collection="implementerList" property="impId"
-                                                  labelProperty="impName"/>
+                                <logic:present name="communityList">
+                                    <html:options collection="communityList" property="comId" labelProperty="comName"/>
                                 </logic:present>
                             </html:select>
                             <script>
                                 $(function () {
-                                    $('[name="impId"]').eq(0).attr("data-live-search", "true");
+                                    $('[name="communityMasterPlanList"]').eq(0).attr("data-live-search", "true");
                                 });
                             </script>
+
                         </div>
+
                     </div>
-                </div>
-
-
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masMpNo" class="col-sm-3 col-form-label">Master Plan No:</label>
-                        <div class="col-sm-9">
-                            <html:text property="masMpNo" styleClass="form-control" styleId="masMpNo"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masMpName" class="col-sm-3 col-form-label">Master Plan Name:</label>
-                        <div class="col-sm-9">
-                            <html:text property="masMpName" styleClass="form-control" styleId="masMpName"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masStatus" class="col-sm-3 col-form-label">Status:</label>
-                        <div class="col-sm-9">
-                            <html:select property="masStatus" styleClass="selectpicker form-control">
-                                <html:option value="1">Public Objection</html:option>
-                                <html:option value="2">Fully Authorized</html:option>
-                                <html:option value="3">Technical Discussion</html:option>
-                                <html:option value="4">Data collection and Plan Preparation</html:option>
-                            </html:select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masStatusIca" class="col-sm-3 col-form-label">ICA Status:</label>
-                        <div class="col-sm-9">
-                            <html:select property="masStatusIca" styleClass="selectpicker form-control">
-                                <html:option value="1">Progressing</html:option>
-                                <html:option value="2">Stuck</html:option>
-                                <html:option value="3">Rejected</html:option>
-                            </html:select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">First Submission Date To ICA:</label>
-
-                        <div class='input-group date col-sm-9' id='mFirstSubmitDateToIca'>
-                            <html:text property="masFirstSubmitDateToIca" styleClass="form-control" styleId="masFirstSubmitDateToIca"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">Last Submission Date To ICA:</label>
-
-                        <div class='input-group date col-sm-9' id='mLastSubmitDateToIca'>
-                            <html:text property="masLastSubmitDateToIca" styleClass="form-control" styleId="masLastSubmitDateToIca"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#mFirstSubmitDateToIca').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                            $('#mLastSubmitDateToIca').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                        });
-                    </script>
-
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masNoSessionWithIca" class="col-sm-3 col-form-label">No Session With ICA:</label>
-                        <div class="col-sm-9">
-                            <html:text property="masNoSessionWithIca" styleClass="form-control" styleId="masNoSessionWithIca"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-
-                        <label for="masSubmitToMod" class="col-sm-3 col-form-label">Submission to Ministry of Defense:</label>
-                        <div class="col-sm-9">
-                            <fieldset class="col-sm-9" id="masSubmitToMod" >
-                                <div>
-                                    <label class="radio-inline">
-                                        <html:radio property="masSubmitToMod" value="1"/>
-                                        Yes
-                                    </label>
-                                    <label class="radio-inline">
-                                        <html:radio property="masSubmitToMod" value="0"/>
-                                        No
-                                    </label>
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masApprovalDate" class="col-sm-3 col-form-label">Approval Date:</label>
-
-                        <div class='input-group date col-sm-9' id='mApprovalDate'>
-                            <html:text property="masApprovalDate" styleClass="form-control" styleId="masApprovalDate"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masPublicationDate" class="col-sm-3 col-form-label">Publication Date:</label>
-
-                        <div class='input-group date col-sm-9' id='mPublicationDate'>
-                            <html:text property="masPublicationDate" styleClass="form-control" styleId="masPublicationDate"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#mApprovalDate').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                            $('#mPublicationDate').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                        });
-                    </script>
-
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masLastDateForObjection" class="col-sm-3 col-form-label">Last Date For Objection:</label>
-
-                        <div class='input-group date col-sm-9' id='mLastDateForObjection'>
-                            <html:text property="masLastDateForObjection" styleClass="form-control" styleId="masLastDateForObjection"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">Date of Final Publication:</label>
-
-                        <div class='input-group date col-sm-9' id='mDateOfFinalPublication'>
-                            <html:text property="masDateOfFinalPublication" styleClass="form-control" styleId="masDateOfFinalPublication"/>
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#mLastDateForObjection').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                            $('#mDateOfFinalPublication').datetimepicker({
-                                format: 'DD/MM/YYYY'
-                            });
-                        });
-                    </script>
-
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="masApprovedPlanedArea" class="col-sm-3 col-form-label">Approved Planed Area:</label>
-                        <div class="col-sm-9">
-                            <html:text property="masApprovedPlanedArea" styleClass="form-control" styleId="masApprovedPlanedArea"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">Boarder:</label>
-                        <div class="col-sm-9">
-                            <html:select property="masVillageAdminBoarder" styleClass="selectpicker form-control">
-                                <html:option value="1">C</html:option>
-                                <html:option value="2">C&B</html:option>
-                                <html:option value="3">C&A</html:option>
-                                <html:option value="4">C,B,&A</html:option>
-                                <html:option value="5">JER</html:option>
-                            </html:select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-
-                    <div class="col-md-6">
-                        <label for="masNote" class="col-sm-3 col-form-label">Note:</label>
-                        <div class="col-sm-9">
-                            <html:textarea property="masNote" styleClass="form-control" rows="6"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label  class="col-sm-3 col-form-label">&nbsp;</label>
-                        <div class="col-sm-9">
-                        </div>
-                    </div>
-                </div>
-
-
-                <h2 class="titleSep"><span></span></h2>
-                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="donorMasterPlanList" class="col-sm-3 col-form-label">Donor:</label>
                         <div class="col-sm-9">
@@ -318,29 +122,224 @@
 
                     </div>
 
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6">
-
-                        <label for="communityMasterPlanList" class="col-sm-3 col-form-label"> Community:</label>
+                        <label for="impId" class="col-sm-3 col-form-label">Implementer:</label>
                         <div class="col-sm-9">
-
-                            <html:select property="communityMasterPlanList" multiple="true"
+                            <html:select property="impId"
                                          styleClass="selectpicker form-control">
-                                <logic:present name="communityList">
-                                    <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                <logic:present name="implementerList">
+                                    <html:options collection="implementerList" property="impId"
+                                                  labelProperty="impName"/>
                                 </logic:present>
                             </html:select>
                             <script>
-                            $(function () {
-                                $('[name="communityMasterPlanList"]').eq(0).attr("data-live-search", "true");
-                            });
+                                $(function () {
+                                    $('[name="impId"]').eq(0).attr("data-live-search", "true");
+                                });
                             </script>
-
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="masMpNo" class="col-sm-3 col-form-label">Master Plan No:</label>
+                        <div class="col-sm-9">
+                            <html:text property="masMpNo" styleClass="form-control" styleId="masMpNo"/>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="masMpName" class="col-sm-3 col-form-label">Master Plan Name:</label>
+                        <div class="col-sm-9">
+                            <html:text property="masMpName" styleClass="form-control" styleId="masMpName"/>
+                        </div>
+                        <%--<label for="masStatus" class="col-sm-3 col-form-label">Status:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:select property="masStatus" styleClass="selectpicker form-control">--%>
+                                <%--<html:option value="1">Public Objection</html:option>--%>
+                                <%--<html:option value="2">Fully Authorized</html:option>--%>
+                                <%--<html:option value="3">Technical Discussion</html:option>--%>
+                                <%--<html:option value="4">Data collection and Plan Preparation</html:option>--%>
+                            <%--</html:select>--%>
+                        <%--</div>--%>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="masStatusIca" class="col-sm-3 col-form-label">ICA Status:</label>
+                        <div class="col-sm-9">
+                            <html:select property="masStatusIca" styleClass="selectpicker form-control">
+                                <html:option value="1">Progressing</html:option>
+                                <html:option value="2">Stuck</html:option>
+                                <html:option value="3">Rejected</html:option>
+                            </html:select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="masMajorObjection" class="col-sm-3 col-form-label">Major Objection:</label>
+                        <div class="col-sm-9">
+                            <html:text property="masMajorObjection" styleClass="form-control" styleId="masMajorObjection"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="masFirstSubmitDateToIca" class="col-sm-3 col-form-label">First Submission Date To ICA:</label>
+
+                        <div class='input-group date col-sm-9' id='mFirstSubmitDateToIca'>
+                            <html:text property="masFirstSubmitDateToIca" styleClass="form-control" styleId="masFirstSubmitDateToIca"/>
+                            <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="masLastSubmitDateToIca" class="col-sm-3 col-form-label">Last Submission Date To ICA:</label>
+
+                        <div class='input-group date col-sm-9' id='mLastSubmitDateToIca'>
+                            <html:text property="masLastSubmitDateToIca" styleClass="form-control" styleId="masLastSubmitDateToIca"/>
+                            <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#mFirstSubmitDateToIca').datetimepicker({
+                                    format: 'DD/MM/YYYY'
+                                });
+                                $('#mLastSubmitDateToIca').datetimepicker({
+                                    format: 'DD/MM/YYYY'
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="masNoSessionWithIca" class="col-sm-3 col-form-label">No Session With ICA:</label>
+                        <div class="col-sm-9">
+                            <html:text property="masNoSessionWithIca" styleClass="form-control" styleId="masNoSessionWithIca"/>
+                        </div>
+                    </div>
+                </div>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masApprovalDate" class="col-sm-3 col-form-label">Approval Date:</label>--%>
+
+                        <%--<div class='input-group date col-sm-9' id='mApprovalDate'>--%>
+                            <%--<html:text property="masApprovalDate" styleClass="form-control" styleId="masApprovalDate"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masPublicationDate" class="col-sm-3 col-form-label">Publication Date:</label>--%>
+
+                        <%--<div class='input-group date col-sm-9' id='mPublicationDate'>--%>
+                            <%--<html:text property="masPublicationDate" styleClass="form-control" styleId="masPublicationDate"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<script type="text/javascript">--%>
+                        <%--$(function () {--%>
+                            <%--$('#mApprovalDate').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                            <%--$('#mPublicationDate').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                        <%--});--%>
+                    <%--</script>--%>
+
+                <%--</div>--%>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masLastDateForObjection" class="col-sm-3 col-form-label">Last Date For Objection:</label>--%>
+
+                        <%--<div class='input-group date col-sm-9' id='mLastDateForObjection'>--%>
+                            <%--<html:text property="masLastDateForObjection" styleClass="form-control" styleId="masLastDateForObjection"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-6">--%>
+                        <%--<label for="masDateOfFinalPublication" class="col-sm-3 col-form-label">Date of Final Publication:</label>--%>
+
+                        <%--<div class='input-group date col-sm-9' id='mDateOfFinalPublication'>--%>
+                            <%--<html:text property="masDateOfFinalPublication" styleClass="form-control" styleId="masDateOfFinalPublication"/>--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<script type="text/javascript">--%>
+                        <%--$(function () {--%>
+                            <%--$('#mLastDateForObjection').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                            <%--$('#mDateOfFinalPublication').datetimepicker({--%>
+                                <%--format: 'DD/MM/YYYY'--%>
+                            <%--});--%>
+                        <%--});--%>
+                    <%--</script>--%>
+
+                <%--</div>--%>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="masSubmitToMod" class="col-sm-3 col-form-label">Submission to Ministry of Defense:</label>
+                        <div class="col-sm-9">
+                            <fieldset class="col-sm-9" id="masSubmitToMod" >
+                                <div>
+                                    <label class="radio-inline">
+                                        <html:radio property="masSubmitToMod" value="1"/>
+                                        Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                        <html:radio property="masSubmitToMod" value="0"/>
+                                        No
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="masApprovedPlanedArea" class="col-sm-3 col-form-label">Approved Planed Area:</label>
+                        <div class="col-sm-9">
+                            <html:text property="masApprovedPlanedArea" styleClass="form-control" styleId="masApprovedPlanedArea"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                    <div class="col-md-6">
+                        <label for="masVillageAdminBoarder" class="col-sm-3 col-form-label">Boarder:</label>
+                        <div class="col-sm-9">
+                            <html:select property="masVillageAdminBoarder" styleClass="selectpicker form-control">
+                                <html:option value="1">C</html:option>
+                                <html:option value="2">C&B</html:option>
+                                <html:option value="3">C&A</html:option>
+                                <html:option value="4">C,B,&A</html:option>
+                                <html:option value="5">JER</html:option>
+                            </html:select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="masNote" class="col-sm-3 col-form-label">Note:</label>
+                        <div class="col-sm-9">
+                            <html:textarea property="masNote" styleClass="form-control" rows="6"/>
+                        </div>
                     </div>
                 </div>
 
 
+                <%--<h2 class="titleSep"><span></span></h2>--%>
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">

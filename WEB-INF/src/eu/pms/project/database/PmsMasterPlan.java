@@ -36,7 +36,7 @@ public class PmsMasterPlan implements Serializable {
     private String masNote;
     private String username;
     private java.util.Date timeStamp;
-
+    private String masMajorObjection;
 
     /** default constructor */
     public PmsMasterPlan() {
@@ -241,6 +241,14 @@ public class PmsMasterPlan implements Serializable {
 
     public void setMasDateOfFinalPublicationStr(String masDateOfFinalPublicationStr) {
         this.masDateOfFinalPublicationStr = masDateOfFinalPublicationStr;
+    }
+
+    public String getMasMajorObjection() {
+        return masMajorObjection;
+    }
+
+    public void setMasMajorObjection(String masMajorObjection) {
+        this.masMajorObjection = masMajorObjection;
     }
 
     public String toString() {

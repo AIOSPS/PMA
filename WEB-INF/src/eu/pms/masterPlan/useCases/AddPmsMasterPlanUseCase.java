@@ -20,6 +20,9 @@ public class AddPmsMasterPlanUseCase implements ComponentUseCase {
         try {
             Iterator itr = input.iterator();
             String masId = (String) itr.next();
+            if (masId == null || masId.equals("")){
+                masId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+            }
             String impId = (String) itr.next();
             String masMpNo = (String) itr.next();
             String masMpName = (String) itr.next();
@@ -36,6 +39,7 @@ public class AddPmsMasterPlanUseCase implements ComponentUseCase {
             Integer masApprovedPlanedArea = (Integer) itr.next();
             String masVillageAdminBoarder = (String) itr.next();
             String masNote = (String) itr.next();
+            String masMajorObjection = (String) itr.next();
 
             String[] donorMasterPlanArray = (String[]) itr.next();
             String[] communityMasterPlanArray = (String[]) itr.next();
@@ -61,6 +65,7 @@ public class AddPmsMasterPlanUseCase implements ComponentUseCase {
             pmsMasterPlan.setMasApprovedPlanedArea(masApprovedPlanedArea);
             pmsMasterPlan.setMasVillageAdminBoarder(masVillageAdminBoarder);
             pmsMasterPlan.setMasNote(masNote);
+            pmsMasterPlan.setMasMajorObjection(masMajorObjection);
             pmsMasterPlan.setUsername(username);
             pmsMasterPlan.setTimeStamp(timeStamp);
 

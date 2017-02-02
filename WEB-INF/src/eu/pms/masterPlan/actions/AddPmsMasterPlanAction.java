@@ -42,6 +42,7 @@ public class AddPmsMasterPlanAction extends Action {
         Integer masApprovedPlanedArea = pmsMasterPlanForm.getMasApprovedPlanedArea();
         String masVillageAdminBoarder = pmsMasterPlanForm.getMasVillageAdminBoarder();
         String masNote = pmsMasterPlanForm.getMasNote();
+        String masMajorObjection = pmsMasterPlanForm.getMasMajorObjection();
 
         String[] donorMasterPlanArray = pmsMasterPlanForm.getDonorMasterPlanList();
         String[] communityMasterPlanArray = pmsMasterPlanForm.getCommunityMasterPlanList();
@@ -64,6 +65,7 @@ public class AddPmsMasterPlanAction extends Action {
         inputs.add(masApprovedPlanedArea);
         inputs.add(masVillageAdminBoarder);
         inputs.add(masNote);
+        inputs.add(masMajorObjection);
         inputs.add(donorMasterPlanArray);
         inputs.add(communityMasterPlanArray);
 

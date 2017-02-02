@@ -94,7 +94,7 @@
                 <tr>
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
-                    <th class="text-center">Status</th>
+                    <%--<th class="text-center">Status</th>--%>
                     <th class="text-center">First Submission Date to ICA</th>
                     <th class="text-center">Last Submission Date To ICA</th>
                     <th class="text-center"></th>
@@ -104,7 +104,7 @@
                 <tr>
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
-                    <th class="text-center">Status</th>
+                    <%--<th class="text-center">Status</th>--%>
                     <th class="text-center">First Submission Date to ICA</th>
                     <th class="text-center">Last Submission Date To ICA</th>
                     <th class="text-center"></th>
@@ -117,7 +117,7 @@
                         <tr>
                             <td width="20%"><bean:write name="pmsMasterPlanList" property="masMpNo"/></td>
                             <td width="40%"><bean:write name="pmsMasterPlanList" property="masMpName"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masStatus"/></td>
+                            <%--<td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masStatus"/></td>--%>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masFirstSubmitDateToIcaStr"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masLastSubmitDateToIcaStr"/></td>
                             <td width="10%" class="text-center">

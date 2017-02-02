@@ -1,7 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="eu.pms.project.database.PmsDonor" %>
 <%@ page import="eu.pms.lookup.database.PmsGovernate" %>
-<%@ page import="eu.pms.project.database.PmsCommunity" %>
+<%@ page import="eu.pms.project.database.PmsCommunitiesVw" %>
 <%@ page import="eu.pms.project.database.PmsSector" %>
 <%@ page import="eu.pms.lookup.database.PmsBenificiaryTyp" %>
 <%@ page import="eu.pms.project.database.PmsImplementer" %>
@@ -148,7 +148,7 @@
                                     <% List communityList = (List) request.getAttribute("communityList");%>
                                     <%
                                         for (int i = 0; i < communityList.size(); i++) {
-                                            PmsCommunity obj = (PmsCommunity) communityList.get(i);
+                                            PmsCommunitiesVw obj = (PmsCommunitiesVw) communityList.get(i);
                                     %>
                                     <option value="<%=obj.getComId()%>"><%=obj.getComName()%></option>
                                     <% }%>

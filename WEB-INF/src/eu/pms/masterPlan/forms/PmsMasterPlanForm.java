@@ -31,7 +31,7 @@ public class PmsMasterPlanForm  extends ActionForm {
     private Integer masApprovedPlanedArea;
     private String masVillageAdminBoarder;
     private String masNote;
-
+    private String masMajorObjection;
     private String[] donorMasterPlanList;
     private String[] communityMasterPlanList;
 
@@ -193,6 +193,14 @@ public class PmsMasterPlanForm  extends ActionForm {
         this.communityMasterPlanList = communityMasterPlanList;
     }
 
+    public String getMasMajorObjection() {
+        return masMajorObjection;
+    }
+
+    public void setMasMajorObjection(String masMajorObjection) {
+        this.masMajorObjection = masMajorObjection;
+    }
+
     @Override
     public void reset(ActionMapping mapping, HttpServletRequest request) {
         masId = null;
@@ -212,7 +220,7 @@ public class PmsMasterPlanForm  extends ActionForm {
         masApprovedPlanedArea = null;///
         masVillageAdminBoarder = null;
         masNote = null;
-
+        masMajorObjection=null;
         donorMasterPlanList = null;
         communityMasterPlanList = null;
     }

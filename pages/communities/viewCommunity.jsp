@@ -316,6 +316,29 @@
                             </div>
                         </div>
                     </div>
+                <div class="panel-heading"><B>Related Incidents</B></div>
+                <div class="panel-body" style="padding: 0px!important;">
+                    <table class="table table-condensed">
+                        <tbody>
+                        <tr>
+                            <td width="12%" class="text-center"><B>Incident Number</B></td>
+                            <td width="33%" class="text-center"><B>Description</B></td>
+                            <td width="12%" class="text-center"><B>Incident Date</B></td>
+                            <td width="33%" class="text-center"><B>Source Link</B></td>
+                        </tr>
+                        <logic:present name="incidentList">
+                            <logic:iterate id="incidentList" name="incidentList" type="eu.pms.project.database.PmsIncident">
+                                <tr>
+                                    <td ><bean:write name="incidentList" property="incId"/></td>
+                                    <td ><bean:write name="incidentList" property="incDescription"/></td>
+                                    <td ><bean:write name="incidentList" property="incTimeStampStr"/></td>
+                                    <td ><a target="_blank" href="<bean:write name="incidentList" property="incSourceLink"/>"><bean:write name="incidentList" property="incSourceLink"/></a></td>
+                                </tr>
+                            </logic:iterate>
+                        </logic:present>
+                        </tbody>
+                    </table>
+                </div>
 
                     <div class="form-group row hidden-print">
                         <div class="offset-sm-2 col-sm-10">

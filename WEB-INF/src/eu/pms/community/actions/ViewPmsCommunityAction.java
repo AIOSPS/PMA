@@ -6,6 +6,8 @@ import eu.pms.community.forms.PmsCommunityForm;
 import eu.pms.community.useCases.GetPmsCommunityTypeUseCase;
 import eu.pms.community.useCases.GetPmsCommunityUseCase;
 import eu.pms.community.useCases.GetPmsGovernateUseCase;
+import eu.pms.incident.useCases.PmsIncidentListByCommunityUseCase;
+import eu.pms.incident.useCases.PmsIncidentListByProjectUseCase;
 import eu.pms.project.database.PmsCommunity;
 import eu.pms.project.useCases.GetPmsLocationUseCase;
 import org.apache.struts.action.Action;
@@ -28,14 +30,17 @@ public class ViewPmsCommunityAction extends Action {
             return mapping.findForward("invalidAccess");
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
-        List communityTypeList = (List) new GetPmsCommunityTypeUseCase().execute(null, request);
-        List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
-        request.setAttribute("communityTypeList", communityTypeList);
-        request.setAttribute("governateList", governateList);
 
         String comId = request.getParameter("comId");
         ArrayList inputs = new ArrayList();
         inputs.add(comId);
+
+        List communityTypeList = (List) new GetPmsCommunityTypeUseCase().execute(null, request);
+        List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
+        List incidentList = (List) new PmsIncidentListByCommunityUseCase().execute(inputs, request);
+        request.setAttribute("communityTypeList", communityTypeList);
+        request.setAttribute("governateList", governateList);
+        request.setAttribute("incidentList", incidentList);
         List communityList = (List) new GetPmsCommunityUseCase().execute(inputs, request);
         PmsCommunity pmsCommunity = null;
         if (communityList != null && communityList.size() > 0 && communityList.get(0) instanceof PmsCommunity) {

@@ -93,6 +93,7 @@ public class ViewPmsMasterPlanAction extends Action {
         pmsMasterPlanForm.setMasApprovedPlanedArea(pmsMasterPlan.getMasApprovedPlanedArea());
         pmsMasterPlanForm.setMasVillageAdminBoarder(pmsMasterPlan.getMasVillageAdminBoarder());
         pmsMasterPlanForm.setMasNote(pmsMasterPlan.getMasNote());
+        pmsMasterPlanForm.setMasMajorObjection(pmsMasterPlan.getMasMajorObjection());
 
         pmsMasterPlanForm.setDonorMasterPlanList(masterPlanDonorArr);
         pmsMasterPlanForm.setCommunityMasterPlanList(masterPlanCommunityArr);
