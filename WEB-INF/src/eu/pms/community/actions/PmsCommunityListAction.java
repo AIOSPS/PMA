@@ -8,6 +8,7 @@ import eu.pms.community.useCases.GetPmsGovernateUseCase;
 import eu.pms.community.useCases.PmsCommunityListUseCase;
 import eu.pms.login.components.LoginComponent;
 import eu.pms.login.forms.LoginForm;
+import eu.pms.project.useCases.GetPmsCommunityUseCase;
 import eu.pms.project.useCases.PmsProjectListUseCase;
 import org.apache.struts.action.*;
 
@@ -31,6 +32,10 @@ public class PmsCommunityListAction extends Action
 //            return mapping.findForward("noPermission");
         List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
         request.setAttribute("governateList", governateList);
+
+        List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
+        request.setAttribute("communityList", communityList);
+
         ArrayList inputData = new ArrayList();
         PmsCommunitySearchForm pmsCommunitySearchForm = (PmsCommunitySearchForm) form;
         if (pmsCommunitySearchForm != null) {

@@ -31,7 +31,7 @@ public class PmsCommunityListUseCase implements ComponentUseCase {
                 String cond = " where 1=1 ";
                 if(comName!=null && !comName.trim().equals("")){
                     comName =  CommonFilter.cleanQeuryParam(comName);
-                    cond += " and a.comName like '%"+comName+"%' ";
+                    cond += " and a.comId = '"+comName+"' ";
                 }
                 if(comPcbsCode!=null && !comPcbsCode.trim().equals("")){
                     cond += " and a.comPcbsCode like '%"+comPcbsCode+"%' ";

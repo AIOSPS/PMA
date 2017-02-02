@@ -46,7 +46,18 @@
                             <div class="col-md-4">
                                 <label for="communityName" class="col-sm-12 col-form-label">Community Name:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="communityName" styleClass="form-control" styleId="communityName"/>
+                                    <html:select property="communityName"
+                                                 styleClass="selectpicker form-control">
+                                        <logic:present name="communityList">
+                                            <html:option value="">Select</html:option>
+                                            <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                        </logic:present>
+                                    </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="communityName"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -121,7 +132,7 @@
                 <logic:present name="pmsCommunityList">
                     <logic:iterate id="pmsCommunityList" name="pmsCommunityList" type="eu.pms.project.database.PmsCommunitiesVw">
                         <tr>
-                            <td width="35%" class="text-left"><bean:write name="pmsCommunityList" property="comName"/></td>
+                            <td width="35%" class="text-left"><bean:write name="pmsCommunityList" property="comFullName"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comPcbsCode"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="govDesc"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="typDesc"/></td>

@@ -13,6 +13,7 @@ public class PmsCommunitiesVw implements Serializable {
     private String comPcbsCode;
     private String comOchaCode;
     private String comTopology;
+    private String comFullName;
 
     /** default constructor */
     public PmsCommunitiesVw() {
@@ -80,5 +81,13 @@ public class PmsCommunitiesVw implements Serializable {
 
     public void setComTopology(String comTopology) {
         this.comTopology = comTopology;
+    }
+
+    public String getComFullName() {
+        return comFullName;
+    }
+
+    public void setComFullName(String comFullName) {
+        this.comFullName = comFullName;
     }
 }

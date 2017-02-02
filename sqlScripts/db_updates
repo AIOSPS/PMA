@@ -210,3 +210,26 @@ VIEW `pms_incidents_communities_vw` AS
         JOIN `pms_communities` `com`)
     WHERE
         (`inc`.`com_id` = `com`.`com_id`)
+---------------------------------------------------
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `pms_communities_vw` AS
+    SELECT
+        `com`.`com_id` AS `com_id`,
+        `com`.`com_name` AS `com_full_name`,
+        `comtyp`.`typ_desc` AS `typ_desc`,
+        `gov`.`gov_desc` AS `gov_desc`,
+        `com`.`com_pcbs_code` AS `com_pcbs_code`,
+        `com`.`com_ocha_code` AS `com_ocha_code`,
+        `com`.`gov_id` AS `gov_id`,
+        `com`.`com_topology` AS `com_topology`,
+        CONCAT(`com`.`com_name`, '-', `gov`.`gov_desc`) AS `com_name`
+    FROM
+        ((`pms_communities` `com`
+        JOIN `pms_community_types` `comtyp`)
+        JOIN `pms_governates` `gov`)
+    WHERE
+        ((`com`.`typ_id` = `comtyp`.`typ_id`)
+            AND (`com`.`gov_id` = `gov`.`gov_id`))
