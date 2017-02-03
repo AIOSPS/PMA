@@ -168,7 +168,8 @@
                     <div class="col-md-6">
                         <label for="masStatusIca" class="col-sm-3 col-form-label">ICA Status:</label>
                         <div class="col-sm-9">
-                            <html:select property="masStatusIca" styleClass="selectpicker form-control">
+                            <html:select property="masStatusIca" styleClass="selectpicker form-control"
+                                         onchange="setMajorObjection(this.value)">
                                 <html:option value="1">Progressing</html:option>
                                 <html:option value="2">Stuck</html:option>
                                 <html:option value="3">Rejected</html:option>
@@ -359,6 +360,17 @@
 
 <%--********************************* validate script*****************************--%>
 <script>
+
+    function setMajorObjection(icaStatus) {
+        if(icaStatus=="3"){
+            document.getElementsByName("masMajorObjection")[0].disabled = false;
+
+        }else{
+            document.getElementsByName("masMajorObjection")[0].disabled = true;
+        }
+    }
+    setMajorObjection("1");
+
     (function (exports) {
         function valOrFunction(val, ctx, args) {
             if (typeof val == "function") {
