@@ -48,6 +48,7 @@ public class AddPmsProjectAction extends Action {
         String prgId = pmsProjectForm.getPrgId();
         String devId = pmsProjectForm.getDevId();
         String secId = pmsProjectForm.getSecId();
+        String subSecId = pmsProjectForm.getSubSecId();
         String secType = pmsProjectForm.getSecType();
         String preId = pmsProjectForm.getPreId();
         String[] donorProjectList = pmsProjectForm.getDonorProjectList();
@@ -86,6 +87,7 @@ public class AddPmsProjectAction extends Action {
         inputs.add(prgId);
         inputs.add(devId);
         inputs.add(secId);
+        inputs.add(subSecId);
         inputs.add(secType);
         inputs.add(preId);
         inputs.add(donorProjectList);

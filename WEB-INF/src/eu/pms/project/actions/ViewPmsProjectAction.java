@@ -236,6 +236,7 @@ public class ViewPmsProjectAction extends Action {
         pmsProjectForm.setProArea(pmsProject.getProArea());
         pmsProjectForm.setProHasCluster(pmsProject.getProHasCluster());
         pmsProjectForm.setSecId(pmsProject.getSecId());
+        pmsProjectForm.setSubSecId(pmsProject.getSubSecId());
         pmsProjectForm.setProNeedPermit(pmsProject.getProNeedPermit());
         pmsProjectForm.setPreId(pmsProject.getPreId());
         pmsProjectForm.setSecType(pmsProject.getSecType());

@@ -29,6 +29,7 @@ public class PmsProject implements Serializable {
     private String prgId;
     private String devId;
     private String secId;
+    private String subSecId;
     private String preId;
     private String comLatitude;
     private String comLongitude;
@@ -239,6 +240,14 @@ public class PmsProject implements Serializable {
 
     public void setSecType(String secType) {
         this.secType = secType;
+    }
+
+    public String getSubSecId() {
+        return subSecId;
+    }
+
+    public void setSubSecId(String subSecId) {
+        this.subSecId = subSecId;
     }
 
     public String toString() {

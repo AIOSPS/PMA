@@ -16,7 +16,7 @@ public class PmsSector implements Serializable {
     private String secParentId;
     private String username;
     private java.util.Date timeStamp;
-
+private String compId;
     /** default constructor */
     public PmsSector() {
     }
@@ -77,6 +77,13 @@ public class PmsSector implements Serializable {
         this.timeStamp = timeStamp;
     }
 
+    public String getCompId() {
+        return secId+"|"+secParentId;
+    }
+
+    public void setCompId(String compId) {
+        this.compId = compId;
+    }
 
     public String toString() {
         return new ToStringBuilder(this)

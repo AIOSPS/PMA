@@ -34,6 +34,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             String prgId = (String) itr.next();
             String devId = (String) itr.next();
             String secId = (String) itr.next();
+            String subSecId = (String) itr.next();
             String secType = (String) itr.next();
             String preId = (String) itr.next();
             String[] donorProjectArray = (String[]) itr.next();
@@ -73,6 +74,7 @@ public class AddPmsProjectUseCase implements ComponentUseCase {
             pmsProject.setPrgId(prgId);
             pmsProject.setDevId(devId);
             pmsProject.setSecId(secId);
+            pmsProject.setSubSecId(subSecId);
             pmsProject.setPreId(preId);
             pmsProject.setSecType(secType);
             pmsProject.setUsername(username);

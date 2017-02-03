@@ -2,6 +2,7 @@ package eu.pms.project.actions;
 
 
 import eu.pms.common.tools.SessionTraker;
+import eu.pms.project.database.PmsCommunitiesVw;
 import eu.pms.project.database.PmsSector;
 import eu.pms.project.useCases.*;
 import org.apache.struts.action.Action;
@@ -32,6 +33,7 @@ public class ViewAddPmsProjectAction extends Action {
         List programmList = (List) new GetPmsProgrammUseCase().execute(null, request);
 //        List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
+        List subSectorList = (List) new GetPmsSubSectorUseCase().execute(null, request);
         List clusterList = (List) new GetPmsClusterTypUseCase().execute(null, request);
         List clusterHList = new ArrayList();
         List clusterDList = new ArrayList();
@@ -55,10 +57,11 @@ public class ViewAddPmsProjectAction extends Action {
         request.setAttribute("developmentAgencyList", developmentAgencyList);
         request.setAttribute("programmList", programmList);
 //        request.setAttribute("locationList", locationList);
-        request.setAttribute("communityList", communityList);
+        request.setAttribute("communityList", communityList!=null && communityList.size()>0&& communityList.get(0) instanceof PmsCommunitiesVw ?communityList:null);
         request.setAttribute("clusterHList", clusterHList);
         request.setAttribute("clusterDList", clusterDList);
         request.setAttribute("clusterOthList", clusterOthList);
+        request.setAttribute("subSectorList", subSectorList);
         request.setAttribute("permitList", permitList);
         request.setAttribute("benificiryTypeList", benificiryTypeList);
         request.setAttribute("indicatorList", indicatorList);

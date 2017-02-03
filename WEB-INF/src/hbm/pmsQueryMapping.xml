@@ -138,6 +138,16 @@
             name="getPmsSectorTyp">
         <![CDATA[
                 from eu.pms.project.database.PmsSector a
+                where a.secParentId is null
+
+                order by a.secType,a.secDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsSubSector">
+        <![CDATA[
+                from eu.pms.project.database.PmsSector a
+                where a.secParentId is not null
                 order by a.secType,a.secDesc
                   ]]>
     </query>

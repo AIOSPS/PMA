@@ -34,6 +34,7 @@ public class PmsProjectForm  extends ActionForm {
     private String prgId;
     private String devId;
     private String secId;
+    private String subSecId;
     private String secType;
     private String preId;
 
@@ -289,6 +290,14 @@ public class PmsProjectForm  extends ActionForm {
         this.proBudgetTxt = proBudgetTxt;
     }
 
+    public String getSubSecId() {
+        return subSecId;
+    }
+
+    public void setSubSecId(String subSecId) {
+        this.subSecId = subSecId;
+    }
+
     @Override
     public void reset(ActionMapping mapping, HttpServletRequest request) {
         proId=null;
@@ -307,6 +316,7 @@ public class PmsProjectForm  extends ActionForm {
         prgId=null;
         devId=null;
         secId=null;
+        subSecId=null;
         secType=null;
         preId=null;
 
