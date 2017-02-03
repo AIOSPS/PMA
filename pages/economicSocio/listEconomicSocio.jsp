@@ -83,8 +83,7 @@
                     <th class="text-center">Women Livelihood Source1</th>
                     <th class="text-center">Women Livelihood Source2</th>
                     <th class="text-center">Women Livelihood Source3</th>
-                    <th class="text-center">Access to Lands Military</th>
-                    <th class="text-center">Access to Lands Checkpoints</th>
+                    <th class="text-center">Access to Lands Affected By</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
@@ -96,8 +95,7 @@
                     <th class="text-center">Women Livelihood Source1</th>
                     <th class="text-center">Women Livelihood Source2</th>
                     <th class="text-center">Women Livelihood Source3</th>
-                    <th class="text-center">Access to Lands Military</th>
-                    <th class="text-center">Access to Lands Checkpoints</th>
+                    <th class="text-center">Access to Lands Affected By</th>
                     <th class="text-center"></th>
 
                 </tr>
@@ -113,7 +111,6 @@
                             <td width="10%" class="text-center"><bean:write name="pmsEconomicSocioList" property="womenLivelihoodSource2"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsEconomicSocioList" property="womenLivelihoodSource3"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsEconomicSocioList" property="accessToLandsMilitary"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsEconomicSocioList" property="accessToLandsCheckpoints"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsEconomicSocio.do?ecoId=<bean:write name="pmsEconomicSocioList" property="compId.ecoId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>

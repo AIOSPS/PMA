@@ -160,64 +160,47 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <label for="accessToLandsMilitary" class="col-sm-3 col-form-label">Access to Lands Military:</label>
+                        <label for="accessToLandsMilitary" class="col-sm-3 col-form-label">Access to Lands Affected By:</label>
                         <div class="col-sm-9">
-                            <fieldset class="col-sm-9" id="accessToLandsMilitary">
-                                <div>
-
-                                    <label class="radio-inline">
-                                        <html:radio property="accessToLandsMilitary" value="1" disabled="true"/>
-                                        Yes
-                                    </label>
-
-
-                                    <label class="radio-inline">
-                                        <html:radio property="accessToLandsMilitary"  value="0" disabled="true"/>
-                                        No
-                                    </label>
-
-
-                                </div>
-                            </fieldset>
+                            <html:select property="accessToLandsMilitary" styleClass="selectpicker form-control" disabled="true">
+                                <html:option value="1">Military Activity</html:option>
+                                <html:option value="2">Check Points</html:option>
+                                <html:option value="3">Bypass Road</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
 
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <label for="accessToLandsCheckpoints" class="col-sm-3 col-form-label">Access to Lands Checkpoints:</label>
-                        <div class='col-sm-9'>
-                            <fieldset class="col-sm-9" id="accessToLandsCheckpoints">
-                                <div>
+                        <%--<label for="accessToLandsCheckpoints" class="col-sm-3 col-form-label">Access to Lands Checkpoints:</label>--%>
+                        <%--<div class='col-sm-9'>--%>
+                            <%--<fieldset class="col-sm-9" id="accessToLandsCheckpoints">--%>
+                                <%--<div>--%>
 
-                                    <label class="radio-inline">
-                                        <html:radio property="accessToLandsCheckpoints" value="1" disabled="true"/>
-                                        Yes
-                                    </label>
-
-
-                                    <label class="radio-inline">
-                                        <html:radio property="accessToLandsCheckpoints"  value="0" disabled="true"/>
-                                        No
-                                    </label>
+                                    <%--<label class="radio-inline">--%>
+                                        <%--<html:radio property="accessToLandsCheckpoints" value="1" disabled="true"/>--%>
+                                        <%--Yes--%>
+                                    <%--</label>--%>
 
 
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <label for="familyAvgSize" class="col-sm-3 col-form-label">Family Average Size:</label>
-                        <div class='input-group date  col-sm-9'>
-                            <html:text property="familyAvgSize" styleClass="form-control" styleId="familyAvgSize" disabled="true"/>
-                            <span class="input-group-addon input-group-addon1">
+                                    <%--<label class="radio-inline">--%>
+                                        <%--<html:radio property="accessToLandsCheckpoints"  value="0" disabled="true"/>--%>
+                                        <%--No--%>
+                                    <%--</label>--%>
+
+
+                                <%--</div>--%>
+                            <%--</fieldset>--%>
+                        <%--</div>--%>
+                            <label for="familyAvgSize" class="col-sm-3 col-form-label">Family Average Size:</label>
+                            <div class='input-group date  col-sm-9'>
+                                <html:text property="familyAvgSize" styleClass="form-control" styleId="familyAvgSize" disabled="true"/>
+                                <span class="input-group-addon input-group-addon1">
                                Person
                             </span>
-                        </div>
+                            </div>
                     </div>
-                </div>
-                <div class="form-group row">
-
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <label for="familyAvgIncome" class="col-sm-3 col-form-label">Family Average Income:</label>
                         <div class='input-group date  col-sm-9'>
@@ -226,9 +209,6 @@
                                NIS
                             </span>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-
                     </div>
                 </div>
 
