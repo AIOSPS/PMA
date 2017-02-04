@@ -149,6 +149,22 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
+                        <label for="proTitle" class="col-sm-3 col-form-label">Project Title:</label>
+                        <div class="col-sm-9">
+                            <html:text property="proTitle" styleClass="form-control" styleId="proTitle"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="proDescription" class="col-sm-3 col-form-label">Project Description:</label>
+                        <div class="col-sm-9">
+                            <html:text property="proDescription" styleClass="form-control" styleId="proDescription"/>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
                         <label for="secId" class="col-sm-3 col-form-label"> Sector:</label>
                         <div class="col-sm-9">
                             <html:select property="secId" styleClass="selectpicker form-control">
@@ -179,34 +195,22 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="proTitle" class="col-sm-3 col-form-label">Project Title:</label>
+                        <label for="secId" class="col-sm-3 col-form-label"> Sub Sector:</label>
                         <div class="col-sm-9">
-                            <html:text property="proTitle" styleClass="form-control" styleId="proTitle"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="proDescription" class="col-sm-3 col-form-label">Project Description:</label>
-                        <div class="col-sm-9">
-                            <html:text property="proDescription" styleClass="form-control" styleId="proDescription"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="statusPr" class="col-sm-3 col-form-label">Status:</label>
-                        <div class="col-sm-9">
-                            <html:select property="proStatus" styleClass="selectpicker form-control">
-                                <html:option value="1">Design / Approval</html:option>
-                                <html:option value="2">Ongoing</html:option>
-                                <html:option value="3">Delayed</html:option>
-                                <html:option value="4">Completed</html:option>
-                                <html:option value="5">On-Hold</html:option>
-                                <html:option value="6">Closed</html:option>
-                                <html:option value="7">Cancelled</html:option>
+                            <html:select property="subSecId" styleClass=" form-control" >
+                                <logic:present name="subSectorList">
+                                    <html:options collection="subSectorList" property="compId"
+                                                  labelProperty="secName"/>
+                                </logic:present>
                             </html:select>
+                                <%--<script>--%>
+                                <%--$(function () {--%>
+                                <%--$('[name="subSecId"]').eq(0).attr("data-live-search", "true");--%>
+                                <%--});--%>
+                                <%--</script>--%>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="form-group row">
@@ -254,8 +258,17 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-
+                        <label for="statusPr" class="col-sm-3 col-form-label">Status:</label>
                         <div class="col-sm-9">
+                            <html:select property="proStatus" styleClass="selectpicker form-control">
+                                <html:option value="1">Design / Approval</html:option>
+                                <html:option value="2">Ongoing</html:option>
+                                <html:option value="3">Delayed</html:option>
+                                <html:option value="4">Completed</html:option>
+                                <html:option value="5">On-Hold</html:option>
+                                <html:option value="6">Closed</html:option>
+                                <html:option value="7">Cancelled</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -801,4 +814,30 @@
 
         document.getElementsByName("proBudget")[0].value = this.value.replace(/,/g, "")
     }
+
+    //************** filter sub sector*******************
+    var opts = $('[name="subSecId"] option').map(function(){
+        return [[this.value, $(this).text()]];
+    });
+    var currentVal = document.getElementsByName("secId")[0].value;
+    var optlist = $('[name="subSecId"]').eq(0).empty();
+    optlist.append($("<option></option>").attr("value",'').text('')); ;
+    opts.each(function(){
+        if (parseInt(currentVal)==parseInt((this[0].split("|")[1]))) {
+            optlist.append($('<option></option>').attr('value', this[0]).text(this[1]));
+
+        }
+    });
+    $('[name="secId"]').eq(0).change(function() {
+        var currentVal = $( this ).val();
+        var optlist = $('[name="subSecId"]').eq(0).empty();
+        optlist.append($("<option></option>").attr("value",'').text('')); ;
+        opts.each(function(){
+            if (parseInt(currentVal)==parseInt((this[0].split("|")[1]))) {
+                optlist.append($('<option></option>').attr('value', this[0]).text(this[1]));
+
+            }
+        });
+    });
+    //************** end filter sub sector*******************
 </script>
