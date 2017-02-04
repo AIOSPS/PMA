@@ -110,7 +110,7 @@
                             <tbody>
                             <tr>
                                 <td colspan="2" class="text-center"><B>Latitude</B></td>
-                                <td colspan="2" class="text-center"><B>Longitude</B></td>
+                                <td colspan="4" class="text-center"><B>Longitude</B></td>
                             </tr>
                             <logic:present name="projectLocationList">
                                 <% List projectLocationList = (List) request.getAttribute("projectLocationList");
@@ -121,7 +121,7 @@
                                 %>
                                 <tr>
                                     <td colspan="2"><%=pmsProjectsLocation.getCompId().getComLatitude()%></td>
-                                    <td colspan="2"><%=pmsProjectsLocation.getCompId().getComLongitude()%></td>
+                                    <td colspan="4"><%=pmsProjectsLocation.getCompId().getComLongitude()%></td>
                                 </tr>
                                 <%
                                     }
@@ -129,14 +129,16 @@
                             </logic:present>
                             <logic:notPresent name="projectLocationList">
                                 <tr>
-                                    <td colspan="4">No Location Found</td>
+                                    <td colspan="6">No Location Found</td>
                                 </tr>
                             </logic:notPresent>
                             <tr>
                                 <td width="12%"><B>Cluster Project</B></td>
                                 <td width="33%"><bean:write name="pmsProjectForm" property="proHasClusterDesc" /></td>
                                 <td width="12%"><B>Community</B></td>
-                                <td width="33%"><%=request.getAttribute("comName")%></td>
+                                <td width="20%"><%=request.getAttribute("comName")%></td>
+                                <td width="9%"><B>Master Plan</B></td>
+                                <td width="4%"><%=request.getAttribute("hasMp")%></td>
                             </tr>
                             </tbody>
                         </table>

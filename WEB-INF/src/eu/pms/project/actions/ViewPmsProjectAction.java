@@ -114,6 +114,7 @@ public class ViewPmsProjectAction extends Action {
                     else
                         hasMPName = "No";
                 }
+                request.setAttribute("hasMp",hasMPName);
             }
             List<PmsProjectsIndicator> projectIndicatorList = (List) new GetPmsProjectIndicatorUseCase().execute(inputs, request);
             if (projectIndicatorList != null && projectIndicatorList.size() > 0) {
@@ -128,7 +129,7 @@ public class ViewPmsProjectAction extends Action {
             fillPmsProjectData(pmsProjectForm, pmsProject, projectDonorArr, projectImplementerArr, projectCommunityArr, projectIndicatorArr);
 
             List<PmsProjectsLocation> projectLocationList = (List) new GetPmsProjectLocationUseCase().execute(inputs, request);
-            request.setAttribute("projectLocationList", projectLocationList);
+            request.setAttribute("projectLocationList", projectLocationList!=null&&projectLocationList.size()>0?projectLocationList:null);
             List<PmsProjectsBenificiary> projectBenificiryList = (List) new GetPmsProjectBenificiaryUseCase().execute(inputs, request);
             request.setAttribute("projectBenificiryList", projectBenificiryList);
             List benificiryTypeList = (List) new GetPmsBenificiaryUseCase().execute(null, request);
@@ -174,7 +175,7 @@ public class ViewPmsProjectAction extends Action {
         if(communityList!=null&&communityList.size()>0) {
             if(projectCommunityArr!=null&&projectCommunityArr.length>0){
             for (int i = 0; i < communityList.size(); i++) {
-                PmsCommunity obj = (PmsCommunity) communityList.get(i);
+                PmsCommunitiesVw obj = (PmsCommunitiesVw) communityList.get(i);
                 for(int j = 0;j< projectCommunityArr.length;j++)
                     if(obj.getComId().equals(projectCommunityArr[j])){
                         comName +=obj.getComName()+" | ";
