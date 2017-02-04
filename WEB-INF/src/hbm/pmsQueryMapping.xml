@@ -404,6 +404,14 @@
                   ]]>
     </query>
     <query
+            name="getPmsMasterPlanByComId">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlanCommunity a
+                where a.compId.comId = ?
+                order by a.compId.comId
+                  ]]>
+    </query>
+    <query
             name="getPmsMasterPlanDonor">
         <![CDATA[
                 from eu.pms.project.database.PmsMasterPlanDonor a

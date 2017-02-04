@@ -3,6 +3,7 @@ package eu.pms.project.actions;
 
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.incident.useCases.PmsIncidentListByProjectUseCase;
+import eu.pms.masterPlan.useCases.GetPmsMPByCommunityUseCase;
 import eu.pms.project.database.*;
 import eu.pms.project.forms.PmsProjectForm;
 import eu.pms.project.useCases.*;
@@ -48,6 +49,7 @@ public class ViewPmsProjectAction extends Action {
                 clusterDList.add(pmsSecTyp);
 
         }
+
         List permitList = (List) new GetPmsPermitUseCase().execute(null, request);
         List benificiryList = (List) new GetPmsBenificiaryUseCase().execute(null, request);
         List indicatorList = (List) new GetPmsIndicatorListUseCase().execute(null, request);
@@ -97,9 +99,18 @@ public class ViewPmsProjectAction extends Action {
             if (projectCommunityList != null && projectCommunityList.size() > 0) {
                 projectCommunityArr = new String[projectCommunityList.size()];
                 int i = 0;
+                ArrayList input = new ArrayList();
+                String hasMPName = "";
                 for (PmsProjectsCommunity pmsProjectsCommunity : projectCommunityList) {
                     projectCommunityArr[i] = pmsProjectsCommunity.getCompId().getComId();
                     i++;
+
+                    input.add(pmsProjectsCommunity.getCompId().getComId());
+                    List hasMP = (List) new GetPmsMPByCommunityUseCase().execute(input, request);
+                    if (hasMP != null && hasMP.size() > 0)
+                        hasMPName = "Yes";
+                    else
+                        hasMPName = "No";
                 }
             }
             List<PmsProjectsIndicator> projectIndicatorList = (List) new GetPmsProjectIndicatorUseCase().execute(inputs, request);

@@ -138,6 +138,16 @@
             name="getPmsSectorTyp">
         <![CDATA[
                 from eu.pms.project.database.PmsSector a
+                where a.secParentId is null
+
+                order by a.secType,a.secDesc
+                  ]]>
+    </query>
+    <query
+            name="getPmsSubSector">
+        <![CDATA[
+                from eu.pms.project.database.PmsSector a
+                where a.secParentId is not null
                 order by a.secType,a.secDesc
                   ]]>
     </query>
@@ -391,6 +401,14 @@
                 from eu.pms.project.database.PmsMasterPlan a
                 where a.masId = ?
                 order by a.masMpName
+                  ]]>
+    </query>
+    <query
+            name="getPmsMasterPlanByComId">
+        <![CDATA[
+                from eu.pms.project.database.PmsMasterPlanCommunity a
+                where a.compId.comId = ?
+                order by a.compId.comId
                   ]]>
     </query>
     <query
