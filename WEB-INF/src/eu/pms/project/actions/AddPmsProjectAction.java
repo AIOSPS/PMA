@@ -87,7 +87,7 @@ public class AddPmsProjectAction extends Action {
         inputs.add(prgId);
         inputs.add(devId);
         inputs.add(secId);
-        inputs.add(subSecId);
+        inputs.add(subSecId!=null && !subSecId.isEmpty()&& subSecId.contains("|")?subSecId.split("|")[0]:null);
         inputs.add(secType);
         inputs.add(preId);
         inputs.add(donorProjectList);

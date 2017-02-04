@@ -6,6 +6,7 @@ import eu.pms.community.useCases.GetPmsGovernateUseCase;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.login.components.LoginComponent;
 import eu.pms.login.forms.LoginForm;
+import eu.pms.project.database.PmsCommunitiesVw;
 import eu.pms.project.forms.PmsProjectSearchForm;
 import eu.pms.project.useCases.GetPmsCommunityUseCase;
 import eu.pms.project.useCases.GetPmsDonorsUseCase;
@@ -38,7 +39,7 @@ public class PmsProjectListAction extends Action
         List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
         request.setAttribute("governateList", governateList);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
-        request.setAttribute("communityList", communityList);
+        request.setAttribute("communityList", communityList!=null && communityList.size()>0&& communityList.get(0) instanceof PmsCommunitiesVw ?communityList:null);
 
 
         ArrayList inputData = new ArrayList();

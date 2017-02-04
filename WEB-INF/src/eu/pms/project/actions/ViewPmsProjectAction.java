@@ -34,6 +34,7 @@ public class ViewPmsProjectAction extends Action {
         List programmList = (List) new GetPmsProgrammUseCase().execute(null, request);
         //List locationList = (List) new GetPmsLocationUseCase().execute(null, request);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
+        List subSectorList = (List) new GetPmsSubSectorUseCase().execute(null, request);
         List clusterList = (List) new GetPmsClusterTypUseCase().execute(null, request);
         List clusterHList = new ArrayList();
         List clusterDList = new ArrayList();
@@ -58,9 +59,10 @@ public class ViewPmsProjectAction extends Action {
         request.setAttribute("developmentAgencyList", developmentAgencyList);
         request.setAttribute("programmList", programmList);
        // request.setAttribute("locationList", locationList);
-        request.setAttribute("communityList", communityList);
+        request.setAttribute("communityList",  communityList!=null && communityList.size()>0&& communityList.get(0) instanceof PmsCommunitiesVw ?communityList:null);
         request.setAttribute("clusterHList", clusterHList);
         request.setAttribute("clusterDList", clusterDList);
+        request.setAttribute("subSectorList", subSectorList);
         request.setAttribute("permitList", permitList);
         request.setAttribute("benificiryList", benificiryList);
         request.setAttribute("indicatorList", indicatorList);
