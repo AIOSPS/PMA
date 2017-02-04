@@ -312,3 +312,7 @@ VIEW `pms_economic_socio_vw` AS
     FROM
         `pms_economic_socio`;
 
+----------------
+update pms.pms_sectors
+set sec_parent_id = null
+where length(sec_parent_id) =1;
