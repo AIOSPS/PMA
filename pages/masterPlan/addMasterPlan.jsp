@@ -21,11 +21,11 @@
         $("#masStatusIca").prop('required', true);
         $("#masMajorObjection").attr("placeholder", "Major Objection");
         $("#masFirstSubmitDateToIca").attr("placeholder", "First Submission Date To ICA");
-        $("#masFirstSubmitDateToIca").prop('required', true);
+        //$("#masFirstSubmitDateToIca").prop('required', true);
         $("#masLastSubmitDateToIca").attr("placeholder", "Last Submission Date To ICA");
 //        $("#masLastSubmitDateToIca").prop('required', true);
         $("#masNoSessionWithIca").attr("placeholder", "No Session With ICA");
-        $("#masNoSessionWithIca").prop('required', true);
+        //$("#masNoSessionWithIca").prop('required', true);
         $("#masSubmitToMod").attr("placeholder", "Submission to Ministry of Defense ");
         $("#masSubmitToMod").prop('required', true);
         $('input[name=masSubmitToMod][value="1"]').attr('checked', true);
