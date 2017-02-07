@@ -39,7 +39,7 @@ public class PmsWarningListUseCase implements ComponentUseCase {
                     warnedId =  CommonFilter.cleanQeuryParam(warnedId);
                     cond += " and a.warWarnedId like '%"+warnedId+"%' ";
                 }
-                String query = " from eu.pms.project.database.PmsActivity a ";
+                String query = " from eu.pms.project.database.PmsWarnings a ";
                 query +=cond;
                 query +=" order by a.warWarnedName ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);
