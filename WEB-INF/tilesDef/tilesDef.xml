@@ -224,4 +224,17 @@
     <definition name="pms.editEconomicSocio.tile" extends="innerLayout">
         <put name="body" value="/pages/economicSocio/editEconomicSocio.jsp"/>
     </definition>
+
+    <definition name="pms.warningList.tile" extends="innerLayout">
+        <put name="body" value="/pages/warnings/listWarning.jsp"/>
+    </definition>
+    <definition name="pms.addWarning.tile" extends="innerLayout">
+        <put name="body" value="/pages/warnings/addWarning.jsp"/>
+    </definition>
+    <definition name="pms.viewWarning.tile" extends="innerLayout">
+        <put name="body" value="/pages/warnings/viewWarning.jsp"/>
+    </definition>
+    <definition name="pms.editWarning.tile" extends="innerLayout">
+        <put name="body" value="/pages/warnings/editWarning.jsp"/>
+    </definition>
 </tiles-definitions>

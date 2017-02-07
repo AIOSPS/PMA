@@ -38,6 +38,8 @@
         <form-bean name="pmsWaterSocioSearchForm" type="eu.pms.waterSocio.forms.PmsWaterSocioSearchForm"/>
         <form-bean name="pmsEconomicSocioForm" type="eu.pms.economicSocio.forms.PmsEconomicSocioForm"/>
         <form-bean name="pmsEconomicSocioSearchForm" type="eu.pms.economicSocio.forms.PmsEconomicSocioSearchForm"/>
+        <form-bean name="pmsWarningForm" type="eu.pms.warnings.forms.PmsWarningForm"/>
+        <form-bean name="pmsWarningSearchForm" type="eu.pms.warnings.forms.PmsWarningSearchForm"/>
 
     </form-beans>
 
@@ -854,6 +856,53 @@
             <forward name="success" path="pms.editEconomicSocio.tile"/>
         </action>
 
+
+        <action
+                type="eu.pms.warnings.actions.PmsWarningListAction"
+                scope="request"
+                path="/pmsWarningList">
+            <forward name="success" path="pms.warningList.tile" contextRelative="true"/>
+        </action>
+        <action
+                type="eu.pms.warnings.actions.PmsWarningListAction"
+                scope="request"
+                path="/searchWarning"
+                name="pmsWarningSearchForm"
+        >
+            <forward name="success" path="pms.warningList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmsWarningForm"
+                type="eu.pms.warnings.actions.ViewAddPmsWarningAction"
+                validate="false"
+                path="/viewAddWarning"
+        >
+            <forward name="success" path="pms.addWarning.tile"/>
+        </action>
+        <action
+                name="pmsWarningForm"
+                type="eu.pms.warnings.actions.AddPmsWarningAction"
+                validate="false"
+                path="/addWarning"
+        >
+            <forward name="success" path="/pmsWarningList.do"/>
+        </action>
+        <action
+                name="pmsWarningForm"
+                type="eu.pms.warnings.actions.ViewPmsWarningAction"
+                validate="false"
+                path="/viewPmsWarning"
+        >
+            <forward name="success" path="pms.viewWarning.tile"/>
+        </action>
+        <action
+                name="pmsWarningForm"
+                type="eu.pms.warnings.actions.ViewPmsWarningAction"
+                validate="false"
+                path="/viewEditWarning"
+        >
+            <forward name="success" path="pms.editWarning.tile"/>
+        </action>
     </action-mappings>
 
     <!-- ========== Controller Configuration ================================ -->
