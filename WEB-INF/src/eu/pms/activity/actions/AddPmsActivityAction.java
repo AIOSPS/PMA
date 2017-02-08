@@ -13,6 +13,7 @@ import org.apache.struts.action.ActionMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -32,7 +33,7 @@ public class AddPmsActivityAction extends Action {
         String secId = pmsActivityForm.getSecId();
         String actDesc = pmsActivityForm.getActDesc();
         String actUnit = pmsActivityForm.getActUnit();
-        int actUnitQty = pmsActivityForm.getActUnitQty();
+        BigDecimal actUnitQty = pmsActivityForm.getActUnitQty();
         int actEstimatedBudget = pmsActivityForm.getActEstimatedBudget();
 
 

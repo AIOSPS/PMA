@@ -19,7 +19,7 @@ public class PmsActivityForm extends ActionForm {
     private String secId;
     private String actDesc;
     private String actUnit;
-    private int actUnitQty;
+    private java.math.BigDecimal actUnitQty;
     private int actEstimatedBudget;
 
     /** default constructor */
@@ -66,11 +66,11 @@ public class PmsActivityForm extends ActionForm {
         this.actUnit = actUnit;
     }
 
-    public int getActUnitQty() {
+    public BigDecimal getActUnitQty() {
         return actUnitQty;
     }
 
-    public void setActUnitQty(int actUnitQty) {
+    public void setActUnitQty(BigDecimal actUnitQty) {
         this.actUnitQty = actUnitQty;
     }
 

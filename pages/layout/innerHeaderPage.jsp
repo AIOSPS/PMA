@@ -70,7 +70,6 @@
                         <li class="dropdown-submenu ">
                             <a>Socio-economic Data</a>
                             <ul class="dropdown-menu">
-                                <li><a href="/pmsWarningList.do">Warning</a></li>
                                 <li><a href="/pmsEconomicSocioList.do">Basic socio</a></li>
                                 <li><a href="/pmsAgricultureSocioList.do">Agriculture</a></li>
                                 <li><a href="/pmsWaterSocioList.do">Water</a></li>
@@ -98,8 +97,8 @@
                 </li>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Incident  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <li><a href="/pmsWarningList.do">Warning</a></li>
                         <li><a href="/pmsIncidentList.do">Incident</a></li>
-                        <%--<li><a href="#">Link to project</a></li>--%>
                     </ul>
                 </li>
                 <li class="dropdown">

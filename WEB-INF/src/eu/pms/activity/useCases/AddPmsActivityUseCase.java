@@ -23,7 +23,7 @@ public class AddPmsActivityUseCase implements ComponentUseCase {
             String secId = (String) itr.next();
             String actDesc = (String) itr.next();
             String actUnit = (String) itr.next();
-            int actUnitQty = (Integer) itr.next();
+            BigDecimal actUnitQty = (BigDecimal) itr.next();
             int actEstimatedBudget = (Integer) itr.next();
 
             String username = "pms";

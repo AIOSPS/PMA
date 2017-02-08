@@ -173,6 +173,21 @@
                 order by a.indTitle
                   ]]>
     </query>
+    <query
+            name="getPmsWarningList">
+        <![CDATA[
+                from eu.pms.project.database.PmsWarnings a
+                order by a.warWarnedName
+                  ]]>
+    </query>
+    <query
+            name="getPmsWarningById">
+        <![CDATA[
+                from eu.pms.project.database.PmsWarnings a
+                where a.warId = ?
+                order by a.warWarnedName
+                  ]]>
+    </query>
 
     <!--**************************************************************-->
 

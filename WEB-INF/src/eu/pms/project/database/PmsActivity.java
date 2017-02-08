@@ -1,6 +1,8 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -11,7 +13,7 @@ public class PmsActivity implements Serializable {
     private PmsActivityPK compId;
     private String actDesc;
     private String actUnit;
-    private int actUnitQty;
+    private BigDecimal actUnitQty;
     private int actEstimatedBudget;
     private String username;
     private java.util.Date timeStamp;
@@ -44,11 +46,11 @@ public class PmsActivity implements Serializable {
         this.actUnit = actUnit;
     }
 
-    public int getActUnitQty() {
+    public BigDecimal getActUnitQty() {
         return this.actUnitQty;
     }
 
-    public void setActUnitQty(int actUnitQty) {
+    public void setActUnitQty(BigDecimal actUnitQty) {
         this.actUnitQty = actUnitQty;
     }
 

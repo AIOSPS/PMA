@@ -14,6 +14,9 @@ import org.apache.struts.action.ActionMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.*;
 
 public class AddPmsInterventionAction extends Action {
@@ -67,7 +70,15 @@ public class AddPmsInterventionAction extends Action {
                 pmsActivity.setActDesc(parameters.get("actDesc"+count)[0]);
                 pmsActivity.setActUnit(parameters.get("actUnit"+count)[0]);
                 String actUnitQtyStr =parameters.get("actUnitQty"+count)[0];
-                Integer actUnitQty =Integer.parseInt(actUnitQtyStr);
+
+                DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+                symbols.setGroupingSeparator(',');
+                symbols.setDecimalSeparator('.');
+                String pattern = "#,##0.0#";
+                DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
+                decimalFormat.setParseBigDecimal(true);
+                BigDecimal actUnitQty = (BigDecimal) decimalFormat.parse(actUnitQtyStr);
+
                 pmsActivity.setActUnitQty(actUnitQty);
                 pmsActivity.setActEstimatedBudget(Integer.parseInt(parameters.get("actEstimatedBudget"+count)[0]));
                 pmsActivity.setUsername(username);

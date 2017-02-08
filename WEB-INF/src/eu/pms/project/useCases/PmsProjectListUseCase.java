@@ -43,7 +43,7 @@ public class PmsProjectListUseCase implements ComponentUseCase {
                 if(statusId!=null && !statusId.trim().equals("")){
                     cond += " and a.proStatus = '"+statusId+"' ";
                 }
-                String query = " select distinct new eu.pms.project.database.structs.PmsProjectList(a.proId,a.proTitle,a.proDescription,a.proStatus,a.proStartDate,a.proEndDate) "+
+                String query = " select distinct new eu.pms.project.database.structs.PmsProjectList(a.proId,a.proTitle,a.proDescription,a.proStatusDesc,a.proStartDate,a.proEndDate) "+
                                " from eu.pms.project.database.PmsProjectVw a ";
                 query +=cond;
                 query +=" order by a.proTitle ";

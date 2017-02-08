@@ -31,6 +31,9 @@ public class AddPmsWarningAction extends Action {
 //            return mapping.findForward("noPermission");
         PmsWarningForm pmsWarningForm = (PmsWarningForm) form;
         String warId = pmsWarningForm.getWarId();
+        if (warId == null || warId.equals("")){
+            warId = eu.pms.common.tools.Randomizer.randomIntegers(10).toString();
+        }
         String warNo = pmsWarningForm.getWarNo();
         String warWarnedName = pmsWarningForm.getWarWarnedName();
         String warWarnedId = pmsWarningForm.getWarWarnedId();

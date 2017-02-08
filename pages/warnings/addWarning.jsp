@@ -69,23 +69,32 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="warWarnedName" class="col-sm-3 col-form-label">Warned Name:</label>
-                        <div class="col-sm-9">
-                            <html:text property="warWarnedName" styleClass="form-control" styleId="warWarnedName"/>
-                        </div>
+                        <%--<label for="warWarnedName" class="col-sm-3 col-form-label">Warned Name:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="warWarnedName" styleClass="form-control" styleId="warWarnedName"/>--%>
+                        <%--</div>--%>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>
+                        <label for="warWarnedName" class="col-sm-3 col-form-label">Warned Name:</label>
                         <div class="col-sm-9">
-                            <html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId"/>
+                            <html:text property="warWarnedName" styleClass="form-control" styleId="warWarnedName"/>
                         </div>
+                        <%--<label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId"/>--%>
+                        <%--</div>--%>
                     </div>
                     <div class="col-md-6">
                         <label for="warType" class="col-sm-3 col-form-label">Warning Type:</label>
                         <div class="col-sm-9">
-                            <html:text property="warType" styleClass="form-control" styleId="warType"/>
+                            <html:select property="warType"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">Stop working</html:option>
+                                <html:option value="2">Demolition Order</html:option>
+                                <html:option value="3">Confiscation order</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
@@ -145,7 +154,14 @@
                     <div class="col-md-6">
                         <label for="warStructType" class="col-sm-3 col-form-label">Struct Type:</label>
                         <div class="col-sm-9">
-                            <html:text property="warStructType" styleClass="form-control" styleId="warStructType"/>
+                            <html:select property="warStructType"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">Residential</html:option>
+                                <html:option value="2">In ProcessLivestock barn</html:option>
+                                <html:option value="3">Commercial</html:option>
+                                <html:option value="4">Industrial</html:option>
+                                <html:option value="5">Agricultural</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -218,7 +234,14 @@
                     <div class="col-md-6">
                         <label for="warStatus" class="col-sm-3 col-form-label">Status:</label>
                         <div class="col-sm-9">
-                            <html:text property="warStatus" styleClass="form-control" styleId="warStatus"/>
+                            <html:select property="warStatus"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">Executed</html:option>
+                                <html:option value="2">In Process</html:option>
+                                <html:option value="3">On hold - Legal action</html:option>
+                                <html:option value="4">Closed/Cancelled</html:option>
+                                <html:option value="5">Ready for Execution</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
