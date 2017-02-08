@@ -246,7 +246,7 @@
     <query
             name="getPmsInterventionList">
         <![CDATA[
-                from eu.pms.project.database.PmsIntervention a
+                from eu.pms.project.database.PmsInterventionVw a
                 order by a.intDesc
                   ]]>
     </query>

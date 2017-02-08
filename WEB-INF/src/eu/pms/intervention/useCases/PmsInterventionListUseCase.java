@@ -25,6 +25,7 @@ public class PmsInterventionListUseCase implements ComponentUseCase {
                 String secId = (String)itr.next();
                 String intPriority = (String)itr.next();
                 String intSource = (String) itr.next();
+                String masId = (String) itr.next();
                 String cond = " where 1=1 ";
                 if(secId!=null && !secId.trim().equals("")){
                     cond += " and a.compId.secId = '"+secId+"' ";
@@ -35,7 +36,10 @@ public class PmsInterventionListUseCase implements ComponentUseCase {
                 if(intSource!=null && !intSource.trim().equals("") ){
                     cond += " and a.intSource = '"+intSource+"' ";
                 }
-                String query = " from eu.pms.project.database.PmsIntervention a ";
+                if(masId!=null && !masId.trim().equals("") ){
+                    cond += " and a.masId = '"+masId+"' ";
+                }
+                String query = " from eu.pms.project.database.PmsInterventionVw a ";
                 query +=cond;
                 query +=" order by a.intDesc ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);

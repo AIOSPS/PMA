@@ -761,4 +761,18 @@
         <property name="username" type="java.lang.String" column="username" />
         <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
+
+    <class name="eu.pms.project.database.PmsInterventionVw" table="pms_intervention_vw" >
+        <composite-id name="compId" class="eu.pms.project.database.PmsInterventionVwPK">
+            <key-property name="intId" column="int_id" type="java.lang.String"/>
+            <key-property name="secId" column="sec_id" type="java.lang.String"/>
+        </composite-id>
+        <property name="intDesc" type="java.lang.String" column="int_desc" />
+        <property name="intEstimatedBudget" type="int" column="int_estimated_budget" />
+        <property name="intSource" type="java.lang.String" column="int_source" />
+        <property name="intPriority" type="java.lang.String" column="int_priority" />
+        <property name="masMpName" type="java.lang.String" column="mas_mp_name" />
+        <property name="comName" type="java.lang.String" column="com_name" />
+        <property name="masId" type="java.lang.String" column="mas_id" />
+    </class>
 </hibernate-mapping>

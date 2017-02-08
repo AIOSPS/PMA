@@ -3,6 +3,7 @@ package eu.pms.intervention.actions;
 
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.intervention.forms.PmsInterventionSearchForm;
+import eu.pms.intervention.useCases.GetPmsMasterPlanUseCase;
 import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.intervention.useCases.PmsInterventionListUseCase;
 import org.apache.struts.action.*;
@@ -25,13 +26,16 @@ public class PmsInterventionListAction extends Action
 //        if (!SessionTraker.checkActionToRole(request, this.getClass().getName()))
 //            return mapping.findForward("noPermission");
         List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
+        List masterPlanList = (List) new GetPmsMasterPlanUseCase().execute(null, request);
         request.setAttribute("sectorsList", sectorsList);
+        request.setAttribute("masterPlanList", masterPlanList);
         ArrayList inputData = new ArrayList();
         PmsInterventionSearchForm pmsInterventionSearchForm = (PmsInterventionSearchForm) form;
         if (pmsInterventionSearchForm != null) {
             inputData.add(pmsInterventionSearchForm.getSecId());
             inputData.add(pmsInterventionSearchForm.getIntPriority());
             inputData.add(pmsInterventionSearchForm.getInterventionSource());
+            inputData.add(pmsInterventionSearchForm.getMasId());
         }
         request.setAttribute("pmsInterventionList", new PmsInterventionListUseCase().execute(inputData, request));
 

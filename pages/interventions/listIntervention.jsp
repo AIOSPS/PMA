@@ -88,10 +88,22 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <%--<label for="prNotes" class="col-sm-5 col-form-label">Community Topology:</label>--%>
-                                <%--<div class="col-sm-12">--%>
-                                    <%--<input type="number" class="form-control" id="prBdget" placeholder="Budget"/>--%>
-                                <%--</div>--%>
+                                <label for="prNotes" class="col-sm-5 col-form-label">Master Plan:</label>
+                                <div class="col-sm-12">
+                                    <html:select property="masId"
+                                                 styleClass="selectpicker form-control">
+                                        <logic:present name="masterPlanList">
+                                            <html:option value="">Select</html:option>
+                                            <html:options collection="masterPlanList" property="masId" labelProperty="masMpName"/>
+                                        </logic:present>
+
+                                    </html:select>
+                                    <script>
+                                        $(function () {
+                                            $('[name="masId"]').eq(0).attr("data-live-search", "true");
+                                        });
+                                    </script>
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 <%--<label for="prNotes" class="col-sm-5 col-form-label">Has Cluster:</label>--%>
@@ -114,28 +126,31 @@
             <table id="listInterventionsTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
+                    <th class="text-center">Community</th>
+                    <th class="text-center">Master Plan Name</th>
                     <th class="text-center">Description</th>
                     <th class="text-center">Estimated Budget</th>
-                    <th class="text-center">Source</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
+                    <th class="text-center">Community</th>
+                    <th class="text-center">Master Plan Name</th>
                     <th class="text-center">Description</th>
                     <th class="text-center">Estimated Budget</th>
-                    <th class="text-center">Source</th>
                     <th class="text-center"></th>
 
                 </tr>
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsInterventionList">
-                    <logic:iterate id="pmsInterventionList" name="pmsInterventionList" type="eu.pms.project.database.PmsIntervention">
+                    <logic:iterate id="pmsInterventionList" name="pmsInterventionList" type="eu.pms.project.database.PmsInterventionVw">
                         <tr>
-                            <td width="50%"><bean:write name="pmsInterventionList" property="intDesc"/></td>
+                            <td width="25%"><bean:write name="pmsInterventionList" property="comName"/></td>
+                            <td width="25%" class="text-center"><bean:write name="pmsInterventionList" property="masMpName"/></td>
+                            <td width="25%" class="text-center"><bean:write name="pmsInterventionList" property="intDesc"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsInterventionList" property="intEstimatedBudget"/></td>
-                            <td width="25%" class="text-center"><bean:write name="pmsInterventionList" property="intSourceDesc"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsIntervention.do?intId=<bean:write name="pmsInterventionList" property="compId.intId"/>&secId=<bean:write name="pmsInterventionList" property="compId.secId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
