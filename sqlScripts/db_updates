@@ -368,3 +368,47 @@ VIEW `pms_intervention_vw` AS
         JOIN `pms_interventions` `b`)
     WHERE
         (`a`.`mas_id` = `b`.`mas_id`);
+------------------------
+USE `pms`;
+CREATE
+     OR REPLACE ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `pms_master_plan_vw` AS
+    SELECT
+        `mp`.`mas_id` AS `mas_id`,
+        `mp`.`mas_mp_no` AS `mas_mp_no`,
+        `mp`.`mas_mp_name` AS `mas_mp_name`,
+        `mp`.`mas_status` AS `mas_status`,
+        `mp`.`mas_status_ica` AS `mas_status_ica`,
+        (CASE `mp`.`mas_status_ica`
+            WHEN 1 THEN 'Progressing'
+            WHEN 2 THEN 'Stuck'
+            WHEN 3 THEN 'Rejected'
+            ELSE 'Unknown Status'
+        END) AS `mas_status_ica_desc`,
+        `mp`.`mas_first_submit_date_to_ica` AS `mas_first_submit_date_to_ica`,
+        `mp`.`mas_last_submit_date_to_ica` AS `mas_last_submit_date_to_ica`,
+        `mp`.`mas_no_session_with_ica` AS `mas_no_session_with_ica`,
+        `mp`.`mas_submit_to_mod` AS `mas_submit_to_mod`,
+        (CASE `mp`.`mas_submit_to_mod`
+            WHEN 1 THEN 'Yes'
+            WHEN 0 THEN 'No'
+            ELSE 'Unknown Status'
+        END) AS `mas_submit_to_mod_desc`,
+        `mp`.`mas_approval_date` AS `mas_approval_date`,
+        `mp`.`mas_publication_date` AS `mas_publication_date`,
+        `mp`.`mas_last_date_for_objection` AS `mas_last_date_for_objection`,
+        `mp`.`mas_date_of_final_publication` AS `mas_date_of_final_publication`,
+        `mp`.`mas_approved_planed_area` AS `mas_approved_planed_area`,
+        `mp`.`mas_village_admin_boarder` AS `mas_village_admin_boarder`,
+        `mp`.`mas_note` AS `mas_note`,
+        `mp`.`imp_id` AS `imp_id`,
+        `mp`.`username` AS `username`,
+        `mp`.`time_stamp` AS `time_stamp`,
+        `mpc`.`com_id` AS `com_id`,
+        `com`.`com_name` AS `com_name`
+    FROM
+        ((`pms_master_plan` `mp`
+        LEFT JOIN `pms_master_plan_communities` `mpc` ON ((`mp`.`mas_id` = `mpc`.`mas_id`)))
+        LEFT JOIN `pms_communities` `com` ON ((`mpc`.`com_id` = `com`.`com_id`)));

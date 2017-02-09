@@ -38,6 +38,8 @@ public class PmsMasterPlanVw implements Serializable {
     private java.util.Date timeStamp;
     private String comId;
     private String comName;
+    private String masStatusIcaDesc;
+    private String masSubmitToModDesc;
 
     /** default constructor */
     public PmsMasterPlanVw() {
@@ -258,6 +260,22 @@ public class PmsMasterPlanVw implements Serializable {
 
     public void setMasDateOfFinalPublicationStr(String masDateOfFinalPublicationStr) {
         this.masDateOfFinalPublicationStr = masDateOfFinalPublicationStr;
+    }
+
+    public String getMasStatusIcaDesc() {
+        return masStatusIcaDesc;
+    }
+
+    public void setMasStatusIcaDesc(String masStatusIcaDesc) {
+        this.masStatusIcaDesc = masStatusIcaDesc;
+    }
+
+    public String getMasSubmitToModDesc() {
+        return masSubmitToModDesc;
+    }
+
+    public void setMasSubmitToModDesc(String masSubmitToModDesc) {
+        this.masSubmitToModDesc = masSubmitToModDesc;
     }
 
     public String toString() {

@@ -123,10 +123,10 @@
                         <tr>
                             <td width="10%"><bean:write name="pmsMasterPlanList" property="masMpNo"/></td>
                             <td width="20%"><bean:write name="pmsMasterPlanList" property="masMpName"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masStatusIca"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masStatusIcaDesc"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masNoSessionWithIca"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masApprovedPlanedArea"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masSubmitToMod"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masSubmitToModDesc"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masFirstSubmitDateToIcaStr"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masLastSubmitDateToIcaStr"/></td>
                             <td width="10%" class="text-center">
