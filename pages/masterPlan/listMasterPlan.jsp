@@ -94,7 +94,10 @@
                 <tr>
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
-                    <%--<th class="text-center">Status</th>--%>
+                    <th class="text-center">Status ICA</th>
+                    <th class="text-center">No Session With ICA</th>
+                    <th class="text-center">Approved Planed Area</th>
+                    <th class="text-center">Submission to Ministry of Defense</th>
                     <th class="text-center">First Submission Date to ICA</th>
                     <th class="text-center">Last Submission Date To ICA</th>
                     <th class="text-center"></th>
@@ -104,7 +107,10 @@
                 <tr>
                     <th class="text-center">Master Plan No</th>
                     <th class="text-center">Master Plan Name</th>
-                    <%--<th class="text-center">Status</th>--%>
+                    <th class="text-center">Status ICA</th>
+                    <th class="text-center">No Session With ICA</th>
+                    <th class="text-center">Approved Planed Area</th>
+                    <th class="text-center">Submission to Ministry of Defense</th>
                     <th class="text-center">First Submission Date to ICA</th>
                     <th class="text-center">Last Submission Date To ICA</th>
                     <th class="text-center"></th>
@@ -115,9 +121,12 @@
                 <logic:present name="pmsMasterPlanList">
                     <logic:iterate id="pmsMasterPlanList" name="pmsMasterPlanList" type="eu.pms.project.database.PmsMasterPlanVw">
                         <tr>
-                            <td width="20%"><bean:write name="pmsMasterPlanList" property="masMpNo"/></td>
-                            <td width="40%"><bean:write name="pmsMasterPlanList" property="masMpName"/></td>
-                            <%--<td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masStatus"/></td>--%>
+                            <td width="10%"><bean:write name="pmsMasterPlanList" property="masMpNo"/></td>
+                            <td width="20%"><bean:write name="pmsMasterPlanList" property="masMpName"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masStatusIca"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masNoSessionWithIca"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masApprovedPlanedArea"/></td>
+                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masSubmitToMod"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masFirstSubmitDateToIcaStr"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masLastSubmitDateToIcaStr"/></td>
                             <td width="10%" class="text-center">
