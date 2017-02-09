@@ -83,7 +83,7 @@
                     <th class="text-center">Women Livelihood Source1</th>
                     <th class="text-center">Women Livelihood Source2</th>
                     <th class="text-center">Women Livelihood Source3</th>
-                    <th class="text-center">Access to Lands Affected By</th>
+                    <th class="text-center">Access to livelihood Restriction</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
@@ -95,7 +95,7 @@
                     <th class="text-center">Women Livelihood Source1</th>
                     <th class="text-center">Women Livelihood Source2</th>
                     <th class="text-center">Women Livelihood Source3</th>
-                    <th class="text-center">Access to Lands Affected By</th>
+                    <th class="text-center">Access to livelihood Restriction</th>
                     <th class="text-center"></th>
 
                 </tr>

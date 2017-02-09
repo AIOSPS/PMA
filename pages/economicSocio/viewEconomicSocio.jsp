@@ -23,7 +23,7 @@
         $("#womenLivelihoodSource2").prop('required', true);
         $("#womenLivelihoodSource3").attr("placeholder", "Women Livelihood Source3");
         $("#womenLivelihoodSource3").prop('required', true);
-        $("#accessToLandsMilitary").attr("placeholder", "Access to Lands Military");
+        $("#accessToLandsMilitary").attr("placeholder", "Access to livelihood Restriction");
         $("#accessToLandsMilitary").prop('required', true);
         $("#accessToLandsCheckpoints").attr("placeholder", "Access to Lands Checkpoints");
         $("#accessToLandsCheckpoints").prop('required', true);
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <label for="accessToLandsMilitary" class="col-sm-3 col-form-label">Access to Lands Affected By:</label>
+                        <label for="accessToLandsMilitary" class="col-sm-3 col-form-label">Access to livelihood Restriction:</label>
                         <div class="col-sm-9">
                             <html:select property="accessToLandsMilitary" styleClass="selectpicker form-control" disabled="true">
                                 <html:option value="1">Military Activity</html:option>
