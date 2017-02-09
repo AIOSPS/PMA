@@ -18,7 +18,7 @@
 //        $("#warLongitude").prop('required', true);
         $("#warType").attr("placeholder", "Warning Type");
         $("#warType").prop('required', true);
-        $("#warStructType").attr("placeholder", "Struct Type");
+        $("#warStructType").attr("placeholder", "Structure type");
         $("#warStructType").prop('required', true);
         $("#warIssueDate").attr("placeholder", "Issue Date");
 //        $("#warIssueDate").prop('required', true);
@@ -70,28 +70,33 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>
-                        <div class="col-sm-9">
-                            <html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
                         <label for="warWarnedName" class="col-sm-3 col-form-label">Warned Name:</label>
                         <div class="col-sm-9">
                             <html:text property="warWarnedName" styleClass="form-control" styleId="warWarnedName"/>
                         </div>
                     </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="warType" class="col-sm-3 col-form-label">Warning Type:</label>
+                        <label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>
                         <div class="col-sm-9">
-                            <html:select property="warType"
+                            <html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="donId" class="col-sm-3 col-form-label">Donor:</label>
+                        <div class="col-sm-9">
+                            <html:select property="donId"
                                          styleClass="selectpicker form-control">
-                                <html:option value="1">Stop working</html:option>
-                                <html:option value="2">Demolition Order</html:option>
-                                <html:option value="3">Confiscation order</html:option>
+                                <logic:present name="dononrList">
+                                    <html:options collection="dononrList" property="donId" labelProperty="donName"/>
+                                </logic:present>
                             </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="donId"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -115,41 +120,36 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="donId" class="col-sm-3 col-form-label">Donor:</label>
-                        <div class="col-sm-9">
-                            <html:select property="donId"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="dononrList">
-                                    <html:options collection="dononrList" property="donId" labelProperty="donName"/>
-                                </logic:present>
-                            </html:select>
-                            <script>
-                                $(function () {
-                                    $('[name="donId"]').eq(0).attr("data-live-search", "true");
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
                         <label for="warLatitude" class="col-sm-3 col-form-label">Latitude:</label>
                         <div class="col-sm-9">
                             <html:text property="warLatitude" styleClass="form-control" styleId="warLatitude"/>
                         </div>
                     </div>
+                </div>
+
+                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="warLongitude" class="col-sm-3 col-form-label">Longitude:</label>
                         <div class="col-sm-9">
                             <html:text property="warLongitude" styleClass="form-control" styleId="warLongitude"/>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <label for="warType" class="col-sm-3 col-form-label">Warning Type:</label>
+                        <div class="col-sm-9">
+                            <html:select property="warType"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">Stop working</html:option>
+                                <html:option value="2">Demolition Order</html:option>
+                                <html:option value="3">Confiscation order</html:option>
+                            </html:select>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="warStructType" class="col-sm-3 col-form-label">Struct Type:</label>
+                        <label for="warStructType" class="col-sm-3 col-form-label">Structure type:</label>
                         <div class="col-sm-9">
                             <html:select property="warStructType"
                                          styleClass="selectpicker form-control">
@@ -331,8 +331,8 @@
         emptyText: "Please Enter The Warning Type ",
     });
     InvalidInputHelper(document.getElementsByName("warStructType")[0], {
-        defaultText: "Please Enter The Struct Type ",
-        emptyText: "Please Enter The Struct Type ",
+        defaultText: "Please Enter The Structure type ",
+        emptyText: "Please Enter The Structure type ",
     });
     InvalidInputHelper(document.getElementsByName("warIssueDate")[0], {
         defaultText: "Please Enter The Issue Date ",
