@@ -6,7 +6,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#warNo").attr("placeholder", "Warning No");
+        $("#warNo").attr("placeholder", "Warning Number");
         $("#warWarnedName").attr("placeholder", "Warned Name");
         $("#warWarnedId").attr("placeholder", "Warned Id");
         $("#warLatitude").attr("placeholder", "Latitude");
@@ -48,14 +48,17 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="warNo" class="col-sm-3 col-form-label">Warning No:</label>
+                        <label for="warNo" class="col-sm-3 col-form-label">Warning Number:</label>
                         <div class="col-sm-9">
                             <html:hidden property="warId"/>
                             <html:text property="warNo" styleClass="form-control" styleId="warNo" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-
+                        <label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>
+                        <div class="col-sm-9">
+                             <html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId" disabled="true"/>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -64,10 +67,6 @@
                         <div class="col-sm-9">
                             <html:text property="warWarnedName" styleClass="form-control" styleId="warWarnedName" disabled="true"/>
                         </div>
-                        <%--<label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>--%>
-                        <%--<div class="col-sm-9">--%>
-                            <%--<html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId" disabled="true"/>--%>
-                        <%--</div>--%>
                     </div>
                     <div class="col-md-6">
                         <label for="warType" class="col-sm-3 col-form-label">Warning Type:</label>

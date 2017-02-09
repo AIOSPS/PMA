@@ -5,7 +5,7 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 <script type="text/javascript">
     $(function () {
-        $("#warningNo").attr("placeholder", "Warning No");
+        $("#warningNo").attr("placeholder", "Warning Number");
         $("#warningName").attr("placeholder", "Warning Name");
         $("#warnedId").attr("placeholder", "Warned Id");
     });
@@ -43,7 +43,7 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="warningNo" class="col-sm-12 col-form-label">Warning No:</label>
+                                <label for="warningNo" class="col-sm-12 col-form-label">Warning Numner:</label>
                                 <div class="col-sm-12">
                                     <html:text property="warningNo" styleClass="form-control" styleId="warningNo"/>
                                 </div>
@@ -90,7 +90,7 @@
             <table id="listWarningsTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="text-center">Warning No</th>
+                    <th class="text-center">Warning Number</th>
                     <th class="text-center">Warning Name</th>
                     <th class="text-center">Warned Id</th>
                     <th class="text-center"></th>
@@ -98,7 +98,7 @@
                 </thead>
                 <tfoot>
                 <tr>
-                    <th class="text-center">Warning No</th>
+                    <th class="text-center">Warning Number</th>
                     <th class="text-center">Warning Name</th>
                     <th class="text-center">Warned Id</th>
                     <th class="text-center"></th>

@@ -412,3 +412,20 @@ VIEW `pms_master_plan_vw` AS
         ((`pms_master_plan` `mp`
         LEFT JOIN `pms_master_plan_communities` `mpc` ON ((`mp`.`mas_id` = `mpc`.`mas_id`)))
         LEFT JOIN `pms_communities` `com` ON ((`mpc`.`com_id` = `com`.`com_id`)));
+-----------------------
+ALTER TABLE `pms`.`pms_warnings`
+DROP FOREIGN KEY `pms_war_donors_fk`;
+ALTER TABLE `pms`.`pms_warnings`
+CHANGE COLUMN `don_id` `don_id` VARCHAR(15) NULL COMMENT 'the donor of the MP' ,
+CHANGE COLUMN `war_latitude` `war_latitude` DECIMAL(18,14) NULL COMMENT 'The coordinates of the structure the warning issued' ,
+CHANGE COLUMN `war_longitude` `war_longitude` DECIMAL(18,14) NULL COMMENT 'The coordinates of the structure the warning issued' ,
+CHANGE COLUMN `war_issue_date` `war_issue_date` DATE NULL COMMENT 'The date when the Israeli court decrees the decision' ,
+CHANGE COLUMN `war_receptionist_id` `war_receptionist_id` VARCHAR(15) NULL COMMENT 'The receptionist of the warning ID number' ,
+CHANGE COLUMN `war_receptionist_name` `war_receptionist_name` VARCHAR(100) NULL COMMENT 'the name of the person who received the warning and sign on it' ,
+CHANGE COLUMN `war_reception_date` `war_reception_date` DATE NULL COMMENT 'the date of receiving the warning' ;
+ALTER TABLE `pms`.`pms_warnings`
+ADD CONSTRAINT `pms_war_donors_fk`
+  FOREIGN KEY (`don_id`)
+  REFERENCES `pms`.`pms_donors` (`don_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

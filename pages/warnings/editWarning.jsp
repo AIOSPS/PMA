@@ -6,34 +6,34 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#warNo").attr("placeholder", "Warning No");
+        $("#warNo").attr("placeholder", "Warning Number");
         $("#warNo").prop('required', true);
         $("#warWarnedName").attr("placeholder", "Warned Name");
         $("#warWarnedName").prop('required', true);
         $("#warWarnedId").attr("placeholder", "Warned Id");
         $("#warWarnedId").prop('required', true);
         $("#warLatitude").attr("placeholder", "Latitude");
-        $("#warLatitude").prop('required', true);
+//        $("#warLatitude").prop('required', true);
         $("#warLongitude").attr("placeholder", "Longitude");
-        $("#warLongitude").prop('required', true);
+//        $("#warLongitude").prop('required', true);
         $("#warType").attr("placeholder", "Warning Type");
         $("#warType").prop('required', true);
         $("#warStructType").attr("placeholder", "Struct Type");
         $("#warStructType").prop('required', true);
         $("#warIssueDate").attr("placeholder", "Issue Date");
-        $("#warIssueDate").prop('required', true);
+//        $("#warIssueDate").prop('required', true);
         $("#warSubmitDate").attr("placeholder", "Submit Date");
         $("#warSubmitDate").prop('required', true);
         $("#warReceptionistId").attr("placeholder", "Receptionist Id");
-        $("#warReceptionistId").prop('required', true);
+//        $("#warReceptionistId").prop('required', true);
         $("#warReceptionistName").attr("placeholder", "Receptionist Name");
-        $("#warReceptionistName").prop('required', true);
+//        $("#warReceptionistName").prop('required', true);
         $("#warReceptionDate").attr("placeholder", "Reception Date");
-        $("#warReceptionDate").prop('required', true);
+//        $("#warReceptionDate").prop('required', true);
         $("#warStatus").attr("placeholder", "Status");
         $("#warStatus").prop('required', true);
         $("#warNotes").attr("placeholder", "Notes");
-        $("#warNotes").prop('required', true);
+//        $("#warNotes").prop('required', true);
     });
 </script>
 
@@ -63,18 +63,17 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="warNo" class="col-sm-3 col-form-label">Warning No:</label>
+                        <label for="warNo" class="col-sm-3 col-form-label">Warning Number:</label>
                         <div class="col-sm-9">
                             <html:hidden property="warId"/>
                             <html:text property="warNo" styleClass="form-control" styleId="warNo"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                            <%--<label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>--%>
-                            <%--<div class="col-sm-9">--%>
-                            <%--<html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId"/>--%>
-                        <html:hidden property="warWarnedId"/>
-                            <%--</div>--%>
+                        <label for="warWarnedId" class="col-sm-3 col-form-label">Warned Id:</label>
+                        <div class="col-sm-9">
+                            <html:text property="warWarnedId" styleClass="form-control" styleId="warWarnedId"/>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -305,8 +304,8 @@
     })(window);
 
     InvalidInputHelper(document.getElementsByName("warNo")[0], {
-        defaultText: "Please Enter The Warning No ",
-        emptyText: "Please Enter The Warning No ",
+        defaultText: "Please Enter The  Warning Number ",
+        emptyText: "Please Enter The Warning Number ",
 //        invalidText: function (input) {
 //            return 'The email address "' + input.value + '" is invalid!';
 //        }
