@@ -461,6 +461,8 @@
         <property name="impId" type="java.lang.String" column="imp_id" />
         <property name="comId" type="java.lang.String" column="com_id" />
         <property name="comName" type="java.lang.String" column="com_name" />
+        <property name="masStatusIcaDesc" type="java.lang.String" column="mas_status_ica_desc" />
+        <property name="masSubmitToModDesc" type="java.lang.String" column="mas_submit_to_mod_desc" />
     </class>
 
     <class name="eu.pms.project.database.PmsSector" table="pms_sectors" >

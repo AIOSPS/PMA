@@ -125,7 +125,14 @@
                             <td width="20%"><bean:write name="pmsMasterPlanList" property="masMpName"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masStatusIcaDesc"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masNoSessionWithIca"/></td>
-                            <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masApprovedPlanedArea"/></td>
+                            <td width="10%" class="text-center">
+                                <logic:notEqual name="pmsMasterPlanList" property="masApprovedPlanedArea" value="0">
+                                    <bean:write name="pmsMasterPlanList" property="masApprovedPlanedArea"/>
+                                </logic:notEqual>
+                                <logic:equal name="pmsMasterPlanList" property="masApprovedPlanedArea" value="0">
+                                    NA
+                                </logic:equal>
+                            </td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masSubmitToModDesc"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masFirstSubmitDateToIcaStr"/></td>
                             <td width="10%" class="text-center"><bean:write name="pmsMasterPlanList" property="masLastSubmitDateToIcaStr"/></td>
