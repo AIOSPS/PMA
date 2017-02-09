@@ -169,7 +169,7 @@
                                                 <input type="text" id="actUnit0" name="actUnit0" placeholder='Unit' class="form-control"/>
                                             </td>
                                             <td data-name="actUnitQty">
-                                                <input type="text" id="actUnitQty0" name="actUnitQty0" placeholder='Unit Qty' class="form-control"/>
+                                                <%--<input type="text" id="actUnitQty0" name="actUnitQty0" placeholder='Unit Qty' class="form-control"/>--%>
                                             </td>
                                             <td data-name="actEstimatedBudget">
                                                 <input type="text" id="actEstimatedBudget0" name="actEstimatedBudget0" placeholder='Estimated Budget' class="form-control"/>
