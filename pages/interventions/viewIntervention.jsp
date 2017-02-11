@@ -195,7 +195,7 @@
                                                     <input type="text" disabled="true" id="actUnit<%=count%>" name="actUnit<%=count%>" value="<%=pmsActivity.getActUnit()%>" placeholder='Unit' class="form-control"/>
                                                 </td>
                                                 <td data-name="actUnitQty">
-                                                    <input type="text" disabled="true" id="actUnitQty<%=count%>" name="actUnitQty<%=count%>" value="<%=pmsActivity.getActUnitQty()%>" placeholder='Unit Qty' class="form-control"/>
+                                                    <input type="text"  id="actUnitQty<%=count%>" name="actUnitQty<%=count%>" value="<%=pmsActivity.getActUnitQty()%>" placeholder='Unit Qty' class="form-control"/>
                                                 </td>
                                                 <td data-name="actEstimatedBudget">
                                                     <input type="text" disabled="true" id="actEstimatedBudget<%=count%>" name="actEstimatedBudget<%=count%>" value="<%=pmsActivity.getActEstimatedBudget()%>" placeholder='Estimated Budget' class="form-control"/>
@@ -234,4 +234,12 @@
     </div>
     </div>
 </article>
-
+<script>
+    var count = <%=((List) request.getAttribute("activitiesList")).size()%>
+    for (i = 1; i <= count; i++) {
+        document.getElementsByName("actUnitQty"+i)[0].value = parseFloat(document.getElementsByName("actUnitQty"+i)[0].value.replace(/,/g, ""))
+                .toFixed(2)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+</script>
