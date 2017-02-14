@@ -78,6 +78,17 @@ public class ViewPmsProjectAction extends Action {
         String[] projectIndicatorArr = null;
         if (projectList != null && projectList.size() > 0 && projectList.get(0) instanceof PmsProject) {
             pmsProject = (PmsProject) projectList.get(0);
+
+            try {
+                //in milliseconds
+                long diff = pmsProject.getProEndDate().getTime() - pmsProject.getProStartDate().getTime();
+                int diffYears = Math.round(diff / (365 * 24 * 60 * 60 * 1000L));
+                request.setAttribute("duration",diffYears);
+            } catch (Exception e) {
+                request.setAttribute("duration",0);
+                e.printStackTrace();
+            }
+
             List<PmsProjectDonor> projectDonorList = (List) new GetPmsProjectDonorsUseCase().execute(inputs, request);
             if (projectDonorList != null && projectDonorList.size() > 0) {
                 projectDonorArr = new String[projectDonorList.size()];

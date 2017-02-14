@@ -102,7 +102,9 @@
                             </tr>
                             <tr>
                                 <td><B>Project Description</B></td>
-                                <td colspan="3"><bean:write name="pmsProjectForm" property="proDescription" /></td>
+                                <td><bean:write name="pmsProjectForm" property="proDescription" /></td>
+                                <td><B>Project Duration in Years</B></td>
+                                <td><%=request.getAttribute("duration")%></td>
                             </tr>
 
                             <tr>
@@ -175,7 +177,7 @@
                                         pmsProjectsBenificiary = (PmsProjectsBenificiary) itr.next();
                                 %>
                                 <tr>
-                                    <td><%
+                                    <td colspan="2"><%
                                         List benificiryTypeList = (List)request.getAttribute("benificiryTypeList");
 
                                         if(benificiryTypeList!=null&&benificiryTypeList.size()>0) {
@@ -189,7 +191,7 @@
                                     %>
                                         <%=request.getAttribute("benificiaryTyp")%>
                                     </td>
-                                    <td><%=pmsProjectsBenificiary.getBenTotal()%></td>
+                                    <td colspan="2"><%=pmsProjectsBenificiary.getBenTotal()%></td>
                                 </tr>
                                 <%}%>
                             </logic:present>
