@@ -12,7 +12,7 @@
         </div>
         <div class="slogan">
             <p class="s1">European Union</p>
-            <p class="s2">Area C - Project Monitoring System</p>
+            <p class="s2">Area C - Monitoring System</p>
         </div>
     </div>
     <div class="col-md-4 text-right">
@@ -22,6 +22,6 @@
 </header>
 <div class="content-wrapper breadcrumb">
     <div class="container clearfix">
-        <nav class="menu-breadcrumb"><a href="#"   class="active">Europa </a><span class="sep awesome"> </span><span> Area C Project Monitoring System</span></nav>
+        <nav class="menu-breadcrumb"><a href="#"   class="active">Europa </a><span class="sep awesome"> </span><span> Area C Monitoring System</span></nav>
     </div>
 </div>

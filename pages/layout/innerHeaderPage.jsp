@@ -13,7 +13,7 @@
         </div>
         <div class="slogan">
             <p class="s1">European Union</p>
-            <p class="s2">Area C - Project Monitoring System</p>
+            <p class="s2">Area C - Monitoring System</p>
         </div>
     </div>
     <div class="col-md-4 text-right">
@@ -95,7 +95,7 @@
                         <li><a href="/pmsPermitList.do">Permit</a></li>
                     </ul>
                 </li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Incident  <span class="caret"></span></a>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Threat  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/pmsWarningList.do">Warning</a></li>
                         <li><a href="/pmsIncidentList.do">Incident</a></li>
@@ -104,8 +104,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-qrcode "></span>  Indicators  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/pmsObjectiveList.do">Objectives</a></li>
-                        <li><a href="/pmsResultList.do">Results</a></li>
+                        <%--<li><a href="/pmsObjectiveList.do">Objectives</a></li>--%>
+                        <%--<li><a href="/pmsResultList.do">Results</a></li>--%>
                         <li><a href="/pmsIndicatorList.do">Indicators</a></li>
                     </ul>
                 </li>

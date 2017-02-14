@@ -76,7 +76,17 @@
                                 <td width="12%"><B>Project Number</B></td>
                                 <td width="33%"><bean:write name="pmsProjectForm" property="proId" /></td>
                                 <td width="12%"><B>Project Type</B></td>
-                                <td width="33%"><bean:write name="pmsProjectForm" property="secType" /></td>
+                                <td width="33%">
+                                    <logic:equal name="pmsProjectForm" property="secType" value="H">
+                                        Humman
+                                    </logic:equal>
+                                    <logic:equal name="pmsProjectForm" property="secType" value="D">
+                                        Development
+                                    </logic:equal>
+                                    <logic:equal name="pmsProjectForm" property="secType" value="O">
+                                        Others
+                                    </logic:equal>
+                                </td>
                             </tr>
                             <tr>
                                 <td><B>Sector</B></td>
@@ -148,7 +158,7 @@
                         <table class="table table-condensed">
                             <tbody>
                             <tr>
-                                <td width="12%"><B>Permit Need</B></td>
+                                <td width="12%"><B>Permit </B></td>
                                 <td width="33%"><bean:write name="pmsProjectForm" property="proNeedPermitDesc" /></td>
                                 <td width="12%"><B>Permit Number</B></td>
                                 <td width="33%"><%=request.getAttribute("perTitle")%></td>
@@ -207,7 +217,7 @@
                         <table class="table table-condensed">
                             <tbody>
                             <tr>
-                                <td width="12%" class="text-center"><B>Incident Number</B></td>
+                                <td width="12%" class="text-center"><B>Incident Type</B></td>
                                 <td width="33%" class="text-center"><B>Description</B></td>
                                 <td width="12%" class="text-center"><B>Incident Date</B></td>
                                 <td width="33%" class="text-center"><B>Source Link</B></td>
@@ -215,7 +225,23 @@
                             <logic:present name="incidentList">
                                 <logic:iterate id="incidentList" name="incidentList" type="eu.pms.project.database.PmsIncident">
                                     <tr>
-                                        <td ><bean:write name="incidentList" property="incId"/></td>
+                                        <td >
+                                            <logic:equal name="incidentList" property="incType" value="1">
+                                                Sealing
+                                            </logic:equal>
+                                            <logic:equal name="incidentList" property="incType" value="2">
+                                                Demolition
+                                            </logic:equal>
+                                            <logic:equal name="incidentList" property="incType" value="3">
+                                                Confiscation
+                                            </logic:equal>
+                                            <logic:equal name="incidentList" property="incType" value="4">
+                                                Demolition and Confiscation
+                                            </logic:equal>
+                                            <logic:equal name="incidentList" property="incType" value="5">
+                                                Demoltion (partial)
+                                            </logic:equal>
+                                        </td>
                                         <td ><bean:write name="incidentList" property="incDescription"/></td>
                                         <td ><bean:write name="incidentList" property="incTimeStampStr"/></td>
                                         <td ><a target="_blank" href="<bean:write name="incidentList" property="incSourceLink"/>"><bean:write name="incidentList" property="incSourceLink"/></a></td>
@@ -225,6 +251,25 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <div class="panel-heading"><B>Related Warning</B></div>
+                    <div class="panel-body" style="padding: 0px!important;">
+                        <table class="table table-condensed">
+                            <tbody>
+                            <tr>
+                                <td width="34%" class="text-center"><B>Warning Type</B></td>
+                                <td width="33%" class="text-center"><B>Structure Warning</B></td>
+                                <td width="33%" class="text-center"><B>Warning Status</B></td>
+                            </tr>
+                            <tr>
+                                <td >&nbsp;</td>
+                                <td >&nbsp;</td>
+                                <td >&nbsp;</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                     <div class="panel-heading"><B>Project Pictures</B></div>
                     <div class="panel-body" style="padding: 0px!important;">
                         <table class="table table-condensed">

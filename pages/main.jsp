@@ -13,7 +13,7 @@
     <div class="container">
 
         <div class="col-md-12 pd15 titleArea">
-            <h1>Welcome to the EU-PMS </h1>
+            <h1>Welcome to the EU-MS </h1>
         </div>
 
         <%--<div class="content-wrapper ">--%>
