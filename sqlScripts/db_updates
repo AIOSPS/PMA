@@ -20,7 +20,7 @@ VIEW `pms_warnings_vw` AS
         END) AS `war_type`,
         (CASE `warn`.`war_struct_type`
             WHEN 1 THEN 'Residential'
-            WHEN 2 THEN 'In ProcessLivestock barn'
+            WHEN 2 THEN 'Livestock barn'
             WHEN 3 THEN 'Commercial'
             WHEN 4 THEN 'Industrial'
             WHEN 5 THEN 'Agricultural'
