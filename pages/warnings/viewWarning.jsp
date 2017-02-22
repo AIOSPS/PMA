@@ -139,7 +139,7 @@
                             <html:select property="warStructType"
                                          styleClass="selectpicker form-control" disabled="true">
                                 <html:option value="1">Residential</html:option>
-                                <html:option value="2">In ProcessLivestock barn</html:option>
+                                <html:option value="2">Livestock barn</html:option>
                                 <html:option value="3">Commercial</html:option>
                                 <html:option value="4">Industrial</html:option>
                                 <html:option value="5">Agricultural</html:option>
