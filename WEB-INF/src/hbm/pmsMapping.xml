@@ -764,6 +764,33 @@
         <property name="timeStamp" type="java.util.Date" column="time_stamp" />
     </class>
 
+    <class name="eu.pms.project.database.PmsWarningsVw" table="pms_warnings_vw" >
+        <id name="warId" type="java.lang.String" column="war_id" >
+            <generator class="assigned" />
+        </id>
+        <property name="warNo" type="java.lang.String" column="war_no" />
+        <property name="warWarnedName" type="java.lang.String" column="war_warned_name" />
+        <property name="warWarnedId" type="java.lang.String" column="war_warned_id" />
+        <property name="comId" type="java.lang.String" column="com_id" />
+        <property name="donId" type="java.lang.String" column="don_id" />
+        <property name="warLatitude" type="java.math.BigDecimal" column="war_latitude" />
+        <property name="warLongitude" type="java.math.BigDecimal" column="war_longitude" />
+        <property name="warType" type="java.lang.String" column="war_type" />
+        <property name="warStructType" type="java.lang.String" column="war_struct_type" />
+        <property name="warIssueDate" type="java.util.Date" column="war_issue_date" />
+        <property name="warSubmitDate" type="java.util.Date" column="war_submit_date" />
+        <property name="warReceptionistId" type="java.lang.String" column="war_receptionist_id" />
+        <property name="warReceptionistName" type="java.lang.String" column="war_receptionist_name" />
+        <property name="warReceptionDate" type="java.util.Date" column="war_reception_date" />
+        <property name="warStatus" type="java.lang.String" column="war_status" />
+        <property name="warNotes" type="java.lang.String" column="war_notes" />
+        <property name="username" type="java.lang.String" column="username" />
+        <property name="timeStamp" type="java.util.Date" column="time_stamp" />
+        <property name="comName" type="java.lang.String" column="com_name" />
+        <property name="govId" type="java.lang.String" column="gov_id" />
+        <property name="govDesc" type="java.lang.String" column="gov_desc" />
+    </class>
+
     <class name="eu.pms.project.database.PmsInterventionVw" table="pms_intervention_vw" >
         <composite-id name="compId" class="eu.pms.project.database.PmsInterventionVwPK">
             <key-property name="intId" column="int_id" type="java.lang.String"/>

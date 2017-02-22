@@ -1,431 +1,54 @@
-ALTER TABLE `pms`.`pms_incidents`
-CHANGE COLUMN `inc_SourceLink` `inc_SourceLink` VARCHAR(150) NULL DEFAULT NULL ;
-----------------------
-CREATE or replace
-    ALGORITHM = UNDEFINED
+CREATE
+     OR REPLACE ALGORITHM = UNDEFINED
     DEFINER = `root`@`localhost`
     SQL SECURITY DEFINER
-VIEW `pms_water_socio_vw` AS
+VIEW `pms_warnings_vw` AS
     SELECT
-        `wat`.`wat_id` AS `wat_id`,
-        (CASE `wat`.`wat_isconnected`
-            WHEN 1 THEN 'Yes'
-            ELSE 'No'
-        END) AS `wat_isconnected`,
-        (CASE `wat`.`wat_network`
-            WHEN 1 THEN 'Yes'
-            WHEN 2 THEN 'No'
-            ELSE 'Partially'
-        END) AS `wat_network`,
-        (CASE `wat`.`wat_use_wat_tanker`
-            WHEN 1 THEN 'Yes'
-            ELSE 'No'
-        END) AS `wat_use_wat_tanker`,
-        `wat`.`wat_rain_water_well` AS `wat_rain_water_well`,
-        `wat`.`wat_no_springs` AS `wat_no_springs`,
-        `wat`.`wat_price_water` AS `wat_price_water`,
-        (CASE `wat`.`wat_filling_point`
-            WHEN 1 THEN 'Within 5KM'
-            ELSE 'Beyond 5KM'
-        END) AS `wat_filling_point`,
-        `wat`.`wat_quantity` AS `wat_quantity`,
-        `wat`.`wat_survey_date` AS `wat_survey_date`,
-        `wat`.`username` AS `username`,
-        `wat`.`time_stamp` AS `time_stamp`,
-        `wat`.`com_id` AS `com_id`,
+        `warn`.`war_id` AS `war_id`,
+        `warn`.`war_no` AS `war_no`,
+        `warn`.`war_warned_name` AS `war_warned_name`,
+        `warn`.`war_warned_id` AS `war_warned_id`,
+        `warn`.`com_id` AS `com_id`,
+        `warn`.`don_id` AS `don_id`,
+        `warn`.`war_latitude` AS `war_latitude`,
+        `warn`.`war_longitude` AS `war_longitude`,
+        (CASE `warn`.`war_type`
+            WHEN 1 THEN 'Stop working'
+            WHEN 2 THEN 'Demolition Order'
+            WHEN 3 THEN 'Confiscation order'
+            ELSE 'Unknown'
+        END) AS `war_type`,
+        (CASE `warn`.`war_struct_type`
+            WHEN 1 THEN 'Residential'
+            WHEN 2 THEN 'In ProcessLivestock barn'
+            WHEN 3 THEN 'Commercial'
+            WHEN 4 THEN 'Industrial'
+            WHEN 5 THEN 'Agricultural'
+            ELSE 'Unknown'
+        END) AS `war_struct_type`,
+        `warn`.`war_issue_date` AS `war_issue_date`,
+        `warn`.`war_submit_date` AS `war_submit_date`,
+        `warn`.`war_receptionist_id` AS `war_receptionist_id`,
+        `warn`.`war_receptionist_name` AS `war_receptionist_name`,
+        `warn`.`war_reception_date` AS `war_reception_date`,
+        (CASE `warn`.`war_status`
+            WHEN 1 THEN 'Executed'
+            WHEN 2 THEN 'In Process'
+            WHEN 3 THEN 'On hold - Legal action'
+            WHEN 4 THEN 'Closed/Cancelled'
+            WHEN 5 THEN 'Ready for Execution'
+            ELSE 'Unknown'
+        END) AS `war_status`,
+        `warn`.`war_notes` AS `war_notes`,
+        `warn`.`username` AS `username`,
+        `warn`.`time_stamp` AS `time_stamp`,
         `com`.`com_name` AS `com_name`,
         `gov`.`gov_id` AS `gov_id`,
         `gov`.`gov_desc` AS `gov_desc`
     FROM
-        ((`pms_water_socio` `wat`
+        ((`pms_warnings` `warn`
         JOIN `pms_communities` `com`)
         JOIN `pms_governates` `gov`)
     WHERE
-        ((`wat`.`com_id` = `com`.`com_id`)
-            AND (`com`.`gov_id` = `gov`.`gov_id`))
-------------------------------------
-ALTER TABLE `pms`.`pms_master_plan`
-CHANGE COLUMN `mas_mp_no` `mas_mp_no` VARCHAR(15) NULL ,
-CHANGE COLUMN `mas_last_submit_date_to_ica` `mas_last_submit_date_to_ica` DATE NULL ,
-CHANGE COLUMN `mas_approval_date` `mas_approval_date` DATE NULL ,
-CHANGE COLUMN `mas_publication_date` `mas_publication_date` DATE NULL ,
-CHANGE COLUMN `mas_last_date_for_objection` `mas_last_date_for_objection` DATE NULL ,
-CHANGE COLUMN `mas_date_of_final_publication` `mas_date_of_final_publication` DATE NULL ,
-CHANGE COLUMN `mas_approved_planed_area` `mas_approved_planed_area` INT(11) NULL COMMENT 'Approved planned area (Donum)' ;
-
-
-USE `pms`;
-CREATE
-     OR REPLACE ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_master_plan_vw` AS
-    SELECT
-        `mp`.`mas_id` AS `mas_id`,
-        `mp`.`mas_mp_no` AS `mas_mp_no`,
-        `mp`.`mas_mp_name` AS `mas_mp_name`,
-        `mp`.`mas_status` AS `mas_status`,
-        `mp`.`mas_status_ica` AS `mas_status_ica`,
-        `mp`.`mas_first_submit_date_to_ica` AS `mas_first_submit_date_to_ica`,
-        `mp`.`mas_last_submit_date_to_ica` AS `mas_last_submit_date_to_ica`,
-        `mp`.`mas_no_session_with_ica` AS `mas_no_session_with_ica`,
-        `mp`.`mas_submit_to_mod` AS `mas_submit_to_mod`,
-        `mp`.`mas_approval_date` AS `mas_approval_date`,
-        `mp`.`mas_publication_date` AS `mas_publication_date`,
-        `mp`.`mas_last_date_for_objection` AS `mas_last_date_for_objection`,
-        `mp`.`mas_date_of_final_publication` AS `mas_date_of_final_publication`,
-        `mp`.`mas_approved_planed_area` AS `mas_approved_planed_area`,
-        `mp`.`mas_village_admin_boarder` AS `mas_village_admin_boarder`,
-        `mp`.`mas_note` AS `mas_note`,
-        `mp`.`imp_id` AS `imp_id`,
-        `mp`.`username` AS `username`,
-        `mp`.`time_stamp` AS `time_stamp`,
-        `mpc`.`com_id` AS `com_id`,
-        `com`.`com_name` AS `com_name`
-    FROM
-        ((`pms_master_plan` `mp`
-        left JOIN `pms_master_plan_communities` `mpc` on  (`mp`.`mas_id` = `mpc`.`mas_id`))
-        left JOIN `pms_communities` `com` ON ((`mpc`.`com_id` = `com`.`com_id`)));
----------------
-drop TABLE if exists `pms_economic_socio` ;
-CREATE TABLE `pms_economic_socio` (
-  `eco_id` varchar(15) NOT NULL,
-  `com_id` varchar(15) NOT NULL,
-  `men_livelihood_source1` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
-  `men_livelihood_source2` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
-  `men_livelihood_source3` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
-  `women_livelihood_source1` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
-  `women_livelihood_source2` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
-  `women_livelihood_source3` char(1) NOT NULL COMMENT 'Domain of values (work in settlements, PA employee, Farming, Handicrafts )',
-  `access_to_lands_military` char(1) NOT NULL COMMENT 'Yes or No',
-  `access_to_lands_checkpoints` char(1) NOT NULL COMMENT 'Yes or No',
-  `family_avg_size` int(11) NOT NULL,
-  `family_avg_income` decimal(5,3) NOT NULL,
-  `username` varchar(15) NOT NULL,
-  `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`com_id`,`eco_id`),
-  CONSTRAINT `pms_econmic_socio_pms_com_fk` FOREIGN KEY (`com_id`) REFERENCES `pms_communities` (`com_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-------------------------
-CREATE
-    ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_economic_socio_vw` AS
-    SELECT
-        `pms_economic_socio`.`eco_id` AS `eco_id`,
-        `pms_economic_socio`.`com_id` AS `com_id`,
-        (CASE `pms_economic_socio`.`men_livelihood_source1`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `men_livelihood_source1`,
-        (CASE `pms_economic_socio`.`men_livelihood_source2`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `men_livelihood_source2`,
-        (CASE `pms_economic_socio`.`men_livelihood_source3`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `men_livelihood_source3`,
-        (CASE `pms_economic_socio`.`women_livelihood_source1`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `women_livelihood_source1`,
-        (CASE `pms_economic_socio`.`women_livelihood_source2`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `women_livelihood_source2`,
-        (CASE `pms_economic_socio`.`women_livelihood_source3`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `women_livelihood_source3`,
-        (CASE `pms_economic_socio`.`access_to_lands_military`
-            WHEN 1 THEN 'Yes'
-            WHEN 0 THEN 'No'
-            ELSE 'N/A'
-        END) AS `access_to_lands_military`,
-        (CASE `pms_economic_socio`.`access_to_lands_checkpoints`
-            WHEN 1 THEN 'Yes'
-            WHEN 0 THEN 'No'
-            ELSE 'N/A'
-        END) AS `access_to_lands_checkpoints`,
-        `pms_economic_socio`.`family_avg_size` AS `family_avg_size`,
-        `pms_economic_socio`.`family_avg_income` AS `family_avg_income`,
-        `pms_economic_socio`.`username` AS `username`,
-        `pms_economic_socio`.`time_stamp` AS `time_stamp`
-    FROM
-        `pms_economic_socio`
---------------------------------
-CREATE
-    ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_incidents_communities_vw` AS
-    SELECT
-        `inc`.`inc_id` AS `inc_id`,
-        `inc`.`inc_type` AS `inc_type`,
-        `inc`.`inc_ocha_id` AS `inc_ocha_id`,
-        `inc`.`inc_description` AS `inc_description`,
-        `inc`.`inc_Affected_women` AS `inc_Affected_women`,
-        `inc`.`inc_Affected_men` AS `inc_Affected_men`,
-        `inc`.`inc_Affected_adaults` AS `inc_Affected_adaults`,
-        `inc`.`inc_Affected_children` AS `inc_Affected_children`,
-        `inc`.`inc_Displaced_women` AS `inc_Displaced_women`,
-        `inc`.`inc_SourceLink` AS `inc_SourceLink`,
-        `inc`.`inc_timeStamp` AS `inc_timeStamp`,
-        `inc`.`dat_id` AS `dat_id`,
-        `inc`.`com_id` AS `com_id`,
-        `inc`.`ocha_loc_latitude` AS `ocha_loc_latitude`,
-        `inc`.`ocha_loc_longitude` AS `ocha_loc_longitude`,
-        `inc`.`pro_id` AS `pro_id`,
-        `inc`.`inc_Displaced_men` AS `inc_Displaced_men`,
-        `inc`.`inc_Displaced_adult` AS `inc_Displaced_adult`,
-        `inc`.`inc_Displaced_children` AS `inc_Displaced_children`,
-        `inc`.`inc_loc_latitude` AS `inc_loc_latitude`,
-        `inc`.`inc_loc_longitude` AS `inc_loc_longitude`,
-        `inc`.`inc_demolished_structure` AS `inc_demolished_structure`,
-        `inc`.`username` AS `username`,
-        `inc`.`time_stamp` AS `time_stamp`,
-        `com`.`gov_id` AS `gov_id`
-    FROM
-        (`pms_incidents` `inc`
-        JOIN `pms_communities` `com`)
-    WHERE
-        (`inc`.`com_id` = `com`.`com_id`)
----------------------------------------------------
-CREATE
-    ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_communities_vw` AS
-    SELECT
-        `com`.`com_id` AS `com_id`,
-        `com`.`com_name` AS `com_full_name`,
-        `comtyp`.`typ_desc` AS `typ_desc`,
-        `gov`.`gov_desc` AS `gov_desc`,
-        `com`.`com_pcbs_code` AS `com_pcbs_code`,
-        `com`.`com_ocha_code` AS `com_ocha_code`,
-        `com`.`gov_id` AS `gov_id`,
-        `com`.`com_topology` AS `com_topology`,
-        CONCAT(`com`.`com_name`, '-', `gov`.`gov_desc`) AS `com_name`
-    FROM
-        ((`pms_communities` `com`
-        JOIN `pms_community_types` `comtyp`)
-        JOIN `pms_governates` `gov`)
-    WHERE
-        ((`com`.`typ_id` = `comtyp`.`typ_id`)
-            AND (`com`.`gov_id` = `gov`.`gov_id`))
---------------------------
-ALTER TABLE `pms`.`pms_master_plan`
-ADD COLUMN `mas_major_objection` VARCHAR(100) NULL AFTER `mas_status_ica`;
---------------------------
-ALTER TABLE `pms`.`pms_projects`
-ADD COLUMN `subsec_id` VARCHAR(15) NULL AFTER `sec_id`;
-------------------------
-ALTER TABLE `pms`.`pms_economic_socio`
-CHANGE COLUMN `access_to_lands_checkpoints` `access_to_lands_checkpoints` CHAR(1) NULL COMMENT 'Yes or No' ;
----------------
-USE `pms`;
-CREATE or REPLACE
-     OR REPLACE ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_economic_socio_vw` AS
-    SELECT
-        `pms_economic_socio`.`eco_id` AS `eco_id`,
-        `pms_economic_socio`.`com_id` AS `com_id`,
-        (CASE `pms_economic_socio`.`men_livelihood_source1`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `men_livelihood_source1`,
-        (CASE `pms_economic_socio`.`men_livelihood_source2`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `men_livelihood_source2`,
-        (CASE `pms_economic_socio`.`men_livelihood_source3`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `men_livelihood_source3`,
-        (CASE `pms_economic_socio`.`women_livelihood_source1`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `women_livelihood_source1`,
-        (CASE `pms_economic_socio`.`women_livelihood_source2`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `women_livelihood_source2`,
-        (CASE `pms_economic_socio`.`women_livelihood_source3`
-            WHEN 1 THEN 'work in settlements'
-            WHEN 2 THEN 'PA employee'
-            WHEN 3 THEN 'Farming'
-            WHEN 4 THEN 'Handicrafts'
-            ELSE 'N/A'
-        END) AS `women_livelihood_source3`,
-        (CASE `pms_economic_socio`.`access_to_lands_military`
-            WHEN 1 THEN 'Military Activity'
-            WHEN 2 THEN 'Check Points'
-            WHEN 3 THEN 'Bypass Road'
-            ELSE 'N/A'
-        END) AS `access_to_lands_military`,
-        (CASE `pms_economic_socio`.`access_to_lands_checkpoints`
-            WHEN 1 THEN 'Yes'
-            WHEN 0 THEN 'No'
-            ELSE 'N/A'
-        END) AS `access_to_lands_checkpoints`,
-        `pms_economic_socio`.`family_avg_size` AS `family_avg_size`,
-        `pms_economic_socio`.`family_avg_income` AS `family_avg_income`,
-        `pms_economic_socio`.`username` AS `username`,
-        `pms_economic_socio`.`time_stamp` AS `time_stamp`
-    FROM
-        `pms_economic_socio`;
-
-----------------
-update pms.pms_sectors
-set sec_parent_id = null
-where length(sec_parent_id) =1;
---------------------
-CREATE TABLE `pms_warnings` (
-  `war_id` varchar(15) NOT NULL COMMENT 'The ID of the warning is sequance generated by the system',
-  `war_no` varchar(15) NOT NULL COMMENT 'The number come from the document issued by ICA ',
-  `war_warned_name` varchar(100) NOT NULL COMMENT 'Name of the person/ organization wanred',
-  `war_warned_id` varchar(15) NOT NULL COMMENT 'the warned person/ oranization',
-  `com_id` varchar(15) NOT NULL COMMENT 'the name of the community where the warning provided',
-  `don_id` varchar(15) NOT NULL COMMENT 'the donor of the MP',
-  `war_latitude` decimal(18,14) NOT NULL COMMENT 'The coordinates of the structure the warning issued',
-  `war_longitude` decimal(18,14) NOT NULL COMMENT 'The coordinates of the structure the warning issued',
-  `war_type` varchar(2) NOT NULL COMMENT 'list of value ( Stop working, Demolition Order, confiscation order)',
-  `war_struct_type` varchar(2) NOT NULL COMMENT 'List of value (Residential, Livestock barn, Commercial, Industrial, Agricultural) ',
-  `war_issue_date` date NOT NULL COMMENT 'The date when the Israeli court decrees the decision',
-  `war_submit_date` date NOT NULL COMMENT 'The date when the ICA, or IDF submit the warning letter to the owner of the structure/ property, or one of his relative, ',
-  `war_receptionist_id` varchar(15) NOT NULL COMMENT 'The receptionist of the warning ID number',
-  `war_receptionist_name` varchar(100) NOT NULL COMMENT 'the name of the person who received the warning and sign on it',
-  `war_reception_date` date NOT NULL COMMENT 'the date of receiving the warning',
-  `war_status` varchar(2) NOT NULL COMMENT 'List of value (Executed, In Process, on hold- Legal action, closed/ cancelled, ready for execution)',
-  `war_notes` varchar(200) DEFAULT NULL,
-  `username` varchar(15) NOT NULL,
-  `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`war_id`),
-  KEY `pms_war_donors_fk_idx` (`don_id`),
-  KEY `pms_war_communities_fk_idx` (`com_id`),
-  CONSTRAINT `pms_war_communities_fk` FOREIGN KEY (`com_id`) REFERENCES `pms_communities` (`com_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `pms_war_donors_fk` FOREIGN KEY (`don_id`) REFERENCES `pms_donors` (`don_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
------------------------
-ALTER TABLE `pms`.`pms_activities`
-CHANGE COLUMN `act_unit_qty` `act_unit_qty` DECIMAL(11,3) NOT NULL ;
-----------------------
-USE `pms`;
-CREATE
-     OR REPLACE ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_intervention_vw` AS
-    SELECT
-        `b`.`int_id` AS `int_id`,
-        `b`.`sec_id` AS `sec_id`,
-        `b`.`int_priority` AS `int_priority`,
-        `b`.`int_source` AS `int_source`,
-        `b`.`mas_id` AS `mas_id`,
-        `a`.`com_name` AS `com_name`,
-        `a`.`mas_mp_name` AS `mas_mp_name`,
-        `b`.`int_desc` AS `int_desc`,
-        `b`.`int_estimated_budget` AS `int_estimated_budget`
-    FROM
-        (`pms_master_plan_vw` `a`
-        JOIN `pms_interventions` `b`)
-    WHERE
-        (`a`.`mas_id` = `b`.`mas_id`);
-------------------------
-USE `pms`;
-CREATE
-     OR REPLACE ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_master_plan_vw` AS
-    SELECT
-        `mp`.`mas_id` AS `mas_id`,
-        `mp`.`mas_mp_no` AS `mas_mp_no`,
-        `mp`.`mas_mp_name` AS `mas_mp_name`,
-        `mp`.`mas_status` AS `mas_status`,
-        `mp`.`mas_status_ica` AS `mas_status_ica`,
-        (CASE `mp`.`mas_status_ica`
-            WHEN 1 THEN 'Progressing'
-            WHEN 2 THEN 'Stuck'
-            WHEN 3 THEN 'Rejected'
-            ELSE 'Unknown Status'
-        END) AS `mas_status_ica_desc`,
-        `mp`.`mas_first_submit_date_to_ica` AS `mas_first_submit_date_to_ica`,
-        `mp`.`mas_last_submit_date_to_ica` AS `mas_last_submit_date_to_ica`,
-        `mp`.`mas_no_session_with_ica` AS `mas_no_session_with_ica`,
-        `mp`.`mas_submit_to_mod` AS `mas_submit_to_mod`,
-        (CASE `mp`.`mas_submit_to_mod`
-            WHEN 1 THEN 'Yes'
-            WHEN 0 THEN 'No'
-            ELSE 'Unknown Status'
-        END) AS `mas_submit_to_mod_desc`,
-        `mp`.`mas_approval_date` AS `mas_approval_date`,
-        `mp`.`mas_publication_date` AS `mas_publication_date`,
-        `mp`.`mas_last_date_for_objection` AS `mas_last_date_for_objection`,
-        `mp`.`mas_date_of_final_publication` AS `mas_date_of_final_publication`,
-        `mp`.`mas_approved_planed_area` AS `mas_approved_planed_area`,
-        `mp`.`mas_village_admin_boarder` AS `mas_village_admin_boarder`,
-        `mp`.`mas_note` AS `mas_note`,
-        `mp`.`imp_id` AS `imp_id`,
-        `mp`.`username` AS `username`,
-        `mp`.`time_stamp` AS `time_stamp`,
-        `mpc`.`com_id` AS `com_id`,
-        `com`.`com_name` AS `com_name`
-    FROM
-        ((`pms_master_plan` `mp`
-        LEFT JOIN `pms_master_plan_communities` `mpc` ON ((`mp`.`mas_id` = `mpc`.`mas_id`)))
-        LEFT JOIN `pms_communities` `com` ON ((`mpc`.`com_id` = `com`.`com_id`)));
------------------------
-ALTER TABLE `pms`.`pms_warnings`
-DROP FOREIGN KEY `pms_war_donors_fk`;
-ALTER TABLE `pms`.`pms_warnings`
-CHANGE COLUMN `don_id` `don_id` VARCHAR(15) NULL COMMENT 'the donor of the MP' ,
-CHANGE COLUMN `war_latitude` `war_latitude` DECIMAL(18,14) NULL COMMENT 'The coordinates of the structure the warning issued' ,
-CHANGE COLUMN `war_longitude` `war_longitude` DECIMAL(18,14) NULL COMMENT 'The coordinates of the structure the warning issued' ,
-CHANGE COLUMN `war_issue_date` `war_issue_date` DATE NULL COMMENT 'The date when the Israeli court decrees the decision' ,
-CHANGE COLUMN `war_receptionist_id` `war_receptionist_id` VARCHAR(15) NULL COMMENT 'The receptionist of the warning ID number' ,
-CHANGE COLUMN `war_receptionist_name` `war_receptionist_name` VARCHAR(100) NULL COMMENT 'the name of the person who received the warning and sign on it' ,
-CHANGE COLUMN `war_reception_date` `war_reception_date` DATE NULL COMMENT 'the date of receiving the warning' ;
-ALTER TABLE `pms`.`pms_warnings`
-ADD CONSTRAINT `pms_war_donors_fk`
-  FOREIGN KEY (`don_id`)
-  REFERENCES `pms`.`pms_donors` (`don_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
+        ((`warn`.`com_id` = `com`.`com_id`)
+            AND (`com`.`gov_id` = `gov`.`gov_id`));

@@ -23,23 +23,33 @@ public class PmsWarningListUseCase implements ComponentUseCase {
         try {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
-                String warningNo = (String)itr.next();
-                String warningName = (String)itr.next();
-                String warnedId = (String) itr.next();
+                String warType = (String)itr.next();
+                String warStructType = (String)itr.next();
+                String warStatus = (String) itr.next();
+                String comId = (String) itr.next();
+                String govId = (String) itr.next();
                 String cond = " where 1=1 ";
-                if(warningNo!=null && !warningNo.trim().equals("")){
-                    warningNo =  CommonFilter.cleanQeuryParam(warningNo);
-                    cond += " and a.warNo like '%"+warningNo+"%' ";
+                if(warType!=null && !warType.trim().equals("")){
+                    warType =  CommonFilter.cleanQeuryParam(warType);
+                    cond += " and a.warType = '"+warType+"' ";
                 }
-                if(warningName!=null && !warningName.trim().equals("")){
-                    warningName =  CommonFilter.cleanQeuryParam(warningName);
-                    cond += " and a.warWarnedName like '%"+warningName+"%' ";
+                if(warStructType!=null && !warStructType.trim().equals("")){
+                    warStructType =  CommonFilter.cleanQeuryParam(warStructType);
+                    cond += " and a.warStructType = '"+warStructType+"' ";
                 }
-                if(warnedId!=null && !warnedId.equals("")){
-                    warnedId =  CommonFilter.cleanQeuryParam(warnedId);
-                    cond += " and a.warWarnedId like '%"+warnedId+"%' ";
+                if(warStatus!=null && !warStatus.equals("")){
+                    warStatus =  CommonFilter.cleanQeuryParam(warStatus);
+                    cond += " and a.warStatus = '"+warStatus+"' ";
                 }
-                String query = " from eu.pms.project.database.PmsWarnings a ";
+                if(comId!=null && !comId.equals("")){
+                    comId =  CommonFilter.cleanQeuryParam(comId);
+                    cond += " and a.comId = '"+comId+"' ";
+                }
+                if(govId!=null && !govId.equals("")){
+                    govId =  CommonFilter.cleanQeuryParam(govId);
+                    cond += " and a.govId = '"+govId+"' ";
+                }
+                String query = " from eu.pms.project.database.PmsWarningsVw a ";
                 query +=cond;
                 query +=" order by a.warWarnedName ";
                 retList = new DataAccessObjectImpl().getFromDynamicQuery(query);

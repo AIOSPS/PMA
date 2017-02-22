@@ -176,7 +176,7 @@
     <query
             name="getPmsWarningList">
         <![CDATA[
-                from eu.pms.project.database.PmsWarnings a
+                from eu.pms.project.database.PmsWarningsVw a
                 order by a.warWarnedName
                   ]]>
     </query>

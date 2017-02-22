@@ -43,39 +43,80 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label for="warningNo" class="col-sm-12 col-form-label">Warning Numner:</label>
+                                <label for="warningNo" class="col-sm-12 col-form-label">Warning type:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="warningNo" styleClass="form-control" styleId="warningNo"/>
+                                    <html:select property="warType"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:option value="1">Stop working</html:option>
+                                        <html:option value="2">Demolition Order</html:option>
+                                        <html:option value="3">Confiscation order</html:option>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="warningName" class="col-sm-12 col-form-label">Warning Name:</label>
+                                <label for="warningName" class="col-sm-12 col-form-label">Structure type:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="warningName" styleClass="form-control" styleId="warningName"/>
+                                    <html:select property="warStructType"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:option value="1">Residential</html:option>
+                                        <html:option value="2">In ProcessLivestock barn</html:option>
+                                        <html:option value="3">Commercial</html:option>
+                                        <html:option value="4">Industrial</html:option>
+                                        <html:option value="5">Agricultural</html:option>
+                                    </html:select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="warnedId" class="col-sm-12 col-form-label">Warned Id:</label>
+                                <label for="warnedId" class="col-sm-12 col-form-label">Warning status:</label>
                                 <div class="col-sm-12">
-                                    <html:text property="warnedId" styleClass="form-control" styleId="warnedId"/>
+                                    <html:select property="warStatus"
+                                                 styleClass="selectpicker form-control">
+                                        <html:option value="">Select</html:option>
+                                        <html:option value="1">Executed</html:option>
+                                        <html:option value="2">In Process</html:option>
+                                        <html:option value="3">On hold - Legal action</html:option>
+                                        <html:option value="4">Closed/Cancelled</html:option>
+                                        <html:option value="5">Ready for Execution</html:option>
+                                    </html:select>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
-
-                            <div class="col-md-4">
-                                <%--<label for="prNotes" class="col-sm-5 col-form-label">Community Topology:</label>--%>
-                                <%--<div class="col-sm-12">--%>
-                                    <%--<input type="number" class="form-control" id="prBdget" placeholder="Budget"/>--%>
-                                <%--</div>--%>
-                            </div>
-                            <div class="col-md-4">
-                                <%--<label for="prNotes" class="col-sm-5 col-form-label">Has Cluster:</label>--%>
-                                <%--<div class="col-sm-12">--%>
-                                    <%--<input type="number" class="form-control" id="prBdget" placeholder="Budget"/>--%>
-                                <%--</div>--%>
-                            </div>
-                            <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <label for="comId" class="col-sm-12 col-form-label">Community:</label>
+                                    <div class="col-sm-12">
+                                        <html:select property="comId"
+                                                     styleClass="selectpicker form-control">
+                                            <logic:present name="communityList">
+                                                <html:option value="">Select</html:option>
+                                                <html:options collection="communityList" property="comId" labelProperty="comName"/>
+                                            </logic:present>
+                                        </html:select>
+                                        <script>
+                                            $(function () {
+                                                $('[name="comId"]').eq(0).attr("data-live-search", "true");
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="govId" class="col-sm-12 col-form-label">Governorate:</label>
+                                    <div class="col-sm-12">
+                                        <html:select property="govId"
+                                                     styleClass="selectpicker form-control">
+                                            <html:option value="">Select</html:option>
+                                            <html:options collection="governateList" property="lookupId" labelProperty="lookupDesc"/>
+                                        </html:select>
+                                        <script>
+                                            $(function () {
+                                                $('[name="govId"]').eq(0).attr("data-live-search", "true");
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                 <label  class="col-sm-5 col-form-label">&nbsp;</label>
                                 <div class="col-sm-12">
                                     <button type="submit" class="btn btn-primary">Search</button>
@@ -91,27 +132,33 @@
                 <thead>
                 <tr>
                     <th class="text-center">Warning Number</th>
-                    <th class="text-center">Warning Name</th>
-                    <th class="text-center">Warned Id</th>
+                    <th class="text-center">Warning type</th>
+                    <th class="text-center">Structure type</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Community</th>
                     <th class="text-center"></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
                     <th class="text-center">Warning Number</th>
-                    <th class="text-center">Warning Name</th>
-                    <th class="text-center">Warned Id</th>
+                    <th class="text-center">Warning type</th>
+                    <th class="text-center">Structure type</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Community</th>
                     <th class="text-center"></th>
 
                 </tr>
                 </tfoot>
                 <tbody>
                 <logic:present name="pmsWarningList">
-                    <logic:iterate id="pmsWarningList" name="pmsWarningList" type="eu.pms.project.database.PmsWarnings">
+                    <logic:iterate id="pmsWarningList" name="pmsWarningList" type="eu.pms.project.database.PmsWarningsVw">
                         <tr>
-                            <td width="50%"><bean:write name="pmsWarningList" property="warNo"/></td>
-                            <td width="20%" class="text-center"><bean:write name="pmsWarningList" property="warWarnedName"/></td>
-                            <td width="25%" class="text-center"><bean:write name="pmsWarningList" property="warWarnedId"/></td>
+                            <td width="15%"><bean:write name="pmsWarningList" property="warNo"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsWarningList" property="warType"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsWarningList" property="warStructType"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsWarningList" property="warStatus"/></td>
+                            <td width="20%" class="text-center"><bean:write name="pmsWarningList" property="comName"/></td>
                             <td width="5%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsWarning.do?warId=<bean:write name="pmsWarningList" property="warId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
