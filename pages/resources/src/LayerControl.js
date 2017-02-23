@@ -105,19 +105,19 @@ ol.control.Control.prototype.setMap.call(this, map);//register the map to the co
                source.on('tileloadstart', function(event) {
                var element = document.getElementById(layerTreeConfig.legendnodeid+'___loadingimg');
                    if (element !==null){
-                   element.src = 'css/images/loading.png';
+                   element.src = '/pages/resources/css/images/loading.png';
                    }
                });
                source.on('tileloadend', function(event) {
                var element = document.getElementById(layerTreeConfig.legendnodeid+'___loadingimg');
                    if (element !==null){
-                   element.src = 'css/images/ok.png';
+                   element.src = '/pages/resources/css/images/ok.png';
                    }
                });
                source.on('tileloaderror', function(event) {
                var element = document.getElementById(layerTreeConfig.legendnodeid+'___loadingimg');
                    if (element !==null){
-                   element.src = 'css/images/no.png';
+                   element.src = '/pages/resources/css/images/no.png';
                    } 
                });
           }
@@ -126,19 +126,19 @@ ol.control.Control.prototype.setMap.call(this, map);//register the map to the co
                source.on('imageloadstart', function(event) {
                var element = document.getElementById(layerTreeConfig.legendnodeid+'___loadingimg');
                    if (element !==null){
-                   element.src = 'css/images/loading.png';
+                   element.src = '/pages/resources/css/images/loading.png';
                    }
                });
                source.on('imageloadend', function(event) {
                var element = document.getElementById(layerTreeConfig.legendnodeid+'___loadingimg');
                    if (element !==null){
-                   element.src = 'css/images/ok.png';
+                   element.src = '/pages/resources/css/images/ok.png';
                    }
                });
                source.on('imageloaderror', function(event) {
                var element = document.getElementById(layerTreeConfig.legendnodeid+'___loadingimg');
                    if (element !==null){
-                   element.src = 'css/images/no.png';
+                   element.src = '/pages/resources/css/images/no.png';
                    } 
                });
           
@@ -692,7 +692,7 @@ function renderLoadingIcon(value,metaData,record ) {
     var id = record.get("id");
     var lyrname = id.split("___treeid")[0];
     var imageId = lyrname+"___loadingimg";
-    return '<img id="' + imageId + '" src="css/images/ok.png">';
+    return '<img id="' + imageId + '" src="/pages/resources/css/images/ok.png">';
     }
     else
     {

@@ -81,8 +81,9 @@
         </action>
         <action
                 type="eu.pms.login.actions.MainAction"
+                scope="request"
                 path="/home">
-            <forward name="success" path="main.tile"/>
+            <forward name="success" path="main.tile" contextRelative="true"/>
         </action>
 
         <action
@@ -603,15 +604,15 @@
         </action>
         <action
                 type="eu.pms.map.actions.ViewMapAction"
+                scope="request"
                 path="/viewMaps">
-
             <forward name="success" path="pms.viewMaps.tile" contextRelative="true"/>
         </action>
 
         <action
                 type="eu.pms.map.actions.ViewMapsLayerAction"
+                scope="request"
                 path="/viewMapsLayer">
-
             <forward name="success" path="pms.viewMapsLayer.tile" contextRelative="true"/>
         </action>
 
