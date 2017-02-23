@@ -30,9 +30,8 @@
             if(request.getParameter("comId") != null && !request.getParameter("comId").equals(""))
             {
         %>
-        alert(<%=request.getParameter("comId")%>);
-                 <%--drawBtcMap(<%=request.getParameter("comId")%>);--%>
-                drawBtcMap(5000);
+
+                 drawBtcMap(<%=request.getParameter("comId")%>);
 
         <%
             }else
