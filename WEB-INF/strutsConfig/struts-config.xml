@@ -602,10 +602,11 @@
             <forward name="success" path="pms.editIndicator.tile"/>
         </action>
         <action
-                type="org.apache.struts.actions.ForwardAction"
-                path="/viewMaps"
-                parameter="pms.viewMaps.tile"
-        />
+                type="eu.pms.map.actions.ViewMapAction"
+                path="/viewMaps">
+
+            <forward name="success" path="pms.viewMaps.tile" contextRelative="true"/>
+        </action>
 
         <action
                 type="org.apache.struts.actions.ForwardAction"

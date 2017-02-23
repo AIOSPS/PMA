@@ -624,6 +624,8 @@
         <property name="comOchaCode" column="com_ocha_code" type="java.lang.String"/>
         <property name="comTopology" column="com_topology" type="java.lang.String"/>
         <property name="comFullName" column="com_full_name" type="java.lang.String"/>
+        <property name="comLatitude" type="java.math.BigDecimal" column="com_latitude"/>
+        <property name="comLongitude" type="java.math.BigDecimal" column="com_longitude"/>
     </class>
 
     <class name="eu.pms.project.database.PmsAgricultureSocio" table="pms_agriculture_socio" >

@@ -132,17 +132,20 @@
                 <logic:present name="pmsCommunityList">
                     <logic:iterate id="pmsCommunityList" name="pmsCommunityList" type="eu.pms.project.database.PmsCommunitiesVw">
                         <tr>
-                            <td width="35%" class="text-left"><bean:write name="pmsCommunityList" property="comFullName"/></td>
+                            <td width="30%" class="text-left"><bean:write name="pmsCommunityList" property="comFullName"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comPcbsCode"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="govDesc"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="typDesc"/></td>
-                            <td width="5%" class="text-center">
+                            <td width="10%" class="text-center">
                                 <a href="javaScript:parent.location = '/viewPmsCommunity.do?comId=<bean:write name="pmsCommunityList" property="comId"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                 </a>
                                 &nbsp;
                                 <a href="javaScript:parent.location = '/viewEditCommunity.do?comId=<bean:write name="pmsCommunityList" property="comId"/>'">
                                     <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                <a href="javaScript:parent.location = '/viewMapsLayer.do?long=<bean:write name="pmsCommunityList" property="comLongitude"/>&lat=<bean:write name="pmsCommunityList" property="comLatitude"/>'">
+                                    <span class="glyphicon glyphicon-map-marker"></span>
                                 </a>
                             </td>
                         </tr>

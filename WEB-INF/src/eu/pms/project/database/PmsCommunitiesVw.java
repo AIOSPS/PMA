@@ -1,6 +1,7 @@
 package eu.pms.project.database;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 
 /** @author Hibernate CodeGenerator */
@@ -14,6 +15,8 @@ public class PmsCommunitiesVw implements Serializable {
     private String comOchaCode;
     private String comTopology;
     private String comFullName;
+    private BigDecimal comLatitude;
+    private BigDecimal comLongitude;
 
     /** default constructor */
     public PmsCommunitiesVw() {
@@ -89,5 +92,21 @@ public class PmsCommunitiesVw implements Serializable {
 
     public void setComFullName(String comFullName) {
         this.comFullName = comFullName;
+    }
+
+    public BigDecimal getComLatitude() {
+        return comLatitude;
+    }
+
+    public void setComLatitude(BigDecimal comLatitude) {
+        this.comLatitude = comLatitude;
+    }
+
+    public BigDecimal getComLongitude() {
+        return comLongitude;
+    }
+
+    public void setComLongitude(BigDecimal comLongitude) {
+        this.comLongitude = comLongitude;
     }
 }
