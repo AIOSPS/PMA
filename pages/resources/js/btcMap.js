@@ -10,7 +10,7 @@ var view =new ol.View({
 var map;
 function drawBtcMap() {
     var variable = 5000;
-    var p_com_var = 50;
+    var p_com_var = 5000;
 
      map = new ol.Map({
         controls: ol.control.defaults({
