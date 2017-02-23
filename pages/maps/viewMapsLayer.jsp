@@ -25,8 +25,21 @@
 
 <script type="text/javascript">
     Ext.onReady(function() {
-        drawBtcMap();
+
         <%
+            if(request.getParameter("comId") != null && !request.getParameter("comId").equals(""))
+            {
+        %>
+        alert(<%=request.getParameter("comId")%>);
+                 <%--drawBtcMap(<%=request.getParameter("comId")%>);--%>
+                drawBtcMap(5000);
+
+        <%
+            }else
+                {
+        %>
+                drawBtcMap(5000);
+        <%    }
             if(request.getParameter("long") != null && !request.getParameter("long").equals(""))
             {
         %>

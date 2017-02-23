@@ -80,10 +80,10 @@
             <forward name="success" path="main.tile"/>
         </action>
         <action
-                type="org.apache.struts.actions.ForwardAction"
-                path="/home"
-                parameter="main.tile"
-        />
+                type="eu.pms.login.actions.MainAction"
+                path="/home">
+            <forward name="success" path="main.tile"/>
+        </action>
 
         <action
                 type="eu.pms.logout.actions.LogoutAction"
@@ -609,10 +609,11 @@
         </action>
 
         <action
-                type="org.apache.struts.actions.ForwardAction"
-                path="/viewMapsLayer"
-                parameter="pms.viewMapsLayer.tile"
-        />
+                type="eu.pms.map.actions.ViewMapsLayerAction"
+                path="/viewMapsLayer">
+
+            <forward name="success" path="pms.viewMapsLayer.tile" contextRelative="true"/>
+        </action>
 
         <!-- lookup -->
         <action

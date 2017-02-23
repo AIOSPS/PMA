@@ -8,9 +8,9 @@ var view =new ol.View({
     rotation: 0
 });
 var map;
-function drawBtcMap() {
+function drawBtcMap(p_com_var) {
     var variable = 5000;
-    var p_com_var = 5000;
+    // var p_com_var = 5000;
 
      map = new ol.Map({
         controls: ol.control.defaults({

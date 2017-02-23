@@ -144,7 +144,7 @@
                                 <a href="javaScript:parent.location = '/viewEditCommunity.do?comId=<bean:write name="pmsCommunityList" property="comId"/>'">
                                     <span class="glyphicon glyphicon-edit"></span>
                                 </a>
-                                <a href="javaScript:parent.location = '/viewMapsLayer.do?long=<bean:write name="pmsCommunityList" property="comLongitude"/>&lat=<bean:write name="pmsCommunityList" property="comLatitude"/>'">
+                                <a href="javaScript:parent.location = '/viewMapsLayer.do?comId=<bean:write name="pmsCommunityList" property="comId"/>&long=<bean:write name="pmsCommunityList" property="comLongitude"/>&lat=<bean:write name="pmsCommunityList" property="comLatitude"/>'">
                                     <span class="glyphicon glyphicon-map-marker"></span>
                                 </a>
                             </td>
