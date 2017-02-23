@@ -132,7 +132,7 @@
                 <logic:present name="pmsCommunityList">
                     <logic:iterate id="pmsCommunityList" name="pmsCommunityList" type="eu.pms.project.database.PmsCommunitiesVw">
                         <tr>
-                            <td width="30%" class="text-left"><bean:write name="pmsCommunityList" property="comFullName"/></td>
+                            <td width="30%" class="text-left"><bean:write name="pmsCommunityList" property="comName"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="comPcbsCode"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="govDesc"/></td>
                             <td width="20%" class="text-center"><bean:write name="pmsCommunityList" property="typDesc"/></td>
