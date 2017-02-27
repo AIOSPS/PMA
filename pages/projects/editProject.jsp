@@ -140,7 +140,7 @@
                         <div class="col-sm-9">
                             <html:select property="secType" styleClass="selectpicker form-control"
                                          onchange="setProjectTypeConfig(this.value)">
-                                <html:option value="H">Humanitarian</html:option>
+                                <html:option value="H">Humman</html:option>
                                 <html:option value="D">Development</html:option>
                                 <html:option value="Oth">Others</html:option>
                             </html:select>
@@ -169,7 +169,7 @@
                         <div class="col-sm-9">
                             <html:select property="secId" styleClass="selectpicker form-control">
                                 <logic:present name="clusterHList">
-                                    <optgroup label="Humman" id="Humman">
+                                    <optgroup label="Humanitarian" id="Humman">
                                         <html:options collection="clusterHList" property="secId"
                                                       labelProperty="secName"/>
                                     </optgroup>

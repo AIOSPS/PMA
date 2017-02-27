@@ -176,7 +176,7 @@
                         <div class="col-sm-9">
                             <html:select property="secId" styleClass="selectpicker form-control">
                                 <logic:present name="clusterHList">
-                                    <optgroup label="Humman" id="Humman">
+                                    <optgroup label="Humanitarian" id="Humman">
                                         <html:options collection="clusterHList" property="secId"
                                                       labelProperty="secName"/>
                                     </optgroup>
