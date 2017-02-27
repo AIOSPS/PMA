@@ -78,7 +78,7 @@
                                 <td width="12%"><B>Project Type</B></td>
                                 <td width="33%">
                                     <logic:equal name="pmsProjectForm" property="secType" value="H">
-                                        Humman
+                                        Humanitarian
                                     </logic:equal>
                                     <logic:equal name="pmsProjectForm" property="secType" value="D">
                                         Development

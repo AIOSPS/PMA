@@ -91,7 +91,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="/pmsProjectList.do">Projects</a></li>
                         <li><a href="/pmsBenificiaryList.do">Benificaries</a></li>
-                        <li><a href="/pmsIncidentByProjectList.do">Incidents </a></li>
+                        <%--<li><a href="/pmsIncidentByProjectList.do">Incidents </a></li>--%>
                         <li><a href="/pmsPermitList.do">Permit</a></li>
                     </ul>
                 </li>

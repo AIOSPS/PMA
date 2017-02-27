@@ -19,7 +19,7 @@ public class GetPmsSectorsUseCase implements ComponentUseCase {
         List retList = null;
 
         try {
-            retList=new DataAccessObjectImpl().getList("getPmsSectors");
+            retList=new DataAccessObjectImpl().getList("getPmsSubSector");
         } catch (Exception ce) {
             System.out.println("Error PMS Sectors list: " + ce);
             retList = new ArrayList();

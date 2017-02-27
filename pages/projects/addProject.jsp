@@ -146,7 +146,7 @@
                         <div class="col-sm-9">
                             <html:select property="secType" styleClass="selectpicker form-control"
                                          onchange="setProjectTypeConfig(this.value)">
-                                <html:option value="H">Humman</html:option>
+                                <html:option value="H">Humanitarian</html:option>
                                 <html:option value="D">Development</html:option>
                                 <html:option value="Oth">Others</html:option>
                             </html:select>
