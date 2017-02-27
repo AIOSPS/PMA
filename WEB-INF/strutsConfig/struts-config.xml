@@ -87,6 +87,13 @@
         </action>
 
         <action
+                type="eu.pms.dashboard.actions.DashboardAction"
+                scope="request"
+                path="/dashboard">
+            <forward name="success" path="dashboard.tile" contextRelative="true"/>
+        </action>
+
+        <action
                 type="eu.pms.logout.actions.LogoutAction"
                 path="/logout">
             <forward name="logoutDone" path="/loginPage.do" redirect="true"/>

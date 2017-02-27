@@ -130,6 +130,7 @@
                     </ul>
                 </li>
 
+                <li class="dropdown"><a href="/dashboard.do"><span class="glyphicon glyphicon-dashboard"></span> Dashboard <span class="sr-only">(current)</span></a></li>
             </ul>
             <!--	 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

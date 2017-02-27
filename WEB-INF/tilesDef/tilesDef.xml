@@ -32,6 +32,11 @@
     <definition name="main.tile" extends="innerLayout">
         <put name="body" value="/pages/main.jsp"/>
     </definition>
+
+    <definition name="dashboard.tile" extends="innerLayout">
+        <put name="body" value="/pages/dashboard/viewDashboard.jsp"/>
+    </definition>
+
     <definition name="pms.projectList.tile" extends="innerLayout">
         <put name="body" value="/pages/projects/listProject.jsp"/>
     </definition>
