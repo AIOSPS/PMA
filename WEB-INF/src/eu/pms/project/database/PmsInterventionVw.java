@@ -10,7 +10,6 @@ import java.io.Serializable;
 public class PmsInterventionVw implements Serializable {
 
     private PmsInterventionVwPK compId;
-    private String masId;
     private String intDesc;
     private int intEstimatedBudget;
     private String intSource;
@@ -30,14 +29,6 @@ public class PmsInterventionVw implements Serializable {
 
     public void setCompId(PmsInterventionVwPK compId) {
         this.compId = compId;
-    }
-
-    public String getMasId() {
-        return masId;
-    }
-
-    public void setMasId(String masId) {
-        this.masId = masId;
     }
 
     public String getIntDesc() {

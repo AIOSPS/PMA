@@ -23,13 +23,13 @@ public class PmsMasterPlanListUseCase implements ComponentUseCase {
             if (input != null && input.size() > 0){
                 Iterator itr = input.iterator();
                 String comId= (String) itr.next();
-                String masStatus= (String) itr.next();
+                String masStatusIca= (String) itr.next();
                 String cond = " where 1=1 ";
                 if(comId!=null && !comId.trim().equals("")){
                     cond += " and a.comId like '%"+comId+"%' ";
                 }
-                if(masStatus!=null && !masStatus.trim().equals("")){
-                    cond += " and a.masStatus like '%"+masStatus+"%' ";
+                if(masStatusIca!=null && !masStatusIca.trim().equals("")){
+                    cond += " and a.masStatusIca like '%"+masStatusIca+"%' ";
                 }
                 String query = " from eu.pms.project.database.PmsMasterPlanVw a ";
                 query +=cond;

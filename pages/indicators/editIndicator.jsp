@@ -22,7 +22,7 @@
         $("#indFrequency").prop('required', true);
         $("#indCollectionMethod").attr("placeholder", "Collection Method");
         $("#indCollectionMethod").prop('required', true);
-        $("#indStatisticalMethod").attr("placeholder", "Statistical Method");
+        $("#indStatisticalMethod").attr("placeholder", "Data Source");
         $("#indStatisticalMethod").prop('required', true);
     });
 </script>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="indStatisticalMethod" class="col-sm-3 col-form-label">Statistical Method:</label>
+                        <label for="indStatisticalMethod" class="col-sm-3 col-form-label">Data Source:</label>
                         <div class="col-sm-9">
                             <html:text property="indStatisticalMethod" styleClass="form-control" styleId="indStatisticalMethod"/>
                         </div>
@@ -311,8 +311,8 @@
         emptyText: "Please Enter The Collection Method ",
     });
     InvalidInputHelper(document.getElementsByName("indStatisticalMethod")[0], {
-        defaultText: "Please Enter The Statistical Method ",
-        emptyText: "Please Enter The Statistical Method ",
+        defaultText: "Please Enter The Data Source ",
+        emptyText: "Please Enter The Data Source ",
     });
     //   table script
     $(document).ready(function() {

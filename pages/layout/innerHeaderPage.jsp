@@ -109,6 +109,8 @@
                         <li><a href="/pmsIndicatorList.do">Indicators</a></li>
                     </ul>
                 </li>
+                <li class="dropdown"><a href="/dashboard.do"><span class="glyphicon glyphicon-dashboard"></span> Dashboard <span class="sr-only">(current)</span></a></li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor"></span>   Reports   <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -130,7 +132,6 @@
                     </ul>
                 </li>
 
-                <li class="dropdown"><a href="/dashboard.do"><span class="glyphicon glyphicon-dashboard"></span> Dashboard <span class="sr-only">(current)</span></a></li>
             </ul>
             <!--	 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

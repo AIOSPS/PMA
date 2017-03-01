@@ -59,14 +59,13 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="status" class="col-sm-12 col-form-label">Status:</label>
+                                <label for="status" class="col-sm-12 col-form-label">Status ICA:</label>
                                 <div class="col-sm-12">
                                     <html:select property="status" styleClass="selectpicker form-control">
                                         <html:option value="">Select</html:option>
-                                        <html:option value="1">Public Objection</html:option>
-                                        <html:option value="2">Fully Authorized</html:option>
-                                        <html:option value="3">Technical Discussion</html:option>
-                                        <html:option value="4">Data collection and Plan Preparation</html:option>
+                                        <html:option value="1">Progressing</html:option>
+                                        <html:option value="2">Stuck</html:option>
+                                        <html:option value="3">Rejected</html:option>
                                     </html:select>
                                     <script>
                                         $(function () {

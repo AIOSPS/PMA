@@ -11,11 +11,13 @@ public class PmsInterventionVwPK implements Serializable {
 
     private String intId;
     private String secId;
+    private String masId;
 
     /** full constructor */
-    public PmsInterventionVwPK(String intId, String secId) {
+    public PmsInterventionVwPK(String intId, String secId, String masId) {
         this.intId = intId;
         this.secId = secId;
+        this.masId = masId;
     }
 
     /** default constructor */
@@ -38,10 +40,19 @@ public class PmsInterventionVwPK implements Serializable {
         this.secId = secId;
     }
 
+    public String getMasId() {
+        return masId;
+    }
+
+    public void setMasId(String masId) {
+        this.masId = masId;
+    }
+
     public String toString() {
         return new ToStringBuilder(this)
             .append("intId", getIntId())
             .append("secId", getSecId())
+            .append("masId", getSecId())
             .toString();
     }
 
@@ -51,6 +62,7 @@ public class PmsInterventionVwPK implements Serializable {
         return new EqualsBuilder()
             .append(this.getIntId(), castOther.getIntId())
             .append(this.getSecId(), castOther.getSecId())
+            .append(this.getMasId(), castOther.getMasId())
             .isEquals();
     }
 
@@ -58,6 +70,8 @@ public class PmsInterventionVwPK implements Serializable {
         return new HashCodeBuilder()
             .append(getIntId())
             .append(getSecId())
+            .append(getMasId())
+
             .toHashCode();
     }
 

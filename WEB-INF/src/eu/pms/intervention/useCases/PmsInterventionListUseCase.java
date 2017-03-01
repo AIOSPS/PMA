@@ -37,7 +37,7 @@ public class PmsInterventionListUseCase implements ComponentUseCase {
                     cond += " and a.intSource = '"+intSource+"' ";
                 }
                 if(masId!=null && !masId.trim().equals("") ){
-                    cond += " and a.masId = '"+masId+"' ";
+                    cond += " and a.compId.masId = '"+masId+"' ";
                 }
                 String query = " from eu.pms.project.database.PmsInterventionVw a ";
                 query +=cond;
