@@ -79,6 +79,7 @@
                                         <%--});--%>
                                     <%--</script>--%>
                                         <html:select property="sectorId" styleClass="selectpicker form-control">
+                                            <html:option value="">Select</html:option>
                                             <logic:present name="clusterHList">
                                                 <optgroup label="Humanitarian" id="Humman">
                                                     <html:options collection="clusterHList" property="secId"
