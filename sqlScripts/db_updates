@@ -1,80 +1,10 @@
-CREATE
-     OR REPLACE ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_warnings_vw` AS
-    SELECT
-        `warn`.`war_id` AS `war_id`,
-        `warn`.`war_no` AS `war_no`,
-        `warn`.`war_warned_name` AS `war_warned_name`,
-        `warn`.`war_warned_id` AS `war_warned_id`,
-        `warn`.`com_id` AS `com_id`,
-        `warn`.`don_id` AS `don_id`,
-        `warn`.`war_latitude` AS `war_latitude`,
-        `warn`.`war_longitude` AS `war_longitude`,
-        (CASE `warn`.`war_type`
-            WHEN 1 THEN 'Stop working'
-            WHEN 2 THEN 'Demolition Order'
-            WHEN 3 THEN 'Confiscation order'
-            ELSE 'Unknown'
-        END) AS `war_type`,
-        (CASE `warn`.`war_struct_type`
-            WHEN 1 THEN 'Residential'
-            WHEN 2 THEN 'Livestock barn'
-            WHEN 3 THEN 'Commercial'
-            WHEN 4 THEN 'Industrial'
-            WHEN 5 THEN 'Agricultural'
-            ELSE 'Unknown'
-        END) AS `war_struct_type`,
-        `warn`.`war_issue_date` AS `war_issue_date`,
-        `warn`.`war_submit_date` AS `war_submit_date`,
-        `warn`.`war_receptionist_id` AS `war_receptionist_id`,
-        `warn`.`war_receptionist_name` AS `war_receptionist_name`,
-        `warn`.`war_reception_date` AS `war_reception_date`,
-        (CASE `warn`.`war_status`
-            WHEN 1 THEN 'Executed'
-            WHEN 2 THEN 'In Process'
-            WHEN 3 THEN 'On hold - Legal action'
-            WHEN 4 THEN 'Closed/Cancelled'
-            WHEN 5 THEN 'Ready for Execution'
-            ELSE 'Unknown'
-        END) AS `war_status`,
-        `warn`.`war_notes` AS `war_notes`,
-        `warn`.`username` AS `username`,
-        `warn`.`time_stamp` AS `time_stamp`,
-        `com`.`com_name` AS `com_name`,
-        `gov`.`gov_id` AS `gov_id`,
-        `gov`.`gov_desc` AS `gov_desc`
-    FROM
-        ((`pms_warnings` `warn`
-        JOIN `pms_communities` `com`)
-        JOIN `pms_governates` `gov`)
-    WHERE
-        ((`warn`.`com_id` = `com`.`com_id`)
-            AND (`com`.`gov_id` = `gov`.`gov_id`));
---------------------
-USE `pms`;
-CREATE
-     OR REPLACE ALGORITHM = UNDEFINED
-    DEFINER = `root`@`localhost`
-    SQL SECURITY DEFINER
-VIEW `pms_communities_vw` AS
-    SELECT
-        `com`.`com_id` AS `com_id`,
-        `com`.`com_name` AS `com_full_name`,
-        `comtyp`.`typ_desc` AS `typ_desc`,
-        `gov`.`gov_desc` AS `gov_desc`,
-        `com`.`com_pcbs_code` AS `com_pcbs_code`,
-        `com`.`com_ocha_code` AS `com_ocha_code`,
-        `com`.`gov_id` AS `gov_id`,
-        `com`.`com_topology` AS `com_topology`,
-        CONCAT(`com`.`com_name`, '-', `gov`.`gov_desc`) AS `com_name`,
-        `com`.`com_latitude` AS `com_latitude`,
-        `com`.`com_longitude` AS `com_longitude`
-    FROM
-        ((`pms_communities` `com`
-        JOIN `pms_community_types` `comtyp`)
-        JOIN `pms_governates` `gov`)
-    WHERE
-        ((`com`.`typ_id` = `comtyp`.`typ_id`)
-            AND (`com`.`gov_id` = `gov`.`gov_id`));
+    ALTER TABLE `pms`.`pms_incidents`
+DROP FOREIGN KEY `fk_pms_incidents_pms_projects1`;
+ALTER TABLE `pms`.`pms_incidents`
+CHANGE COLUMN `pro_id` `pro_id` VARCHAR(30) NULL ;
+ALTER TABLE `pms`.`pms_incidents`
+ADD CONSTRAINT `fk_pms_incidents_pms_projects1`
+  FOREIGN KEY (`pro_id`)
+  REFERENCES `pms`.`pms_projects` (`pro_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

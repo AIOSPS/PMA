@@ -383,6 +383,7 @@
                     </div>
                     <div class="col-md-4">
                         <html:submit value="Export" styleClass="btn btn-primary"/>
+                        <html:button value="Visulalize" property="" styleClass="btn btn-primary"/>
                     </div>
                     <%--<div class="offset-sm-2 col-sm-10">--%>
                         <%--<label class="col-sm-3 col-form-label">Report Type:</label>--%>

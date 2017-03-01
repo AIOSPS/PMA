@@ -14,7 +14,7 @@
     <query
             name="getPmsProjectList">
         <![CDATA[
-                select distinct new eu.pms.project.database.structs.PmsProjectList(a.proId,a.proTitle,a.proDescription,a.proStatus,a.proStartDate,a.proEndDate)
+                select distinct new eu.pms.project.database.structs.PmsProjectList(a.proId,a.proTitle,a.proDescription,a.proStatusDesc,a.proStartDate,a.proEndDate)
                 from eu.pms.project.database.PmsProjectVw a
                 order by a.proStartDate,proEndDate,proTitle
                   ]]>

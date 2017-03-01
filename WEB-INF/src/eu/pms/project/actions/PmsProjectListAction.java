@@ -7,7 +7,9 @@ import eu.pms.intervention.useCases.GetPmsSectorsUseCase;
 import eu.pms.login.components.LoginComponent;
 import eu.pms.login.forms.LoginForm;
 import eu.pms.project.database.PmsCommunitiesVw;
+import eu.pms.project.database.PmsSector;
 import eu.pms.project.forms.PmsProjectSearchForm;
+import eu.pms.project.useCases.GetPmsClusterTypUseCase;
 import eu.pms.project.useCases.GetPmsCommunityUseCase;
 import eu.pms.project.useCases.GetPmsDonorsUseCase;
 import eu.pms.project.useCases.PmsProjectListUseCase;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class PmsProjectListAction extends Action
@@ -34,8 +37,27 @@ public class PmsProjectListAction extends Action
 
         List dononrList = (List) new GetPmsDonorsUseCase().execute(null, request);
         request.setAttribute("dononrList", dononrList);
-        List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
-        request.setAttribute("sectorsList", sectorsList);
+//        List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
+//        request.setAttribute("sectorsList", sectorsList);
+        List clusterList = (List) new GetPmsClusterTypUseCase().execute(null, request);
+        List clusterHList = new ArrayList();
+        List clusterDList = new ArrayList();
+        List clusterOthList = new ArrayList();
+        Iterator itr = clusterList.iterator();
+        PmsSector pmsSecTyp = new PmsSector();
+        while (itr.hasNext()) {
+            pmsSecTyp = (PmsSector) itr.next();
+            if (pmsSecTyp.getSecType().equals("H"))
+                clusterHList.add(pmsSecTyp);
+            else if (pmsSecTyp.getSecType().equals("D"))
+                clusterDList.add(pmsSecTyp);
+            else if (pmsSecTyp.getSecType().equals("Oth"))
+                clusterOthList.add(pmsSecTyp);
+        }
+        request.setAttribute("clusterHList", clusterHList);
+        request.setAttribute("clusterDList", clusterDList);
+        request.setAttribute("clusterOthList", clusterOthList);
+
         List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
         request.setAttribute("governateList", governateList);
         List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
