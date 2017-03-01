@@ -8,3 +8,25 @@ ADD CONSTRAINT `fk_pms_incidents_pms_projects1`
   REFERENCES `pms`.`pms_projects` (`pro_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+----
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `pms_intervention_vw` AS
+    SELECT
+        `b`.`int_id` AS `int_id`,
+        `b`.`sec_id` AS `sec_id`,
+        `b`.`int_priority` AS `int_priority`,
+        `b`.`int_source` AS `int_source`,
+        `b`.`mas_id` AS `mas_id`,
+        `a`.`com_name` AS `com_name`,
+        `a`.`com_id` AS `com_id`,
+        `a`.`mas_mp_name` AS `mas_mp_name`,
+        `b`.`int_desc` AS `int_desc`,
+        `b`.`int_estimated_budget` AS `int_estimated_budget`
+    FROM
+        (`pms_master_plan_vw` `a`
+        JOIN `pms_interventions` `b`)
+    WHERE
+        (`a`.`mas_id` = `b`.`mas_id`)
