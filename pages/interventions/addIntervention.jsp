@@ -79,18 +79,44 @@
                     <div class="col-md-6">
                         <label for="secId" class="col-sm-3 col-form-label">Sector:</label>
                         <div class="col-sm-9">
-                            <html:select property="secId"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="sectorsList">
-                                    <html:options collection="sectorsList" property="secId" labelProperty="secName"/>
-                                </logic:present>
+                            <%--<html:select property="secId"--%>
+                                         <%--styleClass="selectpicker form-control">--%>
+                                <%--<logic:present name="sectorsList">--%>
+                                    <%--<html:options collection="sectorsList" property="secId" labelProperty="secName"/>--%>
+                                <%--</logic:present>--%>
 
-                            </html:select>
-                            <script>
-                                $(function () {
-                                    $('[name="secId"]').eq(0).attr("data-live-search", "true");
-                                });
-                            </script>
+                            <%--</html:select>--%>
+                            <%--<script>--%>
+                                <%--$(function () {--%>
+                                    <%--$('[name="secId"]').eq(0).attr("data-live-search", "true");--%>
+                                <%--});--%>
+                            <%--</script>--%>
+                                <html:select property="secId" styleClass="selectpicker form-control">
+                                    <logic:present name="clusterHList">
+                                        <%--<html:option value="">Select</html:option>--%>
+                                        <optgroup label="Humanitarian" id="Humman">
+                                            <html:options collection="clusterHList" property="secId"
+                                                          labelProperty="secName"/>
+                                        </optgroup>
+                                    </logic:present>
+                                    <logic:present name="clusterDList">
+                                        <optgroup label="Development" id="Development">
+                                            <html:options collection="clusterDList" property="secId"
+                                                          labelProperty="secName"/>
+                                        </optgroup>
+                                    </logic:present>
+                                    <logic:present name="clusterOthList">
+                                        <optgroup label="Others" id="Others">
+                                            <html:options collection="clusterOthList" property="secId"
+                                                          labelProperty="secName"/>
+                                        </optgroup>
+                                    </logic:present>
+                                </html:select>
+                                <script>
+                                    $(function () {
+                                        $('[name="secId"]').eq(0).attr("data-live-search", "true");
+                                    });
+                                </script>
                         </div>
                     </div>
                     <div class="col-md-6">

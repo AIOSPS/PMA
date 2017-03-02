@@ -27,10 +27,7 @@
             <div class="col-md-8">
                 <h1>List of Indicators</h1>
             </div>
-            <div class="col-md-2 pd15 create ">
-                <button type="button"  class="btn btn-primary fa">Visualize</button>
-            </div>
-            <div class="col-md-2 pd15 create ">
+            <div class="col-md-4 pd15 create ">
                 <button type="button" onclick="javaScript:parent.location = '/viewAddIndicator.do'"
                         class="btn btn-primary fa fa-plus pull-right">Add Indicator
                 </button>
@@ -129,6 +126,16 @@ $(document).ready(function() {
         buttons: ['excel', 'pdf']
     } );
 
+    new $.fn.dataTable.Buttons( table, {
+        buttons: [
+            {
+                text: 'Visualize',
+                action: function ( e, dt, node, conf ) {
+                    alert( 'Button 2 clicked on' );
+                }
+            }
+        ]
+    } );
     table.buttons().container()
             .appendTo( '#listIndicatorsTbl_wrapper .col-sm-6:eq(0)' );
 } );
