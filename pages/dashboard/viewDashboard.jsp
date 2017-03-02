@@ -7,5 +7,7 @@
 <div class="content-wrapper ">
 <div class="pd15 titleArea">
 <img src="/pages/resources/images/dashboard.png" class="img-responsive center-block" width="75%">
+    <img src="/pages/resources/images/dashboard2.png" class="img-responsive center-block" width="75%">
+    <img src="/pages/resources/images/dashboard3.png" class="img-responsive center-block" width="75%">
 </div>
 </div>
