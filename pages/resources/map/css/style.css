@@ -12,7 +12,7 @@ div#accordion {
     background-color: rgba(255,255,255,0.7);
     background-color: transparent;
     z-index: 20000;
-	width:90%;
+	/*width:90%;*/
     max-width: 400px;
     padding: 0 5px 0 0;
     overflow-y: auto;

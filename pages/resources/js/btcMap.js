@@ -3,7 +3,7 @@
  */
 var view =new ol.View({
     center: ol.proj.transform([35, 32], 'EPSG:4326', 'EPSG:3857'),
-    zoom: 9,
+    zoom: 9.5,
     'transparent': 'true',
     rotation: 0
 });
