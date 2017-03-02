@@ -1,0 +1,255 @@
+body, html {
+font-family: Arial,Helvetica,sans-serif;
+}
+
+div#accordion {
+    box-sizing: border-box;
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    min-height: 80px;
+    height: auto;
+    background-color: rgba(255,255,255,0.7);
+    background-color: transparent;
+    z-index: 20000;
+	width:90%;
+    max-width: 400px;
+    padding: 0 5px 0 0;
+    overflow-y: auto;
+}
+
+#footerarea {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: auto;
+    background-color: white;
+    min-height: 40px;
+}
+
+
+.button,
+.button2 {
+	box-sizing: border-box;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	border-radius: 5px;
+	white-space: nowrap;
+	/*float: left;*/
+	display: inline-block;
+	margin-bottom: 2px;
+}
+.button {
+	color: white;
+    background-color: #e28e11;
+	padding: 6px 15px 6px 15px;
+}
+.button2 {
+	color: #e28e11;
+    background-color: white;
+	border: 1px solid #e28e11;
+}
+
+
+#pcontent { /* programmes content */
+	display: none;
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 20%;
+	width: 100%;
+	height: 80%;
+	background-color: white;
+	z-index: 100000;
+	box-shadow: 0px 0px 15px #888888;
+}
+#pcontent > .divtitle {
+    box-sizing: border-box;
+    display: block;
+    margin: 5px;
+    min-height: 40px;
+    position: relative;	
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid #cccccc;
+}
+#pcontent > .divtitle > .divtitle2 {
+	line-height: 150%;
+}
+#pcontent > .divtitle > .divtitle2 > h3,
+#pcontent > .divtitle > .divtitle2 > .subtext1,
+#pcontent > .divtitle > .divtitle2 > .subtext2,
+#pcontent > .divtitle > .divtitle2 > .subtext3 {
+	display: block;
+	text-align: center;
+	margin-top: 5px;
+    font-size: 17px;
+}
+#pcontent > .divtitle > .divtitle2 > h3 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 11px 5px 7px 5px;
+	margin: 0;
+}
+#pcontent > .divtitle > .divtitle2 > .subtext1 {
+	color: #aaaaaa;
+}
+#pcontent > .divtitle > .divtitle2 > .subtext2 {
+	margin-top: 20px;
+}
+#pcontent > .divtitle > .divtitle2 > .subtext3 > .greytext {
+	color: #aaaaaa;
+}
+#pcontent > .divtitle > .divtitle3 > .buttonclose-OLD-VERSION-DELETE {
+	float: right;
+    background-color: #e28e11;
+    background-image: url("img/close-div.svg");
+    position: absolute;
+    right: 0;
+    top: 0;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 30px 30px;
+	border-radius: 5px;
+}
+#pcontent > .divtitle > .divtitle3 > .buttonclose {
+	float: right;
+    right: 0;
+    top: 0;
+	background-color: #0088ce;
+}
+
+#pcontent > .divtitle > .divtitle1,
+#pcontent > .divtitle > .divtitle2,
+#pcontent > .divtitle > .divtitle3
+{
+	box-sizing: border-box;
+	float: left;
+	width: 20%;
+	/*padding: 0px 10px 0 10px;*/
+	padding: 10px 10px;
+}
+#pcontent > .divtitle > .divtitle2 {
+	width: 60%;
+	padding: 0 5px;
+}
+
+#ulprogrammes {
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	padding: 0 10px;
+	position: absolute;
+	width: 100%;
+	height: 80%;
+	overflow-x: scroll;
+}
+#ulprogrammes > li {
+	box-sizing: border-box;
+	display: block;
+	width: 830px;
+	height: auto;
+	/*background-color: #d4d4d4;*/
+	margin: 50px auto 10px auto;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid #cccccc;
+}
+#ulprogrammes > li:last-child {
+	border: none;
+}
+#ulprogrammes > li > h4 {
+	display: block;
+	margin: 0 0 20px;
+	padding: 0;
+	font-size: 22px;
+	color: #e28e11;
+	font-weight: normal;
+	text-align: center;
+	line-height: 115%;
+}
+#ulprogrammes > li > .pdetails1 {
+	box-sizing: border-box;
+	float: left;
+	width: 550px;
+}
+#ulprogrammes > li > .pdetails1 > dt,
+#ulprogrammes > li > .pdetails2 > dt {
+	clear: left;
+	float: left;
+	color: #e28e11;
+	font-size: 13px; 
+	margin: 15px 0 0 0;
+	padding: 2px 0;
+}
+#ulprogrammes > li > .pdetails1 > dt:first-child {
+	margin-top: 0;
+}
+#ulprogrammes > li > .pdetails1 > dd,
+#ulprogrammes > li > .pdetails2 > dd {
+	clear: left;
+	float: left;
+	font-size: 15px; 
+	margin: 0;
+	padding: 2px 0;
+}
+#ulprogrammes > li > .pdetails2 {
+	box-sizing: border-box;
+	float: right;
+	width: 264px;
+	border: 1px solid #e28e11;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+
+
+#footerarea > .footer1,
+#footerarea > .footer2,
+#footerarea > .footer3
+{
+	box-sizing: border-box;
+	float: left;
+	width: 20%;
+	padding: 5px 5px 0 5px;
+	margin: 7px 0 7px 0;
+}
+#footerarea > .footer1,
+#footerarea > .footer3 {
+	padding: 5px 15px 0 15px;
+}
+#footerarea > .footer2 {
+	width: 60%;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 110%;
+	text-align: center;
+}
+#footerarea > .footer2 > .byyourselection {
+	color: #aaaaaa;
+	font-size: 15px;
+	font-weight: normal;
+}
+#footerarea > .footer3 {
+	text-align: right;
+}
+
+
+
+
+@media all and (max-width: 800px) {
+	#footerarea > .footer1,
+	#footerarea > .footer2,
+	#footerarea > .footer3 {
+		width: 100%;
+	}
+	#pcontent > .divtitle > .divtitle1,
+	#pcontent > .divtitle > .divtitle2,
+	#pcontent > .divtitle > .divtitle3 {
+		width: 100%;
+	}
+}
+
+ 

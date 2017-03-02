@@ -23,6 +23,12 @@
 
 <script type="text/javascript" src="/pages/resources/js/btcMap.js" ></script>
 
+<%-- ---------Map Style---------- --%>
+<link rel="stylesheet" href="/pages/resources/map/js/jquery-ui/jquery-ui.css">
+<link rel="stylesheet" href="/pages/resources/map/css/style.css">
+<script src="/pages/resources/map/js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="/pages/resources/map/js/jquery-ui/jquery-ui.js"></script>
+
 <script type="text/javascript">
     Ext.onReady(function() {
 
@@ -49,9 +55,108 @@
         %>
     });
 </script>
-<title></title>
+<meta name="viewport" content="initial-scale=1.0">
+<meta charset="utf-8">
+<%--<style>--%>
+    <%--/* Always set the map height explicitly to define the size of the div--%>
+     <%--* element that contains the map. */--%>
+    <%--#map {--%>
+        <%--height: 100%;--%>
+    <%--}--%>
+    <%--/* Optional: Makes the sample page fill the window. */--%>
+    <%--html, body {--%>
+        <%--height: 100%;--%>
+        <%--margin: 0;--%>
+        <%--padding: 0;--%>
+    <%--}--%>
+<%--</style>--%>
 
 
 <div id="map" style="width:100%;height:97%"></div>
 <%--<div id="marker" title="Marker"></div>--%>
+<div id="accordion">
+    <h3  >EU-MS Map & Database</h3>
+    <div >
+        <br/>
+        <p>
+            Number of Development projects implemented since 2012 is 1,200 projects
+        </p>
+        <p>
+            Number of Humanitarian projects implemented since 2012 is 1,850 projects
+        </p>
+        <p>
+            Number of projects with warning is 376
+        </p>
+    </div>
+    <h3>Donor:</h3>
+    <div>
+        <p>
+            Belgium, Bulgaria, Czech Republic,
+        </p>
+        <p>
+            Denmark, Germany, Estonia,
+        </p>
+        <p>
+            Ireland, Greece, Spain,
+        </p>
+        <p>
+            France, Croatia, Italy,
+        </p>
+        <p>
+            Cyprus, Latvia, Lithuania,
+        </p>
+        <p>
+            Luxembourg,Hungary, Malta,
+        </p>
+        <p>
+            Austria, Portugal,Romania,
+        </p>
+        <p>Slovenia, Slovakia, Finland,</p>
+        <p>Sweden, United Kingdom</p>
 
+    </div>
+    <h3>Governorates:</h3>
+    <div>
+
+            Hebron<br/>Bethlehem<br/>Jerusalem<br/> Ramallah & Al Bireh<br/> Jericho<br/> Nablus<br/> Tulkarem<br/>
+            Jenin<br/> Qalqelya<br/> Tubas<br/> Salfeet
+
+    </div>
+    <h3>Sectors </h3>
+    <div>
+        <h4>Development</h4>
+        <ul>
+            <li>Governance Reform, Fiscal Consolidation and Policy Reform  +Rule of Law, Justice, Citizen Safety and Human Rights</li>
+            <li>Sustainable Service Delivery</li>
+            <li>Self-Sufficient Water and Energy Services</li>
+            <li>Sustainable Economic Development</li>
+            <li>Cross cutting</li>
+        </ul>
+        <h4>Humanitarian</h4>
+        <ul>
+            <li>Education, Health, Access to Land, WASH, Protection, Settler Violence, Shelter, Agriculture</li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+    $( function() {
+        var icons = {
+            header: "ui-icon-circle-arrow-e",
+            activeHeader: "ui-icon-circle-arrow-s"
+        };
+        $( "#accordion" ).accordion({
+            active: false,
+            collapsible: true,
+            icons: icons
+        });
+        $( "#toggle" ).button().on( "click", function() {
+            if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+                $( "#accordion" ).accordion( "option", "icons", null );
+            } else {
+                $( "#accordion" ).accordion( "option", "icons", icons );
+            }
+        });
+    } );
+</script>

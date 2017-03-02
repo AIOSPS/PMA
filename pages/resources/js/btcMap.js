@@ -266,6 +266,9 @@ function drawBtcMap(p_com_var) {
         target: 'map',
         view: view
     });
+
+    var myFullScreenControl = new ol.control.FullScreen();
+    map.addControl(myFullScreenControl);
 };
 function doCenter(long, lat) {
 //35.15624062000000, 31.50144083000000
