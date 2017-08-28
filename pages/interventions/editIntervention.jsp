@@ -298,7 +298,7 @@
         defaultText: "Please Enter The Source ",
         emptyText: "Please Enter The Source ",
     });
-    //   table script for activities
+    //   table script for programme
     $(document).ready(function() {
         $("#add_row").on("click", function() {
             // Dynamic Rows Code

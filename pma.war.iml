@@ -177,15 +177,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/WEB-INF/lib/commons-logging-1.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/WEB-INF/lib/commons-validator.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -195,7 +186,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/WEB-INF/lib/dom4j-1.6.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/WEB-INF/lib/commons-logging-1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -267,7 +258,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/WEB-INF/lib/jfreechart-1.0.12.jar!/" />
+          <root url="jar://$MODULE_DIR$/WEB-INF/lib/dom4j-1.6.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -385,6 +376,15 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/WEB-INF/lib/xerces.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WEB-INF/lib/jfreechart-1.0.12.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

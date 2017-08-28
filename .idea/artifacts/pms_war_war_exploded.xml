@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="pms.war:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/pms_war_war_exploded</output-path>
-    <root id="root" />
-  </artifact>
-</component>

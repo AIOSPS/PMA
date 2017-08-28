@@ -507,4 +507,13 @@
                 order by a.familyAvgSize
                   ]]>
     </query>
+
+    <!-- *********************PMA Query ******** -->
+    <query
+            name="getPmaProgrammeList">
+        <![CDATA[
+                from btc.pma.programme.database.PmaProgrammeInfo a
+                order by a.intrNo
+                  ]]>
+    </query>
 </hibernate-mapping>

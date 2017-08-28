@@ -242,4 +242,14 @@
     <definition name="pms.editWarning.tile" extends="innerLayout">
         <put name="body" value="/pages/warnings/editWarning.jsp"/>
     </definition>
+
+<!-- ****************** Start PMA Tiles ************* -->
+    <definition name="pma.programmeList.tile" extends="innerLayout">
+        <put name="body" value="/pages/programme/listProgramme.jsp"/>
+    </definition>
+
+    <definition name="pma.addProgramme.tile" extends="innerLayout">
+        <put name="body" value="/pages/programme/addProgramme.jsp"/>
+    </definition>
+<!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>

@@ -55,9 +55,9 @@ public class AddPmsInterventionUseCase implements ComponentUseCase {
             new DataAccessObjectImpl().insertOrUpdate(insertList);
 
         } catch (Exception ce) {
-            System.err.println("Error add a new PMS Intervention and activities: " + ce);
+            System.err.println("Error add a new PMS Intervention and programme: " + ce);
             retList = new ArrayList();
-            retList.add(new String("Error add a new PMS Intervention and activities :" + ce.getMessage()));
+            retList.add(new String("Error add a new PMS Intervention and programme :" + ce.getMessage()));
         }
         return retList;
     }

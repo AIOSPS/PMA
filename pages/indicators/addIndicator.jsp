@@ -286,7 +286,7 @@
         emptyText: "Please Enter The Data Source ",
     });
 
-    //   table script for activities
+    //   table script for programme
     $(document).ready(function() {
         $("#add_row").on("click", function() {
             // Dynamic Rows Code

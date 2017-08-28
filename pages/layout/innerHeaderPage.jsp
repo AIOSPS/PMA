@@ -7,13 +7,13 @@
     <div class="col-md-8 branding">
         <div class="logo text-center" >
             <a href="#" title="European Union">
-                <img alt="European logo"  src="/pages/resources/images/logo-sm.jpg">
+                <img alt="European logo"  src="/pages/resources/images/logo-btc.png">
                 <%--<br><span>europa.eu</span>--%>
             </a>
         </div>
         <div class="slogan">
-            <p class="s1">European Union</p>
-            <p class="s2">Area C - Monitoring System</p>
+            <%--<p class="s1">European Union</p>--%>
+            <p class="s2">Programmes Monitoring Application</p>
         </div>
     </div>
     <div class="col-md-4 text-right">
@@ -64,73 +64,75 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/home.do"><span class="glyphicon glyphicon-home"></span> Home <span class="sr-only">(current)</span></a></li>
 
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-desktop"></span>   Community Information  <span class="caret"></span></a>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-desktop"></span>   Programme Management  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/pmsCommunityList.do">Community</a></li>
-                        <li class="dropdown-submenu ">
-                            <a>Socio-economic Data</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/pmsEconomicSocioList.do">Basic socio</a></li>
-                                <li><a href="/pmsAgricultureSocioList.do">Agriculture</a></li>
-                                <li><a href="/pmsWaterSocioList.do">Water</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu ">
-                            <a>Master Plan Data </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/pmsMasterPlanList.do">Master Plan Info</a></li>
-                                <li><a href="/pmsInterventionList.do">Interventions</a></li>
-                                <li><a href="/pmsActivityList.do">Activities</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="/pmaProgrammeList.do">Programme Information</a></li>
+                        <li><a href="#">Overall Objective</a></li>
+                        <li><a href="#">Output/Results</a></li>
+                        <%--<li class="dropdown-submenu ">--%>
+                            <%--<a>Socio-economic Data</a>--%>
+                            <%--<ul class="dropdown-menu">--%>
+                                <%--<li><a href="/pmsEconomicSocioList.do">Basic socio</a></li>--%>
+                                <%--<li><a href="/pmsAgricultureSocioList.do">Agriculture</a></li>--%>
+                                <%--<li><a href="/pmsWaterSocioList.do">Water</a></li>--%>
+                            <%--</ul>--%>
+                        <%--</li>--%>
+                        <%--<li class="dropdown-submenu ">--%>
+                            <%--<a>Master Plan Data </a>--%>
+                            <%--<ul class="dropdown-menu">--%>
+                                <%--<li><a href="/pmsMasterPlanList.do">Master Plan Info</a></li>--%>
+                                <%--<li><a href="/pmsInterventionList.do">Interventions</a></li>--%>
+                                <%--<li><a href="/pmsActivityList.do">Activities</a></li>--%>
+                            <%--</ul>--%>
+                        <%--</li>--%>
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-star  "></span>   Project Information <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-star  "></span>   Program Implementation <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/pmsProjectList.do">Projects</a></li>
-                        <li><a href="/pmsBenificiaryList.do">Benificaries</a></li>
+                        <li><a href="#">programme Activities</a></li>
+                        <%--<li><a href="/pmsBenificiaryList.do">Benificaries</a></li>--%>
                         <%--<li><a href="/pmsIncidentByProjectList.do">Incidents </a></li>--%>
-                        <li><a href="/pmsPermitList.do">Permit</a></li>
+                        <%--<li><a href="/pmsPermitList.do">Permit</a></li>--%>
                     </ul>
                 </li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   Threat  <span class="caret"></span></a>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-puzzle-piece"></span>   M&E  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/pmsWarningList.do">Warning</a></li>
-                        <li><a href="/pmsIncidentList.do">Incident</a></li>
+                        <li><a href="#">Programme Indicators</a></li>
+                        <li><a href="#">Programme Reports</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-qrcode "></span>  Indicators  <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/pmsObjectiveList.do">Objectives</a></li>
-                        <li><a href="/pmsResultList.do">Results</a></li>
-                        <li><a href="/pmsIndicatorList.do">Indicators</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="/dashboard.do"><span class="glyphicon glyphicon-dashboard"></span> Dashboard <span class="sr-only">(current)</span></a></li>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-qrcode "></span>  Indicators  <span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="/pmsObjectiveList.do">Objectives</a></li>--%>
+                        <%--<li><a href="/pmsResultList.do">Results</a></li>--%>
+                        <%--<li><a href="/pmsIndicatorList.do">Indicators</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown"><a href="/dashboard.do"><span class="glyphicon glyphicon-dashboard"></span> Dashboard <span class="sr-only">(current)</span></a></li>--%>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor"></span>   Reports   <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/viewDynamicReport.do">Ad-Hoc Report</a></li>
-                        <li class="dropdown-submenu ">
-                            <a>Pre-defined Reports </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/pages/resources/docs/REPORT1.pdf" target="_blank">Bi-Annual Report</a></li>
-                                <%--<li><a href="/pages/resources/docs/REPORT2.pdf" target="_blank">Report2</a></li>--%>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span> Maps <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <%--<li><a href="/viewMaps.do"> Maps </a></li>--%>
-                        <li><a href="/viewMapsLayer.do"> Map</a></li>
-                    </ul>
-                </li>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor"></span>   Reports   <span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li><a href="#">Ad-Hoc Report</a></li>--%>
+                        <%--&lt;%&ndash;<li class="dropdown-submenu ">&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<a>Pre-defined Reports </a>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<ul class="dropdown-menu">&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<li><a href="/pages/resources/docs/REPORT1.pdf" target="_blank">Bi-Annual Report</a></li>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;&lt;%&ndash;<li><a href="/pages/resources/docs/REPORT2.pdf" target="_blank">Report2</a></li>&ndash;%&gt;&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;</li>&ndash;%&gt;--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown">--%>
+                    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-anchor  "></span> Maps <span class="caret"></span></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--&lt;%&ndash;<li><a href="/viewMaps.do"> Maps </a></li>&ndash;%&gt;--%>
+                        <%--<li><a href="/viewMapsLayer.do"> Map</a></li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
 
             </ul>
             <!--	 <ul class="nav navbar-nav navbar-right">
