@@ -2,6 +2,7 @@ package btc.pma.programme.database;
 
 import java.io.Serializable;
 
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -33,6 +34,8 @@ public class PmaProgrammeInfo implements Serializable {
     /** nullable persistent field */
     private java.util.Date estmStartDate;
 
+    private String estmStartDateStr;
+
     /** nullable persistent field */
     private int contPartnerCountry;
 
@@ -47,6 +50,8 @@ public class PmaProgrammeInfo implements Serializable {
 
     /** nullable persistent field */
     private java.util.Date agrmSignDate;
+
+    private String agrmSignDateStr;
 
     /** nullable persistent field */
     private String username;
@@ -198,6 +203,22 @@ public class PmaProgrammeInfo implements Serializable {
         this.timeStamp = timeStamp;
     }
 
+    public String getEstmStartDateStr() {
+        return estmStartDateStr!=null? DateTool.decorateDate(estmStartDateStr, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setEstmStartDateStr(String estmStartDateStr) {
+        this.estmStartDateStr = estmStartDateStr;
+    }
+
+    public String getAgrmSignDateStr() {
+        return agrmSignDateStr!=null? DateTool.decorateDate(agrmSignDateStr, DateTool.DD_MM_YYYY):"";
+
+    }
+
+    public void setAgrmSignDateStr(String agrmSignDateStr) {
+        this.agrmSignDateStr = agrmSignDateStr;
+    }
 
     public String toString() {
         return new ToStringBuilder(this)

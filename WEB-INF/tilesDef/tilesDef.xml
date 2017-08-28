@@ -251,5 +251,12 @@
     <definition name="pma.addProgramme.tile" extends="innerLayout">
         <put name="body" value="/pages/programme/addProgramme.jsp"/>
     </definition>
+
+    <definition name="pms.viewProgramme.tile" extends="innerLayout">
+        <put name="body" value="/pages/programme/viewProgramme.jsp"/>
+    </definition>
+    <definition name="pms.editProgramme.tile" extends="innerLayout">
+        <put name="body" value="/pages/programme/editProgramme.jsp"/>
+    </definition>
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>

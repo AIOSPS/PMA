@@ -62,18 +62,18 @@
                 </div>
             </div>
     </html:form>
-            <table id="listbenificiariesTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="listprogrammesTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="text-center">Description</th>
-                    <th class="text-center">Total</th>
+                    <th class="text-center">Programme No.</th>
+                    <th class="text-center">Title</th>
                     <%--<th class="text-center"></th>--%>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                    <th class="text-center">Description</th>
-                    <th class="text-center">total</th>
+                    <th class="text-center">Programme No.</th>
+                    <th class="text-center">Title</th>
                     <%--<th class="text-center"></th>--%>
 
                 </tr>
@@ -82,16 +82,16 @@
                 <logic:present name="pmaProgrammeList">
                     <logic:iterate id="pmaProgrammeList" name="pmaProgrammeList" type="btc.pma.programme.database.PmaProgrammeInfo">
                         <tr>
-                            <td width="50%">
+                            <td width="45%">
                                 <bean:write name="pmaProgrammeList" property="intrNo"/>
                             </td>
                             <td width="50%" class="text-center"><bean:write name="pmaProgrammeList" property="intrTitle"/></td>
                             <td width="5%" class="text-center">
-                                <a href="javaScript:parent.location = '/viewPmsBenificiary.do?actId=<bean:write name="pmsBenificiaryList" property="compId.proId"/>'">
+                                <a href="javaScript:parent.location = '/viewPmaProgramme.do?intrNo=<bean:write name="pmaProgrammeList" property="intrNo"/>'">
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                 </a>
                                 &nbsp;
-                                <a href="javaScript:parent.location = '/viewEditBenificiary.do?actId=<bean:write name="pmsBenificiaryList" property="compId.proId"/>'">
+                                <a href="javaScript:parent.location = '/viewEditProgramme.do?intrNo=<bean:write name="pmaProgrammeList" property="intrNo"/>'">
                                     <span class="glyphicon glyphicon-edit"></span>
                                 </a>
                             </td>
@@ -111,14 +111,14 @@
 //                    }  );
 //                });
 $(document).ready(function() {
-    var table = $('#listbenificiariesTbl').DataTable( {
+    var table = $('#listprogrammesTbl').DataTable( {
         lengthChange: false,
 //        dom: 'Bftrip',
         buttons: ['excel', 'pdf']
     } );
 
     table.buttons().container()
-            .appendTo( '#listbenificiariesTbl_wrapper .col-sm-6:eq(0)' );
+            .appendTo( '#listprogrammesTbl_wrapper .col-sm-6:eq(0)' );
 } );
             </script>
         </div>

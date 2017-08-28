@@ -19,14 +19,12 @@ public class PmaProgrammeInfoForm extends ActionForm {
     private String btcNavisionCode;
     private String partInstitution;
     private int agrmDuration;
-    private java.util.Date estmStartDate;
+    private String estmStartDate;
     private int contPartnerCountry;
     private int belgContribution;
     private String secCode;
     private String oallObjective;
-    private java.util.Date agrmSignDate;
-    private String username;
-    private java.util.Date timeStamp;
+    private String agrmSignDate;
 
     public PmaProgrammeInfoForm() {
     }
@@ -87,11 +85,11 @@ public class PmaProgrammeInfoForm extends ActionForm {
         this.agrmDuration = agrmDuration;
     }
 
-    public Date getEstmStartDate() {
+    public String getEstmStartDate() {
         return estmStartDate;
     }
 
-    public void setEstmStartDate(Date estmStartDate) {
+    public void setEstmStartDate(String estmStartDate) {
         this.estmStartDate = estmStartDate;
     }
 
@@ -127,29 +125,14 @@ public class PmaProgrammeInfoForm extends ActionForm {
         this.oallObjective = oallObjective;
     }
 
-    public Date getAgrmSignDate() {
+    public String getAgrmSignDate() {
         return agrmSignDate;
     }
 
-    public void setAgrmSignDate(Date agrmSignDate) {
+    public void setAgrmSignDate(String agrmSignDate) {
         this.agrmSignDate = agrmSignDate;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Date getTimeStamp() {
-        return timeStamp;
-    }
-
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
-    }
 
     @Override
     public void reset(ActionMapping mapping, HttpServletRequest request) {
@@ -166,8 +149,6 @@ public class PmaProgrammeInfoForm extends ActionForm {
           secCode = null;
           oallObjective = null;
           agrmSignDate = null;
-          username  = null;
-          timeStamp = null;
     }
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();

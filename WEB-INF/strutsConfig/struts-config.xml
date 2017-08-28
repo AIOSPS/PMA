@@ -918,14 +918,14 @@
 
         <!-- ******************** Start PMA Actions ***************** -->
         <action
-                type="btc.pma.programme.actions.ViewProgrammeAction"
+                type="btc.pma.programme.actions.PmaProgrammeListAction"
                 scope="request"
                 path="/pmaProgrammeList">
             <forward name="success" path="pma.programmeList.tile" contextRelative="true"/>
         </action>
 
         <action
-                type="btc.pma.programme.actions.ViewProgrammeAction"
+                type="btc.pma.programme.actions.PmaProgrammeListAction"
                 scope="request"
                 path="/searchProgramme"
                 name="pmaProgrammeSearchForm"
@@ -935,12 +935,39 @@
 
         <action
                 name="pmaProgrammeForm"
-                type="btc.pma.programme.actions.ViewAddPmsBenificiaryAction"
+                type="btc.pma.programme.actions.ViewAddPmaProgrammeAction"
                 validate="false"
                 path="/viewAddProgramme"
         >
             <forward name="success" path="pma.addProgramme.tile"/>
         </action>
+
+        <action
+                name="pmaProgrammeForm"
+                type="btc.pma.programme.actions.AddPmaProgrammeAction"
+                validate="false"
+                path="/addProgramme"
+        >
+            <forward name="success" path="/pmaProgrammeList.do"/>
+        </action>
+
+        <action
+                name="pmaProgrammeForm"
+                type="btc.pma.programme.actions.ViewProgrammeAction"
+                validate="false"
+                path="/viewPmaProgramme"
+        >
+            <forward name="success" path="pms.viewProgramme.tile"/>
+        </action>
+        <action
+                name="pmaProgrammeForm"
+                type="btc.pma.programme.actions.ViewProgrammeAction"
+                validate="false"
+                path="/viewEditProgramme"
+        >
+            <forward name="success" path="pms.editProgramme.tile"/>
+        </action>
+
         <!-- ********************** End PMA Actions ************ -->
     </action-mappings>
 
