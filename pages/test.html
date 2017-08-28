@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="resources/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="resources/style.css">
+    <script src="resources/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="resources/jquery-ui/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            var icons = {
+                header: "ui-icon-circle-arrow-e",
+                activeHeader: "ui-icon-circle-arrow-s"
+            };
+            $( "#accordion" ).accordion({
+                active: false,
+                collapsible: true,
+                icons: icons
+            });
+            $( "#toggle" ).button().on( "click", function() {
+                if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+                    $( "#accordion" ).accordion( "option", "icons", null );
+                } else {
+                    $( "#accordion" ).accordion( "option", "icons", icons );
+                }
+            });
+        } );
+    </script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 31.397, lng: 35.644},
+            zoom: 8
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAws9jD09p71p-DgCvQZ92rT1Y4mWxw19w&callback=initMap"
+        async defer></script>
+
+<div id="accordion">
+    <h3  >Section 1</h3>
+    <div >
+        <p>
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+        </p>
+    </div>
+    <h3>Section 2</h3>
+    <div>
+        <p>
+            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+            suscipit faucibus urna.
+        </p>
+    </div>
+    <h3>Section 3</h3>
+    <div>
+        <p>
+            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+        </p>
+        <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
+        </ul>
+    </div>
+    <h3>Section 4</h3>
+    <div>
+        <p>
+            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+            mauris vel est.
+        </p>
+        <p>
+            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.
+        </p>
+    </div>
+</div>
+
+<div id="footerarea">
+    <div class="footer1">
+        <a class="button" href="#print" >Print</a>
+        <a class="button" href="#export" ">Export</a>
+    </div>
+    <div class="footer2">
+        <span id="id_n_prog">638 programmes</span><br>
+        <span class="byyourselection">by your selection</span><br>
+    </div>
+    <div class="footer3">
+        <a href="#show-programmes" class="button"  >Show programmes <img width="17" height="10" src="resources/images/bottom-arrow-white.svg" alt=""></a>
+    </div>
+</div>
+
+<div id="pcontent" style=" ">
+    <div class="divtitle">
+        <div class="divtitle1">
+            <a class="button" href="#print"  >Print</a>
+            <a class="button" href="#export" >Export</a>
+        </div>
+        <div class="divtitle2">
+            <h3><span id="idprogcounttext">56  programmes</span></h3>
+            <div class="subtext1">by your selection</div>
+            <div id="id_n_active" class="subtext2">23 active, 33 completed</div>
+            <div class="subtext3"><span id="id_active_funds">Active programmes: USD 1,523,262,000; </span> <span id="id_total_funds" class="greytext">completed programmes: USD 119,850,000; all programmes: USD 1,643,112,000</span></div>
+        </div>
+        <div class="divtitle3">
+            <a href="#closepopup" class="button buttonclose">Show map <img width="17" height="12" style="vertical-align: center" src="resources/images/top-arrow-white.svg" alt=""></a>
+        </div>
+        <div style="clear: left"></div>
+    </div>
+
+    <div id="ulprogrammes">
+
+        your content goes here !!!   your content goes here !!!   your content goes here !!!   your content goes here !!!
+
+
+    </div>
+</div>
+
+<script>
+    $( document ).ready(function() {
+        console.log( "ready!" );
+
+        $('.footer3 a').click(function(){
+            show_pr() ;
+        });
+
+        function show_pr() {
+            $('#pcontent').css('display', 'block');
+        }
+
+        $('.divtitle3  a').click(function(){
+            hide_pr() ;
+        });
+
+
+        function hide_pr() {
+            $('#pcontent').css('display', 'none');
+        }
+    });
+
+</script>
+
+</body>
+</html>
