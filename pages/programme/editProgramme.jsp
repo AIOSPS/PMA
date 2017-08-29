@@ -48,7 +48,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Add Programme</h1>
+                <h1>Edit Programme</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -63,7 +63,7 @@
                     <div class="col-md-6">
                         <label for="intrNo" class="col-sm-3 col-form-label">Programme Number:</label>
                         <div class="col-sm-9">
-                            <html:text property="intrNo" styleClass="form-control" styleId="intrNo"/>
+                            <html:text property="intrNo" styleClass="form-control" styleId="intrNo" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">

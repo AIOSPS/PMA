@@ -516,4 +516,13 @@
                 order by a.intrNo
                   ]]>
     </query>
+
+    <query
+            name="getPmaProgrammeById">
+        <![CDATA[
+                from btc.pma.programme.database.PmaProgrammeInfo a
+                where a.intrNo = ?
+                order by a.intrTitle
+                  ]]>
+    </query>
 </hibernate-mapping>

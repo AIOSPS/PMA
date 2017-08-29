@@ -48,7 +48,7 @@
     <div class="container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Add Programme</h1>
+                <h1>View Programme</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -63,13 +63,13 @@
                     <div class="col-md-6">
                         <label for="intrNo" class="col-sm-3 col-form-label">Programme Number:</label>
                         <div class="col-sm-9">
-                            <html:text property="intrNo" styleClass="form-control" styleId="intrNo"/>
+                            <html:text property="intrNo" styleClass="form-control" styleId="intrNo" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="intrTitle" class="col-sm-3 col-form-label">Programme Title:</label>
                         <div class="col-sm-9">
-                            <html:text property="intrTitle" styleClass="form-control" styleId="intrTitle"/>
+                            <html:text property="intrTitle" styleClass="form-control" styleId="intrTitle" disabled="true"/>
                         </div>
                     </div>
                 </div>
@@ -79,13 +79,13 @@
                     <div class="col-md-6">
                         <label for="intrDuration" class="col-sm-3 col-form-label">Programme Duration:</label>
                         <div class="col-sm-9">
-                            <html:text property="intrDuration" styleClass="form-control" styleId="intrDuration"/>
+                            <html:text property="intrDuration" styleClass="form-control" styleId="intrDuration" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="intrDescription" class="col-sm-3 col-form-label">Programme Description:</label>
                         <div class="col-sm-9">
-                            <html:text property="intrDescription" styleClass="form-control" styleId="intrDescription"/>
+                            <html:text property="intrDescription" styleClass="form-control" styleId="intrDescription" disabled="true"/>
                         </div>
                     </div>
                 </div>
@@ -95,14 +95,14 @@
                         <label for="btcNavisionCode" class="col-sm-3 col-form-label">BTC Navision Code:</label>
 
                         <div class='col-sm-9'>
-                            <html:text property="btcNavisionCode" styleClass="form-control" styleId="btcNavisionCode"/>
+                            <html:text property="btcNavisionCode" styleClass="form-control" styleId="btcNavisionCode" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="partInstitution" class="col-sm-3 col-form-label">Partner Institution:</label>
 
                         <div class='col-sm-9'>
-                            <html:text property="partInstitution" styleClass="form-control" styleId="partInstitution"/>
+                            <html:text property="partInstitution" styleClass="form-control" styleId="partInstitution" disabled="true"/>
                         </div>
                     </div>
 
@@ -111,13 +111,13 @@
                     <div class="col-md-6">
                         <label for="agrmDuration" class="col-sm-3 col-form-label">Agreement Duration:</label>
                         <div class="col-sm-9">
-                            <html:text property="agrmDuration" styleClass="form-control" styleId="agrmDuration"/>
+                            <html:text property="agrmDuration" styleClass="form-control" styleId="agrmDuration" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="estmStartDate" class="col-sm-3 col-form-label">Estimation start Date:</label>
                         <div class="input-group date col-sm-9" id='pestmStartDate'>
-                            <html:text property="estmStartDate" styleClass="form-control" styleId="estmStartDate"/>
+                            <html:text property="estmStartDate" styleClass="form-control" styleId="estmStartDate" disabled="true"/>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -129,13 +129,13 @@
                     <div class="col-md-6">
                         <label for="contPartnerCountry" class="col-sm-3 col-form-label">Partner Contribution:</label>
                         <div class="col-sm-9">
-                            <html:text property="contPartnerCountry" styleClass="form-control" styleId="contPartnerCountry"/>
+                            <html:text property="contPartnerCountry" styleClass="form-control" styleId="contPartnerCountry" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="belgContribution" class="col-sm-3 col-form-label">Belgian Contribution:</label>
                         <div class="col-sm-9">
-                            <html:text property="belgContribution" styleClass="form-control" styleId="belgContribution"/>
+                            <html:text property="belgContribution" styleClass="form-control" styleId="belgContribution" disabled="true"/>
                         </div>
                     </div>
                 </div>
@@ -144,13 +144,13 @@
                     <div class="col-md-6">
                         <label for="secCode" class="col-sm-3 col-form-label">Sector:</label>
                         <div class="col-sm-9">
-                            <html:text property="secCode" styleClass="form-control" styleId="secCode"/>
+                            <html:text property="secCode" styleClass="form-control" styleId="secCode" disabled="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="oallObjective" class="col-sm-3 col-form-label">Overall Objective:</label>
                         <div class="col-sm-9">
-                            <html:text property="oallObjective" styleClass="form-control" styleId="oallObjective"/>
+                            <html:text property="oallObjective" styleClass="form-control" styleId="oallObjective" disabled="true"/>
                         </div>
                     </div>
 
@@ -161,7 +161,7 @@
                         <label for="agrmSignDate" class="col-sm-3 col-form-label">Agreement Sign Date:</label>
 
                         <div class="input-group date col-sm-9" id='pagrmSignDate'>
-                            <html:text property="agrmSignDate" styleClass="form-control" styleId="agrmSignDate"/>
+                            <html:text property="agrmSignDate" styleClass="form-control" styleId="agrmSignDate" disabled="true"/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -190,7 +190,12 @@
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <html:submit value="Submit" styleClass="btn btn-primary"/>
+                        <button type="button" onclick="javaScript:parent.location = '/viewEditProgramme.do?intrNo=<%=request.getParameter("intrNo")%>'"
+                                class="btn btn-primary">Edit
+                        </button>
+                        <button type="button" onclick="javaScript:window.history.back();"
+                                class="btn btn-primary">Back
+                        </button>
                     </div>
                 </div>
             </html:form>

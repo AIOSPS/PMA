@@ -204,7 +204,7 @@ public class PmaProgrammeInfo implements Serializable {
     }
 
     public String getEstmStartDateStr() {
-        return estmStartDateStr!=null? DateTool.decorateDate(estmStartDateStr, DateTool.DD_MM_YYYY):"";
+        return estmStartDate!=null? DateTool.decorateDate(estmStartDate, DateTool.DD_MM_YYYY):"";
     }
 
     public void setEstmStartDateStr(String estmStartDateStr) {
@@ -212,7 +212,7 @@ public class PmaProgrammeInfo implements Serializable {
     }
 
     public String getAgrmSignDateStr() {
-        return agrmSignDateStr!=null? DateTool.decorateDate(agrmSignDateStr, DateTool.DD_MM_YYYY):"";
+        return agrmSignDate!=null? DateTool.decorateDate(agrmSignDate, DateTool.DD_MM_YYYY):"";
 
     }
 
