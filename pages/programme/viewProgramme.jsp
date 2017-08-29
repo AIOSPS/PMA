@@ -56,7 +56,7 @@
         </div>
         <div class="content-wrapper formWrapper ">
 
-            <html:form action="addProgramme">
+            <html:form action="viewEditProgramme">
                 <h2 class="titleSep"><span>Programme Information</span></h2>
 
                 <div class="form-group row">
