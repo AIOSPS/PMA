@@ -144,7 +144,18 @@
                     <div class="col-md-6">
                         <label for="secCode" class="col-sm-3 col-form-label">Sector:</label>
                         <div class="col-sm-9">
-                            <html:text property="secCode" styleClass="form-control" styleId="secCode" disabled="true"/>
+                            <%--<html:text property="secCode" styleClass="form-control" styleId="secCode" disabled="true"/>--%>
+                                <html:select property="secCode" styleClass="selectpicker form-control" disabled="true">
+                                    <logic:present name="sectorsList">
+                                        <html:options collection="sectorsList" property="secId"
+                                                      labelProperty="secName"/>
+                                    </logic:present>
+                                </html:select>
+                                <script>
+                                    $(function () {
+                                        $('[name="secCode"]').eq(0).attr("data-live-search", "true");
+                                    });
+                                </script>
                         </div>
                     </div>
                     <div class="col-md-6">
