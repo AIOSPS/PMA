@@ -67,7 +67,7 @@
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-desktop"></span>   Programme Management  <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/pmaProgrammeList.do">Programme Information</a></li>
-                        <li><a href="#">Overall Objective</a></li>
+                        <li><a href="/pmaSpecObjectiveList.do">Specific Objective</a></li>
                         <li><a href="#">Output/Results</a></li>
                         <%--<li class="dropdown-submenu ">--%>
                             <%--<a>Socio-economic Data</a>--%>

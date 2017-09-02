@@ -908,7 +908,6 @@
                 name="sobjDescription"
                 type="java.lang.String"
                 column="sobj_description"
-                length="300"
         />
         <property
                 name="sobjDefineDate"
@@ -924,13 +923,16 @@
                 name="sobjRelatedDocuments"
                 type="java.lang.String"
                 column="sobj_related_documents"
-                length="300"
+        />
+        <property
+                name="intrNo"
+                type="java.lang.String"
+                column="intr_no"
         />
         <property
                 name="username"
                 type="java.lang.String"
                 column="username"
-                length="15"
         />
         <property
                 name="timeStamp"
@@ -959,12 +961,12 @@
         />
         <property
                 name="rsltDefineDate"
-                type="java.sql.Timestamp"
+                type="java.util.Date"
                 column="rslt_define_date"
         />
         <property
                 name="rsltCloseDate"
-                type="java.sql.Timestamp"
+                type="java.util.Date"
                 column="rslt_close_date"
         />
         <property
@@ -987,7 +989,7 @@
         />
         <property
                 name="timeStamp"
-                type="java.sql.Timestamp"
+                type="java.util.Date"
                 column="time_stamp"
         />
 

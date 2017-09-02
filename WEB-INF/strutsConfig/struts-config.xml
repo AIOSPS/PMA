@@ -3,7 +3,6 @@
 <struts-config>
 
     <!-- ========== Form Bean Definitions ================================== -->
-
     <form-beans>
         <form-bean name="loginForm" type="eu.pms.login.forms.LoginForm"/>
         <form-bean name="pmsProjectForm" type="eu.pms.project.forms.PmsProjectForm"/>
@@ -42,7 +41,8 @@
         <form-bean name="pmsWarningSearchForm" type="eu.pms.warnings.forms.PmsWarningSearchForm"/>
         <form-bean name="pmaProgrammeSearchForm" type="btc.pma.programme.forms.PmaProgrammeSearchForm"/>
         <form-bean name="pmaProgrammeForm" type="btc.pma.programme.forms.PmaProgrammeInfoForm"/>
-
+        <form-bean name="pmaSpecObjectiveSearchForm" type="btc.pma.specObjective.forms.PmaSpecObjectiveSearchForm"/>
+        <form-bean name="pmaSpecObjectiveForm" type="btc.pma.specObjective.forms.PmaSpecObjectiveForm"/>
     </form-beans>
 
     <global-exceptions>
@@ -966,6 +966,31 @@
                 path="/viewEditProgramme"
         >
             <forward name="success" path="pms.editProgramme.tile"/>
+        </action>
+
+        <action
+                type="btc.pma.specObjective.actions.PmaSpecObjectiveListAction"
+                scope="request"
+                path="/pmaSpecObjectiveList">
+            <forward name="success" path="pma.specObjectiveList.tile" contextRelative="true"/>
+        </action>
+
+        <action
+                type="btc.pma.specObjective.actions.PmaSpecObjectiveListAction"
+                scope="request"
+                path="/searchSpecObjective"
+                name="pmaSpecObjectiveSearchForm"
+        >
+            <forward name="success" path="pma.specObjectiveList.tile" contextRelative="true"/>
+        </action>
+
+        <action
+                name="pmaSpecObjectiveForm"
+                type="btc.pma.specObjective.actions.ViewAddPmaSpecObjectiveAction"
+                validate="false"
+                path="/viewAddSpecObjective"
+        >
+            <forward name="success" path="pma.addSpecObjective.tile"/>
         </action>
 
         <!-- ********************** End PMA Actions ************ -->

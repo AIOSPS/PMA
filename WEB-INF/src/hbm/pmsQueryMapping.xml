@@ -525,4 +525,12 @@
                 order by a.intrTitle
                   ]]>
     </query>
+
+    <query
+            name="getPmaSpecObjectiveList">
+        <![CDATA[
+                from btc.pma.programme.database.PmaSpecificObjective a
+                order by a.sobjNo
+                  ]]>
+    </query>
 </hibernate-mapping>

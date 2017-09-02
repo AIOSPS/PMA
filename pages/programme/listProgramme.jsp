@@ -62,7 +62,7 @@
                 </div>
             </div>
     </html:form>
-            <table id="listprogrammesTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="listResultsTbl" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th class="text-center">Programme No.</th>
@@ -101,28 +101,27 @@
                 </tbody>
             </table>
             <script>
-//                $(document).ready(function () {
-//                    $('#listbenificiariesTbl').DataTable(  {
-//                        dom: 'lBfrtip',
-//                        buttons: [
-//                            'excelHtml5',
-//                            'pdfHtml5'
-//                        ]
-//                    }  );
-//                });
-$(document).ready(function() {
-    var table = $('#listprogrammesTbl').DataTable( {
-        lengthChange: false,
+                //                $(document).ready(function () {
+                //                    $('#listResultsTbl').DataTable(  {
+                //                        dom: 'lBfrtip',
+                //                        buttons: [
+                //                            'excelHtml5',
+                //                            'pdfHtml5'
+                //                        ]
+                //                    }  );
+                //                });
+                $(document).ready(function() {
+                    var table = $('#listResultsTbl').DataTable( {
+                        lengthChange: false,
 //        dom: 'Bftrip',
-        buttons: ['excel', 'pdf']
-    } );
+                        buttons: ['excel', 'pdf']
+                    } );
 
-    table.buttons().container()
-            .appendTo( '#listprogrammesTbl_wrapper .col-sm-6:eq(0)' );
-} );
+                    table.buttons().container()
+                        .appendTo( '#listResultsTbl_wrapper .col-sm-6:eq(0)' );
+                } );
             </script>
         </div>
-
     </div>
     </div>
 </article>

@@ -25,18 +25,22 @@ public class PmaSpecificObjective implements Serializable {
     private String sobjRelatedDocuments;
 
     /** nullable persistent field */
+    private String intrNo;
+
+    /** nullable persistent field */
     private String username;
 
     /** nullable persistent field */
     private java.util.Date timeStamp;
 
     /** full constructor */
-    public PmaSpecificObjective(String sobjNo, String sobjDescription, java.util.Date sobjDefineDate, java.util.Date sobjAdaptationDate, String sobjRelatedDocuments, String username, java.util.Date timeStamp) {
+    public PmaSpecificObjective(String sobjNo, String sobjDescription, java.util.Date sobjDefineDate, java.util.Date sobjAdaptationDate, String sobjRelatedDocuments, String intrNo, String username, java.util.Date timeStamp) {
         this.sobjNo = sobjNo;
         this.sobjDescription = sobjDescription;
         this.sobjDefineDate = sobjDefineDate;
         this.sobjAdaptationDate = sobjAdaptationDate;
         this.sobjRelatedDocuments = sobjRelatedDocuments;
+        this.intrNo = intrNo;
         this.username = username;
         this.timeStamp = timeStamp;
     }
@@ -83,6 +87,14 @@ public class PmaSpecificObjective implements Serializable {
 
     public void setSobjRelatedDocuments(String sobjRelatedDocuments) {
         this.sobjRelatedDocuments = sobjRelatedDocuments;
+    }
+
+    public String getIntrNo() {
+        return intrNo;
+    }
+
+    public void setIntrNo(String intrNo) {
+        this.intrNo = intrNo;
     }
 
     public String getUsername() {
