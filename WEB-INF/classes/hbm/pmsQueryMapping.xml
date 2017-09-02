@@ -533,4 +533,14 @@
                 order by a.sobjNo
                   ]]>
     </query>
+
+    <query
+            name="getPmaSpecObjectiveById">
+        <![CDATA[
+                from btc.pma.programme.database.PmaSpecificObjective a
+                where a.sobjNo = ?
+                order by a.sobjNo
+                  ]]>
+    </query>
+
 </hibernate-mapping>

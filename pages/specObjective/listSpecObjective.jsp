@@ -110,13 +110,13 @@
                             <td width="15%" class="text-center"><bean:write name="pmaSpecObjectiveList" property="sobjDefineDate" format="dd/MM/yyyy"/></td>
                             <td width="15%" class="text-center"><bean:write name="pmaSpecObjectiveList" property="sobjAdaptationDate" format="dd/MM/yyyy"/></td>
                             <td width="5%" class="text-center">
-                                <%--<a href="javaScript:parent.location = '/viewPmaSpecObjective.do?sobjNo=<bean:write name="pmaSpecObjectiveList" property="sobjNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-list-alt"></span>--%>
-                                <%--</a>--%>
-                                <%--&nbsp;--%>
-                                <%--<a href="javaScript:parent.location = '/viewEditSpecObjective.do?sobjNo=<bean:write name="pmaSpecObjectiveList" property="sobjNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-edit"></span>--%>
-                                <%--</a>--%>
+                                <a href="javaScript:parent.location = '/viewSpecObjective.do?sobjNo=<bean:write name="pmaSpecObjectiveList" property="sobjNo"/>'">
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                </a>
+                                &nbsp;
+                                <a href="javaScript:parent.location = '/viewEditSpecObjective.do?sobjNo=<bean:write name="pmaSpecObjectiveList" property="sobjNo"/>'">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
                             </td>
                         </tr>
                     </logic:iterate>

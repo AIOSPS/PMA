@@ -1,7 +1,9 @@
 package btc.pma.programme.database;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -20,6 +22,12 @@ public class PmaSpecificObjective implements Serializable {
 
     /** nullable persistent field */
     private java.util.Date sobjAdaptationDate;
+
+    /** nullable persistent field */
+    private String sobjDefineDateStr;
+
+    /** nullable persistent field */
+    private String sobjAdaptationDateStr;
 
     /** nullable persistent field */
     private String sobjRelatedDocuments;
@@ -111,6 +119,22 @@ public class PmaSpecificObjective implements Serializable {
 
     public void setTimeStamp(java.util.Date timeStamp) {
         this.timeStamp = timeStamp;
+    }
+
+    public String getSobjDefineDateStr() {
+        return sobjDefineDate!=null? DateTool.decorateDate(sobjDefineDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setSobjDefineDateStr(String sobjDefineDateStr) {
+        this.sobjDefineDateStr = sobjDefineDateStr;
+    }
+
+    public String getSobjAdaptationDateStr() {
+        return sobjAdaptationDate!=null? DateTool.decorateDate(sobjAdaptationDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setSobjAdaptationDateStr(String sobjAdaptationDateStr) {
+        this.sobjAdaptationDateStr = sobjAdaptationDateStr;
     }
 
     public String toString() {

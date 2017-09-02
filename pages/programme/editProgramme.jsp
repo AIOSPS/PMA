@@ -61,10 +61,11 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="intrNo" class="col-sm-3 col-form-label">Programme Number:</label>
-                        <div class="col-sm-9">
-                            <html:text property="intrNo" styleClass="form-control" styleId="intrNo" disabled="true"/>
-                        </div>
+                        <%--<label for="intrNo" class="col-sm-3 col-form-label">Programme Number:</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<html:text property="intrNo" styleClass="form-control" styleId="intrNo" disabled="true"/>--%>
+                        <%--</div>--%>
+                            <html:hidden property="intrNo"/>
                     </div>
                     <div class="col-md-6">
                         <label for="intrTitle" class="col-sm-3 col-form-label">Programme Title:</label>

@@ -258,7 +258,7 @@
     <definition name="pms.editProgramme.tile" extends="innerLayout">
         <put name="body" value="/pages/programme/editProgramme.jsp"/>
     </definition>
-
+    <!--************Spect Objective ****************** -->
     <definition name="pma.specObjectiveList.tile" extends="innerLayout">
         <put name="body" value="/pages/specObjective/listSpecObjective.jsp"/>
     </definition>
@@ -267,5 +267,11 @@
         <put name="body" value="/pages/specObjective/addSpecObjective.jsp"/>
     </definition>
 
+    <definition name="pma.viewSpecObjective.tile" extends="innerLayout">
+        <put name="body" value="/pages/specObjective/viewSpecObjective.jsp"/>
+    </definition>
+    <definition name="pma.editSpecObjective.tile" extends="innerLayout">
+        <put name="body" value="/pages/specObjective/editSpecObjective.jsp"/>
+    </definition>
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>
