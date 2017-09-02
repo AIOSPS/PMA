@@ -3,6 +3,7 @@ package btc.pma.specObjective.actions;
 import btc.pma.programme.forms.PmaProgrammeInfoForm;
 import btc.pma.programme.useCases.AddPmaProgrammeUseCase;
 import btc.pma.specObjective.forms.PmaSpecObjectiveForm;
+import btc.pma.specObjective.useCases.AddPmaSpecObjectiveUseCase;
 import eu.pms.common.tools.SessionTraker;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -43,7 +44,7 @@ public class AddPmaSpecObjectiveAction extends Action {
         inputs.add(sobjAdaptationDate);
         inputs.add(sobjRelatedDocuments);
 
-        Collection result = new AddPmaProgrammeUseCase().execute(inputs, request);
+        Collection result = new AddPmaSpecObjectiveUseCase().execute(inputs, request);
         if (result != null && result.size() > 0) {
 
         }

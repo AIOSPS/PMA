@@ -4,6 +4,7 @@ import btc.pma.programme.database.PmaProgrammeInfo;
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.login.database.SecUser;
 import org.hibernate.HibernateException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +32,7 @@ public class AddPmaProgrammeUseCase  implements ComponentUseCase {
             String secCode = (String) itr.next();
             String oallObjective = (String) itr.next();
             String agrmSignDate = (String) itr.next();
-            String username = "pma";
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             PmaProgrammeInfo pmaProgrammeInfo = new PmaProgrammeInfo();

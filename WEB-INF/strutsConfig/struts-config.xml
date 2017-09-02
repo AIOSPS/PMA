@@ -967,7 +967,7 @@
         >
             <forward name="success" path="pms.editProgramme.tile"/>
         </action>
-
+<!--************Spect Objective ****************** -->
         <action
                 type="btc.pma.specObjective.actions.PmaSpecObjectiveListAction"
                 scope="request"
@@ -991,6 +991,32 @@
                 path="/viewAddSpecObjective"
         >
             <forward name="success" path="pma.addSpecObjective.tile"/>
+        </action>
+
+        <action
+                name="pmaSpecObjectiveForm"
+                type="btc.pma.specObjective.actions.AddPmaSpecObjectiveAction"
+                validate="false"
+                path="/AddSpecObjective"
+        >
+            <forward name="success" path="/pmaSpecObjectiveList.do"/>
+        </action>
+
+        <action
+                name="pmaProgrammeForm"
+                type="btc.pma.programme.actions.ViewProgrammeAction"
+                validate="false"
+                path="/viewSpecObjective"
+        >
+            <forward name="success" path="pms.viewProgramme.tile"/>
+        </action>
+        <action
+                name="pmaProgrammeForm"
+                type="btc.pma.programme.actions.ViewProgrammeAction"
+                validate="false"
+                path="/viewEditSpecObjective"
+        >
+            <forward name="success" path="pms.editProgramme.tile"/>
         </action>
 
         <!-- ********************** End PMA Actions ************ -->

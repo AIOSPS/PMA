@@ -43,7 +43,7 @@
         </div>
         <div class="content-wrapper formWrapper ">
 
-            <html:form action="addSpecificObjective">
+            <html:form action="AddSpecObjective">
                 <h2 class="titleSep"><span>Specific Objective Information</span></h2>
 
                 <div class="form-group row">
@@ -107,7 +107,7 @@
                         <div class="col-sm-9">
                             <html:select property="intrNo"
                                          styleClass="selectpicker form-control">
-                                <logic:present name="objectiveList">
+                                <logic:present name="programmeList">
                                     <html:options collection="programmeList" property="intrNo" labelProperty="intrTitle"/>
                                 </logic:present>
                             </html:select>

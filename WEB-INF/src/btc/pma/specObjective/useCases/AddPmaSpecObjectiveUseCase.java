@@ -4,6 +4,7 @@ import btc.pma.programme.database.PmaSpecificObjective;
 import eu.pms.common.component.DataAccessObjectImpl;
 import eu.pms.common.tools.DateTool;
 import eu.pms.common.useCase.ComponentUseCase;
+import eu.pms.login.database.SecUser;
 import org.hibernate.HibernateException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,7 @@ public class AddPmaSpecObjectiveUseCase  implements ComponentUseCase {
             String sobjDefineDate = (String) itr.next();
             String sobjAdaptationDate = (String) itr.next();
             String sobjRelatedDocuments = (String) itr.next();
-            String username = "pma";
+            String username = ((SecUser)request.getSession().getAttribute("userInfo")).getUsrId();
             Date timeStamp = new Date();
 
             PmaSpecificObjective pmaSpecificObjective = new PmaSpecificObjective();

@@ -28,9 +28,9 @@
                 <h1>List of Objectives</h1>
             </div>
             <div class="col-md-4 pd15 create ">
-                <%--<button type="button" onclick="javaScript:parent.location = '/viewAddSpecObjective.do'"--%>
-                        <%--class="btn btn-primary fa fa-plus pull-right">Add Objective--%>
-                <%--</button>--%>
+                <button type="button" onclick="javaScript:parent.location = '/viewAddSpecObjective.do'"
+                        class="btn btn-primary fa fa-plus pull-right">Add Objective
+                </button>
             </div>
         </div>
         <div class="content-wrapper formWrapper  col-md-12 pd15 ">
