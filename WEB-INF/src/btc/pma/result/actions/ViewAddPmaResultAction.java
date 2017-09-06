@@ -1,4 +1,4 @@
-package btc.pma.specObjective.actions;
+package btc.pma.result.actions;
 
 import btc.pma.specObjective.useCases.PmaSpecObjectiveListUseCase;
 import eu.pms.common.tools.SessionTraker;
@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by PC on 8/30/2017.
+ * Created by PC on 9/6/2017.
  */
-public class ViewAddPmaSpecObjectiveAction extends Action
+public class ViewAddPmaResultAction extends Action
 {
 
     public ActionForward execute(ActionMapping mapping,
@@ -24,8 +24,8 @@ public class ViewAddPmaSpecObjectiveAction extends Action
         if (!(SessionTraker.isSessionExist(request)))
             return mapping.findForward("invalidAccess");
 
-        List specObjectiveList = (List) new PmaSpecObjectiveListUseCase().execute(null, request);
-        request.setAttribute("specObjectiveList", specObjectiveList);
+        List resultList = (List) new PmaSpecObjectiveListUseCase().execute(null, request);
+        request.setAttribute("resultList", resultList);
 
         return mapping.findForward("success");
     }

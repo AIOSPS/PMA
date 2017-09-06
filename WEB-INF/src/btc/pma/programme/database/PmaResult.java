@@ -1,7 +1,9 @@
 package btc.pma.programme.database;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -20,6 +22,12 @@ public class PmaResult implements Serializable {
 
     /** nullable persistent field */
     private java.util.Date rsltCloseDate;
+
+    /** nullable persistent field */
+    private String rsltDefineDateStr;
+
+    /** nullable persistent field */
+    private String rsltCloseDateStr;
 
     /** nullable persistent field */
     private String rsltStatus;
@@ -84,6 +92,22 @@ public class PmaResult implements Serializable {
 
     public void setRsltCloseDate(java.util.Date rsltCloseDate) {
         this.rsltCloseDate = rsltCloseDate;
+    }
+
+    public String getRsltDefineDateStr() {
+        return rsltDefineDate!=null? DateTool.decorateDate(rsltDefineDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setRsltDefineDateStr(String rsltDefineDateStr) {
+        this.rsltDefineDateStr = rsltDefineDateStr;
+    }
+
+    public String getRsltCloseDateStr() {
+        return rsltCloseDate!=null? DateTool.decorateDate(rsltCloseDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setRsltCloseDateStr(String rsltCloseDateStr) {
+        this.rsltCloseDateStr = rsltCloseDateStr;
     }
 
     public String getRsltStatus() {

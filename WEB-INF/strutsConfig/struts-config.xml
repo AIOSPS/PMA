@@ -44,6 +44,7 @@
         <form-bean name="pmaSpecObjectiveSearchForm" type="btc.pma.specObjective.forms.PmaSpecObjectiveSearchForm"/>
         <form-bean name="pmaSpecObjectiveForm" type="btc.pma.specObjective.forms.PmaSpecObjectiveForm"/>
         <form-bean name="pmaResultSearchForm"  type="btc.pma.result.forms.PmaResultSearchForm"/>
+        <form-bean name="pmaResultForm" type="btc.pma.result.forms.PmaResultForm"/>
     </form-beans>
 
     <global-exceptions>
@@ -1034,6 +1035,41 @@
                 name="pmaResultSearchForm"
         >
             <forward name="success" path="pma.outputList.tile" contextRelative="true"/>
+        </action>
+
+        <action
+                name="pmaResultForm"
+                type="btc.pma.result.actions.ViewAddPmaResultAction"
+                validate="false"
+                path="/viewAddPmaResult"
+        >
+            <forward name="success" path="pma.addPmaResult.tile"/>
+        </action>
+
+        <action
+                name="pmaResultForm"
+                type="btc.pma.result.actions.AddPmaResultAction"
+                validate="false"
+                path="/addPmaResult"
+        >
+            <forward name="success" path="/pmaResultList.do"/>
+        </action>
+
+        <action
+                name="pmaResultForm"
+                type="btc.pma.result.actions.ViewPmaResultAction"
+                validate="false"
+                path="/viewPmaResult"
+        >
+            <forward name="success" path="pma.viewPmaResult.tile"/>
+        </action>
+        <action
+                name="pmaResultForm"
+                type="btc.pma.result.actions.ViewPmaResultAction"
+                validate="false"
+                path="/viewEditPmaResult"
+        >
+            <forward name="success" path="pma.editPmaResult.tile"/>
         </action>
         <!-- ********************** End PMA Actions ************ -->
     </action-mappings>

@@ -28,9 +28,9 @@
                 <h1>List of Results</h1>
             </div>
             <div class="col-md-4 pd15 create ">
-                <%--<button type="button" onclick="javaScript:parent.location = '/viewAddPmaResult.do'"--%>
-                        <%--class="btn btn-primary fa fa-plus pull-right">Add Objective--%>
-                <%--</button>--%>
+                <button type="button" onclick="javaScript:parent.location = '/viewAddPmaResult.do'"
+                        class="btn btn-primary fa fa-plus pull-right">Add Result
+                </button>
             </div>
         </div>
         <div class="content-wrapper formWrapper  col-md-12 pd15 ">
@@ -104,13 +104,13 @@
                             <td width="15%" class="text-center"><bean:write name="pmaResultList" property="rsltDefineDate" format="dd/MM/yyyy"/></td>
                             <td width="15%" class="text-center"><bean:write name="pmaResultList" property="rsltCloseDate" format="dd/MM/yyyy"/></td>
                             <td width="5%" class="text-center">
-                                <%--<a href="javaScript:parent.location = '/viewSpecObjective.do?sobjNo=<bean:write name="pmaSpecObjectiveList" property="sobjNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-list-alt"></span>--%>
-                                <%--</a>--%>
-                                <%--&nbsp;--%>
-                                <%--<a href="javaScript:parent.location = '/viewEditSpecObjective.do?sobjNo=<bean:write name="pmaSpecObjectiveList" property="sobjNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-edit"></span>--%>
-                                <%--</a>--%>
+                                <a href="javaScript:parent.location = '/viewPmaResult.do?rsltNo=<bean:write name="pmaResultList" property="rsltNo"/>'">
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                </a>
+                                &nbsp;
+                                <a href="javaScript:parent.location = '/viewEditPmaResult.do?rsltNo=<bean:write name="pmaResultList" property="rsltNo"/>'">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
                             </td>
                         </tr>
                     </logic:iterate>

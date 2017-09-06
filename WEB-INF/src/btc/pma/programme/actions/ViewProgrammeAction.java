@@ -48,13 +48,13 @@ public class ViewProgrammeAction extends Action {
             pmaProgrammeInfo = (PmaProgrammeInfo) programmeList.get(0);
 
             PmaProgrammeInfoForm pmaProgrammeInfoForm = (PmaProgrammeInfoForm) form;
-            fillPmsActivityData(pmaProgrammeInfoForm, pmaProgrammeInfo);
+            fillPmaProgrammeData(pmaProgrammeInfoForm, pmaProgrammeInfo);
         }
 
         return mapping.findForward("success");
     }
 
-    private void fillPmsActivityData(PmaProgrammeInfoForm pmaProgrammeInfoForm, PmaProgrammeInfo pmaProgrammeInfo) {
+    private void fillPmaProgrammeData(PmaProgrammeInfoForm pmaProgrammeInfoForm, PmaProgrammeInfo pmaProgrammeInfo) {
         pmaProgrammeInfoForm.setIntrNo(pmaProgrammeInfo.getIntrNo());
         pmaProgrammeInfoForm.setIntrTitle(pmaProgrammeInfo.getIntrTitle());
         pmaProgrammeInfoForm.setIntrDuration(pmaProgrammeInfo.getIntrDuration());

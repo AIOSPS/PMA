@@ -551,4 +551,12 @@
                   ]]>
     </query>
 
+    <query
+            name="getPmaResultById">
+        <![CDATA[
+                from btc.pma.programme.database.PmaResult a
+                where a.rsltNo = ?
+                order by a.rsltNo
+                  ]]>
+    </query>
 </hibernate-mapping>
