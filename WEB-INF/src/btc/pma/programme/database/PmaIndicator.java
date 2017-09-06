@@ -48,15 +48,21 @@ public class PmaIndicator implements Serializable {
     /** nullable persistent field */
     private String indrType;
 
+    /** identifier field */
+    private String rsltNo;
+
+    /** identifier field */
+    private String intrNo;
+
     /** nullable persistent field */
-    private String username;
+    private String userName;
 
     /** nullable persistent field */
     private java.util.Date timeStamp;
 
 
     /** full constructor */
-    public PmaIndicator(String indrNo, String indrDefinition, String indrBaseline, java.util.Date indrDefineDate, java.util.Date indrClosedDate, String indrStatus, String indrTargetPlaned, String indrDataCollMethod, String indrTool, String indrFrequency, String indrResponsibilities, String indrTargetAcheived, String indrType, String username, java.util.Date timeStamp) {
+    public PmaIndicator(String indrNo, String indrDefinition, String indrBaseline, java.util.Date indrDefineDate, java.util.Date indrClosedDate, String indrStatus, String indrTargetPlaned, String indrDataCollMethod, String indrTool, String indrFrequency, String indrResponsibilities, String indrTargetAcheived, String indrType, String intrNo, String rsltNo, String userName, java.util.Date timeStamp) {
         this.indrNo = indrNo;
         this.indrDefinition = indrDefinition;
         this.indrBaseline = indrBaseline;
@@ -70,7 +76,9 @@ public class PmaIndicator implements Serializable {
         this.indrResponsibilities = indrResponsibilities;
         this.indrTargetAcheived = indrTargetAcheived;
         this.indrType = indrType;
-        this.username = username;
+        this.intrNo = intrNo;
+        this.rsltNo = rsltNo;
+        this.userName = userName;
         this.timeStamp = timeStamp;
     }
 
@@ -183,12 +191,28 @@ public class PmaIndicator implements Serializable {
         this.indrType = indrType;
     }
 
-    public String getUsername() {
-        return this.username;
+    public String getRsltNo() {
+        return rsltNo;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setRsltNo(String rsltNo) {
+        this.rsltNo = rsltNo;
+    }
+
+    public String getIntrNo() {
+        return intrNo;
+    }
+
+    public void setIntrNo(String intrNo) {
+        this.intrNo = intrNo;
+    }
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public java.util.Date getTimeStamp() {

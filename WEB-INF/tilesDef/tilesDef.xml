@@ -277,7 +277,6 @@
     <definition name="pma.outputList.tile" extends="innerLayout">
         <put name="body" value="/pages/output/listOutput.jsp"/>
     </definition>
-
     <definition name="pma.addPmaResult.tile" extends="innerLayout">
         <put name="body" value="/pages/output/addOutput.jsp"/>
     </definition>
@@ -287,6 +286,11 @@
     <definition name="pma.editPmaResult.tile" extends="innerLayout">
         <put name="body" value="/pages/output/editOutput.jsp"/>
     </definition>
+    <!--************ Indicator ****************** -->
+    <definition name="pma.pmaIndicatorList.tile" extends="innerLayout">
+        <put name="body" value="/pages/pmaIndicator/listIndicator.jsp"/>
+    </definition>
+
 
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>

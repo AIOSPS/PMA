@@ -559,4 +559,13 @@
                 order by a.rsltNo
                   ]]>
     </query>
+
+    <query
+            name="getPmaIndicatorList">
+        <![CDATA[
+                from btc.pma.programme.database.PmaIndicator a
+                order by a.rsltNo
+                  ]]>
+    </query>
+
 </hibernate-mapping>

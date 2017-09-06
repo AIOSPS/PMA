@@ -1081,7 +1081,17 @@
                 column="indr_type"
         />
         <property
-                name="username"
+                name="rsltNo"
+                type="java.lang.String"
+                column="rslt_no"
+        />
+        <property
+                name="intrNo"
+                type="java.lang.String"
+                column="intr_no"
+        />
+        <property
+                name="userName"
                 type="java.lang.String"
                 column="username"
                 length="15"
