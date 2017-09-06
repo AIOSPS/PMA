@@ -982,6 +982,12 @@
                 length="500"
         />
         <property
+                name="sobjNo"
+                type="java.lang.String"
+                column="sobj_no"
+        />
+
+        <property
                 name="username"
                 type="java.lang.String"
                 column="username"

@@ -28,19 +28,23 @@ public class PmaResult implements Serializable {
     private String rsltLongDescription;
 
     /** nullable persistent field */
+    private String sobjNo;
+
+    /** nullable persistent field */
     private String username;
 
     /** nullable persistent field */
     private java.util.Date timeStamp;
 
     /** full constructor */
-    public PmaResult(String rsltNo, String rsltTitle, java.util.Date rsltDefineDate, java.util.Date rsltCloseDate, String rsltStatus, String rsltLongDescription, String username, java.util.Date timeStamp) {
+    public PmaResult(String rsltNo, String rsltTitle, java.util.Date rsltDefineDate, java.util.Date rsltCloseDate, String rsltStatus, String rsltLongDescription, String sobjNo, String username, java.util.Date timeStamp) {
         this.rsltNo = rsltNo;
         this.rsltTitle = rsltTitle;
         this.rsltDefineDate = rsltDefineDate;
         this.rsltCloseDate = rsltCloseDate;
         this.rsltStatus = rsltStatus;
         this.rsltLongDescription = rsltLongDescription;
+        this.sobjNo = sobjNo;
         this.username = username;
         this.timeStamp = timeStamp;
     }
@@ -114,6 +118,13 @@ public class PmaResult implements Serializable {
         this.timeStamp = timeStamp;
     }
 
+    public String getSobjNo() {
+        return sobjNo;
+    }
+
+    public void setSobjNo(String sobjNo) {
+        this.sobjNo = sobjNo;
+    }
 
     public String toString() {
         return new ToStringBuilder(this)

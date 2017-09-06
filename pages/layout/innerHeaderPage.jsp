@@ -68,7 +68,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="/pmaProgrammeList.do">Programme Information</a></li>
                         <li><a href="/pmaSpecObjectiveList.do">Specific Objective</a></li>
-                        <li><a href="#">Output/Results</a></li>
+                        <li><a href="/pmaResultList.do">Output/Results</a></li>
                         <%--<li class="dropdown-submenu ">--%>
                             <%--<a>Socio-economic Data</a>--%>
                             <%--<ul class="dropdown-menu">--%>

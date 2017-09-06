@@ -273,5 +273,11 @@
     <definition name="pma.editSpecObjective.tile" extends="innerLayout">
         <put name="body" value="/pages/specObjective/editSpecObjective.jsp"/>
     </definition>
+    <!--************ Result ****************** -->
+    <definition name="pma.outputList.tile" extends="innerLayout">
+        <put name="body" value="/pages/output/listOutput.jsp"/>
+    </definition>
+
+    pma.resultList.tile
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>

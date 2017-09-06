@@ -43,6 +43,7 @@
         <form-bean name="pmaProgrammeForm" type="btc.pma.programme.forms.PmaProgrammeInfoForm"/>
         <form-bean name="pmaSpecObjectiveSearchForm" type="btc.pma.specObjective.forms.PmaSpecObjectiveSearchForm"/>
         <form-bean name="pmaSpecObjectiveForm" type="btc.pma.specObjective.forms.PmaSpecObjectiveForm"/>
+        <form-bean name="pmaResultSearchForm"  type="btc.pma.result.forms.PmaResultSearchForm"/>
     </form-beans>
 
     <global-exceptions>
@@ -1018,7 +1019,22 @@
         >
             <forward name="success" path="pma.editSpecObjective.tile"/>
         </action>
+        <!--************ Result ****************** -->
+        <action
+                type="btc.pma.result.actions.PmaResultListAction"
+                scope="request"
+                path="/pmaResultList">
+            <forward name="success" path="pma.outputList.tile" contextRelative="true"/>
+        </action>
 
+        <action
+                type="btc.pma.result.actions.PmaResultListAction"
+                scope="request"
+                path="/pmaSearchResult"
+                name="pmaResultSearchForm"
+        >
+            <forward name="success" path="pma.outputList.tile" contextRelative="true"/>
+        </action>
         <!-- ********************** End PMA Actions ************ -->
     </action-mappings>
 
