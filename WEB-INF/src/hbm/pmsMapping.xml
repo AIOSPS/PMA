@@ -1076,6 +1076,11 @@
                 length="50"
         />
         <property
+                name="indrType"
+                type="java.lang.String"
+                column="indr_type"
+        />
+        <property
                 name="username"
                 type="java.lang.String"
                 column="username"

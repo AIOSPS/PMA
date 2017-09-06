@@ -46,6 +46,9 @@ public class PmaIndicator implements Serializable {
     private String indrTargetAcheived;
 
     /** nullable persistent field */
+    private String indrType;
+
+    /** nullable persistent field */
     private String username;
 
     /** nullable persistent field */
@@ -53,7 +56,7 @@ public class PmaIndicator implements Serializable {
 
 
     /** full constructor */
-    public PmaIndicator(String indrNo, String indrDefinition, String indrBaseline, java.util.Date indrDefineDate, java.util.Date indrClosedDate, String indrStatus, String indrTargetPlaned, String indrDataCollMethod, String indrTool, String indrFrequency, String indrResponsibilities, String indrTargetAcheived, String username, java.util.Date timeStamp) {
+    public PmaIndicator(String indrNo, String indrDefinition, String indrBaseline, java.util.Date indrDefineDate, java.util.Date indrClosedDate, String indrStatus, String indrTargetPlaned, String indrDataCollMethod, String indrTool, String indrFrequency, String indrResponsibilities, String indrTargetAcheived, String indrType, String username, java.util.Date timeStamp) {
         this.indrNo = indrNo;
         this.indrDefinition = indrDefinition;
         this.indrBaseline = indrBaseline;
@@ -66,6 +69,7 @@ public class PmaIndicator implements Serializable {
         this.indrFrequency = indrFrequency;
         this.indrResponsibilities = indrResponsibilities;
         this.indrTargetAcheived = indrTargetAcheived;
+        this.indrType = indrType;
         this.username = username;
         this.timeStamp = timeStamp;
     }
@@ -169,6 +173,14 @@ public class PmaIndicator implements Serializable {
 
     public void setIndrTargetAcheived(String indrTargetAcheived) {
         this.indrTargetAcheived = indrTargetAcheived;
+    }
+
+    public String getIndrType() {
+        return indrType;
+    }
+
+    public void setIndrType(String indrType) {
+        this.indrType = indrType;
     }
 
     public String getUsername() {
