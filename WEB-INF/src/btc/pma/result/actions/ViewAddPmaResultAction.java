@@ -24,8 +24,8 @@ public class ViewAddPmaResultAction extends Action
         if (!(SessionTraker.isSessionExist(request)))
             return mapping.findForward("invalidAccess");
 
-        List resultList = (List) new PmaSpecObjectiveListUseCase().execute(null, request);
-        request.setAttribute("resultList", resultList);
+        List objectiveList = (List) new PmaSpecObjectiveListUseCase().execute(null, request);
+        request.setAttribute("objectiveList", objectiveList);
 
         return mapping.findForward("success");
     }

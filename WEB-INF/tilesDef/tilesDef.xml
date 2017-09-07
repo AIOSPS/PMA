@@ -291,6 +291,9 @@
         <put name="body" value="/pages/pmaIndicator/listIndicator.jsp"/>
     </definition>
 
+    <definition name="pma.addPmaIndicator.tile" extends="innerLayout">
+        <put name="body" value="/pages/pmaIndicator/addIndicator.jsp"/>
+    </definition>
 
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>

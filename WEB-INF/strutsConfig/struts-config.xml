@@ -1028,7 +1028,6 @@
                 path="/pmaResultList">
             <forward name="success" path="pma.outputList.tile" contextRelative="true"/>
         </action>
-
         <action
                 type="btc.pma.result.actions.PmaResultListAction"
                 scope="request"
@@ -1037,7 +1036,6 @@
         >
             <forward name="success" path="pma.outputList.tile" contextRelative="true"/>
         </action>
-
         <action
                 name="pmaResultForm"
                 type="btc.pma.result.actions.ViewAddPmaResultAction"
@@ -1087,6 +1085,14 @@
                 name="pmaIndicatorSearchForm"
         >
             <forward name="success" path="pma.pmaIndicatorList.tile" contextRelative="true"/>
+        </action>
+        <action
+                name="pmaIndicatorSearchForm"
+                type="btc.pma.indicator.actions.ViewAddPmaIndicatorAction"
+                validate="false"
+                path="/viewAddPmaIndicator"
+        >
+            <forward name="success" path="pma.addPmaIndicator.tile"/>
         </action>
         <!-- ********************** End PMA Actions ************ -->
     </action-mappings>

@@ -111,8 +111,8 @@
                         <div class="col-sm-9">
                             <html:select property="sobjNo"
                                          styleClass="selectpicker form-control">
-                                <logic:present name="resultList">
-                                    <html:options collection="resultList" property="sobjNo" labelProperty="sobjDescription"/>
+                                <logic:present name="objectiveList">
+                                    <html:options collection="objectiveList" property="sobjNo" labelProperty="sobjDescription"/>
                                 </logic:present>
                             </html:select>
                             <script>

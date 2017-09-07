@@ -121,7 +121,6 @@
                         .appendTo( '#listResultsTbl_wrapper .col-sm-6:eq(0)' );
                 } );
             </script>
-        </div>
     </div>
     </div>
 </article>
