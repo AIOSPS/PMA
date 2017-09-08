@@ -1104,6 +1104,23 @@
         >
             <forward name="success" path="/pmaIndicatorList.do"/>
         </action>
+
+        <action
+                name="pmaIndicatorForm"
+                type="btc.pma.indicator.actions.ViewPmaIndicatorAction"
+                validate="false"
+                path="/viewPmaIndicator"
+        >
+            <forward name="success" path="pma.viewPmaIndicator.tile"/>
+        </action>
+        <action
+                name="pmaIndicatorForm"
+                type="btc.pma.indicator.actions.ViewPmaIndicatorAction"
+                validate="false"
+                path="/viewEditPmaIndicator"
+        >
+            <forward name="success" path="pma.editPmaIndicator.tile"/>
+        </action>
         <!-- ********************** End PMA Actions ************ -->
     </action-mappings>
 

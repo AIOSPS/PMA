@@ -114,13 +114,13 @@
                             <td width="15%" class="text-center"><bean:write name="pmaIndicatorList" property="indrDefineDate" format="dd/MM/yyyy"/></td>
                             <td width="15%" class="text-center"><bean:write name="pmaIndicatorList" property="indrClosedDate" format="dd/MM/yyyy"/></td>
                             <td width="5%" class="text-center">
-                                <%--<a href="javaScript:parent.location = '/viewPmaResult.do?rsltNo=<bean:write name="pmaResultList" property="rsltNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-list-alt"></span>--%>
-                                <%--</a>--%>
-                                <%--&nbsp;--%>
-                                <%--<a href="javaScript:parent.location = '/viewEditPmaResult.do?rsltNo=<bean:write name="pmaResultList" property="rsltNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-edit"></span>--%>
-                                <%--</a>--%>
+                                <a href="javaScript:parent.location = '/viewPmaIndicator.do?indrNo=<bean:write name="pmaIndicatorList" property="indrNo"/>'">
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                </a>
+                                &nbsp;
+                                <a href="javaScript:parent.location = '/viewEditPmaIndicator.do?indrNo=<bean:write name="pmaIndicatorList" property="indrNo"/>'">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
                             </td>
                         </tr>
                     </logic:iterate>

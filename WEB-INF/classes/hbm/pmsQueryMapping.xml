@@ -567,5 +567,21 @@
                 order by a.rsltNo
                   ]]>
     </query>
+    <query
+            name="getPmaIndicatorById">
+        <![CDATA[
+                from btc.pma.programme.database.PmaIndicator a
+                where a.indrNo=?
+                order by a.indrDefinition
+                  ]]>
+    </query>
+    <query
+            name="getPmsIndicatorDetailByInd">
+        <![CDATA[
+                from btc.pma.programme.database.PmaIndicatorDetail a
+                where a.comp_id.indrNo = ?
+                order by a.comp_id.idtlMeasureDate
+                  ]]>
+    </query>
 
 </hibernate-mapping>

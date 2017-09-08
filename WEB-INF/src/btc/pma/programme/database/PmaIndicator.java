@@ -2,6 +2,7 @@ package btc.pma.programme.database;
 
 import java.io.Serializable;
 
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -23,6 +24,12 @@ public class PmaIndicator implements Serializable {
 
     /** nullable persistent field */
     private java.util.Date indrClosedDate;
+
+    /** nullable persistent field */
+    private String indrDefineDateStr;
+
+    /** nullable persistent field */
+    private String indrClosedDateStr;
 
     /** nullable persistent field */
     private String indrStatus;
@@ -125,6 +132,22 @@ public class PmaIndicator implements Serializable {
 
     public void setIndrClosedDate(java.util.Date indrClosedDate) {
         this.indrClosedDate = indrClosedDate;
+    }
+
+    public String getIndrDefineDateStr() {
+        return indrDefineDate!=null? DateTool.decorateDate(indrDefineDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setIndrDefineDateStr(String indrDefineDateStr) {
+        this.indrDefineDateStr = indrDefineDateStr;
+    }
+
+    public String getIndrClosedDateStr() {
+        return indrClosedDate!=null? DateTool.decorateDate(indrClosedDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setIndrClosedDateStr(String indrClosedDateStr) {
+        this.indrClosedDateStr = indrClosedDateStr;
     }
 
     public String getIndrStatus() {

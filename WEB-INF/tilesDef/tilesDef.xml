@@ -295,5 +295,13 @@
         <put name="body" value="/pages/pmaIndicator/addIndicator.jsp"/>
     </definition>
 
+    <definition name="pma.viewPmaIndicator.tile" extends="innerLayout">
+        <put name="body" value="/pages/pmaIndicator/viewIndicator.jsp"/>
+    </definition>
+
+    <definition name="pma.editPmaIndicator.tile" extends="innerLayout">
+        <put name="body" value="/pages/pmaIndicator/editIndicator.jsp"/>
+    </definition>
+
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>
