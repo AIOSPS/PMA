@@ -1,6 +1,8 @@
 package btc.pma.indicator.actions;
 
 import btc.pma.indicator.useCases.PmaIndicatorListUseCase;
+import btc.pma.programme.useCases.PmaProgrammeListUseCase;
+import btc.pma.result.useCases.PmaResultListUseCase;
 import btc.pma.specObjective.useCases.PmaSpecObjectiveListUseCase;
 import eu.pms.common.tools.SessionTraker;
 import org.apache.struts.action.Action;
@@ -25,8 +27,11 @@ public class ViewAddPmaIndicatorAction extends Action
         if (!(SessionTraker.isSessionExist(request)))
             return mapping.findForward("invalidAccess");
 
-        List idicatorList = (List) new PmaIndicatorListUseCase().execute(null, request);
-        request.setAttribute("idicatorList", idicatorList);
+        List programmeList = (List) new PmaProgrammeListUseCase().execute(null, request);
+        request.setAttribute("programmeList", programmeList);
+
+        List resultList = (List) new PmaResultListUseCase().execute(null, request);
+        request.setAttribute("resultList", resultList);
 
         return mapping.findForward("success");
     }

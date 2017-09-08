@@ -46,6 +46,7 @@
         <form-bean name="pmaResultSearchForm"  type="btc.pma.result.forms.PmaResultSearchForm"/>
         <form-bean name="pmaResultForm" type="btc.pma.result.forms.PmaResultForm"/>
         <form-bean name="pmaIndicatorSearchForm" type="btc.pma.indicator.forms.PmaIndicatorSearchForm"/>
+        <form-bean name="pmaIndicatorForm" type="btc.pma.indicator.forms.PmaIndicatorForm"/>
     </form-beans>
 
     <global-exceptions>
@@ -1087,12 +1088,21 @@
             <forward name="success" path="pma.pmaIndicatorList.tile" contextRelative="true"/>
         </action>
         <action
-                name="pmaIndicatorSearchForm"
+                name="pmaIndicatorForm"
                 type="btc.pma.indicator.actions.ViewAddPmaIndicatorAction"
                 validate="false"
                 path="/viewAddPmaIndicator"
         >
             <forward name="success" path="pma.addPmaIndicator.tile"/>
+        </action>
+
+        <action
+                name="pmaIndicatorForm"
+                type="btc.pma.indicator.actions.AddPmaIndicatorAction"
+                validate="false"
+                path="/addPmaIndicator"
+        >
+            <forward name="success" path="/pmaIndicatorList.do"/>
         </action>
         <!-- ********************** End PMA Actions ************ -->
     </action-mappings>
