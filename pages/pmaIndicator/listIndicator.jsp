@@ -11,8 +11,8 @@
 </script>
 <div class="content-wrapper breadcrumb brd2">
     <div class="container clearfix">
-        <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Indicators</a><span
-                class=""> > </span><span> List Indicators</span></nav>
+        <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-puzzle-piece"></span>   M&amp;E  </a><span
+                class=""> > </span><span> List of Indicators</span></nav>
     </div>
 </div>
 
@@ -21,7 +21,7 @@
 <article class="form">
 
 
-    <div class="container IncidentsCont">
+    <div class="fluid-container IncidentsCont">
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">

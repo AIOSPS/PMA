@@ -13,27 +13,38 @@
 
     });
 </script>
+
 <article class="log-in">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-4 loginBox">
                 <div class="account-wall">
-                    <img class="profile-img" src="/pages/resources/images/logo-btc.png" alt="">
+                    <img class="profile-img" src="/pages/resources/images/logo-btc-lgn.jpg" alt="">
                     <html:form action="login" focus="userId">
                         <div class="form-signin">
-                    <%--<form class="form-signin" action="home.html">--%>
-                        <span class="glyphicon glyphicon-user"></span>
-                        <html:text property="userId" styleClass="form-control" styleId="userId" />
-                        <%--<input type="userId" class="form-control" placeholder="Username" required=""  oninvalid="this.setCustomValidity('Please Enter The Username ')" autofocus=""/>--%>
-                        <span class="glyphicon glyphicon-lock"></span>
-                        <html:password property="password" styleClass="form-control" styleId="password"/>
-                        <%--<input type="password" class="form-control" placeholder="Password" required=""  oninvalid="this.setCustomValidity('Please Enter The Password ')" />--%>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">
-                            Sign in <span class="awesome"></span></button>
 
-                        <a href="#" class="forget-password">Forget Password?</a><span class="clearfix"></span>
-                    <%--</form>--%>
+                            <span class="glyphicon glyphicon-user"></span>
+                            <html:text property="userId" styleClass="form-control" styleId="userId" />
+
+                            <span class="glyphicon glyphicon-lock"></span>
+                            <html:password property="password" styleClass="form-control" styleId="password"/>
+
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Sign in <span class="awesome"></span></button>
+
+                            <a href="#" class="forget-password">Forget Password?</a><span class="clearfix"></span>
+
                         </div> </html:form>
+                    <script type="text/javascript" language="JavaScript">
+                        <!--
+                        var focusControl = document.forms["loginForm"].elements["userId"];
+
+                        if (focusControl.type != "hidden" && !focusControl.disabled) {
+                            focusControl.focus();
+                        }
+                        // -->
+                    </script>
+
                 </div>
             </div>
         </div>

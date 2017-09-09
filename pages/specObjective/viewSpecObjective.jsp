@@ -26,13 +26,13 @@
 
 <div class="content-wrapper breadcrumb brd2">
     <div class="container clearfix">
-        <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Specific Objective Information
-        </a><span class=""> > </span><span>Specific Objectives</span></nav>
+        <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-desktop "></span> Programme Management
+        </a><span class=""> > </span><span>View Specific Objective</span></nav>
     </div>
 </div>
 
 <article class="FormPage">
-    <div class="container">
+    <div class="fluid-container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
                 <h1>View Specific Objective</h1>
@@ -138,7 +138,7 @@
                 <%--</div>--%>
                 <%--</div>--%>
 
-                <div class="form-group row">
+                <div class="form-group row opBtn">
                     <div class="offset-sm-2 col-sm-10">
                         <button type="button" onclick="javaScript:parent.location = '/viewEditSpecObjective.do?sobjNo=<%=request.getParameter("sobjNo")%>'"
                                 class="btn btn-primary">Edit

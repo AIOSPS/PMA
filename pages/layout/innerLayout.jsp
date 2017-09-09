@@ -20,7 +20,7 @@
     <meta name="keywords" content="European, Union, Tracking, System">
     <meta name="author" content="European Union">
 
-    <title>Project Monitoring System</title>
+    <title>Programmes Monitoring Application</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="/pages/resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/pages/resources/fonts/awesome/css/font-awesome.min.css">

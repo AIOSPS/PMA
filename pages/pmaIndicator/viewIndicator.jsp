@@ -32,16 +32,16 @@
 
 <div class="content-wrapper breadcrumb brd2">
     <div class="container clearfix">
-        <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Indicator Information
-        </a><span class=""> > </span><span>Indicators</span></nav>
+        <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-puzzle-piece"></span>   M&amp;E
+        </a><span class=""> > </span><span>View Indicator</span></nav>
     </div>
 </div>
 
 <article class="FormPage">
-    <div class="container">
+    <div class="fluid-container">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
-                <h1>Add Indicator</h1>
+                <h1>View Indicator</h1>
             </div>
             <div class="col-md-4 pd15 create ">
                 <%--<button type="button" class="btn btn-primary fa fa-plus pull-right">Create Record</button>--%>
@@ -275,7 +275,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row opBtn">
                     <div class="offset-sm-2 col-sm-10">
                         <button type="button" onclick="javaScript:parent.location = '/viewEditPmaIndicator.do?indrNo=<%=request.getParameter("indrNo")%>'"
                                 class="btn btn-primary">Edit

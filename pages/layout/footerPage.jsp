@@ -14,5 +14,10 @@
  <%--</div>--%>
 <div class="container clearfix hidden-print">
     <%--<div class="col-md-6 develop">Developed by BTC: <img class="flogo img-fluid" alt="Responsive image" src="/pages/resources/images/logo-btc.png" /></div>--%>
-    <div class="col-md-12 text-right pdTop10"><a class="flink" href="#"><span class="fa  fa-caret-right"></span>Contact US</a></div>
+    <div class="col-md-12 text-right pdTop10">
+        <a class="flink" href="#">
+            <span class="fa "></span>
+            <%--Contact US--%>
+        </a>
+    </div>
 </div>
