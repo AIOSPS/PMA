@@ -584,4 +584,11 @@
                   ]]>
     </query>
 
+    <query
+            name="getPmaActivityList">
+        <![CDATA[
+                from btc.pma.programme.database.PmaActivityInfo a
+                order by a.comp_id.actvNo
+                  ]]>
+    </query>
 </hibernate-mapping>

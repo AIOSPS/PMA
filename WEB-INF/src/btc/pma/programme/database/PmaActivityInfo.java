@@ -54,6 +54,15 @@ public class PmaActivityInfo implements Serializable {
     /** nullable persistent field */
     private String actChallenges;
 
+    /** identifier field */
+    private String indrNo;
+
+    /** identifier field */
+    private String rsltNo;
+
+    /** identifier field */
+    private String clasCode;
+
     /** nullable persistent field */
     private String username;
 
@@ -62,7 +71,7 @@ public class PmaActivityInfo implements Serializable {
 
 
     /** full constructor */
-    public PmaActivityInfo(PmaActivityInfoPK comp_id, String actvLevel, String actvImplementingPartner, String actvTitle, String actvSummaryDescription, String actvStatus, java.util.Date actvProposedStartDate, java.util.Date actvProposedEndDate, long actvBudget, java.util.Date actvActualStartDate, java.util.Date actvActualEndDate, long actvTotalCost, String actvResponsibility, String actvLessonsLearned, String actChallenges, String username, java.util.Date timeStamp) {
+    public PmaActivityInfo(PmaActivityInfoPK comp_id, String actvLevel, String actvImplementingPartner, String actvTitle, String actvSummaryDescription, String actvStatus, java.util.Date actvProposedStartDate, java.util.Date actvProposedEndDate, long actvBudget, java.util.Date actvActualStartDate, java.util.Date actvActualEndDate, long actvTotalCost, String actvResponsibility, String actvLessonsLearned, String actChallenges,String indrNo, String rsltNo, String clasCode, String username, java.util.Date timeStamp) {
         this.comp_id = comp_id;
         this.actvLevel = actvLevel;
         this.actvImplementingPartner = actvImplementingPartner;
@@ -78,6 +87,9 @@ public class PmaActivityInfo implements Serializable {
         this.actvResponsibility = actvResponsibility;
         this.actvLessonsLearned = actvLessonsLearned;
         this.actChallenges = actChallenges;
+        this.indrNo = indrNo;
+        this.rsltNo = rsltNo;
+        this.clasCode = clasCode;
         this.username = username;
         this.timeStamp = timeStamp;
     }
@@ -205,6 +217,30 @@ public class PmaActivityInfo implements Serializable {
 
     public void setActChallenges(String actChallenges) {
         this.actChallenges = actChallenges;
+    }
+
+    public String getIndrNo() {
+        return indrNo;
+    }
+
+    public void setIndrNo(String indrNo) {
+        this.indrNo = indrNo;
+    }
+
+    public String getRsltNo() {
+        return rsltNo;
+    }
+
+    public void setRsltNo(String rsltNo) {
+        this.rsltNo = rsltNo;
+    }
+
+    public String getClasCode() {
+        return clasCode;
+    }
+
+    public void setClasCode(String clasCode) {
+        this.clasCode = clasCode;
     }
 
     public String getUsername() {

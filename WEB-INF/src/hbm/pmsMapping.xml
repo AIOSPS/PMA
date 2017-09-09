@@ -1220,6 +1220,21 @@
                 length="1000"
         />
         <property
+                name="indrNo"
+                type="java.lang.String"
+                column="indr_no"
+        />
+        <property
+                name="rsltNo"
+                type="java.lang.String"
+                column="rslt_no"
+        />
+        <property
+                name="clasCode"
+                type="java.lang.String"
+                column="clas_Code"
+        />
+        <property
                 name="username"
                 type="java.lang.String"
                 column="username"

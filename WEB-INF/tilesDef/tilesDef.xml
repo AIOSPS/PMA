@@ -302,6 +302,10 @@
     <definition name="pma.editPmaIndicator.tile" extends="innerLayout">
         <put name="body" value="/pages/pmaIndicator/editIndicator.jsp"/>
     </definition>
+    <!--************ Activity ****************** -->
+    <definition name="pma.pmaActivityList.tile" extends="innerLayout">
+        <put name="body" value="/pages/pmaActivity/listActivity.jsp"/>
+    </definition>
 
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>
