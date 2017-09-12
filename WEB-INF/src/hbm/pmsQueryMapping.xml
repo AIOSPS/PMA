@@ -591,4 +591,35 @@
                 order by a.comp_id.actvNo
                   ]]>
     </query>
+
+    <query
+            name="getPmaActivityClasList">
+        <![CDATA[
+                from btc.pma.programme.database.PmaActivityClasification a
+                order by a.clasCode
+                  ]]>
+    </query>
+
+    <query
+            name="getPmaImplementersList">
+        <![CDATA[
+                from eu.pms.project.database.PmsImplementer a
+                order by a.impId
+                  ]]>
+    </query>
+
+    <query
+            name="getPmaBeneficiaryTypeList">
+        <![CDATA[
+                from eu.pms.lookup.database.PmsBenificiaryTyp a
+                order by a.lookupId
+                  ]]>
+    </query>
+    <query
+            name="getPmaCommunity">
+        <![CDATA[
+                from eu.pms.project.database.PmsCommunity a
+                order by a.comName
+                  ]]>
+    </query>
 </hibernate-mapping>

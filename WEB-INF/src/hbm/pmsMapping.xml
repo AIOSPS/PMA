@@ -1255,7 +1255,7 @@
         <composite-id name="comp_id" class="btc.pma.programme.database.PmaActivityImplementerPK">
             <key-property name="actvNo" column="actv_no" type="java.lang.String"/>
             <key-property name="intrNo" column="intr_no" type="java.lang.String"/>
-            <key-property name="impId" column="imp_no" type="java.lang.String"/>
+            <key-property name="impId" column="imp_id" type="java.lang.String"/>
         </composite-id>
 
         <property
@@ -1264,11 +1264,17 @@
                 column="com_id"
         />
         <property
+                name="implCost"
+                type="long"
+                column="impl_cost"
+        />
+        <property
                 name="username"
                 type="java.lang.String"
                 column="username"
                 length="15"
         />
+
         <property
                 name="timeStamp"
                 type="java.sql.Timestamp"
@@ -1322,7 +1328,7 @@
         <composite-id name="comp_id" class="btc.pma.programme.database.PmaActivityBeneficiarPK">
             <key-property name="actvNo" column="actv_no" type="java.lang.String"/>
             <key-property name="intrNo" column="intr_no" type="java.lang.String"/>
-            <key-property name="btpId" column="btp_no" type="java.lang.String"/>
+            <key-property name="btpId" column="btp_id" type="java.lang.String"/>
         </composite-id>
 
         <property

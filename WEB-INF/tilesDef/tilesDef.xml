@@ -306,6 +306,8 @@
     <definition name="pma.pmaActivityList.tile" extends="innerLayout">
         <put name="body" value="/pages/pmaActivity/listActivity.jsp"/>
     </definition>
-
+    <definition name="pma.addPmaActivity.tile" extends="innerLayout">
+        <put name="body" value="/pages/pmaActivity/addActivity.jsp"/>
+    </definition>
 <!-- ****************** End PMA Tiles *************** -->
 </tiles-definitions>
