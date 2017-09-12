@@ -957,7 +957,6 @@
                 name="rsltTitle"
                 type="java.lang.String"
                 column="rslt_title"
-                length="150"
         />
         <property
                 name="rsltDefineDate"
@@ -973,13 +972,11 @@
                 name="rsltStatus"
                 type="java.lang.String"
                 column="rslt_status"
-                length="1"
         />
         <property
                 name="rsltLongDescription"
                 type="java.lang.String"
                 column="rslt_long_description"
-                length="500"
         />
         <property
                 name="sobjNo"
@@ -1015,13 +1012,11 @@
                 name="indrDefinition"
                 type="java.lang.String"
                 column="indr_definition"
-                length="250"
         />
         <property
                 name="indrBaseline"
                 type="java.lang.String"
                 column="indr_baseline"
-                length="50"
         />
         <property
                 name="indrDefineDate"
@@ -1037,43 +1032,36 @@
                 name="indrStatus"
                 type="java.lang.String"
                 column="indr_status"
-                length="1"
         />
         <property
                 name="indrTargetPlaned"
                 type="java.lang.String"
                 column="indr_target_planed"
-                length="50"
         />
         <property
                 name="indrDataCollMethod"
                 type="java.lang.String"
                 column="indr_data_coll_method"
-                length="150"
         />
         <property
                 name="indrTool"
                 type="java.lang.String"
                 column="indr_tool"
-                length="100"
         />
         <property
                 name="indrFrequency"
                 type="java.lang.String"
                 column="indr_frequency"
-                length="100"
         />
         <property
                 name="indrResponsibilities"
                 type="java.lang.String"
                 column="indr_responsibilities"
-                length="100"
         />
         <property
                 name="indrTargetAcheived"
                 type="java.lang.String"
                 column="indr_target_acheived"
-                length="50"
         />
         <property
                 name="indrType"

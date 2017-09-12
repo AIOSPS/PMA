@@ -106,11 +106,13 @@
 </script>
 
 <div id="main" class="container-fluid">
+    <header id="header">
     <div class="row">
         <div class="col-sm-12 col-md-12 no-padding-right no-padding-left">
             <tiles:get name="header"/>
         </div>
     </div>
+    </header>
     <div class="row">
         <div class="col-sm-12 col-md-12 no-padding-right no-padding-left">
             <div class="text-right label-title" align="right">
