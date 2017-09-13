@@ -4,7 +4,7 @@
 <%@ taglib uri="/WEB-INF/lib/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 
-<div class="content-wrapper breadcrumb brd2">
+<div class="content-wrapper breadcrumb brd2 container">
     <div class="container clearfix">
         <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-desktop "></span> Programme Management </a><span
                 class=""> > </span><span> List of Programmes</span></nav>
@@ -16,7 +16,7 @@
 <article class="form">
 
 
-    <div class="fluid-container IncidentsCont">
+    <div class="container IncidentsCont pd0">
 
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">

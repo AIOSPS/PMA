@@ -1104,7 +1104,6 @@
                 name="idtlValue"
                 type="java.lang.String"
                 column="idtl_value"
-                length="150"
         />
         <property
                 name="username"
@@ -1131,25 +1130,21 @@
                 name="actvLevel"
                 type="java.lang.String"
                 column="actv_level"
-                length="150"
         />
         <property
                 name="actvImplementingPartner"
                 type="java.lang.String"
                 column="actv_implementing_partner"
-                length="150"
         />
         <property
                 name="actvTitle"
                 type="java.lang.String"
                 column="actv_title"
-                length="200"
         />
         <property
                 name="actvSummaryDescription"
                 type="java.lang.String"
                 column="actv_summary_description"
-                length="400"
         />
         <property
                 name="actvStatus"

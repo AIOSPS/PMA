@@ -27,7 +27,7 @@
 </script>
 
 
-<div class="content-wrapper breadcrumb brd2">
+<div class="content-wrapper breadcrumb brd2 container">
     <div class="container clearfix">
         <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-puzzle-piece"></span>   Program Implementation
         </a><span class=""> > </span><span>Add Activity</span></nav>
@@ -35,7 +35,7 @@
 </div>
 
 <article class="FormPage">
-    <div class="fluid-container">
+    <div class="container pd0">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
                 <h1>Add Activity</h1>
