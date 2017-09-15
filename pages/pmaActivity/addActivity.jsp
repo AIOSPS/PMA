@@ -11,9 +11,9 @@
         $("#actvNo").prop('required', true);
         $("#intrNo").attr("placeholder", "Programme");
         $("#intrNo").prop('required', true);
-        $("#actvLevel").attr("placeholder", "Level");
+        $("#actvLevel").attr("placeholder", "Level of Activity");
         $("#actvLevel").prop('required', true);
-        $("#actvImplementingPartner").attr("placeholder", "DImpementing Partner");
+        $("#actvImplementingPartner").attr("placeholder", "Implementing Partners");
         $("#actvImplementingPartner").prop('required', true);
         $("#actvTitle").attr("placeholder", "Activity Title");
         $("#actvTitle").prop('required', true);
@@ -76,43 +76,49 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="actvLevel" class="col-sm-3 col-form-label">Level:</label>
+                        <label for="actvLevel" class="col-sm-3 col-form-label">Level of Activity:</label>
                         <div class="col-sm-9">
-                            <html:text property="actvLevel" styleClass="form-control" styleId="actvLevel"/>
+                            <html:select property="actvLevel"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">MOLG</html:option>
+                                <html:option value="2">Governorate</html:option>
+                                <html:option value="3">LGU'S</html:option>
+                                <html:option value="4">BTC Office</html:option>
+                            </html:select>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="actvImplementingPartner" class="col-sm-3 col-form-label">Implementing Partner:</label>
+                        <label for="actvImplementingPartner" class="col-sm-3 col-form-label">Implementing Partners:</label>
                         <div class="col-sm-9">
-                            <html:text property="actvImplementingPartner" styleClass="form-control" styleId="actvImplementingPartner"/>
+                            <html:select property="actvImplementingPartner"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">MOLG</html:option>
+                                <html:option value="2">MDLF</html:option>
+                                <html:option value="3">Other Donors</html:option>
+                            </html:select>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="actvTitle" class="col-sm-3 col-form-label">Title:</label>
+                        <label for="clasCode" class="col-sm-3 col-form-label">Activity Classification:</label>
                         <div class="col-sm-9">
-                            <html:text property="actvTitle" styleClass="form-control" styleId="actvTitle"/>
+                            <html:select property="clasCode"
+                                         styleClass="selectpicker form-control">
+                                <logic:present name="actClasList">
+                                    <html:options collection="actClasList" property="clasCode" labelProperty="clasDescription"/>
+                                </logic:present>
+                            </html:select>
+                            <script>
+                                $(function () {
+                                    $('[name="clasCode"]').eq(0).attr("data-live-search", "true");
+                                });
+                            </script>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="actvSummaryDescription" class="col-sm-3 col-form-label">Summary Description:</label>
-                        <div class="col-sm-9">
-                            <html:text property="actvSummaryDescription" styleClass="form-control" styleId="actvSummaryDescription"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="actvStatus" class="col-sm-3 col-form-label">Status:</label>
-                        <div class="col-sm-9">
-                            <html:text property="actvStatus" styleClass="form-control" styleId="actvStatus"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="actvProposedStartDate" class="col-sm-3 col-form-label">Activity Start Date:</label>
-                        <div class='input-group date col-sm-9' id='iDate'>
+                        <label for="actvProposedStartDate" class="col-sm-3 col-form-label">Proposed Start Date:</label>
+                        <div class='input-group date col-sm-9' id='actvProposedStartDate1'>
                             <html:text property="actvProposedStartDate" styleClass="form-control" styleId="actvProposedStartDate"/>
                             <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
@@ -120,9 +126,9 @@
                         </div>
                         <script type="text/javascript">
                             $(function () {
-                            $('#actvProposedStartDate').datetimepicker({
-                            format: 'DD/MM/YYYY'
-                            });
+                                $('#actvProposedStartDate1').datetimepicker({
+                                    format: 'DD/MM/YYYY'
+                                });
                             });
                         </script>
                     </div>
@@ -131,7 +137,7 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="actvProposedEndDate" class="col-sm-3 col-form-label">Proposed End Date:</label>
-                        <div class='input-group date col-sm-9' id='iDate'>
+                        <div class='input-group date col-sm-9' id='actvProposedEndDate1'>
                             <html:text property="actvProposedEndDate" styleClass="form-control" styleId="actvProposedEndDate"/>
                             <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -139,24 +145,15 @@
                         </div>
                         <script type="text/javascript">
                             $(function () {
-                                $('#actvProposedEndDate').datetimepicker({
+                                $('#actvProposedEndDate1').datetimepicker({
                                     format: 'DD/MM/YYYY'
                                 });
                             });
                         </script>
                     </div>
                     <div class="col-md-6">
-                        <label for="actvBudget" class="col-sm-3 col-form-label">Budget:</label>
-                        <div class="col-sm-9">
-                            <html:text property="actvBudget" styleClass="form-control" styleId="actvBudget"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-6">
                         <label for="actvActualStartDate" class="col-sm-3 col-form-label">Actual Start Date:</label>
-                        <div class='input-group date col-sm-9' id='iDate'>
+                        <div class='input-group date col-sm-9' id='actvActualStartDate1'>
                             <html:text property="actvActualStartDate" styleClass="form-control" styleId="actvActualStartDate"/>
                             <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -164,15 +161,18 @@
                         </div>
                         <script type="text/javascript">
                             $(function () {
-                                $('#actvActualStartDate').datetimepicker({
+                                $('#actvActualStartDate1').datetimepicker({
                                     format: 'DD/MM/YYYY'
                                 });
                             });
                         </script>
                     </div>
+                </div>
+
+                <div class="form-group row">
                     <div class="col-md-6">
                         <label for="actvActualEndDate" class="col-sm-3 col-form-label">Actual End Date:</label>
-                        <div class='input-group date col-sm-9' id='iDate'>
+                        <div class='input-group date col-sm-9' id='actvActualEndDate1'>
                             <html:text property="actvActualEndDate" styleClass="form-control" styleId="actvActualEndDate"/>
                             <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -180,60 +180,43 @@
                         </div>
                         <script type="text/javascript">
                             $(function () {
-                                $('#actvActualEndDate').datetimepicker({
+                                $('#actvActualEndDate1').datetimepicker({
                                     format: 'DD/MM/YYYY'
                                 });
                             });
                         </script>
                     </div>
+                    <div class="col-md-6">
+                        <label for="actvTitle" class="col-sm-3 col-form-label">Activity Title:</label>
+                        <div class="col-sm-9">
+                            <html:text property="actvTitle" styleClass="form-control" styleId="actvTitle"/>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="actvBudget" class="col-sm-3 col-form-label">Budget:</label>
+                        <div class="input-group date  col-sm-9">
+                            <html:text property="actvBudget" styleClass="form-control" styleId="actvBudget"/>
+                            <span class="input-group-addon input-group-addon1">
+                               €
+                            </span>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <label for="actvTotalCost" class="col-sm-3 col-form-label">Total Cost:</label>
-                        <div class="col-sm-9">
+                        <div class="input-group date  col-sm-9">
                             <html:text property="actvTotalCost" styleClass="form-control" styleId="actvTotalCost"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="actvResponsibility" class="col-sm-3 col-form-label">Responsibility:</label>
-                        <div class="col-sm-9">
-                            <html:text property="actvResponsibility" styleClass="form-control" styleId="actvResponsibility"/>
+                            <span class="input-group-addon input-group-addon1">
+                               €
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="actvLessonsLearned" class="col-sm-3 col-form-label">Lessons Learned:</label>
-                        <div class="col-sm-9">
-                            <html:text property="actvLessonsLearned" styleClass="form-control" styleId="actvLessonsLearned"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="actChallenges" class="col-sm-3 col-form-label">Challenges:</label>
-                        <div class="col-sm-9">
-                            <html:text property="actChallenges" styleClass="form-control" styleId="actChallenges"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <label for="indrNo" class="col-sm-3 col-form-label">Indicator:</label>
-                        <div class="col-sm-9">
-                            <html:select property="indrNo"
-                                         styleClass="selectpicker form-control">
-                                <logic:present name="indrList">
-                                    <html:options collection="indrList" property="indrNo" labelProperty="indrDefinition"/>
-                                </logic:present>
-                            </html:select>
-                            <script>
-                                $(function () {
-                                    $('[name="indrNo"]').eq(0).attr("data-live-search", "true");
-                                });
-                            </script>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="rsltNo" class="col-sm-3 col-form-label">Result:</label>
+                        <label for="rsltNo" class="col-sm-3 col-form-label">Related Output/Result:</label>
                         <div class="col-sm-9">
                             <html:select property="rsltNo"
                                          styleClass="selectpicker form-control">
@@ -248,22 +231,60 @@
                             </script>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <label for="actvStatus" class="col-sm-3 col-form-label">Activity Status:</label>
+                        <div class="col-sm-9">
+                            <html:select property="actvStatus"
+                                         styleClass="selectpicker form-control">
+                                <html:option value="1">Active</html:option>
+                                <html:option value="2">Not Active</html:option>
+                            </html:select>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="clasCode" class="col-sm-3 col-form-label">Classification:</label>
+                        <label for="actvResponsibility" class="col-sm-3 col-form-label">Responsibility:</label>
                         <div class="col-sm-9">
-                            <html:select property="clasCode"
+                            <html:textarea property="actvResponsibility" styleClass="form-control" rows="6"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="indrNo" class="col-sm-3 col-form-label">Related Indicator:</label>
+                        <div class="col-sm-9">
+                            <html:select property="indrNo"
                                          styleClass="selectpicker form-control">
-                                <logic:present name="actClasList">
-                                    <html:options collection="actClasList" property="clasCode" labelProperty="clasDescription"/>
+                                <logic:present name="indrList">
+                                    <html:options collection="indrList" property="indrNo" labelProperty="indrDefinition"/>
                                 </logic:present>
                             </html:select>
                             <script>
                                 $(function () {
-                                    $('[name="clasCode"]').eq(0).attr("data-live-search", "true");
+                                    $('[name="indrNo"]').eq(0).attr("data-live-search", "true");
                                 });
                             </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="actvLessonsLearned" class="col-sm-3 col-form-label">Lessons Learned:</label>
+                        <div class="col-sm-9">
+                            <html:textarea property="actvLessonsLearned" styleClass="form-control" rows="6"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="actChallenges" class="col-sm-3 col-form-label">Challenges:</label>
+                        <div class="col-sm-9">
+                            <html:textarea property="actChallenges" styleClass="form-control" rows="6"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="actvSummaryDescription" class="col-sm-3 col-form-label">Summary Description:</label>
+                        <div class="col-sm-9">
+                            <html:textarea property="actvSummaryDescription" styleClass="form-control" rows="6"/>
                         </div>
                     </div>
                     <div class="col-md-6">
