@@ -1155,6 +1155,23 @@
         >
             <forward name="success" path="/pmaActivityList.do"/>
         </action>
+
+        <action
+                name="pmaActivityInfoForm"
+                type="btc.pma.activity.actions.ViewPmaActivityAction"
+                validate="false"
+                path="/viewPmaActivity"
+        >
+            <forward name="success" path="pma.viewPmaActivity.tile"/>
+        </action>
+        <action
+                name="pmaActivityInfoForm"
+                type="btc.pma.activity.actions.ViewPmaActivityAction"
+                validate="false"
+                path="/viewEditPmaActivity"
+        >
+            <forward name="success" path="pma.editPmaActivity.tile"/>
+        </action>
         <!-- ********************** End PMA Actions ************ -->
     </action-mappings>
 

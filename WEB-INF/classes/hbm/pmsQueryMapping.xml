@@ -622,4 +622,31 @@
                 order by a.comName
                   ]]>
     </query>
+    <query
+            name="getPmaActivityById">
+        <![CDATA[
+                from btc.pma.programme.database.PmaActivityInfo a
+                where a.comp_id.actvNo = ?
+                  and a.comp_id.intrNo = ?
+                order by a.actvTitle
+                  ]]>
+    </query>
+    <query
+            name="getPmaActivityImplementer">
+        <![CDATA[
+                from btc.pma.programme.database.PmaActivityImplementer a
+                where a.comp_id.actvNo = ?
+                  and a.comp_id.intrNo = ?
+                order by a.comp_id.impId
+                  ]]>
+    </query>
+    <query
+            name="getPmaActivityBeneficiary">
+        <![CDATA[
+                from btc.pma.programme.database.PmaActivityBeneficiar a
+                where a.comp_id.actvNo = ?
+                  and a.comp_id.intrNo = ?
+                order by a.comp_id.btpId
+                  ]]>
+    </query>
 </hibernate-mapping>

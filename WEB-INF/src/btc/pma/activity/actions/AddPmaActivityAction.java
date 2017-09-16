@@ -47,10 +47,10 @@ public class AddPmaActivityAction extends Action {
         String actvStatus = pmaActivityInfoForm.getActvStatus();
         String actvProposedStartDate = pmaActivityInfoForm.getActvProposedStartDate();
         String actvProposedEndDate = pmaActivityInfoForm.getActvProposedEndDate();
-        String actvBudget = pmaActivityInfoForm.getActvBudget();
+        long actvBudget = pmaActivityInfoForm.getActvBudget();
         String actvActualStartDate = pmaActivityInfoForm.getActvActualStartDate();
         String actvActualEndDate = pmaActivityInfoForm.getActvActualEndDate();
-        String actvTotalCost = pmaActivityInfoForm.getActvTotalCost();
+        long actvTotalCost = pmaActivityInfoForm.getActvTotalCost();
         String actvResponsibility = pmaActivityInfoForm.getActvResponsibility();
         String actvLessonsLearned = pmaActivityInfoForm.getActvLessonsLearned();
         String actChallenges = pmaActivityInfoForm.getActChallenges();

@@ -20,10 +20,10 @@ public class PmaActivityInfoForm   extends ActionForm {
     private String actvStatus;
     private String actvProposedStartDate;
     private String actvProposedEndDate;
-    private String actvBudget;
+    private long actvBudget;
     private String actvActualStartDate;
     private String actvActualEndDate;
-    private String actvTotalCost;
+    private long actvTotalCost;
     private String actvResponsibility;
     private String actvLessonsLearned;
     private String actChallenges;
@@ -107,11 +107,11 @@ public class PmaActivityInfoForm   extends ActionForm {
         this.actvProposedEndDate = actvProposedEndDate;
     }
 
-    public String getActvBudget() {
+    public long getActvBudget() {
         return actvBudget;
     }
 
-    public void setActvBudget(String actvBudget) {
+    public void setActvBudget(long actvBudget) {
         this.actvBudget = actvBudget;
     }
 
@@ -131,11 +131,11 @@ public class PmaActivityInfoForm   extends ActionForm {
         this.actvActualEndDate = actvActualEndDate;
     }
 
-    public String getActvTotalCost() {
+    public long getActvTotalCost() {
         return actvTotalCost;
     }
 
-    public void setActvTotalCost(String actvTotalCost) {
+    public void setActvTotalCost(long actvTotalCost) {
         this.actvTotalCost = actvTotalCost;
     }
 
@@ -197,10 +197,10 @@ public class PmaActivityInfoForm   extends ActionForm {
         actvStatus = null;
         actvProposedStartDate = null;
         actvProposedEndDate = null;
-        actvBudget = null;
+        actvBudget = 0;
         actvActualStartDate = null;
         actvActualEndDate = null;
-        actvTotalCost = null;
+        actvTotalCost = 0;
         actvResponsibility = null;
         actvLessonsLearned = null;
         actChallenges = null;

@@ -2,6 +2,7 @@ package btc.pma.programme.database;
 
 import java.io.Serializable;
 
+import eu.pms.common.tools.DateTool;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -41,6 +42,18 @@ public class PmaActivityInfo implements Serializable {
 
     /** nullable persistent field */
     private java.util.Date actvActualEndDate;
+
+    /** nullable persistent field */
+    private String actvProposedStartDateStr;
+
+    /** nullable persistent field */
+    private String actvProposedEndDateStr;
+
+    /** nullable persistent field */
+    private String actvActualStartDateStr;
+
+    /** nullable persistent field */
+    private String actvActualEndDateStr;
 
     /** nullable persistent field */
     private long actvTotalCost;
@@ -169,6 +182,38 @@ public class PmaActivityInfo implements Serializable {
 
     public void setActvBudget(long actvBudget) {
         this.actvBudget = actvBudget;
+    }
+
+    public String getActvProposedStartDateStr() {
+        return actvProposedStartDate!=null? DateTool.decorateDate(actvProposedStartDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setActvProposedStartDateStr(String actvProposedStartDateStr) {
+        this.actvProposedStartDateStr = actvProposedStartDateStr;
+    }
+
+    public String getActvProposedEndDateStr() {
+        return actvProposedEndDate!=null? DateTool.decorateDate(actvProposedEndDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setActvProposedEndDateStr(String actvProposedEndDateStr) {
+        this.actvProposedEndDateStr = actvProposedEndDateStr;
+    }
+
+    public String getActvActualStartDateStr() {
+        return actvActualStartDate!=null? DateTool.decorateDate(actvActualStartDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setActvActualStartDateStr(String actvActualStartDateStr) {
+        this.actvActualStartDateStr = actvActualStartDateStr;
+    }
+
+    public String getActvActualEndDateStr() {
+        return actvActualEndDate!=null? DateTool.decorateDate(actvActualEndDate, DateTool.DD_MM_YYYY):"";
+    }
+
+    public void setActvActualEndDateStr(String actvActualEndDateStr) {
+        this.actvActualEndDateStr = actvActualEndDateStr;
     }
 
     public java.util.Date getActvActualStartDate() {

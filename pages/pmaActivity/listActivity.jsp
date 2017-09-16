@@ -114,13 +114,13 @@
                             <td width="15%" ><bean:write name="pmaActivityList" property="actvTitle"/></td>
                             <td width="15%" ><bean:write name="pmaActivityList" property="actvSummaryDescription"/></td>
                             <td width="5%" class="text-center">
-                                <%--<a href="javaScript:parent.location = '/viewPmaIndicator.do?indrNo=<bean:write name="pmaIndicatorList" property="indrNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-list-alt"></span>--%>
-                                <%--</a>--%>
-                                <%--&nbsp;--%>
-                                <%--<a href="javaScript:parent.location = '/viewEditPmaIndicator.do?indrNo=<bean:write name="pmaIndicatorList" property="indrNo"/>'">--%>
-                                    <%--<span class="glyphicon glyphicon-edit"></span>--%>
-                                <%--</a>--%>
+                                <a href="javaScript:parent.location = '/viewPmaActivity.do?actvNo=<bean:write name="pmaActivityList" property="comp_id.actvNo"/>&intrNo=<bean:write name="pmaActivityList" property="comp_id.intrNo"/>'">
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                </a>
+                                &nbsp;
+                                <a href="javaScript:parent.location = '/viewEditPmaActivity.do?actvNo=<bean:write name="pmaActivityList" property="comp_id.actvNo"/>&intrNo=<bean:write name="pmaActivityList" property="comp_id.intrNo"/>'">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
                             </td>
                         </tr>
                     </logic:iterate>
