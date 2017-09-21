@@ -1,3 +1,10 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="btc.pma.programme.database.PmaActivityImplementer" %>
+<%@ page import="btc.pma.programme.database.PmaActivityBeneficiar" %>
+<%@ page import="eu.pms.lookup.database.PmsBenificiaryTyp" %>
+<%@ page import="eu.pms.project.database.PmsCommunity" %>
+<%@ page import="eu.pms.project.database.PmsImplementer" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -333,6 +340,62 @@
                                                 <button nam="del0" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button>
                                             </td>
                                         </tr>
+
+                                        <logic:present name="PmaActivityImplementerList">
+                                            <% List PmaActivityImplementerList = (List) request.getAttribute("PmaActivityImplementerList");
+                                                int count = 1;
+                                                Iterator itr = PmaActivityImplementerList.iterator();
+                                                PmaActivityImplementer pmaActivityImplementer = null;
+                                                while (itr.hasNext()){
+                                                    pmaActivityImplementer = (PmaActivityImplementer) itr.next();
+                                            %>
+                                            <tr id='addr<%=count%>' data-id="<%=count%>">
+                                                <td data-name="actImplmnt">
+                                                    <%--<input type="text" disabled="true" id="actImplmnt<%=count%>" name="actImplmnt<%=count%>" value="<%=pmaActivityImplementer.getComp_id().getImpId()%>" placeholder='Target' class="form-control"/>--%>
+                                                        <select  class="form-control"  id="actImplmnt<%=count%>" name="actImplmnt<%=count%>" disabled="true">
+                                                            <logic:present name="implList">
+                                                                <% List implList = (List) request.getAttribute("implList");%>
+                                                                <%
+                                                                    for (int i = 0; i < implList.size(); i++) {
+                                                                        PmsImplementer obj = (PmsImplementer) implList.get(i);
+                                                                        if(pmaActivityImplementer.getComp_id().getImpId().equals(obj.getImpId())){
+                                                                %>
+                                                                <option selected value="<%=obj.getImpId()%>"><%=obj.getImpName()%></option>
+                                                                <%}else{%>
+                                                                <option value="<%=obj.getImpId()%>"><%=obj.getImpName()%></option>
+                                                                <% }}%>
+
+                                                            </logic:present>
+                                                        </select>
+
+                                                </td>
+                                                <td data-name="actCost">
+                                                    <input type="text" disabled="true" id="actCost<%=count%>" name="actCost<%=count%>" value="<%=pmaActivityImplementer.getImplCost()%>" placeholder='Cost' class="form-control"/>
+                                                </td>
+                                                <td data-name="actCommunity">
+                                                    <%--<input type="text" disabled="true" id="actCommunity<%=count%>" name="actCommunity<%=count%>" value="<%=pmaActivityImplementer.getComId()%>" placeholder='Community' class="form-control"/>--%>
+                                                        <select  class="form-control"  id="actCommunity<%=count%>" name="actCommunity<%=count%>" disabled="true">
+                                                            <logic:present name="communityList">
+                                                                <% List communityList = (List) request.getAttribute("communityList");%>
+                                                                <%
+                                                                    for (int i = 0; i < communityList.size(); i++) {
+                                                                        PmsCommunity obj = (PmsCommunity) communityList.get(i);
+                                                                        if(pmaActivityImplementer.getComId().equals(obj.getComId())){
+                                                                %>
+                                                                <option selected value="<%=obj.getComId()%>"><%=obj.getComName()%></option>
+                                                                <%}else{%>
+                                                                <option value="<%=obj.getComId()%>"><%=obj.getComName()%></option>
+                                                                <% }}%>
+
+                                                            </logic:present>
+                                                        </select>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    count++;
+                                                }
+                                            %>
+                                        </logic:present>
                                         </tbody>
                                     </table>
                                 </div>
@@ -372,6 +435,42 @@
                                                 <button nam="del0" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button>
                                             </td>
                                         </tr>
+                                        <logic:present name="PmaActivityBeneficiaryList">
+                                            <% List pmaActivityBeneficiaryList = (List) request.getAttribute("PmaActivityBeneficiaryList");
+                                                int count = 1;
+                                                Iterator itr = pmaActivityBeneficiaryList.iterator();
+                                                PmaActivityBeneficiar pmaActivityBeneficiar = null;
+                                                while (itr.hasNext()){
+                                                    pmaActivityBeneficiar = (PmaActivityBeneficiar) itr.next();
+                                            %>
+                                            <tr id='addr<%=count%>' data-id="<%=count%>">
+                                                <td data-name="btpId">
+                                                    <%--<input type="text" disabled="true" id="btpId<%=count%>" name="btpId<%=count%>" value="<%=pmaActivityBeneficiar.getComp_id().getBtpId()%>" placeholder='Type' class="form-control"/>--%>
+                                                        <select  class="form-control"  id="btpId<%=count%>" name="btpId<%=count%>" disabled="true">
+                                                            <logic:present name="benificiaryList">
+                                                                <% List benificiaryList = (List) request.getAttribute("benificiaryList");%>
+                                                                <%
+                                                                    for (int i = 0; i < benificiaryList.size(); i++) {
+                                                                        PmsBenificiaryTyp obj = (PmsBenificiaryTyp) benificiaryList.get(i);
+                                                                        if(pmaActivityBeneficiar.getComp_id().getBtpId().equals(obj.getLookupId())){
+                                                                %>
+                                                                <option selected value="<%=obj.getLookupId()%>"><%=obj.getLookupDesc()%></option>
+                                                                <%}else{%>
+                                                                <option value="<%=obj.getLookupId()%>"><%=obj.getLookupDesc()%></option>
+                                                                <% }}%>
+
+                                                            </logic:present>
+                                                        </select>
+                                                </td>
+                                                <td data-name="benTotal">
+                                                    <input type="text" disabled="true" id="benTotal<%=count%>" name="benTotal<%=count%>" value="<%=pmaActivityBeneficiar.getBeneCount()%>" placeholder='Total' class="form-control"/>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    count++;
+                                                }
+                                            %>
+                                        </logic:present>
                                         </tbody>
                                     </table>
                                 </div>

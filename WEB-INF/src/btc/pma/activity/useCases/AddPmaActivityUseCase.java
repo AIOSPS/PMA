@@ -32,12 +32,12 @@ public class AddPmaActivityUseCase  implements ComponentUseCase {
             String actvStatus = (String) itr.next();
             String actvProposedStartDate = (String) itr.next();
             String actvProposedEndDate = (String) itr.next();
-            String actvBudgetStr = (String) itr.next();
-            long actvBudget = Long.valueOf(actvBudgetStr).longValue();
+            Long actvBudgetStr = (Long) itr.next();
+            long actvBudget = actvBudgetStr.longValue();
             String actvActualStartDate = (String) itr.next();
             String actvActualEndDate = (String) itr.next();
-            String actvTotalCostStr = (String) itr.next();
-            long actvTotalCost = Long.valueOf(actvTotalCostStr).longValue();
+            Long actvTotalCostStr = (Long) itr.next();
+            long actvTotalCost = actvTotalCostStr.longValue();
             String actvResponsibility = (String) itr.next();
             String actvLessonsLearned = (String) itr.next();
             String actChallenges = (String) itr.next();
