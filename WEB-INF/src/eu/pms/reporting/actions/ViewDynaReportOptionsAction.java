@@ -1,5 +1,7 @@
 package eu.pms.reporting.actions;
 
+import btc.pma.activity.useCases.PmaActivityClasListUseCase;
+import btc.pma.activity.useCases.PmaCommunityListUseCase;
 import eu.pms.benificiary.useCases.GetPmsBenificiaryTypeUseCase;
 import eu.pms.common.tools.SessionTraker;
 import eu.pms.community.useCases.GetPmsGovernateUseCase;
@@ -38,13 +40,13 @@ public class ViewDynaReportOptionsAction extends Action {
 //        inputData.clear();
 //        inputData.add(new LkpCurrentJob().getClass().getName());
 //        request.setAttribute("currentJobList", new LoadLookupsListBusinessLayer().BusinessImpl(inputData));
-        List dononrList = (List) new GetPmsDonorsUseCase().execute(null, request);
-        request.setAttribute("dononrList", dononrList);
-        List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
-        request.setAttribute("sectorsList", sectorsList);
+        List classList = (List) new PmaActivityClasListUseCase().execute(null, request);
+        request.setAttribute("classList", classList);
+//        List sectorsList = (List) new GetPmsSectorsUseCase().execute(null, request);
+//        request.setAttribute("sectorsList", sectorsList);
         List governateList = (List) new GetPmsGovernateUseCase().execute(null, request);
         request.setAttribute("governateList", governateList);
-        List communityList = (List) new GetPmsCommunityUseCase().execute(null, request);
+        List communityList = (List) new PmaCommunityListUseCase().execute(null, request);
         request.setAttribute("communityList", communityList);
         List benificiaryTypeList = (List) new GetPmsBenificiaryTypeUseCase().execute(null, request);
         request.setAttribute("benificiaryTypeList", benificiaryTypeList);

@@ -1,10 +1,8 @@
 <%@ page import="java.util.List" %>
-<%@ page import="eu.pms.project.database.PmsDonor" %>
 <%@ page import="eu.pms.lookup.database.PmsGovernate" %>
-<%@ page import="eu.pms.project.database.PmsCommunitiesVw" %>
-<%@ page import="eu.pms.project.database.PmsSector" %>
 <%@ page import="eu.pms.lookup.database.PmsBenificiaryTyp" %>
-<%@ page import="eu.pms.project.database.PmsImplementer" %>
+<%@ page import="eu.pms.project.database.*" %>
+<%@ page import="btc.pma.programme.database.PmaActivityClasification" %>
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
@@ -12,7 +10,7 @@
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
 
 
-<div class="content-wrapper breadcrumb brd2">
+<div class="content-wrapper breadcrumb brd2 container">
     <div class="container clearfix">
         <nav class="menu-breadcrumb2"><a href="#" class="active"><span class="fa fa-home "></span> Dynamic Report
         </a><span class=""> > </span><span>Criteria</span></nav>
@@ -20,7 +18,7 @@
 </div>
 
 <article class="FormPage">
-    <div class="container">
+    <div class="container pd0">
         <div class="col-md-12  pd15 titleArea">
             <div class="col-md-8">
                 <h1>Report Criteria</h1>
@@ -47,7 +45,7 @@
                     <div class="col-md-8">
                         <label for="4_val1" class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="4" class="checkBox">
-                            Project Status</label>
+                            Activity Status</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="4_whereCondType" value="0">
                             <select  id="4_val1" name="4_val1" class="form-control input-sm">
@@ -64,49 +62,49 @@
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
                             <input type="checkbox" name="outputItems" value="2" class="checkBox" checked>
-                            Project Title</label>
+                            Activity Title</label>
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-md-8">
-                        <label for="6_val1" class="col-sm-3 col-form-label">
-                            <input type="checkbox" name="inputItems" value="6" class="checkBox">
-                            Start Date</label>
-                        <input type="hidden" name="6_whereCondType" value="0">
-                        <div class='input-group date col-sm-9' id='prStDate'>
-                            <input type="text" id="6_val1" name="6_val1" class="form-control input-sm">
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="3" class="checkBox" checked>
-                            Project Description</label>
-                    </div>
-                </div>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-8">--%>
+                        <%--<label for="6_val1" class="col-sm-3 col-form-label">--%>
+                            <%--<input type="checkbox" name="inputItems" value="6" class="checkBox">--%>
+                            <%--Start Date</label>--%>
+                        <%--<input type="hidden" name="6_whereCondType" value="0">--%>
+                        <%--<div class='input-group date col-sm-9' id='prStDate'>--%>
+                            <%--<input type="text" id="6_val1" name="6_val1" class="form-control input-sm">--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-4">--%>
+                        <%--<label class="col-sm-12 col-form-label">--%>
+                            <%--<input type="checkbox" name="outputItems" value="3" class="checkBox" checked>--%>
+                            <%--Project Description</label>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
 
-                <div class="form-group row">
-                    <div class="col-md-8">
-                        <label for="7_val1" class="col-sm-3 col-form-label">
-                            <input type="checkbox" name="inputItems" value="7" class="checkBox">
-                            End Date</label>
-                        <input type="hidden" name="7_whereCondType" value="0">
-                        <div class='input-group date col-sm-9' id='prEdDate'>
-                            <input type="text" id="7_val1" name="7_val1" class="form-control input-sm">
-                            <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="8" class="checkBox" checked>
-                            Governorate</label>
-                    </div>
-                </div>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-8">--%>
+                        <%--<label for="7_val1" class="col-sm-3 col-form-label">--%>
+                            <%--<input type="checkbox" name="inputItems" value="7" class="checkBox">--%>
+                            <%--End Date</label>--%>
+                        <%--<input type="hidden" name="7_whereCondType" value="0">--%>
+                        <%--<div class='input-group date col-sm-9' id='prEdDate'>--%>
+                            <%--<input type="text" id="7_val1" name="7_val1" class="form-control input-sm">--%>
+                            <%--<span class="input-group-addon">--%>
+                        <%--<span class="glyphicon glyphicon-calendar"></span>--%>
+                    <%--</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-4">--%>
+                        <%--<label class="col-sm-12 col-form-label">--%>
+                            <%--<input type="checkbox" name="outputItems" value="8" class="checkBox" checked>--%>
+                            <%--Governorate</label>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
 
                 <div class="form-group row">
                     <div class="col-md-8">
@@ -148,7 +146,7 @@
                                     <% List communityList = (List) request.getAttribute("communityList");%>
                                     <%
                                         for (int i = 0; i < communityList.size(); i++) {
-                                            PmsCommunitiesVw obj = (PmsCommunitiesVw) communityList.get(i);
+                                            PmsCommunity obj = (PmsCommunity) communityList.get(i);
                                     %>
                                     <option value="<%=obj.getComId()%>"><%=obj.getComName()%></option>
                                     <% }%>
@@ -160,53 +158,53 @@
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
                             <input type="checkbox" name="outputItems" value="11" class="checkBox" checked>
-                            Donor</label>
+                            Activity Classification</label>
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-md-8">
-                        <label class="col-sm-3 col-form-label">
-                            <input type="checkbox" name="inputItems" value="10" class="checkBox">
-                            Sector</label>
-                        <div class="col-sm-9">
-                            <input type="hidden" name="10_whereCondType" value="0">
-                            <select id="10_val1" name="10_val1" class="selectpicker form-control input-sm" data-live-search="true">
-                                <logic:present name="sectorsList">
-                                    <% List sectorsList = (List) request.getAttribute("sectorsList");%>
-                                    <%
-                                        for (int i = 0; i < sectorsList.size(); i++) {
-                                            PmsSector obj = (PmsSector) sectorsList.get(i);
-                                    %>
-                                    <option value="<%=obj.getSecId()%>"><%=obj.getSecName()%></option>
-                                    <% }%>
+                <%--<div class="form-group row">--%>
+                    <%--<div class="col-md-8">--%>
+                        <%--<label class="col-sm-3 col-form-label">--%>
+                            <%--<input type="checkbox" name="inputItems" value="10" class="checkBox">--%>
+                            <%--Sector</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<input type="hidden" name="10_whereCondType" value="0">--%>
+                            <%--<select id="10_val1" name="10_val1" class="selectpicker form-control input-sm" data-live-search="true">--%>
+                                <%--<logic:present name="sectorsList">--%>
+                                    <%--<% List sectorsList = (List) request.getAttribute("sectorsList");%>--%>
+                                    <%--<%--%>
+                                        <%--for (int i = 0; i < sectorsList.size(); i++) {--%>
+                                            <%--PmsSector obj = (PmsSector) sectorsList.get(i);--%>
+                                    <%--%>--%>
+                                    <%--<option value="<%=obj.getSecId()%>"><%=obj.getSecName()%></option>--%>
+                                    <%--<% }%>--%>
 
-                                </logic:present>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="10" class="checkBox" checked>
-                            Sector</label>
-                    </div>
-                </div>
+                                <%--</logic:present>--%>
+                            <%--</select>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-4">--%>
+                        <%--<label class="col-sm-12 col-form-label">--%>
+                            <%--<input type="checkbox" name="outputItems" value="10" class="checkBox" checked>--%>
+                            <%--Sector</label>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
 
                 <div class="form-group row">
                     <div class="col-md-8">
                         <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="11" class="checkBox">
-                            Donor</label>
+                            Activity Classification</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="11_whereCondType" value="0">
                             <select id="11_val1" name="11_val1" class="selectpicker form-control input-sm" data-live-search="true">
-                                <logic:present name="dononrList">
-                                    <% List dononrList = (List) request.getAttribute("dononrList");%>
+                                <logic:present name="classList">
+                                    <% List classList = (List) request.getAttribute("classList");%>
                                     <%
-                                        for (int i = 0; i < dononrList.size(); i++) {
-                                            PmsDonor obj = (PmsDonor) dononrList.get(i);
+                                        for (int i = 0; i < classList.size(); i++) {
+                                            PmaActivityClasification obj = (PmaActivityClasification) classList.get(i);
                                     %>
-                                    <option value="<%=obj.getDonId()%>"><%=obj.getDonName()%></option>
+                                    <option value="<%=obj.getClasCode()%>"><%=obj.getClasDescription()%></option>
                                     <% }%>
 
                                 </logic:present>
@@ -224,7 +222,7 @@
                     <div class="col-md-8">
                         <label class="col-sm-3 col-form-label">
                             <input type="checkbox" name="inputItems" value="12" class="checkBox">
-                            Has Permit</label>
+                            Challenges</label>
                         <div class="col-sm-9">
                             <input type="hidden" name="12_whereCondType" value="0">
                             <select id="12_val1" name="12_val1" class="form-control input-sm">
@@ -236,7 +234,7 @@
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
                             <input type="checkbox" name="outputItems" value="5" class="checkBox" checked>
-                            Project Budget</label>
+                            Cost</label>
                     </div>
                 </div>
 
@@ -264,7 +262,7 @@
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
                             <input type="checkbox" name="outputItems" value="12" class="checkBox" checked>
-                            Has Permit</label>
+                            Challenges</label>
                     </div>
                 </div>
 
@@ -291,9 +289,14 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="6" class="checkBox" checked>
-                            Start Date</label>
+                            <input type="checkbox" name="outputItems" value="3" class="checkBox" checked>
+                            Programme Description</label>
                     </div>
+                    <%--<div class="col-md-4">--%>
+                        <%--<label class="col-sm-12 col-form-label">--%>
+                            <%--<input type="checkbox" name="outputItems" value="6" class="checkBox" checked>--%>
+                            <%--Start Date</label>--%>
+                    <%--</div>--%>
 
                 </div>
                     <%--<div class="form-group row">--%>
@@ -325,9 +328,14 @@
                     </div>
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="outputItems" value="7" class="checkBox" checked>
-                            End Date</label>
+                            <input type="checkbox" name="outputItems" value="8" class="checkBox" checked>
+                            Governorate</label>
                     </div>
+                    <%--<div class="col-md-4">--%>
+                        <%--<label class="col-sm-12 col-form-label">--%>
+                            <%--<input type="checkbox" name="outputItems" value="7" class="checkBox" checked>--%>
+                            <%--End Date</label>--%>
+                    <%--</div>--%>
 
                 </div>
                 <script type="text/javascript">
@@ -350,7 +358,7 @@
                     <div class="col-md-4">
                         <label class="col-sm-12 col-form-label">
                             <input type="checkbox" name="outputItems" value="4" class="checkBox" checked>
-                            Project Status</label>
+                            Activity Status</label>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -370,7 +378,7 @@
                     </div>
                 </div>
                 <h2 class="titleSep"><span>Export report</span></h2>
-                <div class="form-group row">
+                <div class="form-group row opBtn">
                     <div class="col-md-8">
                         <label class="col-sm-3 col-form-label">
                             Report Type</label>

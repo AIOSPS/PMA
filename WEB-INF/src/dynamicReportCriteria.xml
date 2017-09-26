@@ -3,13 +3,13 @@
 
     <qItem>
         <ItemId>1</ItemId>
-        <HdbFieldName>a.proId</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
-        <DisplayName>Project Id</DisplayName>
-        <WhereCondition>a.proId</WhereCondition>
+        <HdbFieldName>a.comp_id.actvNo</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
+        <DisplayName>Activity Id</DisplayName>
+        <WhereCondition>a.comp_id.actvNo</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proId</LockupDisplayValue>
+            <LockupDisplayValue>a.comp_id.actvNo</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
@@ -22,13 +22,13 @@
 
     <qItem>
         <ItemId>2</ItemId>
-        <HdbFieldName>a.proTitle</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
-        <DisplayName>Project Title</DisplayName>
-        <WhereCondition>a.proTitle</WhereCondition>
+        <HdbFieldName>a.actvTitle</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
+        <DisplayName>Activity Title</DisplayName>
+        <WhereCondition>a.actvTitle</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proTitle</LockupDisplayValue>
+            <LockupDisplayValue>a.actvTitle</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
@@ -41,13 +41,13 @@
 
     <qItem>
         <ItemId>3</ItemId>
-        <HdbFieldName>a.proDescription</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
-        <DisplayName>Project Description</DisplayName>
-        <WhereCondition>a.proDescription</WhereCondition>
+        <HdbFieldName>a.intrTitle</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
+        <DisplayName>Programme Description</DisplayName>
+        <WhereCondition>a.intrTitle</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proDescription</LockupDisplayValue>
+            <LockupDisplayValue>a.intrTitle</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
@@ -60,15 +60,15 @@
 
     <qItem>
         <ItemId>4</ItemId>
-        <HdbFieldName>a.proStatus</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbFieldName>a.secCode</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Project Status</DisplayName>
-        <WhereCondition>a.proStatus</WhereCondition>
+        <WhereCondition>a.secCode</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proStatusDesc</LockupDisplayValue>
+            <LockupDisplayValue>a.secName</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.proStatusDesc</LockupWhereCondition>
+            <LockupWhereCondition>a.secName</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -79,13 +79,13 @@
 
     <qItem>
         <ItemId>5</ItemId>
-        <HdbFieldName>a.proBudget</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
-        <DisplayName>Project Budget</DisplayName>
-        <WhereCondition>a.proBudget</WhereCondition>
+        <HdbFieldName>a.sobjDescription</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
+        <DisplayName>Cost</DisplayName>
+        <WhereCondition>a.sobjDescription</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proBudget</LockupDisplayValue>
+            <LockupDisplayValue>a.sobjDescription</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
@@ -98,13 +98,13 @@
 
     <qItem>
         <ItemId>6</ItemId>
-        <HdbFieldName>a.proStartDate</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbFieldName>a.actvProposedStartDate</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Start Date</DisplayName>
-        <WhereCondition>a.proStartDate</WhereCondition>
+        <WhereCondition>a.actvProposedStartDate</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proStartDate</LockupDisplayValue>
+            <LockupDisplayValue>a.actvProposedStartDate</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
@@ -117,13 +117,13 @@
 
     <qItem>
         <ItemId>7</ItemId>
-        <HdbFieldName>a.proEndDate</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbFieldName>a.actvProposedEndDate</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>End Date</DisplayName>
-        <WhereCondition>a.proEndDate</WhereCondition>
+        <WhereCondition>a.actvProposedEndDate</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.proEndDate</LockupDisplayValue>
+            <LockupDisplayValue>a.actvProposedEndDate</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
@@ -137,15 +137,15 @@
 
     <qItem>
         <ItemId>8</ItemId>
-        <HdbFieldName>a.governateId</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbFieldName>a.govId</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Governorate</DisplayName>
-        <WhereCondition>a.governateId</WhereCondition>
+        <WhereCondition>a.govId</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.governateDesc</LockupDisplayValue>
+            <LockupDisplayValue>a.govDesc</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.governateDesc</LockupWhereCondition>
+            <LockupWhereCondition>a.govDesc</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -156,15 +156,15 @@
 
     <qItem>
         <ItemId>9</ItemId>
-        <HdbFieldName>a.communityId</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbFieldName>a.comId</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Community</DisplayName>
-        <WhereCondition>a.communityId</WhereCondition>
+        <WhereCondition>a.comId</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.communityName</LockupDisplayValue>
+            <LockupDisplayValue>a.comName</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.communityName</LockupWhereCondition>
+            <LockupWhereCondition>a.comName</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -174,15 +174,15 @@
     </qItem>
     <qItem>
         <ItemId>10</ItemId>
-        <HdbFieldName>a.sectorId</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbFieldName>a.secCode</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Sector</DisplayName>
-        <WhereCondition>a.sectorId</WhereCondition>
+        <WhereCondition>a.secCode</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.sectorName</LockupDisplayValue>
+            <LockupDisplayValue>a.secName</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.sectorName</LockupWhereCondition>
+            <LockupWhereCondition>a.secName</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -192,15 +192,15 @@
     </qItem>
     <qItem>
         <ItemId>11</ItemId>
-        <HdbFieldName>a.donorId</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
-        <DisplayName>Donor</DisplayName>
-        <WhereCondition>a.donorId</WhereCondition>
+        <HdbFieldName>a.impId</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
+        <DisplayName>Implememter</DisplayName>
+        <WhereCondition>a.impId</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.donorName</LockupDisplayValue>
+            <LockupDisplayValue>a.impName</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.donorName</LockupWhereCondition>
+            <LockupWhereCondition>a.impName</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -212,15 +212,15 @@
 
     <qItem>
         <ItemId>12</ItemId>
-        <HdbFieldName>a.hasPermit</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
-        <DisplayName>Has Permit</DisplayName>
-        <WhereCondition>a.hasPermit</WhereCondition>
+        <HdbFieldName>a.intrDuration</HdbFieldName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
+        <DisplayName>Duration</DisplayName>
+        <WhereCondition>a.intrDuration</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.pDesc</LockupDisplayValue>
+            <LockupDisplayValue>a.intrDuration</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.pDesc</LockupWhereCondition>
+            <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -231,7 +231,7 @@
     <qItem>
         <ItemId>13</ItemId>
         <HdbFieldName>a.btpId</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Benificiary Type</DisplayName>
         <WhereCondition>a.btpId</WhereCondition>
         <HasLockup>Y</HasLockup>
@@ -249,7 +249,7 @@
     <qItem>
         <ItemId>14</ItemId>
         <HdbFieldName>a.impId</HdbFieldName>
-        <HdbTableName>eu.pms.project.database.PmsProjectVw a</HdbTableName>
+        <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Implementer</DisplayName>
         <WhereCondition>a.impId</WhereCondition>
         <HasLockup>Y</HasLockup>
