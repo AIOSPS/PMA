@@ -1462,7 +1462,21 @@
                 type="java.sql.Timestamp"
                 column="actv_proposed_end_date"
         />
-
+        <property
+                name="actvTotalCost"
+                type="long"
+                column="actv_total_cost"
+        />
+        <property
+                name="actChallenges"
+                type="java.lang.String"
+                column="act_challenges"
+        />
+        <property
+                name="actvStatus"
+                type="java.lang.String"
+                column="actv_status"
+        />
     </class>
 
 </hibernate-mapping>

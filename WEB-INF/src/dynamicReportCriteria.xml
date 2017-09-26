@@ -60,15 +60,15 @@
 
     <qItem>
         <ItemId>4</ItemId>
-        <HdbFieldName>a.secCode</HdbFieldName>
+        <HdbFieldName>a.actvStatus</HdbFieldName>
         <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
-        <DisplayName>Project Status</DisplayName>
-        <WhereCondition>a.secCode</WhereCondition>
+        <DisplayName>Activity Status</DisplayName>
+        <WhereCondition>a.actvStatus</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.secName</LockupDisplayValue>
+            <LockupDisplayValue>a.actvStatus</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.secName</LockupWhereCondition>
+            <LockupWhereCondition>a.actvStatus</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -79,13 +79,13 @@
 
     <qItem>
         <ItemId>5</ItemId>
-        <HdbFieldName>a.sobjDescription</HdbFieldName>
+        <HdbFieldName>a.actvTotalCost</HdbFieldName>
         <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
         <DisplayName>Cost</DisplayName>
-        <WhereCondition>a.sobjDescription</WhereCondition>
+        <WhereCondition>a.actvTotalCost</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.sobjDescription</LockupDisplayValue>
+            <LockupDisplayValue>a.actvTotalCost</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
@@ -212,13 +212,13 @@
 
     <qItem>
         <ItemId>12</ItemId>
-        <HdbFieldName>a.intrDuration</HdbFieldName>
+        <HdbFieldName>a.actChallenges</HdbFieldName>
         <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
-        <DisplayName>Duration</DisplayName>
-        <WhereCondition>a.intrDuration</WhereCondition>
+        <DisplayName>Challenges</DisplayName>
+        <WhereCondition>a.actChallenges</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.intrDuration</LockupDisplayValue>
+            <LockupDisplayValue>a.actChallenges</LockupDisplayValue>
             <LockupTable></LockupTable>
             <LockupWhereCondition></LockupWhereCondition>
         </LockupInfo>
