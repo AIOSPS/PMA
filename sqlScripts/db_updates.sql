@@ -19,6 +19,11 @@ VIEW `pma_programs_view` AS
         `ai`.`actv_total_cost` AS `actv_total_cost`,
         `ai`.`act_challenges` AS `act_challenges`,
         `ai`.`actv_status` AS `actv_status`,
+        (CASE `ai`.`actv_status`
+            WHEN '1' THEN 'Planned'
+            WHEN '2' THEN 'Processing'
+            ELSE 'Finished'
+        END) AS `status_desc`,
         `aimp`.`imp_id` AS `imp_id`,
         `pimp`.`imp_name` AS `imp_name`,
         `pimp`.`imp_Type` AS `imp_Type`,
@@ -27,9 +32,11 @@ VIEW `pma_programs_view` AS
         `comm`.`com_name` AS `com_name`,
         `spobj`.`sobj_description` AS `sobj_description`,
         `gov`.`gov_desc` AS `gov_desc`,
-        `gov`.`gov_id` AS `gov_id`
+        `gov`.`gov_id` AS `gov_id`,
+        `ac`.`clas_code` AS `clas_code`,
+        `ac`.`clas_description` AS `clas_description`
     FROM
-        (((((((((`pma_programme_info` `pi`
+        ((((((((((`pma_programme_info` `pi`
         JOIN `pms_sectors` `ps`)
         JOIN `pma_activity_beneficiares` `ab`)
         JOIN `pms_benificiary_types` `bt`)
@@ -39,6 +46,7 @@ VIEW `pma_programs_view` AS
         JOIN `pms_communities` `comm`)
         JOIN `pma_specific_objective` `spobj`)
         JOIN `pms_governates` `gov`)
+        JOIN `pma_activity_clasification` `ac`)
     WHERE
         ((`pi`.`sec_code` = `ps`.`sec_id`)
             AND (`pi`.`intr_no` = `ab`.`intr_no`)
@@ -50,4 +58,5 @@ VIEW `pma_programs_view` AS
             AND (`pimp`.`imp_id` = `aimp`.`imp_id`)
             AND (`aimp`.`com_id` = `comm`.`com_id`)
             AND (`spobj`.`intr_no` = `pi`.`intr_no`)
-            AND (`comm`.`gov_id` = `gov`.`gov_id`))
+            AND (`comm`.`gov_id` = `gov`.`gov_id`)
+            AND (`ac`.`clas_code` = `ai`.`clas_code`))

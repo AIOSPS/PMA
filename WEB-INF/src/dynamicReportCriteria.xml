@@ -66,9 +66,9 @@
         <WhereCondition>a.actvStatus</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.actvStatus</LockupDisplayValue>
+            <LockupDisplayValue>a.actvStatusDesc</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.actvStatus</LockupWhereCondition>
+            <LockupWhereCondition>a.actvStatusDesc</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>
@@ -192,15 +192,15 @@
     </qItem>
     <qItem>
         <ItemId>11</ItemId>
-        <HdbFieldName>a.impId</HdbFieldName>
+        <HdbFieldName>a.clasCode</HdbFieldName>
         <HdbTableName>btc.pma.programme.database.PmaProgramsView a</HdbTableName>
-        <DisplayName>Implememter</DisplayName>
-        <WhereCondition>a.impId</WhereCondition>
+        <DisplayName>Classification</DisplayName>
+        <WhereCondition>a.clasCode</WhereCondition>
         <HasLockup>Y</HasLockup>
         <LockupInfo>
-            <LockupDisplayValue>a.impName</LockupDisplayValue>
+            <LockupDisplayValue>a.clasDescription</LockupDisplayValue>
             <LockupTable></LockupTable>
-            <LockupWhereCondition>a.impName</LockupWhereCondition>
+            <LockupWhereCondition>a.clasDescription</LockupWhereCondition>
         </LockupInfo>
         <HasJoin>N</HasJoin>
         <JoinWith>

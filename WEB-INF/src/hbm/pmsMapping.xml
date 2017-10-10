@@ -1477,6 +1477,22 @@
                 type="java.lang.String"
                 column="actv_status"
         />
+        <property
+                name="clasCode"
+                type="java.lang.String"
+                column="clas_code"
+        />
+        <property
+                name="clasDescription"
+                type="java.lang.String"
+                column="clas_description"
+        />
+        <property
+                name="actvStatusDesc"
+                type="java.lang.String"
+                column="status_desc"
+        />
+
     </class>
 
 </hibernate-mapping>

@@ -243,8 +243,9 @@
                         <div class="col-sm-9">
                             <html:select property="actvStatus"
                                          styleClass="selectpicker form-control" disabled="true">
-                                <html:option value="1">Active</html:option>
-                                <html:option value="2">Not Active</html:option>
+                                <html:option value="1">Planned</html:option>
+                                <html:option value="2">processing</html:option>
+                                <html:option value="3">Finished</html:option>
                             </html:select>
                         </div>
                     </div>

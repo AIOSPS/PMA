@@ -49,8 +49,9 @@
                         <div class="col-sm-9">
                             <input type="hidden" name="4_whereCondType" value="0">
                             <select  id="4_val1" name="4_val1" class="form-control input-sm">
-                                <option value="1">Active</option>
-                                <option value="2">Inactive</option>
+                                <option value="1">Planned</option>
+                                <option value="2">processing</option>
+                                <option value="3">Finished</option>
                             </select>
                         </div>
                     </div>

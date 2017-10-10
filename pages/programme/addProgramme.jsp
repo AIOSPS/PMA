@@ -7,27 +7,27 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#intrNo").attr("placeholder", "Programme Number");
+        $("#intrNo").attr("placeholder", "Intervention Number");
         $("#intrNo").prop('required', true);
-        $("#intrTitle").attr("placeholder", "Programme Title");
+        $("#intrTitle").attr("placeholder", "Intervention Title");
         $("#intrTitle").prop('required', true);
-        $("#intrDuration").attr("placeholder", "Programme Duration");
+        $("#intrDuration").attr("placeholder", "Intervention Duration");
         $("#intrDuration").prop('required', true);
-        $("#intrDescription").attr("placeholder", "Programme Descrpition");
+        $("#intrDescription").attr("placeholder", "Intervention Brief Description");
         $("#intrDescription").prop('required', true);
         $("#btcNavisionCode").attr("placeholder", "BTC Navision Code");
         $("#btcNavisionCode").prop('required', true);
         $("#partInstitution").attr("placeholder", "Partner Institution");
         $("#partInstitution").prop('required', true);
-        $("#agrmDuration").attr("placeholder", "Agreement Duration");
+        $("#agrmDuration").attr("placeholder", "Duration of Specific Agreement");
         $("#agrmDuration").prop('required', true);
-        $("#estmStartDate").attr("placeholder", "Estimate Start Date");
+        $("#estmStartDate").attr("placeholder", "Estimate Start-up Date");
         $("#estmStartDate").prop('required', true);
         $("#contPartnerCountry").attr("placeholder", "Partner Contribution");
         $("#contPartnerCountry").prop('required', true);
         $("#belgContribution").attr("placeholder", "Belgian Contribution");
         $("#belgContribution").prop('required', true);
-        $("#secCode").attr("placeholder", "Sector");
+        $("#secCode").attr("placeholder", "Sector (DAC Code)");
         $("#secCode").prop('required', true);
         $("#oallObjective").attr("placeholder", "Overall Objective");
         $("#oallObjective").prop('required', true);
@@ -61,13 +61,13 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="intrNo" class="col-sm-3 col-form-label">Programme Number:</label>
+                        <label for="intrNo" class="col-sm-3 col-form-label">Intervention Number:</label>
                         <div class="col-sm-9">
                             <html:text property="intrNo" styleClass="form-control" styleId="intrNo"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="intrTitle" class="col-sm-3 col-form-label">Programme Title:</label>
+                        <label for="intrTitle" class="col-sm-3 col-form-label">Intervention Title:</label>
                         <div class="col-sm-9">
                             <html:text property="intrTitle" styleClass="form-control" styleId="intrTitle"/>
                         </div>
@@ -77,25 +77,25 @@
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="intrDuration" class="col-sm-3 col-form-label">Programme Duration:</label>
-                        <div class="col-sm-9">
-                            <html:text property="intrDuration" styleClass="form-control" styleId="intrDuration"/>
+                        <label for="btcNavisionCode" class="col-sm-3 col-form-label">BTC Navision Code:</label>
+
+                        <div class='col-sm-9'>
+                            <html:text property="btcNavisionCode" styleClass="form-control" styleId="btcNavisionCode"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="intrDescription" class="col-sm-3 col-form-label">Programme Description:</label>
+                        <label for="agrmDuration" class="col-sm-3 col-form-label">Specific Agreement Duration:</label>
                         <div class="col-sm-9">
-                            <html:text property="intrDescription" styleClass="form-control" styleId="intrDescription"/>
+                            <html:text property="agrmDuration" styleClass="form-control" styleId="agrmDuration"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="btcNavisionCode" class="col-sm-3 col-form-label">BTC Navision Code:</label>
-
-                        <div class='col-sm-9'>
-                            <html:text property="btcNavisionCode" styleClass="form-control" styleId="btcNavisionCode"/>
+                        <label for="intrDescription" class="col-sm-3 col-form-label">Intervention Brief Description:</label>
+                        <div class="col-sm-9">
+                            <html:text property="intrDescription" styleClass="form-control" styleId="intrDescription"/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -109,9 +109,9 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="agrmDuration" class="col-sm-3 col-form-label">Agreement Duration:</label>
+                        <label for="intrDuration" class="col-sm-3 col-form-label">Intervention Duration:</label>
                         <div class="col-sm-9">
-                            <html:text property="agrmDuration" styleClass="form-control" styleId="agrmDuration"/>
+                            <html:text property="intrDuration" styleClass="form-control" styleId="intrDuration"/>
                         </div>
                     </div>
                     <div class="col-md-6">

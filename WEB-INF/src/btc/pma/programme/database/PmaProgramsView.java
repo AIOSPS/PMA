@@ -79,7 +79,14 @@ public class PmaProgramsView implements Serializable {
     private long actvTotalCost;
 
     private String actChallenges;
+
     private String actvStatus;
+
+    private String actvStatusDesc;
+
+    private String clasCode;
+
+    private String clasDescription;
 
     /** full constructor */
     public PmaProgramsView(PmaProgramsViewPK comp_id, String intrTitle, int intrDuration, String secCode, String secName, String btpId, String beneCount, String btpDesc, String actvTitle, String impId, String impName, String impType, String impAbbName, String comId, String comName, String sobjDescription, String govDesc, String govId, java.util.Date actvProposedStartDate, java.util.Date actvProposedEndDate) {
@@ -320,6 +327,30 @@ public class PmaProgramsView implements Serializable {
 
     public void setActvStatus(String actvStatus) {
         this.actvStatus = actvStatus;
+    }
+
+    public String getClasCode() {
+        return clasCode;
+    }
+
+    public void setClasCode(String clasCode) {
+        this.clasCode = clasCode;
+    }
+
+    public String getClasDescription() {
+        return clasDescription;
+    }
+
+    public void setClasDescription(String clasDescription) {
+        this.clasDescription = clasDescription;
+    }
+
+    public String getActvStatusDesc() {
+        return actvStatusDesc;
+    }
+
+    public void setActvStatusDesc(String actvStatusDesc) {
+        this.actvStatusDesc = actvStatusDesc;
     }
 
     public String toString() {
